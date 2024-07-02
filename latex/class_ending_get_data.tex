@@ -2,8 +2,7 @@
 \hypertarget{class_ending_get_data}{}\label{class_ending_get_data}\index{EndingGetData@{EndingGetData}}
 
 
-Ending\+Get\+Data에 대한 상속 다이어그램 \+: 
-\nopagebreak
+Ending\+Get\+Data에 대한 상속 다이어그램 \+: \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Ending\+Get\+Data에 대한 상속 다이어그램 \+:
 \end{figure}
 
 
-Ending\+Get\+Data에 대한 협력 다이어그램\+:
-\nopagebreak
+Ending\+Get\+Data에 대한 협력 다이어그램\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -82,18 +80,18 @@ void Ending\+Get\+Data.\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ playerName.text\ =\ \$\textcolor{stringliteral}{"{}1P\ <color=\#FFB800>\{single.Name\}</color>"{}};}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText.text\ =\ single.RecordDetail.TotalScore.ToString();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.SpeedScore\}</color></size>\ SCORE"{}};}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText.text\ =\ single.RecordDetail.Score.ToString();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.PhysicalAge\}</color></size>\ AGE"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.CognitiveAge\}</color></size>\ AGE"{}};}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].TotalScore\ >\ dual.RecordDetails[1].TotalScore)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].Score\ >\ dual.RecordDetails[1].Score)}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FF6B00>WIN</color>"{}};}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dual.RecordDetails[0].TotalScore\ <\ dual.RecordDetails[1].TotalScore)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dual.RecordDetails[0].Score\ <\ dual.RecordDetails[1].Score)}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FF6B00>WIN</color>"{}};}
@@ -107,20 +105,19 @@ void Ending\+Get\+Data.\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ playerName1p.text\ =\ \$\textcolor{stringliteral}{"{}1P\ <color=\#FFB800>\{dual.Names[0]\}</color>"{}};}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ playerName2p.text\ =\ \$\textcolor{stringliteral}{"{}2P\ <color=\#FFB800>\{dual.Names[1]\}</color>"{}};}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText1p.text\ =\ dual.RecordDetails[0].TotalScore.ToString();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText2p.text\ =\ dual.RecordDetails[1].TotalScore.ToString();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText1p.text\ =\ dual.RecordDetails[0].Score.ToString();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText2p.text\ =\ dual.RecordDetails[1].Score.ToString();}
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].SpeedScore\}</color></size>\ SCORE"{}};}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].SpeedScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].PhysicalAge\}</color></size>\ AGE"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].PhysicalAge\}</color></size>\ AGE"{}};}
 \DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].AccuracyScore\}</color></size>\ SCORE"{}};}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].CognitiveAge\}</color></size>\ AGE"{}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].CognitiveAge\}</color></size>\ AGE"{}};}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00066\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

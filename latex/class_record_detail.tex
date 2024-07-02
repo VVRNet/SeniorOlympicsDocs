@@ -2,8 +2,7 @@
 \hypertarget{class_record_detail}{}\label{class_record_detail}\index{RecordDetail@{RecordDetail}}
 
 
-Record\+Detailì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:
-\nopagebreak
+Record\+Detailì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -110,31 +109,29 @@ void Record\+Detail.\+End\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapti
 \DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_speed_scoring}{SpeedScoring}}\ sp\ =\ \textcolor{keyword}{new}();}
 \DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ (int)sp.\mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{CalculateAverageScore}}(\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}});}
 \DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ (\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ +\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}})\ /\ 2\ +\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}};}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Á¡¼ö°è»ê}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ì ìˆ˜ê³„ì‚°}}
 \DoxyCodeLine{00233\ }
 \DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ averageReactionTime\ =\ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Average();}
 \DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ averageCognitiveSpeed\ =\ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Average();}
 \DoxyCodeLine{00236\ }
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cognitiveAge\ =\ EstimateAgeFromSpeed(averageCognitiveSpeed,\ AgeEstimationData.CognitiveSpeedAverages);}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ physicalAge\ =\ EstimateAgeFromSpeed(averageReactionTime,\ AgeEstimationData.ReactionTimeAverages);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cognitiveAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}},\ AgeEstimationData.CognitiveSpeedAverages);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ physicalAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}},\ AgeEstimationData.ReactionTimeAverages);}
 \DoxyCodeLine{00239\ }
 \DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ =\ Mathf.RoundToInt(cognitiveAge);}
 \DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ =\ Mathf.RoundToInt(physicalAge);}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ÀÎÁö´É·Â,\ ½ÅÃ¼´É·Â ³ªÀÌ\ °è»ê}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ì¸ì§€ëŠ¥ë ¥,\ ì‹ ì²´ëŠ¥ë ¥\ ë‚˜ì´\ ê³„ì‚°}}
 \DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00244\ \ \ \ \ \}}
 
 \end{DoxyCode}
-ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
-\nopagebreak
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66_cgraph}
 \end{center}
 \end{figure}
-ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
-\nopagebreak
+ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -205,7 +202,7 @@ List$<$float$>$ Record\+Detail.\+Accuracy\hspace{0.3cm}{\ttfamily [get]}, {\ttfa
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00177\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ Á¤È®µµ}}
+\DoxyCodeLine{00177\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì •í™•ë„}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}\index{RecordDetail@{RecordDetail}!AccuracyScore@{AccuracyScore}}
@@ -220,7 +217,7 @@ int Record\+Detail.\+Accuracy\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00181\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ Á¤È®µµ\ Á¡¼ö}}
+\DoxyCodeLine{00181\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì •í™•ë„\ ì ìˆ˜}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}\index{RecordDetail@{RecordDetail}!CognitiveAge@{CognitiveAge}}
@@ -235,7 +232,7 @@ int Record\+Detail.\+Cognitive\+Age\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00184\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ÀÎÁö´É·Â ³ªÀÌ}}
+\DoxyCodeLine{00184\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì¸ì§€ëŠ¥ë ¥\ ë‚˜ì´}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}\index{RecordDetail@{RecordDetail}!CognitiveSpeed@{CognitiveSpeed}}
@@ -250,7 +247,7 @@ List$<$float$>$ Record\+Detail.\+Cognitive\+Speed\hspace{0.3cm}{\ttfamily [get]}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00180\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ÀÎÁö\ ¼Óµµ}}
+\DoxyCodeLine{00180\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì¸ì§€\ ì†ë„}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_abb4f5cfcb322a8648d07c0cc72be13b0}\index{RecordDetail@{RecordDetail}!Events@{Events}}
@@ -265,7 +262,7 @@ List$<$\mbox{\hyperlink{class_touch_event}{Touch\+Event}}$>$ Record\+Detail.\+Ev
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00178\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ÅÍÄ¡\ ÀÌº¥Æ®}}
+\DoxyCodeLine{00178\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ í„°ì¹˜\ ì´ë²¤íŠ¸}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}\index{RecordDetail@{RecordDetail}!Incorrect@{Incorrect}}
@@ -280,7 +277,7 @@ int Record\+Detail.\+Incorrect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00176\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ¿À´ä ¼ö}}
+\DoxyCodeLine{00176\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì˜¤ë‹µ\ ìˆ˜}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}\index{RecordDetail@{RecordDetail}!PhysicalAge@{PhysicalAge}}
@@ -295,7 +292,7 @@ int Record\+Detail.\+Physical\+Age\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [s
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00185\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ½ÅÃ¼´É·Â ³ªÀÌ}}
+\DoxyCodeLine{00185\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì‹ ì²´ëŠ¥ë ¥\ ë‚˜ì´}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}\index{RecordDetail@{RecordDetail}!ReactionTime@{ReactionTime}}
@@ -310,7 +307,7 @@ List$<$float$>$ Record\+Detail.\+Reaction\+Time\hspace{0.3cm}{\ttfamily [get]}, 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00179\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ¹İÀÀ ¼Óµµ}}
+\DoxyCodeLine{00179\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ë°˜ì‘\ ì†ë„}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}\index{RecordDetail@{RecordDetail}!Score@{Score}}
@@ -325,7 +322,7 @@ int Record\+Detail.\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00174\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ Á¡¼ö}}
+\DoxyCodeLine{00174\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì ìˆ˜}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}\index{RecordDetail@{RecordDetail}!SpeedScore@{SpeedScore}}
@@ -340,7 +337,7 @@ int Record\+Detail.\+Speed\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [se
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00182\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ¼ø¹ß·Â\ Á¡¼ö}}
+\DoxyCodeLine{00182\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ìˆœë°œë ¥\ ì ìˆ˜}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}\index{RecordDetail@{RecordDetail}!TotalScore@{TotalScore}}
@@ -355,7 +352,7 @@ int Record\+Detail.\+Total\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [se
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00183\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ÃÖÁ¾\ Á¡¼ö}}
+\DoxyCodeLine{00183\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ìµœì¢…\ ì ìˆ˜}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}\index{RecordDetail@{RecordDetail}!TotalTouch@{TotalTouch}}
@@ -370,7 +367,7 @@ int Record\+Detail.\+Total\+Touch\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [se
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00175\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ÃÑ\ ÅÍÄ¡\ ¼ö}}
+\DoxyCodeLine{00175\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ì´\ í„°ì¹˜\ ìˆ˜}}
 
 \end{DoxyCode}
 

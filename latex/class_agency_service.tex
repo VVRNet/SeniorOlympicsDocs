@@ -2,6 +2,11 @@
 \hypertarget{class_agency_service}{}\label{class_agency_service}\index{AgencyService@{AgencyService}}
 
 
+기관 관련 작업을 처리하는 서비스 클래스입니다.  
+
+
+
+
 Agency\+Service에 대한 상속 다이어그램 \+: 
 \nopagebreak
 \begin{figure}[H]
@@ -24,29 +29,29 @@ Agency\+Service에 대한 협력 다이어그램\+:
 \begin{DoxyCompactItemize}
 \item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a620519ae769ad9cb63fc068ff9ea49e3}{Create\+Agency}} (\mbox{\hyperlink{class_agency}{Agency}} agency, Action$<$ List$<$ string $>$ $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em 새로운 기관을 생성합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a4808a9e6342d025e1fb1f86f7eea2be6}{License\+Check}} (string admin\+Email, Action$<$ \mbox{\hyperlink{class_agency}{Agency}} $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em Admin\+Email을 사용하여 기관의 라이센스를 확인합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a311d81d232cb9d83fef779a4294d5df9}{Get\+Agencies}} (Action$<$ List$<$ \mbox{\hyperlink{class_agency}{Agency}} $>$ $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em 모든 기관 목록을 가져옵니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a041b76c880832c02b2aef312a74e33da}{Login}} (string admin\+Email, string password, Action$<$ \mbox{\hyperlink{class_agency}{Agency}} $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em Admin\+Email과 비밀번호를 사용하여 기관에 로그인합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{Update\+Agency\+Field}} (string agency\+Id, string field\+Name, object field\+Value, Action$<$ bool $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em 기관의 특정 필드를 업데이트합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a045ee66a8f838387499d7ad2c9fa3a66}{Add\+Class}} (string agency\+Id, \mbox{\hyperlink{class_class}{Class}} new\+Class, Action$<$ bool $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em 새로운 반을 기관에 추가합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a47b9a7a55ef705e2df4c35298221377e}{Remove\+Class}} (string class\+Name, Action$<$ bool $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em 기관에서 반을 제거합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a9a9fa6db0550dc0fc06653282576dd3d}{Add\+Student}} (string class\+Name, \mbox{\hyperlink{class_student}{Student}} new\+Student, Action$<$ bool $>$ callback)
-\item 
+\begin{DoxyCompactList}\small\item\em 새로운 학생을 반에 추가합니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_agency_service_a6deba71c329c0277247a61f4da300ef9}{Remove\+Student}} (string class\+Name, string student\+Id, Action$<$ bool $>$ callback)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 반에서 학생을 제거합니다. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{추가로 상속된 멤버들}
 \doxysubsection*{\mbox{\hyperlink{class_base_service}{Base\+Service}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 IEnumerator \mbox{\hyperlink{class_base_service_a58277b5cf1c1f86cefcfa19a3069ccde}{Send\+Request$<$ T $>$}} (string url, string json\+Data, Action$<$ List$<$ T $>$ $>$ callback)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em HTTP 요청을 보내는 메서드입니다. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{\mbox{\hyperlink{class_base_service}{Base\+Service}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,9 +60,9 @@ string \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{ba
 
 
 \doxysubsection{상세한 설명}
+기관 관련 작업을 처리하는 서비스 클래스입니다. 
 
-
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -70,46 +75,62 @@ IEnumerator Agency\+Service.\+Add\+Class (\begin{DoxyParamCaption}\item[{string}
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00224}{224}} 번째 라인에서 정의되었습니다.
+새로운 반을 기관에 추가합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em agency\+Id} & 기관의 ID입니다. \\
+\hline
+{\em new\+Class} & 추가할 새로운 반입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00272}{272}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00225\ \ \ \ \ \{}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
-\DoxyCodeLine{00230\ }
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00234\ }
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \}\ \},}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_push\ =\ \textcolor{keyword}{new}\ \{\ Classes\ =\ newClass\ \}\ \}}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_push\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$push\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00245\ }
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00247\ }
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00250\ }
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agency.Classes.Add(newClass);}
-\DoxyCodeLine{00252\ }
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \}\ \},}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_push\ =\ \textcolor{keyword}{new}\ \{\ Classes\ =\ newClass\ \}\ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_push\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$push\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agency.Classes.Add(newClass);}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_service_a9a9fa6db0550dc0fc06653282576dd3d}\index{AgencyService@{AgencyService}!AddStudent@{AddStudent}}
@@ -120,49 +141,65 @@ IEnumerator Agency\+Service.\+Add\+Student (\begin{DoxyParamCaption}\item[{strin
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00299}{299}} 번째 라인에서 정의되었습니다.
+새로운 학생을 반에 추가합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em class\+Name} & 반의 이름입니다. \\
+\hline
+{\em new\+Student} & 추가할 새로운 학생입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00360}{360}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00300\ \ \ \ \ \{}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
-\DoxyCodeLine{00305\ }
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00309\ }
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \},\ classesName\ =\ className\ \},}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_push\ =\ \textcolor{keyword}{new}\ \{\ classStudent\ =\ newStudent\ \}\ \}}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_push\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$push\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classesName\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.Name\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classStudent\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.\$.Students\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00322\ }
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00324\ }
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00327\ }
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ classToAddStudent\ =\ agency.Classes.FirstOrDefault(c\ =>\ c.Name\ ==\ className);}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classToAddStudent.\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}.Add(newStudent);}
-\DoxyCodeLine{00330\ }
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \},\ classesName\ =\ className\ \},}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_push\ =\ \textcolor{keyword}{new}\ \{\ classStudent\ =\ newStudent\ \}\ \}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_push\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$push\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classesName\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.Name\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classStudent\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.\$.Students\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ classToAddStudent\ =\ agency.Classes.FirstOrDefault(c\ =>\ c.Name\ ==\ className);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classToAddStudent.\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}.Add(newStudent);}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_service_a620519ae769ad9cb63fc068ff9ea49e3}\index{AgencyService@{AgencyService}!CreateAgency@{CreateAgency}}
@@ -173,54 +210,68 @@ IEnumerator Agency\+Service.\+Create\+Agency (\begin{DoxyParamCaption}\item[{\mb
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+새로운 기관을 생성합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em agency} & 생성할 기관 정보입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00015\ \ \ \ \ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}agency\ is\ null"{}});}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(agency.\mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}}))}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}AdminEmail\ is\ null\ or\ empty"{}});}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AdminEmail\ �ߺ�\ üũ}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ CheckAdminEmailExists(agency.\mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}},\ (exists)\ =>}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (exists[0])}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(new\ List<string>\{\ \textcolor{stringliteral}{"{}AdminEmail\ already\ exists"{}}\});}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(agency.ToString());}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ string\ url\ =\ baseUrl\ +\ \textcolor{stringliteral}{"{}insertOne"{}};}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(url);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ new\ JsonSerializerSettings();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(new\ MongoDbDateTimeConverter());}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(new\ MongoDbObjectIdConverter());}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ string\ jsonData\ =\ JsonConvert.SerializeObject(new}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ document\ =\ agency}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(SendRequest<string>(url,\ jsonData,\ callback));}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}agency\ is\ null"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(agency.\mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}}))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}AdminEmail\ is\ null\ or\ empty"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AdminEmail\ 중복\ 체크}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ CheckAdminEmailExists(agency.\mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}},\ (exists)\ =>}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (exists[0])}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(new\ List<string>\{\ \textcolor{stringliteral}{"{}AdminEmail\ already\ exists"{}}\});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(agency.ToString());}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ string\ url\ =\ baseUrl\ +\ \textcolor{stringliteral}{"{}insertOne"{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(url);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ new\ JsonSerializerSettings();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(new\ MongoDbDateTimeConverter());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(new\ MongoDbObjectIdConverter());}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ string\ jsonData\ =\ JsonConvert.SerializeObject(new}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ document\ =\ agency}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(SendRequest<string>(url,\ jsonData,\ callback));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -239,29 +290,41 @@ IEnumerator Agency\+Service.\+Get\+Agencies (\begin{DoxyParamCaption}\item[{Acti
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00133}{133}} 번째 라인에서 정의되었습니다.
+모든 기관 목록을 가져옵니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00159}{159}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00134\ \ \ \ \ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}find"{}};}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}find"{}};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_service_a4808a9e6342d025e1fb1f86f7eea2be6}\index{AgencyService@{AgencyService}!LicenseCheck@{LicenseCheck}}
@@ -272,45 +335,59 @@ IEnumerator Agency\+Service.\+License\+Check (\begin{DoxyParamCaption}\item[{str
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00095}{95}} 번째 라인에서 정의되었습니다.
+Admin\+Email을 사용하여 기관의 라이센스를 확인합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em admin\+Email} & 확인할 Admin\+Email입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00116}{116}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00096\ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(adminEmail))}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}adminEmail\ is\ null\ or\ empty"{}});}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}findOne"{}};}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ AdminEmail\ =\ adminEmail\ \}}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(response);}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response[0]);}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}No\ documents\ found."{}});}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(adminEmail))}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}adminEmail\ is\ null\ or\ empty"{}});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}findOne"{}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ AdminEmail\ =\ adminEmail\ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(response);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response[0]);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}No\ documents\ found."{}});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_service_a041b76c880832c02b2aef312a74e33da}\index{AgencyService@{AgencyService}!Login@{Login}}
@@ -321,48 +398,64 @@ IEnumerator Agency\+Service.\+Login (\begin{DoxyParamCaption}\item[{string}]{adm
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00155}{155}} 번째 라인에서 정의되었습니다.
+Admin\+Email과 비밀번호를 사용하여 기관에 로그인합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em admin\+Email} & 기관의 Admin\+Email입니다. \\
+\hline
+{\em password} & 기관의 비밀번호입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00188}{188}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00156\ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}findOne"{}};}
-\DoxyCodeLine{00158\ }
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ AdminEmail\ =\ adminEmail\ \}}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ agency\ =\ response[0];}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_password_helper}{PasswordHelper}}.\mbox{\hyperlink{class_password_helper_acd696dd43f0b278625974b824fb8c227}{VerifyPassword}}(password,\ agency.Password))}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(agency);}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//"{}Login\ successful"{}}}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(null);}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//"{}Invalid\ password"{}}}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}findOne"{}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ AdminEmail\ =\ adminEmail\ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ agency\ =\ response[0];}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_password_helper}{PasswordHelper}}.\mbox{\hyperlink{class_password_helper_acd696dd43f0b278625974b824fb8c227}{VerifyPassword}}(password,\ agency.Password))}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(agency);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//"{}Login\ successful"{}}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(null);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//"{}Invalid\ password"{}}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -381,43 +474,57 @@ IEnumerator Agency\+Service.\+Remove\+Class (\begin{DoxyParamCaption}\item[{stri
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00263}{263}} 번째 라인에서 정의되었습니다.
+기관에서 반을 제거합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em class\+Name} & 제거할 반의 이름입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00317}{317}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00264\ \ \ \ \ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
-\DoxyCodeLine{00269\ }
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00273\ }
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \}\ \},}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_pull\ =\ \textcolor{keyword}{new}\ \{\ Classes\ =\ \textcolor{keyword}{new}\ \{\ Name\ =\ className\ \}\ \}\ \}}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_pull\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$pull\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00285\ }
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agency.Classes.RemoveAll(c\ =>\ c.Name\ ==\ className);}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \}\ \},}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_pull\ =\ \textcolor{keyword}{new}\ \{\ Classes\ =\ \textcolor{keyword}{new}\ \{\ Name\ =\ className\ \}\ \}\ \}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_pull\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$pull\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agency.Classes.RemoveAll(c\ =>\ c.Name\ ==\ className);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_service_a6deba71c329c0277247a61f4da300ef9}\index{AgencyService@{AgencyService}!RemoveStudent@{RemoveStudent}}
@@ -428,48 +535,64 @@ IEnumerator Agency\+Service.\+Remove\+Student (\begin{DoxyParamCaption}\item[{st
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00341}{341}} 번째 라인에서 정의되었습니다.
+반에서 학생을 제거합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em class\+Name} & 반의 이름입니다. \\
+\hline
+{\em student\+Id} & 제거할 학생의 ID입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00409}{409}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00342\ \ \ \ \ \{}
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
-\DoxyCodeLine{00347\ }
-\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00351\ }
-\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \},\ classesName\ =\ className\ \},}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_pull\ =\ \textcolor{keyword}{new}\ \{\ classStudent\ =\ \textcolor{keyword}{new}\ \{\ Id\ =\ studentId\ \}\ \}\ \}}
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_pull\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$pull\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classesName\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.Name\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classStudent\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.\$.Students\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00364\ }
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00366\ }
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ classToRemoveStudent\ =\ agency.Classes.FirstOrDefault(c\ =>\ c.Name\ ==\ className);}
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classToRemoveStudent.\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}.RemoveAll(s\ =>\ s.Id\ ==\ studentId);}
-\DoxyCodeLine{00371\ }
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00379\ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agency.\_id\ \},\ classesName\ =\ className\ \},}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_pull\ =\ \textcolor{keyword}{new}\ \{\ classStudent\ =\ \textcolor{keyword}{new}\ \{\ Id\ =\ studentId\ \}\ \}\ \}}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_pull\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$pull\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classesName\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.Name\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}classStudent\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Classes.\$.Students\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ classToRemoveStudent\ =\ agency.Classes.FirstOrDefault(c\ =>\ c.Name\ ==\ className);}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classToRemoveStudent.\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}.RemoveAll(s\ =>\ s.Id\ ==\ studentId);}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Agency\ Not\ Login"{}});}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00447\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}\index{AgencyService@{AgencyService}!UpdateAgencyField@{UpdateAgencyField}}
@@ -480,35 +603,53 @@ IEnumerator Agency\+Service.\+Update\+Agency\+Field (\begin{DoxyParamCaption}\it
 
 
 
-\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00196}{196}} 번째 라인에서 정의되었습니다.
+기관의 특정 필드를 업데이트합니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em agency\+Id} & 업데이트할 기관의 ID입니다. \\
+\hline
+{\em field\+Name} & 업데이트할 필드의 이름입니다. \\
+\hline
+{\em field\+Value} & 필드의 새로운 값입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_agency_service_8cs_source}{Agency\+Service.\+cs}} 파일의 \mbox{\hyperlink{_agency_service_8cs_source_l00237}{237}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00197\ \ \ \ \ \{}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
-\DoxyCodeLine{00199\ }
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agencyId\ \}\ \},}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_set\ =\ \textcolor{keyword}{new}\ \{\ fieldName\ =\ fieldValue\ \}\ \}}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \},\ settings);}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_set\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$set\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}fieldName\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}\ +\ fieldName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}});}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00216\ }
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}updateOne"{}};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keyword}{new}\ \{\ \_oid\ =\ agencyId\ \}\ \},}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ \textcolor{keyword}{new}\ \{\ \_set\ =\ \textcolor{keyword}{new}\ \{\ fieldName\ =\ fieldValue\ \}\ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_set\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$set\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}\_oid\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\$oid\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ jsonData\ =\ jsonData.Replace(\textcolor{stringliteral}{"{}\(\backslash\)"{}fieldName\(\backslash\)"{}"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}\ +\ fieldName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Agency>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
 
 \end{DoxyCode}
 

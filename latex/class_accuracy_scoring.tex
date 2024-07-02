@@ -2,8 +2,7 @@
 \hypertarget{class_accuracy_scoring}{}\label{class_accuracy_scoring}\index{AccuracyScoring@{AccuracyScoring}}
 
 
-Accuracy\+Scoringì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:
-\nopagebreak
+Accuracy\+Scoringì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,27 +37,26 @@ float Accuracy\+Scoring.\+Calculate\+Accuracy\+Score (\begin{DoxyParamCaption}\i
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00009\ \ \ \ \ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Àı´ëÀûÀÎ\ ±âÁØ\ ¼³Á¤\ (¿¹:\ ÃÖ´ë °Å¸®\ 10)}}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ 10.0f;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ì ˆëŒ€ì ì¸\ ê¸°ì¤€\ ì„¤ì •\ (ì˜ˆ:\ ìµœëŒ€\ ê±°ë¦¬\ 10)}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ 1.0f;}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Æò±Õ °Å¸®\ °è»ê}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ í‰ê· \ ê±°ë¦¬\ ê³„ì‚°}}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ meanDistance\ =\ CalculateMean(distances);}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Àı´ëÀûÀÎ\ ±âÁØ¿¡\ µû¶ó °Å¸®\ ±â¹İ\ Á¡¼ö °è»ê}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ì ˆëŒ€ì ì¸\ ê¸°ì¤€ì—\ ë”°ë¼\ ê±°ë¦¬\ ê¸°ë°˜\ ì ìˆ˜\ ê³„ì‚°}}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceScore\ =\ ((maxDistance\ -\/\ meanDistance)\ /\ maxDistance)\ *\ 100.0f;}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Á¤È®µµ¸¦\ 100Á¡\ Ã´µµ·Î º¯È¯}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ì •í™•ë„ë¥¼\ 100ì \ ì²™ë„ë¡œ\ ë³€í™˜}}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracyScore\ =\ accuracy\ *\ 100.0f;}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ÃÖÁ¾\ Á¡¼ö °è»ê (ÃÖ´ë 200Á¡À¸·Î Á¦ÇÑ)}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ìµœì¢…\ ì ìˆ˜\ ê³„ì‚°\ (ìµœëŒ€\ 200ì ìœ¼ë¡œ\ ì œí•œ)}}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ finalScore\ =\ Mathf.Clamp(distanceScore\ +\ accuracyScore,\ 0,\ 200);}
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalScore;}
 \DoxyCodeLine{00026\ \ \ \ \ \}}
 
 \end{DoxyCode}
-ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
-\nopagebreak
+ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
