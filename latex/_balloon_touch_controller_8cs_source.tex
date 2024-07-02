@@ -40,95 +40,88 @@
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 좌표를\ 뷰포트\ 좌표로 정규화\ (0에서\ 1\ 사이\ 값)}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vector3\ viewportPosition\ =\ new\ Vector3(x\ /\ Screen.width,\ (y\ /\ Screen.height),\ Camera.main.nearClipPlane);}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 뷰포트\ 좌표를\ 월드 좌표로 변환}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vector3\ screenPosition\ =\ Camera.main.WorldToScreenPoint(new\ Vector3(x,\ y,\ Camera.main.nearClipPlane));}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a13bbce09d303d0a6f8d42624afcaf1e4}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}{rootObject}}.transform);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00045}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}{Score}}()}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ teamColor\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a13bbce09d303d0a6f8d42624afcaf1e4}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}{rootObject}}.transform);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00052}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}{Score}}()}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ teamColor\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4e8966a05fd97ea2ba26d7e8cf166b4c}{isLeft}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}RED"{}};}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}BLUE"{}};}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4e8966a05fd97ea2ba26d7e8cf166b4c}{isLeft}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}RED"{}};}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}BLUE"{}};}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//배경\ 터치횟수 올리기}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//배경\ 터치횟수 올리기}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3096260b58d2432ada42a472a32c3fbb}{correctSound}};}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3096260b58d2432ada42a472a32c3fbb}{correctSound}};}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{AnswerTouch}}(teamColor);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}{manager}}.\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}++;}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}{manager}}.\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a78672c775d9818c774ca3b90bd304fce}{CompleteStage}}();}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4f5b48e0ac6ceeab76484c0eedbc08cf}{wrongSound}};}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00096}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{00096}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(\textcolor{keywordtype}{string}\ teamColor)}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{AnswerTouch}}(teamColor);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}{manager}}.\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}++;}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}{manager}}.\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a78672c775d9818c774ca3b90bd304fce}{CompleteStage}}();}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4f5b48e0ac6ceeab76484c0eedbc08cf}{wrongSound}};}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00089}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(\textcolor{keywordtype}{string}\ teamColor)}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00109}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{00109}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{AnswerTouch}}(\textcolor{keywordtype}{string}\ teamColor)}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00102}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{AnswerTouch}}(\textcolor{keywordtype}{string}\ teamColor)}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00114}00114\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00115}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac17450643b8e56f865bf7c10385bdc25}{00115}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac17450643b8e56f865bf7c10385bdc25}{OtherEndingMotion}}()}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00120}00120\ \}}
 \DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00122}\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac17450643b8e56f865bf7c10385bdc25}{00122}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac17450643b8e56f865bf7c10385bdc25}{OtherEndingMotion}}()}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00126}00126\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00127}00127\ \}}
-\DoxyCodeLine{\Hypertarget{_balloon_touch_controller_8cs_source_l00128}00128\ }
 
 \end{DoxyCode}

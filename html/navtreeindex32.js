@@ -1,5 +1,16 @@
 var NAVTREEINDEX32 =
 {
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a30b8e49a667fb02b71c1833abd37f1cf":[3,0,12,0,44,49],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a30b8e49a667fb02b71c1833abd37f1cf":[4,0,11,0,42,49],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a31adce560407afe22c3a1ccb4f55ce55":[3,0,12,0,44,2],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a31adce560407afe22c3a1ccb4f55ce55":[4,0,11,0,42,2],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a457084450e77fe7b385b5dcadaae5b7f":[3,0,12,0,44,35],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a457084450e77fe7b385b5dcadaae5b7f":[4,0,11,0,42,35],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a4c7bec387d10a8498a5d1ce6ccd48c8f":[3,0,12,0,44,36],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a4c7bec387d10a8498a5d1ce6ccd48c8f":[4,0,11,0,42,36],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a4ddceb28baee5855e9f9fa1518263ef7":[3,0,12,0,44,1],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a4ddceb28baee5855e9f9fa1518263ef7":[4,0,11,0,42,1],
+"class_spine_1_1_unity_1_1_skeleton_renderer.html#a50c1ed5cbe909dd36bbfc33efc602d07":[3,0,12,0,44,11],
 "class_spine_1_1_unity_1_1_skeleton_renderer.html#a50c1ed5cbe909dd36bbfc33efc602d07":[4,0,11,0,42,11],
 "class_spine_1_1_unity_1_1_skeleton_renderer.html#a593328ff15f463107f47419fa59c5d50":[3,0,12,0,44,45],
 "class_spine_1_1_unity_1_1_skeleton_renderer.html#a593328ff15f463107f47419fa59c5d50":[4,0,11,0,42,45],
@@ -238,16 +249,5 @@ var NAVTREEINDEX32 =
 "class_spine_1_1_unity_1_1_skeleton_root_motion_base.html#af3ed327a0360d0c3b9eeddbb4919724a":[3,0,12,0,49,27],
 "class_spine_1_1_unity_1_1_skeleton_root_motion_base.html#af3ed327a0360d0c3b9eeddbb4919724a":[4,0,11,0,47,27],
 "class_spine_1_1_unity_1_1_skeleton_root_motion_base.html#afc74579bf1beb4419b3475d917c4cec5":[3,0,12,0,49,22],
-"class_spine_1_1_unity_1_1_skeleton_root_motion_base.html#afc74579bf1beb4419b3475d917c4cec5":[4,0,11,0,47,22],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html":[3,0,12,0,50],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html":[4,0,11,0,48],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a26b33d5c500e13fc92d84acb35db869b":[3,0,12,0,50,3],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a26b33d5c500e13fc92d84acb35db869b":[4,0,11,0,48,3],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a6c9be8910a7901bcea9bf330a3ab4be7":[3,0,12,0,50,1],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a6c9be8910a7901bcea9bf330a3ab4be7":[4,0,11,0,48,1],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a788e08ca1f77059b223971e626f6acb0":[3,0,12,0,50,0],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a788e08ca1f77059b223971e626f6acb0":[4,0,11,0,48,0],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a84599f698a1086371c50d690a046cecd":[3,0,12,0,50,2],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#a84599f698a1086371c50d690a046cecd":[4,0,11,0,48,2],
-"class_spine_1_1_unity_1_1_skeleton_submesh_graphic.html#af2ea6adb2058da3bce769d87ed3df0d2":[3,0,12,0,50,4]
+"class_spine_1_1_unity_1_1_skeleton_root_motion_base.html#afc74579bf1beb4419b3475d917c4cec5":[4,0,11,0,47,22]
 };

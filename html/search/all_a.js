@@ -18,7 +18,7 @@ var searchData=
   ['ballmovecontroller_2ecs_15',['BallMoveController.cs',['../_ball_move_controller_8cs.html',1,'']]],
   ['ballobj_16',['ballObj',['../class_tennis_1_1_ball_touch_controller.html#a8449ffa7d5a31a59304828b7f12dc1cb',1,'Tennis::BallTouchController']]],
   ['balloonimage_17',['balloonImage',['../class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a7f6dbeefba1e608761f4349f80f20e80',1,'HotAirBalloon::HotAirBalloonManager']]],
-  ['balloonpos_18',['balloonPos',['../class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a6f6c4d9b353fde030bd9af1ba25104e1',1,'HotAirBalloon::HotAirBalloonManager']]],
+  ['balloonposition_18',['BalloonPosition',['../class_balloon_position.html',1,'']]],
   ['balloontouchcontroller_19',['BalloonTouchController',['../class_hot_air_balloon_1_1_balloon_touch_controller.html',1,'HotAirBalloon']]],
   ['balloontouchcontroller_2ecs_20',['BalloonTouchController.cs',['../_balloon_touch_controller_8cs.html',1,'']]],
   ['ballprefab_21',['ballPrefab',['../class_tennis_1_1_ball_move_controller.html#a4458f08379c73cfc7099c53256144e87',1,'Tennis::BallMoveController']]],

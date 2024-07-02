@@ -1,5 +1,16 @@
 var NAVTREEINDEX22 =
 {
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a3cb154270ff89ebad2fa542da40ca7da":[3,0,12,0,2,18,50],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a3cb154270ff89ebad2fa542da40ca7da":[4,0,11,0,0,18,50],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a3ece08ce3020145c7a157eb4750160cd":[3,0,12,0,2,18,61],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a3ece08ce3020145c7a157eb4750160cd":[4,0,11,0,0,18,61],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a3fd5ece72c6304819d8d4273a9e83a10":[3,0,12,0,2,18,31],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a3fd5ece72c6304819d8d4273a9e83a10":[4,0,11,0,0,18,31],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a4a0ceec14a90d5f53ae1a0b97a7acf51":[3,0,12,0,2,18,37],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a4a0ceec14a90d5f53ae1a0b97a7acf51":[4,0,11,0,0,18,37],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a4f9893d5fc822e4dc7fdf2cf474b6f16":[3,0,12,0,2,18,19],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a4f9893d5fc822e4dc7fdf2cf474b6f16":[4,0,11,0,0,18,19],
+"class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a549cc6d68566c5b779d4e0c974f2e3b0":[3,0,12,0,2,18,33],
 "class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a549cc6d68566c5b779d4e0c974f2e3b0":[4,0,11,0,0,18,33],
 "class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a5df912483379f91ff70f18d804be26c1":[3,0,12,0,2,18,55],
 "class_spine_1_1_unity_1_1_editor_1_1_skeleton_renderer_inspector.html#a5df912483379f91ff70f18d804be26c1":[4,0,11,0,0,18,55],
@@ -238,16 +249,5 @@ var NAVTREEINDEX22 =
 "class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html":[3,0,12,0,2,36],
 "class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html":[4,0,11,0,0,36],
 "class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a70a3c05197417d3a3382d3afdd0564ca":[3,0,12,0,2,36,0],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a70a3c05197417d3a3382d3afdd0564ca":[4,0,11,0,0,36,0],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a8ebea4fef59b004488aeb1d2f29828ab":[3,0,12,0,2,36,1],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a8ebea4fef59b004488aeb1d2f29828ab":[4,0,11,0,0,36,1],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a9fc969858e1de085550501fef0e7dbf2":[3,0,12,0,2,36,2],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a9fc969858e1de085550501fef0e7dbf2":[4,0,11,0,0,36,2],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html":[3,0,12,0,2,37],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html":[4,0,11,0,0,37],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a00615b8f30f78ed789868b8b2d823650":[3,0,12,0,2,37,23],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a00615b8f30f78ed789868b8b2d823650":[4,0,11,0,0,37,23],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a0abacbf5a2c33fc3d51fa85063f0e00b":[3,0,12,0,2,37,19],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a0abacbf5a2c33fc3d51fa85063f0e00b":[4,0,11,0,0,37,19],
-"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a10fd9a9055152d0fc182fc30d41bf302":[3,0,12,0,2,37,10]
+"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a70a3c05197417d3a3382d3afdd0564ca":[4,0,11,0,0,36,0]
 };

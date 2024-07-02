@@ -1,5 +1,16 @@
 var NAVTREEINDEX24 =
 {
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a8fba558fb0101d3e852382181f69219d":[3,0,12,0,3,6,0],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a8fba558fb0101d3e852382181f69219d":[4,0,11,0,1,6,0],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a97d685b67ecc18d6dabf78ed993a3e59":[3,0,12,0,3,6,3],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a97d685b67ecc18d6dabf78ed993a3e59":[4,0,11,0,1,6,3],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9b54aa7101a892a2e1437c5b9d3905f4":[3,0,12,0,3,6,4],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9b54aa7101a892a2e1437c5b9d3905f4":[4,0,11,0,1,6,4],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9e5c83caf78b2231602270174b9a9d5a":[3,0,12,0,3,6,1],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9e5c83caf78b2231602270174b9a9d5a":[4,0,11,0,1,6,1],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#aa482c7860eccb2a58f9c92af770f9c2d":[3,0,12,0,3,6,2],
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#aa482c7860eccb2a58f9c92af770f9c2d":[4,0,11,0,1,6,2],
+"class_spine_1_1_unity_1_1_examples_1_1_draggable_transform.html":[3,0,12,0,3,7],
 "class_spine_1_1_unity_1_1_examples_1_1_draggable_transform.html":[4,0,11,0,1,7],
 "class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html":[3,0,12,0,3,8],
 "class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html":[4,0,11,0,1,8],
@@ -238,16 +249,5 @@ var NAVTREEINDEX24 =
 "class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a53c78c39afbf376c7aadab61b0c33fd2":[3,0,12,0,3,23,2],
 "class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a53c78c39afbf376c7aadab61b0c33fd2":[4,0,11,0,1,23,2],
 "class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a7324fda5ae24151ae0703343b3099886":[3,0,12,0,3,23,0],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a7324fda5ae24151ae0703343b3099886":[4,0,11,0,1,23,0],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a89d03834277cf6d664395575c1b17322":[3,0,12,0,3,23,3],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a89d03834277cf6d664395575c1b17322":[4,0,11,0,1,23,3],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#afd9524332d08c93dd46d61375a171e8f":[3,0,12,0,3,23,1],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#afd9524332d08c93dd46d61375a171e8f":[4,0,11,0,1,23,1],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html":[3,0,12,0,3,24],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html":[4,0,11,0,1,24],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html#a03cd787f213508f951f99e76f57373a0":[3,0,12,0,3,24,4],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html#a03cd787f213508f951f99e76f57373a0":[4,0,11,0,1,24,4],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html#a07fc027ed9cad3270c07efec352ca99c":[3,0,12,0,3,24,17],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html#a07fc027ed9cad3270c07efec352ca99c":[4,0,11,0,1,24,17],
-"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_example.html#a1dca3b0e76acf5ce8572729953f6a9b9":[3,0,12,0,3,24,12]
+"class_spine_1_1_unity_1_1_examples_1_1_mix_and_match_skins_button_example.html#a7324fda5ae24151ae0703343b3099886":[4,0,11,0,1,23,0]
 };

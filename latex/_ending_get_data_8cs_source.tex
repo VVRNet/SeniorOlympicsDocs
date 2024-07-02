@@ -33,18 +33,18 @@
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ playerName.text\ =\ \$\textcolor{stringliteral}{"{}1P\ <color=\#FFB800>\{single.Name\}</color>"{}};}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText.text\ =\ single.RecordDetail.TotalScore.ToString();}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.SpeedScore\}</color></size>\ SCORE"{}};}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText.text\ =\ single.RecordDetail.Score.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.PhysicalAge\}</color></size>\ AGE"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.CognitiveAge\}</color></size>\ AGE"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].TotalScore\ >\ dual.RecordDetails[1].TotalScore)}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].Score\ >\ dual.RecordDetails[1].Score)}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FF6B00>WIN</color>"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dual.RecordDetails[0].TotalScore\ <\ dual.RecordDetails[1].TotalScore)}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dual.RecordDetails[0].Score\ <\ dual.RecordDetails[1].Score)}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FF6B00>WIN</color>"{}};}
@@ -58,14 +58,14 @@
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ playerName1p.text\ =\ \$\textcolor{stringliteral}{"{}1P\ <color=\#FFB800>\{dual.Names[0]\}</color>"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ playerName2p.text\ =\ \$\textcolor{stringliteral}{"{}2P\ <color=\#FFB800>\{dual.Names[1]\}</color>"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText1p.text\ =\ dual.RecordDetails[0].TotalScore.ToString();}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText2p.text\ =\ dual.RecordDetails[1].TotalScore.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText1p.text\ =\ dual.RecordDetails[0].Score.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText2p.text\ =\ dual.RecordDetails[1].Score.ToString();}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].SpeedScore\}</color></size>\ SCORE"{}};}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].SpeedScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].PhysicalAge\}</color></size>\ AGE"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].PhysicalAge\}</color></size>\ AGE"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].AccuracyScore\}</color></size>\ SCORE"{}};}
-\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].CognitiveAge\}</color></size>\ AGE"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].CognitiveAge\}</color></size>\ AGE"{}};}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00066}00066\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ending_get_data_8cs_source_l00067}00067\ \}}

@@ -1,5 +1,16 @@
 var NAVTREEINDEX17 =
 {
+"class_spine_1_1_pow.html#a140e8f91fdc5acc78fa9a5b9fd741ad2":[3,0,12,59,0],
+"class_spine_1_1_pow.html#a140e8f91fdc5acc78fa9a5b9fd741ad2":[4,0,11,59,0],
+"class_spine_1_1_pow.html#a353f2065dd7f876b907e854c8db8f80c":[3,0,12,59,2],
+"class_spine_1_1_pow.html#a353f2065dd7f876b907e854c8db8f80c":[4,0,11,59,2],
+"class_spine_1_1_pow.html#a8636b0479c6c4f80b6446fdcdb569708":[3,0,12,59,1],
+"class_spine_1_1_pow.html#a8636b0479c6c4f80b6446fdcdb569708":[4,0,11,59,1],
+"class_spine_1_1_pow_out.html":[3,0,12,60],
+"class_spine_1_1_pow_out.html":[4,0,11,60],
+"class_spine_1_1_pow_out.html#a2246e5c4bfdb2138896b73d3ca8d9d82":[3,0,12,60,0],
+"class_spine_1_1_pow_out.html#a2246e5c4bfdb2138896b73d3ca8d9d82":[4,0,11,60,0],
+"class_spine_1_1_pow_out.html#ae23562ea61a42adf6218d8b422192b80":[3,0,12,60,1],
 "class_spine_1_1_pow_out.html#ae23562ea61a42adf6218d8b422192b80":[4,0,11,60,1],
 "class_spine_1_1_r_g_b2_timeline.html":[3,0,12,62],
 "class_spine_1_1_r_g_b2_timeline.html":[4,0,11,62],
@@ -238,16 +249,5 @@ var NAVTREEINDEX17 =
 "class_spine_1_1_skeleton.html#a866c0b6a8d06555e160a2eef6eba2239":[3,0,12,75,2],
 "class_spine_1_1_skeleton.html#a866c0b6a8d06555e160a2eef6eba2239":[4,0,11,75,2],
 "class_spine_1_1_skeleton.html#a8fbf9f59c4d2209ac0015e6220b059d1":[3,0,12,75,4],
-"class_spine_1_1_skeleton.html#a8fbf9f59c4d2209ac0015e6220b059d1":[4,0,11,75,4],
-"class_spine_1_1_skeleton.html#a9238949a0febaa09e57777e47c8bf251":[3,0,12,75,37],
-"class_spine_1_1_skeleton.html#a9238949a0febaa09e57777e47c8bf251":[4,0,11,75,37],
-"class_spine_1_1_skeleton.html#a95c46de3f109a8ba6dce819848b1413d":[3,0,12,75,20],
-"class_spine_1_1_skeleton.html#a95c46de3f109a8ba6dce819848b1413d":[4,0,11,75,20],
-"class_spine_1_1_skeleton.html#a9fc9acb3f7d51836ebc40388758e13c6":[3,0,12,75,33],
-"class_spine_1_1_skeleton.html#a9fc9acb3f7d51836ebc40388758e13c6":[4,0,11,75,33],
-"class_spine_1_1_skeleton.html#aa052c002863a96c27ad268bd8eb2c9e1":[3,0,12,75,31],
-"class_spine_1_1_skeleton.html#aa052c002863a96c27ad268bd8eb2c9e1":[4,0,11,75,31],
-"class_spine_1_1_skeleton.html#aa6929dedee376680ea44420a32977548":[3,0,12,75,45],
-"class_spine_1_1_skeleton.html#aa6929dedee376680ea44420a32977548":[4,0,11,75,45],
-"class_spine_1_1_skeleton.html#aa7ca532fb2a76b9998bb44b8066e99fc":[3,0,12,75,28]
+"class_spine_1_1_skeleton.html#a8fbf9f59c4d2209ac0015e6220b059d1":[4,0,11,75,4]
 };

@@ -1,5 +1,16 @@
 var NAVTREEINDEX28 =
 {
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a019cd013d39b630a573bcc182cd678c2":[3,0,12,0,3,65,10],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a019cd013d39b630a573bcc182cd678c2":[4,0,11,0,1,65,10],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a09001d01d8d5f875937ad45a4a6ae5ae":[3,0,12,0,3,65,14],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a09001d01d8d5f875937ad45a4a6ae5ae":[4,0,11,0,1,65,14],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a41e9657f0df84b129a372522ce74f51c":[3,0,12,0,3,65,13],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a41e9657f0df84b129a372522ce74f51c":[4,0,11,0,1,65,13],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a4b375441114845bbd8536e459ab18a48":[3,0,12,0,3,65,5],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a4b375441114845bbd8536e459ab18a48":[4,0,11,0,1,65,5],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a4d895844db9c61f714de2e98a1269b0f":[3,0,12,0,3,65,7],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a4d895844db9c61f714de2e98a1269b0f":[4,0,11,0,1,65,7],
+"class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a54a67390423849c4620bb8bd918fa499":[3,0,12,0,3,65,9],
 "class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a54a67390423849c4620bb8bd918fa499":[4,0,11,0,1,65,9],
 "class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a634d5b152e3f80cf2d1a1fadd494b9cd":[3,0,12,0,3,65,18],
 "class_spine_1_1_unity_1_1_examples_1_1_spineboy_footplanter.html#a634d5b152e3f80cf2d1a1fadd494b9cd":[4,0,11,0,1,65,18],
@@ -238,16 +249,5 @@ var NAVTREEINDEX28 =
 "class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html":[3,0,12,0,29,0],
 "class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html":[4,0,11,0,27,0],
 "class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#a7abd4344c8bbf37768a7102df1744ac7":[3,0,12,0,29,0,2],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#a7abd4344c8bbf37768a7102df1744ac7":[4,0,11,0,27,0,2],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#a7e03669042099544a0c840332737d363":[3,0,12,0,29,0,1],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#a7e03669042099544a0c840332737d363":[4,0,11,0,27,0,1],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#aa7961ec7a2ebd6a4068575e5b8ee2184":[3,0,12,0,29,0,3],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#aa7961ec7a2ebd6a4068575e5b8ee2184":[4,0,11,0,27,0,3],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#ad881ba70e06e43275c51f077ad7e2471":[3,0,12,0,29,0,0],
-"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#ad881ba70e06e43275c51f077ad7e2471":[4,0,11,0,27,0,0],
-"class_spine_1_1_unity_1_1_no_op_texture_loader.html":[3,0,12,0,30],
-"class_spine_1_1_unity_1_1_no_op_texture_loader.html":[4,0,11,0,28],
-"class_spine_1_1_unity_1_1_no_op_texture_loader.html#a59915793fcb82edde765e566921f93e2":[3,0,12,0,30,0],
-"class_spine_1_1_unity_1_1_no_op_texture_loader.html#a59915793fcb82edde765e566921f93e2":[4,0,11,0,28,0],
-"class_spine_1_1_unity_1_1_no_op_texture_loader.html#af85c5c96b7781f3946949115a0f9caeb":[3,0,12,0,30,1]
+"class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh.html#a7abd4344c8bbf37768a7102df1744ac7":[4,0,11,0,27,0,2]
 };

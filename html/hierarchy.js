@@ -34,6 +34,7 @@ var hierarchy =
       [ "Spine.Unity.RegionlessAttachmentLoader", "class_spine_1_1_unity_1_1_regionless_attachment_loader.html", null ]
     ] ],
     [ "CW.Common.CwInputManager.Axis", "struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html", null ],
+    [ "BalloonPosition", "class_balloon_position.html", null ],
     [ "Spine.Unity.BlendModeMaterials", "class_spine_1_1_unity_1_1_blend_mode_materials.html", null ],
     [ "Spine.Unity.Editor.BlendModeMaterialsUtility", "class_spine_1_1_unity_1_1_editor_1_1_blend_mode_materials_utility.html", null ],
     [ "Kino.BloomGraphDrawer", "class_kino_1_1_bloom_graph_drawer.html", null ],
@@ -444,6 +445,7 @@ var hierarchy =
       [ "Quickness.QuicknessManager", "class_quickness_1_1_quickness_manager.html", null ],
       [ "Quickness.TouchObjectController", "class_quickness_1_1_touch_object_controller.html", null ],
       [ "RankSummaryController", "class_rank_summary_controller.html", null ],
+      [ "RankingMoveCotroller", "class_ranking_move_cotroller.html", null ],
       [ "RectConMs", "class_rect_con_ms.html", null ],
       [ "ReloadSceneOnKeyDown", "class_reload_scene_on_key_down.html", null ],
       [ "Reporter", "class_reporter.html", null ],

@@ -1,5 +1,16 @@
 var NAVTREEINDEX35 =
 {
+"classuseful_1_1_team_1_1_team_comparer.html#a091d3b8c3d0713a0062cad33e554bfaa":[3,0,14,0,2,0],
+"classuseful_1_1_team_1_1_team_comparer.html#a091d3b8c3d0713a0062cad33e554bfaa":[4,0,13,0,2,0],
+"classuseful_1_1_team_1_1_team_comparer.html#a3f74d3496cd6fa0cca8ff6f1f76b68e4":[3,0,14,0,2,1],
+"classuseful_1_1_team_1_1_team_comparer.html#a3f74d3496cd6fa0cca8ff6f1f76b68e4":[4,0,13,0,2,1],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html":[3,0,14,0,3],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html":[4,0,13,0,3],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html#a05855da7cac8ed334b73b67f1cc6bdae":[3,0,14,0,3,0],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html#a05855da7cac8ed334b73b67f1cc6bdae":[4,0,13,0,3,0],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html#a13ad5d7c64ccb32869e6bf74719037c8":[3,0,14,0,3,4],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html#a13ad5d7c64ccb32869e6bf74719037c8":[4,0,13,0,3,4],
+"classuseful_1_1_team_1_1_team_dictionary_setter.html#a203604cef9f2d7cd8e0ff1ca0be1808e":[3,0,14,0,3,1],
 "classuseful_1_1_team_1_1_team_dictionary_setter.html#a203604cef9f2d7cd8e0ff1ca0be1808e":[4,0,13,0,3,1],
 "classuseful_1_1_team_1_1_team_dictionary_setter.html#a7bdfe3a6dd6a11cfbdadaaeb6b1dbcce":[3,0,14,0,3,2],
 "classuseful_1_1_team_1_1_team_dictionary_setter.html#a7bdfe3a6dd6a11cfbdadaaeb6b1dbcce":[4,0,13,0,3,2],
@@ -238,16 +249,5 @@ var NAVTREEINDEX35 =
 "functions_vars_n.html":[4,3,2,14],
 "functions_vars_o.html":[4,3,2,15],
 "functions_vars_p.html":[4,3,2,16],
-"functions_vars_q.html":[4,3,2,17],
-"functions_vars_r.html":[4,3,2,18],
-"functions_vars_s.html":[4,3,2,19],
-"functions_vars_t.html":[4,3,2,20],
-"functions_vars_u.html":[4,3,2,21],
-"functions_vars_v.html":[4,3,2,22],
-"functions_vars_w.html":[4,3,2,23],
-"functions_vars_x.html":[4,3,2,24],
-"functions_vars_y.html":[4,3,2,25],
-"functions_vars_z.html":[4,3,2,26],
-"functions_w.html":[4,3,0,23],
-"functions_x.html":[4,3,0,24]
+"functions_vars_q.html":[4,3,2,17]
 };

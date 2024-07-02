@@ -141,19 +141,19 @@ Public ë©¤ë²„ í•¨ìˆ˜</h2></td></tr>
 
 <p class="definition"><a class="el" href="_accuracy_scoring_8cs_source.html">AccuracyScoring.cs</a> íŒŒì¼ì˜ <a class="el" href="_accuracy_scoring_8cs_source.html#l00008">8</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
 <div class="fragment"><div class="line"><span class="lineno">    9</span>    {</div>
-<div class="line"><span class="lineno">   10</span>        <span class="comment">// Àı´ëÀûÀÎ ±âÁØ ¼³Á¤ (¿¹: ÃÖ´ë °Å¸® 10)</span></div>
-<div class="line"><span class="lineno">   11</span>        <span class="keywordtype">float</span> maxDistance = 10.0f;</div>
+<div class="line"><span class="lineno">   10</span>        <span class="comment">// ì ˆëŒ€ì ì¸ ê¸°ì¤€ ì„¤ì • (ì˜ˆ: ìµœëŒ€ ê±°ë¦¬ 10)</span></div>
+<div class="line"><span class="lineno">   11</span>        <span class="keywordtype">float</span> maxDistance = 1.0f;</div>
 <div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>        <span class="comment">// Æò±Õ °Å¸® °è»ê</span></div>
+<div class="line"><span class="lineno">   13</span>        <span class="comment">// í‰ê·  ê±°ë¦¬ ê³„ì‚°</span></div>
 <div class="line"><span class="lineno">   14</span>        <span class="keywordtype">float</span> meanDistance = CalculateMean(distances);</div>
 <div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>        <span class="comment">// Àı´ëÀûÀÎ ±âÁØ¿¡ µû¶ó °Å¸® ±â¹İ Á¡¼ö °è»ê</span></div>
+<div class="line"><span class="lineno">   16</span>        <span class="comment">// ì ˆëŒ€ì ì¸ ê¸°ì¤€ì— ë”°ë¼ ê±°ë¦¬ ê¸°ë°˜ ì ìˆ˜ ê³„ì‚°</span></div>
 <div class="line"><span class="lineno">   17</span>        <span class="keywordtype">float</span> distanceScore = ((maxDistance - meanDistance) / maxDistance) * 100.0f;</div>
 <div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>        <span class="comment">// Á¤È®µµ¸¦ 100Á¡ Ã´µµ·Î º¯È¯</span></div>
+<div class="line"><span class="lineno">   19</span>        <span class="comment">// ì •í™•ë„ë¥¼ 100ì  ì²™ë„ë¡œ ë³€í™˜</span></div>
 <div class="line"><span class="lineno">   20</span>        <span class="keywordtype">float</span> accuracyScore = accuracy * 100.0f;</div>
 <div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>        <span class="comment">// ÃÖÁ¾ Á¡¼ö °è»ê (ÃÖ´ë 200Á¡À¸·Î Á¦ÇÑ)</span></div>
+<div class="line"><span class="lineno">   22</span>        <span class="comment">// ìµœì¢… ì ìˆ˜ ê³„ì‚° (ìµœëŒ€ 200ì ìœ¼ë¡œ ì œí•œ)</span></div>
 <div class="line"><span class="lineno">   23</span>        <span class="keywordtype">float</span> finalScore = Mathf.Clamp(distanceScore + accuracyScore, 0, 200);</div>
 <div class="line"><span class="lineno">   24</span> </div>
 <div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> finalScore;</div>

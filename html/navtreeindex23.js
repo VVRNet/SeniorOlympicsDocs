@@ -1,5 +1,16 @@
 var NAVTREEINDEX23 =
 {
+"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a8ebea4fef59b004488aeb1d2f29828ab":[3,0,12,0,2,36,1],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a8ebea4fef59b004488aeb1d2f29828ab":[4,0,11,0,0,36,1],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a9fc969858e1de085550501fef0e7dbf2":[3,0,12,0,2,36,2],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_path_constraint_drawer.html#a9fc969858e1de085550501fef0e7dbf2":[4,0,11,0,0,36,2],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html":[3,0,12,0,2,37],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html":[4,0,11,0,0,37],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a00615b8f30f78ed789868b8b2d823650":[3,0,12,0,2,37,23],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a00615b8f30f78ed789868b8b2d823650":[4,0,11,0,0,37,23],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a0abacbf5a2c33fc3d51fa85063f0e00b":[3,0,12,0,2,37,19],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a0abacbf5a2c33fc3d51fa85063f0e00b":[4,0,11,0,0,37,19],
+"class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a10fd9a9055152d0fc182fc30d41bf302":[3,0,12,0,2,37,10],
 "class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a10fd9a9055152d0fc182fc30d41bf302":[4,0,11,0,0,37,10],
 "class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a17a125f753ca7d93d735d9052b4e62fb":[3,0,12,0,2,37,16],
 "class_spine_1_1_unity_1_1_editor_1_1_spine_preferences.html#a17a125f753ca7d93d735d9052b4e62fb":[4,0,11,0,0,37,16],
@@ -238,16 +249,5 @@ var NAVTREEINDEX23 =
 "class_spine_1_1_unity_1_1_examples_1_1_combined_skin.html#a1e943efea9745e2c892f687a0e1b136e":[3,0,12,0,3,5,0],
 "class_spine_1_1_unity_1_1_examples_1_1_combined_skin.html#a1e943efea9745e2c892f687a0e1b136e":[4,0,11,0,1,5,0],
 "class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html":[3,0,12,0,3,6],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html":[4,0,11,0,1,6],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a8fba558fb0101d3e852382181f69219d":[3,0,12,0,3,6,0],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a8fba558fb0101d3e852382181f69219d":[4,0,11,0,1,6,0],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a97d685b67ecc18d6dabf78ed993a3e59":[3,0,12,0,3,6,3],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a97d685b67ecc18d6dabf78ed993a3e59":[4,0,11,0,1,6,3],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9b54aa7101a892a2e1437c5b9d3905f4":[3,0,12,0,3,6,4],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9b54aa7101a892a2e1437c5b9d3905f4":[4,0,11,0,1,6,4],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9e5c83caf78b2231602270174b9a9d5a":[3,0,12,0,3,6,1],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#a9e5c83caf78b2231602270174b9a9d5a":[4,0,11,0,1,6,1],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#aa482c7860eccb2a58f9c92af770f9c2d":[3,0,12,0,3,6,2],
-"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html#aa482c7860eccb2a58f9c92af770f9c2d":[4,0,11,0,1,6,2],
-"class_spine_1_1_unity_1_1_examples_1_1_draggable_transform.html":[3,0,12,0,3,7]
+"class_spine_1_1_unity_1_1_examples_1_1_constrained_camera.html":[4,0,11,0,1,6]
 };
