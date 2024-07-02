@@ -1,0 +1,85 @@
+\doxysection{Atlas\+Region\+Attacher.\+cs}
+\hypertarget{_atlas_region_attacher_8cs_source}{}\label{_atlas_region_attacher_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/Legacy/AtlasRegionAttacher.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/Legacy/AtlasRegionAttacher.cs}}
+\mbox{\hyperlink{_atlas_region_attacher_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine}{Spine}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_attachment_tools}{Spine.Unity.AttachmentTools}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00035}00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher}{AtlasRegionAttacher}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_1_1_slot_region_pair}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_1_1_slot_region_pair}{SlotRegionPair}}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_1_1_slot_region_pair_a98b7959431a1639865b3dbd4d552f4ca}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_slot}{SpineSlot}}]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_1_1_slot_region_pair_a98b7959431a1639865b3dbd4d552f4ca}{slot}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_1_1_slot_region_pair_ad8247327610f6f99926a86a0b8aafe1d}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_atlas_region}{SpineAtlasRegion}}]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_1_1_slot_region_pair_ad8247327610f6f99926a86a0b8aafe1d}{region}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a4d46bfac78373fe86b3cc8c8ea5f977d}{00046}}\ \ \ \ \ \ \ \ \ [SerializeField]\ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_atlas_asset}{SpineAtlasAsset}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a4d46bfac78373fe86b3cc8c8ea5f977d}{atlasAsset}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a94e06e25b21c60bfdca2e3a4f3e99e14}{00047}}\ \ \ \ \ \ \ \ \ [SerializeField]\ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a94e06e25b21c60bfdca2e3a4f3e99e14}{inheritProperties}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00048}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a1809340d25bda89075b9d10c0e696b76}{00048}}\ \ \ \ \ \ \ \ \ [SerializeField]\ \textcolor{keyword}{protected}\ List<SlotRegionPair>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a1809340d25bda89075b9d10c0e696b76}{attachments}}\ =\ \textcolor{keyword}{new}\ List<SlotRegionPair>();}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas}{Atlas}}\ atlas;}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Awake\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer}{SkeletonRenderer}}\ skeletonRenderer\ =\ GetComponent<SkeletonRenderer>();}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonRenderer.OnRebuild\ +=\ Apply;}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonRenderer.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_ad8e7b44a7dd205acbdf2e3d9159ae23f}{valid}})\ Apply(skeletonRenderer);}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Apply\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer}{SkeletonRenderer}}\ skeletonRenderer)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this.enabled)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ atlas\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a4d46bfac78373fe86b3cc8c8ea5f977d}{atlasAsset}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_atlas_asset_a4d864ed90c7050dc5a3e26676b275334}{GetAtlas}}();}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atlas\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scale\ =\ skeletonRenderer.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a27160fb5fa4da50bac400c2bd38621f7}{skeletonDataAsset}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset_a734c2af79faa38752766df7f2c68b1bf}{scale}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SlotRegionPair\ entry\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a1809340d25bda89075b9d10c0e696b76}{attachments}})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot\ =\ skeletonRenderer.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_aca997f96ffb5a89579dc325b790f0fd6}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_aeeaf7abe56f807e6e57f3a2514e607ab}{FindSlot}}(entry.slot);}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ originalAttachment\ =\ slot.\mbox{\hyperlink{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}{Attachment}};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ atlas.\mbox{\hyperlink{class_spine_1_1_atlas_a0c3e63b796443fd755114f9bea61c780}{FindRegion}}(entry.region);}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (region\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.Attachment\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_atlas_region_attacher_a94e06e25b21c60bfdca2e3a4f3e99e14}{inheritProperties}}\ \&\&\ originalAttachment\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.Attachment\ =\ originalAttachment.GetRemappedClone(region,\ \textcolor{keyword}{true},\ \textcolor{keyword}{true},\ scale);}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_region_attachment}{RegionAttachment}}\ newRegionAttachment\ =\ region.ToRegionAttachment(region.\mbox{\hyperlink{class_spine_1_1_atlas_region_af99497eb4a22dcba88f89c21c763fba2}{name}},\ scale);}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.Attachment\ =\ newRegionAttachment;}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_region_attacher_8cs_source_l00081}00081\ \}}
+
+\end{DoxyCode}

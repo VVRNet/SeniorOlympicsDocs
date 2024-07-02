@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SeniorOlympics: D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwCameraMove.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_cw_camera_move_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CwCameraMove.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_cw_camera_move_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_c_w_1_1_common.html">CW.Common</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    [HelpURL(CwShared.HelpUrlPrefix + <span class="stringliteral">&quot;CwCameraMove&quot;</span>)]</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    [AddComponentMenu(CwShared.ComponentMenuPrefix + <span class="stringliteral">&quot;Camera Move&quot;</span>)]</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html">    8</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_camera_move.html">CwCameraMove</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a59db10252ec2083d79e6dc9c83b423b5">   11</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a59db10252ec2083d79e6dc9c83b423b5">Listen</a> { <span class="keyword">set</span> { listen = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> listen; } } [SerializeField] <span class="keyword">private</span> <span class="keywordtype">bool</span> listen = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#aa096778294e1988b64c5a79cf46f2f74">   14</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="class_c_w_1_1_common_1_1_cw_camera_move.html#aa096778294e1988b64c5a79cf46f2f74">Damping</a> { <span class="keyword">set</span> { damping = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> damping; } } [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> damping = 10.0f;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#ad44b0e55890b2497a924f7e004b97bc7">   17</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="class_c_w_1_1_common_1_1_cw_camera_move.html#ad44b0e55890b2497a924f7e004b97bc7">Sensitivity</a> { <span class="keyword">set</span> { sensitivity = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> sensitivity; } } [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> sensitivity = 1.0f;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a64fed69d57205fb68937116c65315fff">   20</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CwInputManager.Axis</a> <a class="code hl_property" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a64fed69d57205fb68937116c65315fff">HorizontalControls</a> { <span class="keyword">set</span> { horizontalControls = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> horizontalControls; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CwInputManager.Axis</a> horizontalControls = <span class="keyword">new</span> <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">Axis</a>(2, <span class="keyword">false</span>, <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_enumeration" href="class_c_w_1_1_common_1_1_cw_input_manager.html#a2159880700044f74a33166b583a7eb99">AxisGesture</a>.HorizontalDrag, 1.0f, KeyCode.A, KeyCode.D, KeyCode.LeftArrow, KeyCode.RightArrow, 100.0f);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a4fe0895906f07af8b2ba73ce7ff2b04e">   23</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CwInputManager.Axis</a> <a class="code hl_property" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a4fe0895906f07af8b2ba73ce7ff2b04e">DepthControls</a> { <span class="keyword">set</span> { depthControls = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> depthControls; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CwInputManager.Axis</a> depthControls = <span class="keyword">new</span> <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">Axis</a>(2, <span class="keyword">false</span>, <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_enumeration" href="class_c_w_1_1_common_1_1_cw_input_manager.html#a2159880700044f74a33166b583a7eb99">AxisGesture</a>.HorizontalDrag, 1.0f, KeyCode.S, KeyCode.W, KeyCode.DownArrow, KeyCode.UpArrow, 100.0f);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#ad0423a66434666f86759e64d2f28e1cd">   26</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CwInputManager.Axis</a> <a class="code hl_property" href="class_c_w_1_1_common_1_1_cw_camera_move.html#ad0423a66434666f86759e64d2f28e1cd">VerticalControls</a> { <span class="keyword">set</span> { verticalControls = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> verticalControls; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CwInputManager.Axis</a> verticalControls = <span class="keyword">new</span> <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_struct" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">Axis</a>(3, <span class="keyword">false</span>, <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_enumeration" href="class_c_w_1_1_common_1_1_cw_input_manager.html#a2159880700044f74a33166b583a7eb99">AxisGesture</a>.HorizontalDrag, 1.0f, KeyCode.F, KeyCode.R, KeyCode.None, KeyCode.None, 100.0f);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        [System.NonSerialized]</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> Vector3 remainingDelta;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a1e93a9d3716296e803b96573c063ba5b">   31</a></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a1e93a9d3716296e803b96573c063ba5b">Start</a>()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_class" href="class_c_w_1_1_common_1_1_cw_input_manager.html">CwInputManager</a>.<a class="code hl_function" href="class_c_w_1_1_common_1_1_cw_input_manager.html#ad3835a10dd2d76a561cc3c403d8a1dd2">EnsureThisComponentExists</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a193e3df48d3b3309d9ccb02fa55d4f70">   36</a></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_w_1_1_common_1_1_cw_camera_move.html#a193e3df48d3b3309d9ccb02fa55d4f70">Update</a>()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">if</span> (listen == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                AddToDelta();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            DampenDelta();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> AddToDelta()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="comment">// Get delta from binds</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            var delta = <span class="keywordflow">default</span>(Vector3);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            delta.x = horizontalControls.<a class="code hl_function" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html#aca30e796505ae8b1cea94cee7cebe57c">GetValue</a>(Time.deltaTime);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            delta.y = verticalControls  .<a class="code hl_function" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html#aca30e796505ae8b1cea94cee7cebe57c">GetValue</a>(Time.deltaTime);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            delta.z = depthControls     .<a class="code hl_function" href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html#aca30e796505ae8b1cea94cee7cebe57c">GetValue</a>(Time.deltaTime);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// Store old position</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            var oldPosition = transform.position;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="comment">// Translate</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            transform.Translate(delta * sensitivity * Time.deltaTime, Space.Self);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="comment">// Add to remaining</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            var acceleration = transform.position - oldPosition;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            remainingDelta += acceleration;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="comment">// Revert position</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            transform.position = oldPosition;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> DampenDelta()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="comment">// Dampen remaining delta</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            var factor   = CwHelper.DampenFactor(damping, Time.deltaTime);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            var newDelta = Vector3.Lerp(remainingDelta, Vector3.zero, factor);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="comment">// Translate by difference</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            transform.position += remainingDelta - newDelta;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="comment">// Update remaining</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            remainingDelta = newDelta;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#if UNITY_EDITOR</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_c_w_1_1_common.html">CW.Common</a></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">using </span>UnityEditor;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">using </span>TARGET = CwCameraMove;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    [CanEditMultipleObjects]</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    [CustomEditor(typeof(TARGET))]</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">public</span> <span class="keyword">class </span>CwCameraMove_Editor : CwEditor</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> OnInspector()</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            TARGET tgt; TARGET[] tgts; GetTargets(out tgt, out tgts);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            Draw(<span class="stringliteral">&quot;listen&quot;</span>, <span class="stringliteral">&quot;Is this component currently listening for inputs?&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            Draw(<span class="stringliteral">&quot;damping&quot;</span>, <span class="stringliteral">&quot;How quickly the rotation transitions from the current to the target value (-1 = instant).&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            Draw(<span class="stringliteral">&quot;sensitivity&quot;</span>, <span class="stringliteral">&quot;The movement speed will be multiplied by this.&quot;</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            Separator();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            Draw(<span class="stringliteral">&quot;horizontalControls&quot;</span>, <span class="stringliteral">&quot;The keys/fingers required to move right/left.&quot;</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            Draw(<span class="stringliteral">&quot;depthControls&quot;</span>, <span class="stringliteral">&quot;The keys/fingers required to move backward/forward.&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            Draw(<span class="stringliteral">&quot;verticalControls&quot;</span>, <span class="stringliteral">&quot;The keys/fingers required to move down/up.&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html">CW.Common.CwCameraMove</a></div><div class="ttdoc">This component allows you to freely move the current GameObject based on mouse/finger drags.</div><div class="ttdef"><b>Definition</b> <a href="#l00008">CwCameraMove.cs:9</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_a193e3df48d3b3309d9ccb02fa55d4f70"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#a193e3df48d3b3309d9ccb02fa55d4f70">CW.Common.CwCameraMove.Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdef"><b>Definition</b> <a href="#l00036">CwCameraMove.cs:36</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_a1e93a9d3716296e803b96573c063ba5b"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#a1e93a9d3716296e803b96573c063ba5b">CW.Common.CwCameraMove.Start</a></div><div class="ttdeci">virtual void Start()</div><div class="ttdef"><b>Definition</b> <a href="#l00031">CwCameraMove.cs:31</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_a4fe0895906f07af8b2ba73ce7ff2b04e"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#a4fe0895906f07af8b2ba73ce7ff2b04e">CW.Common.CwCameraMove.DepthControls</a></div><div class="ttdeci">CwInputManager.Axis DepthControls</div><div class="ttdoc">The keys/fingers required to move backward/forward.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">CwCameraMove.cs:23</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_a59db10252ec2083d79e6dc9c83b423b5"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#a59db10252ec2083d79e6dc9c83b423b5">CW.Common.CwCameraMove.Listen</a></div><div class="ttdeci">bool Listen</div><div class="ttdoc">Is this component currently listening for inputs?</div><div class="ttdef"><b>Definition</b> <a href="#l00011">CwCameraMove.cs:11</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_a64fed69d57205fb68937116c65315fff"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#a64fed69d57205fb68937116c65315fff">CW.Common.CwCameraMove.HorizontalControls</a></div><div class="ttdeci">CwInputManager.Axis HorizontalControls</div><div class="ttdoc">The keys/fingers required to move left/right.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">CwCameraMove.cs:20</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_aa096778294e1988b64c5a79cf46f2f74"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#aa096778294e1988b64c5a79cf46f2f74">CW.Common.CwCameraMove.Damping</a></div><div class="ttdeci">float Damping</div><div class="ttdoc">How quickly the position transitions from the current to the target value (-1 = instant).</div><div class="ttdef"><b>Definition</b> <a href="#l00014">CwCameraMove.cs:14</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_ad0423a66434666f86759e64d2f28e1cd"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#ad0423a66434666f86759e64d2f28e1cd">CW.Common.CwCameraMove.VerticalControls</a></div><div class="ttdeci">CwInputManager.Axis VerticalControls</div><div class="ttdoc">The keys/fingers required to move down/up.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">CwCameraMove.cs:26</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_camera_move_html_ad44b0e55890b2497a924f7e004b97bc7"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_camera_move.html#ad44b0e55890b2497a924f7e004b97bc7">CW.Common.CwCameraMove.Sensitivity</a></div><div class="ttdeci">float Sensitivity</div><div class="ttdoc">The movement speed will be multiplied by this.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">CwCameraMove.cs:17</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_input_manager_html"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_input_manager.html">CW.Common.CwInputManager</a></div><div class="ttdoc">This component combines finger and mouse and keyboard inputs into a single interface.</div><div class="ttdef"><b>Definition</b> <a href="_cw_input_manager_8cs_source.html#l00010">CwInputManager.cs:11</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_input_manager_html_a2159880700044f74a33166b583a7eb99"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_input_manager.html#a2159880700044f74a33166b583a7eb99">CW.Common.CwInputManager.AxisGesture</a></div><div class="ttdeci">AxisGesture</div><div class="ttdef"><b>Definition</b> <a href="_cw_input_manager_8cs_source.html#l00012">CwInputManager.cs:13</a></div></div>
+<div class="ttc" id="aclass_c_w_1_1_common_1_1_cw_input_manager_html_ad3835a10dd2d76a561cc3c403d8a1dd2"><div class="ttname"><a href="class_c_w_1_1_common_1_1_cw_input_manager.html#ad3835a10dd2d76a561cc3c403d8a1dd2">CW.Common.CwInputManager.EnsureThisComponentExists</a></div><div class="ttdeci">static void EnsureThisComponentExists()</div><div class="ttdoc">If your component uses this component, then make sure you call this method at least once before you u...</div><div class="ttdef"><b>Definition</b> <a href="_cw_input_manager_8cs_source.html#l00468">CwInputManager.cs:468</a></div></div>
+<div class="ttc" id="anamespace_c_w_1_1_common_html"><div class="ttname"><a href="namespace_c_w_1_1_common.html">CW.Common</a></div><div class="ttdef"><b>Definition</b> <a href="_cw_camera_look_8cs_source.html#l00003">CwCameraLook.cs:4</a></div></div>
+<div class="ttc" id="astruct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis_html"><div class="ttname"><a href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html">CW.Common.CwInputManager.Axis</a></div><div class="ttdef"><b>Definition</b> <a href="_cw_input_manager_8cs_source.html#l00022">CwInputManager.cs:23</a></div></div>
+<div class="ttc" id="astruct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis_html_aca30e796505ae8b1cea94cee7cebe57c"><div class="ttname"><a href="struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis.html#aca30e796505ae8b1cea94cee7cebe57c">CW.Common.CwInputManager.Axis.GetValue</a></div><div class="ttdeci">float GetValue(float delta)</div><div class="ttdef"><b>Definition</b> <a href="_cw_input_manager_8cs_source.html#l00048">CwInputManager.cs:48</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfe35fcde3865645aebb6760888e5d19.html">SeniorOlympics</a></li><li class="navelem"><a class="el" href="dir_0dfbd538de68c6818498e81e82261dfb.html">Assets</a></li><li class="navelem"><a class="el" href="dir_aeb613073e7d917ac855dc2f2f4cb00c.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_869c28fd3ad23f0e2313857e7485f271.html">CW</a></li><li class="navelem"><a class="el" href="dir_aad2d28ec669aad972574e5e69a975e7.html">Shared</a></li><li class="navelem"><a class="el" href="dir_fd09d93e32bd0d922d45e17c82a535a3.html">Common</a></li><li class="navelem"><a class="el" href="dir_686cfdbabcd184e78729bc7f533770cc.html">Examples</a></li><li class="navelem"><a class="el" href="dir_3c8d26a955136e37d3edd2bc663f9bd4.html">Scripts</a></li><li class="navelem"><a class="el" href="_cw_camera_move_8cs.html">CwCameraMove.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

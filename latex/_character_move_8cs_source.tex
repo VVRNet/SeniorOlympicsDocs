@@ -1,0 +1,113 @@
+\doxysection{Character\+Move.\+cs}
+\hypertarget{_character_move_8cs_source}{}\label{_character_move_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Exercise/Tennis/CharacterMove.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Exercise/Tennis/CharacterMove.cs}}
+\mbox{\hyperlink{_character_move_8cs}{ì´ íŒŒì¼ì˜ ë¬¸ì„œí™” íŽ˜ì´ì§€ë¡œ ê°€ê¸°}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_tennis}{Tennis}}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00008}\mbox{\hyperlink{class_tennis_1_1_character_move}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tennis_1_1_character_move}{CharacterMove}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Character]"{}})]}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00011}\mbox{\hyperlink{class_tennis_1_1_character_move_a986bfbdf73f6a4c83404b6f8a14f9ee8}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ \mbox{\hyperlink{class_tennis_1_1_character_move_a986bfbdf73f6a4c83404b6f8a14f9ee8}{charSpine}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00012}\mbox{\hyperlink{class_tennis_1_1_character_move_a45162e6346361120a63e91929b5af3f8}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_tennis_1_1_character_move_a45162e6346361120a63e91929b5af3f8}{moveDistance}};\ \ \textcolor{comment}{//\ ¿òÁ÷ÀÏ °Å¸®(x°ª\ 0\ ±âÁØ)}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ time\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Ball]"{}})]}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00018}\mbox{\hyperlink{class_tennis_1_1_character_move_ae92828c844ae7bf29f301373d92ed7fb}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{BallMoveController}}\ \mbox{\hyperlink{class_tennis_1_1_character_move_ae92828c844ae7bf29f301373d92ed7fb}{ballManager}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00019}\mbox{\hyperlink{class_tennis_1_1_character_move_a92de77fd65e0db81e1a6c0cb2e11526a}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_tennis_1_1_character_move_a92de77fd65e0db81e1a6c0cb2e11526a}{randomMin}}\ =\ 3f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00020}\mbox{\hyperlink{class_tennis_1_1_character_move_a9fbd40a4a0bbf246cfb094e970fb3c22}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_tennis_1_1_character_move_a9fbd40a4a0bbf246cfb094e970fb3c22}{randomMax}}\ =\ 5f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Sound]"{}})]}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00023}\mbox{\hyperlink{class_tennis_1_1_character_move_a4531c8232daa1080180cbc86122e57ce}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioSource\ \mbox{\hyperlink{class_tennis_1_1_character_move_a4531c8232daa1080180cbc86122e57ce}{chrAudio}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00024}\mbox{\hyperlink{class_tennis_1_1_character_move_afade8bf1540dfdd05ec1cb98e445a38f}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_tennis_1_1_character_move_afade8bf1540dfdd05ec1cb98e445a38f}{swingSound}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Effect]"{}})]}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00027}\mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{swingEffect}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00028}\mbox{\hyperlink{class_tennis_1_1_character_move_a7d30c21a72a378c9948b9892b003d791}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_character_move_a7d30c21a72a378c9948b9892b003d791}{moveEffect}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(CoMoveMotion());}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_ae92828c844ae7bf29f301373d92ed7fb}{ballManager}}.\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ab409536180f0e400db78a63a960ce58f}{ResetObject}}();}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ time\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoMoveMotion());}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoMoveSpeed());}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ IEnumerator\ CoMoveSpeed()}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Random.Range(0,\ 100)\ >\ 50)}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ speed\ =\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ speed\ =\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ waitTime\ =\ Random.Range(\mbox{\hyperlink{class_tennis_1_1_character_move_a92de77fd65e0db81e1a6c0cb2e11526a}{randomMin}},\ \mbox{\hyperlink{class_tennis_1_1_character_move_a9fbd40a4a0bbf246cfb094e970fb3c22}{randomMax}});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(waitTime);}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ IEnumerator\ CoMoveMotion()}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_character_move_a986bfbdf73f6a4c83404b6f8a14f9ee8}{charSpine}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}}.GetCurrent(0).Animation.Name\ !=\ \textcolor{stringliteral}{"{}run"{}})}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a986bfbdf73f6a4c83404b6f8a14f9ee8}{charSpine}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}}.SetAnimation(0,\ \textcolor{stringliteral}{"{}run"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a7d30c21a72a378c9948b9892b003d791}{moveEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.countdown.countObj[3].gameObject.activeSelf)}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.countdown.IsPlay)}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a7d30c21a72a378c9948b9892b003d791}{moveEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a986bfbdf73f6a4c83404b6f8a14f9ee8}{charSpine}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}}.SetAnimation(0,\ \textcolor{stringliteral}{"{}shoot-\/tennis"{}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.3f);}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_ae92828c844ae7bf29f301373d92ed7fb}{ballManager}}.\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ad971b6daaf56038bae09c9f9c6386431}{RandomInstantiateBall}}();}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{swingEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{swingEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chrAudio.clip\ =\ \mbox{\hyperlink{class_tennis_1_1_character_move_afade8bf1540dfdd05ec1cb98e445a38f}{swingSound}};}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_a4531c8232daa1080180cbc86122e57ce}{chrAudio}}.Play();}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_character_move_ae92828c844ae7bf29f301373d92ed7fb}{ballManager}}.\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ab409536180f0e400db78a63a960ce58f}{ResetObject}}();}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update()}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ time\ +=\ Time.deltaTime\ *\ speed;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ position\ =\ transform.localPosition;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ position.x\ =\ \mbox{\hyperlink{class_tennis_1_1_character_move_a45162e6346361120a63e91929b5af3f8}{moveDistance}}\ *\ Mathf.Sin(time\ /\ 4.0f\ *\ Mathf.PI);}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ transform.localPosition\ =\ position;}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_move_8cs_source_l00107}00107\ \}}
+
+\end{DoxyCode}

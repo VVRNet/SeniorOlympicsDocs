@@ -1,0 +1,108 @@
+\doxysection{Key\+Pad\+Controller.\+cs}
+\hypertarget{_key_pad_controller_8cs_source}{}\label{_key_pad_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/NotUsed/KeyPadController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/NotUsed/KeyPadController.cs}}
+\mbox{\hyperlink{_key_pad_controller_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00006}\mbox{\hyperlink{class_key_pad_controller}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_key_pad_controller}{KeyPadController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00008}\mbox{\hyperlink{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}{isChangeMode}};\ \textcolor{comment}{//\ ∞¸∏Æ¿⁄ ∆‰¿Ã¡ˆ∏¶\ ø≠∂ß¥¬ false,\ ∫Òπ–π¯»£∏¶\ πŸ≤‹∂ß¥¬ true}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00010}\mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Image>\ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00011}\mbox{\hyperlink{class_key_pad_controller_a1966395710eaaec44bbb516fe129a4c5}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ Color32\ \mbox{\hyperlink{class_key_pad_controller_a1966395710eaaec44bbb516fe129a4c5}{pinOriginColor}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00012}\mbox{\hyperlink{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ Color32\ \mbox{\hyperlink{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6}{pinChangeColor}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ clickCount\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ currentClickCount;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00016}00016\ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00017}\mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ =\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{comment}{//\ ¿‘∑¬µ» ∫Òπ–π¯»£∏¶\ ¿˙¿Â}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ initialPassword\ =\ \textcolor{stringliteral}{"{}0000"{}};\ \textcolor{comment}{//\ √ ±‚ ∫Òπ–π¯»£}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00020}00020\ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00021}\mbox{\hyperlink{class_key_pad_controller_affe6a030588ff1921b62e3c72a4cf56f}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_key_pad_controller_affe6a030588ff1921b62e3c72a4cf56f}{managerPanel}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ currentClickCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}{isChangeMode}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ ∫Òπ–π¯»£ ∫Ø∞Ê πˆ∆∞ ¿Ã∫•∆Æ}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00030}\mbox{\hyperlink{class_key_pad_controller_af7bffc4d59acc0ec0fc3c357e23d59c2}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_key_pad_controller_af7bffc4d59acc0ec0fc3c357e23d59c2}{PasswordChangeMode}}()}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}{isChangeMode}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ º˝¿⁄ πˆ∆∞\ ¿Ã∫•∆Æ}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00036}\mbox{\hyperlink{class_key_pad_controller_a1a21325b1c687f1c063e5e0fb2b47dea}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_key_pad_controller_a1a21325b1c687f1c063e5e0fb2b47dea}{OnNumButtonClick}}(\textcolor{keywordtype}{string}\ number)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ <\ clickCount)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ +=\ number;\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ currentClickCount++;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ <=\ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}.Count)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}[currentClickCount\ -\/\ 1].color\ =\ \mbox{\hyperlink{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6}{pinChangeColor}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ ==\ clickCount)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ComparePassword();}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ ResetPassword();}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ ∫Òπ–π¯»£ ∫Ò±≥}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ComparePassword()}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ ==\ initialPassword)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}∫Òπ–π¯»£∞°\ ¿œƒ°«’¥œ¥Ÿ."{}});}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_affe6a030588ff1921b62e3c72a4cf56f}{managerPanel}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}∫Òπ–π¯»£∞°\ ¿œƒ°«œ¡ˆ\ æ Ω¿¥œ¥Ÿ."{}});}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ ResetPassword();}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//\ ¿‘∑¬«— ∫Òπ–π¯»£ √ ±‚»≠}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ResetPassword()}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ currentClickCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}[i].color\ =\ \mbox{\hyperlink{class_key_pad_controller_a1966395710eaaec44bbb516fe129a4c5}{pinOriginColor}};}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ Delete\ πˆ∆∞ ¿Ã∫•∆Æ}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00090}\mbox{\hyperlink{class_key_pad_controller_adf78005c6dd4da56a5dfd7eca46c4307}{00090}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_key_pad_controller_adf78005c6dd4da56a5dfd7eca46c4307}{DeleteNumber}}()}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∏∂¡ˆ∏∑\ º˝¿⁄ ¡¶∞≈}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ =\ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}.Substring(0,\ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}.Length\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ¡¶∞≈µ» º˝¿⁄ ¿ßƒ°¿«\ ªˆªÛ √ ±‚»≠}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}[currentClickCount\ -\/\ 1].color\ =\ \textcolor{keyword}{new}\ Color32(217,\ 217,\ 217,\ 255);}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ currentClickCount-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_key_pad_controller_8cs_source_l00102}00102\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,309 @@
+\doxysection{Physics\+Constraint.\+cs}
+\hypertarget{_physics_constraint_8cs_source}{}\label{_physics_constraint_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/PhysicsConstraint.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/PhysicsConstraint.cs}}
+\mbox{\hyperlink{_physics_constraint_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00002}00002\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00004}00004\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00005}00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00006}00006\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00007}00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00011}00011\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00012}00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00017}00017\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00018}00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00028}00028\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00029}00029\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}\ =\ Skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a76c2052feb3e27c26a6ec7aa3d377343}{Physics}};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_physics_constraint}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_physics_constraint}{PhysicsConstraint}}\ :\ \mbox{\hyperlink{interface_spine_1_1_i_updatable}{IUpdatable}}\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{PhysicsConstraintData}}\ data;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ inertia,\ strength,\ damping,\ massInverse,\ wind,\ gravity,\ mix;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ reset\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ux,\ uy,\ cx,\ cy,\ tx,\ ty;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ xOffset,\ xVelocity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yOffset,\ yVelocity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotateOffset,\ rotateVelocity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleOffset,\ scaleVelocity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ active;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ readonly\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ remaining,\ lastTime;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00058}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a7b7c3a6953c71b566d7d2c0e36998733}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a7b7c3a6953c71b566d7d2c0e36998733}{PhysicsConstraint}}\ (\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{PhysicsConstraintData}}\ data,\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ this.skeleton\ =\ skeleton;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}\ =\ skeleton.bones.Items[data.bone.index];}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ inertia\ =\ data.inertia;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ data.strength;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ damping\ =\ data.damping;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ massInverse\ =\ data.massInverse;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ wind\ =\ data.wind;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ gravity\ =\ data.gravity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ data.mix;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00076}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a8c529a3ccac5a5008ab5072de8648f7b}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a8c529a3ccac5a5008ab5072de8648f7b}{PhysicsConstraint}}\ (\mbox{\hyperlink{class_spine_1_1_physics_constraint}{PhysicsConstraint}}\ constraint,\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton)}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ :\ this(constraint.data,\ skeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ inertia\ =\ constraint.inertia;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ constraint.strength;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ damping\ =\ constraint.damping;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ massInverse\ =\ constraint.massInverse;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ wind\ =\ constraint.wind;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ gravity\ =\ constraint.gravity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ constraint.mix;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00088}\mbox{\hyperlink{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535}{Reset}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ remaining\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ lastTime\ =\ skeleton.time;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ reset\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ xVelocity\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ yVelocity\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ rotateOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ rotateVelocity\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ scaleOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ scaleVelocity\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00102}\mbox{\hyperlink{class_spine_1_1_physics_constraint_af3d2b3cb132ded8dc5960ca67b028b58}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_af3d2b3cb132ded8dc5960ca67b028b58}{SetToSetupPose}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{PhysicsConstraintData}}\ data\ =\ this.data;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ inertia\ =\ data.inertia;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ data.strength;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ damping\ =\ data.damping;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ massInverse\ =\ data.massInverse;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ wind\ =\ data.wind;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ gravity\ =\ data.gravity;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ data.mix;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00117}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4}{00117}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4}{Translate}}\ (\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ ux\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ uy\ -\/=\ y;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ cx\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ cy\ -\/=\ y;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00128}\mbox{\hyperlink{class_spine_1_1_physics_constraint_aff3041f2590852e2556b276c0e825ac8}{00128}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_aff3041f2590852e2556b276c0e825ac8}{Rotate}}\ (\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ degrees)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ degrees\ *\ MathUtils.DegRad,\ cos\ =\ (float)Math.Cos(r),\ sin\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ cx\ -\/\ x,\ dy\ =\ cy\ -\/\ y;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4}{Translate}}(dx\ *\ cos\ -\/\ dy\ *\ sin\ -\/\ dx,\ dx\ *\ sin\ +\ dy\ *\ cos\ -\/\ dy);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00135}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{00135}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{Update}}\ (\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}\ physics)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mix\ =\ this.mix;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mix\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ x\ =\ data.x\ >\ 0,\ y\ =\ data.y\ >\ 0,\ rotateOrShearX\ =\ data.rotate\ >\ 0\ ||\ data.shearX\ >\ 0,\ scaleX\ =\ data.scaleX\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}\ =\ this.\mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.data.length;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (physics)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.None:}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Reset:}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535}{Reset}}();}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Update;\ \textcolor{comment}{//\ Fall\ through.}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Update:}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ Math.Max(skeleton.time\ -\/\ lastTime,\ 0);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ remaining\ +=\ delta;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastTime\ =\ skeleton.time;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bx\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldX,\ by\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldY;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reset)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reset\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ux\ =\ bx;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uy\ =\ by;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ this.remaining,\ i\ =\ inertia,\ q\ =\ data.limit\ *\ delta,\ t\ =\ data.step,\ f\ =\ skeleton.data.referenceScale;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ||\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u\ =\ (ux\ -\/\ bx)\ *\ i;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ +=\ u\ >\ q\ ?\ q\ :\ u\ <\ -\/q\ ?\ -\/q\ :\ u;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ux\ =\ bx;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u\ =\ (uy\ -\/\ by)\ *\ i;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ +=\ u\ >\ q\ ?\ q\ :\ u\ <\ -\/q\ ?\ -\/q\ :\ u;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uy\ =\ by;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >=\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\ =\ massInverse\ *\ t,\ e\ =\ strength,\ w\ =\ wind\ *\ f,\ g\ =\ (Bone.yDown\ ?\ -\/gravity\ :\ gravity)\ *\ f;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ d\ =\ (float)Math.Pow(damping,\ 60\ *\ t);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xVelocity\ +=\ (w\ -\/\ xOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ +=\ xVelocity\ *\ t;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xVelocity\ *=\ d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yVelocity\ -\/=\ (g\ +\ yOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ +=\ yVelocity\ *\ t;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yVelocity\ *=\ d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ -\/=\ t;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (a\ >=\ t);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ bone.worldX\ +=\ xOffset\ *\ mix\ *\ data.x;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ bone.worldY\ +=\ yOffset\ *\ mix\ *\ data.y;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX\ ||\ scaleX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ca\ =\ (float)Math.Atan2(\mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c,\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a),\ c,\ s,\ mr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ cx\ -\/\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldX,\ dy\ =\ cy\ -\/\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldY;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dx\ >\ q)}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx\ =\ q;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dx\ <\ -\/q)}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx\ =\ -\/q;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dy\ >\ q)}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dy\ =\ q;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dy\ <\ -\/q)}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dy\ =\ -\/q;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mr\ =\ (data.rotate\ +\ data.shearX)\ *\ mix;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ (float)Math.Atan2(dy\ +\ ty,\ dx\ +\ tx)\ -\/\ ca\ -\/\ rotateOffset\ *\ mr;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateOffset\ +=\ (r\ -\/\ (float)Math.Ceiling(r\ *\ MathUtils.InvPI2\ -\/\ 0.5f)\ *\ MathUtils.PI2)\ *\ i;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ rotateOffset\ *\ mr\ +\ ca;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scaleX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.\mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{WorldScaleX}};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ >\ 0)\ scaleOffset\ +=\ (dx\ *\ c\ +\ dy\ *\ s)\ *\ i\ /\ r;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(ca);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(ca);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.\mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{WorldScaleX}};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ >\ 0)\ scaleOffset\ +=\ (dx\ *\ c\ +\ dy\ *\ s)\ *\ i\ /\ r;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ this.remaining;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >=\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\ =\ massInverse\ *\ t,\ e\ =\ strength,\ w\ =\ wind,\ g\ =\ (Bone.yDown\ ?\ -\/gravity\ :\ gravity);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ d\ =\ (float)Math.Pow(damping,\ 60\ *\ t),\ h\ =\ l\ /\ f;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ -\/=\ t;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scaleX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleVelocity\ +=\ (w\ *\ c\ -\/\ g\ *\ s\ -\/\ scaleOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleOffset\ +=\ scaleVelocity\ *\ t;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleVelocity\ *=\ d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateVelocity\ -\/=\ ((w\ *\ s\ +\ g\ *\ c)\ *\ h\ +\ rotateOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateOffset\ +=\ rotateVelocity\ *\ t;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateVelocity\ *=\ d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ <\ t)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ rotateOffset\ *\ mr\ +\ ca;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a\ <\ t)\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.remaining\ =\ a;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cx\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldX;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cy\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldY;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Pose:}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ bone.worldX\ +=\ xOffset\ *\ mix\ *\ data.x;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ bone.worldY\ +=\ yOffset\ *\ mix\ *\ data.y;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ o\ =\ rotateOffset\ *\ mix,\ s,\ c,\ a;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.shearX\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.rotate\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ o\ *\ data.rotate;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.b;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.b\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.d\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ +=\ o\ *\ data.shearX;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.a\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.c\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ o\ *=\ data.rotate;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(o);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(o);}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.a\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.c\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.b;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.b\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.d\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scaleX)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ 1\ +\ scaleOffset\ *\ mix\ *\ data.scaleX;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.a\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.c\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (physics\ !=\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Pose)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.\mbox{\hyperlink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{UpdateAppliedTransform}}();}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00298}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a14e1451ebe9830af02c38123bd09bc34}{00298}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \{\ \textcolor{keyword}{get}\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}};\}\ \textcolor{keyword}{set}\ \{\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00299}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a36e2e3818c51d56be1fa8ac0b2f87aec}{00299}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a36e2e3818c51d56be1fa8ac0b2f87aec}{Inertia}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ inertia;\ \}\ \textcolor{keyword}{set}\ \{\ inertia\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00300}\mbox{\hyperlink{class_spine_1_1_physics_constraint_af73d12f2479276440757c650624ab9ed}{00300}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_af73d12f2479276440757c650624ab9ed}{Strength}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ strength;\ \}\ \textcolor{keyword}{set}\ \{\ strength\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00301}\mbox{\hyperlink{class_spine_1_1_physics_constraint_ad14f3d79191f7f13721cb15cbaf2cb83}{00301}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_ad14f3d79191f7f13721cb15cbaf2cb83}{Damping}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ damping;\ \}\ \textcolor{keyword}{set}\ \{\ damping\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00302}\mbox{\hyperlink{class_spine_1_1_physics_constraint_af98ac7eaeb8d56a907dede77f76c081c}{00302}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_af98ac7eaeb8d56a907dede77f76c081c}{MassInverse}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ massInverse;\ \}\ \textcolor{keyword}{set}\ \{\ massInverse\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00303}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a05dce6360995c63bde18ae0102381d0c}{00303}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a05dce6360995c63bde18ae0102381d0c}{Wind}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ wind;\ \}\ \textcolor{keyword}{set}\ \{\ wind\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00304}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a72840153fed2dcb696538adf0a5b1092}{00304}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a72840153fed2dcb696538adf0a5b1092}{Gravity}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ gravity;\ \}\ \textcolor{keyword}{set}\ \{\ gravity\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00306}\mbox{\hyperlink{class_spine_1_1_physics_constraint_afa66003dcc524095cdd283be0960bc94}{00306}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_afa66003dcc524095cdd283be0960bc94}{Mix}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ mix;\ \}\ \textcolor{keyword}{set}\ \{\ mix\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00307}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a454f03c3ae728e09a75491ee4e83cd32}{00307}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a454f03c3ae728e09a75491ee4e83cd32}{Active}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ active;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00311}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a38bd121f0a05f81d3193fb95a6aa6489}{00311}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{PhysicsConstraintData}}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a38bd121f0a05f81d3193fb95a6aa6489}{getData}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00316}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a2182f0fc6d9097d219edc891119d2064}{00316}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{PhysicsConstraintData}}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a2182f0fc6d9097d219edc891119d2064}{Data}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00318}\mbox{\hyperlink{class_spine_1_1_physics_constraint_a3a39c3af7b9ab656a793cd601e7b42c8}{00318}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a3a39c3af7b9ab656a793cd601e7b42c8}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00321}00321\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_constraint_8cs_source_l00322}00322\ \}}
+
+\end{DoxyCode}

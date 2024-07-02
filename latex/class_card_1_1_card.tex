@@ -1,0 +1,272 @@
+\doxysection{Card.\+Card 클래스 참조}
+\hypertarget{class_card_1_1_card}{}\label{class_card_1_1_card}\index{Card.Card@{Card.Card}}
+
+
+Card.\+Card에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_card_1_1_card__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Card.\+Card에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_card_1_1_card__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_card_1_1_card_a5792bb41f36e8bae2fb3845df7fb16ff}{Set\+Index}} (Vector2 target\+Pos, int index, int\mbox{[}$\,$\mbox{]} shuffle)
+\item 
+void \mbox{\hyperlink{class_card_1_1_card_a463c306a940c77a29c62b6812fc468c0}{On\+Touch}} (float x, float y)
+\item 
+int \mbox{\hyperlink{class_card_1_1_card_a5b0f191de25813fc6b438bb67286c3c3}{Get\+Index}} ()
+\item 
+void \mbox{\hyperlink{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984}{Is\+Answer}} ()
+\item 
+void \mbox{\hyperlink{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373}{Is\+Wrong}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_card_1_1_card_a91a4252629ea76f276bdd1a571d38ae5}{is\+Touch}} = false
+\item 
+Sprite\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_card_1_1_card_aee85b2cda464b040020de7ebe51e9693}{images}}
+\item 
+Sprite \mbox{\hyperlink{class_card_1_1_card_a2f7d3149a0795541d3bd52dedd09ff7d}{card\+Back\+Image}}
+\item 
+Game\+Object \mbox{\hyperlink{class_card_1_1_card_a24e8a1f2b937d50d560c3b14da276baf}{effect}}
+\item 
+int \mbox{\hyperlink{class_card_1_1_card_aacf5b97688ded6c1df6f10f6d66236a0}{distinction}}
+\item 
+Game\+Object \mbox{\hyperlink{class_card_1_1_card_ab0ba4fb73eb01a02efe94f61dd4f62ed}{touch\+Prefab}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_card_1_1_card_a5b0f191de25813fc6b438bb67286c3c3}\index{Card.Card@{Card.Card}!GetIndex@{GetIndex}}
+\index{GetIndex@{GetIndex}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{GetIndex()}{GetIndex()}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a5b0f191de25813fc6b438bb67286c3c3} 
+int Card.\+Card.\+Get\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00156}{156}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ index;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984}\index{Card.Card@{Card.Card}!IsAnswer@{IsAnswer}}
+\index{IsAnswer@{IsAnswer}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{IsAnswer()}{IsAnswer()}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984} 
+void Card.\+Card.\+Is\+Answer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00161}{161}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����Ʈ}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ punchScaleTween\ =\ cardTransform.DOPunchScale(\textcolor{keyword}{new}\ Vector3(0.3f,\ 0.3f,\ 0.3f),\ 1.5f,\ 6,\ 0.6f)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetEase(Ease.OutQuad)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnPlay(()\ =>\ AnswerEffect());}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//.OnComplete(()\ =>\ Deactive());}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373}\index{Card.Card@{Card.Card}!IsWrong@{IsWrong}}
+\index{IsWrong@{IsWrong}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{IsWrong()}{IsWrong()}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373} 
+void Card.\+Card.\+Is\+Wrong (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00188}{188}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ CardFlip(0.2f,\ 0.3f);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_1_1_card_a91a4252629ea76f276bdd1a571d38ae5}{isTouch}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_card_1_1_card_a463c306a940c77a29c62b6812fc468c0}\index{Card.Card@{Card.Card}!OnTouch@{OnTouch}}
+\index{OnTouch@{OnTouch}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{OnTouch()}{OnTouch()}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a463c306a940c77a29c62b6812fc468c0} 
+void Card.\+Card.\+On\+Touch (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{interface_i_touch_object_aa5baa8693756baf00c210dafdcc39493}{ITouch\+Object}}를 구현.
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00114}{114}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPosition);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_card_1_1_card_ab0ba4fb73eb01a02efe94f61dd4f62ed}{touchPrefab}},\ worldPosition,\ Quaternion.identity);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_card_1_1_card_a91a4252629ea76f276bdd1a571d38ae5}{isTouch}})}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_1_1_card_a91a4252629ea76f276bdd1a571d38ae5}{isTouch}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ cardTransform.DORotate(\textcolor{keyword}{new}\ Vector2(0f,\ -\/90f),\ .22f).SetEase(Ease.OutFlash).OnComplete(()\ =>}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ currentCardIndex;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cardTransform.DORotate(Vector2.zero,\ .12f).SetEase(Ease.OutFlash).OnComplete(()\ =>}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(distinction\ ==\ 0)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ controller.OnClickCards(ref\ card,\ index,\ x,\ y,\ reactionTime,\ accuracy);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_card_1_1_card_aacf5b97688ded6c1df6f10f6d66236a0}{distinction}}\ ==\ 1)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsController.OnClickLeftCard(ref\ card,\ index,\ x,\ y,\ reactionTime,\ accuracy);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_card_1_1_card_aacf5b97688ded6c1df6f10f6d66236a0}{distinction}}\ ==\ 2)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsController.OnClickRightCard(ref\ card,\ index,\ x,\ y,\ reactionTime,\ accuracy);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_card_1_1_card_a5792bb41f36e8bae2fb3845df7fb16ff}\index{Card.Card@{Card.Card}!SetIndex@{SetIndex}}
+\index{SetIndex@{SetIndex}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{SetIndex()}{SetIndex()}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a5792bb41f36e8bae2fb3845df7fb16ff} 
+void Card.\+Card.\+Set\+Index (\begin{DoxyParamCaption}\item[{Vector2}]{target\+Pos}{, }\item[{int}]{index}{, }\item[{int\mbox{[}$\,$\mbox{]}}]{shuffle}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00065}{65}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ this.index\ =\ index\ /\ 2;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ targetPos;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ currentCardBack\ =\ \mbox{\hyperlink{class_card_1_1_card_a2f7d3149a0795541d3bd52dedd09ff7d}{cardBackImage}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ cardTransform.localScale\ =\ \textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//effect.transform.localScale\ =\ new\ Vector3(1.5f,\ 1.5f,\ 1.5f);}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleSprite(ref\ \mbox{\hyperlink{class_card_1_1_card_aee85b2cda464b040020de7ebe51e9693}{images}},\ shuffle);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ currentCardIndex\ =\ \mbox{\hyperlink{class_card_1_1_card_aee85b2cda464b040020de7ebe51e9693}{images}}[this.index];}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ currentCardIndex;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ MoveToTarget(pos);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ CardFlip(1.5f,\ 0.5f);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_card_1_1_card_a2f7d3149a0795541d3bd52dedd09ff7d}\index{Card.Card@{Card.Card}!cardBackImage@{cardBackImage}}
+\index{cardBackImage@{cardBackImage}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{cardBackImage}{cardBackImage}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a2f7d3149a0795541d3bd52dedd09ff7d} 
+Sprite Card.\+Card.\+card\+Back\+Image}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_card_1_1_card_aacf5b97688ded6c1df6f10f6d66236a0}\index{Card.Card@{Card.Card}!distinction@{distinction}}
+\index{distinction@{distinction}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{distinction}{distinction}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_aacf5b97688ded6c1df6f10f6d66236a0} 
+int Card.\+Card.\+distinction}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_card_1_1_card_a24e8a1f2b937d50d560c3b14da276baf}\index{Card.Card@{Card.Card}!effect@{effect}}
+\index{effect@{effect}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{effect}{effect}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a24e8a1f2b937d50d560c3b14da276baf} 
+Game\+Object Card.\+Card.\+effect}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_card_1_1_card_aee85b2cda464b040020de7ebe51e9693}\index{Card.Card@{Card.Card}!images@{images}}
+\index{images@{images}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{images}{images}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_aee85b2cda464b040020de7ebe51e9693} 
+Sprite \mbox{[}$\,$\mbox{]} Card.\+Card.\+images}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_card_1_1_card_a91a4252629ea76f276bdd1a571d38ae5}\index{Card.Card@{Card.Card}!isTouch@{isTouch}}
+\index{isTouch@{isTouch}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{isTouch}{isTouch}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_a91a4252629ea76f276bdd1a571d38ae5} 
+bool Card.\+Card.\+is\+Touch = false}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_card_1_1_card_ab0ba4fb73eb01a02efe94f61dd4f62ed}\index{Card.Card@{Card.Card}!touchPrefab@{touchPrefab}}
+\index{touchPrefab@{touchPrefab}!Card.Card@{Card.Card}}
+\doxysubsubsection{\texorpdfstring{touchPrefab}{touchPrefab}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_ab0ba4fb73eb01a02efe94f61dd4f62ed} 
+Game\+Object Card.\+Card.\+touch\+Prefab}
+
+
+
+\mbox{\hyperlink{_card_8cs_source}{Card.\+cs}} 파일의 \mbox{\hyperlink{_card_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Card/\mbox{\hyperlink{_card_8cs}{Card.\+cs}}\end{DoxyCompactItemize}

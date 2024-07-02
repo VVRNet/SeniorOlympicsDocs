@@ -1,0 +1,321 @@
+\doxysection{Spine.\+Animation 클래스 참조}
+\hypertarget{class_spine_1_1_animation}{}\label{class_spine_1_1_animation}\index{Spine.Animation@{Spine.Animation}}
+
+
+Stores a list of timelines to animate a skeleton\textquotesingle{}s pose over time.  
+
+
+
+
+Spine.\+Animation에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_animation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_animation_af083dd2ee0c6e7d2968dd3192e147857}{Animation}} (string name, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_timeline}{Timeline}} $>$ timelines, float duration)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_animation_a7439dfdabadcbea2fb3772e7ca9ee32a}{Set\+Timelines}} (\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_timeline}{Timeline}} $>$ timelines)
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_animation_a1d8e06c3f24b3fb59a0e5e9a4e0c8001}{Has\+Timeline}} (string\mbox{[}$\,$\mbox{]} property\+Ids)
+\begin{DoxyCompactList}\small\item\em Returns true if this animation contains a timeline with any of the specified property IDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_animation_a759bbf63d4738d39935c9b2263e41da8}{Apply}} (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, float last\+Time, float time, bool loop, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$ events, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Applies the animation\textquotesingle{}s timelines to the specified skeleton. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_spine_1_1_animation_a05f3fe3faded67966abbdc8b75e5e537}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_timeline}{Timeline}} $>$ \mbox{\hyperlink{class_spine_1_1_animation_a53ddd8fba50e31311bc983100b76027f}{Timelines}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_animation_a280ba137d92714ee33988829d5a5d5f0}{Duration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The duration of the animation in seconds, which is usually the highest time of all frames in the timeline. The duration is used to know when it has completed and when it should loop back to the start. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_spine_1_1_animation_a51bf7cf1ccd2e3ae1fa03f62336b85a7}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The animation\textquotesingle{}s name, which is unique across all animations in the skeleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Stores a list of timelines to animate a skeleton\textquotesingle{}s pose over time. 
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_animation_af083dd2ee0c6e7d2968dd3192e147857}\index{Spine.Animation@{Spine.Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_af083dd2ee0c6e7d2968dd3192e147857} 
+Spine.\+Animation.\+Animation (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_timeline}{Timeline}} $>$}]{timelines}{, }\item[{float}]{duration}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}name"{}},\ \textcolor{stringliteral}{"{}name\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_animation_a7439dfdabadcbea2fb3772e7ca9ee32a}{SetTimelines}}(timelines);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ this.duration\ =\ duration;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_animation_af083dd2ee0c6e7d2968dd3192e147857_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_animation_a759bbf63d4738d39935c9b2263e41da8}\index{Spine.Animation@{Spine.Animation}!Apply@{Apply}}
+\index{Apply@{Apply}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a759bbf63d4738d39935c9b2263e41da8} 
+void Spine.\+Animation.\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{, }\item[{float}]{last\+Time}{, }\item[{float}]{time}{, }\item[{bool}]{loop}{, }\item[{\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$}]{events}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{\mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}}}]{direction}{}\end{DoxyParamCaption})}
+
+
+
+Applies the animation\textquotesingle{}s timelines to the specified skeleton. 
+
+\begin{DoxySeeAlso}{참고}
+Timeline.\+Apply(\+Skeleton, float, float, Exposed\+List, float, Mix\+Blend, Mix\+Direction)
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{매개변수}
+{\em skeleton} & The skeleton the animation is being applied to. This provides access to the bones, slots, and other skeleton components the timelines may change.\\
+\hline
+{\em last\+Time} & The last time in seconds this animation was applied. Some timelines trigger only at specific times rather than every frame. Pass -\/1 the first time an animation is applied to ensure frame 0 is triggered.\\
+\hline
+{\em time} & The time in seconds the skeleton is being posed for. Most timelines find the frame before and the frame after this time and interpolate between the frame values. If beyond the \doxylink{class_spine_1_1_animation_a280ba137d92714ee33988829d5a5d5f0}{Duration} and 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{loop}
+
+\end{DoxyCode}
+ is true then the animation will repeat, else the last frame will be applied.\\
+\hline
+{\em loop} & If true, the animation repeats after the \doxylink{class_spine_1_1_animation_a280ba137d92714ee33988829d5a5d5f0}{Duration}.\\
+\hline
+{\em events} & If any events are fired, they are added to this list. Can be null to ignore fired events or if no timelines fire events.\\
+\hline
+{\em alpha} & 0 applies the current or setup values (depending on 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{blend}
+
+\end{DoxyCode}
+). 1 applies the timeline values. Between 0 and 1 applies values between the current or setup values and the timeline values. By adjusting 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{alpha}
+
+\end{DoxyCode}
+ over time, an animation can be mixed in or out. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{alpha}
+
+\end{DoxyCode}
+ can also be useful to apply animations on top of each other (layering).\\
+\hline
+{\em blend} & Controls how mixing is applied when 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{alpha}
+
+\end{DoxyCode}
+ \texorpdfstring{$<$}{<} 1.\\
+\hline
+{\em direction} & Indicates whether the timelines are mixing in or out. Used by timelines which perform instant transitions, such as \doxylink{class_spine_1_1_draw_order_timeline}{Draw\+Order\+Timeline} or \doxylink{class_spine_1_1_attachment_timeline}{Attachment\+Timeline}.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00109}{109}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (loop\ \&\&\ duration\ !=\ 0)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\ \%=\ duration;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lastTime\ >\ 0)\ lastTime\ \%=\ duration;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ Timeline[]\ timelines\ =\ this.timelines.Items;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ this.timelines.Count;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timelines[i].\mbox{\hyperlink{class_spine_1_1_animation_a759bbf63d4738d39935c9b2263e41da8}{Apply}}(skeleton,\ lastTime,\ time,\ events,\ alpha,\ blend,\ direction);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_spine_1_1_animation_a759bbf63d4738d39935c9b2263e41da8_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_spine_1_1_animation_a759bbf63d4738d39935c9b2263e41da8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_animation_a1d8e06c3f24b3fb59a0e5e9a4e0c8001}\index{Spine.Animation@{Spine.Animation}!HasTimeline@{HasTimeline}}
+\index{HasTimeline@{HasTimeline}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{HasTimeline()}{HasTimeline()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a1d8e06c3f24b3fb59a0e5e9a4e0c8001} 
+bool Spine.\+Animation.\+Has\+Timeline (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{property\+Ids}{}\end{DoxyParamCaption})}
+
+
+
+Returns true if this animation contains a timeline with any of the specified property IDs. 
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00084}{84}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id}\ \textcolor{keywordflow}{in}\ propertyIds)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timelineIds.Contains(\textcolor{keywordtype}{id}))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_animation_a7439dfdabadcbea2fb3772e7ca9ee32a}\index{Spine.Animation@{Spine.Animation}!SetTimelines@{SetTimelines}}
+\index{SetTimelines@{SetTimelines}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{SetTimelines()}{SetTimelines()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a7439dfdabadcbea2fb3772e7ca9ee32a} 
+void Spine.\+Animation.\+Set\+Timelines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_timeline}{Timeline}} $>$}]{timelines}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00056}{56}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timelines\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}timelines"{}},\ \textcolor{stringliteral}{"{}timelines\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ this.timelines\ =\ timelines;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ avoiding\ reallocations\ by\ adding\ all\ hash\ set\ entries\ at}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ once\ (EnsureCapacity()\ is\ only\ available\ in\ newer\ .Net\ versions).}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idCount\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timelinesCount\ =\ timelines.Count;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ Timeline[]\ timelinesItems\ =\ timelines.Items;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ timelinesCount;\ ++t)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idCount\ +=\ timelinesItems[t].PropertyIds.Length;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ propertyIds\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[idCount];}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentId\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ timelinesCount;\ ++t)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ ids\ =\ timelinesItems[t].PropertyIds;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ idsLength\ =\ ids.Length;\ i\ <\ idsLength;\ ++i)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyIds[currentId++]\ =\ ids[i];}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ this.timelineIds\ =\ \textcolor{keyword}{new}\ HashSet<string>(propertyIds);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_animation_a7439dfdabadcbea2fb3772e7ca9ee32a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_animation_a05f3fe3faded67966abbdc8b75e5e537}\index{Spine.Animation@{Spine.Animation}!ToString@{ToString}}
+\index{ToString@{ToString}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a05f3fe3faded67966abbdc8b75e5e537} 
+override string Spine.\+Animation.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00123}{123}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_animation_a280ba137d92714ee33988829d5a5d5f0}\index{Spine.Animation@{Spine.Animation}!Duration@{Duration}}
+\index{Duration@{Duration}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{Duration}{Duration}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a280ba137d92714ee33988829d5a5d5f0} 
+float Spine.\+Animation.\+Duration\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The duration of the animation in seconds, which is usually the highest time of all frames in the timeline. The duration is used to know when it has completed and when it should loop back to the start. 
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00078}{78}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ duration;\ \}\ \textcolor{keyword}{set}\ \{\ duration\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_animation_a51bf7cf1ccd2e3ae1fa03f62336b85a7}\index{Spine.Animation@{Spine.Animation}!Name@{Name}}
+\index{Name@{Name}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a51bf7cf1ccd2e3ae1fa03f62336b85a7} 
+string Spine.\+Animation.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The animation\textquotesingle{}s name, which is unique across all animations in the skeleton. 
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ name;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_animation_a53ddd8fba50e31311bc983100b76027f}\index{Spine.Animation@{Spine.Animation}!Timelines@{Timelines}}
+\index{Timelines@{Timelines}!Spine.Animation@{Spine.Animation}}
+\doxysubsubsection{\texorpdfstring{Timelines}{Timelines}}
+{\footnotesize\ttfamily \label{class_spine_1_1_animation_a53ddd8fba50e31311bc983100b76027f} 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$\mbox{\hyperlink{class_spine_1_1_timeline}{Timeline}}$>$ Spine.\+Animation.\+Timelines\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00051}{51}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ timelines;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \mbox{\hyperlink{class_spine_1_1_animation_a7439dfdabadcbea2fb3772e7ca9ee32a}{SetTimelines}}(value);\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_animation_8cs}{Animation.\+cs}}\end{DoxyCompactItemize}

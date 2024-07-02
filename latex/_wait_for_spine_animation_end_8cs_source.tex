@@ -1,0 +1,54 @@
+\doxysection{Wait\+For\+Spine\+Animation\+End.\+cs}
+\hypertarget{_wait_for_spine_animation_end_8cs_source}{}\label{_wait_for_spine_animation_end_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Utility/YieldInstructions/WaitForSpineAnimationEnd.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Utility/YieldInstructions/WaitForSpineAnimationEnd.cs}}
+\mbox{\hyperlink{_wait_for_spine_animation_end_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine}{Spine}};}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end}{WaitForSpineAnimationEnd}}\ :\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation}{WaitForSpineAnimation}},\ IEnumerator\ \{}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00044}\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end_a330b8c62a085464fbd4ce5a734f046f0}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end_a330b8c62a085464fbd4ce5a734f046f0}{WaitForSpineAnimationEnd}}\ (\mbox{\hyperlink{namespace_spine}{Spine}}.\mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ trackEntry)\ :}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ base(trackEntry,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a87557f11575c0ad78e4e28abedc13b6e}{End}})\ \{}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00048}00048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Reuse}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00052}\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end_a7dcddd5c26b09d1df7a233c3d5ee45ac}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end}{WaitForSpineAnimationEnd}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_end_a7dcddd5c26b09d1df7a233c3d5ee45ac}{NowWaitFor}}\ (\mbox{\hyperlink{namespace_spine}{Spine}}.\mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ trackEntry)\ \{}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0}{SafeSubscribe}}(trackEntry,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.End);}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wait_for_spine_animation_end_8cs_source_l00058}00058\ \}}
+
+\end{DoxyCode}

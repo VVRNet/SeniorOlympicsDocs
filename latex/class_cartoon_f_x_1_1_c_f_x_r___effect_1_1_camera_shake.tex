@@ -1,0 +1,418 @@
+\doxysection{Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake 클래스 참조}
+\hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake}{}\label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+
+
+Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222}{Shake\+Space}} \{ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}
+, \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222af5a7924e621e84c9280a9a27e1bcb7f6}{World}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a278e9a3715a6422bae1d78c119dd41fc}{fetch\+Cameras}} ()
+\item 
+void \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35}{Start\+Shake}} ()
+\item 
+void \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61}{Stop\+Shake}} ()
+\item 
+void \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac945e612db97c19d7243bb8c685fc9e1}{animate}} (float time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d}{enabled}} = false
+\item 
+bool \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac564be79f09720b086f441ed526f41cc}{use\+Main\+Camera}} = true
+\item 
+List$<$ Camera $>$ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a}{cameras}} = new List$<$Camera$>$()
+\item 
+float \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a493d4ae3ec3f86cec6d62e1ed324cfe9}{delay}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ae11adee9dcea7acc6f8190b4b836e3f4}{duration}} = 1.\+0f
+\item 
+\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222}{Shake\+Space}} \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_acb41a1a69026d6016db780a1c4f73810}{shake\+Space}} = \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222a2fc3359e12b2a9104121dcf04246f6a0}{Shake\+Space.\+Screen}}
+\item 
+Vector3 \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a33822d66fb41777ab4ec5e2034d19985}{shake\+Strength}} = new Vector3(0.\+1f, 0.\+1f, 0.\+1f)
+\item 
+Animation\+Curve \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3f93287f54748e8df0a6bdb9126556c5}{shake\+Curve}} = Animation\+Curve.\+Linear(0, 1, 1, 0)
+\item 
+float \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76}{shakes\+Delay}} = 0
+\item 
+bool \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{is\+Shaking}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a036eade93810c3d44112b8cdd6266af7}{editor\+Preview}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 열거형 문서화}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!ShakeSpace@{ShakeSpace}}
+\index{ShakeSpace@{ShakeSpace}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{ShakeSpace}{ShakeSpace}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222} 
+enum \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222}{Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+Shake\+Space}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Screen@{Screen}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!Screen@{Screen}}}\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222a2fc3359e12b2a9104121dcf04246f6a0}\label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222} 
+Screen&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{World@{World}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!World@{World}}}\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222af5a7924e621e84c9280a9a27e1bcb7f6}\label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222} 
+World&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222a2fc3359e12b2a9104121dcf04246f6a0}{Screen}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222af5a7924e621e84c9280a9a27e1bcb7f6}{World}}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac945e612db97c19d7243bb8c685fc9e1}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!animate@{animate}}
+\index{animate@{animate}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{animate()}{animate()}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac945e612db97c19d7243bb8c685fc9e1} 
+void Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+animate (\begin{DoxyParamCaption}\item[{float}]{time}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00233}{233}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a036eade93810c3d44112b8cdd6266af7}{editorPreview}}\ \&\&\ !EditorApplication.isPlaying)}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shakeVector\ =\ Vector3.zero;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalDuration\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ae11adee9dcea7acc6f8190b4b836e3f4}{duration}}\ +\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a493d4ae3ec3f86cec6d62e1ed324cfe9}{delay}};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ totalDuration)}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a493d4ae3ec3f86cec6d62e1ed324cfe9}{delay}})}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{isShaking}})}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35}{StartShake}}();}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ duration\ of\ the\ camera\ shake}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ Mathf.Clamp01(time/totalDuration);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ delay\ between\ each\ camera\ move}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76}{shakesDelay}}\ >\ 0)}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delaysTimer\ +=\ Time.deltaTime;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (delaysTimer\ <\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76}{shakesDelay}})}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (delaysTimer\ >=\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76}{shakesDelay}})}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delaysTimer\ -\/=\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76}{shakesDelay}};}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ randomVec\ =\ \textcolor{keyword}{new}\ Vector3(Random.value,\ Random.value,\ Random.value);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ shakeVec\ =\ Vector3.Scale(randomVec,\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a33822d66fb41777ab4ec5e2034d19985}{shakeStrength}})\ *\ (Random.value\ >\ 0.5f\ ?\ -\/1\ :\ 1);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shakeVector\ =\ shakeVec\ *\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3f93287f54748e8df0a6bdb9126556c5}{shakeCurve}}.Evaluate(delta)\ *\ GLOBAL\_CAMERA\_SHAKE\_MULTIPLIER;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{isShaking}})}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61}{StopShake}}();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac945e612db97c19d7243bb8c685fc9e1_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac945e612db97c19d7243bb8c685fc9e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a278e9a3715a6422bae1d78c119dd41fc}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!fetchCameras@{fetchCameras}}
+\index{fetchCameras@{fetchCameras}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{fetchCameras()}{fetchCameras()}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a278e9a3715a6422bae1d78c119dd41fc} 
+void Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+fetch\+Cameras (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00181}{181}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!EditorApplication.isPlayingOrWillChangePlaymode)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ cam\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a}{cameras}})}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cam\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ camerasPreRenderPosition.Remove(cam);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a}{cameras}}.Clear();}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac564be79f09720b086f441ed526f41cc}{useMainCamera}}\ \&\&\ Camera.main\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a}{cameras}}.Add(Camera.main);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ cam\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a}{cameras}})}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cam\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!camerasPreRenderPosition.ContainsKey(cam))}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ camerasPreRenderPosition.Add(cam,\ Vector3.zero);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a278e9a3715a6422bae1d78c119dd41fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!StartShake@{StartShake}}
+\index{StartShake@{StartShake}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{StartShake()}{StartShake()}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35} 
+void Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+Start\+Shake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00215}{215}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{isShaking}})}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61}{StopShake}}();}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{isShaking}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RegisterStaticCallback(\textcolor{keyword}{this});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!StopShake@{StopShake}}
+\index{StopShake@{StopShake}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{StopShake()}{StopShake()}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61} 
+void Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+Stop\+Shake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00226}{226}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{isShaking}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shakeVector\ =\ Vector3.zero;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnregisterStaticCallback(\textcolor{keyword}{this});}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!cameras@{cameras}}
+\index{cameras@{cameras}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{cameras}{cameras}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3c35a8409c2224c3440a7b291321559a} 
+List$<$Camera$>$ Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cameras = new List$<$Camera$>$()}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a493d4ae3ec3f86cec6d62e1ed324cfe9}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!delay@{delay}}
+\index{delay@{delay}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a493d4ae3ec3f86cec6d62e1ed324cfe9} 
+float Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+delay = 0.\+0f}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ae11adee9dcea7acc6f8190b4b836e3f4}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!duration@{duration}}
+\index{duration@{duration}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ae11adee9dcea7acc6f8190b4b836e3f4} 
+float Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+duration = 1.\+0f}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a036eade93810c3d44112b8cdd6266af7}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!editorPreview@{editorPreview}}
+\index{editorPreview@{editorPreview}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{editorPreview}{editorPreview}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a036eade93810c3d44112b8cdd6266af7} 
+bool Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+editor\+Preview = true\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!enabled@{enabled}}
+\index{enabled@{enabled}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{enabled}{enabled}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d} 
+bool Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+enabled = false}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!isShaking@{isShaking}}
+\index{isShaking@{isShaking}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{isShaking}{isShaking}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2} 
+bool Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+is\+Shaking}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3f93287f54748e8df0a6bdb9126556c5}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!shakeCurve@{shakeCurve}}
+\index{shakeCurve@{shakeCurve}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{shakeCurve}{shakeCurve}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3f93287f54748e8df0a6bdb9126556c5} 
+Animation\+Curve Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+shake\+Curve = Animation\+Curve.\+Linear(0, 1, 1, 0)}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!shakesDelay@{shakesDelay}}
+\index{shakesDelay@{shakesDelay}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{shakesDelay}{shakesDelay}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_af803efb8b93e4cfc39aa09a1eb08ef76} 
+float Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+shakes\+Delay = 0}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_acb41a1a69026d6016db780a1c4f73810}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!shakeSpace@{shakeSpace}}
+\index{shakeSpace@{shakeSpace}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{shakeSpace}{shakeSpace}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_acb41a1a69026d6016db780a1c4f73810} 
+\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222}{Shake\+Space}} Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+shake\+Space = \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_aad73936c17de212a18570cf98d145222a2fc3359e12b2a9104121dcf04246f6a0}{Shake\+Space.\+Screen}}}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a33822d66fb41777ab4ec5e2034d19985}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!shakeStrength@{shakeStrength}}
+\index{shakeStrength@{shakeStrength}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{shakeStrength}{shakeStrength}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a33822d66fb41777ab4ec5e2034d19985} 
+Vector3 Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+shake\+Strength = new Vector3(0.\+1f, 0.\+1f, 0.\+1f)}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac564be79f09720b086f441ed526f41cc}\index{CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}!useMainCamera@{useMainCamera}}
+\index{useMainCamera@{useMainCamera}!CartoonFX.CFXR\_Effect.CameraShake@{CartoonFX.CFXR\_Effect.CameraShake}}
+\doxysubsubsection{\texorpdfstring{useMainCamera}{useMainCamera}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac564be79f09720b086f441ed526f41cc} 
+bool Cartoon\+FX.\+CFXR\+\_\+\+Effect.\+Camera\+Shake.\+use\+Main\+Camera = true}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+JMO Assets/\+Cartoon FX Remaster/\+CFXR Assets/\+Scripts/\mbox{\hyperlink{_c_f_x_r___effect_8_camera_shake_8cs}{CFXR\+\_\+\+Effect.\+Camera\+Shake.\+cs}}\end{DoxyCompactItemize}

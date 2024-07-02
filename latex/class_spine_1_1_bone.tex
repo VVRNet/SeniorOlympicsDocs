@@ -1,0 +1,1362 @@
+\doxysection{Spine.\+Bone 클래스 참조}
+\hypertarget{class_spine_1_1_bone}{}\label{class_spine_1_1_bone}\index{Spine.Bone@{Spine.Bone}}
+
+
+Stores a bone\textquotesingle{}s current pose.  
+
+
+
+
+Spine.\+Bone에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_bone__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Bone에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_bone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552}{Bone}} (\mbox{\hyperlink{class_spine_1_1_bone_data}{Bone\+Data}} data, \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, \mbox{\hyperlink{class_spine_1_1_bone}{Bone}} parent)
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone_a6520a5f5576ed3f567cbd68a4fb15749}{Bone}} (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} bone, \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, \mbox{\hyperlink{class_spine_1_1_bone}{Bone}} parent)
+\begin{DoxyCompactList}\small\item\em Copy constructor. Does not copy the \doxylink{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}{Children} bones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_a50fb82f9790751ea0a1e118c793de5ee}{Update}} (\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}} physics)
+\begin{DoxyCompactList}\small\item\em Computes the world transform using the parent bone and this bone\textquotesingle{}s local applied transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{Update\+World\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Computes the world transform using the parent bone and this bone\textquotesingle{}s local transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_aec562a1c4a29fd87849e77161dbd2f58}{Update\+World\+Transform}} (float x, float y, float rotation, float scaleX, float scaleY, float shearX, float shearY)
+\begin{DoxyCompactList}\small\item\em Computes the world transform using the parent bone and the specified local transform. The applied transform is set to the specified local transform. Child bones are not updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa}{Set\+To\+Setup\+Pose}} ()
+\begin{DoxyCompactList}\small\item\em Sets this bone\textquotesingle{}s local transform to the setup pose. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Computes the applied transform values from the world transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd}{World\+To\+Local}} (float worldX, float worldY, out float localX, out float localY)
+\begin{DoxyCompactList}\small\item\em Transforms a point from world coordinates to the bone\textquotesingle{}s local coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}{Local\+To\+World}} (float localX, float localY, out float worldX, out float worldY)
+\begin{DoxyCompactList}\small\item\em Transforms a point from the bone\textquotesingle{}s local coordinates to world coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_ab0aa8a98bdd0871ab801adb375724bf7}{World\+To\+Parent}} (float worldX, float worldY, out float parentX, out float parentY)
+\begin{DoxyCompactList}\small\item\em Transforms a point from world coordinates to the parent bone\textquotesingle{}s local coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_a1d93a8c2d1dfc270dafd7d0032859616}{Parent\+To\+World}} (float parentX, float parentY, out float worldX, out float worldY)
+\begin{DoxyCompactList}\small\item\em Transforms a point from the parent bone\textquotesingle{}s coordinates to world coordinates. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a900f988a99dde5481b6f3cfe3da7eebd}{World\+To\+Local\+Rotation}} (float world\+Rotation)
+\begin{DoxyCompactList}\small\item\em Transforms a world rotation to a local rotation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_aaba512ff57ace74ea287eaf67ffe683c}{Local\+To\+World\+Rotation}} (float local\+Rotation)
+\begin{DoxyCompactList}\small\item\em Transforms a local rotation to a world rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_bone_aa8c440acc7431298b9ccafe6d54f10e5}{Rotate\+World}} (float degrees)
+\begin{DoxyCompactList}\small\item\em Rotates the world transform the specified amount. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_spine_1_1_bone_afb63677fe64ce4237a8079ce8a423e39}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_spine_1_1_bone_a3edbc88c04ce1c88e3524d9e3fee3e85}{y\+Down}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone_data}{Bone\+Data}} \mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} \mbox{\hyperlink{class_spine_1_1_bone_abc9d3a82cd486753bd30f02e1f537bcc}{Skeleton}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} \mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}} $>$ \mbox{\hyperlink{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}{Children}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_bone_ae61f8ff89dc9a52134aa745c8b717aaa}{Active}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns false when this item won\textquotesingle{}t be updated by \doxylink{class_spine_1_1_skeleton_af50f9c4c4f3349cdb108e29d8f96f52e}{Skeleton.\+Update\+World\+Transform(\+Skeleton.\+Physics)} because a skin is required and the \doxylink{class_spine_1_1_skeleton_a4e21d4e0b6aa6dd23ae81cc6dfabfd8e}{active skin} does not contain this item. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a449250768b89e6b5cda2a158207b219e}{X}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local X translation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a4a7a8d0b99b6f3d2e042189bc1620b2a}{Y}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local Y translation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_ae3e3b5774fb19a846db3b39c565d6313}{Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local rotation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a41c41f1378421d1cf2ad21fd29c15a7e}{ScaleX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local scaleX. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a4b0e658f9b264ccd6fe056dddc490a2c}{ScaleY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local scaleY. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401}{ShearX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local shearX. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a9496340b8f39d2f3b70de79457363f7f}{ShearY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local shearY. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}} \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Controls how parent world transforms affect this bone. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a6a3cc7c4448f3859b6bfc6f0157c3a6f}{Applied\+Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The rotation, as calculated by any constraints. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_ab3811661c5330a129f8ce8c74292266b}{AX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The applied local x translation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a1c2696d7e1094ed06f4d0fe6ec5abc5b}{AY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The applied local y translation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a0f21d0b0d5f45d8ff19f098d456970e9}{AScaleX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The applied local scaleX. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a835fb922b0bcaf127ecc44e6cf247c98}{AScaleY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The applied local scaleY. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a967c874d90fdd83604c2c7d7bc798283}{AShearX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The applied local shearX. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a2b851cfd7e6b8ee35434f90844a4e1a4}{AShearY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The applied local shearY. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a934009fcbf471670ddb717896d9c339e}{A}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Part of the world transform matrix for the X axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_ad99c616c62995e4b0c207b1f6608a52c}{B}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Part of the world transform matrix for the Y axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a0f8f536da6e17eeda7cdc25051f29a5c}{C}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Part of the world transform matrix for the X axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a6b370338082cd2e642c06de548847021}{D}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Part of the world transform matrix for the Y axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570}{WorldX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The world X position. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c}{WorldY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The world Y position. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf}{World\+RotationX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The world rotation for the X axis, calculated using a and c. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a33a7ce850ec092ca76ebb8292796f483}{World\+RotationY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The world rotation for the Y axis, calculated using b and d. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{World\+ScaleX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the magnitide (always positive) of the world scale X. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_bone_ad86cf0fe043b18cd39791f38f411fb2a}{World\+ScaleY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the magnitide (always positive) of the world scale Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{interface_spine_1_1_i_updatable}{Spine.\+IUpdatable}}(으)로부터 상속된 속성}
+
+
+\doxysubsection{상세한 설명}
+Stores a bone\textquotesingle{}s current pose. 
+
+A bone has a local transform which is used to compute its world transform. A bone also has an applied transform, which is a local transform that can be applied to compute the world transform. The local transform and applied transform may differ if a constraint or application code modifies the world transform after it was computed from the local transform. 
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552}\index{Spine.Bone@{Spine.Bone}!Bone@{Bone}}
+\index{Bone@{Bone}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Bone()}{Bone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552} 
+Spine.\+Bone.\+Bone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_bone_data}{Bone\+Data}}}]{data}{, }\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{, }\item[{\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00130}{130}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ this.skeleton\ =\ skeleton;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ this.parent\ =\ parent;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa}{SetToSetupPose}}();}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_a6520a5f5576ed3f567cbd68a4fb15749}\index{Spine.Bone@{Spine.Bone}!Bone@{Bone}}
+\index{Bone@{Bone}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Bone()}{Bone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a6520a5f5576ed3f567cbd68a4fb15749} 
+Spine.\+Bone.\+Bone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}}]{bone}{, }\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{, }\item[{\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. Does not copy the \doxylink{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}{Children} bones. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em parent} & May be null.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00141}{141}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ this.skeleton\ =\ skeleton;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ this.parent\ =\ parent;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ data\ =\ bone.data;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ bone.x;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ bone.y;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ bone.rotation;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ scaleX\ =\ bone.scaleX;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ scaleY\ =\ bone.scaleY;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ shearX\ =\ bone.shearX;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ shearY\ =\ bone.shearY;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ inherit\ =\ bone.inherit;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}\index{Spine.Bone@{Spine.Bone}!LocalToWorld@{LocalToWorld}}
+\index{LocalToWorld@{LocalToWorld}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{LocalToWorld()}{LocalToWorld()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a} 
+void Spine.\+Bone.\+Local\+To\+World (\begin{DoxyParamCaption}\item[{float}]{localX}{, }\item[{float}]{localY}{, }\item[{out float}]{worldX}{, }\item[{out float}]{worldY}{}\end{DoxyParamCaption})}
+
+
+
+Transforms a point from the bone\textquotesingle{}s local coordinates to world coordinates. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00399}{399}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ localX\ *\ a\ +\ localY\ *\ b\ +\ this.worldX;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ localX\ *\ c\ +\ localY\ *\ d\ +\ this.worldY;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_aaba512ff57ace74ea287eaf67ffe683c}\index{Spine.Bone@{Spine.Bone}!LocalToWorldRotation@{LocalToWorldRotation}}
+\index{LocalToWorldRotation@{LocalToWorldRotation}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{LocalToWorldRotation()}{LocalToWorldRotation()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_aaba512ff57ace74ea287eaf67ffe683c} 
+float Spine.\+Bone.\+Local\+To\+World\+Rotation (\begin{DoxyParamCaption}\item[{float}]{local\+Rotation}{}\end{DoxyParamCaption})}
+
+
+
+Transforms a local rotation to a world rotation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00432}{432}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ localRotation\ =\ (localRotation\ -\/\ rotation\ -\/\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ (float)Math.Sin(localRotation),\ cos\ =\ (float)Math.Cos(localRotation);}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(cos\ *\ c\ +\ sin\ *\ d,\ cos\ *\ a\ +\ sin\ *\ b);}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a1d93a8c2d1dfc270dafd7d0032859616}\index{Spine.Bone@{Spine.Bone}!ParentToWorld@{ParentToWorld}}
+\index{ParentToWorld@{ParentToWorld}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{ParentToWorld()}{ParentToWorld()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a1d93a8c2d1dfc270dafd7d0032859616} 
+void Spine.\+Bone.\+Parent\+To\+World (\begin{DoxyParamCaption}\item[{float}]{parentX}{, }\item[{float}]{parentY}{, }\item[{out float}]{worldX}{, }\item[{out float}]{worldY}{}\end{DoxyParamCaption})}
+
+
+
+Transforms a point from the parent bone\textquotesingle{}s coordinates to world coordinates. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00415}{415}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ parentX;}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ parentY;}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent.\mbox{\hyperlink{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}{LocalToWorld}}(parentX,\ parentY,\ out\ worldX,\ out\ worldY);}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a1d93a8c2d1dfc270dafd7d0032859616_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_aa8c440acc7431298b9ccafe6d54f10e5}\index{Spine.Bone@{Spine.Bone}!RotateWorld@{RotateWorld}}
+\index{RotateWorld@{RotateWorld}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{RotateWorld()}{RotateWorld()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_aa8c440acc7431298b9ccafe6d54f10e5} 
+void Spine.\+Bone.\+Rotate\+World (\begin{DoxyParamCaption}\item[{float}]{degrees}{}\end{DoxyParamCaption})}
+
+
+
+Rotates the world transform the specified amount. 
+
+After changes are made to the world transform, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called and Update(\+Skeleton.\+Physics) will need to be called on any child bones, recursively. 
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00444}{444}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ degrees\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ (float)Math.Sin(degrees),\ cos\ =\ (float)Math.Cos(degrees);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ra\ =\ a,\ rb\ =\ b;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ cos\ *\ ra\ -\/\ sin\ *\ c;}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ cos\ *\ rb\ -\/\ sin\ *\ d;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ sin\ *\ ra\ +\ cos\ *\ c;}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ sin\ *\ rb\ +\ cos\ *\ d;}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa}\index{Spine.Bone@{Spine.Bone}!SetToSetupPose@{SetToSetupPose}}
+\index{SetToSetupPose@{SetToSetupPose}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{SetToSetupPose()}{SetToSetupPose()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa} 
+void Spine.\+Bone.\+Set\+To\+Setup\+Pose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets this bone\textquotesingle{}s local transform to the setup pose. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00284}{284}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ BoneData\ data\ =\ this.data;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ data.x;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ data.y;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ data.rotation;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ scaleX\ =\ data.scaleX;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ scaleY\ =\ data.ScaleY;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ shearX\ =\ data.shearX;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ shearY\ =\ data.shearY;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ inherit\ =\ data.inherit;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_afb63677fe64ce4237a8079ce8a423e39}\index{Spine.Bone@{Spine.Bone}!ToString@{ToString}}
+\index{ToString@{ToString}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_afb63677fe64ce4237a8079ce8a423e39} 
+override string Spine.\+Bone.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00454}{454}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a50fb82f9790751ea0a1e118c793de5ee}\index{Spine.Bone@{Spine.Bone}!Update@{Update}}
+\index{Update@{Update}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a50fb82f9790751ea0a1e118c793de5ee} 
+void Spine.\+Bone.\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}}]{physics}{}\end{DoxyParamCaption})}
+
+
+
+Computes the world transform using the parent bone and this bone\textquotesingle{}s local applied transform. 
+
+
+
+\mbox{\hyperlink{interface_spine_1_1_i_updatable_a96146796a111eb677afe30ca6495a81e}{Spine.\+IUpdatable}}를 구현.
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00158}{158}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(ax,\ ay,\ arotation,\ ascaleX,\ ascaleY,\ ashearX,\ ashearY);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a50fb82f9790751ea0a1e118c793de5ee_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}\index{Spine.Bone@{Spine.Bone}!UpdateAppliedTransform@{UpdateAppliedTransform}}
+\index{UpdateAppliedTransform@{UpdateAppliedTransform}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{UpdateAppliedTransform()}{UpdateAppliedTransform()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac} 
+void Spine.\+Bone.\+Update\+Applied\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes the applied transform values from the world transform. 
+
+If the world transform is modified (by a constraint, \doxylink{class_spine_1_1_bone_aa8c440acc7431298b9ccafe6d54f10e5}{Rotate\+World(float)}, etc) then this method should be called so the applied transform matches the world transform. The applied transform may be needed by other code (eg to apply another constraint). 
+
+Some information is ambiguous in the world transform, such as -\/1,-\/1 scale versus 180 rotation. The applied transform after calling this method is equivalent to the local transform used to compute the world transform, but may not be identical. 
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00306}{306}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552}{Bone}}\ parent\ =\ this.parent;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ax\ =\ worldX\ -\/\ skeleton.x;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ay\ =\ worldY\ -\/\ skeleton.y;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ this.a,\ b\ =\ this.b,\ c\ =\ this.c,\ d\ =\ this.d;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ MathUtils.Atan2Deg(c,\ a);}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ (float)Math.Sqrt(a\ *\ a\ +\ c\ *\ c);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ (float)Math.Sqrt(b\ *\ b\ +\ d\ *\ d);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearX\ =\ 0;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ MathUtils.Atan2Deg(a\ *\ b\ +\ c\ *\ d,\ a\ *\ d\ -\/\ b\ *\ c);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pa\ =\ parent.a,\ pb\ =\ parent.b,\ pc\ =\ parent.c,\ pd\ =\ parent.d;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pid\ =\ 1\ /\ (pa\ *\ pd\ -\/\ pb\ *\ pc);}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ia\ =\ pd\ *\ pid,\ ib\ =\ pb\ *\ pid,\ ic\ =\ pc\ *\ pid,\ \textcolor{keywordtype}{id}\ =\ pa\ *\ pid;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ worldX\ -\/\ parent.worldX,\ dy\ =\ worldY\ -\/\ parent.worldY;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ ax\ =\ (dx\ *\ ia\ -\/\ dy\ *\ ib);}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ ay\ =\ (dy\ *\ \textcolor{keywordtype}{id}\ -\/\ dx\ *\ ic);}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ra,\ rb,\ rc,\ rd;}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inherit\ ==\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.OnlyTranslation)\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ra\ =\ a;}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb\ =\ b;}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rc\ =\ c;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd\ =\ d;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (inherit)\ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoRotationOrReflection:\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ Math.Abs(pa\ *\ pd\ -\/\ pb\ *\ pc)\ /\ (pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sa\ =\ pa\ /\ skeleton.scaleX;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sc\ =\ pc\ /\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ -\/sc\ *\ s\ *\ skeleton.scaleX;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ sa\ *\ s\ *\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pid\ =\ 1\ /\ (pa\ *\ pd\ -\/\ pb\ *\ pc);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ia\ =\ pd\ *\ pid;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ib\ =\ pb\ *\ pid;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoScale:}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoScaleOrReflection:\ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ rotation\ *\ MathUtils.DegRad,\ cos\ =\ (float)Math.Cos(r),\ sin\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ =\ (pa\ *\ cos\ +\ pb\ *\ sin)\ /\ skeleton.scaleX;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ =\ (pc\ *\ cos\ +\ pd\ *\ sin)\ /\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ (float)Math.Sqrt(pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >\ 0.00001f)\ s\ =\ 1\ /\ s;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ *=\ s;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ *=\ s;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sqrt(pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inherit\ ==\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoScale\ \&\&\ pid\ <\ 0\ !=\ (skeleton.scaleX\ <\ 0\ !=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}}\ <\ 0))\ s\ =\ -\/s;}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ MathUtils.PI\ /\ 2\ +\ MathUtils.Atan2(pc,\ pa);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ (float)Math.Cos(r)\ *\ s;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ (float)Math.Sin(r)\ *\ s;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pid\ =\ 1\ /\ (pa\ *\ pd\ -\/\ pb\ *\ pc);}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ia\ =\ pd\ *\ pid;}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ib\ =\ pb\ *\ pid;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ic\ =\ pc\ *\ pid;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ pa\ *\ pid;}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ra\ =\ ia\ *\ a\ -\/\ ib\ *\ c;}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb\ =\ ia\ *\ b\ -\/\ ib\ *\ d;}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rc\ =\ \textcolor{keywordtype}{id}\ *\ c\ -\/\ ic\ *\ a;}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd\ =\ \textcolor{keywordtype}{id}\ *\ d\ -\/\ ic\ *\ b;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ ashearX\ =\ 0;}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ (float)Math.Sqrt(ra\ *\ ra\ +\ rc\ *\ rc);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ascaleX\ >\ 0.0001f)\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det\ =\ ra\ *\ rd\ -\/\ rb\ *\ rc;}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ det\ /\ ascaleX;}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ -\/MathUtils.Atan2Deg(ra\ *\ rb\ +\ rc\ *\ rd,\ det);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ MathUtils.Atan2Deg(rc,\ ra);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ 0;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ (float)Math.Sqrt(rb\ *\ rb\ +\ rd\ *\ rd);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ 0;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ 90\ -\/\ MathUtils.Atan2Deg(rd,\ rb);}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}\index{Spine.Bone@{Spine.Bone}!UpdateWorldTransform@{UpdateWorldTransform}}
+\index{UpdateWorldTransform@{UpdateWorldTransform}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{UpdateWorldTransform()}{UpdateWorldTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3} 
+void Spine.\+Bone.\+Update\+World\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes the world transform using the parent bone and this bone\textquotesingle{}s local transform. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00163}{163}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(x,\ y,\ rotation,\ scaleX,\ scaleY,\ shearX,\ shearY);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_aec562a1c4a29fd87849e77161dbd2f58}\index{Spine.Bone@{Spine.Bone}!UpdateWorldTransform@{UpdateWorldTransform}}
+\index{UpdateWorldTransform@{UpdateWorldTransform}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{UpdateWorldTransform()}{UpdateWorldTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_aec562a1c4a29fd87849e77161dbd2f58} 
+void Spine.\+Bone.\+Update\+World\+Transform (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{rotation}{, }\item[{float}]{scaleX}{, }\item[{float}]{scaleY}{, }\item[{float}]{shearX}{, }\item[{float}]{shearY}{}\end{DoxyParamCaption})}
+
+
+
+Computes the world transform using the parent bone and the specified local transform. The applied transform is set to the specified local transform. Child bones are not updated. 
+
+See \href{http://esotericsoftware.com/spine-runtime-skeletons\#World-transforms}{\texttt{ World transforms}} in the \doxylink{namespace_spine}{Spine} Runtimes Guide.
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00172}{172}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ ax\ =\ x;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ ay\ =\ y;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ rotation;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ scaleX;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ scaleY;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ ashearX\ =\ shearX;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ shearY;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552}{Bone}}\ parent\ =\ this.parent;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{\ \textcolor{comment}{//\ Root\ bone.}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_abc9d3a82cd486753bd30f02e1f537bcc}{Skeleton}}\ skeleton\ =\ this.skeleton;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sx\ =\ skeleton.scaleX,\ sy\ =\ skeleton.ScaleY;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ 90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ (float)Math.Cos(rx)\ *\ scaleX\ *\ sx;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ (float)Math.Cos(ry)\ *\ scaleY\ *\ sx;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Sin(rx)\ *\ scaleX\ *\ sy;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ (float)Math.Sin(ry)\ *\ scaleY\ *\ sy;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ x\ *\ sx\ +\ skeleton.x;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ y\ *\ sy\ +\ skeleton.y;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pa\ =\ parent.a,\ pb\ =\ parent.b,\ pc\ =\ parent.c,\ pd\ =\ parent.d;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ pa\ *\ x\ +\ pb\ *\ y\ +\ parent.worldX;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ pc\ *\ x\ +\ pd\ *\ y\ +\ parent.worldY;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (inherit)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.Normal:\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ 90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ la\ =\ (float)Math.Cos(rx)\ *\ scaleX;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lb\ =\ (float)Math.Cos(ry)\ *\ scaleY;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lc\ =\ (float)Math.Sin(rx)\ *\ scaleX;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ld\ =\ (float)Math.Sin(ry)\ *\ scaleY;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ pa\ *\ la\ +\ pb\ *\ lc;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ pa\ *\ lb\ +\ pb\ *\ ld;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ pc\ *\ la\ +\ pd\ *\ lc;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ pc\ *\ lb\ +\ pd\ *\ ld;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.OnlyTranslation:\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ 90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ (float)Math.Cos(rx)\ *\ scaleX;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ (float)Math.Cos(ry)\ *\ scaleY;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Sin(rx)\ *\ scaleX;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ (float)Math.Sin(ry)\ *\ scaleY;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoRotationOrReflection:\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ pa\ *\ pa\ +\ pc\ *\ pc,\ prx;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >\ 0.0001f)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ Math.Abs(pa\ *\ pd\ -\/\ pb\ *\ pc)\ /\ s;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ /=\ skeleton.scaleX;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ /=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ pc\ *\ s;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ pa\ *\ s;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prx\ =\ MathUtils.Atan2Deg(pc,\ pa);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ =\ 0;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ =\ 0;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prx\ =\ 90\ -\/\ MathUtils.Atan2Deg(pd,\ pb);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX\ -\/\ prx)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ shearY\ -\/\ prx\ +\ 90)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ la\ =\ (float)Math.Cos(rx)\ *\ scaleX;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lb\ =\ (float)Math.Cos(ry)\ *\ scaleY;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lc\ =\ (float)Math.Sin(rx)\ *\ scaleX;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ld\ =\ (float)Math.Sin(ry)\ *\ scaleY;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ pa\ *\ la\ -\/\ pb\ *\ lc;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ pa\ *\ lb\ -\/\ pb\ *\ ld;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ pc\ *\ la\ +\ pd\ *\ lc;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ pc\ *\ lb\ +\ pd\ *\ ld;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoScale:}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoScaleOrReflection:\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cos\ =\ (float)Math.Cos(rotation),\ sin\ =\ (float)Math.Sin(rotation);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ za\ =\ (pa\ *\ cos\ +\ pb\ *\ sin)\ /\ skeleton.scaleX;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zc\ =\ (pc\ *\ cos\ +\ pd\ *\ sin)\ /\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ (float)Math.Sqrt(za\ *\ za\ +\ zc\ *\ zc);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >\ 0.00001f)\ s\ =\ 1\ /\ s;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ za\ *=\ s;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zc\ *=\ s;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sqrt(za\ *\ za\ +\ zc\ *\ zc);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inherit\ ==\ \mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{Inherit}}.NoScale\ \&\&\ (pa\ *\ pd\ -\/\ pb\ *\ pc\ <\ 0)\ !=\ (skeleton.scaleX\ <\ 0\ !=\ skeleton.ScaleY\ <\ 0))\ s\ =\ -\/s;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ MathUtils.PI\ /\ 2\ +\ MathUtils.Atan2(zc,\ za);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zb\ =\ (float)Math.Cos(rotation)\ *\ s;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zd\ =\ (float)Math.Sin(rotation)\ *\ s;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shearX\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shearY\ =\ (90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ la\ =\ (float)Math.Cos(shearX)\ *\ scaleX;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lb\ =\ (float)Math.Cos(shearY)\ *\ scaleY;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lc\ =\ (float)Math.Sin(shearX)\ *\ scaleX;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ld\ =\ (float)Math.Sin(shearY)\ *\ scaleY;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ za\ *\ la\ +\ zb\ *\ lc;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ za\ *\ lb\ +\ zb\ *\ ld;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ zc\ *\ la\ +\ zd\ *\ lc;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ zc\ *\ lb\ +\ zd\ *\ ld;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ a\ *=\ skeleton.scaleX;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ b\ *=\ skeleton.scaleX;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ c\ *=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ d\ *=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd}\index{Spine.Bone@{Spine.Bone}!WorldToLocal@{WorldToLocal}}
+\index{WorldToLocal@{WorldToLocal}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldToLocal()}{WorldToLocal()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd} 
+void Spine.\+Bone.\+World\+To\+Local (\begin{DoxyParamCaption}\item[{float}]{worldX}{, }\item[{float}]{worldY}{, }\item[{out float}]{localX}{, }\item[{out float}]{localY}{}\end{DoxyParamCaption})}
+
+
+
+Transforms a point from world coordinates to the bone\textquotesingle{}s local coordinates. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00390}{390}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ this.a,\ b\ =\ this.b,\ c\ =\ this.c,\ d\ =\ this.d;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det\ =\ a\ *\ d\ -\/\ b\ *\ c;}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ worldX\ -\/\ this.worldX,\ y\ =\ worldY\ -\/\ this.worldY;}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ localX\ =\ (x\ *\ d\ -\/\ y\ *\ b)\ /\ det;}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ localY\ =\ (y\ *\ a\ -\/\ x\ *\ c)\ /\ det;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_bone_a900f988a99dde5481b6f3cfe3da7eebd}\index{Spine.Bone@{Spine.Bone}!WorldToLocalRotation@{WorldToLocalRotation}}
+\index{WorldToLocalRotation@{WorldToLocalRotation}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldToLocalRotation()}{WorldToLocalRotation()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a900f988a99dde5481b6f3cfe3da7eebd} 
+float Spine.\+Bone.\+World\+To\+Local\+Rotation (\begin{DoxyParamCaption}\item[{float}]{world\+Rotation}{}\end{DoxyParamCaption})}
+
+
+
+Transforms a world rotation to a local rotation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00425}{425}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ worldRotation\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ (float)Math.Sin(worldRotation),\ cos\ =\ (float)Math.Cos(worldRotation);}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(a\ *\ sin\ -\/\ c\ *\ cos,\ d\ *\ cos\ -\/\ b\ *\ sin)\ +\ rotation\ -\/\ shearX;}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ab0aa8a98bdd0871ab801adb375724bf7}\index{Spine.Bone@{Spine.Bone}!WorldToParent@{WorldToParent}}
+\index{WorldToParent@{WorldToParent}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldToParent()}{WorldToParent()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ab0aa8a98bdd0871ab801adb375724bf7} 
+void Spine.\+Bone.\+World\+To\+Parent (\begin{DoxyParamCaption}\item[{float}]{worldX}{, }\item[{float}]{worldY}{, }\item[{out float}]{parentX}{, }\item[{out float}]{parentY}{}\end{DoxyParamCaption})}
+
+
+
+Transforms a point from world coordinates to the parent bone\textquotesingle{}s local coordinates. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00405}{405}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentX\ =\ worldX;}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentY\ =\ worldY;}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent.\mbox{\hyperlink{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd}{WorldToLocal}}(worldX,\ worldY,\ out\ parentX,\ out\ parentY);}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_bone_ab0aa8a98bdd0871ab801adb375724bf7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_spine_1_1_bone_a3edbc88c04ce1c88e3524d9e3fee3e85}\index{Spine.Bone@{Spine.Bone}!yDown@{yDown}}
+\index{yDown@{yDown}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{yDown}{yDown}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a3edbc88c04ce1c88e3524d9e3fee3e85} 
+bool Spine.\+Bone.\+y\+Down\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_bone_a934009fcbf471670ddb717896d9c339e}\index{Spine.Bone@{Spine.Bone}!A@{A}}
+\index{A@{A}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a934009fcbf471670ddb717896d9c339e} 
+float Spine.\+Bone.\+A\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Part of the world transform matrix for the X axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00108}{108}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ a;\ \}\ \textcolor{keyword}{set}\ \{\ a\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ae61f8ff89dc9a52134aa745c8b717aaa}\index{Spine.Bone@{Spine.Bone}!Active@{Active}}
+\index{Active@{Active}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ae61f8ff89dc9a52134aa745c8b717aaa} 
+bool Spine.\+Bone.\+Active\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns false when this item won\textquotesingle{}t be updated by \doxylink{class_spine_1_1_skeleton_af50f9c4c4f3349cdb108e29d8f96f52e}{Skeleton.\+Update\+World\+Transform(\+Skeleton.\+Physics)} because a skin is required and the \doxylink{class_spine_1_1_skeleton_a4e21d4e0b6aa6dd23ae81cc6dfabfd8e}{active skin} does not contain this item. 
+
+\begin{DoxySeeAlso}{참고}
+\doxylink{class_spine_1_1_skin_a7be4fe8bc48ddb6d716e515e9b922cab}{Skin.\+Bones}, \doxylink{class_spine_1_1_skin_a119b9bc765342f65060c26f3f9c5cc76}{Skin.\+Constraints}, \doxylink{class_spine_1_1_bone_data_a1e84a4abb65757fac0f6816033659ec0}{Bone\+Data.\+Skin\+Required}, \doxylink{class_spine_1_1_constraint_data_a00565b871fb0968be4126de726462b39}{Constraint\+Data.\+Skin\+Required}
+
+
+\end{DoxySeeAlso}
+
+
+\mbox{\hyperlink{interface_spine_1_1_i_updatable_a98a24b18563168b4e5939af366cf5c24}{Spine.\+IUpdatable}}를 구현.
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00063}{63}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ active;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a6a3cc7c4448f3859b6bfc6f0157c3a6f}\index{Spine.Bone@{Spine.Bone}!AppliedRotation@{AppliedRotation}}
+\index{AppliedRotation@{AppliedRotation}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AppliedRotation}{AppliedRotation}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a6a3cc7c4448f3859b6bfc6f0157c3a6f} 
+float Spine.\+Bone.\+Applied\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The rotation, as calculated by any constraints. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00087}{87}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ arotation;\ \}\ \textcolor{keyword}{set}\ \{\ arotation\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a0f21d0b0d5f45d8ff19f098d456970e9}\index{Spine.Bone@{Spine.Bone}!AScaleX@{AScaleX}}
+\index{AScaleX@{AScaleX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AScaleX}{AScaleX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a0f21d0b0d5f45d8ff19f098d456970e9} 
+float Spine.\+Bone.\+AScaleX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The applied local scaleX. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00096}{96}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ascaleX;\ \}\ \textcolor{keyword}{set}\ \{\ ascaleX\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a835fb922b0bcaf127ecc44e6cf247c98}\index{Spine.Bone@{Spine.Bone}!AScaleY@{AScaleY}}
+\index{AScaleY@{AScaleY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AScaleY}{AScaleY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a835fb922b0bcaf127ecc44e6cf247c98} 
+float Spine.\+Bone.\+AScaleY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The applied local scaleY. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00099}{99}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ascaleY;\ \}\ \textcolor{keyword}{set}\ \{\ ascaleY\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a967c874d90fdd83604c2c7d7bc798283}\index{Spine.Bone@{Spine.Bone}!AShearX@{AShearX}}
+\index{AShearX@{AShearX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AShearX}{AShearX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a967c874d90fdd83604c2c7d7bc798283} 
+float Spine.\+Bone.\+AShearX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The applied local shearX. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00102}{102}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ashearX;\ \}\ \textcolor{keyword}{set}\ \{\ ashearX\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a2b851cfd7e6b8ee35434f90844a4e1a4}\index{Spine.Bone@{Spine.Bone}!AShearY@{AShearY}}
+\index{AShearY@{AShearY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AShearY}{AShearY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a2b851cfd7e6b8ee35434f90844a4e1a4} 
+float Spine.\+Bone.\+AShearY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The applied local shearY. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00105}{105}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ashearY;\ \}\ \textcolor{keyword}{set}\ \{\ ashearY\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ab3811661c5330a129f8ce8c74292266b}\index{Spine.Bone@{Spine.Bone}!AX@{AX}}
+\index{AX@{AX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AX}{AX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ab3811661c5330a129f8ce8c74292266b} 
+float Spine.\+Bone.\+AX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The applied local x translation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00090}{90}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ax;\ \}\ \textcolor{keyword}{set}\ \{\ ax\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a1c2696d7e1094ed06f4d0fe6ec5abc5b}\index{Spine.Bone@{Spine.Bone}!AY@{AY}}
+\index{AY@{AY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{AY}{AY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a1c2696d7e1094ed06f4d0fe6ec5abc5b} 
+float Spine.\+Bone.\+AY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The applied local y translation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00093}{93}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ay;\ \}\ \textcolor{keyword}{set}\ \{\ ay\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ad99c616c62995e4b0c207b1f6608a52c}\index{Spine.Bone@{Spine.Bone}!B@{B}}
+\index{B@{B}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ad99c616c62995e4b0c207b1f6608a52c} 
+float Spine.\+Bone.\+B\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Part of the world transform matrix for the Y axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00110}{110}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b;\ \}\ \textcolor{keyword}{set}\ \{\ b\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a0f8f536da6e17eeda7cdc25051f29a5c}\index{Spine.Bone@{Spine.Bone}!C@{C}}
+\index{C@{C}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a0f8f536da6e17eeda7cdc25051f29a5c} 
+float Spine.\+Bone.\+C\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Part of the world transform matrix for the X axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00112}{112}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ c;\ \}\ \textcolor{keyword}{set}\ \{\ c\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}\index{Spine.Bone@{Spine.Bone}!Children@{Children}}
+\index{Children@{Children}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Children}{Children}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5} 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}$>$ Spine.\+Bone.\+Children\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00062}{62}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ children;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a6b370338082cd2e642c06de548847021}\index{Spine.Bone@{Spine.Bone}!D@{D}}
+\index{D@{D}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a6b370338082cd2e642c06de548847021} 
+float Spine.\+Bone.\+D\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Part of the world transform matrix for the Y axis. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00114}{114}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ d;\ \}\ \textcolor{keyword}{set}\ \{\ d\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}\index{Spine.Bone@{Spine.Bone}!Data@{Data}}
+\index{Data@{Data}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c} 
+\mbox{\hyperlink{class_spine_1_1_bone_data}{Bone\+Data}} Spine.\+Bone.\+Data\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00059}{59}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}\index{Spine.Bone@{Spine.Bone}!Inherit@{Inherit}}
+\index{Inherit@{Inherit}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Inherit}{Inherit}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511} 
+\mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}} Spine.\+Bone.\+Inherit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Controls how parent world transforms affect this bone. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00084}{84}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ inherit;\ \}\ \textcolor{keyword}{set}\ \{\ inherit\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}\index{Spine.Bone@{Spine.Bone}!Parent@{Parent}}
+\index{Parent@{Parent}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Parent}{Parent}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0} 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} Spine.\+Bone.\+Parent\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00061}{61}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ parent;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ae3e3b5774fb19a846db3b39c565d6313}\index{Spine.Bone@{Spine.Bone}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ae3e3b5774fb19a846db3b39c565d6313} 
+float Spine.\+Bone.\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local rotation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00069}{69}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ rotation;\ \}\ \textcolor{keyword}{set}\ \{\ rotation\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a41c41f1378421d1cf2ad21fd29c15a7e}\index{Spine.Bone@{Spine.Bone}!ScaleX@{ScaleX}}
+\index{ScaleX@{ScaleX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{ScaleX}{ScaleX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a41c41f1378421d1cf2ad21fd29c15a7e} 
+float Spine.\+Bone.\+ScaleX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local scaleX. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scaleX;\ \}\ \textcolor{keyword}{set}\ \{\ scaleX\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a4b0e658f9b264ccd6fe056dddc490a2c}\index{Spine.Bone@{Spine.Bone}!ScaleY@{ScaleY}}
+\index{ScaleY@{ScaleY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{ScaleY}{ScaleY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a4b0e658f9b264ccd6fe056dddc490a2c} 
+float Spine.\+Bone.\+ScaleY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local scaleY. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00075}{75}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scaleY;\ \}\ \textcolor{keyword}{set}\ \{\ scaleY\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401}\index{Spine.Bone@{Spine.Bone}!ShearX@{ShearX}}
+\index{ShearX@{ShearX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{ShearX}{ShearX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401} 
+float Spine.\+Bone.\+ShearX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local shearX. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00078}{78}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ shearX;\ \}\ \textcolor{keyword}{set}\ \{\ shearX\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a9496340b8f39d2f3b70de79457363f7f}\index{Spine.Bone@{Spine.Bone}!ShearY@{ShearY}}
+\index{ShearY@{ShearY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{ShearY}{ShearY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a9496340b8f39d2f3b70de79457363f7f} 
+float Spine.\+Bone.\+ShearY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local shearY. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ shearY;\ \}\ \textcolor{keyword}{set}\ \{\ shearY\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_abc9d3a82cd486753bd30f02e1f537bcc}\index{Spine.Bone@{Spine.Bone}!Skeleton@{Skeleton}}
+\index{Skeleton@{Skeleton}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Skeleton}{Skeleton}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_abc9d3a82cd486753bd30f02e1f537bcc} 
+\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} Spine.\+Bone.\+Skeleton\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00060}{60}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ skeleton;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf}\index{Spine.Bone@{Spine.Bone}!WorldRotationX@{WorldRotationX}}
+\index{WorldRotationX@{WorldRotationX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldRotationX}{WorldRotationX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf} 
+float Spine.\+Bone.\+World\+RotationX\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The world rotation for the X axis, calculated using a and c. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00121}{121}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(c,\ a);\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a33a7ce850ec092ca76ebb8292796f483}\index{Spine.Bone@{Spine.Bone}!WorldRotationY@{WorldRotationY}}
+\index{WorldRotationY@{WorldRotationY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldRotationY}{WorldRotationY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a33a7ce850ec092ca76ebb8292796f483} 
+float Spine.\+Bone.\+World\+RotationY\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The world rotation for the Y axis, calculated using b and d. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00123}{123}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(d,\ b);\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}\index{Spine.Bone@{Spine.Bone}!WorldScaleX@{WorldScaleX}}
+\index{WorldScaleX@{WorldScaleX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldScaleX}{WorldScaleX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5} 
+float Spine.\+Bone.\+World\+ScaleX\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the magnitide (always positive) of the world scale X. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00126}{126}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})Math.Sqrt(a\ *\ a\ +\ c\ *\ c);\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ad86cf0fe043b18cd39791f38f411fb2a}\index{Spine.Bone@{Spine.Bone}!WorldScaleY@{WorldScaleY}}
+\index{WorldScaleY@{WorldScaleY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldScaleY}{WorldScaleY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ad86cf0fe043b18cd39791f38f411fb2a} 
+float Spine.\+Bone.\+World\+ScaleY\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the magnitide (always positive) of the world scale Y. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00128}{128}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})Math.Sqrt(b\ *\ b\ +\ d\ *\ d);\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570}\index{Spine.Bone@{Spine.Bone}!WorldX@{WorldX}}
+\index{WorldX@{WorldX}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldX}{WorldX}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570} 
+float Spine.\+Bone.\+WorldX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The world X position. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00117}{117}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ worldX;\ \}\ \textcolor{keyword}{set}\ \{\ worldX\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c}\index{Spine.Bone@{Spine.Bone}!WorldY@{WorldY}}
+\index{WorldY@{WorldY}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{WorldY}{WorldY}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c} 
+float Spine.\+Bone.\+WorldY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The world Y position. If changed, \doxylink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{Update\+Applied\+Transform()} should be called. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00119}{119}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ worldY;\ \}\ \textcolor{keyword}{set}\ \{\ worldY\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a449250768b89e6b5cda2a158207b219e}\index{Spine.Bone@{Spine.Bone}!X@{X}}
+\index{X@{X}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a449250768b89e6b5cda2a158207b219e} 
+float Spine.\+Bone.\+X\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local X translation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00065}{65}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ x;\ \}\ \textcolor{keyword}{set}\ \{\ x\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_bone_a4a7a8d0b99b6f3d2e042189bc1620b2a}\index{Spine.Bone@{Spine.Bone}!Y@{Y}}
+\index{Y@{Y}!Spine.Bone@{Spine.Bone}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily \label{class_spine_1_1_bone_a4a7a8d0b99b6f3d2e042189bc1620b2a} 
+float Spine.\+Bone.\+Y\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local Y translation. 
+
+
+
+\mbox{\hyperlink{_bone_8cs_source}{Bone.\+cs}} 파일의 \mbox{\hyperlink{_bone_8cs_source_l00067}{67}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ y;\ \}\ \textcolor{keyword}{set}\ \{\ y\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_bone_8cs}{Bone.\+cs}}\end{DoxyCompactItemize}

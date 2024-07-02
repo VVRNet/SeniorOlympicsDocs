@@ -1,0 +1,263 @@
+\doxysection{Basketball.\+Touch\+Goal\+Controller 클래스 참조}
+\hypertarget{class_basketball_1_1_touch_goal_controller}{}\label{class_basketball_1_1_touch_goal_controller}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+
+
+Basketball.\+Touch\+Goal\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_basketball_1_1_touch_goal_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Basketball.\+Touch\+Goal\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_basketball_1_1_touch_goal_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a9b0928e65ac4e400f398fa31faf4e043}{On\+Touch}} (float x, float y)
+\item 
+void \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_ab70ceae2111baa6bc5a4cf6b1dd5ea83}{Touch\+Get\+Score}} (float x, float y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_basketball_1_1_basketball_manager}{Basketball\+Manager}} \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_abe2a31f1757f421dee464a1b24741024}{basketball\+Manager}}
+\item 
+Game\+Object \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a0ee5623a6b770ea5355a4b0da8771af2}{root\+Object}}
+\item 
+Game\+Object \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a145cd2d0768e55105fd9ac6f269c0df6}{hit\+Effect\+Image}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_aa7afdaa689a89fd7346695239d575bf7}{get\+Point}}
+\item 
+bool \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a2d60118a5bf46584bc33cf88f0823787}{is\+Left}}
+\item 
+Audio\+Source \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5}{touch\+Sound}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_basketball_1_1_touch_goal_controller_a9b0928e65ac4e400f398fa31faf4e043}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!OnTouch@{OnTouch}}
+\index{OnTouch@{OnTouch}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{OnTouch()}{OnTouch()}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_a9b0928e65ac4e400f398fa31faf4e043} 
+void Basketball.\+Touch\+Goal\+Controller.\+On\+Touch (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{interface_i_touch_object_aa5baa8693756baf00c210dafdcc39493}{ITouch\+Object}}를 구현.
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_ab70ceae2111baa6bc5a4cf6b1dd5ea83}{TouchGetScore}}(x,\ y);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a145cd2d0768e55105fd9ac6f269c0df6}{hitEffectImage}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a0ee5623a6b770ea5355a4b0da8771af2}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ ��ǥ��\ ����Ʈ\ ��ǥ�� ����ȭ\ (0����\ 1\ ����\ ��)}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width,\ (y\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height),\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����Ʈ\ ��ǥ��\ ���� ��ǥ�� ��ȯ}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a145cd2d0768e55105fd9ac6f269c0df6}{hitEffectImage}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a0ee5623a6b770ea5355a4b0da8771af2}{rootObject}}.transform);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basketball_1_1_touch_goal_controller_a9b0928e65ac4e400f398fa31faf4e043_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basketball_1_1_touch_goal_controller_ab70ceae2111baa6bc5a4cf6b1dd5ea83}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!TouchGetScore@{TouchGetScore}}
+\index{TouchGetScore@{TouchGetScore}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{TouchGetScore()}{TouchGetScore()}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_ab70ceae2111baa6bc5a4cf6b1dd5ea83} 
+void Basketball.\+Touch\+Goal\+Controller.\+Touch\+Get\+Score (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00060}{60}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_a2d60118a5bf46584bc33cf88f0823787}{isLeft}})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ basketballManager.moveCount\_Red\ +=\ 1;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_abe2a31f1757f421dee464a1b24741024}{basketballManager}}.\mbox{\hyperlink{class_basketball_1_1_basketball_manager_aa7a34b0e11cca48f2c8a4b4811ab333a}{SpawnGoals\_Red}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ ��ġ"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ isCorrect,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ ���\ ��ġ"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ !isCorrect,\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5}{touchSound}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5}{touchSound}}.Play();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ basketballManager.moveCount\_Blue\ +=\ 1;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_abe2a31f1757f421dee464a1b24741024}{basketballManager}}.\mbox{\hyperlink{class_basketball_1_1_basketball_manager_ab90093df200d665281712dc9dbb61e17}{SpawnGoals\_Blue}}();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ ��ġ"{}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ isCorrect,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ ���\ ��ġ"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ !isCorrect,\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5}{touchSound}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5}{touchSound}}.Play();}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basketball_1_1_touch_goal_controller_ab70ceae2111baa6bc5a4cf6b1dd5ea83_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basketball_1_1_touch_goal_controller_ab70ceae2111baa6bc5a4cf6b1dd5ea83_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_basketball_1_1_touch_goal_controller_abe2a31f1757f421dee464a1b24741024}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!basketballManager@{basketballManager}}
+\index{basketballManager@{basketballManager}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{basketballManager}{basketballManager}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_abe2a31f1757f421dee464a1b24741024} 
+\mbox{\hyperlink{class_basketball_1_1_basketball_manager}{Basketball\+Manager}} Basketball.\+Touch\+Goal\+Controller.\+basketball\+Manager}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_touch_goal_controller_aa7afdaa689a89fd7346695239d575bf7}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{getPoint}{getPoint}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_aa7afdaa689a89fd7346695239d575bf7} 
+float Basketball.\+Touch\+Goal\+Controller.\+get\+Point}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_touch_goal_controller_a145cd2d0768e55105fd9ac6f269c0df6}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!hitEffectImage@{hitEffectImage}}
+\index{hitEffectImage@{hitEffectImage}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{hitEffectImage}{hitEffectImage}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_a145cd2d0768e55105fd9ac6f269c0df6} 
+Game\+Object Basketball.\+Touch\+Goal\+Controller.\+hit\+Effect\+Image}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_touch_goal_controller_a2d60118a5bf46584bc33cf88f0823787}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!isLeft@{isLeft}}
+\index{isLeft@{isLeft}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{isLeft}{isLeft}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_a2d60118a5bf46584bc33cf88f0823787} 
+bool Basketball.\+Touch\+Goal\+Controller.\+is\+Left}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_touch_goal_controller_a0ee5623a6b770ea5355a4b0da8771af2}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!rootObject@{rootObject}}
+\index{rootObject@{rootObject}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{rootObject}{rootObject}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_a0ee5623a6b770ea5355a4b0da8771af2} 
+Game\+Object Basketball.\+Touch\+Goal\+Controller.\+root\+Object}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5}\index{Basketball.TouchGoalController@{Basketball.TouchGoalController}!touchSound@{touchSound}}
+\index{touchSound@{touchSound}!Basketball.TouchGoalController@{Basketball.TouchGoalController}}
+\doxysubsubsection{\texorpdfstring{touchSound}{touchSound}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_touch_goal_controller_aded40fa82877dacf0b0534f0f01046b5} 
+Audio\+Source Basketball.\+Touch\+Goal\+Controller.\+touch\+Sound}
+
+
+
+\mbox{\hyperlink{_touch_goal_controller_8cs_source}{Touch\+Goal\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_goal_controller_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Exercise/\+Basketball/\mbox{\hyperlink{_touch_goal_controller_8cs}{Touch\+Goal\+Controller.\+cs}}\end{DoxyCompactItemize}

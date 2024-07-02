@@ -1,0 +1,481 @@
+\doxysection{Sharp\+Json.\+Lexer 클래스 참조}
+\hypertarget{class_sharp_json_1_1_lexer}{}\label{class_sharp_json_1_1_lexer}\index{SharpJson.Lexer@{SharpJson.Lexer}}
+
+
+Sharp\+Json.\+Lexer에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_sharp_json_1_1_lexer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}} \{ \newline
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58abbb93ef26e3c101ff11cdd21cab08a94}{Null}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af827cf462f62848df37c5e1e94a4da74}{True}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af8320b26d30ab433c5a54546d21f414c}{False}}
+, \newline
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3ccf74d463f8895cef06727cb9709d83}{Colon}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a58be47db9455679e6a44df2eff9c9fa6}{Comma}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a27118326006d3829667a400ad23d5d98}{String}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ab2ee912b91d69b435159c7c3f6df7f5f}{Number}}
+, \newline
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3f3695351a8e288b576adc80861671f2}{Curly\+Open}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58acce4b95158a1ed543a1c0041cac9cdd6}{Curly\+Close}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a142065b5bb20b47e2f118abdf0498501}{Squared\+Open}}
+, \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ae09dc50890bbc0ce8c430a239ebaf5c9}{Squared\+Close}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_af0a3476760e9d08c7f436402c5f6b564}{Lexer}} (string text)
+\item 
+void \mbox{\hyperlink{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949}{Reset}} ()
+\item 
+string \mbox{\hyperlink{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644}{Parse\+String}} ()
+\item 
+float \mbox{\hyperlink{class_sharp_json_1_1_lexer_aea207308302033e727e342c8deb0fe5b}{Parse\+Float\+Number}} ()
+\item 
+double \mbox{\hyperlink{class_sharp_json_1_1_lexer_a17df5147901bf78b35e4768ae98a03da}{Parse\+Double\+Number}} ()
+\item 
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}} \mbox{\hyperlink{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}{Look\+Ahead}} ()
+\item 
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}} \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{Next\+Token}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sharp_json_1_1_lexer_a1e5b09411903f3ddd734c4f933281f7e}{has\+Error}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{line\+Number}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826}{parse\+Numbers\+As\+Float}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00074}{74}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 열거형 문서화}
+\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}\index{SharpJson.Lexer@{SharpJson.Lexer}!Token@{Token}}
+\index{Token@{Token}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{Token}{Token}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+enum \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Sharp\+Json.\+Lexer.\+Token}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!None@{None}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a6adf97f83acf6453d4a6a4b1070f3754}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Null@{Null}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!Null@{Null}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58abbb93ef26e3c101ff11cdd21cab08a94}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Null&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{True@{True}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!True@{True}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af827cf462f62848df37c5e1e94a4da74}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+True&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{False@{False}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!False@{False}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af8320b26d30ab433c5a54546d21f414c}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+False&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Colon@{Colon}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!Colon@{Colon}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3ccf74d463f8895cef06727cb9709d83}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Colon&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Comma@{Comma}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!Comma@{Comma}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a58be47db9455679e6a44df2eff9c9fa6}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Comma&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{String@{String}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!String@{String}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a27118326006d3829667a400ad23d5d98}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+String&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Number@{Number}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!Number@{Number}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ab2ee912b91d69b435159c7c3f6df7f5f}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Number&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurlyOpen@{CurlyOpen}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!CurlyOpen@{CurlyOpen}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3f3695351a8e288b576adc80861671f2}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Curly\+Open&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurlyClose@{CurlyClose}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!CurlyClose@{CurlyClose}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58acce4b95158a1ed543a1c0041cac9cdd6}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Curly\+Close&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SquaredOpen@{SquaredOpen}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!SquaredOpen@{SquaredOpen}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a142065b5bb20b47e2f118abdf0498501}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Squared\+Open&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SquaredClose@{SquaredClose}!SharpJson.Lexer@{SharpJson.Lexer}}\index{SharpJson.Lexer@{SharpJson.Lexer}!SquaredClose@{SquaredClose}}}\Hypertarget{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ae09dc50890bbc0ce8c430a239ebaf5c9}\label{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58} 
+Squared\+Close&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00075}{75}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58abbb93ef26e3c101ff11cdd21cab08a94}{Null}},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af827cf462f62848df37c5e1e94a4da74}{True}},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af8320b26d30ab433c5a54546d21f414c}{False}},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3ccf74d463f8895cef06727cb9709d83}{Colon}},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a58be47db9455679e6a44df2eff9c9fa6}{Comma}},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a27118326006d3829667a400ad23d5d98}{String}},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ab2ee912b91d69b435159c7c3f6df7f5f}{Number}},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3f3695351a8e288b576adc80861671f2}{CurlyOpen}},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58acce4b95158a1ed543a1c0041cac9cdd6}{CurlyClose}},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a142065b5bb20b47e2f118abdf0498501}{SquaredOpen}},}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ae09dc50890bbc0ce8c430a239ebaf5c9}{SquaredClose}},}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_sharp_json_1_1_lexer_af0a3476760e9d08c7f436402c5f6b564}\index{SharpJson.Lexer@{SharpJson.Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_af0a3476760e9d08c7f436402c5f6b564} 
+Sharp\+Json.\+Lexer.\+Lexer (\begin{DoxyParamCaption}\item[{string}]{text}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00111}{111}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949}{Reset}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ json\ =\ text.ToCharArray();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826}{parseNumbersAsFloat}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_sharp_json_1_1_lexer_af0a3476760e9d08c7f436402c5f6b564_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}\index{SharpJson.Lexer@{SharpJson.Lexer}!LookAhead@{LookAhead}}
+\index{LookAhead@{LookAhead}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{LookAhead()}{LookAhead()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363} 
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}} Sharp\+Json.\+Lexer.\+Look\+Ahead (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00273}{273}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ savedIndex\ =\ index;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}(json,\ ref\ savedIndex);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}\index{SharpJson.Lexer@{SharpJson.Lexer}!NextToken@{NextToken}}
+\index{NextToken@{NextToken}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{NextToken()}{NextToken()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530} 
+\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}} Sharp\+Json.\+Lexer.\+Next\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00280}{280}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}(json,\ ref\ index);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sharp_json_1_1_lexer_a17df5147901bf78b35e4768ae98a03da}\index{SharpJson.Lexer@{SharpJson.Lexer}!ParseDoubleNumber@{ParseDoubleNumber}}
+\index{ParseDoubleNumber@{ParseDoubleNumber}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{ParseDoubleNumber()}{ParseDoubleNumber()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_a17df5147901bf78b35e4768ae98a03da} 
+double Sharp\+Json.\+Lexer.\+Parse\+Double\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00237}{237}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ number;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ GetNumberString();}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{double}.TryParse(str,\ NumberStyles.Any,\ CultureInfo.InvariantCulture,\ out\ number))}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ number;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_sharp_json_1_1_lexer_aea207308302033e727e342c8deb0fe5b}\index{SharpJson.Lexer@{SharpJson.Lexer}!ParseFloatNumber@{ParseFloatNumber}}
+\index{ParseFloatNumber@{ParseFloatNumber}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{ParseFloatNumber()}{ParseFloatNumber()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_aea207308302033e727e342c8deb0fe5b} 
+float Sharp\+Json.\+Lexer.\+Parse\+Float\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00227}{227}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ number;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ GetNumberString();}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{float}.TryParse(str,\ NumberStyles.Float,\ CultureInfo.InvariantCulture,\ out\ number))}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ number;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644}\index{SharpJson.Lexer@{SharpJson.Lexer}!ParseString@{ParseString}}
+\index{ParseString@{ParseString}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{ParseString()}{ParseString()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644} 
+string Sharp\+Json.\+Lexer.\+Parse\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00124}{124}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx\ =\ 0;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ builder\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ json[index++];}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ failed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ complete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!complete\ \&\&\ !failed)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ json.Length)}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ json[index++];}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'"{}'})\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complete\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'})\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ json.Length)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ json[index++];}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (c)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'"{}'}:}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'"{}'};}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'b'}:}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)b'};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)f'};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'n'}:}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'r'}:}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)r'};}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'u'}:}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ remainingLength\ =\ json.Length\ -\/\ index;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingLength\ >=\ 4)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ hex\ =\ \textcolor{keyword}{new}\ string(json,\ index,\ 4);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ XXX:\ handle\ UTF}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ (char)Convert.ToInt32(hex,\ 16);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ 4\ chars}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ 4;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ failed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ c;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idx\ >=\ stringBuffer.Length)\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (builder\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder.Append(stringBuffer,\ 0,\ idx);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idx\ =\ 0;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!complete)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ success\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (builder\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ builder.ToString();}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ string(stringBuffer,\ 0,\ idx);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949}\index{SharpJson.Lexer@{SharpJson.Lexer}!Reset@{Reset}}
+\index{Reset@{Reset}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949} 
+void Sharp\+Json.\+Lexer.\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00118}{118}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{lineNumber}}\ =\ 1;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_sharp_json_1_1_lexer_a1e5b09411903f3ddd734c4f933281f7e}\index{SharpJson.Lexer@{SharpJson.Lexer}!hasError@{hasError}}
+\index{hasError@{hasError}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{hasError}{hasError}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_a1e5b09411903f3ddd734c4f933281f7e} 
+bool Sharp\+Json.\+Lexer.\+has\+Error\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00090}{90}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !success;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}\index{SharpJson.Lexer@{SharpJson.Lexer}!lineNumber@{lineNumber}}
+\index{lineNumber@{lineNumber}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{lineNumber}{lineNumber}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c} 
+int Sharp\+Json.\+Lexer.\+line\+Number\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00096}{96}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{set};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826}\index{SharpJson.Lexer@{SharpJson.Lexer}!parseNumbersAsFloat@{parseNumbersAsFloat}}
+\index{parseNumbersAsFloat@{parseNumbersAsFloat}!SharpJson.Lexer@{SharpJson.Lexer}}
+\doxysubsubsection{\texorpdfstring{parseNumbersAsFloat}{parseNumbersAsFloat}}
+{\footnotesize\ttfamily \label{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826} 
+bool Sharp\+Json.\+Lexer.\+parse\+Numbers\+As\+Float\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_json_8cs_source}{Json.\+cs}} 파일의 \mbox{\hyperlink{_json_8cs_source_l00101}{101}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_json_8cs}{Json.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,192 @@
+\doxysection{Skin.\+cs}
+\hypertarget{_skin_8cs_source}{}\label{_skin_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Skin.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Skin.cs}}
+\mbox{\hyperlink{_skin_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_skin}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Difference\ to\ reference\ implementation:\ using\ Dictionary<SkinKey,\ SkinEntry>\ instead\ of\ HashSet<SkinEntry>.}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reason\ is\ that\ there\ is\ no\ efficient\ way\ to\ replace\ or\ access\ an\ already\ added\ element,\ losing\ any\ benefits.}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Dictionary<SkinKey,\ SkinEntry>\ attachments\ =\ \textcolor{keyword}{new}\ Dictionary<SkinKey,\ SkinEntry>(SkinKeyComparer.Instance);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<BoneData>}}\ bones\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<BoneData>}}();}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<ConstraintData>}}\ constraints\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<ConstraintData>}}();}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_skin_a474d9cd42c610b1f227283022f8ad756}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_skin_a474d9cd42c610b1f227283022f8ad756}{Name}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ name;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00049}\mbox{\hyperlink{class_spine_1_1_skin_af42662baf7bf0d445f3894b564796b20}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ ICollection<SkinEntry>\ \mbox{\hyperlink{class_spine_1_1_skin_af42662baf7bf0d445f3894b564796b20}{Attachments}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ attachments.Values;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00050}\mbox{\hyperlink{class_spine_1_1_skin_a7be4fe8bc48ddb6d716e515e9b922cab}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<BoneData>}}\ \mbox{\hyperlink{class_spine_1_1_skin_a7be4fe8bc48ddb6d716e515e9b922cab}{Bones}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bones;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_skin_a119b9bc765342f65060c26f3f9c5cc76}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<ConstraintData>}}\ \mbox{\hyperlink{class_spine_1_1_skin_a119b9bc765342f65060c26f3f9c5cc76}{Constraints}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ constraints;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00053}\mbox{\hyperlink{class_spine_1_1_skin_ab47f6bace21eabe3c1ca6ddb19169ae8}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_skin_ab47f6bace21eabe3c1ca6ddb19169ae8}{Skin}}\ (\textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}name"{}},\ \textcolor{stringliteral}{"{}name\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_skin_a30fb37acfde4cf09a62a2a2835848c5f}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skin_a30fb37acfde4cf09a62a2a2835848c5f}{SetAttachment}}\ (\textcolor{keywordtype}{int}\ slotIndex,\ \textcolor{keywordtype}{string}\ name,\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ attachment)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attachment\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}attachment"{}},\ \textcolor{stringliteral}{"{}attachment\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ attachments[\textcolor{keyword}{new}\ SkinKey(slotIndex,\ name)]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}(slotIndex,\ name,\ attachment);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00066}\mbox{\hyperlink{class_spine_1_1_skin_afb9499439fa5bdbc6c9f5da7acde7f53}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skin_afb9499439fa5bdbc6c9f5da7acde7f53}{AddSkin}}\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ data\ \textcolor{keywordflow}{in}\ skin.bones)}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!bones.Contains(data))\ bones.Add(data);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_constraint_data}{ConstraintData}}\ data\ \textcolor{keywordflow}{in}\ skin.constraints)}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!constraints.Contains(data))\ constraints.Add(data);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<SkinKey,\ SkinEntry>\ item\ \textcolor{keywordflow}{in}\ skin.attachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ entry\ =\ item.Value;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skin_a30fb37acfde4cf09a62a2a2835848c5f}{SetAttachment}}(entry.slotIndex,\ entry.name,\ entry.attachment);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00080}\mbox{\hyperlink{class_spine_1_1_skin_a947d2eacb1d0b5de38295d809be4632b}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skin_a947d2eacb1d0b5de38295d809be4632b}{CopySkin}}\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ data\ \textcolor{keywordflow}{in}\ skin.bones)}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!bones.Contains(data))\ bones.Add(data);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_constraint_data}{ConstraintData}}\ data\ \textcolor{keywordflow}{in}\ skin.constraints)}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!constraints.Contains(data))\ constraints.Add(data);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<SkinKey,\ SkinEntry>\ item\ \textcolor{keywordflow}{in}\ skin.attachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ entry\ =\ item.Value;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.attachment\ is\ \mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skin_a30fb37acfde4cf09a62a2a2835848c5f}{SetAttachment}}(entry.slotIndex,\ entry.name,}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entry.attachment\ !=\ \textcolor{keyword}{null}\ ?\ ((\mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}})entry.attachment).NewLinkedMesh()\ :\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skin_a30fb37acfde4cf09a62a2a2835848c5f}{SetAttachment}}(entry.slotIndex,\ entry.name,\ entry.attachment\ !=\ \textcolor{keyword}{null}\ ?\ entry.attachment.\mbox{\hyperlink{class_spine_1_1_attachment_a9e39d7f3885810a0f8f34285f53b2e2b}{Copy}}()\ :\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00099}\mbox{\hyperlink{class_spine_1_1_skin_a8e1b079b629865148f809487fbda7938}{00099}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \mbox{\hyperlink{class_spine_1_1_skin_a8e1b079b629865148f809487fbda7938}{GetAttachment}}\ (\textcolor{keywordtype}{int}\ slotIndex,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ entry;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ containsKey\ =\ attachments.TryGetValue(\textcolor{keyword}{new}\ SkinKey(slotIndex,\ name),\ out\ entry);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ containsKey\ ?\ entry.attachment\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00106}\mbox{\hyperlink{class_spine_1_1_skin_ad39e7c7566d898c96772b36c8b61f694}{00106}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skin_ad39e7c7566d898c96772b36c8b61f694}{RemoveAttachment}}\ (\textcolor{keywordtype}{int}\ slotIndex,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ attachments.Remove(\textcolor{keyword}{new}\ SkinKey(slotIndex,\ name));}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00112}\mbox{\hyperlink{class_spine_1_1_skin_afbb1d7eef16fad1f1fd6957d28f25a16}{00112}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skin_afbb1d7eef16fad1f1fd6957d28f25a16}{GetAttachments}}\ (\textcolor{keywordtype}{int}\ slotIndex,\ List<SkinEntry>\ attachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slotIndex\ <\ 0)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}slotIndex\ must\ be\ >=\ 0."{}});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attachments\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}attachments"{}},\ \textcolor{stringliteral}{"{}attachments\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<SkinKey,\ SkinEntry>\ item\ \textcolor{keywordflow}{in}\ this.attachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ entry\ =\ item.Value;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.slotIndex\ ==\ slotIndex)\ attachments.Add(entry);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00122}\mbox{\hyperlink{class_spine_1_1_skin_aa47753d1aea98978de744bd7848e97fc}{00122}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skin_aa47753d1aea98978de744bd7848e97fc}{Clear}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ attachments.Clear();}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ bones.Clear();}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ constraints.Clear();}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00128}\mbox{\hyperlink{class_spine_1_1_skin_af959c5c040f9b54cece05756ea19228b}{00128}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_skin_af959c5c040f9b54cece05756ea19228b}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{void}\ AttachAll\ (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton,\ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ oldSkin)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot}{Slot}}[]\ slots\ =\ skeleton.slots.Items;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<SkinKey,\ SkinEntry>\ item\ \textcolor{keywordflow}{in}\ oldSkin.attachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SkinEntry\ entry\ =\ item.Value;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ slotIndex\ =\ entry.slotIndex;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot\ =\ slots[slotIndex];}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.\mbox{\hyperlink{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}{Attachment}}\ ==\ entry.attachment)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ attachment\ =\ \mbox{\hyperlink{class_spine_1_1_skin_a8e1b079b629865148f809487fbda7938}{GetAttachment}}(slotIndex,\ entry.name);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attachment\ !=\ \textcolor{keyword}{null})\ slot.Attachment\ =\ attachment;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00147}\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{00147}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \textcolor{keywordtype}{int}\ slotIndex;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ attachment;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00152}\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_a1388596b84baaf3e9ede3709744b9cac}{00152}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_a1388596b84baaf3e9ede3709744b9cac}{SkinEntry}}\ (\textcolor{keywordtype}{int}\ slotIndex,\ \textcolor{keywordtype}{string}\ name,\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ attachment)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.slotIndex\ =\ slotIndex;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.attachment\ =\ attachment;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00158}\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_ad11e44ed24ab3f215f6ffd40c46adc6a}{00158}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_ad11e44ed24ab3f215f6ffd40c46adc6a}{SlotIndex}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ slotIndex;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00165}\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_a6f9de83cbe4cd3789215ed152dd6dad2}{00165}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_a6f9de83cbe4cd3789215ed152dd6dad2}{Name}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00171}\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry_a99130f7eb887671a2dcb6cf2da2fc5ec}{00171}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attachment;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{struct\ }SkinKey\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \textcolor{keywordtype}{int}\ slotIndex;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \textcolor{keywordtype}{int}\ hashCode;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SkinKey\ (\textcolor{keywordtype}{int}\ slotIndex,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slotIndex\ <\ 0)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}slotIndex\ must\ be\ >=\ 0."{}});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}name"{}},\ \textcolor{stringliteral}{"{}name\ cannot\ be\ null"{}});}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.slotIndex\ =\ slotIndex;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.hashCode\ =\ name.GetHashCode()\ +\ slotIndex\ *\ 37;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }SkinKeyComparer\ :\ IEqualityComparer<SkinKey>\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ readonly\ SkinKeyComparer\ Instance\ =\ \textcolor{keyword}{new}\ SkinKeyComparer();}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IEqualityComparer<SkinKey>.Equals\ (SkinKey\ e1,\ SkinKey\ e2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e1.slotIndex\ ==\ e2.slotIndex\ \&\&\ \textcolor{keywordtype}{string}.Equals(e1.name,\ e2.name,\ StringComparison.Ordinal);}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ IEqualityComparer<SkinKey>.GetHashCode\ (SkinKey\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e.hashCode;}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skin_8cs_source_l00204}00204\ \}}
+
+\end{DoxyCode}

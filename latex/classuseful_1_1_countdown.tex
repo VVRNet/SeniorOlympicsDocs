@@ -1,0 +1,130 @@
+\doxysection{useful.\+Countdown 클래스 참조}
+\hypertarget{classuseful_1_1_countdown}{}\label{classuseful_1_1_countdown}\index{useful.Countdown@{useful.Countdown}}
+
+
+useful.\+Countdown에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classuseful_1_1_countdown__inherit__graph}
+\end{center}
+\end{figure}
+
+
+useful.\+Countdown에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classuseful_1_1_countdown__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classuseful_1_1_countdown_a162445691b300e8f0331790ee7a2f92e}{Do\+Countdown}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Source \mbox{\hyperlink{classuseful_1_1_countdown_a2a4d47d3c7698b1bc7ce2aa815074602}{countdown\+Audio}}
+\item 
+Transform\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}{count\+Obj}}
+\item 
+bool \mbox{\hyperlink{classuseful_1_1_countdown_a300d67abb9018a9093d8f9bea483775f}{Is\+Play}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_countdown_8cs_source}{Countdown.\+cs}} 파일의 \mbox{\hyperlink{_countdown_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{classuseful_1_1_countdown_a162445691b300e8f0331790ee7a2f92e}\index{useful.Countdown@{useful.Countdown}!DoCountdown@{DoCountdown}}
+\index{DoCountdown@{DoCountdown}!useful.Countdown@{useful.Countdown}}
+\doxysubsubsection{\texorpdfstring{DoCountdown()}{DoCountdown()}}
+{\footnotesize\ttfamily \label{classuseful_1_1_countdown_a162445691b300e8f0331790ee7a2f92e} 
+void useful.\+Countdown.\+Do\+Countdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_countdown_8cs_source}{Countdown.\+cs}} 파일의 \mbox{\hyperlink{_countdown_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Action());}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ Action() }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Function.TouchEnable(false);\ //\ ȭ�� ��ü ��ġ\ ����}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(.1f);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classuseful_1_1_countdown_a2a4d47d3c7698b1bc7ce2aa815074602}{countdownAudio}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a2a4d47d3c7698b1bc7ce2aa815074602}{countdownAudio}}.Play();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ length\ -\/\ 1;\ i++)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}{countObj}}[i].gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}{countObj}}[i].DOScale(Vector3.zero,\ .4f).SetDelay(.5f).SetEase(Ease.InQuad);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}{countObj}}[length\ -\/\ 1].gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ Start\ ������Ʈ}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}{countObj}}[length\ -\/\ 1].localScale\ =\ Vector3.zero;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}{countObj}}[length\ -\/\ 1].DOScale(Vector3.one,\ .3f).SetEase(Ease.OutBack);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1.2f);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_countdown_a300d67abb9018a9093d8f9bea483775f}{IsPlay}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Function.TouchEnable(true);}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{classuseful_1_1_countdown_a2a4d47d3c7698b1bc7ce2aa815074602}\index{useful.Countdown@{useful.Countdown}!countdownAudio@{countdownAudio}}
+\index{countdownAudio@{countdownAudio}!useful.Countdown@{useful.Countdown}}
+\doxysubsubsection{\texorpdfstring{countdownAudio}{countdownAudio}}
+{\footnotesize\ttfamily \label{classuseful_1_1_countdown_a2a4d47d3c7698b1bc7ce2aa815074602} 
+Audio\+Source useful.\+Countdown.\+countdown\+Audio}
+
+
+
+\mbox{\hyperlink{_countdown_8cs_source}{Countdown.\+cs}} 파일의 \mbox{\hyperlink{_countdown_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0}\index{useful.Countdown@{useful.Countdown}!countObj@{countObj}}
+\index{countObj@{countObj}!useful.Countdown@{useful.Countdown}}
+\doxysubsubsection{\texorpdfstring{countObj}{countObj}}
+{\footnotesize\ttfamily \label{classuseful_1_1_countdown_a12ac88d0a79501a769c8c2d6764f60f0} 
+Transform \mbox{[}$\,$\mbox{]} useful.\+Countdown.\+count\+Obj}
+
+
+
+\mbox{\hyperlink{_countdown_8cs_source}{Countdown.\+cs}} 파일의 \mbox{\hyperlink{_countdown_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{classuseful_1_1_countdown_a300d67abb9018a9093d8f9bea483775f}\index{useful.Countdown@{useful.Countdown}!IsPlay@{IsPlay}}
+\index{IsPlay@{IsPlay}!useful.Countdown@{useful.Countdown}}
+\doxysubsubsection{\texorpdfstring{IsPlay}{IsPlay}}
+{\footnotesize\ttfamily \label{classuseful_1_1_countdown_a300d67abb9018a9093d8f9bea483775f} 
+bool useful.\+Countdown.\+Is\+Play = true}
+
+
+
+\mbox{\hyperlink{_countdown_8cs_source}{Countdown.\+cs}} 파일의 \mbox{\hyperlink{_countdown_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Useful/\mbox{\hyperlink{_countdown_8cs}{Countdown.\+cs}}\end{DoxyCompactItemize}

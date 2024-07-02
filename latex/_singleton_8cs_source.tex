@@ -1,0 +1,62 @@
+\doxysection{Singleton.\+cs}
+\hypertarget{_singleton_8cs_source}{}\label{_singleton_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/SDK/Singleton.cs@{D:/Unity/SeniorOlympics/Assets/SDK/Singleton.cs}}
+\mbox{\hyperlink{_singleton_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00003}\mbox{\hyperlink{class_singleton}{00003}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_singleton}{Singleton}}<T>\ :\ MonoBehaviour\ where\ T\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00005}00005\ \ \ \ \ \textcolor{comment}{//싱글톤\ 구조\ 구현\ 클래스}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ m\_ShuttingDown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ m\_Lock\ =\ \textcolor{keyword}{new}\ object();}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ T\ m\_Instance;}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00010}\mbox{\hyperlink{class_singleton_a54103e8475b2a352ee759d5732307534}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_singleton_a54103e8475b2a352ee759d5732307534}{Instance}}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_ShuttingDown)}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(\textcolor{stringliteral}{"{}[Singleton]\ Instance\ '"{}}\ +\ typeof(T)\ +\ \textcolor{stringliteral}{"{}'\ already\ destroyed.\ Returning\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ lock\ (m\_Lock)}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Search\ for\ existing\ instance.}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_Instance\ =\ (T)FindObjectOfType(typeof(T));}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ new\ instance\ if\ one\ doesn't\ already\ exist.}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Need\ to\ create\ a\ new\ GameObject\ to\ attach\ the\ singleton\ to.}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ singletonObject\ =\ \textcolor{keyword}{new}\ GameObject();}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_Instance\ =\ singletonObject.AddComponent<T>();}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ singletonObject.name\ =\ typeof(T).ToString()\ +\ \textcolor{stringliteral}{"{}\ (Singleton)"{}};}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ instance\ persistent.}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DontDestroyOnLoad(singletonObject);}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_Instance;}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnApplicationQuit()}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ m\_ShuttingDown\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDestroy()}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ m\_ShuttingDown\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8cs_source_l00056}00056\ \}}
+
+\end{DoxyCode}

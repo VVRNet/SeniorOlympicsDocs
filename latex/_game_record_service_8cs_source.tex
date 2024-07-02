@@ -1,0 +1,40 @@
+\doxysection{Game\+Record\+Service.\+cs}
+\hypertarget{_game_record_service_8cs_source}{}\label{_game_record_service_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/HTTP/GameRecordService.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/HTTP/GameRecordService.cs}}
+\mbox{\hyperlink{_game_record_service_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00007}\mbox{\hyperlink{class_game_record_service}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_record_service}{GameRecordService}}\ :\ \mbox{\hyperlink{class_base_service}{BaseService}}}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ dataSource\ =\ \textcolor{stringliteral}{"{}Cluster0"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ database\ =\ \textcolor{stringliteral}{"{}SeniorOlympic"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ collection\ =\ \textcolor{stringliteral}{"{}GameRecord"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00013}\mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerator\ \mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{SaveGameRecord}}(\mbox{\hyperlink{class_game_record}{GameRecord}}\ gameRecord,\ Action<List<string>>\ callback)}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}insertOne"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ settings.NullValueHandling\ =\ NullValueHandling.Ignore;}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ document\ =\ gameRecord}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \},\ settings);}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<string>(url,\ jsonData,\ callback);}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//∞‘¿” ±‚∑œ\ ¿˙¿Â}}
+\DoxyCodeLine{\Hypertarget{_game_record_service_8cs_source_l00034}00034\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+\doxysection{Spine\+Beginner\+Two.\+cs}
+\hypertarget{_spine_beginner_two_8cs_source}{}\label{_spine_beginner_two_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/SpineBeginnerTwo.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/SpineBeginnerTwo.cs}}
+\mbox{\hyperlink{_spine_beginner_two_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00035}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two}{SpineBeginnerTwo}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Inspector}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [SpineAnimation]\ attribute\ allows\ an\ Inspector\ dropdown\ of\ Spine\ animation\ names\ coming\ form\ SkeletonAnimation.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_animation}{SpineAnimation}}]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a0fff53ed4ca116aafb3fc7fa73a77077}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a0fff53ed4ca116aafb3fc7fa73a77077}{runAnimationName}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_animation}{SpineAnimation}}]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae9a57b0d6f5f9adc192103df6d6d61bf}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae9a57b0d6f5f9adc192103df6d6d61bf}{idleAnimationName}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_animation}{SpineAnimation}}]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a5d8cd9f11735b157658cc10119248256}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a5d8cd9f11735b157658cc10119248256}{walkAnimationName}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_animation}{SpineAnimation}}]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00049}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae7a7e749a26ba4cb01c811c5ff01f82e}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae7a7e749a26ba4cb01c811c5ff01f82e}{shootAnimationName}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Transitions"{}})]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_animation}{SpineAnimation}}]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00053}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a284a2d118d66c19c4373e48689a958ba}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a284a2d118d66c19c4373e48689a958ba}{idleTurnAnimationName}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_animation}{SpineAnimation}}]}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00056}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a5f98295b151adbd7bde22edae8bc7d30}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a5f98295b151adbd7bde22edae8bc7d30}{runToIdleAnimationName}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00058}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a72832133656f0b66b6b5f7651a2f5721}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a72832133656f0b66b6b5f7651a2f5721}{runWalkDuration}}\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ skeletonAnimation;}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Spine.AnimationState\ and\ Spine.Skeleton\ are\ not\ Unity-\/serialized\ objects.\ You\ will\ not\ see\ them\ as\ fields\ in\ the\ inspector.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00064}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_animation_state}{Spine.AnimationState}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00065}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a8f92723f1eb4839d665b4599f1651967}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Spine.Skeleton}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a8f92723f1eb4839d665b4599f1651967}{skeleton}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ you\ get\ these\ AnimationState\ and\ Skeleton\ references\ in\ Start\ or\ Later.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Getting\ and\ using\ them\ in\ Awake\ is\ not\ guaranteed\ by\ default\ execution\ order.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation\ =\ GetComponent<SkeletonAnimation>();}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}\ =\ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a8f92723f1eb4839d665b4599f1651967}{skeleton}}\ =\ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_aca997f96ffb5a89579dc325b790f0fd6}{Skeleton}};}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DoDemoRoutine());}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ IEnumerator\ DoDemoRoutine\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SetAnimation\ is\ the\ basic\ way\ to\ set\ an\ animation.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SetAnimation\ sets\ the\ animation\ and\ starts\ playing\ it\ from\ the\ beginning.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Common\ Mistake:\ If\ you\ keep\ calling\ it\ in\ Update,\ it\ will\ keep\ showing\ the\ first\ pose\ of\ the\ animation,\ do\ don't\ do\ that.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.SetAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a5d8cd9f11735b157658cc10119248256}{walkAnimationName}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a72832133656f0b66b6b5f7651a2f5721}{runWalkDuration}});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.SetAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a0fff53ed4ca116aafb3fc7fa73a77077}{runAnimationName}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a72832133656f0b66b6b5f7651a2f5721}{runWalkDuration}});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AddAnimation\ queues\ up\ an\ animation\ to\ play\ after\ the\ previous\ one\ ends.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.SetAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a5f98295b151adbd7bde22edae8bc7d30}{runToIdleAnimationName}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.AddAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae9a57b0d6f5f9adc192103df6d6d61bf}{idleAnimationName}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.ScaleX\ =\ -\/1;\ \ \ \ \ \ \ \textcolor{comment}{//\ skeleton\ allows\ you\ to\ flip\ the\ skeleton.}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.SetAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a284a2d118d66c19c4373e48689a958ba}{idleTurnAnimationName}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.AddAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae9a57b0d6f5f9adc192103df6d6d61bf}{idleAnimationName}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.ScaleX\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.SetAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a284a2d118d66c19c4373e48689a958ba}{idleTurnAnimationName}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_a14416e7b625fafa5df2595b004097c82}{spineAnimationState}}.AddAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spine_beginner_two_ae9a57b0d6f5f9adc192103df6d6d61bf}{idleAnimationName}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_spine_beginner_two_8cs_source_l00109}00109\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,351 @@
+\doxysection{Quickness.\+Quickness\+Manager 클래스 참조}
+\hypertarget{class_quickness_1_1_quickness_manager}{}\label{class_quickness_1_1_quickness_manager}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+
+
+Quickness.\+Quickness\+Manager에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_quickness_1_1_quickness_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Quickness.\+Quickness\+Manager에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_quickness_1_1_quickness_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a7ee754f3c852c41fd74e0b7a363608f2}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a769876d2b6e5a4903ae9964a6f5b6789}{Setting\+Random\+Pos}} ()
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a0e4732813f6d86311a2e97a0514bc1af}{Add\+Random\+Pos}} ()
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_quickness_manager_aad99aaa7456849fc13f8743d7d587c47}{Remove\+Position}} (Vector3 position)
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0}{Add\+New\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_quickness_manager_ab11cdab54a0e233abd0b1b6211bf68d5}{Create\+Touch\+Object}} (Transform pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a20ee83996814bd7cf2b3e36c6564fc05}{touch\+Object}}
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touch\+Pos}}
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{set\+Touch\+Pos}}
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{random\+Pos}} = new List$<$Transform$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!AddNewPosition@{AddNewPosition}}
+\index{AddNewPosition@{AddNewPosition}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{AddNewPosition()}{AddNewPosition()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0} 
+void Quickness.\+Quickness\+Manager.\+Add\+New\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00076}{76}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}.Count\ >\ 0)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ newPos\ =\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}[0];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}.RemoveAt(0);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}}.Add(newPos);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ pos\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos.childCount\ ==\ 0)\ \textcolor{comment}{//\ �ڽ� ������Ʈ��\ ���� ���\ ����}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_ab11cdab54a0e233abd0b1b6211bf68d5}{CreateTouchObject}}(pos);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleTouchPositions();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}.Count\ >\ 0)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0}{AddNewPosition}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_quickness_1_1_quickness_manager_a0e4732813f6d86311a2e97a0514bc1af}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!AddRandomPos@{AddRandomPos}}
+\index{AddRandomPos@{AddRandomPos}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{AddRandomPos()}{AddRandomPos()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a0e4732813f6d86311a2e97a0514bc1af} 
+void Quickness.\+Quickness\+Manager.\+Add\+Random\+Pos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}}.Clear();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3����\ ��ġ��\ randomPos��\ ���� ���� �� ������\ ����}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3\ \&\&\ setTouchPos.Count\ >\ 0;\ i++)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ newPos\ =\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}[0];}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}.RemoveAt(0);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}}.Add(newPos);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ pos\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos.childCount\ ==\ 0)\ \textcolor{comment}{//\ �ڽ� ������Ʈ��\ ���� ���\ ����}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_ab11cdab54a0e233abd0b1b6211bf68d5}{CreateTouchObject}}(pos);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a0e4732813f6d86311a2e97a0514bc1af_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a0e4732813f6d86311a2e97a0514bc1af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_quickness_1_1_quickness_manager_ab11cdab54a0e233abd0b1b6211bf68d5}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!CreateTouchObject@{CreateTouchObject}}
+\index{CreateTouchObject@{CreateTouchObject}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{CreateTouchObject()}{CreateTouchObject()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_ab11cdab54a0e233abd0b1b6211bf68d5} 
+void Quickness.\+Quickness\+Manager.\+Create\+Touch\+Object (\begin{DoxyParamCaption}\item[{Transform}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00116}{116}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos.childCount\ ==\ 0)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ touchObj\_R\ =\ Instantiate(\mbox{\hyperlink{class_quickness_1_1_quickness_manager_a20ee83996814bd7cf2b3e36c6564fc05}{touchObject}},\ pos.position,\ Quaternion.identity,\ pos);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touchObj\_R.transform.localScale\ =\ Vector3.zero;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touchObj\_R.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f),\ 0.1f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touchObj\_R.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.4f,\ 1.4f,\ 1.4f),\ 0.2f).SetEase(Ease.OutBack);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_ab11cdab54a0e233abd0b1b6211bf68d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_quickness_1_1_quickness_manager_aad99aaa7456849fc13f8743d7d587c47}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!RemovePosition@{RemovePosition}}
+\index{RemovePosition@{RemovePosition}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{RemovePosition()}{RemovePosition()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_aad99aaa7456849fc13f8743d7d587c47} 
+void Quickness.\+Quickness\+Manager.\+Remove\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{position}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00059}{59}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ randomPos����\ ��ġ��\ ������Ʈ��\ ��ġ\ �ε�����\ ����}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ target\ =\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}}.Find(pos\ =>\ pos.position\ ==\ position);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}}.Remove(target);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ���ο� ��ġ��\ �߰��Ͽ�\ randomPos��\ �׻� 3����\ �����ϵ��� �մϴ�.}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}{randomPos}}.Count\ <\ 3)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a32b516f813a2604d351b61772e8de1b0}{AddNewPosition}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_aad99aaa7456849fc13f8743d7d587c47_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_quickness_1_1_quickness_manager_a769876d2b6e5a4903ae9964a6f5b6789}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!SettingRandomPos@{SettingRandomPos}}
+\index{SettingRandomPos@{SettingRandomPos}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{SettingRandomPos()}{SettingRandomPos()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a769876d2b6e5a4903ae9964a6f5b6789} 
+void Quickness.\+Quickness\+Manager.\+Setting\+Random\+Pos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}.Clear();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ touchPos��\ �ε���\ ���� ����}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touchPos}}.Count\ -\/\ 1;\ i\ >\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touchPos}}[i];}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touchPos}}[i]\ =\ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touchPos}}[randomIndex];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touchPos}}[randomIndex]\ =\ temp;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}{setTouchPos}}.AddRange(\mbox{\hyperlink{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}{touchPos}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a0e4732813f6d86311a2e97a0514bc1af}{AddRandomPos}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a769876d2b6e5a4903ae9964a6f5b6789_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a769876d2b6e5a4903ae9964a6f5b6789_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_quickness_1_1_quickness_manager_a7ee754f3c852c41fd74e0b7a363608f2}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!Start@{Start}}
+\index{Start@{Start}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a7ee754f3c852c41fd74e0b7a363608f2} 
+void Quickness.\+Quickness\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_quickness_manager_a769876d2b6e5a4903ae9964a6f5b6789}{SettingRandomPos}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_quickness_manager_a7ee754f3c852c41fd74e0b7a363608f2_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!randomPos@{randomPos}}
+\index{randomPos@{randomPos}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{randomPos}{randomPos}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a576443d8da7c66543d42c267f226e692} 
+List$<$Transform$>$ Quickness.\+Quickness\+Manager.\+random\+Pos = new List$<$Transform$>$()}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!setTouchPos@{setTouchPos}}
+\index{setTouchPos@{setTouchPos}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{setTouchPos}{setTouchPos}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a912f21e1230ba12b8f2b6eacf844439b} 
+List$<$Transform$>$ Quickness.\+Quickness\+Manager.\+set\+Touch\+Pos}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_quickness_manager_a20ee83996814bd7cf2b3e36c6564fc05}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!touchObject@{touchObject}}
+\index{touchObject@{touchObject}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{touchObject}{touchObject}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a20ee83996814bd7cf2b3e36c6564fc05} 
+Game\+Object Quickness.\+Quickness\+Manager.\+touch\+Object}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45}\index{Quickness.QuicknessManager@{Quickness.QuicknessManager}!touchPos@{touchPos}}
+\index{touchPos@{touchPos}!Quickness.QuicknessManager@{Quickness.QuicknessManager}}
+\doxysubsubsection{\texorpdfstring{touchPos}{touchPos}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_quickness_manager_a118d8946fcc5fab753e30bc213376c45} 
+List$<$Transform$>$ Quickness.\+Quickness\+Manager.\+touch\+Pos}
+
+
+
+\mbox{\hyperlink{_quickness_manager_8cs_source}{Quickness\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_quickness_manager_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Exercise/\+Quickness/\mbox{\hyperlink{_quickness_manager_8cs}{Quickness\+Manager.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,317 @@
+\doxysection{Cartoon\+FX.\+CFXR\+\_\+\+Particle\+Text 클래스 참조}
+\hypertarget{class_cartoon_f_x_1_1_c_f_x_r___particle_text}{}\label{class_cartoon_f_x_1_1_c_f_x_r___particle_text}\index{CartoonFX.CFXR\_ParticleText@{CartoonFX.CFXR\_ParticleText}}
+
+
+Cartoon\+FX.\+CFXR\+\_\+\+Particle\+Text에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{class_cartoon_f_x_1_1_c_f_x_r___particle_text__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Cartoon\+FX.\+CFXR\+\_\+\+Particle\+Text에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{class_cartoon_f_x_1_1_c_f_x_r___particle_text__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a76c56e546672306c6b3061dac6a2d926}{Update\+Text}} (string new\+Text=null, float? new\+Size=null, Color? new\+Color1=null, Color? new\+Color2=null, Color? new\+Background\+Color=null, float? new\+Lifetime\+Multiplier=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{is\+Dynamic}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_source}{CFXR\+\_\+\+Particle\+Text.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a76c56e546672306c6b3061dac6a2d926}\index{CartoonFX.CFXR\_ParticleText@{CartoonFX.CFXR\_ParticleText}!UpdateText@{UpdateText}}
+\index{UpdateText@{UpdateText}!CartoonFX.CFXR\_ParticleText@{CartoonFX.CFXR\_ParticleText}}
+\doxysubsubsection{\texorpdfstring{UpdateText()}{UpdateText()}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a76c56e546672306c6b3061dac6a2d926} 
+void Cartoon\+FX.\+CFXR\+\_\+\+Particle\+Text.\+Update\+Text (\begin{DoxyParamCaption}\item[{string}]{new\+Text}{ = {\ttfamily null}, }\item[{float?}]{new\+Size}{ = {\ttfamily null}, }\item[{Color?}]{new\+Color1}{ = {\ttfamily null}, }\item[{Color?}]{new\+Color2}{ = {\ttfamily null}, }\item[{Color?}]{new\+Background\+Color}{ = {\ttfamily null}, }\item[{float?}]{new\+Lifetime\+Multiplier}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_source}{CFXR\+\_\+\+Particle\+Text.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_source_l00122}{122}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ allow\ updating\ text\ for\ GameObjects\ that\ aren't\ prefabs,\ since\ we\ are\ possibly\ destroying/adding\ GameObjects}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ var\ prefabInstanceStatus\ =\ PrefabUtility.GetPrefabInstanceStatus(\textcolor{keyword}{this});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ var\ prefabAssetType\ =\ PrefabUtility.GetPrefabAssetType(\textcolor{keyword}{this});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(prefabInstanceStatus\ ==\ PrefabInstanceStatus.NotAPrefab\ \&\&\ prefabAssetType\ ==\ PrefabAssetType.NotAPrefab))}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Application.isPlaying)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InitializeFirstParticle();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.isPlaying\ \&\&\ !\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}})}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.Exception(\textcolor{stringliteral}{"{}[CFXR\_ParticleText]\ You\ cannot\ update\ the\ text\ if\ it's\ not\ marked\ as\ dynamic."{}});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newText\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_ad4a4df1e12e4e033f8007d3e5340db29}{letterCase}})}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CFXR\_ParticleTextFontAsset.LetterCase.Lower:}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newText\ =\ newText.ToLowerInvariant();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CFXR\_ParticleTextFontAsset.LetterCase.Upper:}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newText\ =\ newText.ToUpperInvariant();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ new\ text\ doesn't\ contain\ invalid\ characters}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{char}\ c\ \textcolor{keywordflow}{in}\ newText)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{char}.IsWhiteSpace(c))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a5b463a5571b7a156d1bed7927ab47fed}{CharSequence}}.IndexOf(c)\ <\ 0)}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.Exception(\textcolor{stringliteral}{"{}[CFXR\_ParticleText]\ Invalid\ character\ supplied\ for\ the\ dynamic\ text:\ '"{}}\ +\ c\ +\ \textcolor{stringliteral}{"{}'\(\backslash\)nThe\ allowed\ characters\ from\ the\ selected\ font\ are:\ "{}}\ +\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a5b463a5571b7a156d1bed7927ab47fed}{CharSequence}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.text\ =\ newText;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newSize\ !=\ \textcolor{keyword}{null})\ this.size\ =\ newSize.Value;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newColor1\ !=\ \textcolor{keyword}{null})\ this.color1\ =\ newColor1.Value;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newColor2\ !=\ \textcolor{keyword}{null})\ this.color2\ =\ newColor2.Value;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newBackgroundColor\ !=\ \textcolor{keyword}{null})\ this.backgroundColor\ =\ newBackgroundColor.Value;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newLifetimeMultiplier\ !=\ \textcolor{keyword}{null})\ this.lifetimeMultiplier\ =\ newLifetimeMultiplier.Value;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (text\ ==\ \textcolor{keyword}{null}\ ||\ font\ ==\ \textcolor{keyword}{null}\ ||\ !font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_ad98bdfa6ffa8cda04e61a4aaf2641432}{IsValid}}())}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.transform.childCount\ ==\ 0)}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.Exception(\textcolor{stringliteral}{"{}[CFXR\_ParticleText]\ A\ disabled\ GameObject\ with\ a\ ParticleSystem\ component\ is\ required\ as\ the\ first\ child\ when\ 'isDyanmic'\ is\ enabled,\ so\ that\ its\ settings\ can\ be\ used\ as\ a\ base\ for\ the\ generated\ characters."{}});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ process\ text\ and\ calculate\ total\ width\ offset}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalWidth\ =\ 0f;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ charCount\ =\ 0;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ text.Length;\ i++)}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{char}.IsWhiteSpace(text[i]))}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 0)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalWidth\ +=\ letterSpacing\ *\ size;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charCount++;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 0)}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a5b463a5571b7a156d1bed7927ab47fed}{CharSequence}}.IndexOf(text[i]);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ sprite\ =\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_ad8e6026d7ed15d5239a717cf2abd408a}{CharSprites}}[index];}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ charWidth\ =\ sprite.rect.width\ +\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a7f86c08749394ccb86fe5db061d5f745}{CharKerningOffsets}}[index].\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_1_1_kerning_a11ffb4ff8e2b88d700db66965fbe3622}{post}}\ +\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a7f86c08749394ccb86fe5db061d5f745}{CharKerningOffsets}}[index].\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_1_1_kerning_aa32f341f532ab8cf8284a2285443110f}{pre}};}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalWidth\ +=\ (charWidth\ *\ 0.01f\ +\ letterSpacing)\ *\ size;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ delete\ all\ children\ in\ editor,\ to\ make\ sure\ we\ refresh\ the\ particle\ systems\ based\ on\ the\ first\ one}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Application.isPlaying)}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ length\ =\ this.transform.childCount;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ overflow\ =\ 0;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (this.transform.childCount\ >\ 1)}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}.DestroyImmediate(this.transform.GetChild(\textcolor{keyword}{this}.transform.childCount\ -\/\ 1).gameObject);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ overflow++;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (overflow\ >\ 1000)}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ just\ in\ case...}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}Overflow!"{}});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charCount\ >\ 0)}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ needed\ instances}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ childCount\ =\ this.transform.childCount\ -\/\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}}\ ?\ 1\ :\ 0);\ \textcolor{comment}{//\ first\ one\ is\ the\ particle\ source\ and\ always\ deactivated}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childCount\ <\ charCount)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ instantiate\ new\ letter\ GameObjects\ if\ needed}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ model\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}}\ ?\ this.transform.GetChild(0).gameObject\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ childCount;\ i\ <\ charCount;\ i++)}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ newLetter\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}}\ ?\ Instantiate(model,\ this.transform)\ :\ new\ GameObject();}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}})}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newLetter.transform.SetParent(this.transform);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newLetter.AddComponent<ParticleSystem>();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newLetter.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newLetter.transform.localRotation\ =\ Quaternion.identity;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ each\ letter}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ offset\ =\ totalWidth\ /\ 2f;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalWidth\ =\ 0f;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentChild\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ when\ not\ dynamic,\ we\ use\ CopySerialized\ to\ propagate\ the\ settings\ to\ the\ instances}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ sourceParticle\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}}\ ?\ null\ :\ this.GetComponent<ParticleSystem>();}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ sourceParticleRenderer\ =\ this.GetComponent<ParticleSystemRenderer>();}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ text.Length;\ i++)}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ letter\ =\ text[i];}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{char}.IsWhiteSpace(letter))}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalWidth\ +=\ letterSpacing\ *\ size;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentChild++;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a5b463a5571b7a156d1bed7927ab47fed}{CharSequence}}.IndexOf(text[i]);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ sprite\ =\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_ad8e6026d7ed15d5239a717cf2abd408a}{CharSprites}}[index];}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ char\ particle\ size\ ratio}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ ratio\ =\ size\ *\ sprite.rect.width\ /\ 50f;}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ char\ position}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalWidth\ +=\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a7f86c08749394ccb86fe5db061d5f745}{CharKerningOffsets}}[index].\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_1_1_kerning_aa32f341f532ab8cf8284a2285443110f}{pre}}\ *\ 0.01f\ *\ size;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ position\ =\ (totalWidth\ -\/\ offset)\ /\ ratio;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ charWidth\ =\ sprite.rect.width\ +\ font.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_a7f86c08749394ccb86fe5db061d5f745}{CharKerningOffsets}}[index].\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_1_1_kerning_a11ffb4ff8e2b88d700db66965fbe3622}{post}};}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalWidth\ +=\ (charWidth\ *\ 0.01f\ +\ letterSpacing)\ *\ size;}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ particle\ system\ for\ this\ letter}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ letterObj\ =\ this.transform.GetChild(currentChild).gameObject;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ letterObj.name\ =\ letter.ToString();}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ ps\ =\ letterObj.GetComponent<ParticleSystem>();}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}})}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorUtility.CopySerialized(sourceParticle,\ ps);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainModule\ =\ ps.main;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startSizeXMultiplier\ =\ baseScaleX\ *\ ratio;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startSizeYMultiplier\ =\ baseScaleY\ *\ ratio;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startSizeZMultiplier\ =\ baseScaleZ\ *\ ratio;}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ps.textureSheetAnimation.SetSprite(0,\ sprite);}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startRotation\ =\ Mathf.Deg2Rad\ *\ rotation;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startColor\ =\ backgroundColor;}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ customData\ =\ ps.customData;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ customData.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ customData.SetColor(ParticleSystemCustomData.Custom1,\ color1);}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ customData.SetColor(ParticleSystemCustomData.Custom2,\ color2);}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cumulativeDelay)}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startDelay\ =\ delay\ *\ i;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startLifetime\ =\ Mathf.LerpUnclamped(baseLifetime,\ baseLifetime\ +\ (delay\ *\ (text.Length\ -\/\ i)),\ compensateLifetime\ /\ lifetimeMultiplier);}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startDelay\ =\ delay;}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mainModule.startLifetime\ =\ mainModule.startLifetime.constant\ *\ lifetimeMultiplier;}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ particle\ system\ renderer\ parameters}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ particleRenderer\ =\ ps.GetComponent<ParticleSystemRenderer>();}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}{isDynamic}})}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorUtility.CopySerialized(sourceParticleRenderer,\ particleRenderer);}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleRenderer.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleRenderer.pivot\ =\ \textcolor{keyword}{new}\ Vector3(basePivot.x\ +\ position,\ basePivot.y,\ basePivot.z);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleRenderer.sortingFudge\ +=\ i\ *\ sortingFudgeOffset;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ active\ state\ for\ needed\ letters\ only}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1,\ l\ =\ this.transform.childCount;\ i\ <\ l;\ i++)}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.GetChild(i).gameObject.SetActive(i\ <=\ charCount);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR }}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ play\ the\ effect\ in\ Editor}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Application.isPlaying)}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.GetComponent<ParticleSystem>().Clear(\textcolor{keyword}{true});}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.GetComponent<ParticleSystem>().Play(\textcolor{keyword}{true});}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a76c56e546672306c6b3061dac6a2d926_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d}\index{CartoonFX.CFXR\_ParticleText@{CartoonFX.CFXR\_ParticleText}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!CartoonFX.CFXR\_ParticleText@{CartoonFX.CFXR\_ParticleText}}
+\doxysubsubsection{\texorpdfstring{isDynamic}{isDynamic}}
+{\footnotesize\ttfamily \label{class_cartoon_f_x_1_1_c_f_x_r___particle_text_a31db380e33ab04ad969a3b070acf995d} 
+bool Cartoon\+FX.\+CFXR\+\_\+\+Particle\+Text.\+is\+Dynamic}
+
+
+
+\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_source}{CFXR\+\_\+\+Particle\+Text.\+cs}} 파일의 \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+JMO Assets/\+Cartoon FX Remaster/\+CFXR Assets/\+Scripts/\mbox{\hyperlink{_c_f_x_r___particle_text_8cs}{CFXR\+\_\+\+Particle\+Text.\+cs}}\end{DoxyCompactItemize}

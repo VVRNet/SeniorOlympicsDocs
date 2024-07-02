@@ -1,0 +1,38 @@
+\doxysection{Cw\+Seed\+Attribute.\+cs}
+\hypertarget{_cw_seed_attribute_8cs_source}{}\label{_cw_seed_attribute_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Extras/Scripts/CwSeedAttribute.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Extras/Scripts/CwSeedAttribute.cs}}
+\mbox{\hyperlink{_cw_seed_attribute_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00006}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_seed_attribute}{00006}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_seed_attribute}{CwSeedAttribute}}\ :\ PropertyAttribute}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00008}00008\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00011}00011\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00016}00016\ \ \ \ \ [CustomPropertyDrawer(typeof(CwSeedAttribute))]}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CwSeedDrawer\ :\ PropertyDrawer}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnGUI(Rect\ position,\ SerializedProperty\ property,\ GUIContent\ label)}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ var\ rect1\ =\ position;\ rect1.xMax\ =\ position.xMax\ -\/\ 20;}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ var\ rect2\ =\ position;\ rect2.xMin\ =\ position.xMax\ -\/\ 18;}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect1,\ property,\ label);}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GUI.Button(rect2,\ \textcolor{stringliteral}{"{}R"{}})\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ property.intValue\ =\ Random.Range(\textcolor{keywordtype}{int}.MinValue,\ \textcolor{keywordtype}{int}.MaxValue);}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_seed_attribute_8cs_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

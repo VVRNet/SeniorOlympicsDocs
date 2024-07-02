@@ -1,0 +1,472 @@
+\doxysection{Skeleton\+Ragdoll2\+D.\+cs}
+\hypertarget{_skeleton_ragdoll2_d_8cs_source}{}\label{_skeleton_ragdoll2_d_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SkeletonUtility Modules/SkeletonRagdoll2D.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SkeletonUtility Modules/SkeletonRagdoll2D.cs}}
+\mbox{\hyperlink{_skeleton_ragdoll2_d_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00030}00030\ \textcolor{comment}{//\ Contributed\ by:\ Mitch\ Thompson}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00032}00032\ \textcolor{preprocessor}{\#if\ UNITY\_2019\_2\ ||\ UNITY\_2019\_3\ ||\ UNITY\_2019\_4\ ||\ UNITY\_2020\_1\ ||\ UNITY\_2020\_2\ }\textcolor{comment}{//\ note:\ 2020.3+\ uses\ old\ bahavior\ again}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00033}00033\ \textcolor{preprocessor}{\#define\ HINGE\_JOINT\_2019\_BEHAVIOUR}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00034}00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00036}00036\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00037}00037\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00038}00038\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00040}00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00041}00041\ \ \ \ \ [RequireComponent(typeof(SkeletonRenderer))]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d}{SkeletonRagdoll2D}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Transform\ parentSpaceHelper;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00045}00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Inspector}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Hierarchy"{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_bone}{SpineBone}}]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00048}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a320caeba1c90f6cf1bbaf3ceb093a650}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a320caeba1c90f6cf1bbaf3ceb093a650}{startingBoneName}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_bone}{SpineBone}}]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00050}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a8a6f37da1fd8506a84c69eb8bbcc4eb7}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a8a6f37da1fd8506a84c69eb8bbcc4eb7}{stopBoneNames}}\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Parameters"{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00053}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aaff267d0d2219b1069727b1c76139ea6}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aaff267d0d2219b1069727b1c76139ea6}{applyOnStart}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Warning!\ You\ will\ have\ to\ re-\/enable\ and\ tune\ mix\ values\ manually\ if\ attempting\ to\ remove\ the\ ragdoll\ system."{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00055}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a24fca2692727fbe8a1d7b789c5bf8853}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a24fca2692727fbe8a1d7b789c5bf8853}{disableIK}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00056}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ac0921b1f66ea7ee27d8a5c5cff36eb8e}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ac0921b1f66ea7ee27d8a5c5cff36eb8e}{disableOtherConstraints}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Set\ RootRigidbody\ IsKinematic\ to\ true\ when\ Apply\ is\ called."{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00059}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a9534be9f8b31b8918d107eb356b429e5}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a9534be9f8b31b8918d107eb356b429e5}{pinStartBone}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af1166f70b9abfb0b62540c67eb944b10}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af1166f70b9abfb0b62540c67eb944b10}{gravityScale}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}If\ no\ BoundingBox\ Attachment\ is\ attached\ to\ a\ bone,\ this\ becomes\ the\ default\ Width\ or\ Radius\ of\ a\ Bone's\ ragdoll\ Rigidbody"{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00062}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ae10af0feb826c88db359746f6ae1399a}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ae10af0feb826c88db359746f6ae1399a}{thickness}}\ =\ 0.125f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Default\ rotational\ limit\ value.\ Min\ is\ negative\ this\ value,\ Max\ is\ this\ value."{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00064}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a63d30e9c6b0861d5e9e4e033c4e46dc4}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a63d30e9c6b0861d5e9e4e033c4e46dc4}{rotationLimit}}\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00065}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a3fcc8bb7d4185526e67176bbc51c2950}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a3fcc8bb7d4185526e67176bbc51c2950}{rootMass}}\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}If\ your\ ragdoll\ seems\ unstable\ or\ uneffected\ by\ limits,\ try\ lowering\ this\ value."{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ [Range(0.01f,\ 1f)]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00068}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af3e5a0885be8343f032f5787fe89f134}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af3e5a0885be8343f032f5787fe89f134}{massFalloffFactor}}\ =\ 0.4f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}The\ layer\ assigned\ to\ all\ of\ the\ rigidbody\ parts."{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll}{SkeletonRagdoll}}.LayerField]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00071}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af5aa4abd19026fcdf55f6815eab5b3f0}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af5aa4abd19026fcdf55f6815eab5b3f0}{colliderLayer}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ [Range(0,\ 1)]}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00073}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{00073}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00074}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a5a5ee9be587f63c3cc8ebe185f3eb3a0}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a5a5ee9be587f63c3cc8ebe185f3eb3a0}{oldRagdollBehaviour}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00075}00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_animation}{ISkeletonAnimation}}\ targetSkeletonComponent;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }BoneFlipEntry\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ BoneFlipEntry\ (\textcolor{keywordtype}{bool}\ flipX,\ \textcolor{keywordtype}{bool}\ flipY)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.flipX\ =\ flipX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.flipY\ =\ flipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ flipX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ flipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ Dictionary<Bone,\ Transform>\ boneTable\ =\ \textcolor{keyword}{new}\ Dictionary<Bone,\ Transform>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ Dictionary<Bone,\ BoneFlipEntry>\ boneFlipTable\ =\ \textcolor{keyword}{new}\ Dictionary<Bone,\ BoneFlipEntry>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ Transform\ ragdollRoot;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00091}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a2214f8a0ae9338cc3785bc0ca9a93a2c}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rigidbody2D\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a2214f8a0ae9338cc3785bc0ca9a93a2c}{RootRigidbody}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00092}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aeaf446bd541f4dc423f3c77649d4fe91}{00092}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aeaf446bd541f4dc423f3c77649d4fe91}{StartingBone}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ Vector2\ rootOffset;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00094}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a7ee2465e47bdd0bce8a8edfe73d02f72}{00094}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Vector3\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a7ee2465e47bdd0bce8a8edfe73d02f72}{RootOffset}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.rootOffset;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isActive;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00096}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aeecfd8dc2860a12ab930957cedf92142}{00096}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aeecfd8dc2860a12ab930957cedf92142}{IsActive}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.isActive;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ IEnumerator\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentSpaceHelper\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper\ =\ (\textcolor{keyword}{new}\ GameObject(\textcolor{stringliteral}{"{}Parent\ Space\ Helper"{}})).transform;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ targetSkeletonComponent\ =\ GetComponent<SkeletonRenderer>()\ as\ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_animation}{ISkeletonAnimation}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (targetSkeletonComponent\ ==\ null)\ Debug.LogError("{}Attached\ \mbox{\hyperlink{namespace_spine}{Spine}}\ component\ does\ not\ implement\ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_animation}{ISkeletonAnimation}}.\ This\ script\ is\ not\ compatible."{});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ skeleton\ =\ targetSkeletonComponent.\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aaff267d0d2219b1069727b1c76139ea6}{applyOnStart}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a564ed398fdf3ae0e0cd1c20938688999}{Apply}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00113}00113\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ API}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00114}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a572ef6964d271d73d3bf7902bcdc3ec6}{00114}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rigidbody2D[]\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a572ef6964d271d73d3bf7902bcdc3ec6}{RigidbodyArray}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isActive)}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Rigidbody2D[0];}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody2D[]\ rigidBodies\ =\ \textcolor{keyword}{new}\ Rigidbody2D[boneTable.Count];}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ boneTable.Values)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rigidBodies[i]\ =\ t.GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rigidBodies;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00130}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a51a481533d1fd104ae575e345415a885}{00130}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Vector3\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a51a481533d1fd104ae575e345415a885}{EstimatedSkeletonPosition}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.RootRigidbody.position\ -\/\ rootOffset;\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00135}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a564ed398fdf3ae0e0cd1c20938688999}{00135}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a564ed398fdf3ae0e0cd1c20938688999}{Apply}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ startingBone\ =\ this.StartingBone\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ac17fa59f8524f84672419a2e9c676666}{FindBone}}(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a320caeba1c90f6cf1bbaf3ceb093a650}{startingBoneName}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ RecursivelyCreateBoneProxies(startingBone);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a2214f8a0ae9338cc3785bc0ca9a93a2c}{RootRigidbody}}\ =\ boneTable[startingBone].GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ RootRigidbody.isKinematic\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a9534be9f8b31b8918d107eb356b429e5}{pinStartBone}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ RootRigidbody.mass\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a3fcc8bb7d4185526e67176bbc51c2950}{rootMass}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ List<Collider2D>\ boneColliders\ =\ \textcolor{keyword}{new}\ List<Collider2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<Bone,\ Transform>\ pair\ \textcolor{keywordflow}{in}\ boneTable)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ b\ =\ pair.Key;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ t\ =\ pair.Value;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ parentTransform;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneColliders.Add(t.GetComponent<Collider2D>());}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ ==\ startingBone)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot\ =\ \textcolor{keyword}{new}\ GameObject(\textcolor{stringliteral}{"{}RagdollRoot"{}}).transform;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.SetParent(transform,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ ==\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a9238949a0febaa09e57777e47c8bf251}{RootBone}})\ \{\ \textcolor{comment}{//\ RagdollRoot\ is\ skeleton\ root's\ parent,\ thus\ the\ skeleton's\ scale\ and\ position.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_aa6929dedee376680ea44420a32977548}{X}},\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ad076b350b843c874fb5cff64f826d9de}{Y}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localRotation\ =\ (skeleton.ScaleX\ <\ 0)\ ?\ Quaternion.Euler(0,\ 0,\ 180.0f)\ :\ Quaternion.identity;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(b.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}.\mbox{\hyperlink{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570}{WorldX}},\ b.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}.\mbox{\hyperlink{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c}{WorldY}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localRotation\ =\ Quaternion.Euler(0,\ 0,\ b.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}.\mbox{\hyperlink{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf}{WorldRotationX}}\ -\/\ b.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}.\mbox{\hyperlink{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401}{ShearX}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentTransform\ =\ ragdollRoot;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rootOffset\ =\ t.position\ -\/\ transform.position;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentTransform\ =\ boneTable[b.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}];}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ joint\ and\ attach\ to\ parent.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody2D\ rbParent\ =\ parentTransform.GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rbParent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HingeJoint2D\ joint\ =\ t.gameObject.AddComponent<HingeJoint2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.connectedBody\ =\ rbParent;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ parentTransform.InverseTransformPoint(t.position);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.connectedAnchor\ =\ localPos;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.GetComponent<Rigidbody2D>().mass\ =\ joint.connectedBody.mass\ *\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af3e5a0885be8343f032f5787fe89f134}{massFalloffFactor}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00177}00177\ \textcolor{preprocessor}{\#if\ HINGE\_JOINT\_2019\_BEHAVIOUR}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ referenceAngle\ =\ (rbParent.transform.eulerAngles.z\ -\/\ t.eulerAngles.z\ +\ 360f)\ \%\ 360f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minAngle\ =\ referenceAngle\ -\/\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a63d30e9c6b0861d5e9e4e033c4e46dc4}{rotationLimit}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxAngle\ =\ referenceAngle\ +\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a63d30e9c6b0861d5e9e4e033c4e46dc4}{rotationLimit}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (maxAngle\ >\ 180f)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minAngle\ -\/=\ 360f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxAngle\ -\/=\ 360f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00185}00185\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minAngle\ =\ -\/\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a63d30e9c6b0861d5e9e4e033c4e46dc4}{rotationLimit}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxAngle\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a63d30e9c6b0861d5e9e4e033c4e46dc4}{rotationLimit}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00188}00188\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.limits\ =\ \textcolor{keyword}{new}\ JointAngleLimits2D\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ min\ =\ minAngle,}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\ =\ maxAngle}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.useLimits\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ignore\ collisions\ among\ bones.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ boneColliders.Count;\ x++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ boneColliders.Count;\ y++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ y)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Physics2D.IgnoreCollision(boneColliders[x],\ boneColliders[y]);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Destroy\ existing\ override-\/mode\ SkeletonUtility\ bones.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_utility_bone}{SkeletonUtilityBone}}[]\ utilityBones\ =\ GetComponentsInChildren<SkeletonUtilityBone>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (utilityBones.Length\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<string>\ destroyedUtilityBoneNames\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_utility_bone}{SkeletonUtilityBone}}\ ub\ \textcolor{keywordflow}{in}\ utilityBones)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ub.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_utility_bone_a9cf4a0521a92bcd3fec7e513d9382a8e}{mode}}\ ==\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_utility_bone}{SkeletonUtilityBone}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_utility_bone_aec3397f6106156b665b8b44648ccb47b}{Mode}}.Override)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destroyedUtilityBoneNames.Add(ub.gameObject.name);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(ub.gameObject);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (destroyedUtilityBoneNames.Count\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ msg\ =\ \textcolor{stringliteral}{"{}Destroyed\ Utility\ Bones:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ destroyedUtilityBoneNames.Count;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ msg\ +=\ destroyedUtilityBoneNames[i];}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ destroyedUtilityBoneNames.Count\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ msg\ +=\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(msg);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ skeleton\ constraints.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a24fca2692727fbe8a1d7b789c5bf8853}{disableIK}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<IkConstraint>}}\ ikConstraints\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a9fc9acb3f7d51836ebc40388758e13c6}{IkConstraints}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ ikConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a1f98637f699b80b9cf46b3638962b0a0}{Count}};\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ikConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].Mix\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ac0921b1f66ea7ee27d8a5c5cff36eb8e}{disableOtherConstraints}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<TransformConstraint>}}\ transformConstraints\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ae0407b2eb25cb28c9eebaf87ef83e505}{TransformConstraints}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a1f98637f699b80b9cf46b3638962b0a0}{Count}};\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixRotate\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixScaleX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixScaleY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixShearY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<PathConstraint>}}\ pathConstraints\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ab55c5668b8473f8df274ac017a16bb4f}{PathConstraints}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ pathConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a1f98637f699b80b9cf46b3638962b0a0}{Count}};\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixRotate\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathConstraints.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i].MixY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ targetSkeletonComponent.UpdateWorld\ +=\ UpdateSpineSkeleton;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00257}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a6e927e79f8222b2e1c119baeb60537fd}{00257}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Coroutine\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a6e927e79f8222b2e1c119baeb60537fd}{SmoothMix}}\ (\textcolor{keywordtype}{float}\ target,\ \textcolor{keywordtype}{float}\ duration)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ StartCoroutine(SmoothMixCoroutine(target,\ duration));}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ IEnumerator\ SmoothMixCoroutine\ (\textcolor{keywordtype}{float}\ target,\ \textcolor{keywordtype}{float}\ duration)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startMix\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_acdcb41164c617375a198124234134312}{SetBonesToSetupPose}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}}\ =\ Mathf.SmoothStep(startMix,\ target,\ (Time.time\ -\/\ startTime)\ /\ duration);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00272}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aa9523b35d4bc437732584006ee4e4469}{00272}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aa9523b35d4bc437732584006ee4e4469}{SetSkeletonPosition}}\ (Vector3\ worldPosition)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isActive)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(\textcolor{stringliteral}{"{}Can't\ call\ SetSkeletonPosition\ while\ Ragdoll\ is\ not\ active!"{}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ offset\ =\ worldPosition\ -\/\ transform.position;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ transform.position\ =\ worldPosition;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ boneTable.Values)}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.position\ -\/=\ offset;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ UpdateSpineSkeleton(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_af50f9c4c4f3349cdb108e29d8f96f52e}{UpdateWorldTransform}}(\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a76c2052feb3e27c26a6ec7aa3d377343}{Physics}}.Update);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00288}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af98701bda804ff47bdb437acf36367f8}{00288}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af98701bda804ff47bdb437acf36367f8}{Remove}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ boneTable.Values)}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(t.gameObject);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(ragdollRoot.gameObject);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ boneTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ targetSkeletonComponent.UpdateWorld\ -\/=\ UpdateSpineSkeleton;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00298}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a50aadd4510fcf9efc806a3363641562d}{00298}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rigidbody2D\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a50aadd4510fcf9efc806a3363641562d}{GetRigidbody}}\ (\textcolor{keywordtype}{string}\ boneName)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ac17fa59f8524f84672419a2e9c676666}{FindBone}}(boneName);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (bone\ !=\ \textcolor{keyword}{null}\ \&\&\ boneTable.ContainsKey(bone))\ ?\ boneTable[bone].GetComponent<Rigidbody2D>()\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00302}00302\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RecursivelyCreateBoneProxies\ (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ boneName\ =\ b.\mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{Data}}.\mbox{\hyperlink{class_spine_1_1_bone_data_a4333ca2630ac562a9561650ec128d864}{Name}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a8a6f37da1fd8506a84c69eb8bbcc4eb7}{stopBoneNames}}.Contains(boneName))}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ boneGameObject\ =\ \textcolor{keyword}{new}\ GameObject(boneName);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ boneGameObject.layer\ =\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af5aa4abd19026fcdf55f6815eab5b3f0}{colliderLayer}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ t\ =\ boneGameObject.transform;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ boneTable.Add(b,\ t);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ t.parent\ =\ transform;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ t.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(b.\mbox{\hyperlink{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570}{WorldX}},\ b.\mbox{\hyperlink{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c}{WorldY}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ t.localRotation\ =\ Quaternion.Euler(0,\ 0,\ b.\mbox{\hyperlink{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf}{WorldRotationX}}\ -\/\ b.\mbox{\hyperlink{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401}{ShearX}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ t.localScale\ =\ \textcolor{keyword}{new}\ Vector3(b.\mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{WorldScaleX}},\ b.\mbox{\hyperlink{class_spine_1_1_bone_ad86cf0fe043b18cd39791f38f411fb2a}{WorldScaleY}},\ 1);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ List<Collider2D>\ colliders\ =\ AttachBoundingBoxRagdollColliders(b,\ boneGameObject,\ skeleton,\ this.gravityScale);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (colliders.Count\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ length\ =\ b.\mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{Data}}.\mbox{\hyperlink{class_spine_1_1_bone_data_a70e065fd258060e337536d086bd44e19}{Length}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CircleCollider2D\ circle\ =\ boneGameObject.AddComponent<CircleCollider2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ circle.radius\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ae10af0feb826c88db359746f6ae1399a}{thickness}}\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoxCollider2D\ box\ =\ boneGameObject.AddComponent<BoxCollider2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ box.size\ =\ \textcolor{keyword}{new}\ Vector2(length,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ae10af0feb826c88db359746f6ae1399a}{thickness}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ box.offset\ =\ \textcolor{keyword}{new}\ Vector2(length\ *\ 0.5f,\ 0);\ \textcolor{comment}{//\ box.center\ in\ UNITY\_4}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody2D\ rb\ =\ boneGameObject.GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rb\ ==\ \textcolor{keyword}{null})\ rb\ =\ boneGameObject.AddComponent<Rigidbody2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ rb.gravityScale\ =\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af1166f70b9abfb0b62540c67eb944b10}{gravityScale}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Bone\ child\ \textcolor{keywordflow}{in}\ b.\mbox{\hyperlink{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}{Children}})}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RecursivelyCreateBoneProxies(child);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateSpineSkeleton\ (ISkeletonAnimation\ animatedSkeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parentFlipX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parentFlipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ startingBone\ =\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aeaf446bd541f4dc423f3c77649d4fe91}{StartingBone}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ GetStartBoneParentFlipState(out\ parentFlipX,\ out\ parentFlipY);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<Bone,\ Transform>\ pair\ \textcolor{keywordflow}{in}\ boneTable)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ b\ =\ pair.Key;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ t\ =\ pair.Value;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isStartingBone\ =\ (b\ ==\ startingBone);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ parentBone\ =\ b.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ parentTransform\ =\ isStartingBone\ ?\ ragdollRoot\ :\ boneTable[parentBone];}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isStartingBone)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoneFlipEntry\ parentBoneFlip\ =\ boneFlipTable[parentBone];}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentFlipX\ =\ parentBoneFlip.flipX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentFlipY\ =\ parentBoneFlip.flipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flipX\ =\ parentFlipX\ \string^\ (b.ScaleX\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flipY\ =\ parentFlipY\ \string^\ (b.ScaleY\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoneFlipEntry\ boneFlip;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneFlipTable.TryGetValue(b,\ out\ boneFlip);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneFlip.flipX\ =\ flipX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneFlip.flipY\ =\ flipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneFlipTable[b]\ =\ boneFlip;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flipXOR\ =\ flipX\ \string^\ flipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parentFlipXOR\ =\ parentFlipX\ \string^\ parentFlipY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00370}00370\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a5a5ee9be587f63c3cc8ebe185f3eb3a0}{oldRagdollBehaviour}}\ \&\&\ isStartingBone)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ !=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a9238949a0febaa09e57777e47c8bf251}{RootBone}})\ \{\ \textcolor{comment}{//\ RagdollRoot\ is\ not\ skeleton\ root.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(parentBone.WorldX,\ parentBone.WorldY,\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localRotation\ =\ Quaternion.Euler(0,\ 0,\ parentBone.WorldRotationX\ -\/\ parentBone.ShearX);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localScale\ =\ \textcolor{keyword}{new}\ Vector3(parentBone.WorldScaleX,\ parentBone.WorldScaleY,\ 1);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ parentTransformWorldPosition\ =\ parentTransform.position;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Quaternion\ parentTransformWorldRotation\ =\ parentTransform.rotation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper.position\ =\ parentTransformWorldPosition;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper.rotation\ =\ parentTransformWorldRotation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper.localScale\ =\ parentTransform.lossyScale;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_a5a5ee9be587f63c3cc8ebe185f3eb3a0}{oldRagdollBehaviour}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isStartingBone\ \&\&\ b\ !=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a9238949a0febaa09e57777e47c8bf251}{RootBone}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPosition\ =\ \textcolor{keyword}{new}\ Vector3(b.Parent.WorldX,\ b.Parent.WorldY,\ 0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper.position\ =\ ragdollRoot.TransformPoint(localPosition);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper.localRotation\ =\ Quaternion.Euler(0,\ 0,\ parentBone.WorldRotationX\ -\/\ parentBone.ShearX);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentSpaceHelper.localScale\ =\ \textcolor{keyword}{new}\ Vector3(parentBone.WorldScaleX,\ parentBone.WorldScaleY,\ 1);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ boneWorldPosition\ =\ t.position;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ right\ =\ parentSpaceHelper.InverseTransformDirection(t.right);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ boneLocalPosition\ =\ parentSpaceHelper.InverseTransformPoint(boneWorldPosition);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ boneLocalRotation\ =\ Mathf.Atan2(right.y,\ right.x)\ *\ Mathf.Rad2Deg;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flipXOR)\ boneLocalPosition.y\ *=\ -\/1f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentFlipXOR\ !=\ flipXOR)\ boneLocalPosition.y\ *=\ -\/1f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentFlipXOR)\ boneLocalRotation\ *=\ -\/1f;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentFlipX\ !=\ flipX)\ boneLocalRotation\ +=\ 180;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b.X\ =\ Mathf.Lerp(b.X,\ boneLocalPosition.x,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b.Y\ =\ Mathf.Lerp(b.Y,\ boneLocalPosition.y,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b.Rotation\ =\ Mathf.Lerp(b.Rotation,\ boneLocalRotation,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_acf447fa57b13fa4a49f45ac28b7275f3}{mix}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//b.AppliedRotation\ =\ Mathf.Lerp(b.AppliedRotation,\ boneLocalRotation,\ mix);}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GetStartBoneParentFlipState\ (out\ \textcolor{keywordtype}{bool}\ parentFlipX,\ out\ \textcolor{keywordtype}{bool}\ parentFlipY)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ parentFlipX\ =\ skeleton.ScaleX\ <\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ parentFlipY\ =\ skeleton.ScaleY\ <\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ parent\ =\ this.StartingBone\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_aeaf446bd541f4dc423f3c77649d4fe91}{StartingBone}}.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (parent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentFlipX\ \string^=\ parent.ScaleX\ <\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentFlipY\ \string^=\ parent.ScaleY\ <\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\ =\ parent.\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ List<Collider2D>\ AttachBoundingBoxRagdollColliders\ (Bone\ b,\ GameObject\ go,\ Skeleton\ skeleton,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af1166f70b9abfb0b62540c67eb944b10}{gravityScale}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ AttachmentNameMarker\ =\ \textcolor{stringliteral}{"{}ragdoll"{}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ List<Collider2D>\ colliders\ =\ \textcolor{keyword}{new}\ List<Collider2D>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ Skin\ skin\ =\ skeleton.Skin\ ??\ skeleton.Data.DefaultSkin;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ List<Skin.SkinEntry>\ skinEntries\ =\ \textcolor{keyword}{new}\ List<Skin.SkinEntry>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Slot\ slot\ \textcolor{keywordflow}{in}\ skeleton.Slots)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.Bone\ ==\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skin.GetAttachments(skeleton.Slots.IndexOf(slot),\ skinEntries);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00434}00434\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bbAttachmentAdded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Skin.SkinEntry\ entry\ in\ skinEntries)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoundingBoxAttachment\ bbAttachment\ =\ entry.Attachment\ as\ BoundingBoxAttachment;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bbAttachment\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!entry.Name.ToLower().Contains(AttachmentNameMarker))}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bbAttachmentAdded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PolygonCollider2D\ bbCollider\ =\ SkeletonUtility.AddBoundingBoxAsComponent(bbAttachment,\ slot,\ go,\ isTrigger:\ false);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colliders.Add(bbCollider);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bbAttachmentAdded)}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonUtility.AddBoneRigidbody2D(go,\ isKinematic:\ false,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af1166f70b9abfb0b62540c67eb944b10}{gravityScale}}:\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_af1166f70b9abfb0b62540c67eb944b10}{gravityScale}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colliders;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Vector3\ FlipScale\ (\textcolor{keywordtype}{bool}\ flipX,\ \textcolor{keywordtype}{bool}\ flipY)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector3(flipX\ ?\ -\/1f\ :\ 1f,\ flipY\ ?\ -\/1f\ :\ 1f,\ 1f);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00460}00460\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDrawGizmosSelected\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isActive)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.DrawWireSphere(transform.position,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ae10af0feb826c88db359746f6ae1399a}{thickness}}\ *\ 1.2f);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ newTransformPos\ =\ RootRigidbody.position\ -\/\ rootOffset;}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.DrawLine(transform.position,\ newTransformPos);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.DrawWireSphere(newTransformPos,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll2_d_ae10af0feb826c88db359746f6ae1399a}{thickness}}\ *\ 1.2f);}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00468}00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00469}00469\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00470}00470\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_ragdoll2_d_8cs_source_l00472}00472\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,57 @@
+\doxysection{Mecanim\+To\+Animation\+Handle\+Example.\+cs}
+\hypertarget{_mecanim_to_animation_handle_example_8cs_source}{}\label{_mecanim_to_animation_handle_example_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Mecanim as Logic/MecanimToAnimationHandleExample.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Mecanim as Logic/MecanimToAnimationHandleExample.cs}}
+\mbox{\hyperlink{_mecanim_to_animation_handle_example_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ This\ StateMachineBehaviour\ handles\ sending\ the\ Mecanim\ state\ information\ to\ the\ component\ that\ handles\ playing\ the\ Spine\ animations.}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00037}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_mecanim_to_animation_handle_example}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_mecanim_to_animation_handle_example}{MecanimToAnimationHandleExample}}\ :\ StateMachineBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example}{SkeletonAnimationHandleExample}}\ animationHandle;}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ initialized;}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_mecanim_to_animation_handle_example_a936844cf6d5c135c6057fb6901f55229}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_mecanim_to_animation_handle_example_a936844cf6d5c135c6057fb6901f55229}{OnStateEnter}}\ (Animator\ animator,\ AnimatorStateInfo\ stateInfo,\ \textcolor{keywordtype}{int}\ layerIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!initialized)\ \{}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animationHandle\ =\ animator.GetComponent<\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example}{SkeletonAnimationHandleExample}}>();}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ animationHandle.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example_a8db55b6a63a726dc629f21f0d9a8bd2d}{PlayAnimationForState}}(stateInfo.shortNameHash,\ layerIndex);}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_mecanim_to_animation_handle_example_8cs_source_l00051}00051\ \}}
+
+\end{DoxyCode}

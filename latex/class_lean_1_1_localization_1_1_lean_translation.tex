@@ -1,0 +1,360 @@
+\doxysection{Lean.\+Localization.\+Lean\+Translation 클래스 참조}
+\hypertarget{class_lean_1_1_localization_1_1_lean_translation}{}\label{class_lean_1_1_localization_1_1_lean_translation}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+
+
+This contains the translated value for the current language, and other associated data.  
+
+
+
+
+Lean.\+Localization.\+Lean\+Translation에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{class_lean_1_1_localization_1_1_lean_translation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_lean_1_1_localization_1_1_lean_translation_1_1_entry}{Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a01c991d80160c67c30beebcff0cd8814}{Lean\+Translation}} (string new\+Name)
+\item 
+void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_aa8854aa92225f85f050511787b8d1b4f}{Register}} (string language, \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} owner)
+\item 
+void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_aa333649a9f2b0d884a775381eb750593}{Clear}} ()
+\item 
+int \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a9432cf2308799657c2cb5e5306bf06fa}{Language\+Count}} (string language)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_afbc0b0905175e30c123a4382f4afa914}{Format\+Text}} (string raw\+Text, string current\+Text=null, \mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler}{ILocalization\+Handler}} handler=null, Game\+Object local\+Token\+Root=null)
+\begin{DoxyCompactList}\small\item\em This returns Text with all tokens substituted using the Lean\+Localization.\+Tokens list. NOTE\+: If you want local tokens to work, then specify the local\+Token\+Root Game\+Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+object \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a9ad336418ee848f4d12338976468e6b7}{Data}}
+\begin{DoxyCompactList}\small\item\em The data of this translation (e.\+g. string or Object). NOTE\+: This is a System.\+Object, so you must correctly cast it back before use. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a824bd82e5b9cdc36e181d6dd26cd79d6}{Primary}}
+\begin{DoxyCompactList}\small\item\em If Data has been filled with data for the primary language, then this will be set to true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a966eb38e12885870cf06720d25f5c47c}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The name of this translation. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{struct_lean_1_1_localization_1_1_lean_translation_1_1_entry}{Entry}} $>$ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_aa953082b618ca94df80bdc94b218879b}{Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em This stores a list of all \doxylink{class_lean_1_1_localization_1_1_lean_source}{Lean\+Source} instances that are currently managing the current value of this translation in the current language. NOTE\+: If this is empty then no \doxylink{class_lean_1_1_localization_1_1_lean_source}{Lean\+Source} of this name is localized for the current language. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+This contains the translated value for the current language, and other associated data. 
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_a01c991d80160c67c30beebcff0cd8814}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!LeanTranslation@{LeanTranslation}}
+\index{LeanTranslation@{LeanTranslation}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{LeanTranslation()}{LeanTranslation()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_a01c991d80160c67c30beebcff0cd8814} 
+Lean.\+Localization.\+Lean\+Translation.\+Lean\+Translation (\begin{DoxyParamCaption}\item[{string}]{new\+Name}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ newName;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_aa333649a9f2b0d884a775381eb750593}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!Clear@{Clear}}
+\index{Clear@{Clear}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_aa333649a9f2b0d884a775381eb750593} 
+void Lean.\+Localization.\+Lean\+Translation.\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00053}{53}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a9ad336418ee848f4d12338976468e6b7}{Data}}\ \ \ \ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation_a824bd82e5b9cdc36e181d6dd26cd79d6}{Primary}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ entries.Clear();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_afbc0b0905175e30c123a4382f4afa914}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!FormatText@{FormatText}}
+\index{FormatText@{FormatText}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{FormatText()}{FormatText()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_afbc0b0905175e30c123a4382f4afa914} 
+static string Lean.\+Localization.\+Lean\+Translation.\+Format\+Text (\begin{DoxyParamCaption}\item[{string}]{raw\+Text}{, }\item[{string}]{current\+Text}{ = {\ttfamily null}, }\item[{\mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler}{ILocalization\+Handler}}}]{handler}{ = {\ttfamily null}, }\item[{Game\+Object}]{local\+Token\+Root}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This returns Text with all tokens substituted using the Lean\+Localization.\+Tokens list. NOTE\+: If you want local tokens to work, then specify the local\+Token\+Root Game\+Object. 
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00078}{78}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(currentText)\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentText\ =\ rawText;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rawText\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.Length\ =\ 0;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.Length\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.Clear();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ rawText.Length;\ i++)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ rawChar\ =\ rawText[i];}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rawChar\ ==\ \textcolor{charliteral}{'\{'})}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffering\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffering\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.Length\ =\ 0;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffering\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (rawChar\ ==\ \textcolor{charliteral}{'\}'})}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffering\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer.Length\ >\ 0)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ token\ =\ \textcolor{keywordflow}{default}(LeanToken);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ and\ replace\ local\ tokens\ first}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer.Length\ >\ 0\ \&\&\ localTokenRoot\ !=\ \textcolor{keyword}{null}\ \&\&\ LeanLocalToken.TryGetLocalToken(localTokenRoot,\ buffer.ToString(),\ ref\ token)\ ==\ \textcolor{keyword}{true})\ \textcolor{comment}{//\ TODO:\ Avoid\ ToString\ here?}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.Append(token.Value);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.Add(token);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ and\ replace\ global\ tokens\ second}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buffer.Length\ >\ 0\ \&\&\ LeanLocalization.CurrentTokens.TryGetValue(buffer.ToString(),\ out\ token)\ ==\ \textcolor{keyword}{true})\ \textcolor{comment}{//\ TODO:\ Avoid\ ToString\ here?}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.Append(token.Value);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.Add(token);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ none\ found,\ leave\ the\ token\ text\ as\ it\ was}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.Append(\textcolor{charliteral}{'\{'}).Append(buffer).Append(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.Length\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffering\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffering\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.Append(rawChar);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.Append(rawChar);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Match(currentText,\ current)\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handler\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler.UnregisterAll();}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ tokens.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ token\ =\ tokens[i];}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token.Register(handler);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler.Register(token);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current.ToString();}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ currentText;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lean_1_1_localization_1_1_lean_translation_afbc0b0905175e30c123a4382f4afa914_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lean_1_1_localization_1_1_lean_translation_afbc0b0905175e30c123a4382f4afa914_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_a9432cf2308799657c2cb5e5306bf06fa}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!LanguageCount@{LanguageCount}}
+\index{LanguageCount@{LanguageCount}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{LanguageCount()}{LanguageCount()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_a9432cf2308799657c2cb5e5306bf06fa} 
+int Lean.\+Localization.\+Lean\+Translation.\+Language\+Count (\begin{DoxyParamCaption}\item[{string}]{language}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00061}{61}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ var\ total\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ entries.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries[i].Language\ ==\ language)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ 1;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_aa8854aa92225f85f050511787b8d1b4f}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!Register@{Register}}
+\index{Register@{Register}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_aa8854aa92225f85f050511787b8d1b4f} 
+void Lean.\+Localization.\+Lean\+Translation.\+Register (\begin{DoxyParamCaption}\item[{string}]{language}{, }\item[{\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{owner}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ var\ entry\ =\ \textcolor{keyword}{new}\ Entry();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ entry.Language\ =\ language;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ entry.Owner\ \ \ \ =\ owner;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ entries.Add(entry);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_a9ad336418ee848f4d12338976468e6b7}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!Data@{Data}}
+\index{Data@{Data}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_a9ad336418ee848f4d12338976468e6b7} 
+object Lean.\+Localization.\+Lean\+Translation.\+Data}
+
+
+
+The data of this translation (e.\+g. string or Object). NOTE\+: This is a System.\+Object, so you must correctly cast it back before use. 
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_a824bd82e5b9cdc36e181d6dd26cd79d6}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!Primary@{Primary}}
+\index{Primary@{Primary}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{Primary}{Primary}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_a824bd82e5b9cdc36e181d6dd26cd79d6} 
+bool Lean.\+Localization.\+Lean\+Translation.\+Primary}
+
+
+
+If Data has been filled with data for the primary language, then this will be set to true. 
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_aa953082b618ca94df80bdc94b218879b}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!Entries@{Entries}}
+\index{Entries@{Entries}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{Entries}{Entries}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_aa953082b618ca94df80bdc94b218879b} 
+List$<$\mbox{\hyperlink{struct_lean_1_1_localization_1_1_lean_translation_1_1_entry}{Entry}}$>$ Lean.\+Localization.\+Lean\+Translation.\+Entries\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+This stores a list of all \doxylink{class_lean_1_1_localization_1_1_lean_source}{Lean\+Source} instances that are currently managing the current value of this translation in the current language. NOTE\+: If this is empty then no \doxylink{class_lean_1_1_localization_1_1_lean_source}{Lean\+Source} of this name is localized for the current language. 
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ entries;\ \}\ \}\ \textcolor{keyword}{private}\ List<Entry>\ entries\ =\ \textcolor{keyword}{new}\ List<Entry>();}
+
+\end{DoxyCode}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_translation_a966eb38e12885870cf06720d25f5c47c}\index{Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}!Name@{Name}}
+\index{Name@{Name}!Lean.Localization.LeanTranslation@{Lean.Localization.LeanTranslation}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_translation_a966eb38e12885870cf06720d25f5c47c} 
+string Lean.\+Localization.\+Lean\+Translation.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The name of this translation. 
+
+
+
+\mbox{\hyperlink{_lean_translation_8cs_source}{Lean\+Translation.\+cs}} 파일의 \mbox{\hyperlink{_lean_translation_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ name;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ name;}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Plugins/\+CW/\+Lean\+Localization/\+Required/\+Scripts/\mbox{\hyperlink{_lean_translation_8cs}{Lean\+Translation.\+cs}}\end{DoxyCompactItemize}

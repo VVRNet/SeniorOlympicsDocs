@@ -1,0 +1,363 @@
+\doxysection{Ik\+Constraint.\+cs}
+\hypertarget{_ik_constraint_8cs_source}{}\label{_ik_constraint_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/IkConstraint.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/IkConstraint.cs}}
+\mbox{\hyperlink{_ik_constraint_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}\ =\ Skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a76c2052feb3e27c26a6ec7aa3d377343}{Physics}};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_ik_constraint}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_ik_constraint}{IkConstraint}}\ :\ \mbox{\hyperlink{interface_spine_1_1_i_updatable}{IUpdatable}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_data}{IkConstraintData}}\ data;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}\ bones\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}();}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ target;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}\ bendDirection;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ compress,\ stretch;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ mix\ =\ 1,\ softness;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ active;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00052}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a798033292134e6c7da7d1f8aa4625476}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a798033292134e6c7da7d1f8aa4625476}{IkConstraint}}\ (\mbox{\hyperlink{class_spine_1_1_ik_constraint_data}{IkConstraintData}}\ data,\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ bones\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}(data.bones.Count);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ boneData\ \textcolor{keywordflow}{in}\ data.bones)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bones.Add(skeleton.bones.Items[boneData.index]);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ target\ =\ skeleton.bones.Items[data.target.index];}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ data.mix;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ softness\ =\ data.softness;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ bendDirection\ =\ data.bendDirection;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ compress\ =\ data.compress;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ stretch\ =\ data.stretch;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00070}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a5f16e12c1f138448e3ed8fc855189e8d}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a5f16e12c1f138448e3ed8fc855189e8d}{IkConstraint}}\ (\mbox{\hyperlink{class_spine_1_1_ik_constraint}{IkConstraint}}\ constraint,\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ :\ this(constraint.data,\ skeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ constraint.mix;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ softness\ =\ constraint.softness;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ bendDirection\ =\ constraint.bendDirection;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ compress\ =\ constraint.compress;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ stretch\ =\ constraint.stretch;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00080}\mbox{\hyperlink{class_spine_1_1_ik_constraint_ae63aa22f6d9a435dd7e568b28f1c80d0}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_ae63aa22f6d9a435dd7e568b28f1c80d0}{SetToSetupPose}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_ik_constraint_data}{IkConstraintData}}\ data\ =\ this.data;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ data.mix;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ softness\ =\ data.softness;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ bendDirection\ =\ data.bendDirection;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ compress\ =\ data.compress;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ stretch\ =\ data.stretch;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00089}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a8e6e66f7c0e0f5d9528432403712eef9}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a8e6e66f7c0e0f5d9528432403712eef9}{Update}}\ (\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}\ physics)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mix\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ target\ =\ this.target;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}[]\ bones\ =\ this.bones.Items;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (this.bones.Count)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a18a585a455a6333c38ac758ae4815e7a}{Apply}}(bones[0],\ target.worldX,\ target.worldY,\ compress,\ stretch,\ data.uniform,\ mix);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a18a585a455a6333c38ac758ae4815e7a}{Apply}}(bones[0],\ bones[1],\ target.worldX,\ target.worldY,\ bendDirection,\ stretch,\ data.uniform,\ softness,\ mix);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00104}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a5e2ac0834351698df61b21155f51c949}{00104}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a5e2ac0834351698df61b21155f51c949}{Bones}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bones;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00109}\mbox{\hyperlink{class_spine_1_1_ik_constraint_ad1a580213fc5cfa4dbd9d452f0bd5067}{00109}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_ad1a580213fc5cfa4dbd9d452f0bd5067}{Target}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ target;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ target\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00118}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a23bc63bb003cf787f7101eee7859a84d}{00118}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a23bc63bb003cf787f7101eee7859a84d}{Mix}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ mix;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ mix\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00125}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a8b7c023a91bb48c3c37ff7fa3930a331}{00125}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a8b7c023a91bb48c3c37ff7fa3930a331}{Softness}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ softness;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ softness\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00131}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a692813c7fbad094d14b5e43045856886}{00131}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a692813c7fbad094d14b5e43045856886}{BendDirection}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bendDirection;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ bendDirection\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00137}\mbox{\hyperlink{class_spine_1_1_ik_constraint_aae466041d944539d2e11e7210d8c3ebd}{00137}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_aae466041d944539d2e11e7210d8c3ebd}{Compress}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ compress;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ compress\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00148}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a69ab603aa1671fce4813cc607c5af59d}{00148}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a69ab603aa1671fce4813cc607c5af59d}{Stretch}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ stretch;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ stretch\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00153}\mbox{\hyperlink{class_spine_1_1_ik_constraint_af30678f094283a52ad5701f64c3dc3d4}{00153}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_af30678f094283a52ad5701f64c3dc3d4}{Active}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ active;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00158}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a7640855cda04f79aa1b4966a329d550a}{00158}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_data}{IkConstraintData}}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a7640855cda04f79aa1b4966a329d550a}{Data}}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00162}\mbox{\hyperlink{class_spine_1_1_ik_constraint_ad47467a0cc383a862565d4d4970b5e91}{00162}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_ad47467a0cc383a862565d4d4970b5e91}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00167}\mbox{\hyperlink{class_spine_1_1_ik_constraint_a18a585a455a6333c38ac758ae4815e7a}{00167}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a18a585a455a6333c38ac758ae4815e7a}{Apply}}\ (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone,\ \textcolor{keywordtype}{float}\ targetX,\ \textcolor{keywordtype}{float}\ targetY,\ \textcolor{keywordtype}{bool}\ compress,\ \textcolor{keywordtype}{bool}\ stretch,\ \textcolor{keywordtype}{bool}\ uniform,}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ alpha)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ p\ =\ bone.parent;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pa\ =\ p.a,\ pb\ =\ p.b,\ pc\ =\ p.c,\ pd\ =\ p.d;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotationIK\ =\ -\/bone.ashearX\ -\/\ bone.arotation;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tx\ =\ 0,\ ty\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (bone.inherit)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.OnlyTranslation:}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ =\ (targetX\ -\/\ bone.worldX)\ *\ Math.Sign(bone.skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a0f883b19b2bc80d4d5db65fba9f1f99c}{ScaleX}});}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ =\ (targetY\ -\/\ bone.worldY)\ *\ Math.Sign(bone.skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}});}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoRotationOrReflection:\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ Math.Abs(pa\ *\ pd\ -\/\ pb\ *\ pc)\ /\ Math.Max(0.0001f,\ pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sa\ =\ pa\ /\ bone.skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sc\ =\ pc\ /\ bone.skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ -\/sc\ *\ s\ *\ bone.skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ sa\ *\ s\ *\ bone.skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotationIK\ +=\ MathUtils.Atan2Deg(sc,\ sa);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ \textcolor{keywordflow}{default};\ \textcolor{comment}{//\ Fall\ through.}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ targetX\ -\/\ p.worldX,\ y\ =\ targetY\ -\/\ p.worldY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ d\ =\ pa\ *\ pd\ -\/\ pb\ *\ pc;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Math.Abs(d)\ <=\ 0.0001f)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ =\ (x\ *\ pd\ -\/\ y\ *\ pb)\ /\ d\ -\/\ bone.ax;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ =\ (y\ *\ pa\ -\/\ x\ *\ pc)\ /\ d\ -\/\ bone.ay;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ rotationIK\ +=\ MathUtils.Atan2Deg(ty,\ tx);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone.ascaleX\ <\ 0)\ rotationIK\ +=\ 180;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotationIK\ >\ 180)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotationIK\ -\/=\ 360;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (rotationIK\ <\ -\/180)\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotationIK\ +=\ 360;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sx\ =\ bone.ascaleX,\ sy\ =\ bone.ascaleY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (compress\ ||\ stretch)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (bone.inherit)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScale:}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScaleOrReflection:}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ =\ targetX\ -\/\ bone.worldX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ =\ targetY\ -\/\ bone.worldY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ b\ =\ bone.data.length\ *\ sx;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ >\ 0.0001f)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dd\ =\ tx\ *\ tx\ +\ ty\ *\ ty;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((compress\ \&\&\ dd\ <\ b\ *\ b)\ ||\ (stretch\ \&\&\ dd\ >\ b\ *\ b))\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ ((float)Math.Sqrt(dd)\ /\ b\ -\/\ 1)\ *\ alpha\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sx\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uniform)\ sy\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ bone.\mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(bone.ax,\ bone.ay,\ bone.arotation\ +\ rotationIK\ *\ alpha,\ sx,\ sy,\ bone.ashearX,\ bone.ashearY);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00235}\mbox{\hyperlink{class_spine_1_1_ik_constraint_af70e5c81616ba0f3bdedcb40c1a67dad}{00235}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_ik_constraint_af70e5c81616ba0f3bdedcb40c1a67dad}{Apply}}\ (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ parent,\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ child,\ \textcolor{keywordtype}{float}\ targetX,\ \textcolor{keywordtype}{float}\ targetY,\ \textcolor{keywordtype}{int}\ bendDir,\ \textcolor{keywordtype}{bool}\ stretch,\ \textcolor{keywordtype}{bool}\ uniform,}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ softness,\ \textcolor{keywordtype}{float}\ alpha)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}parent"{}},\ \textcolor{stringliteral}{"{}parent\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}child"{}},\ \textcolor{stringliteral}{"{}child\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent.inherit\ !=\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.Normal\ ||\ child.inherit\ !=\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.Normal)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ px\ =\ parent.ax,\ py\ =\ parent.ay,\ psx\ =\ parent.ascaleX,\ psy\ =\ parent.ascaleY,\ sx\ =\ psx,\ sy\ =\ psy,\ csx\ =\ child.ascaleX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ os1,\ os2,\ s2;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (psx\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psx\ =\ -\/psx;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os1\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s2\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os1\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s2\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (psy\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psy\ =\ -\/psy;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s2\ =\ -\/s2;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (csx\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csx\ =\ -\/csx;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os2\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cx\ =\ child.ax,\ cy,\ cwx,\ cwy,\ a\ =\ parent.a,\ b\ =\ parent.b,\ c\ =\ parent.c,\ d\ =\ parent.d;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ u\ =\ Math.Abs(psx\ -\/\ psy)\ <=\ 0.0001f;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!u\ ||\ stretch)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cwx\ =\ a\ *\ cx\ +\ parent.worldX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cwy\ =\ c\ *\ cx\ +\ parent.worldY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cy\ =\ child.ay;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cwx\ =\ a\ *\ cx\ +\ b\ *\ cy\ +\ parent.worldX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cwy\ =\ c\ *\ cx\ +\ d\ *\ cy\ +\ parent.worldY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ pp\ =\ parent.parent;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ pp.a;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ pp.b;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ pp.c;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ pp.d;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \textcolor{keywordtype}{id}\ =\ a\ *\ d\ -\/\ b\ *\ c,\ x\ =\ cwx\ -\/\ pp.worldX,\ y\ =\ cwy\ -\/\ pp.worldY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ Math.Abs(\textcolor{keywordtype}{id})\ <=\ 0.0001f\ ?\ 0\ :\ 1\ /\ id;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ (x\ *\ d\ -\/\ y\ *\ b)\ *\ \textcolor{keywordtype}{id}\ -\/\ px,\ dy\ =\ (y\ *\ a\ -\/\ x\ *\ c)\ *\ \textcolor{keywordtype}{id}\ -\/\ py;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l1\ =\ (float)Math.Sqrt(dx\ *\ dx\ +\ dy\ *\ dy),\ l2\ =\ child.data.length\ *\ csx,\ a1,\ a2;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l1\ <\ 0.0001f)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_ik_constraint_a18a585a455a6333c38ac758ae4815e7a}{Apply}}(parent,\ targetX,\ targetY,\ \textcolor{keyword}{false},\ stretch,\ \textcolor{keyword}{false},\ alpha);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child.\mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(cx,\ cy,\ 0,\ child.ascaleX,\ child.ascaleY,\ child.ashearX,\ child.ashearY);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ targetX\ -\/\ pp.worldX;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ targetY\ -\/\ pp.worldY;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tx\ =\ (x\ *\ d\ -\/\ y\ *\ b)\ *\ \textcolor{keywordtype}{id}\ -\/\ px,\ ty\ =\ (y\ *\ a\ -\/\ x\ *\ c)\ *\ \textcolor{keywordtype}{id}\ -\/\ py;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dd\ =\ tx\ *\ tx\ +\ ty\ *\ ty;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (softness\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ softness\ *=\ psx\ *\ (csx\ +\ 1)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ td\ =\ (float)Math.Sqrt(dd),\ sd\ =\ td\ -\/\ l1\ -\/\ l2\ *\ psx\ +\ softness;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sd\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ p\ =\ Math.Min(1,\ sd\ /\ (softness\ *\ 2))\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p\ =\ (sd\ -\/\ softness\ *\ (1\ -\/\ p\ *\ p))\ /\ td;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ -\/=\ p\ *\ tx;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ -\/=\ p\ *\ ty;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dd\ =\ tx\ *\ tx\ +\ ty\ *\ ty;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (u)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l2\ *=\ psx;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cos\ =\ (dd\ -\/\ l1\ *\ l1\ -\/\ l2\ *\ l2)\ /\ (2\ *\ l1\ *\ l2);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cos\ <\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cos\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ MathUtils.PI\ *\ bendDir;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (cos\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cos\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stretch)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ ((float)Math.Sqrt(dd)\ /\ (l1\ +\ l2)\ -\/\ 1)\ *\ alpha\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sx\ *=\ a;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uniform)\ sy\ *=\ a;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ (float)Math.Acos(cos)\ *\ bendDir;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ l1\ +\ l2\ *\ cos;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ l2\ *\ (float)Math.Sin(a2);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a1\ =\ (float)Math.Atan2(ty\ *\ a\ -\/\ tx\ *\ b,\ tx\ *\ a\ +\ ty\ *\ b);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ psx\ *\ l2;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ psy\ *\ l2;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aa\ =\ a\ *\ a,\ bb\ =\ b\ *\ b,\ ta\ =\ (float)Math.Atan2(ty,\ tx);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ bb\ *\ l1\ *\ l1\ +\ aa\ *\ dd\ -\/\ aa\ *\ bb;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ c1\ =\ -\/2\ *\ bb\ *\ l1,\ c2\ =\ bb\ -\/\ aa;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ c1\ *\ c1\ -\/\ 4\ *\ c2\ *\ c;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (d\ >=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ q\ =\ (float)Math.Sqrt(d);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c1\ <\ 0)\ q\ =\ -\/q;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q\ =\ -\/(c1\ +\ q)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r0\ =\ q\ /\ c2,\ r1\ =\ c\ /\ q;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ Math.Abs(r0)\ <\ Math.Abs(r1)\ ?\ r0\ :\ r1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ *\ r\ <=\ dd)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ (float)Math.Sqrt(dd\ -\/\ r\ *\ r)\ *\ bendDir;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a1\ =\ ta\ -\/\ (float)Math.Atan2(y,\ r);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ (float)Math.Atan2(y\ /\ psy,\ (r\ -\/\ l1)\ /\ psx);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ break\_outer;\ \textcolor{comment}{//\ break\ outer;}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minAngle\ =\ MathUtils.PI,\ minX\ =\ l1\ -\/\ a,\ minDist\ =\ minX\ *\ minX,\ minY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxAngle\ =\ 0,\ maxX\ =\ l1\ +\ a,\ maxDist\ =\ maxX\ *\ maxX,\ maxY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ -\/a\ *\ l1\ /\ (aa\ -\/\ bb);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ >=\ -\/1\ \&\&\ c\ <=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Acos(c);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ a\ *\ (float)Math.Cos(c)\ +\ l1;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ b\ *\ (float)Math.Sin(c);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ x\ *\ x\ +\ y\ *\ y;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (d\ <\ minDist)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minAngle\ =\ c;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minDist\ =\ d;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minX\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minY\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (d\ >\ maxDist)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxAngle\ =\ c;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxDist\ =\ d;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxX\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxY\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dd\ <=\ (minDist\ +\ maxDist)\ *\ 0.5f)\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a1\ =\ ta\ -\/\ (float)Math.Atan2(minY\ *\ bendDir,\ minX);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ minAngle\ *\ bendDir;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a1\ =\ ta\ -\/\ (float)Math.Atan2(maxY\ *\ bendDir,\ maxX);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ maxAngle\ *\ bendDir;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ break\_outer:}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ os\ =\ (float)Math.Atan2(cy,\ cx)\ *\ s2;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotation\ =\ parent.arotation;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ a1\ =\ (a1\ -\/\ os)\ *\ MathUtils.RadDeg\ +\ os1\ -\/\ rotation;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a1\ >\ 180)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a1\ -\/=\ 360;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a1\ <\ -\/180)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a1\ +=\ 360;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ parent.\mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(px,\ py,\ rotation\ +\ a1\ *\ alpha,\ sx,\ sy,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ child.arotation;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ a2\ =\ ((a2\ +\ os)\ *\ MathUtils.RadDeg\ -\/\ child.ashearX)\ *\ s2\ +\ os2\ -\/\ rotation;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a2\ >\ 180)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ -\/=\ 360;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a2\ <\ -\/180)}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a2\ +=\ 360;}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ child.\mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(cx,\ cy,\ rotation\ +\ a2\ *\ alpha,\ child.ascaleX,\ child.ascaleY,\ child.ashearX,\ child.ashearY);}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00384}00384\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ik_constraint_8cs_source_l00385}00385\ \}}
+
+\end{DoxyCode}

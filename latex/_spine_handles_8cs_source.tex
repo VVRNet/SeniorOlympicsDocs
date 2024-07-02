@@ -1,0 +1,588 @@
+\doxysection{Spine\+Handles.\+cs}
+\hypertarget{_spine_handles_8cs_source}{}\label{_spine_handles_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Utility/SpineHandles.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Utility/SpineHandles.cs}}
+\mbox{\hyperlink{_spine_handles_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00030}00030\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ 0219}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00032}\mbox{\hyperlink{_spine_handles_8cs_a77ae81b5da2aa89f7c876dba9bcd532e}{00032}}\ \textcolor{preprocessor}{\#define\ SPINE\_SKELETONMECANIM}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00036}00036\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00037}00037\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00038}00038\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00039}00039\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00040}00040\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00041}00041\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00043}00043\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor}{Spine.Unity.Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}\ =\ UnityEngine.EventType;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }SpineHandles\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ BoneColor\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Color(0.8f,\ 0.8f,\ 0.8f,\ 0.4f);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ PathColor\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Color(254\ /\ 255f,\ 127\ /\ 255f,\ 0);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ TransformContraintColor\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Color(170\ /\ 255f,\ 226\ /\ 255f,\ 35\ /\ 255f);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ IkColor\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Color(228\ /\ 255f,\ 90\ /\ 255f,\ 43\ /\ 255f);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ PointColor\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Color(1f,\ 1f,\ 0f,\ 1f);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Vector3[]\ \_boneMeshVerts\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(0.1f,\ 0.1f,\ 0),}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(1,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(0.1f,\ -\/0.1f,\ 0)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ \_boneMesh;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ BoneMesh\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_boneMesh\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneMesh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \_boneMeshVerts,}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uv\ =\ \textcolor{keyword}{new}\ Vector2[4],}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangles\ =\ \textcolor{keyword}{new}[]\ \{\ 0,\ 1,\ 2,\ 2,\ 3,\ 0\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneMesh.RecalculateBounds();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneMesh.RecalculateNormals();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_boneMesh;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ \_arrowheadMesh;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ ArrowheadMesh\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_arrowheadMesh\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_arrowheadMesh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{new}[]\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(0,\ 0),}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(-\/0.1f,\ 0.05f),}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Vector3(-\/0.1f,\ -\/0.05f)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uv\ =\ \textcolor{keyword}{new}\ Vector2[3],}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangles\ =\ \textcolor{keyword}{new}[]\ \{\ 0,\ 1,\ 2\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_arrowheadMesh.RecalculateBounds();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_arrowheadMesh.RecalculateNormals();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_arrowheadMesh;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Material\ \_boneMaterial;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Material\ BoneMaterial\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_boneMaterial\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneMaterial\ =\ \textcolor{keyword}{new}\ Material(Shader.Find(\textcolor{stringliteral}{"{}Hidden/Spine/Bones"{}}));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneMaterial.SetColor(\textcolor{stringliteral}{"{}\_Color"{}},\ SpineHandles.BoneColor);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_boneMaterial;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Material\ GetBoneMaterial\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ BoneMaterial.SetColor(\textcolor{stringliteral}{"{}\_Color"{}},\ SpineHandles.BoneColor);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BoneMaterial;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Material\ GetBoneMaterial\ (Color\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ BoneMaterial.SetColor(\textcolor{stringliteral}{"{}\_Color"{}},\ color);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BoneMaterial;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Material\ \_ikMaterial;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Material\ IKMaterial\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_ikMaterial\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_ikMaterial\ =\ \textcolor{keyword}{new}\ Material(Shader.Find(\textcolor{stringliteral}{"{}Hidden/Spine/Bones"{}}));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_ikMaterial.SetColor(\textcolor{stringliteral}{"{}\_Color"{}},\ SpineHandles.IkColor);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_ikMaterial;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIStyle\ \_boneNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUIStyle\ BoneNameStyle\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_boneNameStyle\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneNameStyle\ =\ \textcolor{keyword}{new}\ GUIStyle(EditorStyles.whiteMiniLabel)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alignment\ =\ TextAnchor.MiddleCenter,}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stretchWidth\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding\ =\ \textcolor{keyword}{new}\ RectOffset(0,\ 0,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contentOffset\ =\ \textcolor{keyword}{new}\ Vector2(-\/5f,\ 0f)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_boneNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIStyle\ \_pathNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUIStyle\ PathNameStyle\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_pathNameStyle\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_pathNameStyle\ =\ \textcolor{keyword}{new}\ GUIStyle(SpineHandles.BoneNameStyle);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_pathNameStyle.normal.textColor\ =\ SpineHandles.PathColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_pathNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIStyle\ \_pointNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUIStyle\ PointNameStyle\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_pointNameStyle\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_pointNameStyle\ =\ \textcolor{keyword}{new}\ GUIStyle(SpineHandles.BoneNameStyle);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_pointNameStyle.normal.textColor\ =\ SpineHandles.PointColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_pointNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBoneNames\ (Transform\ transform,\ Skeleton\ skeleton,\ \textcolor{keywordtype}{float}\ positionScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ GUIStyle\ style\ =\ BoneNameStyle;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Bone\ b\ \textcolor{keywordflow}{in}\ skeleton.Bones)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!b.Active)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ pos\ =\ \textcolor{keyword}{new}\ Vector3(b.WorldX\ *\ positionScale,\ b.WorldY\ *\ positionScale,\ 0)\ +\ (\textcolor{keyword}{new}\ Vector3(b.A,\ b.C)\ *\ (b.Data.Length\ *\ 0.5f));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ transform.TransformPoint(pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.Label(pos,\ b.Data.Name,\ style);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBones\ (Transform\ transform,\ Skeleton\ skeleton,\ \textcolor{keywordtype}{float}\ positionScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ boneScale\ =\ 1.8f;\ \textcolor{comment}{//\ Draw\ the\ root\ bone\ largest;}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ DrawCrosshairs2D(skeleton.Bones.Items[0].GetWorldPosition(transform),\ 0.08f,\ positionScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Bone\ b\ \textcolor{keywordflow}{in}\ skeleton.Bones)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!b.Active)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawBone(transform,\ b,\ boneScale,\ positionScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneScale\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Vector3[]\ \_boneWireBuffer\ =\ \textcolor{keyword}{new}\ Vector3[5];}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Vector3[]\ GetBoneWireBuffer\ (Matrix4x4\ m)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ \_boneMeshVerts.Length;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_boneWireBuffer[i]\ =\ m.MultiplyPoint(\_boneMeshVerts[i]);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \_boneWireBuffer[4]\ =\ \_boneWireBuffer[0];\ \textcolor{comment}{//\ closed\ polygon.}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_boneWireBuffer;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBoneWireframe\ (Transform\ transform,\ Bone\ b,\ Color\ color,\ \textcolor{keywordtype}{float}\ skeletonRenderScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ color;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ pos\ =\ \textcolor{keyword}{new}\ Vector3(b.WorldX\ *\ skeletonRenderScale,\ b.WorldY\ *\ skeletonRenderScale,\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ length\ =\ b.Data.Length;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Quaternion\ rot\ =\ Quaternion.Euler(0,\ 0,\ b.WorldRotationX);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ scale\ =\ Vector3.one\ *\ length\ *\ b.WorldScaleX\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ my\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scale.y\ *=\ (SpineEditorUtilities.Preferences.handleScale\ +\ 1)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scale.y\ =\ Mathf.Clamp(scale.x,\ -\/my\ *\ skeletonRenderScale,\ my\ *\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawPolyLine(GetBoneWireBuffer(transform.localToWorldMatrix\ *\ Matrix4x4.TRS(pos,\ rot,\ scale)));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ wp\ =\ transform.TransformPoint(pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawBoneCircle(wp,\ color,\ transform.forward,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ wp\ =\ transform.TransformPoint(pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawBoneCircle(wp,\ color,\ transform.forward,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBone\ (Transform\ transform,\ Bone\ b,\ \textcolor{keywordtype}{float}\ boneScale,\ \textcolor{keywordtype}{float}\ skeletonRenderScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ pos\ =\ \textcolor{keyword}{new}\ Vector3(b.WorldX\ *\ skeletonRenderScale,\ b.WorldY\ *\ skeletonRenderScale,\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ length\ =\ b.Data.Length;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Quaternion\ rot\ =\ Quaternion.Euler(0,\ 0,\ b.WorldRotationX);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ scale\ =\ Vector3.one\ *\ length\ *\ b.WorldScaleX\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ my\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scale.y\ *=\ (SpineEditorUtilities.Preferences.handleScale\ +\ 1f)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scale.y\ =\ Mathf.Clamp(scale.x,\ -\/my\ *\ skeletonRenderScale,\ my\ *\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.GetBoneMaterial().SetPass(0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.DrawMeshNow(SpineHandles.BoneMesh,\ transform.localToWorldMatrix\ *\ Matrix4x4.TRS(pos,\ rot,\ scale));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ wp\ =\ transform.TransformPoint(pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawBoneCircle(wp,\ SpineHandles.BoneColor,\ transform.forward,\ boneScale\ *\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBone\ (Transform\ transform,\ Bone\ b,\ \textcolor{keywordtype}{float}\ boneScale,\ Color\ color,\ \textcolor{keywordtype}{float}\ skeletonRenderScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ pos\ =\ \textcolor{keyword}{new}\ Vector3(b.WorldX\ *\ skeletonRenderScale,\ b.WorldY\ *\ skeletonRenderScale,\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ length\ =\ b.Data.Length;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Quaternion\ rot\ =\ Quaternion.Euler(0,\ 0,\ b.WorldRotationX);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ scale\ =\ Vector3.one\ *\ length\ *\ b.WorldScaleX;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ my\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scale.y\ *=\ (SpineEditorUtilities.Preferences.handleScale\ +\ 1f)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scale.y\ =\ Mathf.Clamp(scale.x,\ -\/my,\ my);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.GetBoneMaterial(color).SetPass(0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.DrawMeshNow(SpineHandles.BoneMesh,\ transform.localToWorldMatrix\ *\ Matrix4x4.TRS(pos,\ rot,\ scale));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ wp\ =\ transform.TransformPoint(pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawBoneCircle(wp,\ color,\ transform.forward,\ boneScale\ *\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawPaths\ (Transform\ transform,\ Skeleton\ skeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Slot\ s\ \textcolor{keywordflow}{in}\ skeleton.DrawOrder)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PathAttachment\ p\ =\ s.Attachment\ as\ PathAttachment;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p\ !=\ \textcolor{keyword}{null})\ SpineHandles.DrawPath(s,\ p,\ transform,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}[]\ pathVertexBuffer;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawPath\ (Slot\ s,\ PathAttachment\ p,\ Transform\ t,\ \textcolor{keywordtype}{bool}\ includeName)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ worldVerticesLength\ =\ p.WorldVerticesLength;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pathVertexBuffer\ ==\ \textcolor{keyword}{null}\ ||\ pathVertexBuffer.Length\ <\ worldVerticesLength)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathVertexBuffer\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[worldVerticesLength];}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ pv\ =\ pathVertexBuffer;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ p.ComputeWorldVertices(s,\ pv);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ ocolor\ =\ Handles.color;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ SpineHandles.PathColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ Matrix4x4\ m\ =\ t.localToWorldMatrix;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ step\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ worldVerticesLength\ -\/\ step;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ p0,\ p1,\ p2,\ p3;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <\ n;\ i\ +=\ step)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p0\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[i],\ pv[i\ +\ 1]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p1\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[i\ +\ 2],\ pv[i\ +\ 3]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p2\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[i\ +\ 4],\ pv[i\ +\ 5]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p3\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[i\ +\ 6],\ pv[i\ +\ 7]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawCubicBezier(p0,\ p1,\ p2,\ p3);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ n\ +=\ step;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p.Closed)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p0\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[n\ -\/\ 4],\ pv[n\ -\/\ 3]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p1\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[n\ -\/\ 2],\ pv[n\ -\/\ 1]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p2\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[0],\ pv[1]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p3\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[2],\ pv[3]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawCubicBezier(p0,\ p1,\ p2,\ p3);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ endCapSize\ =\ 0.05f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ firstPoint\ =\ m.MultiplyPoint(\textcolor{keyword}{new}\ Vector3(pv[2],\ pv[3]));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawDot(firstPoint,\ endCapSize);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (!p.Closed)\ SpineHandles.DrawDot(m.MultiplyPoint(new\ Vector3(pv[n\ -\/\ 4],\ pv[n\ -\/\ 3])),\ endCapSize);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (includeName)\ Handles.Label(firstPoint\ +\ \textcolor{keyword}{new}\ Vector3(0,\ 0.1f),\ p.Name,\ PathNameStyle);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ ocolor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawDot\ (Vector3\ position,\ \textcolor{keywordtype}{float}\ size)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DotHandleCap(0,\ position,\ Quaternion.identity,\ size\ *\ HandleUtility.GetHandleSize(position),\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Ignore);\ \textcolor{comment}{//Handles.DotCap(0,\ position,\ Quaternion.identity,\ size\ *\ HandleUtility.GetHandleSize(position));}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBoundingBoxes\ (Transform\ transform,\ Skeleton\ skeleton)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Slot\ slot\ \textcolor{keywordflow}{in}\ skeleton.Slots)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoundingBoxAttachment\ bba\ =\ slot.Attachment\ as\ BoundingBoxAttachment;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bba\ !=\ \textcolor{keyword}{null})\ SpineHandles.DrawBoundingBox(slot,\ bba,\ transform);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBoundingBox\ (Slot\ slot,\ BoundingBoxAttachment\ box,\ Transform\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (box.Vertices.Length\ <=\ 2)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Handle\ cases\ where\ user\ creates\ a\ BoundingBoxAttachment\ but\ doesn't\ actually\ define\ it.}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ worldVerts\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[box.WorldVerticesLength];}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ box.ComputeWorldVertices(slot,\ worldVerts);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ Color.green;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ lastVert\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ vert\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ firstVert\ =\ t.TransformPoint(\textcolor{keyword}{new}\ Vector3(worldVerts[0],\ worldVerts[1],\ 0));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ worldVerts.Length;\ i\ +=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vert.x\ =\ worldVerts[i];}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vert.y\ =\ worldVerts[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vert.z\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vert\ =\ t.TransformPoint(vert);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(lastVert,\ vert);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastVert\ =\ vert;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(lastVert,\ firstVert);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawPointAttachment\ (Bone\ bone,\ PointAttachment\ pointAttachment,\ Transform\ skeletonTransform)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pointAttachment\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ localPos;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ pointAttachment.ComputeWorldPosition(bone,\ out\ localPos.x,\ out\ localPos.y);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ localRotation\ =\ pointAttachment.ComputeWorldRotation(bone);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ Matrix4x4\ m\ =\ Matrix4x4.TRS(localPos,\ Quaternion.Euler(0,\ 0,\ localRotation),\ Vector3.one)\ *\ Matrix4x4.TRS(Vector3.right\ *\ 0.25f,\ Quaternion.identity,\ Vector3.one);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ DrawBoneCircle(skeletonTransform.TransformPoint(localPos),\ SpineHandles.PointColor,\ Vector3.back,\ 1.3f);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ DrawArrowhead(skeletonTransform.localToWorldMatrix\ *\ m);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawConstraints\ (Transform\ transform,\ Skeleton\ skeleton,\ \textcolor{keywordtype}{float}\ skeletonRenderScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ targetPos;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ pos;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ active;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ handleColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ Thickness\ =\ 4f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ normal\ =\ transform.forward;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transform\ Constraints}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ handleColor\ =\ SpineHandles.TransformContraintColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394ae5a041c873c9e37ed55b30e89b316fdc}{TransformConstraint}}\ tc\ \textcolor{keywordflow}{in}\ skeleton.TransformConstraints)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ targetBone\ =\ tc.Target;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetPos\ =\ targetBone.GetWorldPosition(transform,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tc.MixX\ >\ 0\ ||\ tc.MixY\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((tc.MixX\ >\ 0\ \&\&\ tc.MixX\ !=\ 1f)\ ||}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (tc.MixY\ >\ 0\ \&\&\ tc.MixY\ !=\ 1f))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ handleColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Bone\ b\ \textcolor{keywordflow}{in}\ tc.Bones)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ b.GetWorldPosition(transform,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawDottedLine(targetPos,\ pos,\ Thickness);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneCircle(targetPos,\ handleColor,\ normal,\ 1.3f\ *\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ handleColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawCrosshairs(targetPos,\ 0.2f,\ targetBone.A,\ targetBone.B,\ targetBone.C,\ targetBone.D,\ transform,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ IK\ Constraints}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ handleColor\ =\ SpineHandles.IkColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394a97ef365a8511acdf2b932f31d1f782e6}{IkConstraint}}\ ikc\ \textcolor{keywordflow}{in}\ skeleton.IkConstraints)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ targetBone\ =\ ikc.Target;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetPos\ =\ targetBone.GetWorldPosition(transform,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<Bone>\ bones\ =\ ikc.Bones;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ active\ =\ ikc.Mix\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (active)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ bones.Items[0].GetWorldPosition(transform,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (bones.Count)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ handleColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(targetPos,\ pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneCircle(targetPos,\ handleColor,\ normal);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Matrix4x4\ m\ =\ bones.Items[0].GetMatrix4x4();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m.m03\ =\ targetBone.WorldX\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m.m13\ =\ targetBone.WorldY\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawArrowhead(transform.localToWorldMatrix\ *\ m);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ childBone\ =\ bones.Items[1];}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ child\ =\ childBone.GetWorldPosition(transform,\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ handleColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(child,\ pos);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(targetPos,\ child);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneCircle(pos,\ handleColor,\ normal,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneCircle(child,\ handleColor,\ normal,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneCircle(targetPos,\ handleColor,\ normal);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Matrix4x4\ m\ =\ childBone.GetMatrix4x4();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m.m03\ =\ targetBone.WorldX\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m.m13\ =\ targetBone.WorldY\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawArrowhead(transform.localToWorldMatrix\ *\ m);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Handles.Label(targetPos,\ ikc.Data.Name,\ SpineHandles.BoneNameStyle);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00440}00440\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Path\ Constraints}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ handleColor\ =\ SpineHandles.PathColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PathConstraint\ pc\ \textcolor{keywordflow}{in}\ skeleton.PathConstraints)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ active\ =\ pc.MixX\ >\ 0\ ||\ pc.MixY\ >\ 0\ ||\ pc.MixRotate\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (active)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Bone\ b\ \textcolor{keywordflow}{in}\ pc.Bones)}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneCircle(b.GetWorldPosition(transform,\ skeletonRenderScale),\ handleColor,\ normal,\ 1f\ *\ skeletonRenderScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawReferenceRect\ (SkeletonGraphic\ skeletonGraphic,\ Color\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ RectTransform\ rectTransform\ =\ skeletonGraphic.rectTransform;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ referenceRectSize\ =\ skeletonGraphic.GetReferenceRectSize();}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ position\ =\ rectTransform.position;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ right\ =\ rectTransform.TransformVector(Vector3.right\ *\ referenceRectSize.x);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ up\ =\ rectTransform.TransformVector(Vector3.up\ *\ referenceRectSize.y);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ cornerVertexBL\ =\ position\ -\/\ rectTransform.pivot.x\ *\ right\ -\/\ rectTransform.pivot.y\ *\ up;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ DrawRect(cornerVertexBL,\ right,\ up,\ color);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawRectTransformRect\ (SkeletonGraphic\ skeletonGraphic,\ Color\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ RectTransform\ rectTransform\ =\ skeletonGraphic.rectTransform;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ rectTransformSize\ =\ skeletonGraphic.RectTransformSize;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ position\ =\ rectTransform.position;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ right\ =\ rectTransform.TransformVector(Vector3.right\ *\ rectTransformSize.x);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ up\ =\ rectTransform.TransformVector(Vector3.up\ *\ rectTransformSize.y);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ cornerVertexBL\ =\ position\ -\/\ rectTransform.pivot.x\ *\ right\ -\/\ rectTransform.pivot.y\ *\ up;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ DrawRect(cornerVertexBL,\ right,\ up,\ color);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00476}00476\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00477}00477\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawRect\ (Vector3\ cornerVertexBL,\ Vector3\ right,\ Vector3\ up,\ Color\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00479}00479\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ v0\ =\ cornerVertexBL;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ v1\ =\ v0\ +\ right;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ v2\ =\ v0\ +\ right\ +\ up;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ v3\ =\ v0\ +\ up;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ previousColor\ =\ UnityEditor.Handles.color;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.Handles.color\ =\ color;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.Handles.DrawLine(v0,\ v1);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.Handles.DrawLine(v1,\ v2);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.Handles.DrawLine(v2,\ v3);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.Handles.DrawLine(v3,\ v0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.Handles.color\ =\ previousColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawCrosshairs2D\ (Vector3\ position,\ \textcolor{keywordtype}{float}\ scale,\ \textcolor{keywordtype}{float}\ skeletonRenderScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ scale\ *=\ SpineEditorUtilities.Preferences.handleScale\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(position\ +\ \textcolor{keyword}{new}\ Vector3(-\/scale,\ 0),\ position\ +\ \textcolor{keyword}{new}\ Vector3(scale,\ 0));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(position\ +\ \textcolor{keyword}{new}\ Vector3(0,\ -\/scale),\ position\ +\ \textcolor{keyword}{new}\ Vector3(0,\ scale));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawCrosshairs\ (Vector3\ position,\ \textcolor{keywordtype}{float}\ scale,\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ c,\ \textcolor{keywordtype}{float}\ d,\ Transform\ transform,\ \textcolor{keywordtype}{float}\ skeletonRenderScale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ scale\ *=\ SpineEditorUtilities.Preferences.handleScale\ *\ skeletonRenderScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00505}00505\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ xOffset\ =\ (Vector3)(\textcolor{keyword}{new}\ Vector2(a,\ c).normalized\ *\ scale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ yOffset\ =\ (Vector3)(\textcolor{keyword}{new}\ Vector2(b,\ d).normalized\ *\ scale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ =\ transform.TransformDirection(xOffset);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ =\ transform.TransformDirection(yOffset);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(position\ +\ xOffset,\ position\ -\/\ xOffset);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawLine(position\ +\ yOffset,\ position\ -\/\ yOffset);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00513}00513\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawArrowhead2D\ (Vector3\ pos,\ \textcolor{keywordtype}{float}\ localRotation,\ \textcolor{keywordtype}{float}\ scale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00517}00517\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ scale\ *=\ SpineEditorUtilities.Preferences.handleScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00519}00519\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.IKMaterial.SetPass(0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.DrawMeshNow(SpineHandles.ArrowheadMesh,\ Matrix4x4.TRS(pos,\ Quaternion.Euler(0,\ 0,\ localRotation),\ \textcolor{keyword}{new}\ Vector3(scale,\ scale,\ scale)));}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00523}00523\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00524}00524\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawArrowhead\ (Vector3\ pos,\ Quaternion\ worldQuaternion)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.DrawMeshNow(SpineHandles.ArrowheadMesh,\ pos,\ worldQuaternion,\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00528}00528\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00530}00530\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawArrowhead\ (Matrix4x4\ m)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00532}00532\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ SpineEditorUtilities.Preferences.handleScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ m.m00\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ m.m01\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ m.m02\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ m.m10\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ m.m11\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ m.m12\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ m.m20\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ m.m21\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ m.m22\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00543}00543\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.IKMaterial.SetPass(0);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.DrawMeshNow(SpineHandles.ArrowheadMesh,\ m);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00546}00546\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00547}00547\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00548}00548\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawBoneCircle\ (Vector3\ pos,\ Color\ outlineColor,\ Vector3\ normal,\ \textcolor{keywordtype}{float}\ scale\ =\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00550}00550\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ scale\ *=\ SpineEditorUtilities.Preferences.handleScale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00552}00552\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ o\ =\ Handles.color;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ outlineColor;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ firstScale\ =\ 0.08f\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawSolidDisc(pos,\ normal,\ firstScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ Thickness\ =\ 0.03f;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ secondScale\ =\ firstScale\ -\/\ (Thickness\ *\ SpineEditorUtilities.Preferences.handleScale\ *\ scale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00559}00559\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (secondScale\ >\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ \textcolor{keyword}{new}\ Color(0.3f,\ 0.3f,\ 0.3f,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawSolidDisc(pos,\ normal,\ secondScale);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.color\ =\ o;}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00567}00567\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00568}00568\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ DrawCubicBezier\ (Vector3\ p0,\ Vector3\ p1,\ Vector3\ p2,\ Vector3\ p3)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UnityEngine.Event.current.type\ !=\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00570}00570\ }
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawBezier(p0,\ p3,\ p1,\ p2,\ Handles.color,\ Texture2D.whiteTexture,\ 2f);}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ const\ float\ dotSize\ =\ 0.01f;}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Quaternion\ q\ =\ Quaternion.identity;}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Handles.DotCap(0,\ p0,\ q,\ dotSize);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Handles.DotCap(0,\ p1,\ q,\ dotSize);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Handles.DotCap(0,\ p2,\ q,\ dotSize);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Handles.DotCap(0,\ p3,\ q,\ dotSize);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Handles.DrawLine(p0,\ p1);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Handles.DrawLine(p3,\ p2);}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00580}00580\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00581}00581\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_handles_8cs_source_l00582}00582\ \}}
+
+\end{DoxyCode}

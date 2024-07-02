@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SeniorOlympics: D:/Unity/SeniorOlympics/Assets/Spine Examples/Other Examples/Animation Tester/SpineAnimationTesterTool.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_spine_animation_tester_tool_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SpineAnimationTesterTool.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_spine_animation_tester_tool_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Spine Runtimes License Agreement</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Last updated July 28, 2023. Replaces all prior versions.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Copyright (c) 2013-2023, Esoteric Software LLC</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Integration of the Spine Runtimes into software or otherwise creating</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * derivative works of the Spine Runtimes is permitted under the terms and</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * conditions of Section 2 of the Spine Editor License Agreement:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * http://esotericsoftware.com/spine-editor-license</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Otherwise, it is permitted to integrate the Spine Runtimes into software or</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * otherwise create derivative works of the Spine Runtimes (collectively,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * &quot;Products&quot;), provided that each user of the Products must obtain their own</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * Spine Editor license and redistribution of the Products in any form must</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * include this license and copyright notice.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * THE SPINE RUNTIMES ARE PROVIDED BY ESOTERIC SOFTWARE LLC &quot;AS IS&quot; AND ANY</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * DISCLAIMED. IN NO EVENT SHALL ESOTERIC SOFTWARE LLC BE LIABLE FOR ANY</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * BUSINESS INTERRUPTION, OR LOSS OF USE, DATA, OR PROFITS) HOWEVER CAUSED AND</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_spine.html">Spine</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_spine_1_1_unity.html">Spine.Unity</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespace_spine.html">   37</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_spine_1_1_unity_1_1_examples.html">Spine.Unity.Examples</a> {</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html">   38</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html">SpineAnimationTesterTool</a> : MonoBehaviour, <a class="code hl_interface" href="interface_spine_1_1_unity_1_1_i_has_skeleton_data_asset.html">IHasSkeletonDataAsset</a>, <a class="code hl_interface" href="interface_spine_1_1_unity_1_1_i_has_skeleton_component.html">IHasSkeletonComponent</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">   40</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_animation.html">SkeletonAnimation</a> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">skeletonAnimation</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a37d3415615bfdb35c72d9349e26414ef">   41</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">SkeletonDataAsset</a> <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">SkeletonDataAsset</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">skeletonAnimation</a>.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_renderer.html#a2e53e761f321a7e2c08ea1bf10d757dc">SkeletonDataAsset</a>; } }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9cadb26dd59a9f72e1803ba41f534501">   42</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_spine_1_1_unity_1_1_i_skeleton_component.html">ISkeletonComponent</a> <a class="code hl_property" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9cadb26dd59a9f72e1803ba41f534501">SkeletonComponent</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">skeletonAnimation</a>; } }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a8eab5f295cd832bab0ed384968026913">   44</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a8eab5f295cd832bab0ed384968026913">useOverrideMixDuration</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac71e319a1c39ed2f6f5c3c7d744bb9d9">   45</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac71e319a1c39ed2f6f5c3c7d744bb9d9">overrideMixDuration</a> = 0.2f;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ab261ca2c38444b72b49f525e5c207aa0">   47</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ab261ca2c38444b72b49f525e5c207aa0">useOverrideAttachmentThreshold</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        [Range(0f, 1f)]</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9181cfdf62720a5aaf5b2ea59a8ecc7b">   50</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9181cfdf62720a5aaf5b2ea59a8ecc7b">attachmentThreshold</a> = 0.5f;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a50390056cfb07e604c997eb9af04a825">   52</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a50390056cfb07e604c997eb9af04a825">useOverrideDrawOrderThreshold</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        [Range(0f, 1f)]</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a7ba7df646867dbb0a7d5256304b24ca8">   54</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a7ba7df646867dbb0a7d5256304b24ca8">drawOrderThreshold</a> = 0.5f;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        [System.Serializable]</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html">   57</a></span>        <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html">AnimationControl</a> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            [<a class="code hl_class" href="class_spine_1_1_unity_1_1_spine_animation.html">SpineAnimation</a>]</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9ffd559ae5796526a278d120a2978a0d">   59</a></span>            <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9ffd559ae5796526a278d120a2978a0d">animationName</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9aaca6f32f83d03ec63ef8bd9ee1b20c">   60</a></span>            <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9aaca6f32f83d03ec63ef8bd9ee1b20c">loop</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a731eba53b26063346eb9d4b8bbb35ae2">   61</a></span>            <span class="keyword">public</span> KeyCode <a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a731eba53b26063346eb9d4b8bbb35ae2">key</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            [Space]</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#aa631a2ab48b2359451227b6df0a59b25">   64</a></span>            <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#aa631a2ab48b2359451227b6df0a59b25">useCustomMixDuration</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a2b1b5a3dfb54ad45f5036cb93779d042">   65</a></span>            <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a2b1b5a3dfb54ad45f5036cb93779d042">mixDuration</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="comment">//public bool useChainToControl;</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="comment">//public int chainToControl;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        [System.Serializable]</div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track.html">   70</a></span>        <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track.html">ControlledTrack</a> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track.html#adbb22a9e76f557bd0a6d37a2f406280f">   71</a></span>            <span class="keyword">public</span> List&lt;AnimationControl&gt; <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track.html#adbb22a9e76f557bd0a6d37a2f406280f">controls</a> = <span class="keyword">new</span> List&lt;AnimationControl&gt;();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        [Space]</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">   75</a></span>        <span class="keyword">public</span> List&lt;ControlledTrack&gt; <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">trackControls</a> = <span class="keyword">new</span> List&lt;ControlledTrack&gt;();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        [Header(<span class="stringliteral">&quot;UI&quot;</span>)]</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a5ea1811e875a4b472d8fe700a694ec32">   78</a></span>        <span class="keyword">public</span> UnityEngine.UI.Text <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a5ea1811e875a4b472d8fe700a694ec32">boundAnimationsText</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac8a253682b45f85c8ba61d6952753d4d">   79</a></span>        <span class="keyword">public</span> UnityEngine.UI.Text <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac8a253682b45f85c8ba61d6952753d4d">skeletonNameText</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordtype">void</span> OnValidate () {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="comment">// Fill in the SkeletonData asset name</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac8a253682b45f85c8ba61d6952753d4d">skeletonNameText</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">skeletonAnimation</a> != <span class="keyword">null</span> &amp;&amp; <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">skeletonAnimation</a>.<a class="code hl_variable" href="class_spine_1_1_unity_1_1_skeleton_renderer.html#a27160fb5fa4da50bac400c2bd38621f7">skeletonDataAsset</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    skeletonNameText.text = <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">SkeletonDataAsset</a>.name.Replace(<span class="stringliteral">&quot;_SkeletonData&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="comment">// Fill in the control list.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a5ea1811e875a4b472d8fe700a694ec32">boundAnimationsText</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                StringBuilder boundAnimationsStringBuilder = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                boundAnimationsStringBuilder.AppendLine(<span class="stringliteral">&quot;Animation Controls:&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> trackIndex = 0; trackIndex &lt; <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">trackControls</a>.Count; trackIndex++) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    <span class="keywordflow">if</span> (trackIndex &gt; 0)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                        boundAnimationsStringBuilder.AppendLine();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    boundAnimationsStringBuilder.AppendFormat(<span class="stringliteral">&quot;---- Track {0} ---- \n&quot;</span>, trackIndex);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    <span class="keywordflow">foreach</span> (<a class="code hl_struct" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html">AnimationControl</a> ba <span class="keywordflow">in</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">trackControls</a>[trackIndex].controls) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                        <span class="keywordtype">string</span> animationName = ba.<a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9ffd559ae5796526a278d120a2978a0d">animationName</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                        <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(animationName))</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                            animationName = <span class="stringliteral">&quot;SetEmptyAnimation&quot;</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                        boundAnimationsStringBuilder.AppendFormat(<span class="stringliteral">&quot;[{0}]  {1}\n&quot;</span>, ba.<a class="code hl_variable" href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a731eba53b26063346eb9d4b8bbb35ae2">key</a>.ToString(), animationName);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                boundAnimationsText.text = boundAnimationsStringBuilder.ToString();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordtype">void</span> Start () {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a8eab5f295cd832bab0ed384968026913">useOverrideMixDuration</a>) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                skeletonAnimation.AnimationState.Data.DefaultMix = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac71e319a1c39ed2f6f5c3c7d744bb9d9">overrideMixDuration</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">void</span> Update () {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <a class="code hl_class" href="class_spine_1_1_animation_state.html">AnimationState</a> animationState = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">skeletonAnimation</a>.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_animation.html#ab1694ead3860e2f34dd892747aef356b">AnimationState</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="comment">// For each track</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> trackIndex = 0; trackIndex &lt; <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">trackControls</a>.Count; trackIndex++) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="comment">// For each control in the track</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="keywordflow">foreach</span> (AnimationControl control <span class="keywordflow">in</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">trackControls</a>[trackIndex].controls) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                    <span class="comment">// Check each control, and play the appropriate animation.</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                    <span class="keywordflow">if</span> (Input.GetKeyDown(control.key)) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                        <a class="code hl_class" href="class_spine_1_1_track_entry.html">TrackEntry</a> trackEntry;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                        <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(control.animationName)) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                            trackEntry = animationState.<a class="code hl_function" href="class_spine_1_1_animation_state.html#aea0a186fda0d6f935f588f9753da1492">SetAnimation</a>(trackIndex, control.animationName, control.loop);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                            <span class="keywordtype">float</span> mix = control.useCustomMixDuration ? control.mixDuration : animationState.<a class="code hl_property" href="class_spine_1_1_animation_state.html#ab2d2e4e06fa38ff98fe4144b356f2c0a">Data</a>.<a class="code hl_property" href="class_spine_1_1_animation_state_data.html#a6cfdb35a391cc33dcd080ec1374f332e">DefaultMix</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                            trackEntry = animationState.<a class="code hl_function" href="class_spine_1_1_animation_state.html#a4e84d7e2712e10ea6ed95ff092cbd379">SetEmptyAnimation</a>(trackIndex, mix);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                        }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                        <span class="keywordflow">if</span> (trackEntry != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                            <span class="keywordflow">if</span> (control.useCustomMixDuration)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                                trackEntry.<a class="code hl_function" href="class_spine_1_1_track_entry.html#afa3afa0b84cd3b11b8d52200ead397d7">SetMixDuration</a>(control.mixDuration, 0f); <span class="comment">// use SetMixDuration(mixDuration, delay) to update delay correctly</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ab261ca2c38444b72b49f525e5c207aa0">useOverrideAttachmentThreshold</a>)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                                trackEntry.MixAttachmentThreshold = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9181cfdf62720a5aaf5b2ea59a8ecc7b">attachmentThreshold</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a50390056cfb07e604c997eb9af04a825">useOverrideDrawOrderThreshold</a>)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                                trackEntry.MixDrawOrderThreshold = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a7ba7df646867dbb0a7d5256304b24ca8">drawOrderThreshold</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                        }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                        <span class="comment">// Don&#39;t parse more than one animation per track.</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+</div>
+<div class="ttc" id="aclass_spine_1_1_animation_state_data_html_a6cfdb35a391cc33dcd080ec1374f332e"><div class="ttname"><a href="class_spine_1_1_animation_state_data.html#a6cfdb35a391cc33dcd080ec1374f332e">Spine.AnimationStateData.DefaultMix</a></div><div class="ttdeci">float DefaultMix</div><div class="ttdoc">The mix duration to use when no mix duration has been specifically defined between two animations.</div><div class="ttdef"><b>Definition</b> <a href="_animation_state_data_8cs_source.html#l00046">AnimationStateData.cs:46</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_animation_state_html"><div class="ttname"><a href="class_spine_1_1_animation_state.html">Spine.AnimationState</a></div><div class="ttdef"><b>Definition</b> <a href="_animation_state_8cs_source.html#l00042">AnimationState.cs:42</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_animation_state_html_a4e84d7e2712e10ea6ed95ff092cbd379"><div class="ttname"><a href="class_spine_1_1_animation_state.html#a4e84d7e2712e10ea6ed95ff092cbd379">Spine.AnimationState.SetEmptyAnimation</a></div><div class="ttdeci">TrackEntry SetEmptyAnimation(int trackIndex, float mixDuration)</div><div class="ttdef"><b>Definition</b> <a href="_animation_state_8cs_source.html#l00779">AnimationState.cs:779</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_animation_state_html_ab2d2e4e06fa38ff98fe4144b356f2c0a"><div class="ttname"><a href="class_spine_1_1_animation_state.html#ab2d2e4e06fa38ff98fe4144b356f2c0a">Spine.AnimationState.Data</a></div><div class="ttdeci">AnimationStateData Data</div><div class="ttdoc">The AnimationStateData to look up mix durations.</div><div class="ttdef"><b>Definition</b> <a href="_animation_state_8cs_source.html#l00955">AnimationState.cs:955</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_animation_state_html_aea0a186fda0d6f935f588f9753da1492"><div class="ttname"><a href="class_spine_1_1_animation_state.html#aea0a186fda0d6f935f588f9753da1492">Spine.AnimationState.SetAnimation</a></div><div class="ttdeci">TrackEntry SetAnimation(int trackIndex, string animationName, bool loop)</div><div class="ttdoc">Sets an animation by name. SetAnimation(int, Animation, bool)</div><div class="ttdef"><b>Definition</b> <a href="_animation_state_8cs_source.html#l00687">AnimationState.cs:687</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_track_entry_html"><div class="ttname"><a href="class_spine_1_1_track_entry.html">Spine.TrackEntry</a></div><div class="ttdef"><b>Definition</b> <a href="_animation_state_8cs_source.html#l00988">AnimationState.cs:988</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_track_entry_html_afa3afa0b84cd3b11b8d52200ead397d7"><div class="ttname"><a href="class_spine_1_1_track_entry.html#afa3afa0b84cd3b11b8d52200ead397d7">Spine.TrackEntry.SetMixDuration</a></div><div class="ttdeci">void SetMixDuration(float mixDuration, float delay)</div><div class="ttdoc">Sets both MixDuration and Delay.</div><div class="ttdef"><b>Definition</b> <a href="_animation_state_8cs_source.html#l01260">AnimationState.cs:1260</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track.html">Spine.Unity.Examples.SpineAnimationTesterTool.ControlledTrack</a></div><div class="ttdef"><b>Definition</b> <a href="#l00070">SpineAnimationTesterTool.cs:70</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track_html_adbb22a9e76f557bd0a6d37a2f406280f"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_controlled_track.html#adbb22a9e76f557bd0a6d37a2f406280f">Spine.Unity.Examples.SpineAnimationTesterTool.ControlledTrack.controls</a></div><div class="ttdeci">List&lt; AnimationControl &gt; controls</div><div class="ttdef"><b>Definition</b> <a href="#l00071">SpineAnimationTesterTool.cs:71</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html">Spine.Unity.Examples.SpineAnimationTesterTool</a></div><div class="ttdef"><b>Definition</b> <a href="#l00038">SpineAnimationTesterTool.cs:38</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a4b55b55249dcdccb487f51dc85f09fd4"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a4b55b55249dcdccb487f51dc85f09fd4">Spine.Unity.Examples.SpineAnimationTesterTool.trackControls</a></div><div class="ttdeci">List&lt; ControlledTrack &gt; trackControls</div><div class="ttdef"><b>Definition</b> <a href="#l00075">SpineAnimationTesterTool.cs:75</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a50390056cfb07e604c997eb9af04a825"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a50390056cfb07e604c997eb9af04a825">Spine.Unity.Examples.SpineAnimationTesterTool.useOverrideDrawOrderThreshold</a></div><div class="ttdeci">bool useOverrideDrawOrderThreshold</div><div class="ttdef"><b>Definition</b> <a href="#l00052">SpineAnimationTesterTool.cs:52</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a5ea1811e875a4b472d8fe700a694ec32"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a5ea1811e875a4b472d8fe700a694ec32">Spine.Unity.Examples.SpineAnimationTesterTool.boundAnimationsText</a></div><div class="ttdeci">UnityEngine.UI.Text boundAnimationsText</div><div class="ttdef"><b>Definition</b> <a href="#l00078">SpineAnimationTesterTool.cs:78</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a7ba7df646867dbb0a7d5256304b24ca8"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a7ba7df646867dbb0a7d5256304b24ca8">Spine.Unity.Examples.SpineAnimationTesterTool.drawOrderThreshold</a></div><div class="ttdeci">float drawOrderThreshold</div><div class="ttdef"><b>Definition</b> <a href="#l00054">SpineAnimationTesterTool.cs:54</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a8eab5f295cd832bab0ed384968026913"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a8eab5f295cd832bab0ed384968026913">Spine.Unity.Examples.SpineAnimationTesterTool.useOverrideMixDuration</a></div><div class="ttdeci">bool useOverrideMixDuration</div><div class="ttdef"><b>Definition</b> <a href="#l00044">SpineAnimationTesterTool.cs:44</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a9181cfdf62720a5aaf5b2ea59a8ecc7b"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9181cfdf62720a5aaf5b2ea59a8ecc7b">Spine.Unity.Examples.SpineAnimationTesterTool.attachmentThreshold</a></div><div class="ttdeci">float attachmentThreshold</div><div class="ttdef"><b>Definition</b> <a href="#l00050">SpineAnimationTesterTool.cs:50</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_a9cadb26dd59a9f72e1803ba41f534501"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#a9cadb26dd59a9f72e1803ba41f534501">Spine.Unity.Examples.SpineAnimationTesterTool.SkeletonComponent</a></div><div class="ttdeci">ISkeletonComponent SkeletonComponent</div><div class="ttdef"><b>Definition</b> <a href="#l00042">SpineAnimationTesterTool.cs:42</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_ab261ca2c38444b72b49f525e5c207aa0"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ab261ca2c38444b72b49f525e5c207aa0">Spine.Unity.Examples.SpineAnimationTesterTool.useOverrideAttachmentThreshold</a></div><div class="ttdeci">bool useOverrideAttachmentThreshold</div><div class="ttdef"><b>Definition</b> <a href="#l00047">SpineAnimationTesterTool.cs:47</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_ac71e319a1c39ed2f6f5c3c7d744bb9d9"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac71e319a1c39ed2f6f5c3c7d744bb9d9">Spine.Unity.Examples.SpineAnimationTesterTool.overrideMixDuration</a></div><div class="ttdeci">float overrideMixDuration</div><div class="ttdef"><b>Definition</b> <a href="#l00045">SpineAnimationTesterTool.cs:45</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_ac8a253682b45f85c8ba61d6952753d4d"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#ac8a253682b45f85c8ba61d6952753d4d">Spine.Unity.Examples.SpineAnimationTesterTool.skeletonNameText</a></div><div class="ttdeci">UnityEngine.UI.Text skeletonNameText</div><div class="ttdef"><b>Definition</b> <a href="#l00079">SpineAnimationTesterTool.cs:79</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_html_af19a77238b33a4047753f0bc3281c127"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool.html#af19a77238b33a4047753f0bc3281c127">Spine.Unity.Examples.SpineAnimationTesterTool.skeletonAnimation</a></div><div class="ttdeci">SkeletonAnimation skeletonAnimation</div><div class="ttdef"><b>Definition</b> <a href="#l00040">SpineAnimationTesterTool.cs:40</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_animation_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_animation.html">Spine.Unity.SkeletonAnimation</a></div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_8cs_source.html#l00045">SkeletonAnimation.cs:45</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_animation_html_ab1694ead3860e2f34dd892747aef356b"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_animation.html#ab1694ead3860e2f34dd892747aef356b">Spine.Unity.SkeletonAnimation.AnimationState</a></div><div class="ttdeci">Spine.AnimationState AnimationState</div><div class="ttdoc">This is the Spine.AnimationState object of this SkeletonAnimation. You can control animations through...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_8cs_source.html#l00055">SkeletonAnimation.cs:55</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_data_asset_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">Spine.Unity.SkeletonDataAsset</a></div><div class="ttdef"><b>Definition</b> <a href="_skeleton_data_asset_8cs_source.html#l00040">SkeletonDataAsset.cs:40</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_renderer_html_a27160fb5fa4da50bac400c2bd38621f7"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_renderer.html#a27160fb5fa4da50bac400c2bd38621f7">Spine.Unity.SkeletonRenderer.skeletonDataAsset</a></div><div class="ttdeci">SkeletonDataAsset skeletonDataAsset</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_renderer_8cs_source.html#l00070">SkeletonRenderer.cs:70</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_renderer_html_a2e53e761f321a7e2c08ea1bf10d757dc"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_renderer.html#a2e53e761f321a7e2c08ea1bf10d757dc">Spine.Unity.SkeletonRenderer.SkeletonDataAsset</a></div><div class="ttdeci">SkeletonDataAsset SkeletonDataAsset</div><div class="ttdoc">Gets the SkeletonDataAsset of the Spine Component.</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_renderer_8cs_source.html#l00375">SkeletonRenderer.cs:375</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_spine_animation_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_spine_animation.html">Spine.Unity.SpineAnimation</a></div><div class="ttdef"><b>Definition</b> <a href="_spine_attributes_8cs_source.html#l00095">SpineAttributes.cs:95</a></div></div>
+<div class="ttc" id="ainterface_spine_1_1_unity_1_1_i_has_skeleton_component_html"><div class="ttname"><a href="interface_spine_1_1_unity_1_1_i_has_skeleton_component.html">Spine.Unity.IHasSkeletonComponent</a></div><div class="ttdoc">A Spine-Unity Component that holds a reference to an ISkeletonComponent.</div><div class="ttdef"><b>Definition</b> <a href="_i_skeleton_animation_8cs_source.html#l00101">ISkeletonAnimation.cs:101</a></div></div>
+<div class="ttc" id="ainterface_spine_1_1_unity_1_1_i_has_skeleton_data_asset_html"><div class="ttname"><a href="interface_spine_1_1_unity_1_1_i_has_skeleton_data_asset.html">Spine.Unity.IHasSkeletonDataAsset</a></div><div class="ttdoc">Holds a reference to a SkeletonDataAsset.</div><div class="ttdef"><b>Definition</b> <a href="_i_skeleton_animation_8cs_source.html#l00069">ISkeletonAnimation.cs:69</a></div></div>
+<div class="ttc" id="ainterface_spine_1_1_unity_1_1_i_skeleton_component_html"><div class="ttname"><a href="interface_spine_1_1_unity_1_1_i_skeleton_component.html">Spine.Unity.ISkeletonComponent</a></div><div class="ttdoc">A Spine-Unity Component that manages a Spine.Skeleton instance, instantiated from a SkeletonDataAsset...</div><div class="ttdef"><b>Definition</b> <a href="_i_skeleton_animation_8cs_source.html#l00075">ISkeletonAnimation.cs:75</a></div></div>
+<div class="ttc" id="anamespace_spine_1_1_unity_1_1_examples_html"><div class="ttname"><a href="namespace_spine_1_1_unity_1_1_examples.html">Spine.Unity.Examples</a></div><div class="ttdef"><b>Definition</b> <a href="#l00037">SpineAnimationTesterTool.cs:37</a></div></div>
+<div class="ttc" id="anamespace_spine_1_1_unity_html"><div class="ttname"><a href="namespace_spine_1_1_unity.html">Spine.Unity</a></div><div class="ttdef"><b>Definition</b> <a href="#l00037">SpineAnimationTesterTool.cs:37</a></div></div>
+<div class="ttc" id="anamespace_spine_html"><div class="ttname"><a href="namespace_spine.html">Spine</a></div><div class="ttdef"><b>Definition</b> <a href="#l00037">SpineAnimationTesterTool.cs:37</a></div></div>
+<div class="ttc" id="astruct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control_html"><div class="ttname"><a href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html">Spine.Unity.Examples.SpineAnimationTesterTool.AnimationControl</a></div><div class="ttdef"><b>Definition</b> <a href="#l00057">SpineAnimationTesterTool.cs:57</a></div></div>
+<div class="ttc" id="astruct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control_html_a2b1b5a3dfb54ad45f5036cb93779d042"><div class="ttname"><a href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a2b1b5a3dfb54ad45f5036cb93779d042">Spine.Unity.Examples.SpineAnimationTesterTool.AnimationControl.mixDuration</a></div><div class="ttdeci">float mixDuration</div><div class="ttdef"><b>Definition</b> <a href="#l00065">SpineAnimationTesterTool.cs:65</a></div></div>
+<div class="ttc" id="astruct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control_html_a731eba53b26063346eb9d4b8bbb35ae2"><div class="ttname"><a href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a731eba53b26063346eb9d4b8bbb35ae2">Spine.Unity.Examples.SpineAnimationTesterTool.AnimationControl.key</a></div><div class="ttdeci">KeyCode key</div><div class="ttdef"><b>Definition</b> <a href="#l00061">SpineAnimationTesterTool.cs:61</a></div></div>
+<div class="ttc" id="astruct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control_html_a9aaca6f32f83d03ec63ef8bd9ee1b20c"><div class="ttname"><a href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9aaca6f32f83d03ec63ef8bd9ee1b20c">Spine.Unity.Examples.SpineAnimationTesterTool.AnimationControl.loop</a></div><div class="ttdeci">bool loop</div><div class="ttdef"><b>Definition</b> <a href="#l00060">SpineAnimationTesterTool.cs:60</a></div></div>
+<div class="ttc" id="astruct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control_html_a9ffd559ae5796526a278d120a2978a0d"><div class="ttname"><a href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#a9ffd559ae5796526a278d120a2978a0d">Spine.Unity.Examples.SpineAnimationTesterTool.AnimationControl.animationName</a></div><div class="ttdeci">string animationName</div><div class="ttdef"><b>Definition</b> <a href="#l00059">SpineAnimationTesterTool.cs:59</a></div></div>
+<div class="ttc" id="astruct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control_html_aa631a2ab48b2359451227b6df0a59b25"><div class="ttname"><a href="struct_spine_1_1_unity_1_1_examples_1_1_spine_animation_tester_tool_1_1_animation_control.html#aa631a2ab48b2359451227b6df0a59b25">Spine.Unity.Examples.SpineAnimationTesterTool.AnimationControl.useCustomMixDuration</a></div><div class="ttdeci">bool useCustomMixDuration</div><div class="ttdef"><b>Definition</b> <a href="#l00064">SpineAnimationTesterTool.cs:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfe35fcde3865645aebb6760888e5d19.html">SeniorOlympics</a></li><li class="navelem"><a class="el" href="dir_0dfbd538de68c6818498e81e82261dfb.html">Assets</a></li><li class="navelem"><a class="el" href="dir_9c8c39a7638d41efb5d2c79f438eff06.html">Spine Examples</a></li><li class="navelem"><a class="el" href="dir_b682046666420e53831e0e007f500f01.html">Other Examples</a></li><li class="navelem"><a class="el" href="dir_83a98d1764b50956040582e916833023.html">Animation Tester</a></li><li class="navelem"><a class="el" href="_spine_animation_tester_tool_8cs.html">SpineAnimationTesterTool.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

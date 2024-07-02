@@ -1,0 +1,135 @@
+\doxysection{Lean\+Format\+String.\+cs}
+\hypertarget{_lean_format_string_8cs_source}{}\label{_lean_format_string_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanCommon/Extras/Scripts/LeanFormatString.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanCommon/Extras/Scripts/LeanFormatString.cs}}
+\mbox{\hyperlink{_lean_format_string_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}};}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_common}{Lean.Common}}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00008}00008\ \ \ \ \ [HelpURL(LeanCommon.HelpUrlPrefix\ +\ \textcolor{stringliteral}{"{}LeanFormatString"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00009}00009\ \ \ \ \ [AddComponentMenu(LeanCommon.ComponentPathPrefix\ +\ \textcolor{stringliteral}{"{}Format\ String"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00010}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string}{LeanFormatString}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00012}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_1_1_string_event}{00012}}\ \ \ \ \ \ \ \ \ [System.Serializable]\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_1_1_string_event}{StringEvent}}\ :\ UnityEvent<string>\ \{\}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00015}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a370974b22803c93641bb5314c6546f6f}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a370974b22803c93641bb5314c6546f6f}{Format}}\ \{\ \textcolor{keyword}{set}\ \{\ format\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ format;\ \}\ \}\ [SerializeField]\ [Multiline]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ format\ =\ \textcolor{stringliteral}{"{}Current\ Value\ =\ \{0\}"{}};}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00019}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_abc178be85006145b4048a89de0b86a5f}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_1_1_string_event}{StringEvent}}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_abc178be85006145b4048a89de0b86a5f}{OnString}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{if}\ (onString\ ==\ \textcolor{keyword}{null})\ onString\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_1_1_string_event}{StringEvent}}();\ \textcolor{keywordflow}{return}\ onString;\ \ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ StringEvent\ onString;}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00022}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a22eb680adcbaec1064a5290566843eaa}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a22eb680adcbaec1064a5290566843eaa}{SetString}}(\textcolor{keywordtype}{string}\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00028}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a71a292433b06c4c5f9978a22297fa539}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a71a292433b06c4c5f9978a22297fa539}{SetString}}(\textcolor{keywordtype}{string}\ a,\ \textcolor{keywordtype}{string}\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00034}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_ae7fadf54f50f63ae0cd3ee05c9251164}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_ae7fadf54f50f63ae0cd3ee05c9251164}{SetString}}(\textcolor{keywordtype}{int}\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00040}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a0c9a17eb5b9378fdef3d31690a834cd0}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a0c9a17eb5b9378fdef3d31690a834cd0}{SetString}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00046}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_af274492b702e14c0528f0193bc9ca7de}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_af274492b702e14c0528f0193bc9ca7de}{SetString}}(\textcolor{keywordtype}{float}\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00052}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a49aa4580c50f8fd5a74d10c013bdec35}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a49aa4580c50f8fd5a74d10c013bdec35}{SetString}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00058}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a69ba917c69fd840551c0b06a086ac246}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a69ba917c69fd840551c0b06a086ac246}{SetString}}(Vector2\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00064}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a03e8d28bb3e1fa3728fc45206c503bea}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a03e8d28bb3e1fa3728fc45206c503bea}{SetString}}(Vector2\ a,\ Vector2\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00070}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a2eccc146c8ea7d9cf3d5400cf1a7f12d}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a2eccc146c8ea7d9cf3d5400cf1a7f12d}{SetString}}(Vector3\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00076}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a3cd2a2040d42f940d9c84ff93a994caa}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a3cd2a2040d42f940d9c84ff93a994caa}{SetString}}(Vector3\ a,\ Vector3\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00082}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a9a5a9cd934563dddb0324dde8596f06b}{00082}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a9a5a9cd934563dddb0324dde8596f06b}{SetString}}(Vector4\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00088}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a5f582307b6f34b60f1f073d439015628}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a5f582307b6f34b60f1f073d439015628}{SetString}}(Vector4\ a,\ Vector4\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00094}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_aaae7015a8bf3dbc56605f966b1ae9e60}{00094}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_aaae7015a8bf3dbc56605f966b1ae9e60}{SetString}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{int}\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00100}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_ac2945544fba78bc4d81b9bfa38ef9894}{00100}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_ac2945544fba78bc4d81b9bfa38ef9894}{SetString}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{float}\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ SendString(a,\ b);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ SendString(\textcolor{keywordtype}{object}\ a)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (onString\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onString.Invoke(\textcolor{keywordtype}{string}.\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a370974b22803c93641bb5314c6546f6f}{Format}}(format,\ a));}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ SendString(\textcolor{keywordtype}{object}\ a,\ \textcolor{keywordtype}{object}\ b)}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (onString\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onString.Invoke(\textcolor{keywordtype}{string}.\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_format_string_a370974b22803c93641bb5314c6546f6f}{Format}}(format,\ a,\ b));}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00123}00123\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00124}00124\ \textcolor{keyword}{namespace\ }Lean.Common.Editor}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00125}00125\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00127}00127\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ LeanFormatString;}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00129}00129\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00130}00130\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }LeanFormatString\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00132}00132\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ TARGET\ tgt;\ TARGET[]\ tgts;\ GetTargets(out\ tgt,\ out\ tgts);}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ BeginError(Any(tgts,\ t\ =>\ \textcolor{keywordtype}{string}.IsNullOrEmpty(t.Format)));}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}format"{}},\ \textcolor{stringliteral}{"{}The\ final\ text\ will\ use\ this\ string\ formatting,\ where\ \{0\}\ is\ the\ first\ value,\ \{1\}\ is\ the\ second,\ etc.\ Formatting\ uses\ standard\ <b>string.Format</b>\ style."{}});}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ EndError();}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}onString"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00146}00146\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_format_string_8cs_source_l00147}00147\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,884 @@
+\doxysection{CFXR\+\_\+\+Effect.\+cs}
+\hypertarget{_c_f_x_r___effect_8cs_source}{}\label{_c_f_x_r___effect_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR\_Effect.cs@{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR\_Effect.cs}}
+\mbox{\hyperlink{_c_f_x_r___effect_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00001}00001\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00002}00002\ \textcolor{comment}{//\ Cartoon\ FX}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00003}00003\ \textcolor{comment}{//\ (c)\ 2012-\/2020\ Jean\ Moreno}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00004}00004\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00007}00007\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00009}00009\ \textcolor{comment}{//\ Use\ the\ defines\ below\ to\ globally\ disable\ features:}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00011}00011\ \textcolor{comment}{//\#define\ DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00012}00012\ \textcolor{comment}{//\#define\ DISABLE\_LIGHTS}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00013}00013\ \textcolor{comment}{//\#define\ DISABLE\_CLEAR\_BEHAVIOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00015}00015\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00017}00017\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00018}00018\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00019}00019\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00020}00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00022}00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_cartoon_f_x}{CartoonFX}}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00024}00024\ \ \ \ \ [RequireComponent(typeof(ParticleSystem))]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00025}00025\ \ \ \ \ [DisallowMultipleComponent]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00026}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect}{CFXR\_Effect}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Change\ this\ value\ to\ easily\ tune\ the\ camera\ shake\ strength\ for\ all\ effects}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ GLOBAL\_CAMERA\_SHAKE\_MULTIPLIER\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00031}00031\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ [InitializeOnLoadMethod]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ InitGlobalOptions()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ AnimatedLight.editorPreview\ =\ EditorPrefs.GetBool(\textcolor{stringliteral}{"{}CFXR\ Light\ EditorPreview"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00036}00036\ \textcolor{preprocessor}{\ \ \ \ \#if\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ CameraShake.editorPreview\ =\ EditorPrefs.GetBool(\textcolor{stringliteral}{"{}CFXR\ CameraShake\ EditorPreview"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00040}00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00042}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84}{ClearBehavior}}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84a6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84abcfaccebf745acfd5e75351095a5394a}{Disable}},}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84a0e181f89f47654b86f3beb42f5cc08b8}{Destroy}}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00050}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light}{AnimatedLight}}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00052}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a7549c5c4271b1f01ada4ebfc3e5a1277}{00052}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a7549c5c4271b1f01ada4ebfc3e5a1277}{editorPreview}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00054}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a90484f3b6246077d28ef950d8cd23238}{00054}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Light\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a90484f3b6246077d28ef950d8cd23238}{light}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00056}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a94ccb788787d7c7bb2a90e99ba5108a8}{00056}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a94ccb788787d7c7bb2a90e99ba5108a8}{loop}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00058}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3e7b8ef6c4b748bbd2e27d8ae51ca857}{00058}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3e7b8ef6c4b748bbd2e27d8ae51ca857}{animateIntensity}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00059}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a21e74eb346009f6ede9685e801254371}{00059}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a21e74eb346009f6ede9685e801254371}{intensityStart}}\ =\ 8f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00060}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a59b115269146e000be25621c4f6aed8a}{00060}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a59b115269146e000be25621c4f6aed8a}{intensityEnd}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00061}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_adc37fbb83d460e52595d310967af53e8}{00061}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_adc37fbb83d460e52595d310967af53e8}{intensityDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00062}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a7d2074181a788866ff293aaa1a1b91f1}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AnimationCurve\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a7d2074181a788866ff293aaa1a1b91f1}{intensityCurve}}\ =\ AnimationCurve.EaseInOut(0f,\ 1f,\ 1f,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00063}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a97d67de4651fa5331e3ff37ea6e9ae07}{00063}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a97d67de4651fa5331e3ff37ea6e9ae07}{perlinIntensity}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00064}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_afc012c315541fa11e937e9fc59ed3d39}{00064}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_afc012c315541fa11e937e9fc59ed3d39}{perlinIntensitySpeed}}\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00065}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a16f0eae1b070f5460108e02888c4de52}{00065}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a16f0eae1b070f5460108e02888c4de52}{fadeIn}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00066}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ad5625cb54470f328ed9e35f67351ff0b}{00066}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ad5625cb54470f328ed9e35f67351ff0b}{fadeInDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00067}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa98df347104ea68b5b28be85c743730b}{00067}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa98df347104ea68b5b28be85c743730b}{fadeOut}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00068}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a85f24fb8976fa90e4cff0708c1f069ce}{00068}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a85f24fb8976fa90e4cff0708c1f069ce}{fadeOutDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00070}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_af91f4115e4e8ba86ab45b8d6d6a84692}{00070}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_af91f4115e4e8ba86ab45b8d6d6a84692}{animateRange}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00071}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_acce411f0d4b95ee92333ea504550e887}{00071}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_acce411f0d4b95ee92333ea504550e887}{rangeStart}}\ =\ 8f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00072}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a8e8a52ab9d52547af426518dee111866}{00072}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a8e8a52ab9d52547af426518dee111866}{rangeEnd}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00073}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aea278f3964d55f7ab2ab9ada172ef14e}{00073}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aea278f3964d55f7ab2ab9ada172ef14e}{rangeDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00074}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a1807ffb7fa704efb73964d1b140ae4f0}{00074}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AnimationCurve\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a1807ffb7fa704efb73964d1b140ae4f0}{rangeCurve}}\ =\ AnimationCurve.EaseInOut(0f,\ 1f,\ 1f,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00075}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa39fff62b736278c314814ebfcc3ae35}{00075}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa39fff62b736278c314814ebfcc3ae35}{perlinRange}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00076}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ab7fab651ed8b8a340e5792f89abb2d7e}{00076}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ab7fab651ed8b8a340e5792f89abb2d7e}{perlinRangeSpeed}}\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00078}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a89ae30141c75aada35c0e6501dba0866}{00078}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a89ae30141c75aada35c0e6501dba0866}{animateColor}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00079}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3920704fd2372e8239e9a12f8bf00364}{00079}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Gradient\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3920704fd2372e8239e9a12f8bf00364}{colorGradient}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00080}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a193db7dba7c74794c26374fed24ef1f7}{00080}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a193db7dba7c74794c26374fed24ef1f7}{colorDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00081}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a58f4fc50e173bfef6f4e4f7144ea2724}{00081}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AnimationCurve\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a58f4fc50e173bfef6f4e4f7144ea2724}{colorCurve}}\ =\ AnimationCurve.EaseInOut(0f,\ 1f,\ 1f,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00082}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a4814cc25e81f739a58ff52758ba8a3d7}{00082}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a4814cc25e81f739a58ff52758ba8a3d7}{perlinColor}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00083}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa0fc6183b05fb13e08139192affff365}{00083}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa0fc6183b05fb13e08139192affff365}{perlinColorSpeed}}\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00085}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a4b99fe339183472d9ace8dd14722f77a}{00085}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a4b99fe339183472d9ace8dd14722f77a}{animate}}(\textcolor{keywordtype}{float}\ time)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00087}00087\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a7549c5c4271b1f01ada4ebfc3e5a1277}{editorPreview}}\ \&\&\ !EditorApplication.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00092}00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a90484f3b6246077d28ef950d8cd23238}{light}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3e7b8ef6c4b748bbd2e27d8ae51ca857}{animateIntensity}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a94ccb788787d7c7bb2a90e99ba5108a8}{loop}}\ ?\ Mathf.Clamp01((time\ \%\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_adc37fbb83d460e52595d310967af53e8}{intensityDuration}})/\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_adc37fbb83d460e52595d310967af53e8}{intensityDuration}})\ :\ Mathf.Clamp01(time/\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_adc37fbb83d460e52595d310967af53e8}{intensityDuration}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delta\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a97d67de4651fa5331e3ff37ea6e9ae07}{perlinIntensity}}\ ?\ Mathf.PerlinNoise(Time.time\ *\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_afc012c315541fa11e937e9fc59ed3d39}{perlinIntensitySpeed}},\ 0f)\ :\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a7d2074181a788866ff293aaa1a1b91f1}{intensityCurve}}.Evaluate(delta);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.intensity\ =\ Mathf.LerpUnclamped(\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a59b115269146e000be25621c4f6aed8a}{intensityEnd}},\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a21e74eb346009f6ede9685e801254371}{intensityStart}},\ delta);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a16f0eae1b070f5460108e02888c4de52}{fadeIn}}\ \&\&\ time\ <\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ad5625cb54470f328ed9e35f67351ff0b}{fadeInDuration}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.intensity\ *=\ Mathf.Clamp01(time\ /\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ad5625cb54470f328ed9e35f67351ff0b}{fadeInDuration}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_af91f4115e4e8ba86ab45b8d6d6a84692}{animateRange}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a94ccb788787d7c7bb2a90e99ba5108a8}{loop}}\ ?\ Mathf.Clamp01((time\ \%\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aea278f3964d55f7ab2ab9ada172ef14e}{rangeDuration}})/\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aea278f3964d55f7ab2ab9ada172ef14e}{rangeDuration}})\ :\ Mathf.Clamp01(time/\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aea278f3964d55f7ab2ab9ada172ef14e}{rangeDuration}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delta\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa39fff62b736278c314814ebfcc3ae35}{perlinRange}}\ ?\ Mathf.PerlinNoise(Time.time\ *\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ab7fab651ed8b8a340e5792f89abb2d7e}{perlinRangeSpeed}},\ 10f)\ :\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a1807ffb7fa704efb73964d1b140ae4f0}{rangeCurve}}.Evaluate(delta);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.range\ =\ Mathf.LerpUnclamped(\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a8e8a52ab9d52547af426518dee111866}{rangeEnd}},\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_acce411f0d4b95ee92333ea504550e887}{rangeStart}},\ delta);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a89ae30141c75aada35c0e6501dba0866}{animateColor}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a94ccb788787d7c7bb2a90e99ba5108a8}{loop}}\ ?\ Mathf.Clamp01((time\ \%\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a193db7dba7c74794c26374fed24ef1f7}{colorDuration}})/\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a193db7dba7c74794c26374fed24ef1f7}{colorDuration}})\ :\ Mathf.Clamp01(time/\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a193db7dba7c74794c26374fed24ef1f7}{colorDuration}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delta\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a4814cc25e81f739a58ff52758ba8a3d7}{perlinColor}}\ ?\ Mathf.PerlinNoise(Time.time\ *\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa0fc6183b05fb13e08139192affff365}{perlinColorSpeed}},\ 0f)\ :\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a58f4fc50e173bfef6f4e4f7144ea2724}{colorCurve}}.Evaluate(delta);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.color\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3920704fd2372e8239e9a12f8bf00364}{colorGradient}}.Evaluate(delta);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00124}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a8528fc56f27ba89dcdee448a6701c931}{00124}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a8528fc56f27ba89dcdee448a6701c931}{animateFadeOut}}(\textcolor{keywordtype}{float}\ time)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa98df347104ea68b5b28be85c743730b}{fadeOut}}\ \&\&\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a90484f3b6246077d28ef950d8cd23238}{light}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.intensity\ *=\ 1.0f\ -\/\ Mathf.Clamp01(time\ /\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a85f24fb8976fa90e4cff0708c1f069ce}{fadeOutDuration}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00132}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ad98332bc4bc0614fa22860d7e66fef45}{00132}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_ad98332bc4bc0614fa22860d7e66fef45}{reset}}()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a90484f3b6246077d28ef950d8cd23238}{light}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3e7b8ef6c4b748bbd2e27d8ae51ca857}{animateIntensity}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.intensity\ =\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a16f0eae1b070f5460108e02888c4de52}{fadeIn}}\ ||\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_aa98df347104ea68b5b28be85c743730b}{fadeOut}})\ ?\ 0\ :\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a59b115269146e000be25621c4f6aed8a}{intensityEnd}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_af91f4115e4e8ba86ab45b8d6d6a84692}{animateRange}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.range\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a8e8a52ab9d52547af426518dee111866}{rangeEnd}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a89ae30141c75aada35c0e6501dba0866}{animateColor}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light.color\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light_a3920704fd2372e8239e9a12f8bf00364}{colorGradient}}.Evaluate(1f);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00153}00153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#region\ Animated\ Light\ Property\ Drawer}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00154}00154\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ [CustomPropertyDrawer(typeof(\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light}{AnimatedLight}}))]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }AnimatedLightDrawer\ :\ PropertyDrawer}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ light;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ loop;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ animateIntensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ intensityStart;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ intensityEnd;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ intensityDuration;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ intensityCurve;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ perlinIntensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ perlinIntensitySpeed;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ fadeIn;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ fadeInDuration;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ fadeOut;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ fadeOutDuration;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ animateRange;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ rangeStart;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ rangeEnd;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ rangeDuration;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ rangeCurve;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ perlinRange;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ perlinRangeSpeed;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ animateColor;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ colorGradient;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ colorDuration;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ colorCurve;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ perlinColor;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ perlinColorSpeed;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ fetchProperties(SerializedProperty\ property)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ light\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}light"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}loop"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animateIntensity\ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}animateIntensity"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intensityStart\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}intensityStart"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intensityEnd\ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}intensityEnd"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intensityDuration\ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}intensityDuration"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intensityCurve\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}intensityCurve"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinIntensity\ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}perlinIntensity"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinIntensitySpeed\ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}perlinIntensitySpeed"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fadeIn\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}fadeIn"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fadeInDuration\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}fadeInDuration"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fadeOut\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}fadeOut"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fadeOutDuration\ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}fadeOutDuration"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animateRange\ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}animateRange"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rangeStart\ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}rangeStart"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rangeEnd\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}rangeEnd"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rangeDuration\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}rangeDuration"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rangeCurve\ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}rangeCurve"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinRange\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}perlinRange"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinRangeSpeed\ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}perlinRangeSpeed"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animateColor\ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}animateColor"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colorGradient\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}colorGradient"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colorDuration\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}colorDuration"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colorCurve\ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}colorCurve"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinColor\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}perlinColor"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinColorSpeed\ \ \ \ \ \ =\ \textcolor{keyword}{property}.FindPropertyRelative(\textcolor{stringliteral}{"{}perlinColorSpeed"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIContent[]\ ModePopupLabels\ =\ \textcolor{keyword}{new}\ GUIContent[]\ \{\ \textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Curve"{}}),\ \textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Perlin\ Noise"{}})\ \};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIContent\ IntensityModeLabel\ =\ \textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Intensity\ Mode"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIContent\ RangeModeLabel\ =\ \textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Range\ Mode"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GUIContent\ ColorModeLabel\ =\ \textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Color\ Mode"{}});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ INDENT\_WIDTH\ =\ 15f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ PADDING\ =\ 4f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ startIndent(ref\ Rect\ rect)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUIUtility.labelWidth\ -\/=\ INDENT\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.xMin\ +=\ INDENT\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ endIndent(ref\ Rect\ rect)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUIUtility.labelWidth\ +=\ INDENT\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.xMin\ -\/=\ INDENT\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnGUI(Rect\ position,\ SerializedProperty\ property,\ GUIContent\ label)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fetchProperties(property);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ rect\ =\ EditorGUI.IndentedRect(position);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Rect\ lineRect\ =\ rect;}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//lineRect.height\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//lineRect.y\ -\/=\ 2;}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//EditorGUI.DrawRect(lineRect,\ Color.gray);}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_af37dce70335e31a012b150edf4c1007e}{Event}}.current.type\ ==\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Repaint)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorStyles.helpBox.Draw(rect,\ GUIContent.none,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUIUtility.labelWidth\ -\/=\ INDENT\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.height\ =\ EditorGUIUtility.singleLineHeight;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.xMax\ -\/=\ PADDING;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.y\ +=\ PADDING;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ propSpace\ =\ EditorGUIUtility.singleLineHeight\ +\ EditorGUIUtility.standardVerticalSpacing;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ light);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ loop);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ animateIntensity);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateIntensity.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ intensityStart);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ intensityEnd);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val\ =\ EditorGUI.Popup(rect,\ IntensityModeLabel,\ perlinIntensity.boolValue\ ?\ 1\ :\ 0,\ ModePopupLabels);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ ==\ 1\ \&\&\ !perlinIntensity.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinIntensity.boolValue\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (val\ ==\ 0\ \&\&\ perlinIntensity.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinIntensity.boolValue\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (perlinIntensity.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ perlinIntensitySpeed);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ intensityDuration);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ intensityCurve);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ fadeIn);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fadeIn.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ fadeInDuration);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ fadeOut);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fadeOut.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ fadeOutDuration);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ animateRange);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateRange.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ rangeStart);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ rangeEnd);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val\ =\ EditorGUI.Popup(rect,\ RangeModeLabel,\ perlinRange.boolValue\ ?\ 1\ :\ 0,\ ModePopupLabels);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ ==\ 1\ \&\&\ !perlinRange.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinRange.boolValue\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (val\ ==\ 0\ \&\&\ perlinRange.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinRange.boolValue\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (perlinRange.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ perlinRangeSpeed);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ rangeDuration);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ rangeCurve);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ animateColor);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateColor.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ colorGradient);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val\ =\ EditorGUI.Popup(rect,\ ColorModeLabel,\ perlinColor.boolValue\ ?\ 1\ :\ 0,\ ModePopupLabels);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ ==\ 1\ \&\&\ !perlinColor.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinColor.boolValue\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (val\ ==\ 0\ \&\&\ perlinColor.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perlinColor.boolValue\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00374}00374\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (perlinColor.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ perlinColorSpeed);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ colorDuration);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rect,\ colorCurve);\ rect.y\ +=\ propSpace;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endIndent(ref\ rect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUIUtility.labelWidth\ +=\ INDENT\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GUI.changed)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{property}.serializedObject.ApplyModifiedProperties();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{float}\ GetPropertyHeight(SerializedProperty\ property,\ GUIContent\ label)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fetchProperties(property);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ propSpace\ =\ EditorGUIUtility.singleLineHeight\ +\ EditorGUIUtility.standardVerticalSpacing;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00407}00407\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateIntensity.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ 3;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ perlinIntensity.boolValue\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ fadeIn.boolValue\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ fadeOut.boolValue\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateRange.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ 3;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ perlinRange.boolValue\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateColor.boolValue)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ perlinColor.boolValue\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count\ *\ propSpace\ +\ PADDING\ *\ 2;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00433}00433\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00434}00434\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ================================================================================================================================}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Globally\ disable\ features}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00441}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a87b5a574c78a0c3049a0fb37dd59cdb8}{00441}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a87b5a574c78a0c3049a0fb37dd59cdb8}{GlobalDisableCameraShake}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00442}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a90007a248316657144ca5c6930f4a965}{00442}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a90007a248316657144ca5c6930f4a965}{GlobalDisableLights}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ================================================================================================================================}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Defines\ an\ action\ to\ execute\ when\ the\ Particle\ System\ has\ completely\ finished\ playing\ and\ emitting\ particles."{}})]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00447}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a55f54ed816f0ea264e46c6b4c3816e42}{00447}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84}{ClearBehavior}}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a55f54ed816f0ea264e46c6b4c3816e42}{clearBehavior}}\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84}{ClearBehavior}}.Destroy;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00449}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{00449}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake}{CameraShake}}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00451}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{00451}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_animated_light}{AnimatedLight}}[]\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Defines\ which\ Particle\ System\ to\ track\ to\ trigger\ light\ fading\ out.\(\backslash\)nLeave\ empty\ if\ not\ using\ fading\ out."{}})]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00453}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_ace255739af37ace8669dd465c5d49a18}{00453}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ ParticleSystem\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_ace255739af37ace8669dd465c5d49a18}{fadeOutReference}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00454}00454\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ time;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ ParticleSystem\ rootParticleSystem;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ MaterialPropertyBlock\ materialPropertyBlock;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ Renderer\ particleRenderer;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ================================================================================================================================}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00462}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afbf7bbad2263b94ed5bd27b3c2c80835}{00462}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afbf7bbad2263b94ed5bd27b3c2c80835}{ResetState}}()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ time\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ fadingOutStartTime\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ isFadingOut\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00468}00468\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ animLight\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animLight.reset();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00476}00476\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00478}00478\ \textcolor{preprocessor}{\#if\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d}{enabled}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a15546c0581048d35ddc9126c51b8df61}{StopShake}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00483}00483\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00486}00486\ \textcolor{preprocessor}{\#if\ !DISABLE\_CAMERA\_SHAKE\ ||\ !DISABLE\_CLEAR\_BEHAVIOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00489}00489\ \textcolor{preprocessor}{\ \ \ \ \#if\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d}{enabled}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a278e9a3715a6422bae1d78c119dd41fc}{fetchCameras}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00494}00494\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00495}00495\ \textcolor{preprocessor}{\ \ \ \ \#if\ !DISABLE\_CLEAR\_BEHAVIOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ startFrameOffset\ =\ GlobalStartFrameOffset++;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00497}00497\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Detect\ if\ world\ position\ needs\ to\ be\ passed\ to\ the\ shader}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ particleRenderer\ =\ this.GetComponent<ParticleSystemRenderer>();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (particleRenderer.sharedMaterial\ !=\ \textcolor{keyword}{null}\ \&\&\ particleRenderer.sharedMaterial.IsKeywordEnabled(\textcolor{stringliteral}{"{}\_CFXR\_LIGHTING\_WPOS\_OFFSET"{}}))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ materialPropertyBlock\ =\ \textcolor{keyword}{new}\ MaterialPropertyBlock();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00504}00504\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00505}00505\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00506}00506\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00508}00508\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ animLight\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animLight.light\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00513}00513\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animLight.light.enabled\ =\ !\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a90007a248316657144ca5c6930f4a965}{GlobalDisableLights}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00515}00515\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animLight.light.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00517}00517\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00520}00520\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00523}00523\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afbf7bbad2263b94ed5bd27b3c2c80835}{ResetState}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00525}00525\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00527}00527\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS\ ||\ !DISABLE\_CAMERA\_SHAKE\ ||\ !DISABLE\_CLEAR\_BEHAVIOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00528}00528\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ CHECK\_EVERY\_N\_FRAME\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00529}00529\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ GlobalStartFrameOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00530}00530\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ startFrameOffset;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00531}00531\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00532}00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00533}00533\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS\ ||\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ time\ +=\ Time.deltaTime;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00535}00535\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afefd02df5202225e491fc4dad4105c07}{Animate}}(time);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_ace255739af37ace8669dd465c5d49a18}{fadeOutReference}}\ !=\ \textcolor{keyword}{null}\ \&\&\ !\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_ace255739af37ace8669dd465c5d49a18}{fadeOutReference}}.isEmitting\ \&\&\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_ace255739af37ace8669dd465c5d49a18}{fadeOutReference}}.isPlaying\ ||\ isFadingOut))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_aa604e2e660fa9f757490eeecf02bbcaf}{FadeOut}}(time);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00542}00542\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00543}00543\ \textcolor{preprocessor}{\#if\ !DISABLE\_CLEAR\_BEHAVIOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a55f54ed816f0ea264e46c6b4c3816e42}{clearBehavior}}\ !=\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84}{ClearBehavior}}.None)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rootParticleSystem\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rootParticleSystem\ =\ this.GetComponent<ParticleSystem>();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00550}00550\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ isAlive\ every\ N\ frame,\ with\ an\ offset\ so\ that\ all\ active\ effects\ aren't\ checked\ at\ once}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((Time.renderedFrameCount\ +\ startFrameOffset)\ \%\ CHECK\_EVERY\_N\_FRAME\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!rootParticleSystem.IsAlive(\textcolor{keyword}{true}))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a55f54ed816f0ea264e46c6b4c3816e42}{clearBehavior}}\ ==\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a7ceef1a1caf42f91e96826655ba18e84}{ClearBehavior}}.Destroy)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject.Destroy(this.gameObject);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00567}00567\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialPropertyBlock\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleRenderer.GetPropertyBlock(materialPropertyBlock);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ materialPropertyBlock.SetVector(\textcolor{stringliteral}{"{}\_GameObjectWorldPosition"{}},\ this.transform.position);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleRenderer.SetPropertyBlock(materialPropertyBlock);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00574}00574\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00575}00575\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00576}00576\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00577}00577\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS\ ||\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00578}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afefd02df5202225e491fc4dad4105c07}{00578}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afefd02df5202225e491fc4dad4105c07}{Animate}}(\textcolor{keywordtype}{float}\ time)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00579}00579\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00580}00580\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}}\ !=\ \textcolor{keyword}{null}\ \&\&\ !\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a90007a248316657144ca5c6930f4a965}{GlobalDisableLights}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ animLight\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00584}00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animLight.animate(time);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00586}00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00587}00587\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00588}00588\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00589}00589\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00590}00590\ \textcolor{preprocessor}{\#if\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00591}00591\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d}{enabled}}\ \&\&\ !\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a87b5a574c78a0c3049a0fb37dd59cdb8}{GlobalDisableCameraShake}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00592}00592\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00593}00593\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00594}00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a6aff8cd680dc47113849a563b047bab2}{isShaking}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00595}00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00596}00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a278e9a3715a6422bae1d78c119dd41fc}{fetchCameras}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00597}00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00598}00598\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00599}00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_ac945e612db97c19d7243bb8c685fc9e1}{animate}}(time);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00600}00600\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00601}00601\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00602}00602\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00603}00603\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00605}00605\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00606}00606\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isFadingOut;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00607}00607\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fadingOutStartTime;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00608}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_aa604e2e660fa9f757490eeecf02bbcaf}{00608}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_aa604e2e660fa9f757490eeecf02bbcaf}{FadeOut}}(\textcolor{keywordtype}{float}\ time)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00609}00609\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00610}00610\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00611}00611\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00613}00613\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00614}00614\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isFadingOut)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00616}00616\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00617}00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isFadingOut\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00618}00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fadingOutStartTime\ =\ time;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00619}00619\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00620}00620\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00621}00621\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ animLight\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_a942b46075c79141d8d5df6e93c1334e9}{animatedLights}})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00622}00622\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00623}00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animLight.animateFadeOut(time\ -\/\ fadingOutStartTime);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00626}00626\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00627}00627\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00628}00628\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00629}00629\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Editor\ preview}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00630}00630\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Detect\ when\ the\ Particle\ System\ is\ previewing\ and\ trigger\ this\ animation\ too}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00631}00631\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00632}00632\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ ParticleSystem\ \_parentParticle;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00633}00633\ \ \ \ \ \ \ \ \ ParticleSystem\ parentParticle}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00634}00634\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00637}00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_parentParticle\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00638}00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00639}00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_parentParticle\ =\ this.GetComponent<ParticleSystem>();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00640}00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00641}00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parentParticle;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00642}00642\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00643}00643\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00644}00644\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ editorUpdateRegistered;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00645}00645\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00646}00646\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ \textcolor{keywordtype}{bool}\ particleWasStopped;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00647}00647\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ \textcolor{keywordtype}{float}\ particleTime;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00648}00648\ \ \ \ \ \ \ \ \ [System.NonSerialized]\ \textcolor{keywordtype}{float}\ particleTimeUnwrapped;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDestroy()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ UnregisterEditorUpdate();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00653}00653\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RegisterEditorUpdate()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00656}00656\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \ \ \ var\ type\ =\ PrefabUtility.GetPrefabAssetType(this.gameObject);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \ \ var\ status\ =\ PrefabUtility.GetPrefabInstanceStatus(this.gameObject);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prefab\ in\ Project\ window}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((type\ ==\ PrefabAssetType.Regular\ ||\ type\ ==\ PrefabAssetType.Variant)\ \&\&\ status\ ==\ PrefabInstanceStatus.NotAPrefab)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00665}00665\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00666}00666\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!editorUpdateRegistered)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ +=\ onEditorUpdate;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ editorUpdateRegistered\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00671}00671\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00672}00672\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00673}00673\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ UnregisterEditorUpdate()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00674}00674\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (editorUpdateRegistered)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00677}00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ editorUpdateRegistered\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00678}00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ -\/=\ onEditorUpdate;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00679}00679\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00680}00680\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afbf7bbad2263b94ed5bd27b3c2c80835}{ResetState}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00681}00681\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00682}00682\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00683}00683\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onEditorUpdate()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00684}00684\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (EditorApplication.isPlayingOrWillChangePlaymode)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00689}00689\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \ \ \ var\ renderer\ =\ this.GetComponent<ParticleSystemRenderer>();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00696}00696\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (renderer.sharedMaterial\ !=\ \textcolor{keyword}{null}\ \&\&\ renderer.sharedMaterial.IsKeywordEnabled(\textcolor{stringliteral}{"{}\_CFXR\_LIGHTING\_WPOS\_OFFSET"{}}))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00697}00697\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00698}00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialPropertyBlock\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00699}00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00700}00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ materialPropertyBlock\ =\ \textcolor{keyword}{new}\ MaterialPropertyBlock();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00701}00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00702}00702\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00703}00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer.GetPropertyBlock(materialPropertyBlock);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00704}00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ materialPropertyBlock.SetVector(\textcolor{stringliteral}{"{}\_GameObjectWorldPosition"{}},\ this.transform.position);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00705}00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer.SetPropertyBlock(materialPropertyBlock);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00706}00706\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00707}00707\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00708}00708\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Need\ to\ track\ unwrapped\ time\ when\ playing\ back\ from\ Editor}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00709}00709\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ because\ the\ parentParticle.time\ will\ be\ reset\ at\ each\ loop}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ parentParticle.time\ -\/\ particleTime;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00711}00711\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00712}00712\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (delta\ <\ 0\ \&\&\ parentParticle.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00713}00713\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00714}00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delta\ =\ parentParticle.main.duration\ +\ delta;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00715}00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (delta\ >\ 0.1\ ||\ delta\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00716}00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00717}00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ try\ to\ detect\ when\ "{}Restart"{}\ is\ pressed}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00718}00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afbf7bbad2263b94ed5bd27b3c2c80835}{ResetState}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00719}00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleTimeUnwrapped\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00720}00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delta\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00721}00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00723}00723\ \ \ \ \ \ \ \ \ \ \ \ \ particleTimeUnwrapped\ +=\ delta;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00724}00724\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00725}00725\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (particleTime\ !=\ parentParticle.time)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00726}00726\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00727}00727\ \textcolor{preprocessor}{\#if\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00728}00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a3d83dec7d4c6ac1036fc8f9a441d881d}{enabled}}\ \&\&\ parentParticle.time\ <\ particleTime\ \&\&\ parentParticle.time\ <\ 0.05f)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00729}00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_abd0a9af0bcee141ad5f0b452d42cd8d6}{cameraShake}}.\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_1_1_camera_shake_a7c84da977f5bcaa90c717ae6314f0e35}{StartShake}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00731}00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00732}00732\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00733}00733\ \textcolor{preprocessor}{\#if\ !DISABLE\_LIGHTS\ ||\ !DISABLE\_CAMERA\_SHAKES}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afefd02df5202225e491fc4dad4105c07}{Animate}}(particleTimeUnwrapped);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parentParticle.isEmitting)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_aa604e2e660fa9f757490eeecf02bbcaf}{FadeOut}}(particleTimeUnwrapped);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00739}00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00740}00740\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00741}00741\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00742}00742\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00743}00743\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (particleWasStopped\ !=\ parentParticle.isStopped)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00744}00744\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00745}00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentParticle.isStopped)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00746}00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00747}00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___effect_afbf7bbad2263b94ed5bd27b3c2c80835}{ResetState}}();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00748}00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00749}00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleTimeUnwrapped\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00750}00750\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00751}00751\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00752}00752\ \ \ \ \ \ \ \ \ \ \ \ \ particleWasStopped\ =\ parentParticle.isStopped;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00753}00753\ \ \ \ \ \ \ \ \ \ \ \ \ particleTime\ =\ parentParticle.time;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00754}00754\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00755}00755\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00756}00756\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00757}00757\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00758}00758\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00759}00759\ \ \ \ \ [CustomEditor(typeof(CFXR\_Effect))]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00760}00760\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00761}00761\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CFXR\_Effect\_Editor\ :\ Editor}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00762}00762\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00763}00763\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}?\ lightEditorPreview;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00764}00764\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}?\ shakeEditorPreview;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00765}00765\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00766}00766\ \ \ \ \ \ \ \ \ GUIStyle\ \_PaddedRoundedRect;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00767}00767\ \ \ \ \ \ \ \ \ GUIStyle\ PaddedRoundedRect}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00768}00768\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00769}00769\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00770}00770\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00771}00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_PaddedRoundedRect\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00772}00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00773}00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PaddedRoundedRect\ =\ \textcolor{keyword}{new}\ GUIStyle(EditorStyles.helpBox);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00774}00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PaddedRoundedRect.padding\ =\ \textcolor{keyword}{new}\ RectOffset(4,\ 4,\ 4,\ 4);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00775}00775\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00776}00776\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_PaddedRoundedRect;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00777}00777\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00778}00778\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00779}00779\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00780}00780\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspectorGUI()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00781}00781\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00782}00782\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalOptionsGUI();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00783}00783\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00784}00784\ \textcolor{preprocessor}{\#if\ DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00785}00785\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Camera\ Shake\ has\ been\ globally\ disabled\ in\ the\ code.\(\backslash\)nThe\ properties\ remain\ to\ avoid\ data\ loss\ but\ the\ shaking\ won't\ be\ applied\ for\ any\ effect."{}},\ MessageType.Info);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00786}00786\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00787}00787\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00788}00788\ \ \ \ \ \ \ \ \ \ \ \ \ base.OnInspectorGUI();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00789}00789\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00790}00790\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00791}00791\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GlobalOptionsGUI()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00792}00792\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00793}00793\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.BeginVertical(PaddedRoundedRect);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00794}00794\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00795}00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GUILayout.Label(\textcolor{stringliteral}{"{}Editor\ Preview:"{}},\ EditorStyles.boldLabel);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00796}00796\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00797}00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lightEditorPreview\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00798}00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00799}00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lightEditorPreview\ =\ EditorPrefs.GetBool(\textcolor{stringliteral}{"{}CFXR\ Light\ EditorPreview"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00800}00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00801}00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ lightPreview\ =\ EditorGUILayout.Toggle(\textcolor{stringliteral}{"{}Light\ Animations"{}},\ lightEditorPreview.Value);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00802}00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lightPreview\ !=\ lightEditorPreview.Value)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00803}00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00804}00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lightEditorPreview\ =\ lightPreview;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00805}00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorPrefs.SetBool(\textcolor{stringliteral}{"{}CFXR\ Light\ EditorPreview"{}},\ lightPreview);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00806}00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CFXR\_Effect.AnimatedLight.editorPreview\ =\ lightPreview;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00807}00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00808}00808\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00809}00809\ \textcolor{preprocessor}{\#if\ !DISABLE\_CAMERA\_SHAKE}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00810}00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shakeEditorPreview\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00812}00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shakeEditorPreview\ =\ EditorPrefs.GetBool(\textcolor{stringliteral}{"{}CFXR\ CameraShake\ EditorPreview"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00813}00813\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00814}00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ shakePreview\ =\ EditorGUILayout.Toggle(\textcolor{stringliteral}{"{}Camera\ Shake"{}},\ shakeEditorPreview.Value);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00815}00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shakePreview\ !=\ shakeEditorPreview.Value)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00816}00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00817}00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shakeEditorPreview\ =\ shakePreview;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00818}00818\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorPrefs.SetBool(\textcolor{stringliteral}{"{}CFXR\ CameraShake\ EditorPreview"{}},\ shakePreview);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00819}00819\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CFXR\_Effect.CameraShake.editorPreview\ =\ shakePreview;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00820}00820\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00821}00821\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00822}00822\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00823}00823\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.EndVertical();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00824}00824\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00825}00825\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00826}00826\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00827}00827\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00828}00828\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.targets\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00829}00829\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00830}00830\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00831}00831\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00832}00832\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00833}00833\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ t\ \textcolor{keywordflow}{in}\ this.targets)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00834}00834\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00835}00835\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ cfxr\_effect\ =\ t\ as\ CFXR\_Effect;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00836}00836\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cfxr\_effect\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00837}00837\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00838}00838\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isPrefabSource(cfxr\_effect.gameObject))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00839}00839\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00840}00840\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00841}00841\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00842}00842\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cfxr\_effect.RegisterEditorUpdate();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00843}00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00844}00844\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00845}00845\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00846}00846\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00847}00847\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00848}00848\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00849}00849\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.targets\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00850}00850\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00851}00851\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00852}00852\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00853}00853\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00854}00854\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ t\ \textcolor{keywordflow}{in}\ this.targets)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00855}00855\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00856}00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Can\ be\ null\ if\ GameObject\ has\ been\ destroyed}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00857}00857\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ cfxr\_effect\ =\ t\ as\ CFXR\_Effect;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00858}00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cfxr\_effect\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00859}00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00860}00860\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isPrefabSource(cfxr\_effect.gameObject))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00861}00861\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00862}00862\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00863}00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00864}00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cfxr\_effect.UnregisterEditorUpdate();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00865}00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00866}00866\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00867}00867\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00868}00868\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00869}00869\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isPrefabSource(GameObject\ gameObject)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00870}00870\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00871}00871\ \ \ \ \ \ \ \ \ \ \ \ \ var\ assetType\ =\ PrefabUtility.GetPrefabAssetType(gameObject);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00872}00872\ \ \ \ \ \ \ \ \ \ \ \ \ var\ prefabType\ =\ PrefabUtility.GetPrefabInstanceStatus(gameObject);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00873}00873\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((assetType\ ==\ PrefabAssetType.Regular\ ||\ assetType\ ==\ PrefabAssetType.Variant)\ \&\&\ prefabType\ ==\ PrefabInstanceStatus.NotAPrefab);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00874}00874\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00875}00875\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00876}00876\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00877}00877\ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___effect_8cs_source_l00878}00878\ ;}
+
+\end{DoxyCode}

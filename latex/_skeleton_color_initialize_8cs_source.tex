@@ -1,0 +1,87 @@
+\doxysection{Skeleton\+Color\+Initialize.\+cs}
+\hypertarget{_skeleton_color_initialize_8cs_source}{}\label{_skeleton_color_initialize_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SkeletonColorInitialize.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SkeletonColorInitialize.cs}}
+\mbox{\hyperlink{_skeleton_color_initialize_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine}{Spine}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00035}\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_prototyping}{00035}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_prototyping}{Spine.Unity.Prototyping}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize}{SkeletonColorInitialize}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_a2630e7e89ef0619e200fcbe78d882fa5}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_a2630e7e89ef0619e200fcbe78d882fa5}{skeletonColor}}\ =\ Color.white;}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_ac67b1e496f200acb366f41f603ae1d32}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<SlotSettings>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_ac67b1e496f200acb366f41f603ae1d32}{slotSettings}}\ =\ \textcolor{keyword}{new}\ List<SlotSettings>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_1_1_slot_settings}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_1_1_slot_settings}{SlotSettings}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_slot}{SpineSlot}}]}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00045}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_1_1_slot_settings_a397c464d849016823709b636c906e89c}{00045}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_1_1_slot_settings_a397c464d849016823709b636c906e89c}{slot}}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_1_1_slot_settings_a98a5cd67c2e2bb3e50953c8cd5e7b070}{00046}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_1_1_slot_settings_a98a5cd67c2e2bb3e50953c8cd5e7b070}{color}}\ =\ Color.white;}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00049}00049\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnValidate\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component}{ISkeletonComponent}}\ skeletonComponent\ =\ GetComponent<ISkeletonComponent>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonComponent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component_a378f283bd1514c0ce61719fa2ce0a467}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a8018f6075e7578e9bccf1cd81c92f904}{SetSlotsToSetupPose}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component}{IAnimationStateComponent}}\ animationStateComponent\ =\ GetComponent<IAnimationStateComponent>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationStateComponent\ !=\ \textcolor{keyword}{null}\ \&\&\ animationStateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}}\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animationStateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}}.Apply(skeletonComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component_a378f283bd1514c0ce61719fa2ce0a467}{Skeleton}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ ApplySettings();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00061}00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ ApplySettings();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplySettings\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component}{ISkeletonComponent}}\ skeletonComponent\ =\ GetComponent<ISkeletonComponent>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonComponent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton\ =\ skeletonComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component_a378f283bd1514c0ce61719fa2ce0a467}{Skeleton}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.SetColor(\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_a2630e7e89ef0619e200fcbe78d882fa5}{skeletonColor}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SlotSettings\ s\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_skeleton_color_initialize_ac67b1e496f200acb366f41f603ae1d32}{slotSettings}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_aeeaf7abe56f807e6e57f3a2514e607ab}{FindSlot}}(s.slot);}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot\ !=\ \textcolor{keyword}{null})\ slot.SetColor(s.color);}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_color_initialize_8cs_source_l00083}00083\ \}}
+
+\end{DoxyCode}

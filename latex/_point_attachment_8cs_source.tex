@@ -1,0 +1,71 @@
+\doxysection{Point\+Attachment.\+cs}
+\hypertarget{_point_attachment_8cs_source}{}\label{_point_attachment_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Attachments/PointAttachment.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Attachments/PointAttachment.cs}}
+\mbox{\hyperlink{_point_attachment_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_point_attachment}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_point_attachment}{PointAttachment}}\ :\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ x,\ y,\ rotation;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_point_attachment_ac4a6eefda3030b2294cfcf07443f417e}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_ac4a6eefda3030b2294cfcf07443f417e}{X}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ x;\ \}\ \textcolor{keyword}{set}\ \{\ x\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_point_attachment_a6f7987d16f3c50f8200fd27147b119aa}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_a6f7987d16f3c50f8200fd27147b119aa}{Y}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ y;\ \}\ \textcolor{keyword}{set}\ \{\ y\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00044}\mbox{\hyperlink{class_spine_1_1_point_attachment_a9df3725722d6bb10f5efece7a2cfc935}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_a9df3725722d6bb10f5efece7a2cfc935}{Rotation}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ rotation;\ \}\ \textcolor{keyword}{set}\ \{\ rotation\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_point_attachment_a2ae2f0aa30bac4b25aa6a6adf190d77d}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_a2ae2f0aa30bac4b25aa6a6adf190d77d}{PointAttachment}}\ (\textcolor{keywordtype}{string}\ name)}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(name)\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_point_attachment_a88c88902b160dca006f6c4d747cdef6f}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_a88c88902b160dca006f6c4d747cdef6f}{PointAttachment}}\ (\mbox{\hyperlink{class_spine_1_1_point_attachment}{PointAttachment}}\ other)}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(other)\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ other.x;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ other.y;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ other.rotation;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00058}\mbox{\hyperlink{class_spine_1_1_point_attachment_af707129ef2f4326fa176b55c8944d2a4}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_af707129ef2f4326fa176b55c8944d2a4}{ComputeWorldPosition}}\ (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone,\ out\ \textcolor{keywordtype}{float}\ ox,\ out\ \textcolor{keywordtype}{float}\ oy)\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ bone.\mbox{\hyperlink{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}{LocalToWorld}}(this.x,\ this.y,\ out\ ox,\ out\ oy);}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00062}\mbox{\hyperlink{class_spine_1_1_point_attachment_a62471f0abf986ae7b095152a17ae5f99}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_a62471f0abf986ae7b095152a17ae5f99}{ComputeWorldRotation}}\ (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone)\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ rotation\ *\ MathUtils.DegRad,\ cos\ =\ (float)Math.Cos(r),\ sin\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ cos\ *\ bone.a\ +\ sin\ *\ bone.b;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ cos\ *\ bone.c\ +\ sin\ *\ bone.d;}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(y,\ x);}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00069}\mbox{\hyperlink{class_spine_1_1_point_attachment_acb89a09250f32f0cc71816d0bbaf529a}{00069}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_acb89a09250f32f0cc71816d0bbaf529a}{Copy}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_point_attachment_a2ae2f0aa30bac4b25aa6a6adf190d77d}{PointAttachment}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_point_attachment_8cs_source_l00073}00073\ \}}
+
+\end{DoxyCode}

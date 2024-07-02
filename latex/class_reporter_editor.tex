@@ -1,0 +1,107 @@
+\doxysection{Reporter\+Editor 클래스 참조}
+\hypertarget{class_reporter_editor}{}\label{class_reporter_editor}\index{ReporterEditor@{ReporterEditor}}
+
+
+Reporter\+Editor에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_reporter_editor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Reporter\+Editor에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_reporter_editor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_reporter_editor_ad3ad2a093d0c48f7b9c18a68223cc742}{Create\+Reporter}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_reporter_editor_8cs_source}{Reporter\+Editor.\+cs}} 파일의 \mbox{\hyperlink{_reporter_editor_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_reporter_editor_ad3ad2a093d0c48f7b9c18a68223cc742}\index{ReporterEditor@{ReporterEditor}!CreateReporter@{CreateReporter}}
+\index{CreateReporter@{CreateReporter}!ReporterEditor@{ReporterEditor}}
+\doxysubsubsection{\texorpdfstring{CreateReporter()}{CreateReporter()}}
+{\footnotesize\ttfamily \label{class_reporter_editor_ad3ad2a093d0c48f7b9c18a68223cc742} 
+static void Reporter\+Editor.\+Create\+Reporter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_reporter_editor_8cs_source}{Reporter\+Editor.\+cs}} 파일의 \mbox{\hyperlink{_reporter_editor_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ReporterExecOrder\ =\ -\/12000;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ GameObject\ reporterObj\ =\ \textcolor{keyword}{new}\ GameObject();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ reporterObj.name\ =\ \textcolor{stringliteral}{"{}Reporter"{}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reporter}{Reporter}}\ reporter\ =\ reporterObj.AddComponent<\mbox{\hyperlink{class_reporter}{Reporter}}>();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ reporterObj.AddComponent<\mbox{\hyperlink{class_reporter_message_receiver}{ReporterMessageReceiver}}>();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reporterObj.AddComponent<TestReporter>();}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Register\ root\ object\ for\ undo.}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Undo.RegisterCreatedObjectUndo(reporterObj,\ \textcolor{stringliteral}{"{}Create\ Reporter\ Object"{}});}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ MonoScript\ reporterScript\ =\ MonoScript.FromMonoBehaviour(reporter);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ reporterPath\ =\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.GetDirectoryName(AssetDatabase.GetAssetPath(reporterScript));}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MonoImporter.GetExecutionOrder(reporterScript)\ !=\ ReporterExecOrder)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ MonoImporter.SetExecutionOrder(reporterScript,\ ReporterExecOrder);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}Fixing\ exec\ order\ for\ "{}\ +\ reporterScript.name);}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ reporter.images\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_images}{Images}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ reporter.images.clearImage\ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/clear.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ reporter.images.collapseImage\ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/collapse.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ reporter.images.clearOnNewSceneImage\ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/clearOnSceneLoaded.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ reporter.images.showTimeImage\ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/timer\_1.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ reporter.images.showSceneImage\ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/UnityIcon.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ reporter.images.userImage\ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/user.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ reporter.images.showMemoryImage\ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/memory.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ reporter.images.softwareImage\ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/software.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ reporter.images.dateImage\ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/date.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ reporter.images.showFpsImage\ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/fps.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reporter.images.graphImage\ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(Path.Combine(reporterPath,\ "{}Images/chart.png"{}),\ typeof(Texture2D));}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ reporter.images.infoImage\ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/info.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ reporter.images.saveLogsImage\ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/Save.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ reporter.images.searchImage\ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/search.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ reporter.images.copyImage\ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/copy.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ reporter.images.closeImage\ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/close.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ reporter.images.buildFromImage\ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/buildFrom.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ reporter.images.systemInfoImage\ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/ComputerIcon.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ reporter.images.graphicsInfoImage\ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/graphicCard.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ reporter.images.backImage\ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/back.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ reporter.images.logImage\ \ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/log\_icon.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ reporter.images.warningImage\ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/warning\_icon.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ reporter.images.errorImage\ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/error\_icon.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ reporter.images.barImage\ \ \ \ \ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/bar.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ reporter.images.button\_activeImage\ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/button\_active.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ reporter.images.even\_logImage\ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/even\_log.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ reporter.images.odd\_logImage\ \ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/odd\_log.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ reporter.images.selectedImage\ \ \ \ \ \ \ \ =\ (Texture2D)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/selected.png"{}}),\ typeof(Texture2D));}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ reporter.images.reporterScrollerSkin\ =\ (GUISkin)AssetDatabase.LoadAssetAtPath(\mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(reporterPath,\ \textcolor{stringliteral}{"{}Images/reporterScrollerSkin.guiskin"{}}),\ typeof(GUISkin));}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Unity-\/\+Logs-\/\+Viewer/\+Reporter/\+Editor/\mbox{\hyperlink{_reporter_editor_8cs}{Reporter\+Editor.\+cs}}\end{DoxyCompactItemize}

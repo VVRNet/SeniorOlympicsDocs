@@ -1,0 +1,71 @@
+\doxysection{MS500\+DLL.\+cs}
+\hypertarget{_m_s500_d_l_l_8cs_source}{}\label{_m_s500_d_l_l_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/02.MS500SDK/Scripts/MS500DLL.cs@{D:/Unity/SeniorOlympics/Assets/02.MS500SDK/Scripts/MS500DLL.cs}}
+\mbox{\hyperlink{_m_s500_d_l_l_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Runtime.InteropServices;}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00008}\mbox{\hyperlink{class_m_s500_d_l_l}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_s500_d_l_l}{MS500DLL}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_m_s500_d_l_l}{MS500DLL}}()}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ var\ currentPath\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}PATH"{}},\ EnvironmentVariableTarget.Process);}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00013}00013\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR\_64}}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ currentPath\ +=\ Path.PathSeparator\ +\ Application.dataPath\ +\ \textcolor{stringliteral}{"{}/Plugins/x86\_64/"{}};}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00015}00015\ \textcolor{preprocessor}{\#elif\ UNITY\_EDITOR\_32}}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ currentPath\ +=\ Path.PathSeparator\ +\ Application.dataPath+\ \textcolor{stringliteral}{"{}/Plugins/x86/"{}};}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00017}00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ Environment.SetEnvironmentVariable(\textcolor{stringliteral}{"{}PATH"{}},\ currentPath);}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00022}00022\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00023}\mbox{\hyperlink{class_m_s500_d_l_l_a67d027bd378f7170741ac0b6e7c9ca60}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_a67d027bd378f7170741ac0b6e7c9ca60}{OrdDriver\_open}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00026}00026\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00027}\mbox{\hyperlink{class_m_s500_d_l_l_acdb5715ff5ac4f18497a0ef1c2e97269}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_s500_d_l_l_acdb5715ff5ac4f18497a0ef1c2e97269}{IsOpen}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00029}00029\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00030}\mbox{\hyperlink{class_m_s500_d_l_l_a169387dac2c4954e50df1b6f336837d1}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_a169387dac2c4954e50df1b6f336837d1}{OrdDriver\_Connect}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00032}00032\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00033}\mbox{\hyperlink{class_m_s500_d_l_l_ab1035a7394b5193fe5f691fa77fe0fab}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_ab1035a7394b5193fe5f691fa77fe0fab}{OrdDriver\_Stream}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00035}00035\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00036}\mbox{\hyperlink{class_m_s500_d_l_l_aed16b92bb5bd8a9b6d088d2eb1687cb5}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_aed16b92bb5bd8a9b6d088d2eb1687cb5}{OrdDriver\_StopStream}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00038}00038\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00039}\mbox{\hyperlink{class_m_s500_d_l_l_a3bb1243b62ca4feace09dc1498523bbf}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_a3bb1243b62ca4feace09dc1498523bbf}{OrdDriver\_Reboot}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00041}00041\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00042}\mbox{\hyperlink{class_m_s500_d_l_l_ad35f2bdbb81d6b3cfac15f0b6a229a43}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_ad35f2bdbb81d6b3cfac15f0b6a229a43}{OrdDriver\_SetScanSpeed}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00044}00044\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00045}\mbox{\hyperlink{class_m_s500_d_l_l_a1d102c55b711702484d1e00d7a2c0b45}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_a1d102c55b711702484d1e00d7a2c0b45}{OrdDriver\_SetScanDirection5}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00048}00048\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00049}\mbox{\hyperlink{class_m_s500_d_l_l_a67682c9ab68ac241a1277504373d907c}{00049}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_a67682c9ab68ac241a1277504373d907c}{OrdDriver\_GetScanDirection}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00051}00051\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00052}\mbox{\hyperlink{class_m_s500_d_l_l_abcddba349cc48492b3f7a05535bf22ae}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_s500_d_l_l_abcddba349cc48492b3f7a05535bf22ae}{OrdDriver\_SetScanDirection0}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00054}00054\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00055}\mbox{\hyperlink{class_m_s500_d_l_l_abba567cb3ecf2221fef01290ab57474b}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_s500_d_l_l_abba567cb3ecf2221fef01290ab57474b}{OrdDriver\_Data}}(out\ IntPtr\ data,\ out\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00057}00057\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}libord\_sdk"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00058}\mbox{\hyperlink{class_m_s500_d_l_l_a726f96420c5671cd4ea9499b8684d5b0}{00058}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_s500_d_l_l_a726f96420c5671cd4ea9499b8684d5b0}{OrdDriver\_Close}}();}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00061}00061\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}kernel32"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00062}\mbox{\hyperlink{class_m_s500_d_l_l_a279cb6d821d7463f1b9da7ccb2e3494f}{00062}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ IntPtr\ \mbox{\hyperlink{class_m_s500_d_l_l_a279cb6d821d7463f1b9da7ccb2e3494f}{LoadLibrary}}(\textcolor{keywordtype}{string}\ dllToLoad);}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00063}00063\ \ \ \ \ [DllImport(\textcolor{stringliteral}{"{}kernel32"{}})]}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00064}\mbox{\hyperlink{class_m_s500_d_l_l_a9ca019f46e9eac89999fcb446b00cdbd}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_s500_d_l_l_a9ca019f46e9eac89999fcb446b00cdbd}{FreeLibrary}}(IntPtr\ hModule);}
+\DoxyCodeLine{\Hypertarget{_m_s500_d_l_l_8cs_source_l00065}00065\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+\doxysection{Touch\+Effect\+Controller.\+cs}
+\hypertarget{_touch_effect_controller_8cs_source}{}\label{_touch_effect_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Useful/TouchEffectController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Useful/TouchEffectController.cs}}
+\mbox{\hyperlink{_touch_effect_controller_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceuseful}{useful}}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00007}\mbox{\hyperlink{classuseful_1_1_touch_effect_controller}{00007}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classuseful_1_1_touch_effect_controller}{TouchEffectController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00009}\mbox{\hyperlink{classuseful_1_1_touch_effect_controller_aa2a01e6dd9d8f788cc0716676e321ed5}{00009}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SpriteRenderer\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_aa2a01e6dd9d8f788cc0716676e321ed5}{thisEffectSR}};}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00011}\mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a7b0bc829efc8b13cbcd1fdf8d708c332}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a7b0bc829efc8b13cbcd1fdf8d708c332}{setSpeed}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00012}\mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a9b7c882030b78facf52b0ce154174fa6}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a9b7c882030b78facf52b0ce154174fa6}{minValue}}\ =\ 0.1f;\ \textcolor{comment}{//\ √÷º“∞™}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Update()}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ «ˆ¿Á\ æÀ∆ƒ∞™}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ currentAlpha\ =\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_aa2a01e6dd9d8f788cc0716676e321ed5}{thisEffectSR}}.color.a;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ currentScale\ =\ transform.localScale;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ newAlpha\ =\ currentAlpha\ -\/\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a7b0bc829efc8b13cbcd1fdf8d708c332}{setSpeed}}\ *\ Time.deltaTime;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ newScale\ =\ Mathf.Max(currentScale.x\ -\/\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a7b0bc829efc8b13cbcd1fdf8d708c332}{setSpeed}}\ *\ Time.deltaTime,\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a9b7c882030b78facf52b0ce154174fa6}{minValue}});}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newAlpha\ <=\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_a9b7c882030b78facf52b0ce154174fa6}{minValue}})}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ newColor\ =\ \mbox{\hyperlink{classuseful_1_1_touch_effect_controller_aa2a01e6dd9d8f788cc0716676e321ed5}{thisEffectSR}}.color;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newColor.a\ =\ newAlpha;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisEffectSR.color\ =\ newColor;}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.localScale\ =\ \textcolor{keyword}{new}\ Vector3(newScale,\ newScale,\ newScale);}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Destroy(gameObject);}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_effect_controller_8cs_source_l00042}00042\ \}}
+
+\end{DoxyCode}

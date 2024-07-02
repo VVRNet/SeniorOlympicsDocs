@@ -1,0 +1,124 @@
+\doxysection{Cw\+Demo\+Button\+Builder.\+cs}
+\hypertarget{_cw_demo_button_builder_8cs_source}{}\label{_cw_demo_button_builder_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwDemoButtonBuilder.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwDemoButtonBuilder.cs}}
+\mbox{\hyperlink{_cw_demo_button_builder_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}};}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00008}00008\ \ \ \ \ [HelpURL(CwShared.HelpUrlPrefix\ +\ \textcolor{stringliteral}{"{}CwDemoButtonBuilder"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00009}00009\ \ \ \ \ [AddComponentMenu(CwShared.ComponentMenuPrefix\ +\ \textcolor{stringliteral}{"{}Demo\ Button\ Builder"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00010}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder}{CwDemoButtonBuilder}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00013}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a4204152c6844e83de740f49823dfbb39}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a4204152c6844e83de740f49823dfbb39}{ButtonPrefab}}\ \{\ \textcolor{keyword}{set}\ \{\ buttonPrefab\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ buttonPrefab;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ GameObject\ buttonPrefab;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00016}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ae61c074d2508821459d99a77512c469a}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ RectTransform\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ae61c074d2508821459d99a77512c469a}{ButtonRoot}}\ \{\ \textcolor{keyword}{set}\ \{\ buttonRoot\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ buttonRoot;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ RectTransform\ buttonRoot;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00019}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a51487287f539ce375ce1ee52a9a49471}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Sprite\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a51487287f539ce375ce1ee52a9a49471}{Icon}}\ \{\ \textcolor{keyword}{set}\ \{\ icon\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ icon;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ Sprite\ icon;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00022}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}\ \{\ \textcolor{keyword}{set}\ \{\ color\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ color;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}\ color\ =\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}.white;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00025}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ad90f36d32a75f8f45cfeb6e6496c2310}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ad90f36d32a75f8f45cfeb6e6496c2310}{OverrideName}}\ \{\ \textcolor{keyword}{set}\ \{\ overrideName\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ overrideName;\ \}\ \}\ [SerializeField]\ [Multiline(3)]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ overrideName;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ clone;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [ContextMenu(\textcolor{stringliteral}{"{}Build"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00031}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a73c83105969cfa235149102239b58f85}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a73c83105969cfa235149102239b58f85}{Build}}()}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clone\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DestroyImmediate(clone);}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buttonPrefab\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clone\ =\ DoInstantiate();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clone.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ image\ =\ clone.GetComponent<Image>();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ icon;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.color\ \ =\ color;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ title\ =\ clone.GetComponentInChildren<\mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}>();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (title\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ title.text\ =\ \textcolor{keywordtype}{string}.IsNullOrEmpty(overrideName)\ ==\ \textcolor{keyword}{false}\ ?\ overrideName\ :\ name;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ isolate\ =\ clone.GetComponent<\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button}{CwDemoButton}}>();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isolate\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isolate.IsolateTarget\ =\ transform;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ [ContextMenu(\textcolor{stringliteral}{"{}Build\ All"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00069}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_af76e489a6bfc25d78562c549ec833f7e}{00069}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_af76e489a6bfc25d78562c549ec833f7e}{BuildAll}}()}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ builder\ \textcolor{keywordflow}{in}\ transform.parent.GetComponentsInChildren<\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder}{CwDemoButtonBuilder}}>(\textcolor{keyword}{true}))}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder.Build();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ DoInstantiate()}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00079}00079\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.isPlaying\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(buttonPrefab,\ buttonRoot);}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00084}00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Instantiate(buttonPrefab,\ buttonRoot,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00090}00090\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00091}00091\ \textcolor{keyword}{namespace\ }PaintIn3D}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00094}00094\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder}{CwDemoButtonBuilder}};}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00096}00096\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00097}00097\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CwDemoButtonBuilder\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00099}00099\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ TARGET\ tgt;\ TARGET[]\ tgts;\ GetTargets(out\ tgt,\ out\ tgts);}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}buttonPrefab"{}},\ \textcolor{stringliteral}{"{}The\ built\ button\ will\ be\ based\ on\ this\ prefab."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}buttonRoot"{}},\ \textcolor{stringliteral}{"{}The\ built\ button\ will\ be\ placed\ under\ this\ transform."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}icon"{}},\ \textcolor{stringliteral}{"{}The\ icon\ given\ to\ this\ button."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}color"{}},\ \textcolor{stringliteral}{"{}The\ icon\ will\ be\ tinted\ by\ this."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}overrideName"{}},\ \textcolor{stringliteral}{"{}Use\ a\ different\ name\ for\ the\ button\ text?"{}});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Button(\textcolor{stringliteral}{"{}Build\ All"{}})\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Undo.RecordObjects(tgts,\ \textcolor{stringliteral}{"{}Build\ All"{}});}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tgt.BuildAll();}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00122}00122\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_demo_button_builder_8cs_source_l00124}00124\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

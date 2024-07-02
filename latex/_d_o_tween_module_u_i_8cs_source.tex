@@ -1,0 +1,472 @@
+\doxysection{DOTween\+Module\+UI.\+cs}
+\hypertarget{_d_o_tween_module_u_i_8cs_source}{}\label{_d_o_tween_module_u_i_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs}}
+\mbox{\hyperlink{_d_o_tween_module_u_i_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00001}00001\ \textcolor{comment}{//\ Author:\ Daniele\ Giardini\ -\/\ http://www.demigiant.com}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00002}00002\ \textcolor{comment}{//\ Created:\ 2018/07/13}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00004}00004\ \textcolor{preprocessor}{\#if\ true\ }\textcolor{comment}{//\ MODULE\_MARKER}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }DG.Tweening.Core;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }DG.Tweening.Core.Enums;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }DG.Tweening.Plugins;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00013}00013\ \textcolor{keyword}{using\ }DG.Tweening.Plugins.Options;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00014}\mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ad111d1f64b621da3af7b9e9de4ce74ef}{00014}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ad111d1f64b621da3af7b9e9de4ce74ef}{Outline}}\ =\ UnityEngine.UI.Outline;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00015}\mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{00015}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}\ =\ UnityEngine.UI.Text;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00017}00017\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ 1591}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00018}00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_g_1_1_tweening}{DG.Tweening}}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }DOTweenModuleUI}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Shortcuts}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ CanvasGroup}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<float,\ float,\ FloatOptions>\ DOFade(\textcolor{keyword}{this}\ CanvasGroup\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<float,\ float,\ FloatOptions>\ t\ =\ DOTween.To(()\ =>\ target.alpha,\ x\ =>\ target.alpha\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00036}00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Graphic}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOColor(\textcolor{keyword}{this}\ Graphic\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.To(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOFade(\textcolor{keyword}{this}\ Graphic\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.ToAlpha(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00060}00060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Image}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOColor(\textcolor{keyword}{this}\ Image\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.To(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOFade(\textcolor{keyword}{this}\ Image\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.ToAlpha(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<float,\ float,\ FloatOptions>\ DOFillAmount(\textcolor{keyword}{this}\ Image\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endValue\ >\ 1)\ endValue\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (endValue\ <\ 0)\ endValue\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<float,\ float,\ FloatOptions>\ t\ =\ DOTween.To(()\ =>\ target.fillAmount,\ x\ =>\ target.fillAmount\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Sequence\ DOGradientColor(\textcolor{keyword}{this}\ Image\ target,\ Gradient\ gradient,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ Sequence\ s\ =\ DOTween.Sequence();}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ GradientColorKey[]\ colors\ =\ gradient.colorKeys;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ len\ =\ colors.Length;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ len;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GradientColorKey\ c\ =\ colors[i];}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ \&\&\ c.time\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.color\ =\ c.color;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ colorDuration\ =\ i\ ==\ len\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ duration\ -\/\ s.Duration(\textcolor{keyword}{false})\ \textcolor{comment}{//\ Verifies\ that\ total\ duration\ is\ correct}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ duration\ *\ (i\ ==\ 0\ ?\ c.time\ :\ c.time\ -\/\ colors[i\ -\/\ 1].time);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s.Append(target.DOColor(c.color,\ colorDuration).SetEase(Ease.Linear));}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ s.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00120}00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00122}00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ LayoutElement}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOFlexibleSize(\textcolor{keyword}{this}\ LayoutElement\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ \textcolor{keyword}{new}\ Vector2(target.flexibleWidth,\ target.flexibleHeight),\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.flexibleWidth\ =\ x.x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.flexibleHeight\ =\ x.y;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOMinSize(\textcolor{keyword}{this}\ LayoutElement\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ \textcolor{keyword}{new}\ Vector2(target.minWidth,\ target.minHeight),\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.minWidth\ =\ x.x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.minHeight\ =\ x.y;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOPreferredSize(\textcolor{keyword}{this}\ LayoutElement\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ \textcolor{keyword}{new}\ Vector2(target.preferredWidth,\ target.preferredHeight),\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.preferredWidth\ =\ x.x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.preferredHeight\ =\ x.y;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00166}00166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00168}00168\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Outline}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOColor(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ad111d1f64b621da3af7b9e9de4ce74ef}{Outline}}\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.To(()\ =>\ target.effectColor,\ x\ =>\ target.effectColor\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOFade(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ad111d1f64b621da3af7b9e9de4ce74ef}{Outline}}\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.ToAlpha(()\ =>\ target.effectColor,\ x\ =>\ target.effectColor\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOScale(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ad111d1f64b621da3af7b9e9de4ce74ef}{Outline}}\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.effectDistance,\ x\ =>\ target.effectDistance\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00200}00200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00202}00202\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ RectTransform}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOAnchorPos(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOAnchorPosX(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ \textcolor{keyword}{new}\ Vector2(endValue,\ 0),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.X,\ snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOAnchorPosY(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ \textcolor{keyword}{new}\ Vector2(0,\ endValue),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.Y,\ snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ DOAnchorPos3D(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector3\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition3D,\ x\ =>\ target.anchoredPosition3D\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ DOAnchorPos3DX(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition3D,\ x\ =>\ target.anchoredPosition3D\ =\ x,\ \textcolor{keyword}{new}\ Vector3(endValue,\ 0,\ 0),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.X,\ snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ DOAnchorPos3DY(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition3D,\ x\ =>\ target.anchoredPosition3D\ =\ x,\ \textcolor{keyword}{new}\ Vector3(0,\ endValue,\ 0),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.Y,\ snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ DOAnchorPos3DZ(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector3,\ Vector3,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchoredPosition3D,\ x\ =>\ target.anchoredPosition3D\ =\ x,\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ endValue),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.Z,\ snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOAnchorMax(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchorMax,\ x\ =>\ target.anchorMax\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOAnchorMin(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.anchorMin,\ x\ =>\ target.anchorMin\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOPivot(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.pivot,\ x\ =>\ target.pivot\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOPivotX(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.pivot,\ x\ =>\ target.pivot\ =\ x,\ \textcolor{keyword}{new}\ Vector2(endValue,\ 0),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.X).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOPivotY(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.pivot,\ x\ =>\ target.pivot\ =\ x,\ \textcolor{keyword}{new}\ Vector2(0,\ endValue),\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(AxisConstraint.Y).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ DOSizeDelta(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ VectorOptions>\ t\ =\ DOTween.To(()\ =>\ target.sizeDelta,\ x\ =>\ target.sizeDelta\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOPunchAnchorPos(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ punch,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{int}\ vibrato\ =\ 10,\ \textcolor{keywordtype}{float}\ elasticity\ =\ 1,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.Punch(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ punch,\ duration,\ vibrato,\ elasticity)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetTarget(target).SetOptions(snapping);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOShakeAnchorPos(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{float}\ strength\ =\ 100,\ \textcolor{keywordtype}{int}\ vibrato\ =\ 10,\ \textcolor{keywordtype}{float}\ randomness\ =\ 90,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ fadeOut\ =\ \textcolor{keyword}{true},\ ShakeRandomnessMode\ randomnessMode\ =\ ShakeRandomnessMode.Full)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.Shake(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ duration,\ strength,\ vibrato,\ randomness,\ \textcolor{keyword}{true},\ fadeOut,\ randomnessMode)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetTarget(target).SetSpecialStartupMode(SpecialStartupMode.SetShake).SetOptions(snapping);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOShakeAnchorPos(\textcolor{keyword}{this}\ RectTransform\ target,\ \textcolor{keywordtype}{float}\ duration,\ Vector2\ strength,\ \textcolor{keywordtype}{int}\ vibrato\ =\ 10,\ \textcolor{keywordtype}{float}\ randomness\ =\ 90,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ fadeOut\ =\ \textcolor{keyword}{true},\ ShakeRandomnessMode\ randomnessMode\ =\ ShakeRandomnessMode.Full)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.Shake(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ duration,\ strength,\ vibrato,\ randomness,\ fadeOut,\ randomnessMode)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetTarget(target).SetSpecialStartupMode(SpecialStartupMode.SetShake).SetOptions(snapping);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00384}00384\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Special}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Sequence\ DOJumpAnchorPos(\textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ jumpPower,\ \textcolor{keywordtype}{int}\ numJumps,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numJumps\ <\ 1)\ numJumps\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startPosY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ offsetY\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ offsetYSet\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Separate\ Y\ Tween\ so\ we\ can\ elaborate\ elapsedPercentage\ on\ that\ insted\ of\ on\ the\ Sequence}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (in\ case\ users\ add\ a\ delay\ or\ other\ elements\ to\ the\ Sequence)}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ Sequence\ s\ =\ DOTween.Sequence();}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ Tween\ yTween\ =\ DOTween.To(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ \textcolor{keyword}{new}\ Vector2(0,\ jumpPower),\ duration\ /\ (numJumps\ *\ 2))}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetOptions(AxisConstraint.Y,\ snapping).SetEase(Ease.OutQuad).SetRelative()}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetLoops(numJumps\ *\ 2,\ LoopType.Yoyo)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnStart(()=>\ startPosY\ =\ target.anchoredPosition.y);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ s.Append(DOTween.To(()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ \textcolor{keyword}{new}\ Vector2(endValue.x,\ 0),\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetOptions(AxisConstraint.X,\ snapping).SetEase(Ease.Linear)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).Join(yTween)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetTarget(target).SetEase(DOTween.defaultEaseType);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ s.OnUpdate(()\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!offsetYSet)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offsetYSet\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offsetY\ =\ s.isRelative\ ?\ endValue.y\ :\ endValue.y\ -\/\ startPosY;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ pos\ =\ target.anchoredPosition;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos.y\ +=\ DOVirtual.EasedValue(0,\ offsetY,\ s.ElapsedDirectionalPercentage(),\ Ease.OutQuad);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.anchoredPosition\ =\ pos;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00424}00424\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00426}00426\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00428}00428\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ ScrollRect}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DONormalizedPos(\textcolor{keyword}{this}\ ScrollRect\ target,\ Vector2\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ \textcolor{keyword}{new}\ Vector2(target.horizontalNormalizedPosition,\ target.verticalNormalizedPosition),}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.horizontalNormalizedPosition\ =\ x.x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.verticalNormalizedPosition\ =\ x.y;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOHorizontalNormalizedPos(\textcolor{keyword}{this}\ ScrollRect\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ target.horizontalNormalizedPosition,\ x\ =>\ target.horizontalNormalizedPosition\ =\ x,\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOVerticalNormalizedPos(\textcolor{keyword}{this}\ ScrollRect\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ target.verticalNormalizedPosition,\ x\ =>\ target.verticalNormalizedPosition\ =\ x,\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00462}00462\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00464}00464\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Slider}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00465}00465\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<float,\ float,\ FloatOptions>\ DOValue(\textcolor{keyword}{this}\ Slider\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<float,\ float,\ FloatOptions>\ t\ =\ DOTween.To(()\ =>\ target.value,\ x\ =>\ target.value\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00476}00476\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00477}00477\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00479}00479\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Text}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOColor(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00485}00485\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.To(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<int,\ int,\ NoOptions>\ DOCounter(}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}\ target,\ \textcolor{keywordtype}{int}\ fromValue,\ \textcolor{keywordtype}{int}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ addThousandsSeparator\ =\ \textcolor{keyword}{true},\ CultureInfo\ culture\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ v\ =\ fromValue;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ CultureInfo\ cInfo\ =\ !addThousandsSeparator\ ?\ null\ :\ culture\ ??\ CultureInfo.InvariantCulture;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<int,\ int,\ NoOptions>\ t\ =\ DOTween.To(()\ =>\ v,\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.text\ =\ addThousandsSeparator}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ v.ToString(\textcolor{stringliteral}{"{}N0"{}},\ cInfo)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ v.ToString();}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00513}00513\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00517}00517\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOFade(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00518}00518\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.ToAlpha(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00523}00523\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00533}00533\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<string,\ string,\ StringOptions>\ DOText(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}\ target,\ \textcolor{keywordtype}{string}\ endValue,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ richTextEnabled\ =\ \textcolor{keyword}{true},\ ScrambleMode\ scrambleMode\ =\ ScrambleMode.None,\ \textcolor{keywordtype}{string}\ scrambleChars\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00534}00534\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endValue\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Debugger.logPriority\ >\ 0)\ Debugger.LogWarning(\textcolor{stringliteral}{"{}You\ can't\ pass\ a\ NULL\ string\ to\ DOText:\ an\ empty\ string\ will\ be\ used\ instead\ to\ avoid\ errors"{}});}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endValue\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<string,\ string,\ StringOptions>\ t\ =\ DOTween.To(()\ =>\ target.text,\ x\ =>\ target.text\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(richTextEnabled,\ scrambleMode,\ scrambleChars)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00543}00543\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00544}00544\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00545}00545\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00546}00546\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00547}00547\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Blendables}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00549}00549\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Graphic}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00550}00550\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00556}00556\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOBlendableColor(\textcolor{keyword}{this}\ Graphic\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00557}00557\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ endValue\ =\ endValue\ -\/\ target.color;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ to\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ to,\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ diff\ =\ x\ -\/\ to;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ to\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.color\ +=\ diff;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Blendable().SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00567}00567\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00568}00568\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00569}00569\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00570}00570\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Image}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00571}00571\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00577}00577\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOBlendableColor(\textcolor{keyword}{this}\ Image\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00578}00578\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ endValue\ =\ endValue\ -\/\ target.color;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ to\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ to,\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ diff\ =\ x\ -\/\ to;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ to\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00584}00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.color\ +=\ diff;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00586}00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Blendable().SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00587}00587\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00588}00588\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00589}00589\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00590}00590\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00591}00591\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Text}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00592}00592\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00598}00598\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOBlendableColor(\textcolor{keyword}{this}\ \mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00599}00599\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00600}00600\ \ \ \ \ \ \ \ \ \ \ \ \ endValue\ =\ endValue\ -\/\ target.color;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ to\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ to,\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00603}00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ diff\ =\ x\ -\/\ to;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ to\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00605}00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.color\ +=\ diff;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00606}00606\ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00607}00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Blendable().SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00608}00608\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00610}00610\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00611}00611\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00612}00612\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00614}00614\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Shapes}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00615}00615\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00624}00624\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Vector2,\ Vector2,\ CircleOptions>\ DOShapeCircle(}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}\ RectTransform\ target,\ Vector2\ center,\ \textcolor{keywordtype}{float}\ endValueDegrees,\ \textcolor{keywordtype}{float}\ duration,\ \textcolor{keywordtype}{bool}\ relativeCenter\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ snapping\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00626}00626\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00627}00627\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Vector2,\ Vector2,\ CircleOptions>\ t\ =\ DOTween.To(}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CirclePlugin.Get(),\ ()\ =>\ target.anchoredPosition,\ x\ =>\ target.anchoredPosition\ =\ x,\ center,\ duration}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetOptions(endValueDegrees,\ relativeCenter,\ snapping).SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00633}00633\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00634}00634\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00635}00635\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00636}00636\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00637}00637\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00638}00638\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00639}00639\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00640}00640\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ███\ INTERNAL\ CLASSES\ ████████████████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00641}00641\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00642}00642\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00643}00643\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }Utils}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00644}00644\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ SwitchToRectTransform(RectTransform\ from,\ RectTransform\ to)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ localPoint;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ fromPivotDerivedOffset\ =\ \textcolor{keyword}{new}\ Vector2(from.rect.width\ *\ 0.5f\ +\ from.rect.xMin,\ from.rect.height\ *\ 0.5f\ +\ from.rect.yMin);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00653}00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ screenP\ =\ RectTransformUtility.WorldToScreenPoint(\textcolor{keyword}{null},\ from.position);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ screenP\ +=\ fromPivotDerivedOffset;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RectTransformUtility.ScreenPointToLocalPointInRectangle(to,\ screenP,\ \textcolor{keyword}{null},\ out\ localPoint);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00656}00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ pivotDerivedOffset\ =\ \textcolor{keyword}{new}\ Vector2(to.rect.width\ *\ 0.5f\ +\ to.rect.xMin,\ to.rect.height\ *\ 0.5f\ +\ to.rect.yMin);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ to.anchoredPosition\ +\ localPoint\ -\/\ pivotDerivedOffset;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00659}00659\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00660}00660\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00661}00661\ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_u_i_8cs_source_l00662}00662\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

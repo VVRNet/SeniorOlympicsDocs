@@ -1,0 +1,84 @@
+\doxysection{DOTween\+Module\+Sprite.\+cs}
+\hypertarget{_d_o_tween_module_sprite_8cs_source}{}\label{_d_o_tween_module_sprite_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs}}
+\mbox{\hyperlink{_d_o_tween_module_sprite_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00001}00001\ \textcolor{comment}{//\ Author:\ Daniele\ Giardini\ -\/\ http://www.demigiant.com}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00002}00002\ \textcolor{comment}{//\ Created:\ 2018/07/13}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00004}00004\ \textcolor{preprocessor}{\#if\ true\ }\textcolor{comment}{//\ MODULE\_MARKER}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }DG.Tweening.Core;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }DG.Tweening.Plugins.Options;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00010}00010\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ 1591}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_g_1_1_tweening}{DG.Tweening}}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }DOTweenModuleSprite}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00015}00015\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Shortcuts}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00017}00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ SpriteRenderer}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOColor(\textcolor{keyword}{this}\ SpriteRenderer\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.To(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ TweenerCore<Color,\ Color,\ ColorOptions>\ DOFade(\textcolor{keyword}{this}\ SpriteRenderer\ target,\ \textcolor{keywordtype}{float}\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ TweenerCore<Color,\ Color,\ ColorOptions>\ t\ =\ DOTween.ToAlpha(()\ =>\ target.color,\ x\ =>\ target.color\ =\ x,\ endValue,\ duration);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394a3ff39d3acb327553070a64ef0cb321d5}{Sequence}}\ DOGradientColor(\textcolor{keyword}{this}\ SpriteRenderer\ target,\ Gradient\ gradient,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394a3ff39d3acb327553070a64ef0cb321d5}{Sequence}}\ s\ =\ DOTween.Sequence();}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ GradientColorKey[]\ colors\ =\ gradient.colorKeys;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ len\ =\ colors.Length;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ len;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GradientColorKey\ c\ =\ colors[i];}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ \&\&\ c.time\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.color\ =\ c.color;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ colorDuration\ =\ i\ ==\ len\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ duration\ -\/\ s.Duration(\textcolor{keyword}{false})\ \textcolor{comment}{//\ Verifies\ that\ total\ duration\ is\ correct}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ duration\ *\ (i\ ==\ 0\ ?\ c.time\ :\ c.time\ -\/\ colors[i\ -\/\ 1].time);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s.Append(target.DOColor(c.color,\ colorDuration).SetEase(Ease.Linear));}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ s.SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Blendables}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ SpriteRenderer}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Tweener\ DOBlendableColor(\textcolor{keyword}{this}\ SpriteRenderer\ target,\ Color\ endValue,\ \textcolor{keywordtype}{float}\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ endValue\ =\ endValue\ -\/\ target.color;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ to\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DOTween.To(()\ =>\ to,\ x\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ diff\ =\ x\ -\/\ to;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ to\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.color\ +=\ diff;}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},\ endValue,\ duration)}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Blendable().SetTarget(target);}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00086}00086\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00088}00088\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{_d_o_tween_module_sprite_8cs_source_l00093}00093\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

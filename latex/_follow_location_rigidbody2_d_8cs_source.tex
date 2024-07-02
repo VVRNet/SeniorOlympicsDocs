@@ -1,0 +1,59 @@
+\doxysection{Follow\+Location\+Rigidbody2\+D.\+cs}
+\hypertarget{_follow_location_rigidbody2_d_8cs_source}{}\label{_follow_location_rigidbody2_d_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Components/SkeletonUtility/FollowLocationRigidbody2D.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Components/SkeletonUtility/FollowLocationRigidbody2D.cs}}
+\mbox{\hyperlink{_follow_location_rigidbody2_d_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00039}00039\ \ \ \ \ [RequireComponent(typeof(Rigidbody2D))]}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d}{FollowLocationRigidbody2D}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a7aedb29e355b4e9879937034ef614ed4}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a7aedb29e355b4e9879937034ef614ed4}{reference}};}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a017840128182f7324b5bea5fe3be6017}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a017840128182f7324b5bea5fe3be6017}{followFlippedX}};}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ Rigidbody2D\ ownRigidbody;}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ ownRigidbody\ =\ this.GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FixedUpdate\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a017840128182f7324b5bea5fe3be6017}{followFlippedX}})\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ownRigidbody.rotation\ =\ ((-\/reference.rotation.eulerAngles.z\ +\ 270f)\ \%\ 360f)\ -\/\ 90f;}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ownRigidbody.rotation\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a7aedb29e355b4e9879937034ef614ed4}{reference}}.rotation.eulerAngles.z;}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ ownRigidbody.position\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_location_rigidbody2_d_a7aedb29e355b4e9879937034ef614ed4}{reference}}.position;}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_location_rigidbody2_d_8cs_source_l00058}00058\ \}}
+
+\end{DoxyCode}

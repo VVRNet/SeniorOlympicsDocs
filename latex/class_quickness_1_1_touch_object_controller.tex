@@ -1,0 +1,244 @@
+\doxysection{Quickness.\+Touch\+Object\+Controller 클래스 참조}
+\hypertarget{class_quickness_1_1_touch_object_controller}{}\label{class_quickness_1_1_touch_object_controller}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+
+
+Quickness.\+Touch\+Object\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_quickness_1_1_touch_object_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Quickness.\+Touch\+Object\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_quickness_1_1_touch_object_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a7196d53ddd7f612daf3c89631feaee8e}{On\+Touch}} (float x, float y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34}{root\+Object}}
+\item 
+Game\+Object \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d}{hit\+Effect\+Score}}
+\item 
+Game\+Object \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}{remove\+Effect}}
+\item 
+Box\+Collider \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a3cece4c6a2aaad6b2c447b3d27c8f1d8}{box\+Collider}}
+\item 
+bool \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a19b84dd45e52c778746debfe61c06914}{is\+Left}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_quickness_1_1_touch_object_controller_a7196d53ddd7f612daf3c89631feaee8e}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}!OnTouch@{OnTouch}}
+\index{OnTouch@{OnTouch}!Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+\doxysubsubsection{\texorpdfstring{OnTouch()}{OnTouch()}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_touch_object_controller_a7196d53ddd7f612daf3c89631feaee8e} 
+void Quickness.\+Touch\+Object\+Controller.\+On\+Touch (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{interface_i_touch_object_aa5baa8693756baf00c210dafdcc39493}{ITouch\+Object}}를 구현.
+
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00061}{61}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPos\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.WorldToScreenPoint(transform.position).z);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPos\ =\ Camera.main.ScreenToWorldPoint(screenPos);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPos);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d}{hitEffectScore}}\ !=\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34}{rootObject}}.activeSelf\ !=\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ ��ǥ��\ ����Ʈ\ ��ǥ�� ����ȭ\ (0����\ 1\ ����\ ��)}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width,\ (y\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height),\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����Ʈ\ ��ǥ��\ ���� ��ǥ�� ��ȯ}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d}{hitEffectScore}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34}{rootObject}}.transform);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a19b84dd45e52c778746debfe61c06914}{isLeft}})}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boxCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrect\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ �̺�Ʈ}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}{removeEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f),\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(Vector3.one\ *\ 0.15f,\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsAnyGameTypeActive())}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ��\ ��ġ��\ randomPos����\ ����}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quicknessManager\_Red.RemovePosition(this.transform.position);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ ��ġ"{}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ isCorrect,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ ���\ ��ġ"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ !isCorrect,\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boxCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrect\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}{removeEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f),\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(Vector3.one\ *\ 0.15f,\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsAnyGameTypeActive())}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quicknessManager\_Blue.RemovePosition(this.transform.position);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ ��ġ"{}});}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ isCorrect,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ ���\ ��ġ"{}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ !isCorrect,\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_quickness_1_1_touch_object_controller_a7196d53ddd7f612daf3c89631feaee8e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_quickness_1_1_touch_object_controller_a3cece4c6a2aaad6b2c447b3d27c8f1d8}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}!boxCollider@{boxCollider}}
+\index{boxCollider@{boxCollider}!Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+\doxysubsubsection{\texorpdfstring{boxCollider}{boxCollider}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_touch_object_controller_a3cece4c6a2aaad6b2c447b3d27c8f1d8} 
+Box\+Collider Quickness.\+Touch\+Object\+Controller.\+box\+Collider}
+
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}!hitEffectScore@{hitEffectScore}}
+\index{hitEffectScore@{hitEffectScore}!Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+\doxysubsubsection{\texorpdfstring{hitEffectScore}{hitEffectScore}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d} 
+Game\+Object Quickness.\+Touch\+Object\+Controller.\+hit\+Effect\+Score}
+
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_touch_object_controller_a19b84dd45e52c778746debfe61c06914}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}!isLeft@{isLeft}}
+\index{isLeft@{isLeft}!Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+\doxysubsubsection{\texorpdfstring{isLeft}{isLeft}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_touch_object_controller_a19b84dd45e52c778746debfe61c06914} 
+bool Quickness.\+Touch\+Object\+Controller.\+is\+Left}
+
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}!removeEffect@{removeEffect}}
+\index{removeEffect@{removeEffect}!Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+\doxysubsubsection{\texorpdfstring{removeEffect}{removeEffect}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274} 
+Game\+Object Quickness.\+Touch\+Object\+Controller.\+remove\+Effect}
+
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}!rootObject@{rootObject}}
+\index{rootObject@{rootObject}!Quickness.TouchObjectController@{Quickness.TouchObjectController}}
+\doxysubsubsection{\texorpdfstring{rootObject}{rootObject}}
+{\footnotesize\ttfamily \label{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34} 
+Game\+Object Quickness.\+Touch\+Object\+Controller.\+root\+Object}
+
+
+
+\mbox{\hyperlink{_touch_object_controller_8cs_source}{Touch\+Object\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_touch_object_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Exercise/\+Quickness/\mbox{\hyperlink{_touch_object_controller_8cs}{Touch\+Object\+Controller.\+cs}}\end{DoxyCompactItemize}

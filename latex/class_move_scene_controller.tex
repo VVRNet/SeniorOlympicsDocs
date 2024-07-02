@@ -1,0 +1,160 @@
+\doxysection{Move\+Scene\+Controller 클래스 참조}
+\hypertarget{class_move_scene_controller}{}\label{class_move_scene_controller}\index{MoveSceneController@{MoveSceneController}}
+
+
+Move\+Scene\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_move_scene_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Move\+Scene\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_move_scene_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6}{Select\+Contents}} (string contents\+Name)
+\item 
+void \mbox{\hyperlink{class_move_scene_controller_ae0ef038a86f7d40909327b7809a18235}{Select\+Game\+Mode}} (int mode\+Num)
+\item 
+void \mbox{\hyperlink{class_move_scene_controller_aba1a9022bce53a4862732c7f972a7333}{Return\+Launcher\+Page}} (int page)
+\item 
+void \mbox{\hyperlink{class_move_scene_controller_a19148c7d1a6de207406169305b392674}{Load\+Contents}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_move_scene_controller_8cs_source}{Move\+Scene\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_move_scene_controller_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_move_scene_controller_a19148c7d1a6de207406169305b392674}\index{MoveSceneController@{MoveSceneController}!LoadContents@{LoadContents}}
+\index{LoadContents@{LoadContents}!MoveSceneController@{MoveSceneController}}
+\doxysubsubsection{\texorpdfstring{LoadContents()}{LoadContents()}}
+{\footnotesize\ttfamily \label{class_move_scene_controller_a19148c7d1a6de207406169305b392674} 
+void Move\+Scene\+Controller.\+Load\+Contents (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_move_scene_controller_8cs_source}{Move\+Scene\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_move_scene_controller_8cs_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ SceneManager.LoadScene(\textcolor{stringliteral}{"{}Loading"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_scene_controller_a19148c7d1a6de207406169305b392674_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_move_scene_controller_aba1a9022bce53a4862732c7f972a7333}\index{MoveSceneController@{MoveSceneController}!ReturnLauncherPage@{ReturnLauncherPage}}
+\index{ReturnLauncherPage@{ReturnLauncherPage}!MoveSceneController@{MoveSceneController}}
+\doxysubsubsection{\texorpdfstring{ReturnLauncherPage()}{ReturnLauncherPage()}}
+{\footnotesize\ttfamily \label{class_move_scene_controller_aba1a9022bce53a4862732c7f972a7333} 
+void Move\+Scene\+Controller.\+Return\+Launcher\+Page (\begin{DoxyParamCaption}\item[{int}]{page}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_move_scene_controller_8cs_source}{Move\+Scene\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_move_scene_controller_8cs_source_l00060}{60}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ PlayerPrefs.SetInt(\textcolor{stringliteral}{"{}ChoicePage"{}},\ page);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6}\index{MoveSceneController@{MoveSceneController}!SelectContents@{SelectContents}}
+\index{SelectContents@{SelectContents}!MoveSceneController@{MoveSceneController}}
+\doxysubsubsection{\texorpdfstring{SelectContents()}{SelectContents()}}
+{\footnotesize\ttfamily \label{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6} 
+void Move\+Scene\+Controller.\+Select\+Contents (\begin{DoxyParamCaption}\item[{string}]{contents\+Name}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_move_scene_controller_8cs_source}{Move\+Scene\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_move_scene_controller_8cs_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(contentsName))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ������\ -\/\ �ٽ� ���� ��ư}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ contentsName\ =\ SceneManager.GetActiveScene().name;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.SetString(selectSceneKey,\ contentsName);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ó\ -\/\ ������\ ����\ ��ư}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.SetString(selectSceneKey,\ contentsName);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.SetString(\textcolor{stringliteral}{"{}SelectedGameScene"{}},\ contentsName);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_move_scene_controller_ae0ef038a86f7d40909327b7809a18235}\index{MoveSceneController@{MoveSceneController}!SelectGameMode@{SelectGameMode}}
+\index{SelectGameMode@{SelectGameMode}!MoveSceneController@{MoveSceneController}}
+\doxysubsubsection{\texorpdfstring{SelectGameMode()}{SelectGameMode()}}
+{\footnotesize\ttfamily \label{class_move_scene_controller_ae0ef038a86f7d40909327b7809a18235} 
+void Move\+Scene\+Controller.\+Select\+Game\+Mode (\begin{DoxyParamCaption}\item[{int}]{mode\+Num}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_move_scene_controller_8cs_source}{Move\+Scene\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_move_scene_controller_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ selectedScene\ =\ PlayerPrefs.GetString(selectSceneKey,\ \textcolor{stringliteral}{"{}Not\ set"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ó�� ���ƿ� ��常\ ������\ ���\ selectSceneKey\ ����\ Launcher�� �ٲ�. �̰���\ �ذ��ϱ� ����\ �ڵ�}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedScene\ ==\ \textcolor{stringliteral}{"{}Launcher"{}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ selectedScene\ =\ PlayerPrefs.GetString(\textcolor{stringliteral}{"{}SelectedContents"{}},\ \textcolor{stringliteral}{"{}Not\ set"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.SetString(selectSceneKey,\ selectedScene);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ PlayerPrefs.SetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}},\ modeNum);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_scene_controller_ae0ef038a86f7d40909327b7809a18235_icgraph}
+\end{center}
+\end{figure}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Loading/\mbox{\hyperlink{_move_scene_controller_8cs}{Move\+Scene\+Controller.\+cs}}\end{DoxyCompactItemize}

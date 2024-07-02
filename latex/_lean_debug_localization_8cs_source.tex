@@ -1,0 +1,108 @@
+\doxysection{Lean\+Debug\+Localization.\+cs}
+\hypertarget{_lean_debug_localization_8cs_source}{}\label{_lean_debug_localization_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Extras/Scripts/LeanDebugLocalization.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Extras/Scripts/LeanDebugLocalization.cs}}
+\mbox{\hyperlink{_lean_debug_localization_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00004}\mbox{\hyperlink{namespace_lean_1_1_localization}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_localization}{Lean.Localization}}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00006}00006\ \ \ \ \ [DefaultExecutionOrder(-\/100)]}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00007}00007\ \ \ \ \ [HelpURL(\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization}{LeanLocalization}}.\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization_a7feed1d8958dbd226a0ddae7f623018d}{HelpUrlPrefix}}\ +\ \textcolor{stringliteral}{"{}LeanLocalization"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00008}00008\ \ \ \ \ [AddComponentMenu(\textcolor{stringliteral}{"{}"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00009}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization}{LeanDebugLocalization}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00011}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_1_1_string_event}{00011}}\ \ \ \ \ \ \ \ \ [System.Serializable]\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_1_1_string_event}{StringEvent}}\ :\ UnityEvent<string>\ \{\}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00013}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_acffeda3d871a6027f752bc4fb8239878}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_1_1_string_event}{StringEvent}}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_acffeda3d871a6027f752bc4fb8239878}{OnString}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{if}\ (onString\ ==\ \textcolor{keyword}{null})\ onString\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_1_1_string_event}{StringEvent}}();\ \textcolor{keywordflow}{return}\ onString;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ StringEvent\ onString;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00015}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_a85ecbed60be59508a0abf9d498fe0031}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_a85ecbed60be59508a0abf9d498fe0031}{ClearSave}}()}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.DeleteKey(\textcolor{stringliteral}{"{}LeanLocalization.CurrentLanguage"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00020}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_aa0172f14ec23df6419cd20f2f6d61353}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_aa0172f14ec23df6419cd20f2f6d61353}{ClearSaveAlt}}()}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.DeleteKey(\textcolor{stringliteral}{"{}LeanLocalization.CurrentLanguageAlt"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00025}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_a9ca903b55ad1ff82440533de8cd23ebf}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_a9ca903b55ad1ff82440533de8cd23ebf}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ LeanLocalization.OnLocalizationChanged\ +=\ HandleLocalizationChanged;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00030}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_a64eef104736e850b18472680acc51954}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_debug_localization_a64eef104736e850b18472680acc51954}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ LeanLocalization.OnLocalizationChanged\ -\/=\ HandleLocalizationChanged;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ HandleLocalizationChanged()}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ var\ text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization}{LeanLocalization}}.\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization_a57512f7a5f1d9042e5947475bd2276d6}{Instances}}.Count\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ first\ =\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization}{LeanLocalization}}.\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization_a57512f7a5f1d9042e5947475bd2276d6}{Instances}}[0];}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ \textcolor{stringliteral}{"{}LOOKING\ FOR:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first.DetectLanguage\ ==\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization}{LeanLocalization}}.\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization_a592525613027ce57185649190d347a9d}{DetectType}}.SystemLanguage)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ Application.systemLanguage.ToString();}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (first.DetectLanguage\ ==\ LeanLocalization.DetectType.CurrentCulture)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ cultureInfo\ =\ System.Globalization.CultureInfo.CurrentCulture;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cultureInfo\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ cultureInfo.Name;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (first.DetectLanguage\ ==\ LeanLocalization.DetectType.CurrentCulture)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ cultureInfo\ =\ System.Globalization.CultureInfo.CurrentUICulture;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cultureInfo\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ cultureInfo.Name;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ load\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first.SaveLoad\ ==\ LeanLocalization.SaveLoadType.WhenChanged)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\ =\ PlayerPrefs.GetString(\textcolor{stringliteral}{"{}LeanLocalization.CurrentLanguage"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (first.SaveLoad\ ==\ LeanLocalization.SaveLoadType.WhenChanged)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ load\ =\ PlayerPrefs.GetString(\textcolor{stringliteral}{"{}LeanLocalization.CurrentLanguageAlt"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(load)\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ \textcolor{stringliteral}{"{}LOADING\ PREVIOUSLY\ SAVED:\ "{}}\ +\ load;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nALIASES:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ alias\ \textcolor{keywordflow}{in}\ LeanLocalization.CurrentAliases)}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ alias.Key\ +\ \textcolor{stringliteral}{"{}\ =\ "{}}\ +\ alias.Value\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nDETECTED:\ "{}}\ +\ first.CurrentLanguage;}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (onString\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onString.Invoke(text);}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_debug_localization_8cs_source_l00102}00102\ \}}
+
+\end{DoxyCode}

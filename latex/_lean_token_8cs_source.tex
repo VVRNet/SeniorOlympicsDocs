@@ -1,0 +1,146 @@
+\doxysection{Lean\+Token.\+cs}
+\hypertarget{_lean_token_8cs_source}{}\label{_lean_token_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/LeanToken.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/LeanToken.cs}}
+\mbox{\hyperlink{_lean_token_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_lean_1_1_common}{Lean.Common}};}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}};}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_localization}{Lean.Localization}}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00010}00010\ \ \ \ \ [ExecuteInEditMode]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00011}00011\ \ \ \ \ [HelpURL(LeanLocalization.HelpUrlPrefix\ +\ \textcolor{stringliteral}{"{}LeanToken"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00012}00012\ \ \ \ \ [AddComponentMenu(LeanLocalization.ComponentPathPrefix\ +\ \textcolor{stringliteral}{"{}Token"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00013}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{LeanToken}}\ :\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source}{LeanSource}}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ value;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ HashSet<ILocalizationHandler>\ handlers;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ HashSet<ILocalizationHandler>\ tempHandlers\ =\ \textcolor{keyword}{new}\ HashSet<ILocalizationHandler>();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00025}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aceb2989791edcb6f5729a76f57c761ae}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aceb2989791edcb6f5729a76f57c761ae}{Value}}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.value\ !=\ value)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.value\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handlers\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempHandlers.Clear();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempHandlers.UnionWith(handlers);}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ handler\ \textcolor{keywordflow}{in}\ tempHandlers)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler.UpdateLocalization();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00054}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_a5ae49ab4aa7d4efe1c074a67845adf81}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_a5ae49ab4aa7d4efe1c074a67845adf81}{SetValue}}(\textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aceb2989791edcb6f5729a76f57c761ae}{Value}}\ =\ value.ToString();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00060}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_acae82823e228168416538b7e8a44eb49}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_acae82823e228168416538b7e8a44eb49}{SetValue}}(\textcolor{keywordtype}{string}\ value)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aceb2989791edcb6f5729a76f57c761ae}{Value}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00066}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_abe5699bcc8fbeb493ba4715cc0637ac9}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_abe5699bcc8fbeb493ba4715cc0637ac9}{SetValue}}(\textcolor{keywordtype}{int}\ value)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aceb2989791edcb6f5729a76f57c761ae}{Value}}\ =\ value.ToString();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00071}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_a24091a341925c4ccc1dd0825d7819d16}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_a24091a341925c4ccc1dd0825d7819d16}{Register}}(\mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler}{ILocalizationHandler}}\ handler)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handler\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handlers\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handlers\ =\ \textcolor{keyword}{new}\ HashSet<ILocalizationHandler>();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handlers.Add(handler);}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00084}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_a0320fe0c86f5be1fa3cff41b6fe7c00d}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_a0320fe0c86f5be1fa3cff41b6fe7c00d}{Unregister}}(\mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler}{ILocalizationHandler}}\ handler)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handlers\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handlers.Remove(handler);}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00092}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_ad680de318f89a231952214bce8dd6561}{00092}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_ad680de318f89a231952214bce8dd6561}{UnregisterAll}}()}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handlers\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ handler\ \textcolor{keywordflow}{in}\ handlers)}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler.Unregister(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handlers.Clear();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00105}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_ad261209e815273f29a627c516bd320aa}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_ad261209e815273f29a627c516bd320aa}{Register}}()}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization}{LeanLocalization}}.\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization_aa510a3c5f5b7e9c3c3ef8f7271ad5d34}{RegisterToken}}(name,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00110}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aea5871e76c7ed6ae02f3ad431e1405cf}{00110}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_aea5871e76c7ed6ae02f3ad431e1405cf}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ base.OnDisable();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token_ad680de318f89a231952214bce8dd6561}{UnregisterAll}}();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00119}00119\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00120}00120\ \textcolor{keyword}{namespace\ }Lean.Localization.Editor}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00121}00121\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00122}00122\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00123}00123\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ LeanToken;}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00125}00125\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00126}00126\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00127}00127\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }LeanToken\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00128}00128\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ TARGET\ tgt;\ TARGET[]\ tgts;\ GetTargets(out\ tgt,\ out\ tgts);}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Draw(\textcolor{stringliteral}{"{}value"{}},\ \textcolor{stringliteral}{"{}This\ is\ the\ current\ value/text\ for\ this\ token.\ When\ this\ changes,\ it\ will\ automatically\ update\ all\ localizations\ that\ use\ this\ token."{}})\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Each(tgts,\ t\ =>\ t.Value\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}value"{}}).stringValue);}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ [UnityEditor.MenuItem(\textcolor{stringliteral}{"{}Assets/Create/Lean/Localization/Lean\ Token"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CreateToken()}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ CwHelper.CreatePrefabAsset(\textcolor{stringliteral}{"{}New\ Token"{}}).AddComponent<LeanToken>();}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_token_8cs_source_l00146}00146\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

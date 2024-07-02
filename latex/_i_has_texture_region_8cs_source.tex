@@ -1,0 +1,53 @@
+\doxysection{IHas\+Texture\+Region.\+cs}
+\hypertarget{_i_has_texture_region_8cs_source}{}\label{_i_has_texture_region_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Attachments/IHasTextureRegion.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Attachments/IHasTextureRegion.cs}}
+\mbox{\hyperlink{_i_has_texture_region_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00034}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}}\ \{}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00036}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a6a6a7d41f8d250042c3c1093ceff572c}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a6a6a7d41f8d250042c3c1093ceff572c}{Path}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00041}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_ac8f91394e299eadd289be73e9252d965}{00041}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_texture_region}{TextureRegion}}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_ac8f91394e299eadd289be73e9252d965}{Region}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00047}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a37a36abf5d7be9ae3b8e48a7ff3c7fc2}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a37a36abf5d7be9ae3b8e48a7ff3c7fc2}{UpdateRegion}}\ ();}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00049}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_ad919ebcfb807dfaaafb047b64443c74e}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_ad919ebcfb807dfaaafb047b64443c74e}{R}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00050}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a9467526665ac786e19e24ad32a3e6edd}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a9467526665ac786e19e24ad32a3e6edd}{G}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00051}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a32f4eee46d22f05b0bf2672d1483ae3b}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a32f4eee46d22f05b0bf2672d1483ae3b}{B}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00052}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a0f136d9d294c63419e1b0c74c0b344fc}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a0f136d9d294c63419e1b0c74c0b344fc}{A}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00054}\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a14e2221f805d4a65002ea5c949615ddf}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_sequence}{Sequence}}\ \mbox{\hyperlink{class_spine_1_1_sequence}{Sequence}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_i_has_texture_region_8cs_source_l00056}00056\ \}}
+
+\end{DoxyCode}

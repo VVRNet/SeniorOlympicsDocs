@@ -1,0 +1,188 @@
+\doxysection{License\+Page\+Touch.\+cs}
+\hypertarget{_license_page_touch_8cs_source}{}\label{_license_page_touch_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/LicensePageTouch.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/LicensePageTouch.cs}}
+\mbox{\hyperlink{_license_page_touch_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00008}\mbox{\hyperlink{class_license_page_touch}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_license_page_touch}{LicensePageTouch}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00010}\mbox{\hyperlink{class_license_page_touch_a8b7ddb3f77bd93a1f426a4a92d0b6206}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ List<GameObject>\ \mbox{\hyperlink{class_license_page_touch_a8b7ddb3f77bd93a1f426a4a92d0b6206}{panelList}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00012}00012\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[LicenseMessage]"{}})]}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00013}\mbox{\hyperlink{class_license_page_touch_a069ddd82246e1c4a7b0888806750acf3}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_license_page_touch_a069ddd82246e1c4a7b0888806750acf3}{licenseMessage}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00014}\mbox{\hyperlink{class_license_page_touch_a18216d504be999231ed33021d5e93762}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_license_page_touch_a18216d504be999231ed33021d5e93762}{expirationDateText}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00015}\mbox{\hyperlink{class_license_page_touch_a7aed7f307c169d378e5481581f423357}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_license_page_touch_a7aed7f307c169d378e5481581f423357}{dayText}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00017}00017\ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00018}\mbox{\hyperlink{class_license_page_touch_a75ab38e241e183171314ebf716368dcb}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_license_page_touch_a75ab38e241e183171314ebf716368dcb}{notUsedMessage}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00019}\mbox{\hyperlink{class_license_page_touch_a42fefe6041fa30e7e25d47d7232c6b73}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_license_page_touch_a42fefe6041fa30e7e25d47d7232c6b73}{cannotText}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00020}\mbox{\hyperlink{class_license_page_touch_aa965067755af670ae83769fbd7bb682f}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_license_page_touch_aa965067755af670ae83769fbd7bb682f}{cannotDayText}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00022}00022\ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00023}\mbox{\hyperlink{class_license_page_touch_ad9f0ada22975e202440242f5f91ed54a}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_license_page_touch_ad9f0ada22975e202440242f5f91ed54a}{notFoundMessage}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00025}00025\ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00026}\mbox{\hyperlink{class_license_page_touch_a884dbff4f7138776ac47ad27abdddeb9}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_license_page_touch_a884dbff4f7138776ac47ad27abdddeb9}{isEnd}};\ \textcolor{comment}{//\ ¿•\ ø‰√ª¿Ã\ ≥°≥µ¥¬¡ˆ æÀ±‚¿ß«—\ ∫Øºˆ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00027}\mbox{\hyperlink{class_license_page_touch_a319685944c6e09a0f4c8e5404215ada9}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_license_page_touch_a319685944c6e09a0f4c8e5404215ada9}{isValid}};\ \textcolor{comment}{//\ ±‚∞£¿Ã\ ¿Ø»ø«—¡ˆ\ »Æ¿Œ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00028}\mbox{\hyperlink{class_license_page_touch_a82bdccfd535ccd087bcda32bae1c9739}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_license_page_touch_a82bdccfd535ccd087bcda32bae1c9739}{progressImg}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_agency_service}{AgencyService}}\ \_agencyService;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ SettingPageManager.Instance.bgCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \_agencyService\ =\ gameObject.AddComponent<\mbox{\hyperlink{class_agency_service}{AgencyService}}>();}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ StartCoroutine(LoadingAni());}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a90e8586c03cf60e10c74d39c7f1bd266}{CheckLicense}}();}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00041}\mbox{\hyperlink{class_license_page_touch_a90e8586c03cf60e10c74d39c7f1bd266}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_license_page_touch_a90e8586c03cf60e10c74d39c7f1bd266}{CheckLicense}}()}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a884dbff4f7138776ac47ad27abdddeb9}{isEnd}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a319685944c6e09a0f4c8e5404215ada9}{isValid}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ StartCoroutine(CallCheckLicenseAPI());}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00048}00048\ \ \ \ \ IEnumerator\ LoadingAni()}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a82bdccfd535ccd087bcda32bae1c9739}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a82bdccfd535ccd087bcda32bae1c9739}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a82bdccfd535ccd087bcda32bae1c9739}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a82bdccfd535ccd087bcda32bae1c9739}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00066}00066\ \ \ \ \ IEnumerator\ CallCheckLicenseAPI()}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//text\ ∫“∑Øø¿±‚}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ directoryPath\ =\ \textcolor{stringliteral}{"{}C://SpodyConfig//"{}};\ \textcolor{comment}{//\ ∆ƒ¿œ¿Ã\ ¿÷¥¬ ∞Ê∑Œ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fileName\ =\ \textcolor{stringliteral}{"{}AdminEmail.txt"{}};\ \textcolor{comment}{//\ √£¥¬ ∆ƒ¿œ∏Ì}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ filePath\ =\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.Combine(directoryPath,\ fileName);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∆ƒ¿œ¿Ã\ ¡∏¿Á«œ¥¬¡ˆ »Æ¿Œ\ »ƒ\ agentName\ º≥¡§}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(filePath))}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ adminEmail\ =\ File.ReadAllText(filePath);\ \textcolor{comment}{//\ ∆ƒ¿œ\ ≥ªøÎ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a4808a9e6342d025e1fb1f86f7eea2be6}{LicenseCheck}}(adminEmail,\ (result)\ =>}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result\ !=\ null)}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ º∫∞¯¿˚¿∏∑Œ µ•¿Ã≈Õ∏¶\ πﬁæ“¿ª\ ∞ÊøÏ\ √≥∏Æ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result.Status\ ==\ \textcolor{stringliteral}{"{}inActive"{}})}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}inActive\ License"{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ±‚∞¸\ ∫Ò»∞º∫»≠}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ false;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ notFoundMessage.SetActive(true);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cannotText.text\ =\ \textcolor{stringliteral}{"{}Subscription\ has\ expired."{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SettingPageManager.Instance.mainGuideText.text\ =\ \textcolor{stringliteral}{"{}Click\ on\ the\ screen\ to\ exit"{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ string\ agencyName\ =\ result.Name;\ \textcolor{comment}{//±‚∞¸∏Ì}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SettingPageManager.Instance.mainGuideText.text\ =\ \textcolor{stringliteral}{"{}please\ wait\ for\ a\ moment..."{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ today\ =\ DateTime.Today;\ \textcolor{comment}{//\ Ω√∞£¿ª\ π´Ω√«œ∞Ì ø¿¥√ ≥Ø¬•∏∏\ ∞°¡Æø»}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ thirtyDaysAgo\ =\ today.AddDays(30);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/30¿œ\ \string~\ ø¿¥√¿Œ ∞ÊøÏ\ (¿Ã\ ¡∂∞«¿ª\ ∏’¿˙ ∞ÀªÁ)}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result.ExpirationDate.Date\ <=\ thirtyDaysAgo\ \&\&\ result.ExpirationDate.Date\ >=\ today)}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∂Û¿ÃºæΩ∫\ ±‚∞£\ æÀ∑¡¡÷¥¬ æ»≥ª∏ﬁºº¡ˆ\ √‚∑¬}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//∞Ëæ‡±‚∞£¿Ã\ «—¥ﬁ¿Ã ≥≤æ“¿ª\ ∞ÊøÏ\ /\ ∞Ëæ‡±‚∞£¿Ã\ «—¥ﬁ¿Ã«œ∑Œ ≥≤æ“¿ª∂ß}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.AgencyLogin(adminEmail);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ licenseMessage.SetActive(true);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TimeSpan\ remainPeriod\ =\ result.ExpirationDate\ -\/\ today;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ expirationDateText.text\ =\ \textcolor{stringliteral}{"{}Your\ SPODY\ subscription\(\backslash\)nexpires\ in\ <color=\#FF0000>"{}}\ +\ remainPeriod.Days.ToString()\ +\ \textcolor{stringliteral}{"{}</color>days."{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dayText.text\ =\ result.ExpirationDate.ToString(\textcolor{stringliteral}{"{}MM-\/dd-\/yyyy"{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ø¿¥√∫∏¥Ÿ ¿Ã¿¸¿Œ\ ∞ÊøÏ\ (30¿œ∫∏¥Ÿ ¥ı ¿Ã¿¸)}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (result.ExpirationDate.Date\ >\ today)}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//∞Ëæ‡±‚∞£¿Ã\ ≥≤¿∫\ ∞ÊøÏ\ /\ ±◊≥… ∆–Ω∫¿Œ\ ∞ÊøÏ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.AgencyLogin(adminEmail);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ licenseMessage.SetActive(true);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TimeSpan\ remainPeriod\ =\ result.ExpirationDate\ -\/\ today;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ expirationDateText.text\ =\ \textcolor{stringliteral}{"{}Your\ SPODY\ subscription\(\backslash\)nexpires\ in\ <color=\#FF0000>"{}}\ +\ remainPeriod.Days.ToString()\ +\ \textcolor{stringliteral}{"{}</color>days."{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dayText.text\ =\ result.ExpirationDate.ToString(\textcolor{stringliteral}{"{}MM-\/dd-\/yyyy"{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ø¿¥√∫∏¥Ÿ ¿Ã»ƒ¿Œ\ ∞ÊøÏ}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (result.ExpirationDate.Date\ <\ today)}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//∞Ëæ‡±‚∞£¿Ã\ ¡ˆ≥≠\ ∞ÊøÏ\ /\ Ω∫∆˜µ ¡æ∑·}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Expiration\ date\ is\ after\ today."{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ false;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ notUsedMessage.SetActive(true);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cannotText.text\ =\ \textcolor{stringliteral}{"{}Subscription\ has\ expired."{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cannotDayText.text\ =\ result.ExpirationDate.ToString(\textcolor{stringliteral}{"{}MM-\/dd-\/yyyy"{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SettingPageManager.Instance.mainGuideText.text\ =\ \textcolor{stringliteral}{"{}Click\ on\ the\ screen\ to\ exit"{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}±‚∞¸\ æ¯¿Ω"{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ false;}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ notFoundMessage.SetActive(true);}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SettingPageManager.Instance.mainGuideText.text\ =\ \textcolor{stringliteral}{"{}Click\ on\ the\ screen\ to\ exit"{}};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}adminEmail.txt\ ∆ƒ¿œ¿Ã\ ¡∏¿Á«œ¡ˆ\ æ Ω¿¥œ¥Ÿ."{}});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_license_page_touch_a884dbff4f7138776ac47ad27abdddeb9}{isEnd}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00165}\mbox{\hyperlink{class_license_page_touch_a3fd09402e57a7b6e5a6ef087e682baf2}{00165}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_license_page_touch_a3fd09402e57a7b6e5a6ef087e682baf2}{LisenseDieBtn}}()}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00166}00166\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ Application.Quit();}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00170}\mbox{\hyperlink{class_license_page_touch_ab07a7e427cb43ee16d4df79f7d9f21fa}{00170}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_license_page_touch_ab07a7e427cb43ee16d4df79f7d9f21fa}{OnTouch}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isValid)}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ panelList[0].SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ panelList[1].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ LisenseDieBtn();}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_license_page_touch_8cs_source_l00182}00182\ \}}
+
+\end{DoxyCode}

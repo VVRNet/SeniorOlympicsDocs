@@ -1,0 +1,88 @@
+\doxysection{Spine\+Mesh.\+cs}
+\hypertarget{_spine_mesh_8cs_source}{}\label{_spine_mesh_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Mesh Generation/SpineMesh.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Mesh Generation/SpineMesh.cs}}
+\mbox{\hyperlink{_spine_mesh_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00030}00030\ \textcolor{comment}{//\ Not\ for\ optimization.\ Do\ not\ disable.}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00031}\mbox{\hyperlink{_spine_mesh_8cs_a22394b1bf659e141bf2f51d208ec06ad}{00031}}\ \textcolor{preprocessor}{\#define\ SPINE\_TRIANGLECHECK\ }\textcolor{comment}{//\ Avoid\ calling\ SetTriangles\ at\ the\ cost\ of\ checking\ for\ mesh\ differences\ (vertex\ counts,\ memberwise\ attachment\ list\ compare)\ every\ frame.}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00032}00032\ \textcolor{comment}{//\#define\ SPINE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00036}00036\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00038}00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }SpineMesh\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{const}\ HideFlags\ MeshHideflags\ =\ HideFlags.DontSaveInBuild\ |\ HideFlags.DontSaveInEditor;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ NewSkeletonMesh\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ m\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}();}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ m.MarkDynamic();}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ m.name\ =\ \textcolor{stringliteral}{"{}Skeleton\ Mesh"{}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ m.hideFlags\ =\ SpineMesh.MeshHideflags;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00053}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction}{SubmeshInstruction}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00054}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a965c4b551d10c01e2b14d813c1bfb7a5}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a965c4b551d10c01e2b14d813c1bfb7a5}{skeleton}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00055}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a10e77fce5272d768152ed5b1d42400ff}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a10e77fce5272d768152ed5b1d42400ff}{startSlot}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00056}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ae6413c404b93ed594a2b78755753fa63}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ae6413c404b93ed594a2b78755753fa63}{endSlot}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00057}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a39a5c93ae7322d9ccce80253bf800453}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Material\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a39a5c93ae7322d9ccce80253bf800453}{material}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00059}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_adf56f35149630a365b631632eda0bd9b}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_adf56f35149630a365b631632eda0bd9b}{forceSeparate}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00060}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ace647497dd39327214ea3056ba65520f}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ace647497dd39327214ea3056ba65520f}{preActiveClippingSlotSource}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00062}00062\ \textcolor{preprocessor}{\#if\ SPINE\_TRIANGLECHECK}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cached\ values\ because\ they\ are\ determined\ in\ the\ process\ of\ generating\ instructions,}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ but\ could\ otherwise\ be\ pulled\ from\ accessing\ attachments,\ checking\ materials\ and\ counting\ tris\ and\ verts.}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ rawTriangleCount;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ rawVertexCount;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ rawFirstVertexIndex;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ hasClipping;}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00069}00069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00070}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a52e00972410d0450573faf83997899b8}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a52e00972410d0450573faf83997899b8}{hasPMAAdditiveSlot}};}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00073}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a4e58fdd37956a14dce991859af2d817f}{00073}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a4e58fdd37956a14dce991859af2d817f}{SlotCount}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ae6413c404b93ed594a2b78755753fa63}{endSlot}}\ -\/\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a10e77fce5272d768152ed5b1d42400ff}{startSlot}};\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00075}\mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a47081b1257a8541fed71951e1928ac7d}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a47081b1257a8541fed71951e1928ac7d}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}[SubmeshInstruction:\ slots\ \{0\}\ to\ \{1\}.\ (Material)\{2\}.\ preActiveClippingSlotSource:\{3\}]"{}},}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a10e77fce5272d768152ed5b1d42400ff}{startSlot}},}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ae6413c404b93ed594a2b78755753fa63}{endSlot}}\ -\/\ 1,}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a39a5c93ae7322d9ccce80253bf800453}{material}}\ ==\ \textcolor{keyword}{null}\ ?\ \textcolor{stringliteral}{"{}<none>"{}}\ :\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_a39a5c93ae7322d9ccce80253bf800453}{material}}.name,}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction_ace647497dd39327214ea3056ba65520f}{preActiveClippingSlotSource}}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_mesh_8cs_source_l00085}00085\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,201 @@
+\doxysection{CFXR\+\_\+\+Emission\+By\+Surface.\+cs}
+\hypertarget{_c_f_x_r___emission_by_surface_8cs_source}{}\label{_c_f_x_r___emission_by_surface_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR\_EmissionBySurface.cs@{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR\_EmissionBySurface.cs}}
+\mbox{\hyperlink{_c_f_x_r___emission_by_surface_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00003}00003\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00005}00005\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_cartoon_f_x}{CartoonFX}}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00009}00009\ \ \ \ \ [RequireComponent(typeof(ParticleSystem))]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00010}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface}{CFXR\_EmissionBySurface}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00012}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_a76d35e17e89e6babf4bce20cca7c9a8d}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_a76d35e17e89e6babf4bce20cca7c9a8d}{active}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00013}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_aea12f043e8f561892f94d24ec40aaf42}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_aea12f043e8f561892f94d24ec40aaf42}{particlesPerUnit}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00014}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_aa630f29ba40e6e1a26b375afd2b11bb8}{00014}}\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}This\ is\ to\ avoid\ slowdowns\ in\ the\ Editor\ if\ the\ value\ gets\ too\ high"{}})]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_aa630f29ba40e6e1a26b375afd2b11bb8}{maxEmissionRate}}\ =\ 5000;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00015}\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_ac8d798c84626bc5d3e1192208745ceed}{00015}}\ \ \ \ \ \ \ \ \ [HideInInspector]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_ac8d798c84626bc5d3e1192208745ceed}{density}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ attachedToEditor;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ ParticleSystem\ ps;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00020}00020\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnValidate()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ this.hideFlags\ =\ HideFlags.DontSaveInBuild;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ CalculateAndUpdateEmission();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{void}\ AttachToEditor()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attachedToEditor)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ +=\ OnEditorUpdate;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ attachedToEditor\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{void}\ DetachFromEditor()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!attachedToEditor)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ -\/=\ OnEditorUpdate;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ attachedToEditor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEditorUpdate()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ CalculateAndUpdateEmission();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!System.Array.Exists(Selection.gameObjects,\ item\ =>\ item\ ==\ \textcolor{keyword}{this}.gameObject))}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DetachFromEditor();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CalculateAndUpdateEmission()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_a76d35e17e89e6babf4bce20cca7c9a8d}{active}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ps\ ==\ \textcolor{keyword}{null})\ ps\ =\ this.GetComponent<ParticleSystem>();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_ac8d798c84626bc5d3e1192208745ceed}{density}}\ =\ CalculateShapeDensity(ps.shape,\ ps.main.scalingMode\ ==\ ParticleSystemScalingMode.Shape,\ \textcolor{keyword}{this}.transform);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_ac8d798c84626bc5d3e1192208745ceed}{density}}\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ emissionOverTime\ =\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_ac8d798c84626bc5d3e1192208745ceed}{density}}\ *\ \mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_aea12f043e8f561892f94d24ec40aaf42}{particlesPerUnit}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ ParticleSystem.EmissionModule\ emission\ =\ ps.emission;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Math.Abs(emission.rateOverTime.constant\ -\/\ emissionOverTime)\ >\ 0.1f)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ emission.rateOverTime\ =\ Mathf.Min(\mbox{\hyperlink{class_cartoon_f_x_1_1_c_f_x_r___emission_by_surface_aa630f29ba40e6e1a26b375afd2b11bb8}{maxEmissionRate}},\ emissionOverTime);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ CalculateShapeDensity(ParticleSystem.ShapeModule\ shapeModule,\ \textcolor{keywordtype}{bool}\ isShapeScaling,\ Transform\ transform)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ arcPercentage\ =\ Mathf.Max(0.01f,\ shapeModule.arc\ /\ 360f);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ thicknessPercentage\ =\ Mathf.Max(0.01f,\ 1.0f\ -\/\ shapeModule.radiusThickness);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleX\ =\ shapeModule.scale.x;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleY\ =\ shapeModule.scale.y;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleZ\ =\ shapeModule.scale.z;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isShapeScaling)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localScale\ =\ Quaternion.Euler(shapeModule.rotation)\ *\ transform.localScale;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleX\ =\ scaleX\ *\ localScale.x;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleY\ =\ scaleY\ *\ localScale.y;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleZ\ =\ scaleZ\ *\ localScale.z;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ scaleX\ =\ Mathf.Abs(scaleX);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ scaleY\ =\ Mathf.Abs(scaleY);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ scaleZ\ =\ Mathf.Abs(scaleZ);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (shapeModule.shapeType)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Hemisphere:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Sphere:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rX\ =\ shapeModule.radius\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rY\ =\ shapeModule.radius\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rZ\ =\ shapeModule.radius\ *\ scaleZ;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rmX\ =\ rX\ *\ thicknessPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rmY\ =\ rY\ *\ thicknessPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rmZ\ =\ rZ\ *\ thicknessPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ volume\ =\ (rX\ *\ rY\ *\ rZ\ -\/\ rmX\ *\ rmY\ *\ rmZ)\ *\ Mathf.PI;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shapeModule.shapeType\ ==\ ParticleSystemShapeType.Hemisphere)}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ volume\ /=\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ volume\ *\ arcPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Cone:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ innerDisk\ =\ shapeModule.radius\ *\ scaleX\ *\ thicknessPercentage\ *\ shapeModule.radius\ *\ scaleY\ *\ thicknessPercentage\ *\ Mathf.PI;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ outerDisk\ =\ shapeModule.radius\ *scaleX\ *\ shapeModule.radius\ *\ scaleY\ *\ Mathf.PI;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ outerDisk\ -\/\ innerDisk;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.ConeVolume:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cylinder\ volume,\ changing\ the\ angle\ doesn't\ actually\ extend\ the\ area\ from\ where\ the\ particles\ are\ emitted}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ innerCylinder\ =\ shapeModule.radius\ *\ scaleX\ *\ thicknessPercentage\ *\ shapeModule.radius\ *\ scaleY\ *\ thicknessPercentage\ *\ Mathf.PI\ *\ shapeModule.length\ *\ scaleZ;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ outerCylinder\ =\ shapeModule.radius\ *\ scaleX\ *\ shapeModule.radius\ *\ scaleY\ *\ Mathf.PI\ *\ shapeModule.length\ *\ scaleZ;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ outerCylinder\ -\/\ innerCylinder;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.BoxEdge:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.BoxShell:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Box:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scaleX\ *\ scaleY\ *\ scaleZ;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Circle:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusX\ =\ shapeModule.radius\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusY\ =\ shapeModule.radius\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusMinX\ =\ radiusX\ *\ thicknessPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusMinY\ =\ radiusY\ *\ thicknessPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ area\ =\ (radiusX\ *\ radiusY\ -\/\ radiusMinX\ *\ radiusMinY)\ *\ Mathf.PI;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ area\ *\ arcPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.SingleSidedEdge:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ shapeModule.radius\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Donut:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ outerDonutVolume\ =\ 2\ *\ Mathf.PI\ *\ Mathf.PI\ *\ shapeModule.donutRadius\ *\ shapeModule.donutRadius\ *\ shapeModule.radius\ *\ arcPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ innerDonutVolume\ =\ 2\ *\ Mathf.PI\ *\ Mathf.PI\ *\ shapeModule.donutRadius\ *\ thicknessPercentage\ *\ thicknessPercentage\ *\ shapeModule.donutRadius\ *\ shapeModule.radius\ *\ arcPercentage;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (outerDonutVolume\ -\/\ innerDonutVolume)\ *\ scaleX\ *\ scaleY\ *\ scaleZ;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Rectangle:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scaleX\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Mesh:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.SkinnedMeshRenderer:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.MeshRenderer:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(\ \textcolor{keywordtype}{string}.\mbox{\hyperlink{namespace_spine_a66fcb0ab63b2b301097360f7cb4f1cd3}{Format}}(\textcolor{stringliteral}{"{}[\{0\}]\ Calculating\ volume\ for\ a\ mesh\ is\ unsupported."{}},\ nameof(CFXR\_EmissionBySurface)));}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.active\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.Sprite:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ParticleSystemShapeType.SpriteRenderer:}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(\ \textcolor{keywordtype}{string}.\mbox{\hyperlink{namespace_spine_a66fcb0ab63b2b301097360f7cb4f1cd3}{Format}}(\textcolor{stringliteral}{"{}[\{0\}]\ Calculating\ volume\ for\ a\ sprite\ is\ unsupported."{}},\ nameof(CFXR\_EmissionBySurface)));}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.active\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00167}00167\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00170}00170\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00171}00171\ \ \ \ \ [CustomEditor(typeof(CFXR\_EmissionBySurface))]}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00172}00172\ \ \ \ \ \textcolor{keyword}{class\ }CFXR\_EmissionBySurface\_Editor\ :\ Editor}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00173}00173\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ CFXR\_EmissionBySurface\ Target\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ target\ as\ CFXR\_EmissionBySurface;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspectorGUI()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ base.OnInspectorGUI();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ GUILayout.Space(10);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}This\ Editor\ script\ will\ adapt\ the\ particle\ emission\ based\ on\ its\ shape\ density,\ so\ that\ you\ can\ resize\ it\ to\ fit\ a\ specific\ situation\ and\ the\ overall\ number\ of\ particles\ won't\ change.\(\backslash\)n\(\backslash\)nYou\ can\ scale\ the\ object\ to\ change\ the\ emission\ area,\ and\ you\ can\ open\ the\ 'Shape'\ module\ in\ the\ Particle\ System\ to\ visualize\ the\ emission\ area."{}},\ MessageType.Info);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Calculated\ Density:\ "{}}\ +\ Target.density,\ MessageType.None);}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ Target.AttachToEditor();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ Target.DetachFromEditor();}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00194}00194\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_c_f_x_r___emission_by_surface_8cs_source_l00195}00195\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SeniorOlympics: D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanCommon/Extras/Scripts/LeanSpawn.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_lean_spawn_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">LeanSpawn.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_lean_spawn_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_c_w_1_1_common.html">CW.Common</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_lean_1_1_common.html">Lean.Common</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    [HelpURL(LeanCommon.HelpUrlPrefix + <span class="stringliteral">&quot;LeanSpawn&quot;</span>)]</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    [AddComponentMenu(LeanCommon.ComponentPathPrefix + <span class="stringliteral">&quot;Spawn&quot;</span>)]</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html">   10</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_lean_1_1_common_1_1_lean_spawn.html">LeanSpawn</a> : MonoBehaviour</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">   12</a></span>        <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">SourceType</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <a class="code hl_enumvalue" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9a0e44af9995e2a7aae76618e7d1fc593f">ThisTransform</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_property" href="class_lean_1_1_common_1_1_lean_spawn.html#ac792ad81452c2b4e49f11184f1698d1a">Prefab</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html#ac792ad81452c2b4e49f11184f1698d1a">   19</a></span>        <span class="keyword">public</span> Transform <a class="code hl_property" href="class_lean_1_1_common_1_1_lean_spawn.html#ac792ad81452c2b4e49f11184f1698d1a">Prefab</a> { <span class="keyword">set</span> { prefab = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> prefab; } } [SerializeField] <span class="keyword">private</span> Transform prefab;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html#aed527c485bd9f33f81eba97d2233f54d">   22</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">SourceType</a> <a class="code hl_property" href="class_lean_1_1_common_1_1_lean_spawn.html#aed527c485bd9f33f81eba97d2233f54d">DefaultPosition</a> { <span class="keyword">set</span> { defaultPosition = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> defaultPosition; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_enumeration" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">SourceType</a> defaultPosition;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html#a62b7b602aa5d229158c8cc0431f521f0">   25</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">SourceType</a> <a class="code hl_property" href="class_lean_1_1_common_1_1_lean_spawn.html#a62b7b602aa5d229158c8cc0431f521f0">DefaultRotation</a> { <span class="keyword">set</span> { defaultRotation = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> defaultRotation; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_enumeration" href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">SourceType</a> defaultRotation;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html#a811bdb3dfdf72d0d449528e35103f4b0">   28</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lean_1_1_common_1_1_lean_spawn.html#a811bdb3dfdf72d0d449528e35103f4b0">Spawn</a>()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">if</span> (prefab != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                var position = defaultPosition == SourceType.Prefab ? prefab.position : transform.position;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                var rotation = defaultRotation == SourceType.Prefab ? prefab.rotation : transform.rotation;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                var clone    = Instantiate(prefab, position, rotation);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                clone.gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_lean_1_1_common_1_1_lean_spawn.html#a66515acc09ebadab0a3cafaa1007046d">   41</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lean_1_1_common_1_1_lean_spawn.html#a66515acc09ebadab0a3cafaa1007046d">Spawn</a>(Vector3 position)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (prefab != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                var rotation = defaultRotation == SourceType.Prefab ? prefab.rotation : transform.rotation;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                var clone    = Instantiate(prefab, position, rotation);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                clone.gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#if UNITY_EDITOR</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">namespace </span>Lean.Common.Editor</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">using </span>UnityEditor;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">using </span>TARGET = LeanSpawn;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    [CanEditMultipleObjects]</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    [CustomEditor(typeof(TARGET))]</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">public</span> <span class="keyword">class </span>LeanSpawn_Editor : CwEditor</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> OnInspector()</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            TARGET tgt; TARGET[] tgts; GetTargets(out tgt, out tgts);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            BeginError(Any(tgts, t =&gt; t.Prefab == <span class="keyword">null</span>));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                Draw(<span class="stringliteral">&quot;prefab&quot;</span>, <span class="stringliteral">&quot;The prefab that this component can spawn.&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            EndError();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            Draw(<span class="stringliteral">&quot;defaultPosition&quot;</span>, <span class="stringliteral">&quot;If you call Spawn(), where should the position come from?&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            Draw(<span class="stringliteral">&quot;defaultRotation&quot;</span>, <span class="stringliteral">&quot;If you call Spawn(), where should the rotation come from?&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html">Lean.Common.LeanSpawn</a></div><div class="ttdoc">This component allows you to spawn a prefab at the specified world point. NOTE: For this component to...</div><div class="ttdef"><b>Definition</b> <a href="#l00010">LeanSpawn.cs:11</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_a62b7b602aa5d229158c8cc0431f521f0"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#a62b7b602aa5d229158c8cc0431f521f0">Lean.Common.LeanSpawn.DefaultRotation</a></div><div class="ttdeci">SourceType DefaultRotation</div><div class="ttdoc">If you call Spawn(), where should the rotation come from?</div><div class="ttdef"><b>Definition</b> <a href="#l00025">LeanSpawn.cs:25</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_a66515acc09ebadab0a3cafaa1007046d"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#a66515acc09ebadab0a3cafaa1007046d">Lean.Common.LeanSpawn.Spawn</a></div><div class="ttdeci">void Spawn(Vector3 position)</div><div class="ttdoc">This will spawn Prefab at the specified position in world space.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">LeanSpawn.cs:41</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_a7ea3bc13367b0825ab336321f790a2b9"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9">Lean.Common.LeanSpawn.SourceType</a></div><div class="ttdeci">SourceType</div><div class="ttdef"><b>Definition</b> <a href="#l00012">LeanSpawn.cs:13</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_a7ea3bc13367b0825ab336321f790a2b9a0e44af9995e2a7aae76618e7d1fc593f"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#a7ea3bc13367b0825ab336321f790a2b9a0e44af9995e2a7aae76618e7d1fc593f">Lean.Common.LeanSpawn.SourceType.ThisTransform</a></div><div class="ttdeci">@ ThisTransform</div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_a811bdb3dfdf72d0d449528e35103f4b0"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#a811bdb3dfdf72d0d449528e35103f4b0">Lean.Common.LeanSpawn.Spawn</a></div><div class="ttdeci">void Spawn()</div><div class="ttdoc">This will spawn Prefab at the current Transform.position.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">LeanSpawn.cs:28</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_ac792ad81452c2b4e49f11184f1698d1a"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#ac792ad81452c2b4e49f11184f1698d1a">Lean.Common.LeanSpawn.Prefab</a></div><div class="ttdeci">Transform Prefab</div><div class="ttdoc">The prefab that this component can spawn.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">LeanSpawn.cs:19</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_common_1_1_lean_spawn_html_aed527c485bd9f33f81eba97d2233f54d"><div class="ttname"><a href="class_lean_1_1_common_1_1_lean_spawn.html#aed527c485bd9f33f81eba97d2233f54d">Lean.Common.LeanSpawn.DefaultPosition</a></div><div class="ttdeci">SourceType DefaultPosition</div><div class="ttdoc">If you call Spawn(), where should the position come from?</div><div class="ttdef"><b>Definition</b> <a href="#l00022">LeanSpawn.cs:22</a></div></div>
+<div class="ttc" id="anamespace_c_w_1_1_common_html"><div class="ttname"><a href="namespace_c_w_1_1_common.html">CW.Common</a></div><div class="ttdef"><b>Definition</b> <a href="_cw_camera_look_8cs_source.html#l00003">CwCameraLook.cs:4</a></div></div>
+<div class="ttc" id="anamespace_lean_1_1_common_html"><div class="ttname"><a href="namespace_lean_1_1_common.html">Lean.Common</a></div><div class="ttdef"><b>Definition</b> <a href="_lean_destroy_8cs_source.html#l00004">LeanDestroy.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfe35fcde3865645aebb6760888e5d19.html">SeniorOlympics</a></li><li class="navelem"><a class="el" href="dir_0dfbd538de68c6818498e81e82261dfb.html">Assets</a></li><li class="navelem"><a class="el" href="dir_aeb613073e7d917ac855dc2f2f4cb00c.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_869c28fd3ad23f0e2313857e7485f271.html">CW</a></li><li class="navelem"><a class="el" href="dir_234174eb7c63c2f28803f00232fd6c3f.html">LeanCommon</a></li><li class="navelem"><a class="el" href="dir_6c1fe6bb85168a7e825ec9ab8bc19f8a.html">Extras</a></li><li class="navelem"><a class="el" href="dir_e064569a855261cc25a5650fafe8b984.html">Scripts</a></li><li class="navelem"><a class="el" href="_lean_spawn_8cs.html">LeanSpawn.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

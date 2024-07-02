@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SeniorOlympics: D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/RuntimeLoadFromExportsExample.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_runtime_load_from_exports_example_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RuntimeLoadFromExportsExample.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_runtime_load_from_exports_example_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Spine Runtimes License Agreement</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Last updated July 28, 2023. Replaces all prior versions.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Copyright (c) 2013-2023, Esoteric Software LLC</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Integration of the Spine Runtimes into software or otherwise creating</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * derivative works of the Spine Runtimes is permitted under the terms and</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * conditions of Section 2 of the Spine Editor License Agreement:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * http://esotericsoftware.com/spine-editor-license</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Otherwise, it is permitted to integrate the Spine Runtimes into software or</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * otherwise create derivative works of the Spine Runtimes (collectively,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * &quot;Products&quot;), provided that each user of the Products must obtain their own</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * Spine Editor license and redistribution of the Products in any form must</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * include this license and copyright notice.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * THE SPINE RUNTIMES ARE PROVIDED BY ESOTERIC SOFTWARE LLC &quot;AS IS&quot; AND ANY</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * DISCLAIMED. IN NO EVENT SHALL ESOTERIC SOFTWARE LLC BE LIABLE FOR ANY</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * BUSINESS INTERRUPTION, OR LOSS OF USE, DATA, OR PROFITS) HOWEVER CAUSED AND</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_spine_1_1_unity_1_1_examples.html">Spine.Unity.Examples</a> {</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html">   35</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html">RuntimeLoadFromExportsExample</a> : MonoBehaviour {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ae2017cdd985c918f36146a602b7c98d4">   37</a></span>        <span class="keyword">public</span> TextAsset <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ae2017cdd985c918f36146a602b7c98d4">skeletonJson</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a2ed522a281d7bc693c75d277154efe18">   38</a></span>        <span class="keyword">public</span> TextAsset <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a2ed522a281d7bc693c75d277154efe18">atlasText</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a9c18abebd815d6dc4d395fccb88c3604">   39</a></span>        <span class="keyword">public</span> Texture2D[] <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a9c18abebd815d6dc4d395fccb88c3604">textures</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a08c7a200f471008af2f246f2b20c0c20">   40</a></span>        <span class="keyword">public</span> Material <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a08c7a200f471008af2f246f2b20c0c20">materialPropertySource</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a99ad2a9d1794fe121f3fa41a161f271d">   42</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a99ad2a9d1794fe121f3fa41a161f271d">delay</a> = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">   43</a></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">skinName</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">   44</a></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">animationName</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_class" href="class_spine_1_1_unity_1_1_spine_atlas_asset.html">SpineAtlasAsset</a> runtimeAtlasAsset;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">SkeletonDataAsset</a> runtimeSkeletonDataAsset;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_animation.html">SkeletonAnimation</a> runtimeSkeletonAnimation;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_graphic.html">SkeletonGraphic</a> runtimeSkeletonGraphic;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a343b8d2086180e1a0aca8ea1b00a6fb8">   51</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a343b8d2086180e1a0aca8ea1b00a6fb8">blendModeMaterials</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a736d73f43b42e8b591d81f3823b22adc">   52</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a736d73f43b42e8b591d81f3823b22adc">applyAdditiveMaterial</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ac821a2463bb33116d67abf9319933b79">   53</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_spine_1_1_unity_1_1_blend_mode_materials_1_1_template_materials.html">BlendModeMaterials.TemplateMaterials</a> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ac821a2463bb33116d67abf9319933b79">blendModeTemplateMaterials</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ab8f9557dfa825490928cbed9cca9c41d">   54</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_spine_1_1_unity_1_1_blend_mode_materials_1_1_template_materials.html">BlendModeMaterials.TemplateMaterials</a> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ab8f9557dfa825490928cbed9cca9c41d">graphicBlendModeMaterials</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a329bd78106bbd30f5a9aa9f26452476f">   55</a></span>        <span class="keyword">public</span> Material <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a329bd78106bbd30f5a9aa9f26452476f">skeletonGraphicMaterial</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">void</span> CreateRuntimeAssetsAndGameObject () {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="comment">// 1. Create the AtlasAsset (needs atlas text asset and textures, and materials/shader);</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">// 2. Create SkeletonDataAsset (needs json or binary asset file, and an AtlasAsset)</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="comment">// 2.1 Optional: Setup blend mode materials at SkeletonDataAsset. Only required if the skeleton</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="comment">//    uses blend modes which require blend mode materials.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="comment">// 3.a Create SkeletonAnimation (needs a valid SkeletonDataAsset)</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// 3.b Create SkeletonGraphic (needs a valid SkeletonDataAsset)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            runtimeAtlasAsset = <a class="code hl_class" href="class_spine_1_1_unity_1_1_spine_atlas_asset.html">SpineAtlasAsset</a>.<a class="code hl_function" href="class_spine_1_1_unity_1_1_spine_atlas_asset.html#a0832bb714397e812e1cf6b9214b37efa">CreateRuntimeInstance</a>(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a2ed522a281d7bc693c75d277154efe18">atlasText</a>, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a9c18abebd815d6dc4d395fccb88c3604">textures</a>, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a08c7a200f471008af2f246f2b20c0c20">materialPropertySource</a>, <span class="keyword">true</span>, <span class="keyword">null</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            runtimeSkeletonDataAsset = <a class="code hl_class" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">SkeletonDataAsset</a>.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html#ae2fc984ba1801b55e8c299832aadbf49">CreateRuntimeInstance</a>(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ae2017cdd985c918f36146a602b7c98d4">skeletonJson</a>, runtimeAtlasAsset, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a343b8d2086180e1a0aca8ea1b00a6fb8">blendModeMaterials</a>)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                runtimeSkeletonDataAsset.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html#a87d0dab94cb0599079af79da52afe4ba">SetupRuntimeBlendModeMaterials</a>(</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a736d73f43b42e8b591d81f3823b22adc">applyAdditiveMaterial</a>, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ac821a2463bb33116d67abf9319933b79">blendModeTemplateMaterials</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        IEnumerator Start () {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            CreateRuntimeAssetsAndGameObject();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a99ad2a9d1794fe121f3fa41a161f271d">delay</a> &gt; 0) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                runtimeSkeletonDataAsset.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_data_asset.html#a2b0df38bd74c1b464ed8543f72c7fd4e">GetSkeletonData</a>(<span class="keyword">false</span>); <span class="comment">// preload</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a99ad2a9d1794fe121f3fa41a161f271d">delay</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            InstantiateSkeletonAnimation();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            InstantiateSkeletonGraphic();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordtype">void</span> InstantiateSkeletonAnimation () {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            runtimeSkeletonAnimation = SkeletonAnimation.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_animation.html#a8a2052d505c044dab2e1be70c55ec488">NewSkeletonAnimationGameObject</a>(runtimeSkeletonDataAsset);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            runtimeSkeletonAnimation.transform.parent = transform;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            runtimeSkeletonAnimation.name = <span class="stringliteral">&quot;SkeletonAnimation Instance&quot;</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="comment">// additional initialization</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            runtimeSkeletonAnimation.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_animation.html#ac87342871735d41c80346ab7c2999ddd">Initialize</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">skinName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                runtimeSkeletonAnimation.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_renderer.html#aca997f96ffb5a89579dc325b790f0fd6">Skeleton</a>.<a class="code hl_function" href="class_spine_1_1_skeleton.html#af80bbbc3b2b5d588152eba7e83430dc8">SetSkin</a>(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">skinName</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            runtimeSkeletonAnimation.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_renderer.html#aca997f96ffb5a89579dc325b790f0fd6">Skeleton</a>.<a class="code hl_function" href="class_spine_1_1_skeleton.html#a8018f6075e7578e9bccf1cd81c92f904">SetSlotsToSetupPose</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">animationName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                runtimeSkeletonAnimation.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_animation.html#ab1694ead3860e2f34dd892747aef356b">AnimationState</a>.SetAnimation(0, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">animationName</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordtype">void</span> InstantiateSkeletonGraphic () {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            Canvas canvas = this.GetComponentInChildren&lt;Canvas&gt;();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            Transform parent = canvas.transform;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            runtimeSkeletonGraphic = SkeletonGraphic.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a396e5198e5734aa6569ded48db00a7a9">NewSkeletonGraphicGameObject</a>(runtimeSkeletonDataAsset, parent, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a329bd78106bbd30f5a9aa9f26452476f">skeletonGraphicMaterial</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            runtimeSkeletonGraphic.name = <span class="stringliteral">&quot;SkeletonGraphic Instance&quot;</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a343b8d2086180e1a0aca8ea1b00a6fb8">blendModeMaterials</a>) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                runtimeSkeletonGraphic.allowMultipleCanvasRenderers = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                runtimeSkeletonGraphic.additiveMaterial = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ab8f9557dfa825490928cbed9cca9c41d">graphicBlendModeMaterials</a>.additiveTemplate;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                runtimeSkeletonGraphic.multiplyMaterial = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ab8f9557dfa825490928cbed9cca9c41d">graphicBlendModeMaterials</a>.multiplyTemplate;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                runtimeSkeletonGraphic.screenMaterial = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ab8f9557dfa825490928cbed9cca9c41d">graphicBlendModeMaterials</a>.screenTemplate;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="comment">// additional initialization</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            runtimeSkeletonGraphic.<a class="code hl_function" href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a7e3fa647feb1c7753bf9a62fadfb58b5">Initialize</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">skinName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                runtimeSkeletonGraphic.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a6ab9b7418886660097bf793044441e68">Skeleton</a>.<a class="code hl_function" href="class_spine_1_1_skeleton.html#af80bbbc3b2b5d588152eba7e83430dc8">SetSkin</a>(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">skinName</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            runtimeSkeletonGraphic.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a6ab9b7418886660097bf793044441e68">Skeleton</a>.<a class="code hl_function" href="class_spine_1_1_skeleton.html#a8018f6075e7578e9bccf1cd81c92f904">SetSlotsToSetupPose</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">animationName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                runtimeSkeletonGraphic.<a class="code hl_property" href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a6fd509246376e1b8eb6668fc6b5eb0f1">AnimationState</a>.SetAnimation(0, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">animationName</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="ttc" id="aclass_spine_1_1_skeleton_html_a8018f6075e7578e9bccf1cd81c92f904"><div class="ttname"><a href="class_spine_1_1_skeleton.html#a8018f6075e7578e9bccf1cd81c92f904">Spine.Skeleton.SetSlotsToSetupPose</a></div><div class="ttdeci">void SetSlotsToSetupPose()</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_8cs_source.html#l00530">Skeleton.cs:530</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_skeleton_html_af80bbbc3b2b5d588152eba7e83430dc8"><div class="ttname"><a href="class_spine_1_1_skeleton.html#af80bbbc3b2b5d588152eba7e83430dc8">Spine.Skeleton.SetSkin</a></div><div class="ttdeci">void SetSkin(string skinName)</div><div class="ttdoc">Sets a skin by name (see SetSkin(Skin)).</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_8cs_source.html#l00565">Skeleton.cs:565</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_blend_mode_materials_1_1_template_materials_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_blend_mode_materials_1_1_template_materials.html">Spine.Unity.BlendModeMaterials.TemplateMaterials</a></div><div class="ttdef"><b>Definition</b> <a href="_blend_mode_materials_8cs_source.html#l00102">BlendModeMaterials.cs:102</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html">Spine.Unity.Examples.RuntimeLoadFromExportsExample</a></div><div class="ttdef"><b>Definition</b> <a href="#l00035">RuntimeLoadFromExportsExample.cs:35</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a08c7a200f471008af2f246f2b20c0c20"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a08c7a200f471008af2f246f2b20c0c20">Spine.Unity.Examples.RuntimeLoadFromExportsExample.materialPropertySource</a></div><div class="ttdeci">Material materialPropertySource</div><div class="ttdef"><b>Definition</b> <a href="#l00040">RuntimeLoadFromExportsExample.cs:40</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a2ed522a281d7bc693c75d277154efe18"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a2ed522a281d7bc693c75d277154efe18">Spine.Unity.Examples.RuntimeLoadFromExportsExample.atlasText</a></div><div class="ttdeci">TextAsset atlasText</div><div class="ttdef"><b>Definition</b> <a href="#l00038">RuntimeLoadFromExportsExample.cs:38</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a329bd78106bbd30f5a9aa9f26452476f"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a329bd78106bbd30f5a9aa9f26452476f">Spine.Unity.Examples.RuntimeLoadFromExportsExample.skeletonGraphicMaterial</a></div><div class="ttdeci">Material skeletonGraphicMaterial</div><div class="ttdef"><b>Definition</b> <a href="#l00055">RuntimeLoadFromExportsExample.cs:55</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a343b8d2086180e1a0aca8ea1b00a6fb8"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a343b8d2086180e1a0aca8ea1b00a6fb8">Spine.Unity.Examples.RuntimeLoadFromExportsExample.blendModeMaterials</a></div><div class="ttdeci">bool blendModeMaterials</div><div class="ttdef"><b>Definition</b> <a href="#l00051">RuntimeLoadFromExportsExample.cs:51</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a736d73f43b42e8b591d81f3823b22adc"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a736d73f43b42e8b591d81f3823b22adc">Spine.Unity.Examples.RuntimeLoadFromExportsExample.applyAdditiveMaterial</a></div><div class="ttdeci">bool applyAdditiveMaterial</div><div class="ttdef"><b>Definition</b> <a href="#l00052">RuntimeLoadFromExportsExample.cs:52</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a99ad2a9d1794fe121f3fa41a161f271d"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a99ad2a9d1794fe121f3fa41a161f271d">Spine.Unity.Examples.RuntimeLoadFromExportsExample.delay</a></div><div class="ttdeci">float delay</div><div class="ttdef"><b>Definition</b> <a href="#l00042">RuntimeLoadFromExportsExample.cs:42</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_a9c18abebd815d6dc4d395fccb88c3604"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#a9c18abebd815d6dc4d395fccb88c3604">Spine.Unity.Examples.RuntimeLoadFromExportsExample.textures</a></div><div class="ttdeci">Texture2D[] textures</div><div class="ttdef"><b>Definition</b> <a href="#l00039">RuntimeLoadFromExportsExample.cs:39</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_ab8f9557dfa825490928cbed9cca9c41d"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ab8f9557dfa825490928cbed9cca9c41d">Spine.Unity.Examples.RuntimeLoadFromExportsExample.graphicBlendModeMaterials</a></div><div class="ttdeci">BlendModeMaterials.TemplateMaterials graphicBlendModeMaterials</div><div class="ttdef"><b>Definition</b> <a href="#l00054">RuntimeLoadFromExportsExample.cs:54</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_ac821a2463bb33116d67abf9319933b79"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ac821a2463bb33116d67abf9319933b79">Spine.Unity.Examples.RuntimeLoadFromExportsExample.blendModeTemplateMaterials</a></div><div class="ttdeci">BlendModeMaterials.TemplateMaterials blendModeTemplateMaterials</div><div class="ttdef"><b>Definition</b> <a href="#l00053">RuntimeLoadFromExportsExample.cs:53</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_ada4d76b3a64f11b9d88442868edc4ace"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ada4d76b3a64f11b9d88442868edc4ace">Spine.Unity.Examples.RuntimeLoadFromExportsExample.skinName</a></div><div class="ttdeci">string skinName</div><div class="ttdef"><b>Definition</b> <a href="#l00043">RuntimeLoadFromExportsExample.cs:43</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_ae2017cdd985c918f36146a602b7c98d4"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#ae2017cdd985c918f36146a602b7c98d4">Spine.Unity.Examples.RuntimeLoadFromExportsExample.skeletonJson</a></div><div class="ttdeci">TextAsset skeletonJson</div><div class="ttdef"><b>Definition</b> <a href="#l00037">RuntimeLoadFromExportsExample.cs:37</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example_html_aeb0b3684b8b1c36be4f2fce9526bbe5f"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_runtime_load_from_exports_example.html#aeb0b3684b8b1c36be4f2fce9526bbe5f">Spine.Unity.Examples.RuntimeLoadFromExportsExample.animationName</a></div><div class="ttdeci">string animationName</div><div class="ttdef"><b>Definition</b> <a href="#l00044">RuntimeLoadFromExportsExample.cs:44</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_animation_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_animation.html">Spine.Unity.SkeletonAnimation</a></div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_8cs_source.html#l00045">SkeletonAnimation.cs:45</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_animation_html_a8a2052d505c044dab2e1be70c55ec488"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_animation.html#a8a2052d505c044dab2e1be70c55ec488">Spine.Unity.SkeletonAnimation.NewSkeletonAnimationGameObject</a></div><div class="ttdeci">static SkeletonAnimation NewSkeletonAnimationGameObject(SkeletonDataAsset skeletonDataAsset, bool quiet=false)</div><div class="ttdoc">Instantiates a new UnityEngine.GameObject and adds a prepared SkeletonAnimation component to it.</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_8cs_source.html#l00165">SkeletonAnimation.cs:165</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_animation_html_ab1694ead3860e2f34dd892747aef356b"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_animation.html#ab1694ead3860e2f34dd892747aef356b">Spine.Unity.SkeletonAnimation.AnimationState</a></div><div class="ttdeci">Spine.AnimationState AnimationState</div><div class="ttdoc">This is the Spine.AnimationState object of this SkeletonAnimation. You can control animations through...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_8cs_source.html#l00055">SkeletonAnimation.cs:55</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_animation_html_ac87342871735d41c80346ab7c2999ddd"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_animation.html#ac87342871735d41c80346ab7c2999ddd">Spine.Unity.SkeletonAnimation.Initialize</a></div><div class="ttdeci">override void Initialize(bool overwrite, bool quiet=false)</div><div class="ttdoc">Initialize this component. Attempts to load the SkeletonData and creates the internal Spine objects a...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_8cs_source.html#l00181">SkeletonAnimation.cs:181</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_data_asset_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_data_asset.html">Spine.Unity.SkeletonDataAsset</a></div><div class="ttdef"><b>Definition</b> <a href="_skeleton_data_asset_8cs_source.html#l00040">SkeletonDataAsset.cs:40</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_data_asset_html_a2b0df38bd74c1b464ed8543f72c7fd4e"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_data_asset.html#a2b0df38bd74c1b464ed8543f72c7fd4e">Spine.Unity.SkeletonDataAsset.GetSkeletonData</a></div><div class="ttdeci">SkeletonData GetSkeletonData(bool quiet)</div><div class="ttdoc">Loads, caches and returns the SkeletonData from the skeleton data file. Returns the cached SkeletonDa...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_data_asset_8cs_source.html#l00131">SkeletonDataAsset.cs:131</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_data_asset_html_a87d0dab94cb0599079af79da52afe4ba"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_data_asset.html#a87d0dab94cb0599079af79da52afe4ba">Spine.Unity.SkeletonDataAsset.SetupRuntimeBlendModeMaterials</a></div><div class="ttdeci">void SetupRuntimeBlendModeMaterials(bool applyAdditiveMaterial, BlendModeMaterials.TemplateMaterials templateMaterials)</div><div class="ttdoc">If this SkeletonDataAsset has been created via CreateRuntimeInstance, this method sets up blend mode ...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_data_asset_8cs_source.html#l00105">SkeletonDataAsset.cs:105</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_data_asset_html_ae2fc984ba1801b55e8c299832aadbf49"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_data_asset.html#ae2fc984ba1801b55e8c299832aadbf49">Spine.Unity.SkeletonDataAsset.CreateRuntimeInstance</a></div><div class="ttdeci">static SkeletonDataAsset CreateRuntimeInstance(TextAsset skeletonDataFile, AtlasAssetBase atlasAsset, bool initialize, float scale=0.01f)</div><div class="ttdoc">Creates a runtime SkeletonDataAsset.</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_data_asset_8cs_source.html#l00083">SkeletonDataAsset.cs:83</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_graphic_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_graphic.html">Spine.Unity.SkeletonGraphic</a></div><div class="ttdef"><b>Definition</b> <a href="_skeleton_graphic_8cs_source.html#l00053">SkeletonGraphic.cs:53</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_graphic_html_a396e5198e5734aa6569ded48db00a7a9"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a396e5198e5734aa6569ded48db00a7a9">Spine.Unity.SkeletonGraphic.NewSkeletonGraphicGameObject</a></div><div class="ttdeci">static SkeletonGraphic NewSkeletonGraphicGameObject(SkeletonDataAsset skeletonDataAsset, Transform parent, Material material)</div><div class="ttdoc">Create a new GameObject with a SkeletonGraphic component.</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_graphic_8cs_source.html#l00187">SkeletonGraphic.cs:187</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_graphic_html_a6ab9b7418886660097bf793044441e68"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a6ab9b7418886660097bf793044441e68">Spine.Unity.SkeletonGraphic.Skeleton</a></div><div class="ttdeci">Skeleton Skeleton</div><div class="ttdoc">Gets the Spine.Skeleton instance of the Spine Component. This is equivalent to SkeletonRenderer's ....</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_graphic_8cs_source.html#l00532">SkeletonGraphic.cs:532</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_graphic_html_a6fd509246376e1b8eb6668fc6b5eb0f1"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a6fd509246376e1b8eb6668fc6b5eb0f1">Spine.Unity.SkeletonGraphic.AnimationState</a></div><div class="ttdeci">Spine.AnimationState AnimationState</div><div class="ttdoc">Gets the Spine.AnimationState of the animated Spine Component. This is equivalent to SkeletonAnimatio...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_graphic_8cs_source.html#l00567">SkeletonGraphic.cs:567</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_graphic_html_a7e3fa647feb1c7753bf9a62fadfb58b5"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_graphic.html#a7e3fa647feb1c7753bf9a62fadfb58b5">Spine.Unity.SkeletonGraphic.Initialize</a></div><div class="ttdeci">void Initialize(bool overwrite)</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_graphic_8cs_source.html#l00804">SkeletonGraphic.cs:804</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_skeleton_renderer_html_aca997f96ffb5a89579dc325b790f0fd6"><div class="ttname"><a href="class_spine_1_1_unity_1_1_skeleton_renderer.html#aca997f96ffb5a89579dc325b790f0fd6">Spine.Unity.SkeletonRenderer.Skeleton</a></div><div class="ttdeci">Skeleton Skeleton</div><div class="ttdoc">Gets the Spine.Skeleton instance of the Spine Component. This is equivalent to SkeletonRenderer's ....</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_renderer_8cs_source.html#l00289">SkeletonRenderer.cs:289</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_spine_atlas_asset_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_spine_atlas_asset.html">Spine.Unity.SpineAtlasAsset</a></div><div class="ttdoc">Loads and stores a Spine atlas and list of materials.</div><div class="ttdef"><b>Definition</b> <a href="_spine_atlas_asset_8cs_source.html#l00038">SpineAtlasAsset.cs:38</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_spine_atlas_asset_html_a0832bb714397e812e1cf6b9214b37efa"><div class="ttname"><a href="class_spine_1_1_unity_1_1_spine_atlas_asset.html#a0832bb714397e812e1cf6b9214b37efa">Spine.Unity.SpineAtlasAsset.CreateRuntimeInstance</a></div><div class="ttdeci">static SpineAtlasAsset CreateRuntimeInstance(TextAsset atlasText, Material[] materials, bool initialize, Func&lt; SpineAtlasAsset, TextureLoader &gt; newCustomTextureLoader=null)</div><div class="ttdoc">Creates a runtime AtlasAsset</div><div class="ttdef"><b>Definition</b> <a href="_spine_atlas_asset_8cs_source.html#l00057">SpineAtlasAsset.cs:57</a></div></div>
+<div class="ttc" id="anamespace_spine_1_1_unity_1_1_examples_html"><div class="ttname"><a href="namespace_spine_1_1_unity_1_1_examples.html">Spine.Unity.Examples</a></div><div class="ttdef"><b>Definition</b> <a href="_spine_animation_tester_tool_8cs_source.html#l00037">SpineAnimationTesterTool.cs:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfe35fcde3865645aebb6760888e5d19.html">SeniorOlympics</a></li><li class="navelem"><a class="el" href="dir_0dfbd538de68c6818498e81e82261dfb.html">Assets</a></li><li class="navelem"><a class="el" href="dir_9c8c39a7638d41efb5d2c79f438eff06.html">Spine Examples</a></li><li class="navelem"><a class="el" href="dir_3f6f16555463a81f7197830943818d04.html">Scripts</a></li><li class="navelem"><a class="el" href="_runtime_load_from_exports_example_8cs.html">RuntimeLoadFromExportsExample.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,616 @@
+\doxysection{Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll 클래스 참조}
+\hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll}{}\label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+
+
+Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_1_1_layer_field_attribute}{Layer\+Field\+Attribute}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7f56ea488d9b7a10835c6b15bebb6b0f}{Apply}} ()
+\begin{DoxyCompactList}\small\item\em Instantiates the ragdoll simulation and applies its transforms to the skeleton. \end{DoxyCompactList}\item 
+Coroutine \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97d057d7d4871d4f2c59b2c086c44b97}{Smooth\+Mix}} (float target, float duration)
+\begin{DoxyCompactList}\small\item\em Transitions the mix value from the current value to a target value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac8526de5500ccd9c8cd84bfebd4c8740}{Set\+Skeleton\+Position}} (Vector3 world\+Position)
+\begin{DoxyCompactList}\small\item\em Set the transform world position while preserving the ragdoll parts world position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a2b0e2e42b88b57c5a8fb8fb38a046851}{Remove}} ()
+\begin{DoxyCompactList}\small\item\em Removes the ragdoll instance and effect from the animated skeleton. \end{DoxyCompactList}\item 
+Rigidbody \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a90f66c303353cb9cb56b22ab4f25d605}{Get\+Rigidbody}} (string bone\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aba756d3850488030fe419a42fc906563}{starting\+Bone\+Name}} = "{}"{}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a32283d2756fbb095f51e0fbff77b931e}{stop\+Bone\+Names}} = new List$<$string$>$()
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a8cf18bbbc8046df122ba5f18d03c5c7f}{apply\+On\+Start}}
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7a0537b5226a4695bf155e2f8aeb194c}{disable\+IK}} = true
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a0d2282202e2e70ec35f1d7ccc05dbb44}{disable\+Other\+Constraints}} = false
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aede1dd047ea7ce8bbe1c3ef503b47204}{pin\+Start\+Bone}}
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ab2f493fe0b0baa1415dad9725ff040cb}{enable\+Joint\+Collision}}
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a3f92c70df460ddb3e213e57725808edb}{use\+Gravity}} = true
+\item 
+float \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a1ac5e34227c6744aa2dbd92ad4e2ae4b}{thickness}} = 0.\+125f
+\item 
+float \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a9226c08da1a0c0d1620e0b5d6cf4b713}{rotation\+Limit}} = 20
+\item 
+float \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a236ac6e8e5fddcce277885f3aaf763f0}{root\+Mass}} = 20
+\item 
+float \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ae34d43248413367e42e798b705c9fa70}{mass\+Falloff\+Factor}} = 0.\+4f
+\item 
+int \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a2941e939a80b87e699b9003b78101898}{collider\+Layer}} = 0
+\item 
+float \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97342b0f2edbd763e3c43f7e1b07b85c}{mix}} = 1
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a5a263f76ed61b4050efe09d06efcf5ff}{old\+Ragdoll\+Behaviour}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+Rigidbody \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a27bd2925b95f7a61787a49619c39ee4b}{Root\+Rigidbody}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d}{Starting\+Bone}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Vector3 \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a800ad9fa5badbc728b7ff1b8e3185ed4}{Root\+Offset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7ba0e8be9756502a64463d87f143f998}{Is\+Active}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Rigidbody\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac7153e690abc79c54dcf4a84318dbd06}{Rigidbody\+Array}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Vector3 \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_add3ff18dc2369696fe39ed96484d50b2}{Estimated\+Skeleton\+Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7f56ea488d9b7a10835c6b15bebb6b0f}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!Apply@{Apply}}
+\index{Apply@{Apply}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7f56ea488d9b7a10835c6b15bebb6b0f} 
+void Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Apply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Instantiates the ragdoll simulation and applies its transforms to the skeleton. 
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00133}{133}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97342b0f2edbd763e3c43f7e1b07b85c}{mix}}\ =\ 1;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d}{StartingBone}}\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ac17fa59f8524f84672419a2e9c676666}{FindBone}}(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aba756d3850488030fe419a42fc906563}{startingBoneName}});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ RecursivelyCreateBoneProxies(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d}{StartingBone}});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a27bd2925b95f7a61787a49619c39ee4b}{RootRigidbody}}\ =\ boneTable[\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d}{StartingBone}}].GetComponent<Rigidbody>();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ RootRigidbody.isKinematic\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aede1dd047ea7ce8bbe1c3ef503b47204}{pinStartBone}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ RootRigidbody.mass\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a236ac6e8e5fddcce277885f3aaf763f0}{rootMass}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ List<Collider>\ boneColliders\ =\ \textcolor{keyword}{new}\ List<Collider>();}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (KeyValuePair<Bone,\ Transform>\ pair\ \textcolor{keywordflow}{in}\ boneTable)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ b\ =\ pair.Key;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ t\ =\ pair.Value;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ parentTransform;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneColliders.Add(t.GetComponent<Collider>());}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ ==\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d}{StartingBone}})\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot\ =\ \textcolor{keyword}{new}\ GameObject(\textcolor{stringliteral}{"{}RagdollRoot"{}}).transform;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.SetParent(transform,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ ==\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a9238949a0febaa09e57777e47c8bf251}{RootBone}})\ \{\ \textcolor{comment}{//\ RagdollRoot\ is\ skeleton\ root's\ parent,\ thus\ the\ skeleton's\ scale\ and\ position.}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_aa6929dedee376680ea44420a32977548}{X}},\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ad076b350b843c874fb5cff64f826d9de}{Y}},\ 0);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localRotation\ =\ (skeleton.ScaleX\ <\ 0)\ ?\ Quaternion.Euler(0,\ 0,\ 180.0f)\ :\ Quaternion.identity;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(b.Parent.WorldX,\ b.Parent.WorldY,\ 0);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdollRoot.localRotation\ =\ Quaternion.Euler(0,\ 0,\ b.Parent.WorldRotationX\ -\/\ b.Parent.ShearX);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentTransform\ =\ ragdollRoot;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rootOffset\ =\ t.position\ -\/\ transform.position;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentTransform\ =\ boneTable[b.Parent];}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ joint\ and\ attach\ to\ parent.}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody\ rbParent\ =\ parentTransform.GetComponent<Rigidbody>();}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rbParent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HingeJoint\ joint\ =\ t.gameObject.AddComponent<HingeJoint>();}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.connectedBody\ =\ rbParent;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ parentTransform.InverseTransformPoint(t.position);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ localPos.x\ *=\ 1;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.connectedAnchor\ =\ localPos;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.axis\ =\ Vector3.forward;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.GetComponent<Rigidbody>().mass\ =\ joint.connectedBody.mass\ *\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ae34d43248413367e42e798b705c9fa70}{massFalloffFactor}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.limits\ =\ \textcolor{keyword}{new}\ JointLimits\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ min\ =\ -\/\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a9226c08da1a0c0d1620e0b5d6cf4b713}{rotationLimit}},}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a9226c08da1a0c0d1620e0b5d6cf4b713}{rotationLimit}},}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.useLimits\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joint.enableCollision\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ab2f493fe0b0baa1415dad9725ff040cb}{enableJointCollision}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ignore\ collisions\ among\ bones.}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ boneColliders.Count;\ x++)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ boneColliders.Count;\ y++)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ y)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.IgnoreCollision(boneColliders[x],\ boneColliders[y]);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Destroy\ existing\ override-\/mode\ SkeletonUtilityBones.}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonUtilityBone[]\ utilityBones\ =\ GetComponentsInChildren<SkeletonUtilityBone>();}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (utilityBones.Length\ >\ 0)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<string>\ destroyedUtilityBoneNames\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SkeletonUtilityBone\ ub\ \textcolor{keywordflow}{in}\ utilityBones)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ub.mode\ ==\ SkeletonUtilityBone.Mode.Override)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destroyedUtilityBoneNames.Add(ub.gameObject.name);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(ub.gameObject);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (destroyedUtilityBoneNames.Count\ >\ 0)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ msg\ =\ \textcolor{stringliteral}{"{}Destroyed\ Utility\ Bones:\ "{}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ destroyedUtilityBoneNames.Count;\ i++)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ msg\ +=\ destroyedUtilityBoneNames[i];}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ destroyedUtilityBoneNames.Count\ -\/\ 1)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ msg\ +=\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(msg);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ skeleton\ constraints.}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7a0537b5226a4695bf155e2f8aeb194c}{disableIK}})\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<IkConstraint>\ ikConstraints\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a9fc9acb3f7d51836ebc40388758e13c6}{IkConstraints}};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ ikConstraints.Count;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ikConstraints.Items[i].Mix\ =\ 0;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a0d2282202e2e70ec35f1d7ccc05dbb44}{disableOtherConstraints}})\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<TransformConstraint>\ transformConstraints\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ae0407b2eb25cb28c9eebaf87ef83e505}{TransformConstraints}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ transformConstraints.Count;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.Items[i].MixRotate\ =\ 0;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.Items[i].MixScaleX\ =\ 0;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.Items[i].MixScaleY\ =\ 0;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.Items[i].MixShearY\ =\ 0;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.Items[i].MixX\ =\ 0;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transformConstraints.Items[i].MixY\ =\ 0;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<PathConstraint>\ pathConstraints\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ab55c5668b8473f8df274ac017a16bb4f}{PathConstraints}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ pathConstraints.Count;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathConstraints.Items[i].MixRotate\ =\ 0;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathConstraints.Items[i].MixX\ =\ 0;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pathConstraints.Items[i].MixY\ =\ 0;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ targetSkeletonComponent.UpdateWorld\ +=\ UpdateSpineSkeleton;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7f56ea488d9b7a10835c6b15bebb6b0f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a90f66c303353cb9cb56b22ab4f25d605}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!GetRigidbody@{GetRigidbody}}
+\index{GetRigidbody@{GetRigidbody}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{GetRigidbody()}{GetRigidbody()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a90f66c303353cb9cb56b22ab4f25d605} 
+Rigidbody Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Get\+Rigidbody (\begin{DoxyParamCaption}\item[{string}]{bone\+Name}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00287}{287}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ Bone\ bone\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_ac17fa59f8524f84672419a2e9c676666}{FindBone}}(boneName);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (bone\ !=\ \textcolor{keyword}{null}\ \&\&\ boneTable.ContainsKey(bone))\ ?\ boneTable[bone].GetComponent<Rigidbody>()\ :\ null;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a90f66c303353cb9cb56b22ab4f25d605_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a2b0e2e42b88b57c5a8fb8fb38a046851}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!Remove@{Remove}}
+\index{Remove@{Remove}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a2b0e2e42b88b57c5a8fb8fb38a046851} 
+void Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Remove (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes the ragdoll instance and effect from the animated skeleton. 
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00276}{276}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ boneTable.Values)}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(t.gameObject);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(ragdollRoot.gameObject);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ boneTable.Clear();}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ targetSkeletonComponent.UpdateWorld\ -\/=\ UpdateSpineSkeleton;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac8526de5500ccd9c8cd84bfebd4c8740}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!SetSkeletonPosition@{SetSkeletonPosition}}
+\index{SetSkeletonPosition@{SetSkeletonPosition}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{SetSkeletonPosition()}{SetSkeletonPosition()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac8526de5500ccd9c8cd84bfebd4c8740} 
+void Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Set\+Skeleton\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{world\+Position}{}\end{DoxyParamCaption})}
+
+
+
+Set the transform world position while preserving the ragdoll parts world position. 
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00260}{260}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isActive)\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(\textcolor{stringliteral}{"{}Can't\ call\ SetSkeletonPosition\ while\ Ragdoll\ is\ not\ active!"{}});}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ offset\ =\ worldPosition\ -\/\ transform.position;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ transform.position\ =\ worldPosition;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ boneTable.Values)}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.position\ -\/=\ offset;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ UpdateSpineSkeleton(\textcolor{keyword}{null});}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_af50f9c4c4f3349cdb108e29d8f96f52e}{UpdateWorldTransform}}(Skeleton.Physics.Update);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac8526de5500ccd9c8cd84bfebd4c8740_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97d057d7d4871d4f2c59b2c086c44b97}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!SmoothMix@{SmoothMix}}
+\index{SmoothMix@{SmoothMix}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{SmoothMix()}{SmoothMix()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97d057d7d4871d4f2c59b2c086c44b97} 
+Coroutine Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Smooth\+Mix (\begin{DoxyParamCaption}\item[{float}]{target}{, }\item[{float}]{duration}{}\end{DoxyParamCaption})}
+
+
+
+Transitions the mix value from the current value to a target value. 
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00245}{245}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ StartCoroutine(SmoothMixCoroutine(target,\ duration));}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a8cf18bbbc8046df122ba5f18d03c5c7f}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!applyOnStart@{applyOnStart}}
+\index{applyOnStart@{applyOnStart}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{applyOnStart}{applyOnStart}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a8cf18bbbc8046df122ba5f18d03c5c7f} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+apply\+On\+Start}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a2941e939a80b87e699b9003b78101898}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!colliderLayer@{colliderLayer}}
+\index{colliderLayer@{colliderLayer}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{colliderLayer}{colliderLayer}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a2941e939a80b87e699b9003b78101898} 
+int Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+collider\+Layer = 0}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00068}{68}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7a0537b5226a4695bf155e2f8aeb194c}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!disableIK@{disableIK}}
+\index{disableIK@{disableIK}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{disableIK}{disableIK}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7a0537b5226a4695bf155e2f8aeb194c} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+disable\+IK = true}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00051}{51}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a0d2282202e2e70ec35f1d7ccc05dbb44}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!disableOtherConstraints@{disableOtherConstraints}}
+\index{disableOtherConstraints@{disableOtherConstraints}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{disableOtherConstraints}{disableOtherConstraints}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a0d2282202e2e70ec35f1d7ccc05dbb44} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+disable\+Other\+Constraints = false}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00052}{52}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ab2f493fe0b0baa1415dad9725ff040cb}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!enableJointCollision@{enableJointCollision}}
+\index{enableJointCollision@{enableJointCollision}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{enableJointCollision}{enableJointCollision}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ab2f493fe0b0baa1415dad9725ff040cb} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+enable\+Joint\+Collision}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00057}{57}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ae34d43248413367e42e798b705c9fa70}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!massFalloffFactor@{massFalloffFactor}}
+\index{massFalloffFactor@{massFalloffFactor}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{massFalloffFactor}{massFalloffFactor}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ae34d43248413367e42e798b705c9fa70} 
+float Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+mass\+Falloff\+Factor = 0.\+4f}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97342b0f2edbd763e3c43f7e1b07b85c}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!mix@{mix}}
+\index{mix@{mix}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{mix}{mix}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a97342b0f2edbd763e3c43f7e1b07b85c} 
+float Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+mix = 1}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00070}{70}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a5a263f76ed61b4050efe09d06efcf5ff}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!oldRagdollBehaviour@{oldRagdollBehaviour}}
+\index{oldRagdollBehaviour@{oldRagdollBehaviour}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{oldRagdollBehaviour}{oldRagdollBehaviour}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a5a263f76ed61b4050efe09d06efcf5ff} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+old\+Ragdoll\+Behaviour = false}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00071}{71}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aede1dd047ea7ce8bbe1c3ef503b47204}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!pinStartBone@{pinStartBone}}
+\index{pinStartBone@{pinStartBone}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{pinStartBone}{pinStartBone}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aede1dd047ea7ce8bbe1c3ef503b47204} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+pin\+Start\+Bone}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00055}{55}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a236ac6e8e5fddcce277885f3aaf763f0}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!rootMass@{rootMass}}
+\index{rootMass@{rootMass}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{rootMass}{rootMass}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a236ac6e8e5fddcce277885f3aaf763f0} 
+float Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+root\+Mass = 20}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00063}{63}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a9226c08da1a0c0d1620e0b5d6cf4b713}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!rotationLimit@{rotationLimit}}
+\index{rotationLimit@{rotationLimit}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{rotationLimit}{rotationLimit}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a9226c08da1a0c0d1620e0b5d6cf4b713} 
+float Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+rotation\+Limit = 20}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00062}{62}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aba756d3850488030fe419a42fc906563}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!startingBoneName@{startingBoneName}}
+\index{startingBoneName@{startingBoneName}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{startingBoneName}{startingBoneName}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_aba756d3850488030fe419a42fc906563} 
+string Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+starting\+Bone\+Name = "{}"{}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a32283d2756fbb095f51e0fbff77b931e}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!stopBoneNames@{stopBoneNames}}
+\index{stopBoneNames@{stopBoneNames}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{stopBoneNames}{stopBoneNames}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a32283d2756fbb095f51e0fbff77b931e} 
+List$<$string$>$ Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+stop\+Bone\+Names = new List$<$string$>$()}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a1ac5e34227c6744aa2dbd92ad4e2ae4b}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!thickness@{thickness}}
+\index{thickness@{thickness}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{thickness}{thickness}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a1ac5e34227c6744aa2dbd92ad4e2ae4b} 
+float Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+thickness = 0.\+125f}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00060}{60}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a3f92c70df460ddb3e213e57725808edb}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!useGravity@{useGravity}}
+\index{useGravity@{useGravity}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{useGravity}{useGravity}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a3f92c70df460ddb3e213e57725808edb} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+use\+Gravity = true}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00058}{58}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_add3ff18dc2369696fe39ed96484d50b2}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!EstimatedSkeletonPosition@{EstimatedSkeletonPosition}}
+\index{EstimatedSkeletonPosition@{EstimatedSkeletonPosition}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{EstimatedSkeletonPosition}{EstimatedSkeletonPosition}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_add3ff18dc2369696fe39ed96484d50b2} 
+Vector3 Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Estimated\+Skeleton\+Position\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00128}{128}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ RootRigidbody.position\ -\/\ rootOffset;\ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7ba0e8be9756502a64463d87f143f998}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{IsActive}{IsActive}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a7ba0e8be9756502a64463d87f143f998} 
+bool Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Is\+Active\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00093}{93}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.isActive;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac7153e690abc79c54dcf4a84318dbd06}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!RigidbodyArray@{RigidbodyArray}}
+\index{RigidbodyArray@{RigidbodyArray}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{RigidbodyArray}{RigidbodyArray}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_ac7153e690abc79c54dcf4a84318dbd06} 
+Rigidbody \mbox{[}$\,$\mbox{]} Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Rigidbody\+Array\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00112}{112}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isActive)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Rigidbody[0];}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody[]\ rigidBodies\ =\ \textcolor{keyword}{new}\ Rigidbody[boneTable.Count];}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ boneTable.Values)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rigidBodies[i]\ =\ t.GetComponent<Rigidbody>();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rigidBodies;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a800ad9fa5badbc728b7ff1b8e3185ed4}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!RootOffset@{RootOffset}}
+\index{RootOffset@{RootOffset}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{RootOffset}{RootOffset}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a800ad9fa5badbc728b7ff1b8e3185ed4} 
+Vector3 Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Root\+Offset\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00091}{91}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.rootOffset;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a27bd2925b95f7a61787a49619c39ee4b}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!RootRigidbody@{RootRigidbody}}
+\index{RootRigidbody@{RootRigidbody}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{RootRigidbody}{RootRigidbody}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a27bd2925b95f7a61787a49619c39ee4b} 
+Rigidbody Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Root\+Rigidbody\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00088}{88}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d}\index{Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}!StartingBone@{StartingBone}}
+\index{StartingBone@{StartingBone}!Spine.Unity.Examples.SkeletonRagdoll@{Spine.Unity.Examples.SkeletonRagdoll}}
+\doxysubsubsection{\texorpdfstring{StartingBone}{StartingBone}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_examples_1_1_skeleton_ragdoll_a93813a65e859ad768e63e9b9ca19759d} 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} Spine.\+Unity.\+Examples.\+Skeleton\+Ragdoll.\+Starting\+Bone\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_ragdoll_8cs_source}{Skeleton\+Ragdoll.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_ragdoll_8cs_source_l00089}{89}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine Examples/\+Scripts/\+Sample Components/\+Skeleton\+Utility Modules/\mbox{\hyperlink{_skeleton_ragdoll_8cs}{Skeleton\+Ragdoll.\+cs}}\end{DoxyCompactItemize}

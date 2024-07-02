@@ -1,0 +1,44 @@
+\doxysection{Speed\+Scoring.\+cs}
+\hypertarget{_speed_scoring_8cs_source}{}\label{_speed_scoring_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/SpeedScoring.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/SpeedScoring.cs}}
+\mbox{\hyperlink{_speed_scoring_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00005}\mbox{\hyperlink{class_speed_scoring}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_speed_scoring}{SpeedScoring}}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ ¡°ºˆ ∞ËªÍ «‘ºˆ: ¿˝¥Î¿˚¿Œ ±‚¡ÿ¿ª\ ªÁøÎ«œø©\ ¡°ºˆ∏¶ ∞ËªÍ«’¥œ¥Ÿ.}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00008}\mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{CalculateAverageScore}}(List<float>\ speeds)}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ¿˝¥Î¿˚¿Œ\ ±‚¡ÿ\ º≥¡§\ (øπ:\ √÷¥Î π›¿¿ º”µµ\ 5√ )}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxSpeed\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∆Ú±’ º”µµ\ ∞ËªÍ}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ meanSpeed\ =\ CalculateMean(speeds);}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ¿˝¥Î¿˚¿Œ\ ±‚¡ÿø°\ µ˚∂Û ¡°ºˆ ∞ËªÍ (≥∑¿ªºˆ∑œ ≥Ù¿∫ ¡°ºˆ∏¶ πﬁµµ∑œ ∞ËªÍ)}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ score\ =\ (maxSpeed\ -\/\ meanSpeed)\ /\ maxSpeed\ *\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ πËø≠¿«\ ≈©±‚ø°\ µ˚∏• ∞°ªÍ¡°\ ∞ËªÍ\ (øπ:\ ∞¢\ µ•¿Ã≈Õ¥Á 1¡°æø\ ∞°ªÍ)}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bonus\ =\ speeds.Count\ *\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ √÷¡æ\ ¡°ºˆ ∞ËªÍ (√÷¥Î 200¡°¿∏∑Œ ¡¶«—)}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ finalScore\ =\ Mathf.Clamp(score\ +\ bonus,\ 0,\ 200);}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalScore;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ ∆Ú±’ ∞ËªÍ\ «‘ºˆ: ∏ÆΩ∫∆Æ¿«\ ∏µÁ ø‰º“¿«\ ∆Ú±’¿ª\ ∞ËªÍ«’¥œ¥Ÿ.}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ CalculateMean(List<float>\ data)}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{float}\ value\ \textcolor{keywordflow}{in}\ data)}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ /\ data.Count;}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_speed_scoring_8cs_source_l00038}00038\ \}}
+
+\end{DoxyCode}

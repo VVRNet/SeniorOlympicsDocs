@@ -1,0 +1,70 @@
+\doxysection{Spineboy\+Target\+Controller\+Graphic.\+cs}
+\hypertarget{_spineboy_target_controller_graphic_8cs_source}{}\label{_spineboy_target_controller_graphic_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/SpineboyTargetControllerGraphic.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/SpineboyTargetControllerGraphic.cs}}
+\mbox{\hyperlink{_spineboy_target_controller_graphic_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00033}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic}{SpineboyTargetControllerGraphic}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00035}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_bone}{SpineBone}}(dataField:\ \textcolor{stringliteral}{"{}skeletonGraphic"{}})]}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_acdbd37d3566262a19bd4b8856df68878}{00038}}\ \ \ \ \ \ \ \ \ public\ string\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_acdbd37d3566262a19bd4b8856df68878}{boneName}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a509abf565661dc759c961b109fa18ab1}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Camera\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a509abf565661dc759c961b109fa18ab1}{cam}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_acb63efa731504946fa212fe51ef249f4}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Canvas\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_acb63efa731504946fa212fe51ef249f4}{canvas}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone;}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnValidate\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}\ ==\ \textcolor{keyword}{null})\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}\ =\ GetComponent<SkeletonGraphic>();}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ bone\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a6ab9b7418886660097bf793044441e68}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_ac17fa59f8524f84672419a2e9c676666}{FindBone}}(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_acdbd37d3566262a19bd4b8856df68878}{boneName}});}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ mousePosition\ =\ Input.mousePosition;}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ localRectPosition;}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ RectTransformUtility.ScreenPointToLocalPointInRectangle(}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}.rectTransform,\ mousePosition,\ \textcolor{keyword}{null},\ out\ localRectPosition);}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ skeletonSpacePoint\ =\ localRectPosition\ /\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_aea35afb7db93e27e8eaa6315015eb04f}{MeshScale}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonSpacePoint.x\ *=\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a6ab9b7418886660097bf793044441e68}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a0f883b19b2bc80d4d5db65fba9f1f99c}{ScaleX}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonSpacePoint.y\ *=\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_spineboy_target_controller_graphic_a22e1eb6a151da4c1d953fe41e17883ef}{skeletonGraphic}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a6ab9b7418886660097bf793044441e68}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ bone.SetLocalPosition(skeletonSpacePoint);}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_spineboy_target_controller_graphic_8cs_source_l00064}00064\ \}}
+
+\end{DoxyCode}

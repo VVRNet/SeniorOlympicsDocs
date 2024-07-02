@@ -1,0 +1,109 @@
+\doxysection{Lean.\+Localization.\+ILocalization\+Handler 인터페이스 참조}
+\hypertarget{interface_lean_1_1_localization_1_1_i_localization_handler}{}\label{interface_lean_1_1_localization_1_1_i_localization_handler}\index{Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}}
+
+
+This interface can be implemented by any component that needs to listen for localization changes.  
+
+
+
+
+Lean.\+Localization.\+ILocalization\+Handler에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_lean_1_1_localization_1_1_i_localization_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Lean.\+Localization.\+ILocalization\+Handler에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{interface_lean_1_1_localization_1_1_i_localization_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler_a998b4aace463e1cf3becc4b6493394ce}{Update\+Localization}} ()
+\begin{DoxyCompactList}\small\item\em This method is called when initializing, or changing language. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler_a551fa244977a97f08da8a8e80a343386}{Register}} (\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{Lean\+Token}} token)
+\begin{DoxyCompactList}\small\item\em This method allows you to register the specified token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler_a9f731284950fee81397be48911878171}{Unregister}} (\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{Lean\+Token}} token)
+\begin{DoxyCompactList}\small\item\em This method allows you to unregister the specified token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler_a72ac22f89885c9420522f7e783ee2549}{Unregister\+All}} ()
+\begin{DoxyCompactList}\small\item\em This method allows you to unregister all tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+This interface can be implemented by any component that needs to listen for localization changes. 
+
+\mbox{\hyperlink{_i_localization_handler_8cs_source}{ILocalization\+Handler.\+cs}} 파일의 \mbox{\hyperlink{_i_localization_handler_8cs_source_l00004}{4}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{interface_lean_1_1_localization_1_1_i_localization_handler_a551fa244977a97f08da8a8e80a343386}\index{Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}!Register@{Register}}
+\index{Register@{Register}!Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily \label{interface_lean_1_1_localization_1_1_i_localization_handler_a551fa244977a97f08da8a8e80a343386} 
+void Lean.\+Localization.\+ILocalization\+Handler.\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{Lean\+Token}}}]{token}{}\end{DoxyParamCaption})}
+
+
+
+This method allows you to register the specified token. 
+
+
+
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a75befdf27251d6830e7559ebf7406358}{Lean.\+Localization.\+Lean\+Localized\+Behaviour}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_dropdown_a876fb706c00c3e633d2ef8ebd95a4ae7}{Lean.\+Localization.\+Lean\+Localized\+Dropdown}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown_aa97e27b005a7b6b7f6b59ac5597e998a}{Lean.\+Localization.\+Lean\+Localized\+TMP\+\_\+\+Dropdown}}에서 구현되었습니다.
+
+\Hypertarget{interface_lean_1_1_localization_1_1_i_localization_handler_a9f731284950fee81397be48911878171}\index{Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}!Unregister@{Unregister}}
+\index{Unregister@{Unregister}!Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}}
+\doxysubsubsection{\texorpdfstring{Unregister()}{Unregister()}}
+{\footnotesize\ttfamily \label{interface_lean_1_1_localization_1_1_i_localization_handler_a9f731284950fee81397be48911878171} 
+void Lean.\+Localization.\+ILocalization\+Handler.\+Unregister (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{Lean\+Token}}}]{token}{}\end{DoxyParamCaption})}
+
+
+
+This method allows you to unregister the specified token. 
+
+
+
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a7d8ece01f400a2c9f754d1afb55a2f78}{Lean.\+Localization.\+Lean\+Localized\+Behaviour}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_dropdown_a00f6e18b93637d50db23c7f66b841215}{Lean.\+Localization.\+Lean\+Localized\+Dropdown}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown_ac0f907aa3fa1c3df41aa4c35bab0608e}{Lean.\+Localization.\+Lean\+Localized\+TMP\+\_\+\+Dropdown}}에서 구현되었습니다.
+
+\Hypertarget{interface_lean_1_1_localization_1_1_i_localization_handler_a72ac22f89885c9420522f7e783ee2549}\index{Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}!UnregisterAll@{UnregisterAll}}
+\index{UnregisterAll@{UnregisterAll}!Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}}
+\doxysubsubsection{\texorpdfstring{UnregisterAll()}{UnregisterAll()}}
+{\footnotesize\ttfamily \label{interface_lean_1_1_localization_1_1_i_localization_handler_a72ac22f89885c9420522f7e783ee2549} 
+void Lean.\+Localization.\+ILocalization\+Handler.\+Unregister\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This method allows you to unregister all tokens. 
+
+
+
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a21f7a1ef851c4a67cf79b011222004d3}{Lean.\+Localization.\+Lean\+Localized\+Behaviour}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_dropdown_a379ce6fe2a39196468c1d50364319dac}{Lean.\+Localization.\+Lean\+Localized\+Dropdown}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown_a588f06c248fad012fb78b6b577ea4f64}{Lean.\+Localization.\+Lean\+Localized\+TMP\+\_\+\+Dropdown}}에서 구현되었습니다.
+
+\Hypertarget{interface_lean_1_1_localization_1_1_i_localization_handler_a998b4aace463e1cf3becc4b6493394ce}\index{Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}!UpdateLocalization@{UpdateLocalization}}
+\index{UpdateLocalization@{UpdateLocalization}!Lean.Localization.ILocalizationHandler@{Lean.Localization.ILocalizationHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateLocalization()}{UpdateLocalization()}}
+{\footnotesize\ttfamily \label{interface_lean_1_1_localization_1_1_i_localization_handler_a998b4aace463e1cf3becc4b6493394ce} 
+void Lean.\+Localization.\+ILocalization\+Handler.\+Update\+Localization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This method is called when initializing, or changing language. 
+
+
+
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{Lean.\+Localization.\+Lean\+Localized\+Behaviour}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_dropdown_af0ea81206db8b0baf350314b316602a7}{Lean.\+Localization.\+Lean\+Localized\+Dropdown}}, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown_ace70eacc91eef863c2d4aeb95e415b37}{Lean.\+Localization.\+Lean\+Localized\+TMP\+\_\+\+Dropdown}}에서 구현되었습니다.
+
+
+
+이 인터페이스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Plugins/\+CW/\+Lean\+Localization/\+Required/\+Scripts/\mbox{\hyperlink{_i_localization_handler_8cs}{ILocalization\+Handler.\+cs}}\end{DoxyCompactItemize}

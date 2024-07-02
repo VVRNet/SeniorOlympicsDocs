@@ -1,0 +1,88 @@
+\doxysection{Spine\+Event\+Unity\+Handler.\+cs}
+\hypertarget{_spine_event_unity_handler_8cs_source}{}\label{_spine_event_unity_handler_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SpineEventUnityHandler.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SpineEventUnityHandler.cs}}
+\mbox{\hyperlink{_spine_event_unity_handler_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_prototyping}{Spine.Unity.Prototyping}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00036}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler}{SpineEventUnityHandler}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair}{EventPair}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_a1b00928abc4c57ba68c2179d1ea48eac}{00040}}\ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_event}{SpineEvent}}]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_a1b00928abc4c57ba68c2179d1ea48eac}{spineEvent}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_ab7d7711db1cf7d13e319cd6ce78b2f60}{00041}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ UnityEvent\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_ab7d7711db1cf7d13e319cd6ce78b2f60}{unityHandler}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_a9ddb848e07bf438ee2e45bee9edeb0c8}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AnimationState.TrackEntryEventDelegate\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_a9ddb848e07bf438ee2e45bee9edeb0c8}{eventDelegate}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00045}\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_aedf3b5ec41faa2267910dc092c904cad}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<EventPair>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_aedf3b5ec41faa2267910dc092c904cad}{events}}\ =\ \textcolor{keyword}{new}\ List<EventPair>();}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component}{ISkeletonComponent}}\ skeletonComponent;}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component}{IAnimationStateComponent}}\ animationStateComponent;}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonComponent\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonComponent\ =\ GetComponent<ISkeletonComponent>();}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonComponent\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationStateComponent\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animationStateComponent\ =\ skeletonComponent\ as\ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component}{IAnimationStateComponent}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationStateComponent\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton\ =\ skeletonComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_skeleton_component_a378f283bd1514c0ce61719fa2ce0a467}{Skeleton}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton_data}{SkeletonData}}\ skeletonData\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_aa7ca532fb2a76b9998bb44b8066e99fc}{Data}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_1_1_unity_ae2bd0d2fe29eaacc28597cd7be01cd5b}{AnimationState}}\ state\ =\ animationStateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair}{EventPair}}\ ep\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_aedf3b5ec41faa2267910dc092c904cad}{events}})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_event_data}{EventData}}\ eventData\ =\ skeletonData.\mbox{\hyperlink{class_spine_1_1_skeleton_data_a6e0a2691d3795a1222ff9158042e2a59}{FindEvent}}(ep.\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_a1b00928abc4c57ba68c2179d1ea48eac}{spineEvent}});}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep.eventDelegate\ =\ ep.eventDelegate\ ??\ delegate\ (\mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ trackEntry,\ \mbox{\hyperlink{class_spine_1_1_event}{Event}}\ e)\ \{\ \textcolor{keywordflow}{if}\ (e.\mbox{\hyperlink{class_spine_1_1_event_a13445d67ad8dc700dc6613b4f935027c}{Data}}\ ==\ eventData)\ ep.\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_ab7d7711db1cf7d13e319cd6ce78b2f60}{unityHandler}}.Invoke();\ \};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.Event\ +=\ ep.\mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_1_1_event_pair_a9ddb848e07bf438ee2e45bee9edeb0c8}{eventDelegate}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDestroy\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationStateComponent\ ==\ \textcolor{keyword}{null})\ animationStateComponent\ =\ GetComponent<IAnimationStateComponent>();}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationStateComponent.IsNullOrDestroyed())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_animation_state}{AnimationState}}\ state\ =\ animationStateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (EventPair\ ep\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_prototyping_1_1_spine_event_unity_handler_aedf3b5ec41faa2267910dc092c904cad}{events}})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep.eventDelegate\ !=\ \textcolor{keyword}{null})\ state.Event\ -\/=\ ep.eventDelegate;}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep.eventDelegate\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_event_unity_handler_8cs_source_l00082}00082\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,73 @@
+\doxysection{Lean\+Selectable\+Graphic\+Color.\+cs}
+\hypertarget{_lean_selectable_graphic_color_8cs_source}{}\label{_lean_selectable_graphic_color_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanCommon/Extras/Scripts/LeanSelectableGraphicColor.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanCommon/Extras/Scripts/LeanSelectableGraphicColor.cs}}
+\mbox{\hyperlink{_lean_selectable_graphic_color_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}};}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_common}{Lean.Common}}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00008}00008\ \ \ \ \ [ExecuteInEditMode]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00009}00009\ \ \ \ \ [RequireComponent(typeof(Graphic))]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00010}00010\ \ \ \ \ [HelpURL(LeanCommon.HelpUrlPrefix\ +\ \textcolor{stringliteral}{"{}LeanSelectableGraphicColor"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00011}00011\ \ \ \ \ [AddComponentMenu(LeanCommon.ComponentPathPrefix\ +\ \textcolor{stringliteral}{"{}Selectable\ Graphic\ Color"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00012}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color}{LeanSelectableGraphicColor}}\ :\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_behaviour}{LeanSelectableBehaviour}}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00015}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_af10b1bc6f24798a12bf567d46228b3fd}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_af10b1bc6f24798a12bf567d46228b3fd}{DefaultColor}}\ \{\ \textcolor{keyword}{set}\ \{\ defaultColor\ =\ value;\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5a9cead9c003c177d995680608e83b17}{UpdateColor}}();\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ defaultColor;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ Color\ defaultColor\ =\ Color.white;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00018}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5fb633f4b454c36c5f419df09fcf1935}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5fb633f4b454c36c5f419df09fcf1935}{SelectedColor}}\ \{\ \textcolor{keyword}{set}\ \{\ selectedColor\ =\ value;\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5a9cead9c003c177d995680608e83b17}{UpdateColor}}();\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ selectedColor;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ Color\ selectedColor\ =\ Color.green;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Graphic\ cachedGraphic;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00023}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a2543547c2997c76cae78348b2f7efcc2}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a2543547c2997c76cae78348b2f7efcc2}{OnSelected}}(\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_select}{LeanSelect}}\ select)}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5a9cead9c003c177d995680608e83b17}{UpdateColor}}();}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00028}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_ad2c16cac62ad33dd840f600fdf75ee26}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_ad2c16cac62ad33dd840f600fdf75ee26}{OnDeselected}}(\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_select}{LeanSelect}}\ select)}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5a9cead9c003c177d995680608e83b17}{UpdateColor}}();}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00033}\mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5a9cead9c003c177d995680608e83b17}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_graphic_color_a5a9cead9c003c177d995680608e83b17}{UpdateColor}}()}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cachedGraphic\ ==\ \textcolor{keyword}{null})\ cachedGraphic\ =\ GetComponent<Graphic>();}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ var\ color\ =\ \mbox{\hyperlink{class_lean_1_1_common_1_1_lean_selectable_behaviour_ac755772d8a02bec86dc4fa8bc0ccfc4e}{Selectable}}\ !=\ \textcolor{keyword}{null}\ \&\&\ Selectable.IsSelected\ ==\ \textcolor{keyword}{true}\ ?\ selectedColor\ :\ defaultColor;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ cachedGraphic.color\ =\ color;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00044}00044\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00045}00045\ \textcolor{keyword}{namespace\ }Lean.Common.Editor}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ LeanSelectableGraphicColor;}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00050}00050\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00051}00051\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }LeanSelectableGraphicColor\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ TARGET\ tgt;\ TARGET[]\ tgts;\ GetTargets(out\ tgt,\ out\ tgts);}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ var\ updateColor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}defaultColor"{}},\ ref\ updateColor,\ \textcolor{stringliteral}{"{}The\ default\ color\ given\ to\ the\ SpriteRenderer."{}});}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}selectedColor"{}},\ ref\ updateColor,\ \textcolor{stringliteral}{"{}The\ color\ given\ to\ the\ SpriteRenderer\ when\ selected."{}});}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (updateColor\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Each(tgts,\ t\ =>\ t.UpdateColor(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_selectable_graphic_color_8cs_source_l00070}00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

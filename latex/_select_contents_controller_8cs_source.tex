@@ -1,0 +1,106 @@
+\doxysection{Select\+Contents\+Controller.\+cs}
+\hypertarget{_select_contents_controller_8cs_source}{}\label{_select_contents_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/SelectContentsController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/SelectContentsController.cs}}
+\mbox{\hyperlink{_select_contents_controller_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine.Video;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00008}00008\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00009}\mbox{\hyperlink{struct_contents_info}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_contents_info}{ContentsInfo}}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00011}\mbox{\hyperlink{struct_contents_info_ace0a7fc476c99c1e929eb7a812fc78aa}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_contents_info_ace0a7fc476c99c1e929eb7a812fc78aa}{sceneName}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00012}\mbox{\hyperlink{struct_contents_info_a45700ac368538e5a1ed5939b5062a89a}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{struct_contents_info_a45700ac368538e5a1ed5939b5062a89a}{setButtonList}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00013}\mbox{\hyperlink{struct_contents_info_a1d9d6a7177b03951f8891fae2e370e37}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ VideoClip\ \mbox{\hyperlink{struct_contents_info_a1d9d6a7177b03951f8891fae2e370e37}{howToPlayVideo}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00014}\mbox{\hyperlink{struct_contents_info_a80d800e557f03aa611bd615ad578c32e}{00014}}\ \ \ \ \ [TextArea]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_contents_info_a80d800e557f03aa611bd615ad578c32e}{howToPlayText}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00017}\mbox{\hyperlink{class_select_contents_controller}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_select_contents_controller}{SelectContentsController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00019}00019\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Agency\ Data]"{}})]}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00020}\mbox{\hyperlink{class_select_contents_controller_a533adbff5abc9043a7cf13428ab0b5dd}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_select_contents_controller_a533adbff5abc9043a7cf13428ab0b5dd}{className}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00022}00022\ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00023}\mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ List<ContentsInfo>\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00025}00025\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Setting\ Info\ Object]"{}})]}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00026}\mbox{\hyperlink{class_select_contents_controller_aafb287c1174783c16611f9f26bbe1818}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ VideoPlayer\ \mbox{\hyperlink{class_select_contents_controller_aafb287c1174783c16611f9f26bbe1818}{infoVideo}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00027}\mbox{\hyperlink{class_select_contents_controller_ac81cbb801f3ae47bde8bd3648695d90f}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_select_contents_controller_ac81cbb801f3ae47bde8bd3648695d90f}{infoText}};}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_ac2b4e18205795928b40613bee2de8475}{SettingData}}();}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a2ac7f0c26b0c5439994c156f778a5098}{ResetSelectContents}}();}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∏∂¡ˆ∏∑¿∏∑Œ Ω««‡«ﬂ¥¯ ƒ‹≈Ÿ√˜ ¿Œµ¶Ω∫\ ¡§∫∏\ ∞°¡Æø¿±‚}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.HasKey(\textcolor{stringliteral}{"{}SelectContents"{}}))}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ selecteCategory\ =\ PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectContents"{}});}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[selecteCategory].setButtonList.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ infoVideo.clip\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[selecteCategory].howToPlayVideo;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ infoText.text\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[selecteCategory].howToPlayText;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{SetActiveContentsData}}(selecteCategory);}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ √≥¿Ω\ Ω√¿€«“ ∂ß}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[0].setButtonList.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ infoVideo.clip\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[0].howToPlayVideo;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ infoText.text\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[0].howToPlayText;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{SetActiveContentsData}}(0);}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00060}\mbox{\hyperlink{class_select_contents_controller_ac2b4e18205795928b40613bee2de8475}{00060}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_select_contents_controller_ac2b4e18205795928b40613bee2de8475}{SettingData}}()}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectStudent)}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ className.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ className.text\ =\ SessionManager.Instance.CurrentClass.Name\ +\ \textcolor{stringliteral}{"{}<color=\#FFFFFF>\ \ >\ \ </color>"{}}\ +\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Name.ToString();}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//\ setButton\ ø¿∫Í¡ß∆Æ\ »∞º∫»≠\ ¿¸√º\ ∏Æº¬}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00073}\mbox{\hyperlink{class_select_contents_controller_a2ac7f0c26b0c5439994c156f778a5098}{00073}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_select_contents_controller_a2ac7f0c26b0c5439994c156f778a5098}{ResetSelectContents}}()}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[i].setButtonList.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ ≈¨∏Ø«—\ ƒ‹≈Ÿ√˜\ ø¿∫Í¡ß∆Æ\ »∞º∫»≠}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00082}\mbox{\hyperlink{class_select_contents_controller_af96bf22eb88f5942e119c6d25751b662}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_select_contents_controller_af96bf22eb88f5942e119c6d25751b662}{ClickContents}}(\textcolor{keywordtype}{int}\ contentsIndex)}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a2ac7f0c26b0c5439994c156f778a5098}{ResetSelectContents}}();}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].setButtonList.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ infoVideo.clip\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].howToPlayVideo;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ infoText.text\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].howToPlayText;}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ PlayerPrefs.SetInt(\textcolor{stringliteral}{"{}SelectContents"{}},\ contentsIndex);}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{SetActiveContentsData}}(contentsIndex);}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ »∞º∫»≠\ µ«æÓ¿÷¥¬ ƒ‹≈Ÿ√˜\ ¡§∫∏\ ¿˙¿Â}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00095}\mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{00095}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{SetActiveContentsData}}(\textcolor{keywordtype}{int}\ contentsIndex)}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sceneName\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].sceneName.ToString();}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ PlayerPrefs.SetString(\textcolor{stringliteral}{"{}SelectedContents"{}},\ sceneName);}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_select_contents_controller_8cs_source_l00100}00100\ \}}
+
+\end{DoxyCode}

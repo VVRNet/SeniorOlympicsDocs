@@ -1,0 +1,111 @@
+\doxysection{Lean\+Localized\+Behaviour.\+cs}
+\hypertarget{_lean_localized_behaviour_8cs_source}{}\label{_lean_localized_behaviour_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/LeanLocalizedBehaviour.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/LeanLocalizedBehaviour.cs}}
+\mbox{\hyperlink{_lean_localized_behaviour_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Serialization;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_localization}{Lean.Localization}}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00008}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour}{LeanLocalizedBehaviour}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_lean_1_1_localization_1_1_i_localization_handler}{ILocalizationHandler}}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}The\ name\ of\ the\ phrase\ we\ want\ to\ use\ for\ this\ localized\ component"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ [LeanTranslationName]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ [FormerlySerializedAs(\textcolor{stringliteral}{"{}phraseName"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ [FormerlySerializedAs(\textcolor{stringliteral}{"{}translationTitle"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ translationName;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ HashSet<LeanToken>\ tokens;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00021}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac1dcf30f9f17f4c234f55cfee6376feb}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac1dcf30f9f17f4c234f55cfee6376feb}{TranslationName}}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (translationName\ !=\ value)}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ translationName\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{UpdateLocalization}}();}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ translationName;}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00039}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a75befdf27251d6830e7559ebf7406358}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a75befdf27251d6830e7559ebf7406358}{Register}}(\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{LeanToken}}\ token)}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens\ =\ \textcolor{keyword}{new}\ HashSet<LeanToken>();}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.Add(token);}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00052}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a7d8ece01f400a2c9f754d1afb55a2f78}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a7d8ece01f400a2c9f754d1afb55a2f78}{Unregister}}(\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_token}{LeanToken}}\ token)}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.Remove(token);}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00060}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a21f7a1ef851c4a67cf79b011222004d3}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a21f7a1ef851c4a67cf79b011222004d3}{UnregisterAll}}()}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ token\ \textcolor{keywordflow}{in}\ tokens)}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token.Unregister(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.Clear();}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ gets\ called\ every\ time\ the\ translation\ needs\ updating}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOTE:\ translation\ may\ be\ null\ if\ it\ can't\ be\ found}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00075}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_aec15c7e852d3037d5854545f85397ada}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_aec15c7e852d3037d5854545f85397ada}{UpdateTranslation}}(\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_translation}{LeanTranslation}}\ translation);}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ [ContextMenu(\textcolor{stringliteral}{"{}Update\ Localization"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00079}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{00079}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{UpdateLocalization}}()}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_aec15c7e852d3037d5854545f85397ada}{UpdateTranslation}}(\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization}{LeanLocalization}}.\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localization_af97cf2fdcbc211f8dbac95f978d3f9e0}{GetTranslation}}(translationName));}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00084}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a34a9f12a606b930840c06eaaaba9e044}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a34a9f12a606b930840c06eaaaba9e044}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ LeanLocalization.OnLocalizationChanged\ +=\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{UpdateLocalization}};}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{UpdateLocalization}}();}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00091}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a4f19d1306490e67582eddc3439c15fde}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a4f19d1306490e67582eddc3439c15fde}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ LeanLocalization.OnLocalizationChanged\ -\/=\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{UpdateLocalization}};}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_a21f7a1ef851c4a67cf79b011222004d3}{UnregisterAll}}();}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00098}00098\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnValidate()}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isActiveAndEnabled\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_localized_behaviour_ac24249434422ddf3258eac825d478f47}{UpdateLocalization}}();}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00106}00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_localized_behaviour_8cs_source_l00108}00108\ \}}
+
+\end{DoxyCode}

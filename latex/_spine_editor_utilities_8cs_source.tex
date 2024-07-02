@@ -1,0 +1,587 @@
+\doxysection{Spine\+Editor\+Utilities.\+cs}
+\hypertarget{_spine_editor_utilities_8cs_source}{}\label{_spine_editor_utilities_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Utility/SpineEditorUtilities.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Utility/SpineEditorUtilities.cs}}
+\mbox{\hyperlink{_spine_editor_utilities_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00030}00030\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ 0219}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00031}00031\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ 0618\ }\textcolor{comment}{//\ for\ 3.7\ branch\ only.\ Avoids\ "{}PreferenceItem'\ is\ obsolete:\ '[PreferenceItem]\ is\ deprecated.\ Use\ [SettingsProvider]\ instead."{}}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00033}00033\ \textcolor{comment}{//\ Original\ contribution\ by:\ Mitch\ Thompson}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00035}\mbox{\hyperlink{_spine_editor_utilities_8cs_a77ae81b5da2aa89f7c876dba9bcd532e}{00035}}\ \textcolor{preprocessor}{\#define\ SPINE\_SKELETONMECANIM}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00037}00037\ \textcolor{preprocessor}{\#if\ UNITY\_2017\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00038}00038\ \textcolor{preprocessor}{\#define\ NEWPLAYMODECALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00039}00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00041}00041\ \textcolor{preprocessor}{\#if\ UNITY\_2018\ ||\ UNITY\_2019\ ||\ UNITY\_2018\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00042}00042\ \textcolor{preprocessor}{\#define\ NEWHIERARCHYWINDOWCALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00043}00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00045}00045\ \textcolor{preprocessor}{\#if\ UNITY\_2018\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00046}00046\ \textcolor{preprocessor}{\#define\ NEW\_PREFERENCES\_SETTINGS\_PROVIDER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00047}00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00049}00049\ \textcolor{preprocessor}{\#if\ UNITY\_2017\_1\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00050}00050\ \textcolor{preprocessor}{\#define\ BUILT\_IN\_SPRITE\_MASK\_COMPONENT}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00053}00053\ \textcolor{preprocessor}{\#if\ UNITY\_2020\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00054}00054\ \textcolor{preprocessor}{\#define\ HAS\_ON\_POSTPROCESS\_PREFAB}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00055}00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00057}00057\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00058}00058\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00059}00059\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00060}00060\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00061}00061\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00062}00062\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00063}00063\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00064}00064\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00066}00066\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor}{Spine.Unity.Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}\ =\ UnityEngine.EventType;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Analysis\ disable\ once\ ConvertToStaticType}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00070}00070\ \ \ \ \ [InitializeOnLoad]}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00071}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}\ :\ AssetPostprocessor\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00073}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a7a17632a07ca1beefad7cc1e681f07b1}{00073}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a7a17632a07ca1beefad7cc1e681f07b1}{editorPath}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00074}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_af8fd9a46db40d4eb6eb64fe41145be9f}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_af8fd9a46db40d4eb6eb64fe41145be9f}{editorGUIPath}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00075}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a09cb8b207b791fa10c4422b475bb1e03}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a09cb8b207b791fa10c4422b475bb1e03}{initialized}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ List<string>\ texturesWithoutMetaFile\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00078}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a9cc30f8ce5e25326ce18f03f8f62c196}{00078}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a9cc30f8ce5e25326ce18f03f8f62c196}{OnTextureImportedFirstTime}}\ (\textcolor{keywordtype}{string}\ texturePath)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ texturesWithoutMetaFile.Add(texturePath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Auto-\/import\ entry\ point\ for\ textures}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnPreprocessTexture\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00084}00084\ \textcolor{preprocessor}{\#if\ UNITY\_2018\_1\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ customTextureSettingsExist\ =\ !assetImporter.importSettingsMissing;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00086}00086\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ customTextureSettingsExist\ =\ System.IO.File.Exists(assetImporter.assetPath\ +\ \textcolor{stringliteral}{"{}.meta"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00088}00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!customTextureSettingsExist)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texturesWithoutMetaFile.Add(assetImporter.assetPath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Auto-\/import\ post\ process\ entry\ point\ for\ all\ assets}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ OnPostprocessAllAssets\ (\textcolor{keywordtype}{string}[]\ imported,\ \textcolor{keywordtype}{string}[]\ deleted,\ \textcolor{keywordtype}{string}[]\ moved,\ \textcolor{keywordtype}{string}[]\ movedFromAssetPaths)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imported.Length\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ copy\ the\ list\ here\ to\ prevent\ nested\ calls\ to\ OnPostprocessAllAssets()\ triggering\ a\ Clear()\ of\ the\ list}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ the\ middle\ of\ execution.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ List<string>\ texturesWithoutMetaFileCopy\ =\ \textcolor{keyword}{new}\ List<string>(texturesWithoutMetaFile);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ AssetUtility.HandleOnPostprocessAllAssets(imported,\ texturesWithoutMetaFileCopy);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ texturesWithoutMetaFile.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00106}00106\ \textcolor{preprocessor}{\#if\ HAS\_ON\_POSTPROCESS\_PREFAB}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Post\ process\ prefabs\ for\ setting\ the\ MeshFilter\ to\ not\ cause\ constant\ Prefab\ override\ changes.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnPostprocessPrefab\ (GameObject\ g)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SpineBuildProcessor.isBuilding)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ SetupSpinePrefabMesh(g,\ context);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ SetupSpinePrefabMesh\ (GameObject\ g,\ UnityEditor.AssetImporters.AssetImportContext\ context)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Dictionary<string,\ int>\ nameUsageCount\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ int>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasModified\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonRenderer[]\ skeletonRenderers\ =\ g.GetComponentsInChildren<SkeletonRenderer>(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SkeletonRenderer\ renderer\ \textcolor{keywordflow}{in}\ skeletonRenderers)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wasModified\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MeshFilter\ meshFilter\ =\ renderer.GetComponent<MeshFilter>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meshFilter\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshFilter\ =\ renderer.gameObject.AddComponent<MeshFilter>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer.EditorUpdateMeshFilterHideFlags();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer.Initialize(\textcolor{keyword}{true},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer.LateUpdateMesh();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ mesh\ =\ meshFilter.sharedMesh;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mesh\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ meshName\ =\ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}Skeleton\ Prefab\ Mesh\ \(\backslash\)"{}\{0\}\(\backslash\)"{}"{}},\ renderer.name);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nameUsageCount.ContainsKey(meshName))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nameUsageCount[meshName]++;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshName\ =\ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}Skeleton\ Prefab\ Mesh\ \(\backslash\)"{}\{0\}\ (\{1\})\(\backslash\)"{}"{}},\ renderer.name,\ nameUsageCount[meshName]);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nameUsageCount.Add(meshName,\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh.name\ =\ meshName;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh.hideFlags\ =\ HideFlags.None;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (context\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ context.AddObjectToAsset(meshFilter.sharedMesh.name,\ meshFilter.sharedMesh);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ wasModified;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ CleanupSpinePrefabMesh\ (GameObject\ g)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasModified\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonRenderer[]\ skeletonRenderers\ =\ g.GetComponentsInChildren<SkeletonRenderer>(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SkeletonRenderer\ renderer\ \textcolor{keywordflow}{in}\ skeletonRenderers)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MeshFilter\ meshFilter\ =\ renderer.GetComponent<MeshFilter>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meshFilter\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meshFilter.sharedMesh)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wasModified\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshFilter.sharedMesh\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshFilter.hideFlags\ =\ HideFlags.None;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ wasModified;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00161}00161\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00163}00163\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Initialization}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SpineEditorUtilities\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.delayCall\ +=\ Initialize;\ \textcolor{comment}{//\ delayed\ so\ that\ AssetDatabase\ is\ ready.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Initialize\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ Preferences\ need\ to\ be\ loaded\ when\ changing\ play\ mode}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ initialize\ handle\ scale\ correctly.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00171}00171\ \textcolor{preprocessor}{\#if\ !NEW\_PREFERENCES\_SETTINGS\_PROVIDER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ Preferences.Load();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00173}00173\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ SpinePreferences.Load();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00175}00175\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (EditorApplication.isPlayingOrWillChangePlaymode)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ assets;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ assetPath;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ assets\ =\ AssetDatabase.FindAssets(\textcolor{stringliteral}{"{}t:texture\ icon-\/subMeshRenderer"{}},\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (assets.Length\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetPath\ =\ AssetDatabase.GUIDToAssetPath(assets[0]);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_af8fd9a46db40d4eb6eb64fe41145be9f}{editorGUIPath}}\ =\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.GetDirectoryName(assetPath).Replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{charliteral}{'/'});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ assets\ =\ AssetDatabase.FindAssets(\textcolor{stringliteral}{"{}t:script\ SpineEditorUtilities"{}},\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (assets.Length\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetPath\ =\ AssetDatabase.GUIDToAssetPath(assets[0]);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a7a17632a07ca1beefad7cc1e681f07b1}{editorPath}}\ =\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332aac70412e939d72a9234cdebb1af5867b}{Path}}.GetDirectoryName(assetPath).Replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{charliteral}{'/'});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_af8fd9a46db40d4eb6eb64fe41145be9f}{editorGUIPath}}))}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_af8fd9a46db40d4eb6eb64fe41145be9f}{editorGUIPath}}\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a7a17632a07ca1beefad7cc1e681f07b1}{editorPath}}.Replace(\textcolor{stringliteral}{"{}/Utility"{}},\ \textcolor{stringliteral}{"{}/GUI"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_af8fd9a46db40d4eb6eb64fe41145be9f}{editorGUIPath}}))}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ae9373fd86c15143431477a0f3f6367de}{Icons}}.Initialize();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Drag\ and\ Drop}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00198}00198\ \textcolor{preprocessor}{\#if\ UNITY\_2019\_1\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.duringSceneGui\ -\/=\ DragAndDropInstantiation.SceneViewDragAndDrop;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.duringSceneGui\ +=\ DragAndDropInstantiation.SceneViewDragAndDrop;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00201}00201\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.onSceneGUIDelegate\ -\/=\ DragAndDropInstantiation.SceneViewDragAndDrop;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.onSceneGUIDelegate\ +=\ DragAndDropInstantiation.SceneViewDragAndDrop;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00204}00204\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00206}00206\ \textcolor{preprocessor}{\#if\ UNITY\_2021\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ DragAndDrop.RemoveDropHandler(HierarchyHandler.HandleDragAndDrop);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ DragAndDrop.AddDropHandler(HierarchyHandler.HandleDragAndDrop);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00209}00209\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyWindowItemOnGUI\ -\/=\ HierarchyHandler.HandleDragAndDrop;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyWindowItemOnGUI\ +=\ HierarchyHandler.HandleDragAndDrop;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00212}00212\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hierarchy\ Icons}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00214}00214\ \textcolor{preprocessor}{\#if\ NEWPLAYMODECALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playModeStateChanged\ -\/=\ HierarchyHandler.IconsOnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playModeStateChanged\ +=\ HierarchyHandler.IconsOnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ HierarchyHandler.IconsOnPlaymodeStateChanged(PlayModeStateChange.EnteredEditMode);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00218}00218\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playmodeStateChanged\ -\/=\ HierarchyHandler.IconsOnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playmodeStateChanged\ +=\ HierarchyHandler.IconsOnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ HierarchyHandler.IconsOnPlaymodeStateChanged();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00222}00222\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Data\ Refresh\ Edit\ Mode.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ prevents\ deserialized\ SkeletonData\ from\ persisting\ from\ play\ mode\ to\ edit\ mode.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00226}00226\ \textcolor{preprocessor}{\#if\ NEWPLAYMODECALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playModeStateChanged\ -\/=\ DataReloadHandler.OnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playModeStateChanged\ +=\ DataReloadHandler.OnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ DataReloadHandler.OnPlaymodeStateChanged(PlayModeStateChange.EnteredEditMode);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00230}00230\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playmodeStateChanged\ -\/=\ DataReloadHandler.OnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.playmodeStateChanged\ +=\ DataReloadHandler.OnPlaymodeStateChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ DataReloadHandler.OnPlaymodeStateChanged();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00234}00234\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SpineEditorUtilities.Preferences.textureImporterWarning)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_ad8f08832ceb97be6334ab8701681a1f3}{IssueWarningsForUnrecommendedTextureSettings}}();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a09cb8b207b791fa10c4422b475bb1e03}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00243}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a50138b04862241cbc785ba1e1b9b014f}{00243}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a50138b04862241cbc785ba1e1b9b014f}{ConfirmInitialization}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a09cb8b207b791fa10c4422b475bb1e03}{initialized}})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Initialize();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00248}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_ad8f08832ceb97be6334ab8701681a1f3}{00248}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_ad8f08832ceb97be6334ab8701681a1f3}{IssueWarningsForUnrecommendedTextureSettings}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ atlasDescriptionGUIDs\ =\ AssetDatabase.FindAssets(\textcolor{stringliteral}{"{}t:textasset\ .atlas"{}});\ \textcolor{comment}{//\ Note:\ finds\ "{}.atlas.txt"{}\ but\ also\ "{}.atlas\ 1.txt"{}\ files.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ atlasDescriptionGUIDs.Length;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ atlasDescriptionPath\ =\ AssetDatabase.GUIDToAssetPath(atlasDescriptionGUIDs[i]);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!atlasDescriptionPath.EndsWith(\textcolor{stringliteral}{"{}.atlas.txt"{}}))}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ texturePath\ =\ atlasDescriptionPath.Replace(\textcolor{stringliteral}{"{}.atlas.txt"{}},\ \textcolor{stringliteral}{"{}.png"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ textureExists\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_ad8f08832ceb97be6334ab8701681a1f3}{IssueWarningsForUnrecommendedTextureSettings}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!textureExists)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texturePath\ =\ texturePath.Replace(\textcolor{stringliteral}{"{}.png"{}},\ \textcolor{stringliteral}{"{}.jpg"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureExists\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_ad8f08832ceb97be6334ab8701681a1f3}{IssueWarningsForUnrecommendedTextureSettings}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!textureExists)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00269}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a4ed1b457f734ce068589dfcfb8fb8ebd}{00269}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a4ed1b457f734ce068589dfcfb8fb8ebd}{ReloadSkeletonDataAssetAndComponent}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer}{SkeletonRenderer}}\ component)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (component\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8bf2e890ce73f7347cbc9d129c7a40cf}{ReloadSkeletonDataAsset}}(component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a27160fb5fa4da50bac400c2bd38621f7}{skeletonDataAsset}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8dd71c44aaf02064516816f7bb3f4abe}{ReinitializeComponent}}(component);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00275}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a170abbe5fef61e893dc99fca661063a3}{00275}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a170abbe5fef61e893dc99fca661063a3}{ReloadSkeletonDataAssetAndComponent}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ component)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (component\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8bf2e890ce73f7347cbc9d129c7a40cf}{ReloadSkeletonDataAsset}}(component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a68a733860bdda37aa13ac2eb384ec5e5}{skeletonDataAsset}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reinitialize.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8dd71c44aaf02064516816f7bb3f4abe}{ReinitializeComponent}}(component);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00282}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_aae92ccf04c1d0144da4b35d9cecb6e32}{00282}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_aae92ccf04c1d0144da4b35d9cecb6e32}{ClearSkeletonDataAsset}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset}{SkeletonDataAsset}}\ skeletonDataAsset)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonDataAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset_a0609f106c8b6f209cdcc696dc7ef5361}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ DataReloadHandler.ClearAnimationReferenceAssets(skeletonDataAsset);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00287}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8bf2e890ce73f7347cbc9d129c7a40cf}{00287}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8bf2e890ce73f7347cbc9d129c7a40cf}{ReloadSkeletonDataAsset}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset}{SkeletonDataAsset}}\ skeletonDataAsset,\ \textcolor{keywordtype}{bool}\ clearAtlasAssets\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonDataAsset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clearAtlasAssets)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_atlas_asset_base}{AtlasAssetBase}}\ aa\ \textcolor{keywordflow}{in}\ skeletonDataAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset_ae14e02feaee9b08ee389f8c4806acf54}{atlasAssets}})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aa\ !=\ \textcolor{keyword}{null})\ aa.\mbox{\hyperlink{class_spine_1_1_unity_1_1_atlas_asset_base_ace7e076fe53120c275480b4c1f6b7cf4}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_aae92ccf04c1d0144da4b35d9cecb6e32}{ClearSkeletonDataAsset}}(skeletonDataAsset);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonDataAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset_a2b0df38bd74c1b464ed8543f72c7fd4e}{GetSkeletonData}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ DataReloadHandler.ReloadAnimationReferenceAssets(skeletonDataAsset);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00301}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8dd71c44aaf02064516816f7bb3f4abe}{00301}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a8dd71c44aaf02064516816f7bb3f4abe}{ReinitializeComponent}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer}{SkeletonRenderer}}\ component)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (component\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a22b43d04a5dcc7b6d5fa539abe98953f}{SkeletonDataAssetIsValid}}(component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a2e53e761f321a7e2c08ea1bf10d757dc}{SkeletonDataAsset}}))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component}{IAnimationStateComponent}}\ stateComponent\ =\ component\ as\ \mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component}{IAnimationStateComponent}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_1_1_unity_ae2bd0d2fe29eaacc28597cd7be01cd5b}{AnimationState}}\ oldAnimationState\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stateComponent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldAnimationState\ =\ stateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_afab6b3cf5d027f6e4e865fbdbcda4ba8}{Initialize}}(\textcolor{keyword}{true});\ \textcolor{comment}{//\ implicitly\ clears\ any\ subscribers}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (oldAnimationState\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}}.AssignEventSubscribersFrom(oldAnimationState);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stateComponent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Any\ set\ animation\ needs\ to\ be\ applied\ as\ well\ since\ it\ might\ set\ attachments,}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ having\ an\ effect\ on\ generated\ SpriteMaskMaterials\ below.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateComponent.\mbox{\hyperlink{interface_spine_1_1_unity_1_1_i_animation_state_component_a26624556d0ef520205b8a7e722a8241f}{AnimationState}}.Apply(component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a8183a6e1f44096398fef80ed4af35e34}{skeleton}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a5ec8980c57b9b42ba4f518767d7badba}{LateUpdate}}();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00323}00323\ \textcolor{preprocessor}{\#if\ BUILT\_IN\_SPRITE\_MASK\_COMPONENT}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ SpineMaskUtilities.EditorAssignSpriteMaskMaterials(component);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00325}00325\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a5ec8980c57b9b42ba4f518767d7badba}{LateUpdate}}();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00329}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a225b7cbe7a7cee7213c483215d7e358c}{00329}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a225b7cbe7a7cee7213c483215d7e358c}{ReinitializeComponent}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ component)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (component\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a22b43d04a5dcc7b6d5fa539abe98953f}{SkeletonDataAssetIsValid}}(component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a8eb9381b5375de073bf106193bf0a920}{SkeletonDataAsset}}))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a7e3fa647feb1c7753bf9a62fadfb58b5}{Initialize}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ component.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_ab8b35c979b6e1055211a977cb2d536f7}{LateUpdate}}();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00336}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a22b43d04a5dcc7b6d5fa539abe98953f}{00336}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a22b43d04a5dcc7b6d5fa539abe98953f}{SkeletonDataAssetIsValid}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset}{SkeletonDataAsset}}\ asset)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ asset\ !=\ \textcolor{keyword}{null}\ \&\&\ asset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset_a2b0df38bd74c1b464ed8543f72c7fd4e}{GetSkeletonData}}(quiet:\ \textcolor{keyword}{true})\ !=\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00340}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_afb3ecbe1697348409ead39edc305d8be}{00340}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_afb3ecbe1697348409ead39edc305d8be}{IssueWarningsForUnrecommendedTextureSettings}}\ (\textcolor{keywordtype}{string}\ texturePath)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ TextureImporter\ texImporter\ =\ (TextureImporter)TextureImporter.GetAtPath(texturePath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texImporter\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ extensionPos\ =\ texturePath.LastIndexOf(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ materialPath\ =\ texturePath.Substring(0,\ extensionPos)\ +\ \textcolor{stringliteral}{"{}\_Material.mat"{}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ AssetDatabase.LoadAssetAtPath<Material>(materialPath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ errorMessage\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaterialChecks.IsTextureSetupProblematic(material,\ PlayerSettings.colorSpace,}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texImporter.sRGBTexture,\ texImporter.mipmapEnabled,\ texImporter.alphaIsTransparency,}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texturePath,\ materialPath,\ ref\ errorMessage))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(errorMessage,\ material);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00361}00361\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }HierarchyHandler\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Dictionary<int,\ GameObject>\ skeletonRendererTable\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ GameObject>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Dictionary<int,\ SkeletonUtilityBone>\ skeletonUtilityBoneTable\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ SkeletonUtilityBone>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Dictionary<int,\ BoundingBoxFollower>\ boundingBoxFollowerTable\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ BoundingBoxFollower>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Dictionary<int,\ BoundingBoxFollowerGraphic>\ boundingBoxFollowerGraphicTable\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ BoundingBoxFollowerGraphic>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00369}00369\ \textcolor{preprocessor}{\#if\ NEWPLAYMODECALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ IconsOnPlaymodeStateChanged\ (PlayModeStateChange\ stateChange)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00371}00371\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ IconsOnPlaymodeStateChanged\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00373}00373\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonRendererTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonUtilityBoneTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxFollowerTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxFollowerGraphicTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00379}00379\ \textcolor{preprocessor}{\#if\ NEWHIERARCHYWINDOWCALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyChanged\ -\/=\ IconsOnChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00381}00381\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyWindowChanged\ -\/=\ IconsOnChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00383}00383\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyWindowItemOnGUI\ -\/=\ IconsOnGUI;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Application.isPlaying\ \&\&\ Preferences.showHierarchyIcons)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00387}00387\ \textcolor{preprocessor}{\#if\ NEWHIERARCHYWINDOWCALLBACKS}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyChanged\ +=\ IconsOnChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00389}00389\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyWindowChanged\ +=\ IconsOnChanged;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00391}00391\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.hierarchyWindowItemOnGUI\ +=\ IconsOnGUI;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IconsOnChanged();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ IconsOnChanged\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonRendererTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonUtilityBoneTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxFollowerTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxFollowerGraphicTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonRenderer[]\ arr\ =\ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}.FindObjectsOfType<SkeletonRenderer>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SkeletonRenderer\ r\ \textcolor{keywordflow}{in}\ arr)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonRendererTable[r.gameObject.GetInstanceID()]\ =\ r.gameObject;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonUtilityBone[]\ boneArr\ =\ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}.FindObjectsOfType<SkeletonUtilityBone>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (SkeletonUtilityBone\ b\ \textcolor{keywordflow}{in}\ boneArr)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonUtilityBoneTable[b.gameObject.GetInstanceID()]\ =\ b;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoundingBoxFollower[]\ bbfArr\ =\ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}.FindObjectsOfType<BoundingBoxFollower>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (BoundingBoxFollower\ bbf\ \textcolor{keywordflow}{in}\ bbfArr)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxFollowerTable[bbf.gameObject.GetInstanceID()]\ =\ bbf;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BoundingBoxFollowerGraphic[]\ bbfgArr\ =\ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}.FindObjectsOfType<BoundingBoxFollowerGraphic>();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (BoundingBoxFollowerGraphic\ bbf\ \textcolor{keywordflow}{in}\ bbfgArr)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxFollowerGraphicTable[bbf.gameObject.GetInstanceID()]\ =\ bbf;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ IconsOnGUI\ (\textcolor{keywordtype}{int}\ instanceId,\ Rect\ selectionRect)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ r\ =\ \textcolor{keyword}{new}\ Rect(selectionRect);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonRendererTable.ContainsKey(instanceId))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ =\ r.width\ -\/\ 15;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.width\ =\ 15;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GUI.Label(r,\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ae9373fd86c15143431477a0f3f6367de}{Icons}}.spine);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (skeletonUtilityBoneTable.ContainsKey(instanceId))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ -\/=\ 26;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonUtilityBoneTable[instanceId]\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonUtilityBoneTable[instanceId].transform.childCount\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ +=\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.y\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.width\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.height\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonUtilityBoneTable[instanceId].mode\ ==\ SkeletonUtilityBone.Mode.Follow)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GUI.DrawTexture(r,\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ae9373fd86c15143431477a0f3f6367de}{Icons}}.bone);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GUI.DrawTexture(r,\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ae9373fd86c15143431477a0f3f6367de}{Icons}}.poseBones);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (boundingBoxFollowerTable.ContainsKey(instanceId))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ -\/=\ 26;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundingBoxFollowerTable[instanceId]\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundingBoxFollowerTable[instanceId].transform.childCount\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ +=\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.y\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.width\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.height\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GUI.DrawTexture(r,\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ae9373fd86c15143431477a0f3f6367de}{Icons}}.boundingBox);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (boundingBoxFollowerGraphicTable.ContainsKey(instanceId))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ -\/=\ 26;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundingBoxFollowerGraphicTable[instanceId]\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundingBoxFollowerGraphicTable[instanceId].transform.childCount\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ +=\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.y\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.width\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.height\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GUI.DrawTexture(r,\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ae9373fd86c15143431477a0f3f6367de}{Icons}}.boundingBox);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00462}00462\ \textcolor{preprocessor}{\#if\ UNITY\_2021\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ DragAndDropVisualMode\ HandleDragAndDrop\ (\textcolor{keywordtype}{int}\ dropTargetInstanceID,\ HierarchyDropFlags\ dropMode,\ Transform\ parentForDraggedObjects,\ \textcolor{keywordtype}{bool}\ perform)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonDataAsset\ skeletonDataAsset\ =\ DragAndDrop.objectReferences.Length\ ==\ 0\ ?\ null\ :}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DragAndDrop.objectReferences[0]\ as\ SkeletonDataAsset;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonDataAsset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DragAndDropVisualMode.None;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!perform)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DragAndDropVisualMode.Copy;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00470}00470\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ dropTargetObject\ =\ UnityEditor.EditorUtility.InstanceIDToObject(dropTargetInstanceID)\ as\ GameObject;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ dropTarget\ =\ dropTargetObject\ !=\ \textcolor{keyword}{null}\ ?\ dropTargetObject.transform\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ parent\ =\ dropTarget;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ siblingIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dropMode\ ==\ HierarchyDropFlags.DropBetween)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\ =\ dropTarget.parent;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ siblingIndex\ =\ dropTarget\ ?\ dropTarget.GetSiblingIndex()\ +\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dropMode\ ==\ HierarchyDropFlags.DropAbove)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\ =\ dropTarget.parent;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ siblingIndex\ =\ dropTarget\ ?\ dropTarget.GetSiblingIndex()\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DragAndDropInstantiation.ShowInstantiateContextMenu(skeletonDataAsset,\ Vector3.zero,\ parent,\ siblingIndex);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DragAndDropVisualMode.Copy;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00487}00487\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ HandleDragAndDrop\ (\textcolor{keywordtype}{int}\ instanceId,\ Rect\ selectionRect)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HACK:\ Uses\ EditorApplication.hierarchyWindowItemOnGUI.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ works\ when\ there\ is\ at\ least\ one\ item\ in\ the\ scene.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Event\ current\ =\ UnityEngine.Event.current;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}\ eventType\ =\ current.type;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDraggingEvent\ =\ eventType\ ==\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.DragUpdated;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDropEvent\ =\ eventType\ ==\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.DragPerform;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.DragAndDrop.visualMode\ =\ DragAndDropVisualMode.Copy;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isDraggingEvent\ ||\ isDropEvent)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorWindow\ mouseOverWindow\ =\ EditorWindow.mouseOverWindow;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mouseOverWindow\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ One,\ existing,\ valid\ SkeletonDataAsset}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}[]\ references\ =\ UnityEditor.DragAndDrop.objectReferences;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (references.Length\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SkeletonDataAsset\ skeletonDataAsset\ =\ references[0]\ as\ SkeletonDataAsset;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonDataAsset\ !=\ \textcolor{keyword}{null}\ \&\&\ skeletonDataAsset.GetSkeletonData(\textcolor{keyword}{true})\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00506}00506\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allow\ drag-\/and-\/dropping\ anywhere\ in\ the\ Hierarchy\ Window.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HACK:\ string-\/compare\ because\ we\ can't\ get\ its\ type\ via\ reflection.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ HierarchyWindow\ =\ \textcolor{stringliteral}{"{}UnityEditor.SceneHierarchyWindow"{}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ GenericDataTargetID\ =\ \textcolor{stringliteral}{"{}target"{}};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (HierarchyWindow.Equals(mouseOverWindow.GetType().ToString(),\ System.StringComparison.Ordinal))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isDraggingEvent)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Object\ mouseOverTarget\ =\ UnityEditor.EditorUtility.InstanceIDToObject(instanceId);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mouseOverTarget)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DragAndDrop.SetGenericData(GenericDataTargetID,\ mouseOverTarget);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ do\ not\ call\ current.Use(),\ otherwise\ we\ get\ the\ wrong\ drop-\/target\ parent.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (isDropEvent)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ parentGameObject\ =\ DragAndDrop.GetGenericData(GenericDataTargetID)\ as\ UnityEngine.GameObject;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ parent\ =\ parentGameObject\ !=\ \textcolor{keyword}{null}\ ?\ parentGameObject.transform\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ when\ dragging\ into\ empty\ space\ in\ hierarchy\ below\ last\ node,\ last\ node\ would\ be\ parent.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsLastNodeInHierarchy(parent))}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DragAndDropInstantiation.ShowInstantiateContextMenu(skeletonDataAsset,\ Vector3.zero,\ parent,\ 0);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.DragAndDrop.AcceptDrag();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.Use();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00534}00534\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsLastNodeInHierarchy\ (Transform\ node)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (node.parent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node.GetSiblingIndex()\ !=\ node.parent.childCount\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ node.parent;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00544}00544\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject[]\ rootNodes\ =\ UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isLastNode\ =\ (rootNodes.Length\ >\ 0\ \&\&\ rootNodes[rootNodes.Length\ -\/\ 1].transform\ ==\ node);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isLastNode;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00549}00549\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00550}00550\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00551}00551\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00552}00552\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00553}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_asset_modification_processor}{00553}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_asset_modification_processor}{SpineAssetModificationProcessor}}\ :\ UnityEditor.AssetModificationProcessor\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00554}00554\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ OnWillCreateAsset\ (\textcolor{keywordtype}{string}\ assetName)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ This\ method\ seems\ to\ be\ called\ from\ the\ main\ thread,}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ from\ worker\ threads\ when\ Project\ Settings\ -\/\ Editor\ -\/\ Parallel\ Import\ is\ enabled.}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ endIndex\ =\ assetName.LastIndexOf(\textcolor{stringliteral}{"{}.meta"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ assetPath\ =\ endIndex\ <\ 0\ ?\ assetName\ :\ assetName.Substring(0,\ endIndex);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a9cc30f8ce5e25326ce18f03f8f62c196}{OnTextureImportedFirstTime}}(assetPath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00560}00560\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00561}00561\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00562}00562\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00563}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_texture_modification_warning_processor}{00563}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_texture_modification_warning_processor}{TextureModificationWarningProcessor}}\ :\ UnityEditor.AssetModificationProcessor\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00564}00564\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}[]\ OnWillSaveAssets\ (\textcolor{keywordtype}{string}[]\ paths)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_1_1_preferences}{Preferences}}.textureImporterWarning)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ path\ \textcolor{keywordflow}{in}\ paths)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((path\ !=\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (path.EndsWith(\textcolor{stringliteral}{"{}.png.meta"{}},\ System.StringComparison.Ordinal)\ ||}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.EndsWith(\textcolor{stringliteral}{"{}.jpg.meta"{}},\ System.StringComparison.Ordinal)))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00570}00570\ }
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ texturePath\ =\ System.IO.Path.ChangeExtension(path,\ \textcolor{keyword}{null});\ \textcolor{comment}{//\ .meta\ removed}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ atlasPath\ =\ System.IO.Path.ChangeExtension(texturePath,\ \textcolor{stringliteral}{"{}atlas.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (System.IO.File.Exists(atlasPath))}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_ad8f08832ceb97be6334ab8701681a1f3}{IssueWarningsForUnrecommendedTextureSettings}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ paths;}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00579}00579\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00580}00580\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_editor_utilities_8cs_source_l00581}00581\ \}}
+
+\end{DoxyCode}

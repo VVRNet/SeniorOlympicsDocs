@@ -1,0 +1,45 @@
+\doxysection{Rect\+Con\+Ms.\+cs}
+\hypertarget{_rect_con_ms_8cs_source}{}\label{_rect_con_ms_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/02.MS500SDK/Scripts/RectConMs.cs@{D:/Unity/SeniorOlympics/Assets/02.MS500SDK/Scripts/RectConMs.cs}}
+\mbox{\hyperlink{_rect_con_ms_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.EventSystems;}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00006}\mbox{\hyperlink{class_rect_con_ms}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rect_con_ms}{RectConMs}}\ :\ MonoBehaviour\ ,\ IPointerDownHandler,\ IPointerUpHandler}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//LT,\ LB,\ RT,\ RB\ ø¿∫Í¡ß∆Æ\ Ω∫≈©∏≥∆Æ}}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ dragging\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00010}\mbox{\hyperlink{class_rect_con_ms_adc4717b118d8145ef1d894fb4f3f85ae}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_rect_con_ms_adc4717b118d8145ef1d894fb4f3f85ae}{tr}};}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00012}\mbox{\hyperlink{class_rect_con_ms_ac22f4799b38b0541c57a1a398039ce52}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_rect_con_ms_ac22f4799b38b0541c57a1a398039ce52}{consX}};}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00013}\mbox{\hyperlink{class_rect_con_ms_a33a3fd9f91b77ec83b9cbe709924504a}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_rect_con_ms_a33a3fd9f91b77ec83b9cbe709924504a}{consY}};}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00014}\mbox{\hyperlink{class_rect_con_ms_a8cc6ee52aff471e9de82b560c7f9f54f}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rect_con_ms_a8cc6ee52aff471e9de82b560c7f9f54f}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rect_con_ms_ac22f4799b38b0541c57a1a398039ce52}{consX}}\ =\ 1280f\ /\ Screen.width;}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rect_con_ms_a33a3fd9f91b77ec83b9cbe709924504a}{consY}}\ =\ 720f\ /\ Screen.height;}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00020}\mbox{\hyperlink{class_rect_con_ms_acc4c3fb5f317672a5709b30bce27b780}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rect_con_ms_acc4c3fb5f317672a5709b30bce27b780}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dragging)}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector2((Input.mousePosition.x\ -\/\ (Screen.width\ /\ 2))\ *\ \mbox{\hyperlink{class_rect_con_ms_ac22f4799b38b0541c57a1a398039ce52}{consX}},\ (Input.mousePosition.y\ -\/\ (Screen.height\ /\ 2))\ *\ \mbox{\hyperlink{class_rect_con_ms_a33a3fd9f91b77ec83b9cbe709924504a}{consY}});}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00028}\mbox{\hyperlink{class_rect_con_ms_a333ed3c285934b434a4a46d3d0925c7d}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rect_con_ms_a333ed3c285934b434a4a46d3d0925c7d}{OnPointerDown}}(PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ dragging\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00033}\mbox{\hyperlink{class_rect_con_ms_aa68262d2a8e8945973b19c162eb597f1}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rect_con_ms_aa68262d2a8e8945973b19c162eb597f1}{OnPointerUp}}(PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ dragging\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rect_con_ms_adc4717b118d8145ef1d894fb4f3f85ae}{tr}}\ =\ \textcolor{keyword}{new}\ Vector2((Input.mousePosition.x\ \ \ -\/\ (Screen.width\ /\ 2))\ *\ \mbox{\hyperlink{class_rect_con_ms_ac22f4799b38b0541c57a1a398039ce52}{consX}},(\ Input.mousePosition.y-\/\ (Screen.height\ /\ 2))\ *\ \mbox{\hyperlink{class_rect_con_ms_a33a3fd9f91b77ec83b9cbe709924504a}{consY}});}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rect_con_ms_8cs_source_l00039}00039\ \}}
+
+\end{DoxyCode}

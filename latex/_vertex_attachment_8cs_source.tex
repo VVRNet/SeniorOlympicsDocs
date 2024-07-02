@@ -1,0 +1,146 @@
+\doxysection{Vertex\+Attachment.\+cs}
+\hypertarget{_vertex_attachment_8cs_source}{}\label{_vertex_attachment_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Attachments/VertexAttachment.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Attachments/VertexAttachment.cs}}
+\mbox{\hyperlink{_vertex_attachment_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00035}\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}\ :\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ nextID\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ readonly\ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}\ nextIdLock\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}();}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}\ timelineAttachment;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}[]\ bones;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}[]\ vertices;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}\ worldVerticesLength;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a68f9c385cb4e5cac2e682312c8fbd72a}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a68f9c385cb4e5cac2e682312c8fbd72a}{Id}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ id;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a2fc2cbedce9853f6f25aa6a65febd60c}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}[]\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a2fc2cbedce9853f6f25aa6a65febd60c}{Bones}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bones;\ \}\ \textcolor{keyword}{set}\ \{\ bones\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00048}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a1eb0b1000871b10626c168cd52c25447}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a1eb0b1000871b10626c168cd52c25447}{Vertices}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ vertices;\ \}\ \textcolor{keyword}{set}\ \{\ vertices\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00049}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a6ccccde921aef221c82b4a71a70fcdad}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a6ccccde921aef221c82b4a71a70fcdad}{WorldVerticesLength}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ worldVerticesLength;\ \}\ \textcolor{keyword}{set}\ \{\ worldVerticesLength\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00052}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a742bdec5095f9cbd89dc45d45eef0fbd}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a742bdec5095f9cbd89dc45d45eef0fbd}{TimelineAttachment}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ timelineAttachment;\ \}\ \textcolor{keyword}{set}\ \{\ timelineAttachment\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00054}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_ab28ba8a413d1a4fdda1128d37a673fb7}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_ab28ba8a413d1a4fdda1128d37a673fb7}{VertexAttachment}}\ (\textcolor{keywordtype}{string}\ name)}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(name)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ lock\ (\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}.nextIdLock)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}.nextID++;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ timelineAttachment\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00064}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a6c3613fce3de5e29f0d145d67d026422}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a6c3613fce3de5e29f0d145d67d026422}{VertexAttachment}}\ (\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}\ other)}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(other)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ lock\ (\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}.nextIdLock)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}}.nextID++;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ timelineAttachment\ =\ other.timelineAttachment;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.bones\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bones\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[other.bones.Length];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Array.\mbox{\hyperlink{class_spine_1_1_attachment_a9e39d7f3885810a0f8f34285f53b2e2b}{Copy}}(other.bones,\ 0,\ bones,\ 0,\ bones.Length);}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bones\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.vertices\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[other.vertices.Length];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Array.\mbox{\hyperlink{class_spine_1_1_attachment_a9e39d7f3885810a0f8f34285f53b2e2b}{Copy}}(other.vertices,\ 0,\ vertices,\ 0,\ vertices.Length);}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ worldVerticesLength\ =\ other.worldVerticesLength;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00086}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a3a09094aaa5c85778385a1b19397fced}{00086}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a3a09094aaa5c85778385a1b19397fced}{ComputeWorldVertices}}\ (\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot,\ \textcolor{keywordtype}{float}[]\ worldVertices)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a3a09094aaa5c85778385a1b19397fced}{ComputeWorldVertices}}(slot,\ 0,\ worldVerticesLength,\ worldVertices,\ 0);}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00102}\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a85602549f16091b7b8beeb1e0a0adf60}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment_a85602549f16091b7b8beeb1e0a0adf60}{ComputeWorldVertices}}\ (\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot,\ \textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{float}[]\ worldVertices,\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{int}\ stride\ =\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ count\ =\ offset\ +\ (count\ >>\ 1)\ *\ stride;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<float>}}\ deformArray\ =\ slot.deform;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ vertices\ =\ this.vertices;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ bones\ =\ this.bones;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bones\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deformArray.Count\ >\ 0)\ vertices\ =\ deformArray.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}};}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone\ =\ slot.bone;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ bone.worldX,\ y\ =\ bone.worldY;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ bone.a,\ b\ =\ bone.b,\ c\ =\ bone.c,\ d\ =\ bone.d;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ vv\ =\ start,\ w\ =\ offset;\ w\ <\ count;\ vv\ +=\ 2,\ w\ +=\ stride)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ vx\ =\ vertices[vv],\ vy\ =\ vertices[vv\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldVertices[w]\ =\ vx\ *\ a\ +\ vy\ *\ b\ +\ x;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldVertices[w\ +\ 1]\ =\ vx\ *\ c\ +\ vy\ *\ d\ +\ y;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ v\ =\ 0,\ skip\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ start;\ i\ +=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ bones[v];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ +=\ n\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skip\ +=\ n;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}[]\ skeletonBones\ =\ slot.bone.skeleton.bones.Items;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deformArray.Count\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ w\ =\ offset,\ b\ =\ skip\ *\ 3;\ w\ <\ count;\ w\ +=\ stride)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ wx\ =\ 0,\ wy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ bones[v++];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\ +=\ v;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ v\ <\ n;\ v++,\ b\ +=\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone\ =\ skeletonBones[bones[v]];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ vx\ =\ vertices[b],\ vy\ =\ vertices[b\ +\ 1],\ weight\ =\ vertices[b\ +\ 2];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wx\ +=\ (vx\ *\ bone.a\ +\ vy\ *\ bone.b\ +\ bone.worldX)\ *\ weight;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wy\ +=\ (vx\ *\ bone.c\ +\ vy\ *\ bone.d\ +\ bone.worldY)\ *\ weight;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldVertices[w]\ =\ wx;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldVertices[w\ +\ 1]\ =\ wy;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ deform\ =\ deformArray.Items;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ w\ =\ offset,\ b\ =\ skip\ *\ 3,\ f\ =\ skip\ <<\ 1;\ w\ <\ count;\ w\ +=\ stride)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ wx\ =\ 0,\ wy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ bones[v++];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\ +=\ v;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ v\ <\ n;\ v++,\ b\ +=\ 3,\ f\ +=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone\ =\ skeletonBones[bones[v]];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ vx\ =\ vertices[b]\ +\ deform[f],\ vy\ =\ vertices[b\ +\ 1]\ +\ deform[f\ +\ 1],\ weight\ =\ vertices[b\ +\ 2];}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wx\ +=\ (vx\ *\ bone.a\ +\ vy\ *\ bone.b\ +\ bone.worldX)\ *\ weight;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wy\ +=\ (vx\ *\ bone.c\ +\ vy\ *\ bone.d\ +\ bone.worldY)\ *\ weight;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldVertices[w]\ =\ wx;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldVertices[w\ +\ 1]\ =\ wy;}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vertex_attachment_8cs_source_l00158}00158\ \}}
+
+\end{DoxyCode}

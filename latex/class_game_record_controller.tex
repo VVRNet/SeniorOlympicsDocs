@@ -1,0 +1,254 @@
+\doxysection{Game\+Record\+Controller í´ë˜ìŠ¤ ì°¸ì¡°}
+\hypertarget{class_game_record_controller}{}\label{class_game_record_controller}\index{GameRecordController@{GameRecordController}}
+
+
+Game\+Record\+Controllerì— ëŒ€í•œ ìƒì† ë‹¤ì´ì–´ê·¸ë¨ \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_game_record_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Game\+Record\+Controllerì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_game_record_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public ë©¤ë²„ í•¨ìˆ˜}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}{Game\+Init}} (\mbox{\hyperlink{class_game_record}{Game\+Record}} record)
+\item 
+void \mbox{\hyperlink{class_game_record_controller_ab1b4b9edd053e44071f83debeb21e19f}{Game\+Start}} ()
+\item 
+void \mbox{\hyperlink{class_game_record_controller_a0198fc250fd06e9b71478c236021877f}{Test\+On\+Touch}} ()
+\item 
+void \mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}} (\mbox{\hyperlink{class_game_record}{Game\+Record}} record, int user\+Index, bool is\+Correct, float accuracy, \mbox{\hyperlink{class_touch_event}{Touch\+Event}} touch\+Event, float reaction\+Time)
+\item 
+void \mbox{\hyperlink{class_game_record_controller_af8dd0434941a7c191663787565c53eb3}{Save\+Game\+Record}} (\mbox{\hyperlink{class_game_record}{Game\+Record}} record, Action callback)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public ì†ì„±}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}
+\item 
+string \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{content\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{ìƒì„¸í•œ ì„¤ëª…}
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00006}{6}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+
+\doxysubsection{ë©¤ë²„ í•¨ìˆ˜ ë¬¸ì„œí™”}
+\Hypertarget{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}\index{GameRecordController@{GameRecordController}!GameInit@{GameInit}}
+\index{GameInit@{GameInit}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{GameInit()}{GameInit()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308} 
+void Game\+Record\+Controller.\+Game\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_record}{Game\+Record}}}]{record}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00020}{20}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentStudent\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).InitGame(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classId:\ currentClass.Name,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personId:\ currentStudent\ ==\ null\ ?\ null\ :\ currentStudent.Id,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ currentStudent\ ==\ null\ ?\ currentClass.Name\ :\ currentStudent.Name,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ÀÓ½Ã·Î µ¥ÀÌÅÍ\ Àû¾î³õÀº°ÅÀÓ ÃßÈÄ\ ½Ã´Ï¾î ¿Ã¸²ÇÈ\ ¶§´Â 2P\ ¼±ÅÃÇÏ¸é ±× ¼±ÅÃÇÑ\ »ç¶÷ÀÇ\ Á¤º¸¸¦\ °°ÀÌ\ ³Ö¾îÁà¾ßÇÔ}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})record).InitGame(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classIds:\ new\ List<string>\ \{\ currentClass.Name,\ \textcolor{stringliteral}{"{}VVR"{}}\ \},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personIds:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ currentStudent.Id,\ \textcolor{stringliteral}{"{}91cc93e9-\/820a-\/40aa-\/abbc-\/a93e132c9e33"{}}\ \},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ names:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.Name\ :\ currentStudent.Name,\ \textcolor{stringliteral}{"{}User1"{}}\ \},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_controller_ab1b4b9edd053e44071f83debeb21e19f}\index{GameRecordController@{GameRecordController}!GameStart@{GameStart}}
+\index{GameStart@{GameStart}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{GameStart()}{GameStart()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_ab1b4b9edd053e44071f83debeb21e19f} 
+void Game\+Record\+Controller.\+Game\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00056}{56}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).SingleGameStart();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}\index{GameRecordController@{GameRecordController}!Hit@{Hit}}
+\index{Hit@{Hit}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{Hit()}{Hit()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e} 
+void Game\+Record\+Controller.\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_record}{Game\+Record}}}]{record}{, }\item[{int}]{user\+Index}{, }\item[{bool}]{is\+Correct}{, }\item[{float}]{accuracy}{, }\item[{\mbox{\hyperlink{class_touch_event}{Touch\+Event}}}]{touch\+Event}{, }\item[{float}]{reaction\+Time}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00069}{69}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ isCorrect:\ Á¤´ä ¿©ºÎ,}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ accuracy:\ Á¤È®µµ(Áß½ÉÁ¡°ú °Å¸®\ Â÷ÀÌ),}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ touchEvent:\ ÅÍÄ¡\ ÀÌº¥Æ®\ ±â·Ï,}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reactionTime:\ ¹İÀÀ¼Óµµ(¿ÀºêÁ§Æ®°¡\ ³ªÅ¸³ª°í ÅÍÄ¡µÆÀ»¶§±îÁö\ ½Ã°£)}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//((SingleGameRecord)record).RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(record.ToString()\ );}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGameRecord)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ singleGameRecord.RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGameRecord)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ dualGameRecord.RecordDetails[userIndex].Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_controller_af8dd0434941a7c191663787565c53eb3}\index{GameRecordController@{GameRecordController}!SaveGameRecord@{SaveGameRecord}}
+\index{SaveGameRecord@{SaveGameRecord}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{SaveGameRecord()}{SaveGameRecord()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_af8dd0434941a7c191663787565c53eb3} 
+void Game\+Record\+Controller.\+Save\+Game\+Record (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_record}{Game\+Record}}}]{record}{, }\item[{Action}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00092}{92}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ single.SingleGameEnd();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ dual.DualGameEnd();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ StartCoroutine(\_gameRecordService.\mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{SaveGameRecord}}(record,\ (response)\ =>}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}°ÔÀÓ ±â·Ï\ ¼º°ø: "{}}\ +\ response);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_af8dd0434941a7c191663787565c53eb3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_controller_a0198fc250fd06e9b71478c236021877f}\index{GameRecordController@{GameRecordController}!TestOnTouch@{TestOnTouch}}
+\index{TestOnTouch@{TestOnTouch}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{TestOnTouch()}{TestOnTouch()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a0198fc250fd06e9b71478c236021877f} 
+void Game\+Record\+Controller.\+Test\+On\+Touch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00063}{63}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ randomIndex\ =\ UnityEngine.Random.Range(0.0f,\ 10.0f);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hit(randomIndex\ <\ 5,\ randomIndex,\ new\ TouchEvent(x:\ randomIndex,\ y:\ randomIndex+2,\ DateTime.UtcNow),\ randomIndex+0.2f);}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{ë©¤ë²„ ë°ì´í„° ë¬¸ì„œí™”}
+\Hypertarget{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}\index{GameRecordController@{GameRecordController}!category@{category}}
+\index{category@{category}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{category}{category}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd} 
+string Game\+Record\+Controller.\+category}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00010}{10}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}\index{GameRecordController@{GameRecordController}!contentName@{contentName}}
+\index{contentName@{contentName}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{contentName}{contentName}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a5a0999a03d58661f82851d30762711a9} 
+string Game\+Record\+Controller.\+content\+Name}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} íŒŒì¼ì˜ \mbox{\hyperlink{_game_record_controller_8cs_source_l00011}{11}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+
+ì´ í´ë˜ìŠ¤ì— ëŒ€í•œ ë¬¸ì„œí™” í˜ì´ì§€ëŠ” ë‹¤ìŒì˜ íŒŒì¼ë¡œë¶€í„° ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\+Controller/\mbox{\hyperlink{_game_record_controller_8cs}{Game\+Record\+Controller.\+cs}}\end{DoxyCompactItemize}

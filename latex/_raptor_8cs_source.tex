@@ -1,0 +1,72 @@
+\doxysection{Raptor.\+cs}
+\hypertarget{_raptor_8cs_source}{}\label{_raptor_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/Raptor.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/Raptor.cs}}
+\mbox{\hyperlink{_raptor_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}};}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00035}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor}{Raptor}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Inspector}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_aded5886a241d35cec487777771dd8850}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_animation_reference_asset}{AnimationReferenceAsset}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_aded5886a241d35cec487777771dd8850}{walk}};}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_afa4ecc711255d7dd5a49d5bcaaf964df}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_animation_reference_asset}{AnimationReferenceAsset}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_afa4ecc711255d7dd5a49d5bcaaf964df}{gungrab}};}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_a27b6b305b25289c59c7abe7ce3f14f29}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_animation_reference_asset}{AnimationReferenceAsset}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_a27b6b305b25289c59c7abe7ce3f14f29}{gunkeep}};}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ skeletonAnimation;}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation\ =\ GetComponent<SkeletonAnimation>();}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GunGrabRoutine());}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ IEnumerator\ GunGrabRoutine\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Play\ the\ walk\ animation\ on\ track\ 0.}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}}.SetAnimation(0,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_aded5886a241d35cec487777771dd8850}{walk}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Repeatedly\ play\ the\ gungrab\ and\ gunkeep\ animation\ on\ track\ 1.}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(Random.Range(0.5f,\ 3f));}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}}.SetAnimation(1,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_afa4ecc711255d7dd5a49d5bcaaf964df}{gungrab}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(Random.Range(0.5f,\ 3f));}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ab1694ead3860e2f34dd892747aef356b}{AnimationState}}.SetAnimation(1,\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_raptor_a27b6b305b25289c59c7abe7ce3f14f29}{gunkeep}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_raptor_8cs_source_l00066}00066\ \}}
+
+\end{DoxyCode}

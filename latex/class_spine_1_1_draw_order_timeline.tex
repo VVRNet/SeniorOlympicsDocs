@@ -1,0 +1,205 @@
+\doxysection{Spine.\+Draw\+Order\+Timeline 클래스 참조}
+\hypertarget{class_spine_1_1_draw_order_timeline}{}\label{class_spine_1_1_draw_order_timeline}\index{Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}}
+
+
+Changes a skeleton\textquotesingle{}s \doxylink{class_spine_1_1_skeleton_a6a451d2b789c6b916a978bd0f27a7c22}{Skeleton.\+Draw\+Order}.  
+
+
+
+
+Spine.\+Draw\+Order\+Timeline에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_spine_1_1_draw_order_timeline__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Draw\+Order\+Timeline에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_spine_1_1_draw_order_timeline__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_draw_order_timeline_a3451de5225ad2a68447dcfebedd85d83}{Draw\+Order\+Timeline}} (int frame\+Count)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_draw_order_timeline_a67aa708c6ac524bc02bb2ba8b5ce0485}{Set\+Frame}} (int frame, float time, int\mbox{[}$\,$\mbox{]} draw\+Order)
+\begin{DoxyCompactList}\small\item\em Sets the time and draw order for the specified frame. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_spine_1_1_draw_order_timeline_a94e54baf6a4a073e7c18b0c9828e25a4}{Apply}} (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, float last\+Time, float time, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$ fired\+Events, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction)
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_timeline}{Spine.\+Timeline}}(으)로부터 상속된 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_timeline_a6dc435d0ab20cafaa2d8d0b00dc62eb6}{Timeline}} (int frame\+Count, params string\mbox{[}$\,$\mbox{]} property\+Ids)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{매개변수}
+{\em property\+Ids} & Unique identifiers for the properties the timeline modifies.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_timeline_ac69d4f351c6bc3b79b1052323bd4201a}{Apply}} (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, float last\+Time, float time, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$ events, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Applies this timeline to the skeleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_draw_order_timeline_a915e212e9c8a41784f90f7a3caaea9c4}{Draw\+Orders}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The draw order for each frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_timeline}{Spine.\+Timeline}}(으)로부터 상속된 속성}
+\begin{DoxyCompactItemize}
+\item 
+string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_timeline_a55319626a889150e17d4fa4e26c21704}{Property\+Ids}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Uniquely encodes both the type of this timeline and the skeleton properties that it affects. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_timeline_aecb5b6169fa02870035f5d3d788c5bfb}{Frames}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The time in seconds and any other values for each frame. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_spine_1_1_timeline_a4884160d47f7641f9a7b6a655b6970b3}{Frame\+Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of entries stored per frame. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_spine_1_1_timeline_ad50c47fe6a578b014ad1ef8aa3d83fb4}{Frame\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of frames for this timeline. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_timeline_abd4e11b8c42f7c3c8b07793f134680fc}{Duration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Changes a skeleton\textquotesingle{}s \doxylink{class_spine_1_1_skeleton_a6a451d2b789c6b916a978bd0f27a7c22}{Skeleton.\+Draw\+Order}. 
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l02009}{2009}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_draw_order_timeline_a3451de5225ad2a68447dcfebedd85d83}\index{Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}!DrawOrderTimeline@{DrawOrderTimeline}}
+\index{DrawOrderTimeline@{DrawOrderTimeline}!Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}}
+\doxysubsubsection{\texorpdfstring{DrawOrderTimeline()}{DrawOrderTimeline()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_draw_order_timeline_a3451de5225ad2a68447dcfebedd85d83} 
+Spine.\+Draw\+Order\+Timeline.\+Draw\+Order\+Timeline (\begin{DoxyParamCaption}\item[{int}]{frame\+Count}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l02014}{2014}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02015\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(frameCount,\ propertyIds)\ \{}
+\DoxyCodeLine{02016\ \ \ \ \ \ \ \ \ \ \ \ \ drawOrders\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[frameCount][];}
+\DoxyCodeLine{02017\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_draw_order_timeline_a94e54baf6a4a073e7c18b0c9828e25a4}\index{Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}!Apply@{Apply}}
+\index{Apply@{Apply}!Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_draw_order_timeline_a94e54baf6a4a073e7c18b0c9828e25a4} 
+override void Spine.\+Draw\+Order\+Timeline.\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{, }\item[{float}]{last\+Time}{, }\item[{float}]{time}{, }\item[{\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$}]{fired\+Events}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{\mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}}}]{direction}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l02037}{2037}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02039\ }
+\DoxyCodeLine{02040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{MixDirection}}.Out)\ \{}
+\DoxyCodeLine{02041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup)\ Array.Copy(skeleton.slots.Items,\ 0,\ skeleton.drawOrder.Items,\ 0,\ skeleton.slots.Count);}
+\DoxyCodeLine{02042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{02043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02044\ }
+\DoxyCodeLine{02045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ frames\ =\ this.frames;}
+\DoxyCodeLine{02046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ frames[0])\ \{}
+\DoxyCodeLine{02047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup\ ||\ blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First)\ Array.Copy(skeleton.slots.Items,\ 0,\ skeleton.drawOrder.Items,\ 0,\ skeleton.slots.Count);}
+\DoxyCodeLine{02048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{02049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02050\ }
+\DoxyCodeLine{02051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ drawOrderToSetupIndex\ =\ drawOrders[Search(frames,\ time)];}
+\DoxyCodeLine{02052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drawOrderToSetupIndex\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{02053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Array.Copy(skeleton.slots.Items,\ 0,\ skeleton.drawOrder.Items,\ 0,\ skeleton.slots.Count);}
+\DoxyCodeLine{02054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{02055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Slot[]\ slots\ =\ skeleton.slots.Items;}
+\DoxyCodeLine{02056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Slot[]\ drawOrder\ =\ skeleton.drawOrder.Items;}
+\DoxyCodeLine{02057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ drawOrderToSetupIndex.Length;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{02058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawOrder[i]\ =\ slots[drawOrderToSetupIndex[i]];}
+\DoxyCodeLine{02059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02060\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_draw_order_timeline_a67aa708c6ac524bc02bb2ba8b5ce0485}\index{Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}!SetFrame@{SetFrame}}
+\index{SetFrame@{SetFrame}!Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}}
+\doxysubsubsection{\texorpdfstring{SetFrame()}{SetFrame()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_draw_order_timeline_a67aa708c6ac524bc02bb2ba8b5ce0485} 
+void Spine.\+Draw\+Order\+Timeline.\+Set\+Frame (\begin{DoxyParamCaption}\item[{int}]{frame}{, }\item[{float}]{time}{, }\item[{int\mbox{[}$\,$\mbox{]}}]{draw\+Order}{}\end{DoxyParamCaption})}
+
+
+
+Sets the time and draw order for the specified frame. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em frame} & Between 0 and 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{frameCount}
+
+\end{DoxyCode}
+, inclusive.\\
+\hline
+{\em time} & The frame time in seconds.\\
+\hline
+{\em draw\+Order} & For each slot in \doxylink{class_spine_1_1_skeleton_af72992c14e5cab05511330483a21e902}{Skeleton.\+Slots}, the index of the slot in the new draw order. May be null to use setup pose draw order.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l02032}{2032}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02033\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame]\ =\ time;}
+\DoxyCodeLine{02034\ \ \ \ \ \ \ \ \ \ \ \ \ drawOrders[frame]\ =\ drawOrder;}
+\DoxyCodeLine{02035\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_draw_order_timeline_a915e212e9c8a41784f90f7a3caaea9c4}\index{Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}!DrawOrders@{DrawOrders}}
+\index{DrawOrders@{DrawOrders}!Spine.DrawOrderTimeline@{Spine.DrawOrderTimeline}}
+\doxysubsubsection{\texorpdfstring{DrawOrders}{DrawOrders}}
+{\footnotesize\ttfamily \label{class_spine_1_1_draw_order_timeline_a915e212e9c8a41784f90f7a3caaea9c4} 
+int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Spine.\+Draw\+Order\+Timeline.\+Draw\+Orders\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The draw order for each frame. 
+
+\begin{DoxySeeAlso}{참고}
+Timeline.\+Set\+Frame(int, float, int\mbox{[}$\,$\mbox{]})
+
+
+\end{DoxySeeAlso}
+. 
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l02021}{2021}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{02023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ drawOrders;}
+\DoxyCodeLine{02024\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02025\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_animation_8cs}{Animation.\+cs}}\end{DoxyCompactItemize}

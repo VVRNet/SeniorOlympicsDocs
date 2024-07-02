@@ -1,0 +1,213 @@
+\doxysection{Bone\+Follower\+Graphic\+Inspector.\+cs}
+\hypertarget{_bone_follower_graphic_inspector_8cs_source}{}\label{_bone_follower_graphic_inspector_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Components/BoneFollowerGraphicInspector.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Components/BoneFollowerGraphicInspector.cs}}
+\mbox{\hyperlink{_bone_follower_graphic_inspector_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor}{Spine.Unity.Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{using\ }Editor\ =\ UnityEditor.Editor;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_af37dce70335e31a012b150edf4c1007e}{Event}}\ =\ UnityEngine.Event;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00038}00038\ \ \ \ \ [CustomEditor(typeof(BoneFollowerGraphic)),\ CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_bone_follower_graphic_inspector}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_bone_follower_graphic_inspector}{BoneFollowerGraphicInspector}}\ :\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ac555d00812ab409d5738fb08c7cff1d6}{Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ SerializedProperty\ boneName,\ skeletonGraphic,\ followXYPosition,\ followZPosition,\ followBoneRotation,}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ followLocalScale,\ followParentWorldScale,\ followSkeletonFlip,\ maintainedAxisOrientation;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic}{BoneFollowerGraphic}}\ targetBoneFollower;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ needsReset;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Context\ Menu\ Item}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ [MenuItem(\textcolor{stringliteral}{"{}CONTEXT/SkeletonGraphic/Add\ BoneFollower\ GameObject"{}})]}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ AddBoneFollowerGameObject\ (MenuCommand\ cmd)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ skeletonGraphic\ =\ cmd.context\ as\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ go\ =\ EditorInstantiation.NewGameObject(\textcolor{stringliteral}{"{}BoneFollower"{}},\ \textcolor{keyword}{true},\ typeof(RectTransform));}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ t\ =\ go.transform;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ t.SetParent(skeletonGraphic.transform);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ t.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic}{BoneFollowerGraphic}}\ f\ =\ go.AddComponent<\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic}{BoneFollowerGraphic}}>();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ f.skeletonGraphic\ =\ skeletonGraphic;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ f.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_ae91adf70e9f9c057464ae663359de58c}{SetBone}}(skeletonGraphic.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a6ab9b7418886660097bf793044441e68}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a9238949a0febaa09e57777e47c8bf251}{RootBone}}.\mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{Data}}.\mbox{\hyperlink{class_spine_1_1_bone_data_a4333ca2630ac562a9561650ec128d864}{Name}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUIUtility.PingObject(t);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ Undo.RegisterCreatedObjectUndo(go,\ \textcolor{stringliteral}{"{}Add\ BoneFollowerGraphic"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validate}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ [MenuItem(\textcolor{stringliteral}{"{}CONTEXT/SkeletonGraphic/Add\ BoneFollower\ GameObject"{}},\ \textcolor{keyword}{true})]}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ ValidateAddBoneFollowerGameObject\ (MenuCommand\ cmd)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ skeletonGraphic\ =\ cmd.context\ as\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ skeletonGraphic.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a506721fbc4b85262b4f31f5124660651}{IsValid}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00070}00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonGraphic\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}skeletonGraphic"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ boneName\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}boneName"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ followBoneRotation\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}followBoneRotation"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ followXYPosition\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}followXYPosition"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ followZPosition\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}followZPosition"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ followLocalScale\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}followLocalScale"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ followParentWorldScale\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}followParentWorldScale"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ followSkeletonFlip\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}followSkeletonFlip"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ maintainedAxisOrientation\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}maintainedAxisOrientation"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower\ =\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic}{BoneFollowerGraphic}})target;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a94d21bd70707b81ee588ee617468b1c0}{SkeletonGraphic}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a94d21bd70707b81ee588ee617468b1c0}{SkeletonGraphic}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a7e3fa647feb1c7753bf9a62fadfb58b5}{Initialize}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a9d64e16da80c113ce14864b1e59b0df6}{valid}}\ ||\ needsReset)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_ab2551e0937177d14c9971fc8ff714a1a}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a29f3e8c7af841645debd5025c21b2795}{LateUpdate}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsReset\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.RepaintAll();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00095}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_bone_follower_graphic_inspector_ad4a7d610d80e27c3f0c730396a62306e}{00095}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_bone_follower_graphic_inspector_ad4a7d610d80e27c3f0c730396a62306e}{OnSceneGUI}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic}{BoneFollowerGraphic}}\ tbf\ =\ target\ as\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic}{BoneFollowerGraphic}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ skeletonGraphicComponent\ =\ tbf.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a94d21bd70707b81ee588ee617468b1c0}{SkeletonGraphic}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonGraphicComponent\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ transform\ =\ skeletonGraphicComponent.transform;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton\ =\ skeletonGraphicComponent.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a6ab9b7418886660097bf793044441e68}{Skeleton}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ positionScale\ =\ skeletonGraphicComponent.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_aea35afb7db93e27e8eaa6315015eb04f}{MeshScale}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(boneName.stringValue))\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBones(transform,\ skeleton,\ positionScale);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneNames(transform,\ skeleton,\ positionScale);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.Label(tbf.transform.position,\ \textcolor{stringliteral}{"{}No\ bone\ selected"{}},\ EditorStyles.helpBox);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ targetBone\ =\ tbf.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a2ebf04b0e6ae20c6dfca1ce276d726d3}{bone}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (targetBone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpineHandles.DrawBoneWireframe(transform,\ targetBone,\ SpineHandles.TransformContraintColor,\ positionScale);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Handles.Label(targetBone.GetWorldPosition(transform,\ positionScale),\ targetBone.\mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{Data}}.\mbox{\hyperlink{class_spine_1_1_bone_data_a4333ca2630ac562a9561650ec128d864}{Name}},\ SpineHandles.BoneNameStyle);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00117}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_bone_follower_graphic_inspector_a8a2d0c0bfb07285f56a5dafb154b2b75}{00117}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_bone_follower_graphic_inspector_a8a2d0c0bfb07285f56a5dafb154b2b75}{OnInspectorGUI}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (serializedObject.isEditingMultipleObjects)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (needsReset)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsReset\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}\ o\ \textcolor{keywordflow}{in}\ targets)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower}{BoneFollower}}\ bf\ =\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower}{BoneFollower}})o;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bf.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_a131944ba0e630dfd045cc9cb8be7d252}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bf.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_ad8c9251d6b054a0e7eb009ca382cf2b5}{LateUpdate}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.RepaintAll();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.BeginChangeCheck();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawDefaultInspector();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsReset\ |=\ EditorGUI.EndChangeCheck();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (needsReset\ \&\&\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_af37dce70335e31a012b150edf4c1007e}{Event}}.current.type\ ==\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_a3c2f69a9278564ef0dffe19a6991358f}{EventType}}.Layout)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_ab2551e0937177d14c9971fc8ff714a1a}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a29f3e8c7af841645debd5025c21b2795}{LateUpdate}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsReset\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SceneView.RepaintAll();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ serializedObject.Update();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ Renderer}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonGraphic.objectReferenceValue\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ parentRenderer\ =\ targetBoneFollower.GetComponentInParent<\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}>();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentRenderer\ !=\ \textcolor{keyword}{null}\ \&\&\ parentRenderer.gameObject\ !=\ targetBoneFollower.gameObject)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonGraphic.objectReferenceValue\ =\ parentRenderer;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Inspector\ automatically\ assigned\ BoneFollowerGraphic.SkeletonGraphic"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(skeletonGraphic);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ skeletonGraphicComponent\ =\ skeletonGraphic.objectReferenceValue\ as\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonGraphicComponent\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonGraphicComponent.gameObject\ ==\ targetBoneFollower.gameObject)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonGraphic.objectReferenceValue\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorUtility.DisplayDialog(\textcolor{stringliteral}{"{}Invalid\ assignment."{}},\ \textcolor{stringliteral}{"{}BoneFollowerGraphic\ can\ only\ follow\ a\ skeleton\ on\ a\ separate\ GameObject.\(\backslash\)n\(\backslash\)nCreate\ a\ new\ GameObject\ for\ your\ BoneFollower,\ or\ choose\ a\ SkeletonGraphic\ from\ a\ different\ GameObject."{}},\ \textcolor{stringliteral}{"{}Ok"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a9d64e16da80c113ce14864b1e59b0df6}{valid}})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsReset\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a9d64e16da80c113ce14864b1e59b0df6}{valid}})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.BeginChangeCheck();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(boneName);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsReset\ |=\ EditorGUI.EndChangeCheck();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(followBoneRotation);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(followXYPosition);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(followZPosition);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(followLocalScale);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(followParentWorldScale);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(followSkeletonFlip);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((followSkeletonFlip.hasMultipleDifferentValues\ ||\ followSkeletonFlip.boolValue\ ==\ \textcolor{keyword}{false})\ \&\&}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (followBoneRotation.hasMultipleDifferentValues\ ||\ followBoneRotation.boolValue\ ==\ \textcolor{keyword}{true}))\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (\textcolor{keyword}{new}\ SpineInspectorUtility.IndentScope())}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(maintainedAxisOrientation);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//BoneFollowerInspector.RecommendRigidbodyButton(targetBoneFollower);}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic}{SkeletonGraphic}}\ boneFollowerSkeletonGraphic\ =\ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_a234cf2461545c2f239281061cc8f1342}{skeletonGraphic}};}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boneFollowerSkeletonGraphic\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}SkeletonGraphic\ is\ unassigned.\ Please\ assign\ a\ SkeletonRenderer\ (SkeletonAnimation\ or\ SkeletonMecanim)."{}},\ MessageType.Warning);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boneFollowerSkeletonGraphic.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a7e3fa647feb1c7753bf9a62fadfb58b5}{Initialize}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boneFollowerSkeletonGraphic.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a68a733860bdda37aa13ac2eb384ec5e5}{skeletonDataAsset}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Assigned\ SkeletonGraphic\ does\ not\ have\ SkeletonData\ assigned\ to\ it."{}},\ MessageType.Warning);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!boneFollowerSkeletonGraphic.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_graphic_a506721fbc4b85262b4f31f5124660651}{IsValid}})}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Assigned\ SkeletonGraphic\ is\ invalid.\ Check\ target\ SkeletonGraphic,\ its\ SkeletonData\ asset\ or\ the\ console\ for\ other\ errors."{}},\ MessageType.Warning);}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_af37dce70335e31a012b150edf4c1007e}{Event}}\ current\ =\ \mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_af37dce70335e31a012b150edf4c1007e}{Event}}.current;}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasUndo\ =\ (current.type\ ==\ EventType.ValidateCommand\ \&\&\ current.commandName\ ==\ \textcolor{stringliteral}{"{}UndoRedoPerformed"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wasUndo)}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetBoneFollower.\mbox{\hyperlink{class_spine_1_1_unity_1_1_bone_follower_graphic_ab2551e0937177d14c9971fc8ff714a1a}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ serializedObject.ApplyModifiedProperties();}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00206}00206\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_follower_graphic_inspector_8cs_source_l00207}00207\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,140 @@
+\doxysection{Feedback\+Controller 클래스 참조}
+\hypertarget{class_feedback_controller}{}\label{class_feedback_controller}\index{FeedbackController@{FeedbackController}}
+
+
+Feedback\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_feedback_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Feedback\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_feedback_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_feedback_controller_a3a21003b4832feb2c1ceefa5363b1e2a}{Toggle\+Point}} (int point)
+\item 
+void \mbox{\hyperlink{class_feedback_controller_a2437ec24e5972c484869043f29c7de98}{Send\+Feedback}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_feedback_controller_a89e0ef95912c88ffb4fcddafae196727}{rating\+Index}}
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_feedback_controller_a967dee40f2f45904605c52b3fff8de0d}{review\+Text}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_feed_back_controller_8cs_source}{Feed\+Back\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_feed_back_controller_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_feedback_controller_a2437ec24e5972c484869043f29c7de98}\index{FeedbackController@{FeedbackController}!SendFeedback@{SendFeedback}}
+\index{SendFeedback@{SendFeedback}!FeedbackController@{FeedbackController}}
+\doxysubsubsection{\texorpdfstring{SendFeedback()}{SendFeedback()}}
+{\footnotesize\ttfamily \label{class_feedback_controller_a2437ec24e5972c484869043f29c7de98} 
+void Feedback\+Controller.\+Send\+Feedback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_feed_back_controller_8cs_source}{Feed\+Back\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_feed_back_controller_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_feedback}{Feedback}}\ feedback\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_feedback}{Feedback}}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ AgencyID\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ ClassID\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ PersonID\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Id,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ Rating\ =\ \mbox{\hyperlink{class_feedback_controller_a89e0ef95912c88ffb4fcddafae196727}{ratingIndex}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ Review\ =\ \mbox{\hyperlink{class_feedback_controller_a967dee40f2f45904605c52b3fff8de0d}{reviewText}}.text,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ CreatedAt\ =\ DateTime.UtcNow}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ StartCoroutine(\_feedbackService.\mbox{\hyperlink{class_feedback_service_a3b36697a8ff4de3bb0b4f29d2a10b899}{CreateFeedback}}(feedback,\ (response)\ =>}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (response.Count\ !=\ 0)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}�ǵ��\ ���� ����: "{}}\ +\ response);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ �߰�\ �۾� (�ʿ��)}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}�ǵ��\ ���� ����"{}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reviewText.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_feedback_controller_a2437ec24e5972c484869043f29c7de98_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_feedback_controller_a3a21003b4832feb2c1ceefa5363b1e2a}\index{FeedbackController@{FeedbackController}!TogglePoint@{TogglePoint}}
+\index{TogglePoint@{TogglePoint}!FeedbackController@{FeedbackController}}
+\doxysubsubsection{\texorpdfstring{TogglePoint()}{TogglePoint()}}
+{\footnotesize\ttfamily \label{class_feedback_controller_a3a21003b4832feb2c1ceefa5363b1e2a} 
+void Feedback\+Controller.\+Toggle\+Point (\begin{DoxyParamCaption}\item[{int}]{point}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_feed_back_controller_8cs_source}{Feed\+Back\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_feed_back_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_feedback_controller_a89e0ef95912c88ffb4fcddafae196727}{ratingIndex}}\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_feedback_controller_a89e0ef95912c88ffb4fcddafae196727}{ratingIndex}}\ =\ point;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_feedback_controller_a89e0ef95912c88ffb4fcddafae196727}\index{FeedbackController@{FeedbackController}!ratingIndex@{ratingIndex}}
+\index{ratingIndex@{ratingIndex}!FeedbackController@{FeedbackController}}
+\doxysubsubsection{\texorpdfstring{ratingIndex}{ratingIndex}}
+{\footnotesize\ttfamily \label{class_feedback_controller_a89e0ef95912c88ffb4fcddafae196727} 
+int Feedback\+Controller.\+rating\+Index}
+
+
+
+\mbox{\hyperlink{_feed_back_controller_8cs_source}{Feed\+Back\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_feed_back_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_feedback_controller_a967dee40f2f45904605c52b3fff8de0d}\index{FeedbackController@{FeedbackController}!reviewText@{reviewText}}
+\index{reviewText@{reviewText}!FeedbackController@{FeedbackController}}
+\doxysubsubsection{\texorpdfstring{reviewText}{reviewText}}
+{\footnotesize\ttfamily \label{class_feedback_controller_a967dee40f2f45904605c52b3fff8de0d} 
+TMP\+\_\+\+Input\+Field Feedback\+Controller.\+review\+Text}
+
+
+
+\mbox{\hyperlink{_feed_back_controller_8cs_source}{Feed\+Back\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_feed_back_controller_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\+Controller/\mbox{\hyperlink{_feed_back_controller_8cs}{Feed\+Back\+Controller.\+cs}}\end{DoxyCompactItemize}

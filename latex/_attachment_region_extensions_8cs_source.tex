@@ -1,0 +1,123 @@
+\doxysection{Attachment\+Region\+Extensions.\+cs}
+\hypertarget{_attachment_region_extensions_8cs_source}{}\label{_attachment_region_extensions_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Utility/AttachmentRegionExtensions.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Utility/AttachmentRegionExtensions.cs}}
+\mbox{\hyperlink{_attachment_region_extensions_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_attachment_tools}{Spine.Unity.AttachmentTools}}\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }AttachmentRegionExtensions\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00036}00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Runtime\ RegionAttachments}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ RegionAttachment\ ToRegionAttachment\ (\textcolor{keyword}{this}\ Sprite\ sprite,\ Material\ material,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sprite.ToRegionAttachment(material.ToSpineAtlasPage(),\ rotation);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ RegionAttachment\ ToRegionAttachment\ (\textcolor{keyword}{this}\ Sprite\ sprite,\ AtlasPage\ page,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sprite\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}sprite"{}});}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (page\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}page"{}});}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ AtlasRegion\ region\ =\ sprite.ToAtlasRegion(page);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ unitsPerPixel\ =\ 1f\ /\ sprite.pixelsPerUnit;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region.ToRegionAttachment(sprite.name,\ unitsPerPixel,\ rotation);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ RegionAttachment\ ToRegionAttachmentPMAClone\ (\textcolor{keyword}{this}\ Sprite\ sprite,\ Shader\ shader,\ TextureFormat\ textureFormat\ =\ AtlasUtilities.SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ AtlasUtilities.UseMipMaps,\ Material\ materialPropertySource\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}\ rotation\ =\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sprite\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}sprite"{}});}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shader\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}shader"{}});}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ AtlasRegion\ region\ =\ sprite.ToAtlasRegionPMAClone(shader,\ textureFormat,\ mipmaps,\ materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ unitsPerPixel\ =\ 1f\ /\ sprite.pixelsPerUnit;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region.ToRegionAttachment(sprite.name,\ unitsPerPixel,\ rotation);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ RegionAttachment\ ToRegionAttachmentPMAClone\ (\textcolor{keyword}{this}\ Sprite\ sprite,\ Material\ materialPropertySource,\ TextureFormat\ textureFormat\ =\ AtlasUtilities.SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ AtlasUtilities.UseMipMaps,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sprite.ToRegionAttachmentPMAClone(materialPropertySource.shader,\ textureFormat,\ mipmaps,\ materialPropertySource,\ rotation);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ RegionAttachment\ ToRegionAttachment\ (\textcolor{keyword}{this}\ AtlasRegion\ region,\ \textcolor{keywordtype}{string}\ attachmentName,\ \textcolor{keywordtype}{float}\ scale\ =\ 0.01f,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(attachmentName))\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentException(\textcolor{stringliteral}{"{}attachmentName\ can't\ be\ null\ or\ empty."{}},\ \textcolor{stringliteral}{"{}attachmentName"{}});}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (region\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}region"{}});}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (AtlasAttachmentLoader.cs)}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ RegionAttachment\ attachment\ =\ \textcolor{keyword}{new}\ RegionAttachment(attachmentName);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Region\ =\ region;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Path\ =\ region.name;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.ScaleX\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.ScaleY\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Rotation\ =\ rotation;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.R\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.G\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.B\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.A\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pass\ OriginalWidth\ and\ OriginalHeight\ because\ UpdateOffset\ uses\ it\ in\ its\ calculation.}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ TextureRegion\ textreRegion\ =\ attachment.Region;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ AtlasRegion\ atlasRegion\ =\ textreRegion\ as\ AtlasRegion;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ originalWidth\ =\ atlasRegion\ !=\ \textcolor{keyword}{null}\ ?\ atlasRegion.originalWidth\ :\ textreRegion.width;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ originalHeight\ =\ atlasRegion\ !=\ \textcolor{keyword}{null}\ ?\ atlasRegion.originalHeight\ :\ textreRegion.height;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Width\ =\ originalWidth\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Height\ =\ originalHeight\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.SetColor(Color.white);}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ attachment.UpdateRegion();}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attachment;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetScale\ (\textcolor{keyword}{this}\ RegionAttachment\ regionAttachment,\ Vector2\ scale)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.ScaleX\ =\ scale.x;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.ScaleY\ =\ scale.y;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetScale\ (\textcolor{keyword}{this}\ RegionAttachment\ regionAttachment,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.ScaleX\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.ScaleY\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetPositionOffset\ (\textcolor{keyword}{this}\ RegionAttachment\ regionAttachment,\ Vector2\ offset)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.X\ =\ offset.x;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.Y\ =\ offset.y;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetPositionOffset\ (\textcolor{keyword}{this}\ RegionAttachment\ regionAttachment,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.X\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.Y\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetRotation\ (\textcolor{keyword}{this}\ RegionAttachment\ regionAttachment,\ \textcolor{keywordtype}{float}\ rotation)\ \{}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ regionAttachment.Rotation\ =\ rotation;}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00131}00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_attachment_region_extensions_8cs_source_l00133}00133\ \}}
+
+\end{DoxyCode}

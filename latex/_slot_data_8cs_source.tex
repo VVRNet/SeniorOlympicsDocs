@@ -1,0 +1,81 @@
+\doxysection{Slot\+Data.\+cs}
+\hypertarget{_slot_data_8cs_source}{}\label{_slot_data_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/SlotData.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/SlotData.cs}}
+\mbox{\hyperlink{_slot_data_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00033}\mbox{\hyperlink{class_spine_1_1_slot_data}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_slot_data}{SlotData}}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}\ index;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ boneData;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ r\ =\ 1,\ g\ =\ 1,\ b\ =\ 1,\ a\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ r2\ =\ 0,\ g2\ =\ 0,\ b2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ hasSecondColor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{string}\ attachmentName;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8}{BlendMode}}\ blendMode;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nonessential.}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ bool\ visible\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_slot_data_a4de0d7e679e9f1d72d56705bd4a7301c}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a4de0d7e679e9f1d72d56705bd4a7301c}{Index}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ index;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00049}\mbox{\hyperlink{class_spine_1_1_slot_data_ac5d0ab3762c4e4b8eeab0c6a99e25fc4}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_slot_data_ac5d0ab3762c4e4b8eeab0c6a99e25fc4}{Name}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ name;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_slot_data_ab093946febd10e7732f6302855a83695}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ boneData;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00052}\mbox{\hyperlink{class_spine_1_1_slot_data_a2e1c5bcc7ce7944977c3f91da96c9a34}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a2e1c5bcc7ce7944977c3f91da96c9a34}{R}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ r;\ \}\ \textcolor{keyword}{set}\ \{\ r\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00053}\mbox{\hyperlink{class_spine_1_1_slot_data_af772a76be2f03ed140fece881a948885}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_af772a76be2f03ed140fece881a948885}{G}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ g;\ \}\ \textcolor{keyword}{set}\ \{\ g\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00054}\mbox{\hyperlink{class_spine_1_1_slot_data_aede53f8e3a3e9e57686a43d68ec16445}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_aede53f8e3a3e9e57686a43d68ec16445}{B}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b;\ \}\ \textcolor{keyword}{set}\ \{\ b\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00055}\mbox{\hyperlink{class_spine_1_1_slot_data_a77bb6849d2d8b41a12e60eb2964b73f3}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a77bb6849d2d8b41a12e60eb2964b73f3}{A}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ a;\ \}\ \textcolor{keyword}{set}\ \{\ a\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00057}\mbox{\hyperlink{class_spine_1_1_slot_data_a23c16ec071fa82db85a59534d44d7d5d}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a23c16ec071fa82db85a59534d44d7d5d}{R2}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ r2;\ \}\ \textcolor{keyword}{set}\ \{\ r2\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00058}\mbox{\hyperlink{class_spine_1_1_slot_data_a627aebd2cc1707ba6569f16683c44306}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a627aebd2cc1707ba6569f16683c44306}{G2}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ g2;\ \}\ \textcolor{keyword}{set}\ \{\ g2\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00059}\mbox{\hyperlink{class_spine_1_1_slot_data_a9222bc5e1a08c90dcc968f3912c8f5d9}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a9222bc5e1a08c90dcc968f3912c8f5d9}{B2}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b2;\ \}\ \textcolor{keyword}{set}\ \{\ b2\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_slot_data_a5b79845f197d7761e9df798dabaa38aa}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a5b79845f197d7761e9df798dabaa38aa}{HasSecondColor}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ hasSecondColor;\ \}\ \textcolor{keyword}{set}\ \{\ hasSecondColor\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00063}\mbox{\hyperlink{class_spine_1_1_slot_data_a6f79fccb80df42fbc9bbd921aed8f934}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{class_spine_1_1_slot_data_a6f79fccb80df42fbc9bbd921aed8f934}{AttachmentName}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ attachmentName;\ \}\ \textcolor{keyword}{set}\ \{\ attachmentName\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00065}\mbox{\hyperlink{class_spine_1_1_slot_data_ac6ff6eeea98c985fc374205263b87530}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8}{BlendMode}}\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8}{BlendMode}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ blendMode;\ \}\ \textcolor{keyword}{set}\ \{\ blendMode\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00067}\mbox{\hyperlink{class_spine_1_1_slot_data_a7e7195a4e2768da4456221ae32e42961}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_slot_data_a7e7195a4e2768da4456221ae32e42961}{SlotData}}\ (\textcolor{keywordtype}{int}\ index,\ String\ name,\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ boneData)\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}index\ must\ be\ >=\ 0."{}},\ \textcolor{stringliteral}{"{}index"{}});}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}name"{}},\ \textcolor{stringliteral}{"{}name\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boneData\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}boneData"{}},\ \textcolor{stringliteral}{"{}boneData\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ this.index\ =\ index;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ this.boneData\ =\ boneData;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00076}\mbox{\hyperlink{class_spine_1_1_slot_data_ab71bc5c519aeb6d859a172b1b042261c}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_slot_data_ab71bc5c519aeb6d859a172b1b042261c}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_data_8cs_source_l00080}00080\ \}}
+
+\end{DoxyCode}

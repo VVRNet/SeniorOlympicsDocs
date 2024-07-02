@@ -1,0 +1,50 @@
+\doxysection{Lean\+Language\+Name\+Attribute.\+cs}
+\hypertarget{_lean_language_name_attribute_8cs_source}{}\label{_lean_language_name_attribute_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/LeanLanguageNameAttribute.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/LeanLanguageNameAttribute.cs}}
+\mbox{\hyperlink{_lean_language_name_attribute_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_localization}{Lean.Localization}}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00006}\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_language_name_attribute}{00006}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_language_name_attribute}{LeanLanguageNameAttribute}}\ :\ PropertyAttribute}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00008}00008\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00011}00011\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_lean_1_1_localization}{Lean.Localization}}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00016}00016\ \ \ \ \ [CustomPropertyDrawer(typeof(LeanLanguageNameAttribute))]}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }LeanLanguageNameDrawer\ :\ PropertyDrawer}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnGUI(Rect\ position,\ SerializedProperty\ property,\ GUIContent\ label)}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ var\ rectA\ =\ position;\ rectA.xMax\ -\/=\ 37.0f;}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ var\ rectB\ =\ position;\ rectB.xMin\ =\ rectB.xMax\ -\/\ 35.0f;}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.PropertyField(rectA,\ property,\ label);}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GUI.Button(rectB,\ \textcolor{stringliteral}{"{}List"{}})\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ menu\ =\ \textcolor{keyword}{new}\ GenericMenu();}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ languageName\ \textcolor{keywordflow}{in}\ LeanLocalization.CurrentLanguages.Keys)}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddItem(\textcolor{keyword}{new}\ GUIContent(languageName),\ property.stringValue\ ==\ languageName,\ ()\ =>\ \{\ property.stringValue\ =\ languageName;\ property.serializedObject.ApplyModifiedProperties();\ \});}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (menu.GetItemCount()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddDisabledItem(\textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Your\ scene\ doesn't\ contain\ any\ languages."{}}));}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.ShowAsContext();}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_language_name_attribute_8cs_source_l00045}00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

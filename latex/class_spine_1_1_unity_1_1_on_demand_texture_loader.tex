@@ -1,0 +1,427 @@
+\doxysection{Spine.\+Unity.\+On\+Demand\+Texture\+Loader 클래스 참조}
+\hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader}{}\label{class_spine_1_1_unity_1_1_on_demand_texture_loader}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+
+
+Spine.\+Unity.\+On\+Demand\+Texture\+Loader에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Unity.\+On\+Demand\+Texture\+Loader에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a93ee32d7c0ca23316749a14f52c057b4}{Get\+Placeholder\+Texture\+Name}} (string original\+Texture\+Name)
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a9febac905b286e57b1227e459f074bcb}{Assign\+Placeholder\+Textures}} (out IEnumerable$<$ Material $>$ modified\+Materials)
+\begin{DoxyCompactList}\small\item\em Assigns previously setup placeholder textures at each Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a6874af8bd5fbaa197edf182eff0c3a8e}{Has\+Placeholder\+Textures\+Assigned}} (out List$<$ Material $>$ placeholder\+Materials)
+\begin{DoxyCompactList}\small\item\em Returns whether any placeholder textures are assigned at the Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab2392bcd15c4818fce89b3c49b4921d3}{Has\+Null\+Main\+Textures\+Assigned}} (out List$<$ Material $>$ null\+Texture\+Materials)
+\begin{DoxyCompactList}\small\item\em Returns whether any main texture is null at a Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a81dfd79c6d283ee618862813d2e13202}{Assign\+Target\+Textures}} (out IEnumerable$<$ Material $>$ modified\+Materials)
+\begin{DoxyCompactList}\small\item\em Assigns previously setup target textures at each Material where placeholder textures are setup. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_aba59049e983781eadbc5aea5c1fc361c}{Begin\+Custom\+Texture\+Loading}} ()
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a7c2b866f91a72d5595d3400852d75b51}{End\+Custom\+Texture\+Loading}} ()
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a71da37da864333c1369f9559e66072da}{Has\+Placeholder\+Assigned}} (Material material)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab653fc8f942f3dce4a0f91b680ef0aac}{Request\+Load\+Material\+Textures}} (Material material, ref Material override\+Material)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_af9fec0ffe0465243d170986b8c7769ba}{Request\+Load\+Texture}} (Texture placeholder\+Texture, ref Texture replacement\+Texture, System.\+Action$<$ Texture $>$ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}{on\+Texture\+Loaded}}=null)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_af8bc79258ac277c9e9f161c052c468a7}{Clear}} (bool clear\+Atlas\+Asset=false)
+\item 
+delegate void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} (\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader}{On\+Demand\+Texture\+Loader}} loader, Material material, int texture\+Index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a30a2e9fca10e7497f3b82bf88bd6d71e}{atlas\+Asset}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a773fe57cb3b72658969173c72c7955a2}{On\+Texture\+Requested}} (Material material, int texture\+Index)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad8cae0dfff299ea186b02b4bbbed11c0}{On\+Texture\+Loaded}} (Material material, int texture\+Index)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a718b502b1087dae32e365f1bf2cc9990}{On\+Texture\+Unloaded}} (Material material, int texture\+Index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{이벤트}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90}{on\+Texture\+Requested}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}{on\+Texture\+Loaded}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570}{on\+Texture\+Unloaded}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a79d79da8c81cb94c54bcb2530b17391c}{Texture\+Requested}}\hspace{0.3cm}{\ttfamily  \mbox{[}add, remove\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a0c8db3dcd30bb39c4b20a31eca88c2ee}{Texture\+Loaded}}\hspace{0.3cm}{\ttfamily  \mbox{[}add, remove\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a51f91d4eec4b5c4dcee9a7232bfbdeef}{Texture\+Unloaded}}\hspace{0.3cm}{\ttfamily  \mbox{[}add, remove\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a9febac905b286e57b1227e459f074bcb}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!AssignPlaceholderTextures@{AssignPlaceholderTextures}}
+\index{AssignPlaceholderTextures@{AssignPlaceholderTextures}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{AssignPlaceholderTextures()}{AssignPlaceholderTextures()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a9febac905b286e57b1227e459f074bcb} 
+bool Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Assign\+Placeholder\+Textures (\begin{DoxyParamCaption}\item[{out IEnumerable$<$ Material $>$}]{modified\+Materials}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Assigns previously setup placeholder textures at each Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}. 
+
+\begin{DoxyReturn}{반환값}
+True on success, false if the placeholder texture could not be assigned at any of the \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}\textquotesingle{}s materials.
+\end{DoxyReturn}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a81dfd79c6d283ee618862813d2e13202}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!AssignTargetTextures@{AssignTargetTextures}}
+\index{AssignTargetTextures@{AssignTargetTextures}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{AssignTargetTextures()}{AssignTargetTextures()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a81dfd79c6d283ee618862813d2e13202} 
+bool Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Assign\+Target\+Textures (\begin{DoxyParamCaption}\item[{out IEnumerable$<$ Material $>$}]{modified\+Materials}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Assigns previously setup target textures at each Material where placeholder textures are setup. 
+
+\begin{DoxyReturn}{반환값}
+True on success, false if the target texture could not be assigned at any of the \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}\textquotesingle{}s materials.
+\end{DoxyReturn}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_aba59049e983781eadbc5aea5c1fc361c}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!BeginCustomTextureLoading@{BeginCustomTextureLoading}}
+\index{BeginCustomTextureLoading@{BeginCustomTextureLoading}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{BeginCustomTextureLoading()}{BeginCustomTextureLoading()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_aba59049e983781eadbc5aea5c1fc361c} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Begin\+Custom\+Texture\+Loading (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader_aba59049e983781eadbc5aea5c1fc361c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_af8bc79258ac277c9e9f161c052c468a7}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!Clear@{Clear}}
+\index{Clear@{Clear}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_af8bc79258ac277c9e9f161c052c468a7} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Clear (\begin{DoxyParamCaption}\item[{bool}]{clear\+Atlas\+Asset}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a7c2b866f91a72d5595d3400852d75b51}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!EndCustomTextureLoading@{EndCustomTextureLoading}}
+\index{EndCustomTextureLoading@{EndCustomTextureLoading}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{EndCustomTextureLoading()}{EndCustomTextureLoading()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a7c2b866f91a72d5595d3400852d75b51} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+End\+Custom\+Texture\+Loading (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader_a7c2b866f91a72d5595d3400852d75b51_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a93ee32d7c0ca23316749a14f52c057b4}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!GetPlaceholderTextureName@{GetPlaceholderTextureName}}
+\index{GetPlaceholderTextureName@{GetPlaceholderTextureName}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{GetPlaceholderTextureName()}{GetPlaceholderTextureName()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a93ee32d7c0ca23316749a14f52c057b4} 
+string Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Get\+Placeholder\+Texture\+Name (\begin{DoxyParamCaption}\item[{string}]{original\+Texture\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+\begin{DoxyParams}{매개변수}
+{\em original\+Texture\+Name} & Original texture name without extension.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The placeholder texture\textquotesingle{}s name for a given original target texture name.
+\end{DoxyReturn}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader_a93ee32d7c0ca23316749a14f52c057b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab2392bcd15c4818fce89b3c49b4921d3}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!HasNullMainTexturesAssigned@{HasNullMainTexturesAssigned}}
+\index{HasNullMainTexturesAssigned@{HasNullMainTexturesAssigned}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{HasNullMainTexturesAssigned()}{HasNullMainTexturesAssigned()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab2392bcd15c4818fce89b3c49b4921d3} 
+virtual bool Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Has\+Null\+Main\+Textures\+Assigned (\begin{DoxyParamCaption}\item[{out List$<$ Material $>$}]{null\+Texture\+Materials}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns whether any main texture is null at a Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em null\+Texture\+Materials} & A newly created list of materials which has a null main texture assigned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+True, if any null main texture is assigned at a Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}.
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00060}{60}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ nullTextureMaterials\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a30a2e9fca10e7497f3b82bf88bd6d71e}{atlasAsset}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ anyNullTexture\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Material\ material\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a30a2e9fca10e7497f3b82bf88bd6d71e}{atlasAsset}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_atlas_asset_base_a1b47211990928486f1924ab64f9933e9}{Materials}})\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.mainTexture\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anyNullTexture\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nullTextureMaterials\ ==\ \textcolor{keyword}{null})\ nullTextureMaterials\ =\ \textcolor{keyword}{new}\ List<Material>();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullTextureMaterials.Add(material);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ anyNullTexture;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a71da37da864333c1369f9559e66072da}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!HasPlaceholderAssigned@{HasPlaceholderAssigned}}
+\index{HasPlaceholderAssigned@{HasPlaceholderAssigned}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{HasPlaceholderAssigned()}{HasPlaceholderAssigned()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a71da37da864333c1369f9559e66072da} 
+bool Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Has\+Placeholder\+Assigned (\begin{DoxyParamCaption}\item[{Material}]{material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a6874af8bd5fbaa197edf182eff0c3a8e}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!HasPlaceholderTexturesAssigned@{HasPlaceholderTexturesAssigned}}
+\index{HasPlaceholderTexturesAssigned@{HasPlaceholderTexturesAssigned}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{HasPlaceholderTexturesAssigned()}{HasPlaceholderTexturesAssigned()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a6874af8bd5fbaa197edf182eff0c3a8e} 
+bool Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Has\+Placeholder\+Textures\+Assigned (\begin{DoxyParamCaption}\item[{out List$<$ Material $>$}]{placeholder\+Materials}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Returns whether any placeholder textures are assigned at the Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em placeholder\+Materials} & A newly created list of materials which has a placeholder texture assigned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+True, if any placeholder texture is assigned at a Material of the associated \doxylink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}.
+\end{DoxyReturn}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad8cae0dfff299ea186b02b4bbbed11c0}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!OnTextureLoaded@{OnTextureLoaded}}
+\index{OnTextureLoaded@{OnTextureLoaded}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{OnTextureLoaded()}{OnTextureLoaded()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad8cae0dfff299ea186b02b4bbbed11c0} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+On\+Texture\+Loaded (\begin{DoxyParamCaption}\item[{Material}]{material}{, }\item[{int}]{texture\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00111}{111}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}{onTextureLoaded}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}{onTextureLoaded}}(\textcolor{keyword}{this},\ material,\ textureIndex);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a773fe57cb3b72658969173c72c7955a2}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!OnTextureRequested@{OnTextureRequested}}
+\index{OnTextureRequested@{OnTextureRequested}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{OnTextureRequested()}{OnTextureRequested()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a773fe57cb3b72658969173c72c7955a2} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+On\+Texture\+Requested (\begin{DoxyParamCaption}\item[{Material}]{material}{, }\item[{int}]{texture\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00107}{107}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90}{onTextureRequested}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90}{onTextureRequested}}(\textcolor{keyword}{this},\ material,\ textureIndex);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a718b502b1087dae32e365f1bf2cc9990}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!OnTextureUnloaded@{OnTextureUnloaded}}
+\index{OnTextureUnloaded@{OnTextureUnloaded}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{OnTextureUnloaded()}{OnTextureUnloaded()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a718b502b1087dae32e365f1bf2cc9990} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+On\+Texture\+Unloaded (\begin{DoxyParamCaption}\item[{Material}]{material}{, }\item[{int}]{texture\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00115}{115}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570}{onTextureUnloaded}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570}{onTextureUnloaded}}(\textcolor{keyword}{this},\ material,\ textureIndex);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab653fc8f942f3dce4a0f91b680ef0aac}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!RequestLoadMaterialTextures@{RequestLoadMaterialTextures}}
+\index{RequestLoadMaterialTextures@{RequestLoadMaterialTextures}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{RequestLoadMaterialTextures()}{RequestLoadMaterialTextures()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab653fc8f942f3dce4a0f91b680ef0aac} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Request\+Load\+Material\+Textures (\begin{DoxyParamCaption}\item[{Material}]{material}{, }\item[{ref Material}]{override\+Material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader_ab653fc8f942f3dce4a0f91b680ef0aac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_af9fec0ffe0465243d170986b8c7769ba}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!RequestLoadTexture@{RequestLoadTexture}}
+\index{RequestLoadTexture@{RequestLoadTexture}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{RequestLoadTexture()}{RequestLoadTexture()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_af9fec0ffe0465243d170986b8c7769ba} 
+void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Request\+Load\+Texture (\begin{DoxyParamCaption}\item[{Texture}]{placeholder\+Texture}{, }\item[{ref Texture}]{replacement\+Texture}{, }\item[{System.\+Action$<$ Texture $>$}]{on\+Texture\+Loaded}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_on_demand_texture_loader_af9fec0ffe0465243d170986b8c7769ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!TextureLoadDelegate@{TextureLoadDelegate}}
+\index{TextureLoadDelegate@{TextureLoadDelegate}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{TextureLoadDelegate()}{TextureLoadDelegate()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89} 
+delegate void Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Texture\+Load\+Delegate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader}{On\+Demand\+Texture\+Loader}}}]{loader}{, }\item[{Material}]{material}{, }\item[{int}]{texture\+Index}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a30a2e9fca10e7497f3b82bf88bd6d71e}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!atlasAsset@{atlasAsset}}
+\index{atlasAsset@{atlasAsset}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{atlasAsset}{atlasAsset}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a30a2e9fca10e7497f3b82bf88bd6d71e} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_atlas_asset_base}{Atlas\+Asset\+Base}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+atlas\+Asset}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{이벤트 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!onTextureLoaded@{onTextureLoaded}}
+\index{onTextureLoaded@{onTextureLoaded}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{onTextureLoaded}{onTextureLoaded}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+on\+Texture\+Loaded\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00091}{91}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!onTextureRequested@{onTextureRequested}}
+\index{onTextureRequested@{onTextureRequested}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{onTextureRequested}{onTextureRequested}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+on\+Texture\+Requested\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00090}{90}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!onTextureUnloaded@{onTextureUnloaded}}
+\index{onTextureUnloaded@{onTextureUnloaded}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{onTextureUnloaded}{onTextureUnloaded}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+on\+Texture\+Unloaded\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00092}{92}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a0c8db3dcd30bb39c4b20a31eca88c2ee}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!TextureLoaded@{TextureLoaded}}
+\index{TextureLoaded@{TextureLoaded}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{TextureLoaded}{TextureLoaded}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a0c8db3dcd30bb39c4b20a31eca88c2ee} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Texture\+Loaded\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00098}{98}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ add\ \{\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}{onTextureLoaded}}\ +=\ value;\ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ \{\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a1b9c23ca5d734ed07ae305ec17e68c48}{onTextureLoaded}}\ -\/=\ value;\ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a79d79da8c81cb94c54bcb2530b17391c}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!TextureRequested@{TextureRequested}}
+\index{TextureRequested@{TextureRequested}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{TextureRequested}{TextureRequested}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a79d79da8c81cb94c54bcb2530b17391c} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Texture\+Requested\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00094}{94}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ add\ \{\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90}{onTextureRequested}}\ +=\ value;\ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ \{\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_adb36bf768a16ca39c414211217584c90}{onTextureRequested}}\ -\/=\ value;\ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_unity_1_1_on_demand_texture_loader_a51f91d4eec4b5c4dcee9a7232bfbdeef}\index{Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}!TextureUnloaded@{TextureUnloaded}}
+\index{TextureUnloaded@{TextureUnloaded}!Spine.Unity.OnDemandTextureLoader@{Spine.Unity.OnDemandTextureLoader}}
+\doxysubsubsection{\texorpdfstring{TextureUnloaded}{TextureUnloaded}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_on_demand_texture_loader_a51f91d4eec4b5c4dcee9a7232bfbdeef} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_a340c1bdc95406bc094a63710f1597f89}{Texture\+Load\+Delegate}} Spine.\+Unity.\+On\+Demand\+Texture\+Loader.\+Texture\+Unloaded\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+\mbox{\hyperlink{_on_demand_texture_loader_8cs_source}{On\+Demand\+Texture\+Loader.\+cs}} 파일의 \mbox{\hyperlink{_on_demand_texture_loader_8cs_source_l00102}{102}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ add\ \{\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570}{onTextureUnloaded}}\ +=\ value;\ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ \{\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_on_demand_texture_loader_ad9bf37c10076117ca7a1eeea45e81570}{onTextureUnloaded}}\ -\/=\ value;\ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/unity/\+Asset Types/\mbox{\hyperlink{_on_demand_texture_loader_8cs}{On\+Demand\+Texture\+Loader.\+cs}}\end{DoxyCompactItemize}

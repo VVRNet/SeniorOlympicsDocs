@@ -1,0 +1,497 @@
+\doxysection{Json.\+cs}
+\hypertarget{_json_8cs_source}{}\label{_json_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Json.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Json.cs}}
+\mbox{\hyperlink{_json_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }Json\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ Deserialize\ (TextReader\ text)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder}{SharpJson.JsonDecoder}}\ parser\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_sharp_json}{SharpJson}}.\mbox{\hyperlink{class_sharp_json_1_1_json_decoder}{JsonDecoder}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ parser.parseNumbersAsFloat\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parser.\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a6300221209a5b9cccd906817263a2e3c}{Decode}}(text.ReadToEnd());}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00073}\mbox{\hyperlink{namespace_sharp_json}{00073}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_sharp_json}{SharpJson}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00074}\mbox{\hyperlink{class_sharp_json_1_1_lexer}{00074}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00075}\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58abbb93ef26e3c101ff11cdd21cab08a94}{Null}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af827cf462f62848df37c5e1e94a4da74}{True}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58af8320b26d30ab433c5a54546d21f414c}{False}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3ccf74d463f8895cef06727cb9709d83}{Colon}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a58be47db9455679e6a44df2eff9c9fa6}{Comma}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a27118326006d3829667a400ad23d5d98}{String}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ab2ee912b91d69b435159c7c3f6df7f5f}{Number}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a3f3695351a8e288b576adc80861671f2}{CurlyOpen}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58acce4b95158a1ed543a1c0041cac9cdd6}{CurlyClose}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58a142065b5bb20b47e2f118abdf0498501}{SquaredOpen}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58ae09dc50890bbc0ce8c430a239ebaf5c9}{SquaredClose}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00090}\mbox{\hyperlink{class_sharp_json_1_1_lexer_a1e5b09411903f3ddd734c4f933281f7e}{00090}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a1e5b09411903f3ddd734c4f933281f7e}{hasError}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !success;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00096}\mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{00096}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{lineNumber}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{set};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00101}\mbox{\hyperlink{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826}{00101}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826}{parseNumbersAsFloat}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}[]\ json;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}[]\ stringBuffer\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[4096];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00111}\mbox{\hyperlink{class_sharp_json_1_1_lexer_af0a3476760e9d08c7f436402c5f6b564}{00111}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_af0a3476760e9d08c7f436402c5f6b564}{Lexer}}\ (\textcolor{keywordtype}{string}\ text)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949}{Reset}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ json\ =\ text.ToCharArray();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_aab88b3c3d476d76b3fd0bd001241e826}{parseNumbersAsFloat}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00118}\mbox{\hyperlink{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949}{00118}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ada9248641a3edebfa189dbe6bfd31949}{Reset}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{lineNumber}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00124}\mbox{\hyperlink{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644}{00124}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644}{ParseString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ builder\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ json[index++];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ failed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ complete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!complete\ \&\&\ !failed)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ json.Length)}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ json[index++];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'"{}'})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complete\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ json.Length)}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ json[index++];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (c)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'"{}'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'"{}'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'b'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)b'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)f'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'n'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'r'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)r'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'u'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ remainingLength\ =\ json.Length\ -\/\ index;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingLength\ >=\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ hex\ =\ \textcolor{keyword}{new}\ string(json,\ index,\ 4);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ XXX:\ handle\ UTF}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ (char)Convert.ToInt32(hex,\ 16);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ 4\ chars}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ failed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringBuffer[idx++]\ =\ c;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idx\ >=\ stringBuffer.Length)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (builder\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder.Append(stringBuffer,\ 0,\ idx);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!complete)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ success\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (builder\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ builder.ToString();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ string(stringBuffer,\ 0,\ idx);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetNumberString\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lastIndex\ =\ GetLastIndexOfNumber(index);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ charLength\ =\ (lastIndex\ -\/\ index)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ result\ =\ \textcolor{keyword}{new}\ string(json,\ index,\ charLength);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ lastIndex\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00227}\mbox{\hyperlink{class_sharp_json_1_1_lexer_aea207308302033e727e342c8deb0fe5b}{00227}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_aea207308302033e727e342c8deb0fe5b}{ParseFloatNumber}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ number;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ GetNumberString();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{float}.TryParse(str,\ NumberStyles.Float,\ CultureInfo.InvariantCulture,\ out\ number))}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ number;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00237}\mbox{\hyperlink{class_sharp_json_1_1_lexer_a17df5147901bf78b35e4768ae98a03da}{00237}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a17df5147901bf78b35e4768ae98a03da}{ParseDoubleNumber}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ number;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ GetNumberString();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{double}.TryParse(str,\ NumberStyles.Any,\ CultureInfo.InvariantCulture,\ out\ number))}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ number;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ GetLastIndexOfNumber\ (\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lastIndex;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (lastIndex\ =\ index;\ lastIndex\ <\ json.Length;\ lastIndex++)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ ch\ =\ json[lastIndex];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ch\ <\ \textcolor{charliteral}{'0'}\ ||\ ch\ >\ \textcolor{charliteral}{'9'})\ \&\&\ ch\ !=\ \textcolor{charliteral}{'+'}\ \&\&\ ch\ !=\ \textcolor{charliteral}{'-\/'}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ ch\ !=\ \textcolor{charliteral}{'.'}\ \&\&\ ch\ !=\ \textcolor{charliteral}{'e'}\ \&\&\ ch\ !=\ \textcolor{charliteral}{'E'})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lastIndex\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SkipWhiteSpaces\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ index\ <\ json.Length;\ index++)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ ch\ =\ json[index];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ch\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{lineNumber}}++;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{char}.IsWhiteSpace(json[index]))}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00273}\mbox{\hyperlink{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}{00273}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}{LookAhead}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ savedIndex\ =\ index;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}(json,\ ref\ savedIndex);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00280}\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{00280}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ SkipWhiteSpaces();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}(json,\ ref\ index);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}\ (\textcolor{keywordtype}{char}[]\ json,\ ref\ \textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ json.Length)}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.None;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ json[index++];}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (c)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\{'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.CurlyOpen;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\}'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.CurlyClose;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'['}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.SquaredOpen;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{']'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.SquaredClose;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{','}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.Comma;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'"{}'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.String;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.Number;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{':'}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.Colon;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ index-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ remainingLength\ =\ json.Length\ -\/\ index;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ false}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingLength\ >=\ 5)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (json[index]\ ==\ \textcolor{charliteral}{'f'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 1]\ ==\ \textcolor{charliteral}{'a'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 2]\ ==\ \textcolor{charliteral}{'l'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 3]\ ==\ \textcolor{charliteral}{'s'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 4]\ ==\ \textcolor{charliteral}{'e'})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ 5;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.False;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ true}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingLength\ >=\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (json[index]\ ==\ \textcolor{charliteral}{'t'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 1]\ ==\ \textcolor{charliteral}{'r'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 2]\ ==\ \textcolor{charliteral}{'u'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 3]\ ==\ \textcolor{charliteral}{'e'})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.True;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ null}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingLength\ >=\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (json[index]\ ==\ \textcolor{charliteral}{'n'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 1]\ ==\ \textcolor{charliteral}{'u'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 2]\ ==\ \textcolor{charliteral}{'l'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json[index\ +\ 3]\ ==\ \textcolor{charliteral}{'l'})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.Null;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.None;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00360}00360\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00362}\mbox{\hyperlink{class_sharp_json_1_1_json_decoder}{00362}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sharp_json_1_1_json_decoder}{JsonDecoder}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00363}\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{00363}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{set};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00368}\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a208fdbfb46f9388afa116af4ae4248f3}{00368}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a208fdbfb46f9388afa116af4ae4248f3}{parseNumbersAsFloat}}\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}\ lexer;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00374}00374\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00375}\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_aaac72c05f74bd408ae48a58d3914fd99}{00375}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_aaac72c05f74bd408ae48a58d3914fd99}{JsonDecoder}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a208fdbfb46f9388afa116af4ae4248f3}{parseNumbersAsFloat}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00380}\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a6300221209a5b9cccd906817263a2e3c}{00380}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{object}\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a6300221209a5b9cccd906817263a2e3c}{Decode}}\ (\textcolor{keywordtype}{string}\ text)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ lexer\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}(text);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ lexer.parseNumbersAsFloat\ =\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a208fdbfb46f9388afa116af4ae4248f3}{parseNumbersAsFloat}};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ParseValue();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00389}\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_aac6bdb9891f963e5a09a4820dc0948a1}{00389}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_aac6bdb9891f963e5a09a4820dc0948a1}{DecodeText}}\ (\textcolor{keywordtype}{string}\ text)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder}{JsonDecoder}}\ builder\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_aaac72c05f74bd408ae48a58d3914fd99}{JsonDecoder}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ builder.\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a6300221209a5b9cccd906817263a2e3c}{Decode}}(text);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ IDictionary<string,\ object>\ ParseObject\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ Dictionary<string,\ object>\ table\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ object>();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Lexer.Token}}\ token\ =\ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}{LookAhead}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (token)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}.\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.None:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TriggerError(\textcolor{stringliteral}{"{}Invalid\ token"{}});}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}.\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.Comma:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}.\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.CurlyClose:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ table;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ name}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ name\ =\ EvalLexer(lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644}{ParseString}}());}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ :}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ !=\ \mbox{\hyperlink{class_sharp_json_1_1_lexer}{Lexer}}.\mbox{\hyperlink{class_sharp_json_1_1_lexer_ae463097c3b4e43cb4d1ab1a0322a8b58}{Token}}.Colon)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TriggerError(\textcolor{stringliteral}{"{}Invalid\ token;\ expected\ ':'"{}});}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ value}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ value\ =\ ParseValue();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[name]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00438}00438\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//return\ null;\ //\ Unreachable\ code}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ IList<object>\ ParseArray\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ List<object>\ array\ =\ \textcolor{keyword}{new}\ List<object>();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lexer.Token\ token\ =\ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}{LookAhead}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (token)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.None:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TriggerError(\textcolor{stringliteral}{"{}Invalid\ token"{}});}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.Comma:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.SquaredClose:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ array;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ value\ =\ ParseValue();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ array.Add(value);}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//return\ null;\ //\ Unreachable\ code}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ ParseValue\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a220de50f8092ba08305379cf8bb38363}{LookAhead}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.String:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ EvalLexer(lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a6b4182a915ee2fd3cfb2ed415dd9b644}{ParseString}}());}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.Number:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sharp_json_1_1_json_decoder_a208fdbfb46f9388afa116af4ae4248f3}{parseNumbersAsFloat}})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ EvalLexer(lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_aea207308302033e727e342c8deb0fe5b}{ParseFloatNumber}}());}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ EvalLexer(lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a17df5147901bf78b35e4768ae98a03da}{ParseDoubleNumber}}());}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.CurlyOpen:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ParseObject();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.SquaredOpen:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ParseArray();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.True:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.False:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.Null:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a2dafe2e9f3aa19f29e262a07ce597530}{NextToken}}();}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Lexer.Token.None:}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ TriggerError(\textcolor{stringliteral}{"{}Unable\ to\ parse\ value"{}});}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00503}00503\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00505}00505\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TriggerError\ (\textcolor{keywordtype}{string}\ message)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sharp_json_1_1_json_decoder_ac1efc464e106bfbb15bde085e46f5a19}{errorMessage}}\ =\ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}Error:\ '\{0\}'\ at\ line\ \{1\}"{}},}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message,\ lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_adcded453f7c16ba06a59f57e4d8eba9c}{lineNumber}});}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00508}00508\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00509}00509\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00510}00510\ \ \ \ \ \ \ \ \ T\ EvalLexer<T>\ (T\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lexer.\mbox{\hyperlink{class_sharp_json_1_1_lexer_a1e5b09411903f3ddd734c4f933281f7e}{hasError}})}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TriggerError(\textcolor{stringliteral}{"{}Lexical\ error\ ocurred"{}});}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00513}00513\ }
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00516}00516\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_json_8cs_source_l00517}00517\ \}}
+
+\end{DoxyCode}

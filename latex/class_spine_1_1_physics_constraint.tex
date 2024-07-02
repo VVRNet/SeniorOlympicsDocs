@@ -1,0 +1,697 @@
+\doxysection{Spine.\+Physics\+Constraint 클래스 참조}
+\hypertarget{class_spine_1_1_physics_constraint}{}\label{class_spine_1_1_physics_constraint}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+
+
+Stores the current pose for a physics constraint. A physics constraint applies physics to bones.  
+
+
+
+
+Spine.\+Physics\+Constraint에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_physics_constraint__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Physics\+Constraint에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_physics_constraint__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_physics_constraint_a7b7c3a6953c71b566d7d2c0e36998733}{Physics\+Constraint}} (\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{Physics\+Constraint\+Data}} data, \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton)
+\item 
+\mbox{\hyperlink{class_spine_1_1_physics_constraint_a8c529a3ccac5a5008ab5072de8648f7b}{Physics\+Constraint}} (\mbox{\hyperlink{class_spine_1_1_physics_constraint}{Physics\+Constraint}} constraint, \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535}{Reset}} ()
+\item 
+void \mbox{\hyperlink{class_spine_1_1_physics_constraint_af3d2b3cb132ded8dc5960ca67b028b58}{Set\+To\+Setup\+Pose}} ()
+\item 
+void \mbox{\hyperlink{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4}{Translate}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Translates the physics constraint so next \doxylink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{Update(\+Physics)} forces are applied as if the bone moved an additional amount in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_physics_constraint_aff3041f2590852e2556b276c0e825ac8}{Rotate}} (float x, float y, float degrees)
+\begin{DoxyCompactList}\small\item\em Rotates the physics constraint so next \doxylink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{Update(\+Physics)} forces are applied as if the bone rotated around the specified point in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{Update}} (\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}} physics)
+\begin{DoxyCompactList}\small\item\em Applies the constraint to the constrained bones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{Physics\+Constraint\+Data}} \mbox{\hyperlink{class_spine_1_1_physics_constraint_a38bd121f0a05f81d3193fb95a6aa6489}{get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em The physics constraint\textquotesingle{}s setup pose data. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_spine_1_1_physics_constraint_a3a39c3af7b9ab656a793cd601e7b42c8}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} \mbox{\hyperlink{class_spine_1_1_physics_constraint_a14e1451ebe9830af02c38123bd09bc34}{Bone}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The bone constrained by this physics constraint. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_a36e2e3818c51d56be1fa8ac0b2f87aec}{Inertia}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_af73d12f2479276440757c650624ab9ed}{Strength}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_ad14f3d79191f7f13721cb15cbaf2cb83}{Damping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_af98ac7eaeb8d56a907dede77f76c081c}{Mass\+Inverse}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_a05dce6360995c63bde18ae0102381d0c}{Wind}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_a72840153fed2dcb696538adf0a5b1092}{Gravity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_spine_1_1_physics_constraint_afa66003dcc524095cdd283be0960bc94}{Mix}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A percentage (0-\/1) that controls the mix between the constrained and unconstrained poses. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_spine_1_1_physics_constraint_a454f03c3ae728e09a75491ee4e83cd32}{Active}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns false when this item won\textquotesingle{}t be updated by \doxylink{class_spine_1_1_skeleton_af50f9c4c4f3349cdb108e29d8f96f52e}{Skeleton.\+Update\+World\+Transform(\+Skeleton.\+Physics)} because a skin is required and the \doxylink{class_spine_1_1_skeleton_a4e21d4e0b6aa6dd23ae81cc6dfabfd8e}{active skin} does not contain this item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{Physics\+Constraint\+Data}} \mbox{\hyperlink{class_spine_1_1_physics_constraint_a2182f0fc6d9097d219edc891119d2064}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The physics constraint\textquotesingle{}s setup pose data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{interface_spine_1_1_i_updatable}{Spine.\+IUpdatable}}(으)로부터 상속된 속성}
+
+
+\doxysubsection{상세한 설명}
+Stores the current pose for a physics constraint. A physics constraint applies physics to bones. 
+
+See \href{http://esotericsoftware.com/spine-physics-constraints}{\texttt{ Physics constraints}} in the \doxylink{namespace_spine}{Spine} User Guide.
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_physics_constraint_a7b7c3a6953c71b566d7d2c0e36998733}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!PhysicsConstraint@{PhysicsConstraint}}
+\index{PhysicsConstraint@{PhysicsConstraint}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{PhysicsConstraint()}{PhysicsConstraint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a7b7c3a6953c71b566d7d2c0e36998733} 
+Spine.\+Physics\+Constraint.\+Physics\+Constraint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{Physics\+Constraint\+Data}}}]{data}{, }\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00058}{58}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ this.skeleton\ =\ skeleton;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}\ =\ skeleton.bones.Items[data.bone.index];}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ inertia\ =\ data.inertia;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ data.strength;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ damping\ =\ data.damping;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ massInverse\ =\ data.massInverse;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ wind\ =\ data.wind;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ gravity\ =\ data.gravity;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ data.mix;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a8c529a3ccac5a5008ab5072de8648f7b}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!PhysicsConstraint@{PhysicsConstraint}}
+\index{PhysicsConstraint@{PhysicsConstraint}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{PhysicsConstraint()}{PhysicsConstraint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a8c529a3ccac5a5008ab5072de8648f7b} 
+Spine.\+Physics\+Constraint.\+Physics\+Constraint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_physics_constraint}{Physics\+Constraint}}}]{constraint}{, }\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00076}{76}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{this}(constraint.data,\ skeleton)\ \{}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ inertia\ =\ constraint.inertia;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ constraint.strength;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ damping\ =\ constraint.damping;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ massInverse\ =\ constraint.massInverse;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ wind\ =\ constraint.wind;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ gravity\ =\ constraint.gravity;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ constraint.mix;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_physics_constraint_a38bd121f0a05f81d3193fb95a6aa6489}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!getData@{getData}}
+\index{getData@{getData}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a38bd121f0a05f81d3193fb95a6aa6489} 
+\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{Physics\+Constraint\+Data}} Spine.\+Physics\+Constraint.\+get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The physics constraint\textquotesingle{}s setup pose data. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00311}{311}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Reset@{Reset}}
+\index{Reset@{Reset}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535} 
+void Spine.\+Physics\+Constraint.\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00088}{88}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ remaining\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ lastTime\ =\ skeleton.time;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ reset\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ =\ 0;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ xVelocity\ =\ 0;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ =\ 0;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ yVelocity\ =\ 0;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ rotateOffset\ =\ 0;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ rotateVelocity\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ scaleOffset\ =\ 0;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ scaleVelocity\ =\ 0;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_physics_constraint_aff3041f2590852e2556b276c0e825ac8}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_aff3041f2590852e2556b276c0e825ac8} 
+void Spine.\+Physics\+Constraint.\+Rotate (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{degrees}{}\end{DoxyParamCaption})}
+
+
+
+Rotates the physics constraint so next \doxylink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{Update(\+Physics)} forces are applied as if the bone rotated around the specified point in world space. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00128}{128}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ degrees\ *\ MathUtils.DegRad,\ cos\ =\ (float)Math.Cos(r),\ sin\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ cx\ -\/\ x,\ dy\ =\ cy\ -\/\ y;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4}{Translate}}(dx\ *\ cos\ -\/\ dy\ *\ sin\ -\/\ dx,\ dx\ *\ sin\ +\ dy\ *\ cos\ -\/\ dy);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_physics_constraint_aff3041f2590852e2556b276c0e825ac8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_physics_constraint_af3d2b3cb132ded8dc5960ca67b028b58}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!SetToSetupPose@{SetToSetupPose}}
+\index{SetToSetupPose@{SetToSetupPose}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{SetToSetupPose()}{SetToSetupPose()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_af3d2b3cb132ded8dc5960ca67b028b58} 
+void Spine.\+Physics\+Constraint.\+Set\+To\+Setup\+Pose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00102}{102}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ PhysicsConstraintData\ data\ =\ this.data;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ inertia\ =\ data.inertia;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ data.strength;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ damping\ =\ data.damping;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ massInverse\ =\ data.massInverse;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ wind\ =\ data.wind;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ gravity\ =\ data.gravity;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ mix\ =\ data.mix;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a3a39c3af7b9ab656a793cd601e7b42c8}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!ToString@{ToString}}
+\index{ToString@{ToString}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a3a39c3af7b9ab656a793cd601e7b42c8} 
+override string Spine.\+Physics\+Constraint.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00318}{318}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Translate@{Translate}}
+\index{Translate@{Translate}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4} 
+void Spine.\+Physics\+Constraint.\+Translate (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Translates the physics constraint so next \doxylink{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}{Update(\+Physics)} forces are applied as if the bone moved an additional amount in world space. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00117}{117}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ ux\ -\/=\ x;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ uy\ -\/=\ y;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ cx\ -\/=\ x;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ cy\ -\/=\ y;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_physics_constraint_a39308aeecf2926d5829dcd5d00e73ee4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Update@{Update}}
+\index{Update@{Update}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497} 
+void Spine.\+Physics\+Constraint.\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}}]{physics}{}\end{DoxyParamCaption})}
+
+
+
+Applies the constraint to the constrained bones. 
+
+
+
+\mbox{\hyperlink{interface_spine_1_1_i_updatable_a96146796a111eb677afe30ca6495a81e}{Spine.\+IUpdatable}}를 구현.
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00135}{135}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mix\ =\ this.mix;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mix\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ x\ =\ data.x\ >\ 0,\ y\ =\ data.y\ >\ 0,\ rotateOrShearX\ =\ data.rotate\ >\ 0\ ||\ data.shearX\ >\ 0,\ scaleX\ =\ data.scaleX\ >\ 0;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a14e1451ebe9830af02c38123bd09bc34}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}\ =\ this.\mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.data.length;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (physics)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.None:}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Reset:}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_ab86db940855ebb04d35c89ab356ae535}{Reset}}();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.\mbox{\hyperlink{class_spine_1_1_skeleton_af8830164174fb0fc3b1f2c140ba5884b}{Update}};\ \textcolor{comment}{//\ Fall\ through.}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.\mbox{\hyperlink{class_spine_1_1_skeleton_af8830164174fb0fc3b1f2c140ba5884b}{Update}}:}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ Math.Max(skeleton.time\ -\/\ lastTime,\ 0);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ remaining\ +=\ delta;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastTime\ =\ skeleton.time;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bx\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldX,\ by\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldY;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reset)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reset\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ux\ =\ bx;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uy\ =\ by;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ this.remaining,\ i\ =\ inertia,\ q\ =\ data.limit\ *\ delta,\ t\ =\ data.step,\ f\ =\ skeleton.data.referenceScale;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ||\ y)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u\ =\ (ux\ -\/\ bx)\ *\ i;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ +=\ u\ >\ q\ ?\ q\ :\ u\ <\ -\/q\ ?\ -\/q\ :\ u;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ux\ =\ bx;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u\ =\ (uy\ -\/\ by)\ *\ i;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ +=\ u\ >\ q\ ?\ q\ :\ u\ <\ -\/q\ ?\ -\/q\ :\ u;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uy\ =\ by;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >=\ t)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\ =\ massInverse\ *\ t,\ e\ =\ strength,\ w\ =\ wind\ *\ f,\ g\ =\ (Bone.yDown\ ?\ -\/gravity\ :\ gravity)\ *\ f;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ d\ =\ (float)Math.Pow(damping,\ 60\ *\ t);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xVelocity\ +=\ (w\ -\/\ xOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ +=\ xVelocity\ *\ t;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xVelocity\ *=\ d;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yVelocity\ -\/=\ (g\ +\ yOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yOffset\ +=\ yVelocity\ *\ t;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yVelocity\ *=\ d;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ -\/=\ t;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (a\ >=\ t);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ bone.worldX\ +=\ xOffset\ *\ mix\ *\ data.x;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ bone.worldY\ +=\ yOffset\ *\ mix\ *\ data.y;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX\ ||\ scaleX)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ca\ =\ (float)Math.Atan2(\mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c,\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a),\ c,\ s,\ mr\ =\ 0;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ cx\ -\/\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldX,\ dy\ =\ cy\ -\/\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldY;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dx\ >\ q)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx\ =\ q;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dx\ <\ -\/q)}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx\ =\ -\/q;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dy\ >\ q)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dy\ =\ q;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dy\ <\ -\/q)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dy\ =\ -\/q;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mr\ =\ (data.rotate\ +\ data.shearX)\ *\ mix;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ (float)Math.Atan2(dy\ +\ ty,\ dx\ +\ tx)\ -\/\ ca\ -\/\ rotateOffset\ *\ mr;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateOffset\ +=\ (r\ -\/\ (float)Math.Ceiling(r\ *\ MathUtils.InvPI2\ -\/\ 0.5f)\ *\ MathUtils.PI2)\ *\ i;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ rotateOffset\ *\ mr\ +\ ca;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scaleX)\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.\mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{WorldScaleX}};}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ >\ 0)\ scaleOffset\ +=\ (dx\ *\ c\ +\ dy\ *\ s)\ *\ i\ /\ r;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(ca);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(ca);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.\mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{WorldScaleX}};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ >\ 0)\ scaleOffset\ +=\ (dx\ *\ c\ +\ dy\ *\ s)\ *\ i\ /\ r;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ this.remaining;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >=\ t)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\ =\ massInverse\ *\ t,\ e\ =\ strength,\ w\ =\ wind,\ g\ =\ (Bone.yDown\ ?\ -\/gravity\ :\ gravity);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ d\ =\ (float)Math.Pow(damping,\ 60\ *\ t),\ h\ =\ l\ /\ f;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ -\/=\ t;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scaleX)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleVelocity\ +=\ (w\ *\ c\ -\/\ g\ *\ s\ -\/\ scaleOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleOffset\ +=\ scaleVelocity\ *\ t;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scaleVelocity\ *=\ d;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateVelocity\ -\/=\ ((w\ *\ s\ +\ g\ *\ c)\ *\ h\ +\ rotateOffset\ *\ e)\ *\ m;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateOffset\ +=\ rotateVelocity\ *\ t;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotateVelocity\ *=\ d;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ <\ t)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ rotateOffset\ *\ mr\ +\ ca;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a\ <\ t)\ \textcolor{comment}{//}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.remaining\ =\ a;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cx\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldX;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cy\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.worldY;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Pose:}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x)\ bone.worldX\ +=\ xOffset\ *\ mix\ *\ data.x;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y)\ bone.worldY\ +=\ yOffset\ *\ mix\ *\ data.y;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rotateOrShearX)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ o\ =\ rotateOffset\ *\ mix,\ s,\ c,\ a;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.shearX\ >\ 0)\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ 0;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.rotate\ >\ 0)\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ o\ *\ data.rotate;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.b;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.b\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.d\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ +=\ o\ *\ data.shearX;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(r);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.a\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.c\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ o\ *=\ data.rotate;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sin(o);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Cos(o);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.a\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.c\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.b;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.b\ =\ c\ *\ a\ -\/\ s\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.d\ =\ s\ *\ a\ +\ c\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.d;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scaleX)\ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ 1\ +\ scaleOffset\ *\ mix\ *\ data.scaleX;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.a\ *=\ s;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bone.c\ *=\ s;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (physics\ !=\ \mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Pose)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.a;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ty\ =\ l\ *\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.c;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}.\mbox{\hyperlink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{UpdateAppliedTransform}}();}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_physics_constraint_a1287815b62c94e3b04a9d805eac10497_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!bone@{bone}}
+\index{bone@{bone}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{bone}{bone}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea} 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} Spine.\+Physics\+Constraint.\+bone}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_physics_constraint_a454f03c3ae728e09a75491ee4e83cd32}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Active@{Active}}
+\index{Active@{Active}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a454f03c3ae728e09a75491ee4e83cd32} 
+bool Spine.\+Physics\+Constraint.\+Active\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns false when this item won\textquotesingle{}t be updated by \doxylink{class_spine_1_1_skeleton_af50f9c4c4f3349cdb108e29d8f96f52e}{Skeleton.\+Update\+World\+Transform(\+Skeleton.\+Physics)} because a skin is required and the \doxylink{class_spine_1_1_skeleton_a4e21d4e0b6aa6dd23ae81cc6dfabfd8e}{active skin} does not contain this item. 
+
+\begin{DoxySeeAlso}{참고}
+\doxylink{class_spine_1_1_skin_a7be4fe8bc48ddb6d716e515e9b922cab}{Skin.\+Bones}, \doxylink{class_spine_1_1_skin_a119b9bc765342f65060c26f3f9c5cc76}{Skin.\+Constraints}, \doxylink{class_spine_1_1_bone_data_a1e84a4abb65757fac0f6816033659ec0}{Bone\+Data.\+Skin\+Required}, \doxylink{class_spine_1_1_constraint_data_a00565b871fb0968be4126de726462b39}{Constraint\+Data.\+Skin\+Required}
+
+
+\end{DoxySeeAlso}
+
+
+\mbox{\hyperlink{interface_spine_1_1_i_updatable_a98a24b18563168b4e5939af366cf5c24}{Spine.\+IUpdatable}}를 구현.
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00307}{307}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00307\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ active;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a14e1451ebe9830af02c38123bd09bc34}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Bone@{Bone}}
+\index{Bone@{Bone}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Bone}{Bone}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a14e1451ebe9830af02c38123bd09bc34} 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} Spine.\+Physics\+Constraint.\+Bone\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The bone constrained by this physics constraint. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00298}{298}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00298\ \{\ \textcolor{keyword}{get}\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}};\}\ \textcolor{keyword}{set}\ \{\ \mbox{\hyperlink{class_spine_1_1_physics_constraint_a9a5231eb1d17cdb2f2fd0580db9d42ea}{bone}}\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_ad14f3d79191f7f13721cb15cbaf2cb83}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Damping@{Damping}}
+\index{Damping@{Damping}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Damping}{Damping}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_ad14f3d79191f7f13721cb15cbaf2cb83} 
+float Spine.\+Physics\+Constraint.\+Damping\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00301}{301}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00301\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ damping;\ \}\ \textcolor{keyword}{set}\ \{\ damping\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a2182f0fc6d9097d219edc891119d2064}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Data@{Data}}
+\index{Data@{Data}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a2182f0fc6d9097d219edc891119d2064} 
+\mbox{\hyperlink{class_spine_1_1_physics_constraint_data}{Physics\+Constraint\+Data}} Spine.\+Physics\+Constraint.\+Data\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The physics constraint\textquotesingle{}s setup pose data. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00316}{316}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00316\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a72840153fed2dcb696538adf0a5b1092}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Gravity@{Gravity}}
+\index{Gravity@{Gravity}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Gravity}{Gravity}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a72840153fed2dcb696538adf0a5b1092} 
+float Spine.\+Physics\+Constraint.\+Gravity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00304}{304}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00304\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ gravity;\ \}\ \textcolor{keyword}{set}\ \{\ gravity\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a36e2e3818c51d56be1fa8ac0b2f87aec}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Inertia@{Inertia}}
+\index{Inertia@{Inertia}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Inertia}{Inertia}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a36e2e3818c51d56be1fa8ac0b2f87aec} 
+float Spine.\+Physics\+Constraint.\+Inertia\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00299}{299}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00299\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ inertia;\ \}\ \textcolor{keyword}{set}\ \{\ inertia\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_af98ac7eaeb8d56a907dede77f76c081c}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!MassInverse@{MassInverse}}
+\index{MassInverse@{MassInverse}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{MassInverse}{MassInverse}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_af98ac7eaeb8d56a907dede77f76c081c} 
+float Spine.\+Physics\+Constraint.\+Mass\+Inverse\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00302}{302}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00302\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ massInverse;\ \}\ \textcolor{keyword}{set}\ \{\ massInverse\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_afa66003dcc524095cdd283be0960bc94}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Mix@{Mix}}
+\index{Mix@{Mix}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Mix}{Mix}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_afa66003dcc524095cdd283be0960bc94} 
+float Spine.\+Physics\+Constraint.\+Mix\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+A percentage (0-\/1) that controls the mix between the constrained and unconstrained poses. 
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00306}{306}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00306\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ mix;\ \}\ \textcolor{keyword}{set}\ \{\ mix\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_af73d12f2479276440757c650624ab9ed}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Strength@{Strength}}
+\index{Strength@{Strength}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Strength}{Strength}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_af73d12f2479276440757c650624ab9ed} 
+float Spine.\+Physics\+Constraint.\+Strength\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00300}{300}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00300\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ strength;\ \}\ \textcolor{keyword}{set}\ \{\ strength\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_physics_constraint_a05dce6360995c63bde18ae0102381d0c}\index{Spine.PhysicsConstraint@{Spine.PhysicsConstraint}!Wind@{Wind}}
+\index{Wind@{Wind}!Spine.PhysicsConstraint@{Spine.PhysicsConstraint}}
+\doxysubsubsection{\texorpdfstring{Wind}{Wind}}
+{\footnotesize\ttfamily \label{class_spine_1_1_physics_constraint_a05dce6360995c63bde18ae0102381d0c} 
+float Spine.\+Physics\+Constraint.\+Wind\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_physics_constraint_8cs_source}{Physics\+Constraint.\+cs}} 파일의 \mbox{\hyperlink{_physics_constraint_8cs_source_l00303}{303}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00303\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ wind;\ \}\ \textcolor{keyword}{set}\ \{\ wind\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_physics_constraint_8cs}{Physics\+Constraint.\+cs}}\end{DoxyCompactItemize}

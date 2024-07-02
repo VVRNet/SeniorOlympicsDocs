@@ -1,0 +1,395 @@
+\doxysection{Spine.\+Skeleton\+Clipping 클래스 참조}
+\hypertarget{class_spine_1_1_skeleton_clipping}{}\label{class_spine_1_1_skeleton_clipping}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+
+
+Spine.\+Skeleton\+Clipping에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_skeleton_clipping__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_ae62e72353332993c8e3c7bc437edfd67}{Clip\+Start}} (\mbox{\hyperlink{class_spine_1_1_slot}{Slot}} slot, \mbox{\hyperlink{class_spine_1_1_clipping_attachment}{Clipping\+Attachment}} clip)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_a1a07278048c33b547f8a596c41ceb4bb}{Clip\+End}} (\mbox{\hyperlink{class_spine_1_1_slot}{Slot}} slot)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_a4351ab3c136c8d55809579933d943770}{Clip\+End}} ()
+\item 
+void \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_a1b2132352c053a5035740b564cd9d55a}{Clip\+Triangles}} (float\mbox{[}$\,$\mbox{]} vertices, int vertices\+Length, int\mbox{[}$\,$\mbox{]} triangles, int triangles\+Length)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_aec7fae2af5eac108aa788fb43a091bbb}{Clip\+Triangles}} (float\mbox{[}$\,$\mbox{]} vertices, int vertices\+Length, int\mbox{[}$\,$\mbox{]} triangles, int triangles\+Length, float\mbox{[}$\,$\mbox{]} uvs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_aba7209fd235ecabbf7c0af1a994e65a8}{Make\+Clockwise}} (\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ float $>$ polygon)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ float $>$ \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_af3488612ff14737245a830dc8cfabce4}{Clipped\+Vertices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ int $>$ \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_af454bc5b089c4c8467710bc00027008f}{Clipped\+Triangles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ float $>$ \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_ae8222ffe289cb076a9a63c319cb5a4ea}{Clipped\+UVs}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_a572fde7842b7d8c228dcfabce68bb31f}{Is\+Clipping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_skeleton_clipping_a4351ab3c136c8d55809579933d943770}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClipEnd@{ClipEnd}}
+\index{ClipEnd@{ClipEnd}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClipEnd()}{ClipEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_a4351ab3c136c8d55809579933d943770} 
+void Spine.\+Skeleton\+Clipping.\+Clip\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clipAttachment\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ clipAttachment\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ clippingPolygons\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ clippedVertices.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ clippedTriangles.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ clippingPolygon.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_a4351ab3c136c8d55809579933d943770_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_a4351ab3c136c8d55809579933d943770_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_skeleton_clipping_a1a07278048c33b547f8a596c41ceb4bb}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClipEnd@{ClipEnd}}
+\index{ClipEnd@{ClipEnd}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClipEnd()}{ClipEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_a1a07278048c33b547f8a596c41ceb4bb} 
+void Spine.\+Skeleton\+Clipping.\+Clip\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00068}{68}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clipAttachment\ !=\ \textcolor{keyword}{null}\ \&\&\ clipAttachment.endSlot\ ==\ slot.data)\ \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_a4351ab3c136c8d55809579933d943770}{ClipEnd}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_a1a07278048c33b547f8a596c41ceb4bb_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_a1a07278048c33b547f8a596c41ceb4bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_skeleton_clipping_ae62e72353332993c8e3c7bc437edfd67}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClipStart@{ClipStart}}
+\index{ClipStart@{ClipStart}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClipStart()}{ClipStart()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_ae62e72353332993c8e3c7bc437edfd67} 
+int Spine.\+Skeleton\+Clipping.\+Clip\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}}]{slot}{, }\item[{\mbox{\hyperlink{class_spine_1_1_clipping_attachment}{Clipping\+Attachment}}}]{clip}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00051}{51}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clipAttachment\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ clipAttachment\ =\ clip;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ clip.worldVerticesLength;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ vertices\ =\ clippingPolygon.\mbox{\hyperlink{class_spine_1_1_exposed_list_a563c4ad0ce4faf82ab5fed8668ce1395}{Resize}}(n).Items;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ clip.ComputeWorldVertices(slot,\ 0,\ n,\ vertices,\ 0,\ 2);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_aba7209fd235ecabbf7c0af1a994e65a8}{MakeClockwise}}(clippingPolygon);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ clippingPolygons\ =\ triangulator.\mbox{\hyperlink{class_spine_1_1_triangulator_a3cb15e58620dd373310a2f3d3ac4789d}{Decompose}}(clippingPolygon,\ triangulator.\mbox{\hyperlink{class_spine_1_1_triangulator_a81b1cc501f12811adce3bba1388fc2d4}{Triangulate}}(clippingPolygon));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (ExposedList<float>\ polygon\ \textcolor{keywordflow}{in}\ clippingPolygons)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton_clipping_aba7209fd235ecabbf7c0af1a994e65a8}{MakeClockwise}}(polygon);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygon.Add(polygon.Items[0]);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygon.Add(polygon.Items[1]);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clippingPolygons.Count;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_ae62e72353332993c8e3c7bc437edfd67_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_ae62e72353332993c8e3c7bc437edfd67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_skeleton_clipping_a1b2132352c053a5035740b564cd9d55a}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClipTriangles@{ClipTriangles}}
+\index{ClipTriangles@{ClipTriangles}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClipTriangles()}{ClipTriangles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_a1b2132352c053a5035740b564cd9d55a} 
+void Spine.\+Skeleton\+Clipping.\+Clip\+Triangles (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{vertices}{, }\item[{int}]{vertices\+Length}{, }\item[{int\mbox{[}$\,$\mbox{]}}]{triangles}{, }\item[{int}]{triangles\+Length}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<float>\ clipOutput\ =\ this.clipOutput,\ clippedVertices\ =\ this.clippedVertices;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<int>\ clippedTriangles\ =\ this.clippedTriangles;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ ExposedList<float>[]\ polygons\ =\ clippingPolygons.Items;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ polygonsCount\ =\ clippingPolygons.Count;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ clippedVertices.Clear();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ clippedTriangles.Clear();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//outer:}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ trianglesLength;\ i\ +=\ 3)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertexOffset\ =\ triangles[i]\ <<\ 1;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x1\ =\ vertices[vertexOffset],\ y1\ =\ vertices[vertexOffset\ +\ 1];}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertexOffset\ =\ triangles[i\ +\ 1]\ <<\ 1;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x2\ =\ vertices[vertexOffset],\ y2\ =\ vertices[vertexOffset\ +\ 1];}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertexOffset\ =\ triangles[i\ +\ 2]\ <<\ 1;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x3\ =\ vertices[vertexOffset],\ y3\ =\ vertices[vertexOffset\ +\ 1];}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ p\ =\ 0;\ p\ <\ polygonsCount;\ p++)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ s\ =\ clippedVertices.Count;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Clip(x1,\ y1,\ x2,\ y2,\ x3,\ y3,\ polygons[p],\ clipOutput))\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ clipOutputLength\ =\ clipOutput.Count;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clipOutputLength\ ==\ 0)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ clipOutputCount\ =\ clipOutputLength\ >>\ 1;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ clipOutputItems\ =\ clipOutput.Items;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ clippedVerticesItems\ =\ clippedVertices.Resize(s\ +\ clipOutputCount\ *\ 2).Items;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ii\ =\ 0;\ ii\ <\ clipOutputLength;\ ii\ +=\ 2)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ clipOutputItems[ii],\ y\ =\ clipOutputItems[ii\ +\ 1];}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s]\ =\ x;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s\ +\ 1]\ =\ y;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ +=\ 2;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ clippedTriangles.Count;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ clippedTrianglesItems\ =\ clippedTriangles.Resize(s\ +\ 3\ *\ (clipOutputCount\ -\/\ 2)).Items;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clipOutputCount-\/-\/;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ii\ =\ 1;\ ii\ <\ clipOutputCount;\ ii++)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedTrianglesItems[s]\ =\ index;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedTrianglesItems[s\ +\ 1]\ =\ index\ +\ ii;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedTrianglesItems[s\ +\ 2]\ =\ index\ +\ ii\ +\ 1;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ +=\ 3;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ clipOutputCount\ +\ 1;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ clippedVerticesItems\ =\ clippedVertices.Resize(s\ +\ 3\ *\ 2).Items;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s]\ =\ x1;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s\ +\ 1]\ =\ y1;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s\ +\ 2]\ =\ x2;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s\ +\ 3]\ =\ y2;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s\ +\ 4]\ =\ x3;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedVerticesItems[s\ +\ 5]\ =\ y3;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ clippedTriangles.Count;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ clippedTrianglesItems\ =\ clippedTriangles.Resize(s\ +\ 3).Items;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedTrianglesItems[s]\ =\ index;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedTrianglesItems[s\ +\ 1]\ =\ index\ +\ 1;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clippedTrianglesItems[s\ +\ 2]\ =\ index\ +\ 2;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ +=\ 3;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//continue\ outer;}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_a1b2132352c053a5035740b564cd9d55a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_a1b2132352c053a5035740b564cd9d55a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_skeleton_clipping_aec7fae2af5eac108aa788fb43a091bbb}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClipTriangles@{ClipTriangles}}
+\index{ClipTriangles@{ClipTriangles}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClipTriangles()}{ClipTriangles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_aec7fae2af5eac108aa788fb43a091bbb} 
+void Spine.\+Skeleton\+Clipping.\+Clip\+Triangles (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{vertices}{, }\item[{int}]{vertices\+Length}{, }\item[{int\mbox{[}$\,$\mbox{]}}]{triangles}{, }\item[{int}]{triangles\+Length}{, }\item[{float\mbox{[}$\,$\mbox{]}}]{uvs}{}\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>}Clips the input triangle against the convex, clockwise clipping area. If the triangle lies entirely within the clipping area, false is returned. The clipping area must duplicate the first vertex at the end of the vertices list. 
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00148}{148}} 번째 라인에서 정의되었습니다.
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_aec7fae2af5eac108aa788fb43a091bbb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_skeleton_clipping_aba7209fd235ecabbf7c0af1a994e65a8}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!MakeClockwise@{MakeClockwise}}
+\index{MakeClockwise@{MakeClockwise}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{MakeClockwise()}{MakeClockwise()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_aba7209fd235ecabbf7c0af1a994e65a8} 
+static void Spine.\+Skeleton\+Clipping.\+Make\+Clockwise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ float $>$}]{polygon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00334}{334}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ vertices\ =\ polygon.Items;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ verticeslength\ =\ polygon.Count;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ area\ =\ vertices[verticeslength\ -\/\ 2]\ *\ vertices[1]\ -\/\ vertices[0]\ *\ vertices[verticeslength\ -\/\ 1],\ p1x,\ p1y,\ p2x,\ p2y;}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ verticeslength\ -\/\ 3;\ i\ <\ n;\ i\ +=\ 2)\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p1x\ =\ vertices[i];}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p1y\ =\ vertices[i\ +\ 1];}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p2x\ =\ vertices[i\ +\ 2];}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p2y\ =\ vertices[i\ +\ 3];}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ area\ +=\ p1x\ *\ p2y\ -\/\ p2x\ *\ p1y;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (area\ <\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ lastX\ =\ verticeslength\ -\/\ 2,\ n\ =\ verticeslength\ >>\ 1;\ i\ <\ n;\ i\ +=\ 2)\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ vertices[i],\ y\ =\ vertices[i\ +\ 1];}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ other\ =\ lastX\ -\/\ i;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices[i]\ =\ vertices[other];}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices[i\ +\ 1]\ =\ vertices[other\ +\ 1];}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices[other]\ =\ x;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices[other\ +\ 1]\ =\ y;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_skeleton_clipping_aba7209fd235ecabbf7c0af1a994e65a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_skeleton_clipping_af454bc5b089c4c8467710bc00027008f}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClippedTriangles@{ClippedTriangles}}
+\index{ClippedTriangles@{ClippedTriangles}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClippedTriangles}{ClippedTriangles}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_af454bc5b089c4c8467710bc00027008f} 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$int$>$ Spine.\+Skeleton\+Clipping.\+Clipped\+Triangles\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ clippedTriangles;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_skeleton_clipping_ae8222ffe289cb076a9a63c319cb5a4ea}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClippedUVs@{ClippedUVs}}
+\index{ClippedUVs@{ClippedUVs}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClippedUVs}{ClippedUVs}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_ae8222ffe289cb076a9a63c319cb5a4ea} 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$float$>$ Spine.\+Skeleton\+Clipping.\+Clipped\+UVs\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ clippedUVs;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_skeleton_clipping_af3488612ff14737245a830dc8cfabce4}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!ClippedVertices@{ClippedVertices}}
+\index{ClippedVertices@{ClippedVertices}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{ClippedVertices}{ClippedVertices}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_af3488612ff14737245a830dc8cfabce4} 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$float$>$ Spine.\+Skeleton\+Clipping.\+Clipped\+Vertices\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00045}{45}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ clippedVertices;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_skeleton_clipping_a572fde7842b7d8c228dcfabce68bb31f}\index{Spine.SkeletonClipping@{Spine.SkeletonClipping}!IsClipping@{IsClipping}}
+\index{IsClipping@{IsClipping}!Spine.SkeletonClipping@{Spine.SkeletonClipping}}
+\doxysubsubsection{\texorpdfstring{IsClipping}{IsClipping}}
+{\footnotesize\ttfamily \label{class_spine_1_1_skeleton_clipping_a572fde7842b7d8c228dcfabce68bb31f} 
+bool Spine.\+Skeleton\+Clipping.\+Is\+Clipping\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_skeleton_clipping_8cs_source}{Skeleton\+Clipping.\+cs}} 파일의 \mbox{\hyperlink{_skeleton_clipping_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ clipAttachment\ !=\ \textcolor{keyword}{null};\ \}\ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_skeleton_clipping_8cs}{Skeleton\+Clipping.\+cs}}\end{DoxyCompactItemize}

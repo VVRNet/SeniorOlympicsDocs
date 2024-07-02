@@ -1,0 +1,229 @@
+\doxysection{CW.\+Common.\+Cw\+Demo\+Button\+Builder 클래스 참조}
+\hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder}{}\label{class_c_w_1_1_common_1_1_cw_demo_button_builder}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+
+
+This component allows you to quickly build a UI button to activate only this Game\+Object when clicked.  
+
+
+
+
+CW.\+Common.\+Cw\+Demo\+Button\+Builder에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{class_c_w_1_1_common_1_1_cw_demo_button_builder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CW.\+Common.\+Cw\+Demo\+Button\+Builder에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{class_c_w_1_1_common_1_1_cw_demo_button_builder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a73c83105969cfa235149102239b58f85}{Build}} ()
+\item 
+void \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_af76e489a6bfc25d78562c549ec833f7e}{Build\+All}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a4204152c6844e83de740f49823dfbb39}{Button\+Prefab}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The built button will be based on this prefab. \end{DoxyCompactList}\item 
+Rect\+Transform \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ae61c074d2508821459d99a77512c469a}{Button\+Root}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The built button will be placed under this transform. \end{DoxyCompactList}\item 
+Sprite \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_a51487287f539ce375ce1ee52a9a49471}{Icon}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The icon given to this button. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The icon will be tinted by this. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ad90f36d32a75f8f45cfeb6e6496c2310}{Override\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Use a different name for the button text? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+This component allows you to quickly build a UI button to activate only this Game\+Object when clicked. 
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_a73c83105969cfa235149102239b58f85}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!Build@{Build}}
+\index{Build@{Build}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{Build()}{Build()}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_a73c83105969cfa235149102239b58f85} 
+void CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clone\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DestroyImmediate(clone);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buttonPrefab\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clone\ =\ DoInstantiate();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clone.name\ =\ name;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ image\ =\ clone.GetComponent<Image>();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ icon;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.color\ \ =\ color;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ title\ =\ clone.GetComponentInChildren<\mbox{\hyperlink{_d_o_tween_module_u_i_8cs_ac19eea1123d7970b5d245ea7f910cfdd}{Text}}>();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (title\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ title.text\ =\ \textcolor{keywordtype}{string}.IsNullOrEmpty(overrideName)\ ==\ \textcolor{keyword}{false}\ ?\ overrideName\ :\ name;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ isolate\ =\ clone.GetComponent<\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button}{CwDemoButton}}>();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isolate\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isolate.IsolateTarget\ =\ transform;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_af76e489a6bfc25d78562c549ec833f7e}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!BuildAll@{BuildAll}}
+\index{BuildAll@{BuildAll}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{BuildAll()}{BuildAll()}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_af76e489a6bfc25d78562c549ec833f7e} 
+void CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Build\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00069}{69}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ builder\ \textcolor{keywordflow}{in}\ transform.parent.GetComponentsInChildren<\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder}{CwDemoButtonBuilder}}>(\textcolor{keyword}{true}))}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder.Build();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_a4204152c6844e83de740f49823dfbb39}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!ButtonPrefab@{ButtonPrefab}}
+\index{ButtonPrefab@{ButtonPrefab}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{ButtonPrefab}{ButtonPrefab}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_a4204152c6844e83de740f49823dfbb39} 
+Game\+Object CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Button\+Prefab\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The built button will be based on this prefab. 
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{set}\ \{\ buttonPrefab\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ buttonPrefab;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ GameObject\ buttonPrefab;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_ae61c074d2508821459d99a77512c469a}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!ButtonRoot@{ButtonRoot}}
+\index{ButtonRoot@{ButtonRoot}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{ButtonRoot}{ButtonRoot}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_ae61c074d2508821459d99a77512c469a} 
+Rect\+Transform CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Button\+Root\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The built button will be placed under this transform. 
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{set}\ \{\ buttonRoot\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ buttonRoot;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ RectTransform\ buttonRoot;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!Color@{Color}}
+\index{Color@{Color}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e} 
+Color CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The icon will be tinted by this. 
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{set}\ \{\ color\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ color;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}\ color\ =\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_demo_button_builder_ab67e3bf416c2895ec46fc4b8c7c34e1e}{Color}}.white;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_a51487287f539ce375ce1ee52a9a49471}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!Icon@{Icon}}
+\index{Icon@{Icon}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{Icon}{Icon}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_a51487287f539ce375ce1ee52a9a49471} 
+Sprite CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Icon\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The icon given to this button. 
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{set}\ \{\ icon\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ icon;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ Sprite\ icon;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_w_1_1_common_1_1_cw_demo_button_builder_ad90f36d32a75f8f45cfeb6e6496c2310}\index{CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}!OverrideName@{OverrideName}}
+\index{OverrideName@{OverrideName}!CW.Common.CwDemoButtonBuilder@{CW.Common.CwDemoButtonBuilder}}
+\doxysubsubsection{\texorpdfstring{OverrideName}{OverrideName}}
+{\footnotesize\ttfamily \label{class_c_w_1_1_common_1_1_cw_demo_button_builder_ad90f36d32a75f8f45cfeb6e6496c2310} 
+string CW.\+Common.\+Cw\+Demo\+Button\+Builder.\+Override\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Use a different name for the button text? 
+
+
+
+\mbox{\hyperlink{_cw_demo_button_builder_8cs_source}{Cw\+Demo\+Button\+Builder.\+cs}} 파일의 \mbox{\hyperlink{_cw_demo_button_builder_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{set}\ \{\ overrideName\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ overrideName;\ \}\ \}\ [SerializeField]\ [Multiline(3)]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ overrideName;}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Plugins/\+CW/\+Shared/\+Common/\+Examples/\+Scripts/\mbox{\hyperlink{_cw_demo_button_builder_8cs}{Cw\+Demo\+Button\+Builder.\+cs}}\end{DoxyCompactItemize}

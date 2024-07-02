@@ -1,0 +1,104 @@
+\doxysection{Bone\+Data.\+cs}
+\hypertarget{_bone_data_8cs_source}{}\label{_bone_data_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/BoneData.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/BoneData.cs}}
+\mbox{\hyperlink{_bone_data_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00033}\mbox{\hyperlink{class_spine_1_1_bone_data}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}\ index;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ parent;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ length;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ x,\ y,\ rotation,\ scaleX\ =\ 1,\ scaleY\ =\ 1,\ shearX,\ shearY;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ inherit\ =\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.Normal;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ skinRequired;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_bone_data_a7379db786b19dbeabaadf3c3f373d0e1}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a7379db786b19dbeabaadf3c3f373d0e1}{Index}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ index;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_bone_data_a4333ca2630ac562a9561650ec128d864}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a4333ca2630ac562a9561650ec128d864}{Name}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ name;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00049}\mbox{\hyperlink{class_spine_1_1_bone_data_ade206a49ecef2aa7f724867c1d918b45}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ \mbox{\hyperlink{class_spine_1_1_bone_data_ade206a49ecef2aa7f724867c1d918b45}{Parent}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ parent;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_bone_data_a70e065fd258060e337536d086bd44e19}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a70e065fd258060e337536d086bd44e19}{Length}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ length;\ \}\ \textcolor{keyword}{set}\ \{\ length\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00054}\mbox{\hyperlink{class_spine_1_1_bone_data_a904249dbb0be11f3e8b0156a7f504566}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a904249dbb0be11f3e8b0156a7f504566}{X}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ x;\ \}\ \textcolor{keyword}{set}\ \{\ x\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00057}\mbox{\hyperlink{class_spine_1_1_bone_data_a40568774979340d29d188f0fb7e6d039}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a40568774979340d29d188f0fb7e6d039}{Y}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ y;\ \}\ \textcolor{keyword}{set}\ \{\ y\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_bone_data_afc399c01b18612e4741b645a328c4727}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_afc399c01b18612e4741b645a328c4727}{Rotation}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ rotation;\ \}\ \textcolor{keyword}{set}\ \{\ rotation\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00063}\mbox{\hyperlink{class_spine_1_1_bone_data_af9256615d23b57edde7bb435e1b75fd9}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_af9256615d23b57edde7bb435e1b75fd9}{ScaleX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scaleX;\ \}\ \textcolor{keyword}{set}\ \{\ scaleX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00066}\mbox{\hyperlink{class_spine_1_1_bone_data_a7b76bed0929216bae2f83f33181de9b5}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a7b76bed0929216bae2f83f33181de9b5}{ScaleY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scaleY;\ \}\ \textcolor{keyword}{set}\ \{\ scaleY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00069}\mbox{\hyperlink{class_spine_1_1_bone_data_aa3df5d6bdbb847133ea930eb1e7117c9}{00069}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_aa3df5d6bdbb847133ea930eb1e7117c9}{ShearX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ shearX;\ \}\ \textcolor{keyword}{set}\ \{\ shearX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00072}\mbox{\hyperlink{class_spine_1_1_bone_data_a93cd9a5aace82e0f986da69e5a081825}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a93cd9a5aace82e0f986da69e5a081825}{ShearY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ shearY;\ \}\ \textcolor{keyword}{set}\ \{\ shearY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00075}\mbox{\hyperlink{class_spine_1_1_bone_data_a3d79f0ae7355bce887dc1eb134fc971f}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ inherit;\ \}\ \textcolor{keyword}{set}\ \{\ inherit\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00080}\mbox{\hyperlink{class_spine_1_1_bone_data_a1e84a4abb65757fac0f6816033659ec0}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a1e84a4abb65757fac0f6816033659ec0}{SkinRequired}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ skinRequired;\ \}\ \textcolor{keyword}{set}\ \{\ skinRequired\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00083}\mbox{\hyperlink{class_spine_1_1_bone_data_ad30e2c651b096fea44f7006b28bc5c83}{00083}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone_data_ad30e2c651b096fea44f7006b28bc5c83}{BoneData}}\ (\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{string}\ name,\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ parent)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}index\ must\ be\ >=\ 0"{}},\ \textcolor{stringliteral}{"{}index"{}});}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}name"{}},\ \textcolor{stringliteral}{"{}name\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ this.index\ =\ index;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ this.parent\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00091}\mbox{\hyperlink{class_spine_1_1_bone_data_a8a7d0515ee37a60cf362ae6865260228}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_bone_data_a8a7d0515ee37a60cf362ae6865260228}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00096}\mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a960b44c579bc2f6818d2daaf9e4c16f0}{Normal}},}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6a6c2253fbfd72e0dc1242b4a1eb53c80c}{OnlyTranslation}},}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6a5bef4159f5b6a945e8e991d139151aea}{NoRotationOrReflection}},}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6a6089ccf7c3fe93a62745e51200419c60}{NoScale}},}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6a0ab1ae8f06af09fd1840af0c33d27f94}{NoScaleOrReflection}}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00104}\mbox{\hyperlink{class_spine_1_1_inherit_enum}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_inherit_enum}{InheritEnum}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00105}\mbox{\hyperlink{class_spine_1_1_inherit_enum_a2fa71558a6fcbbadaad8c00073d9e5a1}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ readonly\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}[]\ \mbox{\hyperlink{class_spine_1_1_inherit_enum_a2fa71558a6fcbbadaad8c00073d9e5a1}{Values}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.Normal,}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.OnlyTranslation,}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoRotationOrReflection,}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScale,}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ Inherit.NoScaleOrReflection}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_data_8cs_source_l00113}00113\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,116 @@
+\doxysection{Ball\+Move\+Controller.\+cs}
+\hypertarget{_ball_move_controller_8cs_source}{}\label{_ball_move_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Exercise/Tennis/BallMoveController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Exercise/Tennis/BallMoveController.cs}}
+\mbox{\hyperlink{_ball_move_controller_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful_1_1_team}{useful.Team}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00006}\mbox{\hyperlink{namespace_tennis}{00006}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_tennis}{Tennis}}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00008}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{BallMoveController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00010}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a9f572b7821585f9da7c5bcb681c08a80}{00010}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tennis_1_1_character_move}{CharacterMove}}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a9f572b7821585f9da7c5bcb681c08a80}{characterMove}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Show\ Ball]"{}})]}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00013}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a4458f08379c73cfc7099c53256144e87}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a4458f08379c73cfc7099c53256144e87}{ballPrefab}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Rigidbody\ ballRigidBody;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00016}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ac5a17745348032f4bf10d4b0a998a1af}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Transform[]\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ac5a17745348032f4bf10d4b0a998a1af}{ballFactory}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00017}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00019}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a86b5e024fc5fbe475f8ceb00c6116d01}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a86b5e024fc5fbe475f8ceb00c6116d01}{ballSpeed}}\ =\ 12f;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00020}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a61bd999d0e97fb834db79cd544baccf7}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a61bd999d0e97fb834db79cd544baccf7}{waitTime}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00022}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a239213a09b8d633857915ac047695117}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a239213a09b8d633857915ac047695117}{team}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00024}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ab409536180f0e400db78a63a960ce58f}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ab409536180f0e400db78a63a960ce58f}{ResetObject}}()}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a9f572b7821585f9da7c5bcb681c08a80}{characterMove}}.\mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{swingEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ¿Ã¿¸ø°\ ª˝º∫µ«æ˙¥¯ ∞¯ ø¿∫Í¡ß∆Æ\ ¡¶∞≈}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ childCount\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}.transform.childCount;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childCount\ >=\ 1)}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ childCount;\ j++)}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}.transform.GetChild(j).gameObject);}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00039}\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ad971b6daaf56038bae09c9f9c6386431}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ad971b6daaf56038bae09c9f9c6386431}{RandomInstantiateBall}}()\ \ \textcolor{comment}{//\ ∞¯ ∑£¥˝ ª˝º∫}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoRandomInstantiateBall());}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ IEnumerator\ CoRandomInstantiateBall()}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ tennisBall;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ac5a17745348032f4bf10d4b0a998a1af}{ballFactory}}.Length\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ac5a17745348032f4bf10d4b0a998a1af}{ballFactory}}.Length);}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ spawnPosition\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_ac5a17745348032f4bf10d4b0a998a1af}{ballFactory}}[randomIndex].position;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tennisBall\ =\ Instantiate(\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a4458f08379c73cfc7099c53256144e87}{ballPrefab}},\ spawnPosition,\ Quaternion.identity);}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballRigidBody\ =\ tennisBall.GetComponent<Rigidbody>();}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a239213a09b8d633857915ac047695117}{team}}\ ==\ \mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED)}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tennisBall.GetComponent<\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller}{BallTouchController}}>().isLeft\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(MoveBallToTarget(tennisBall,\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}));}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ¥Î±‚\ Ω√∞£\ »ƒ\ ø¿∫Í¡ß∆Æ\ ¡¶∞≈}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a61bd999d0e97fb834db79cd544baccf7}{waitTime}});}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tennisBall\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(tennisBall);}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ IEnumerator\ MoveBallToTarget(GameObject\ ball,\ Transform\ target)}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ ball.transform.SetParent(target);}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ initialScale\ =\ ball.transform.localScale;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ targetScale\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ duration\ =\ 3.0f;\ \textcolor{comment}{//\ ≈©±‚∞°\ ¿€æ∆¡ˆ¥¬ Ω√∞£\ (√ )}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∞¯¿Ã target\ ¿ßƒ°∑Œ ≥Øæ∆∞®}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (Vector3.Distance(ball.transform.position,\ target.position)\ >\ 0.1f)}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ direction\ =\ (target.position\ -\/\ ball.transform.position).normalized;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballRigidBody.velocity\ =\ direction\ *\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a86b5e024fc5fbe475f8ceb00c6116d01}{ballSpeed}};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ≈©±‚∏¶\ º≠º≠»˜\ ¡Ÿ¿”}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (Time.time\ -\/\ startTime)\ /\ duration;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ball.transform.localScale\ =\ Vector3.Lerp(initialScale,\ targetScale,\ t);}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ball\ ==\ \textcolor{keyword}{null}\ ||\ ballRigidBody\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∏Ò¿˚¡ˆø° µµ¥ﬁ«œ∏È º”µµ\ 0¿∏∑Œ º≥¡§}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ballRigidBody\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballRigidBody.velocity\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_move_controller_8cs_source_l00110}00110\ \}}
+
+\end{DoxyCode}

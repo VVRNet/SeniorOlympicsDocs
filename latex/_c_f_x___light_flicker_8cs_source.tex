@@ -1,0 +1,44 @@
+\doxysection{CFX\+\_\+\+Light\+Flicker.\+cs}
+\hypertarget{_c_f_x___light_flicker_8cs_source}{}\label{_c_f_x___light_flicker_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX (legacy)/Scripts/CFX\_LightFlicker.cs@{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX (legacy)/Scripts/CFX\_LightFlicker.cs}}
+\mbox{\hyperlink{_c_f_x___light_flicker_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00004}00004\ \textcolor{comment}{//\ Cartoon\ FX\ \ -\/\ (c)\ 2015\ Jean\ Moreno}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00006}00006\ \textcolor{comment}{//\ Randomly\ changes\ a\ light's\ intensity\ over\ time.}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00008}00008\ [RequireComponent(typeof(Light))]}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00009}\mbox{\hyperlink{class_c_f_x___light_flicker}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_f_x___light_flicker}{CFX\_LightFlicker}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//\ Loop\ flicker\ effect}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00012}\mbox{\hyperlink{class_c_f_x___light_flicker_aa1b3e1353927105de0c261e6dee985c5}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_c_f_x___light_flicker_aa1b3e1353927105de0c261e6dee985c5}{loop}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00013}00013\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Perlin\ scale:\ makes\ the\ flicker\ more\ or\ less\ smooth}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00015}\mbox{\hyperlink{class_c_f_x___light_flicker_acbca23771506cad0a6b0c81f7816026b}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_f_x___light_flicker_acbca23771506cad0a6b0c81f7816026b}{smoothFactor}}\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00016}00016\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00018}\mbox{\hyperlink{class_c_f_x___light_flicker_a39bdd9fcb815f9758b5e91c0fb667865}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_f_x___light_flicker_a39bdd9fcb815f9758b5e91c0fb667865}{addIntensity}}\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ minIntensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ maxIntensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ baseIntensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ baseIntensity\ =\ GetComponent<Light>().intensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ minIntensity\ =\ baseIntensity;}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ maxIntensity\ =\ minIntensity\ +\ \mbox{\hyperlink{class_c_f_x___light_flicker_a39bdd9fcb815f9758b5e91c0fb667865}{addIntensity}};}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ Update\ ()}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ GetComponent<Light>().intensity\ =\ Mathf.Lerp(minIntensity,\ maxIntensity,\ Mathf.PerlinNoise(Time.time\ *\ \mbox{\hyperlink{class_c_f_x___light_flicker_acbca23771506cad0a6b0c81f7816026b}{smoothFactor}},\ 0f));}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_f_x___light_flicker_8cs_source_l00039}00039\ \}}
+
+\end{DoxyCode}

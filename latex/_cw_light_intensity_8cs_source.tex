@@ -1,0 +1,113 @@
+\doxysection{Cw\+Light\+Intensity.\+cs}
+\hypertarget{_cw_light_intensity_8cs_source}{}\label{_cw_light_intensity_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwLightIntensity.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwLightIntensity.cs}}
+\mbox{\hyperlink{_cw_light_intensity_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}};}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00007}00007\ \ \ \ \ [ExecuteInEditMode]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00008}00008\ \ \ \ \ [RequireComponent(typeof(Light))]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00009}00009\ \ \ \ \ [AddComponentMenu(\textcolor{stringliteral}{"{}CW/Common/CW\ Light\ Intensity"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00010}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity}{CwLightIntensity}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00013}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a55d12f79a044078ea72796f68e934e70}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a55d12f79a044078ea72796f68e934e70}{Multiplier}}\ \{\ \textcolor{keyword}{set}\ \{\ multiplier\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ multiplier;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ multiplier\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00017}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a330ac3178093da69ed8bf9496bab7112}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a330ac3178093da69ed8bf9496bab7112}{IntensityInStandard}}\ \{\ \textcolor{keyword}{set}\ \ \{\ intensityInStandard\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ intensityInStandard;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ intensityInStandard\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00021}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a5bd74004988484af010770a5e48a1888}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a5bd74004988484af010770a5e48a1888}{IntensityInURP}}\ \{\ \textcolor{keyword}{set}\ \ \{\ intensityInURP\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ intensityInURP;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ intensityInURP\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00025}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_add8b206a8301d1c061a81693e9e2eaf8}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_add8b206a8301d1c061a81693e9e2eaf8}{IntensityInHDRP}}\ \{\ \textcolor{keyword}{set}\ \ \{\ intensityInHDRP\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ intensityInHDRP;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ intensityInHDRP\ =\ 120000.0f;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Light\ cachedLight;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ cachedLightSet;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00033}00033\ \textcolor{preprocessor}{\#if\ \_\_HDRP\_\_}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ UnityEngine.Rendering.HighDefinition.HDAdditionalLightData\ cachedLightData;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00036}00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00038}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a1edd4eeec1da4a2f704416d58a39abca}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Light\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a1edd4eeec1da4a2f704416d58a39abca}{CachedLight}}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cachedLightSet\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLight\ \ \ \ =\ GetComponent<Light>();}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLightSet\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cachedLight;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00052}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a1745d51e6953acf57a4527830192d86b}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity_a1745d51e6953acf57a4527830192d86b}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CwHelper.IsBIRP\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ApplyIntensity(intensityInStandard);}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (CwHelper.IsURP\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ApplyIntensity(intensityInURP);}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (CwHelper.IsHDRP\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ApplyIntensity(intensityInHDRP);}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ApplyIntensity(\textcolor{keywordtype}{float}\ intensity)}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (intensity\ >=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cachedLightSet\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLight\ \ \ \ =\ GetComponent<Light>();}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLightSet\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00078}00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#if\ \_\_HDRP\_\_}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cachedLightData\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLightData\ =\ GetComponent<UnityEngine.Rendering.HighDefinition.HDAdditionalLightData>();}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cachedLightData\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLightData.SetIntensity(intensity\ *\ multiplier,\ UnityEngine.Rendering.HighDefinition.LightUnit.Lux);}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00088}00088\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cachedLight.intensity\ =\ intensity\ *\ multiplier;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00096}00096\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00097}00097\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00098}00098\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_light_intensity}{CwLightIntensity}};}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00102}00102\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00103}00103\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }P3dLight\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00105}00105\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}multiplier"{}},\ \textcolor{stringliteral}{"{}All\ light\ values\ will\ be\ multiplied\ by\ this\ before\ use."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}intensityInStandard"{}},\ \textcolor{stringliteral}{"{}This\ allows\ you\ to\ control\ the\ intensity\ of\ the\ attached\ light\ when\ using\ the\ Standard\ rendering\ pipeline.\(\backslash\)n\(\backslash\)n-\/1\ =\ The\ attached\ light\ intensity\ will\ not\ be\ modified."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}intensityInURP"{}},\ \textcolor{stringliteral}{"{}This\ allows\ you\ to\ control\ the\ intensity\ of\ the\ attached\ light\ when\ using\ the\ URP\ rendering\ pipeline.\(\backslash\)n\(\backslash\)n-\/1\ =\ The\ attached\ light\ intensity\ will\ not\ be\ modified."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}intensityInHDRP"{}},\ \textcolor{stringliteral}{"{}This\ allows\ you\ to\ control\ the\ intensity\ of\ the\ attached\ light\ when\ using\ the\ HDRP\ rendering\ pipeline.\(\backslash\)n\(\backslash\)n-\/1\ =\ The\ attached\ light\ intensity\ will\ not\ be\ modified."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_light_intensity_8cs_source_l00115}00115\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

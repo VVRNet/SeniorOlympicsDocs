@@ -1,0 +1,389 @@
+\doxysection{Spine.\+RGBATimeline 클래스 참조}
+\hypertarget{class_spine_1_1_r_g_b_a_timeline}{}\label{class_spine_1_1_r_g_b_a_timeline}\index{Spine.RGBATimeline@{Spine.RGBATimeline}}
+
+
+Changes a slot\textquotesingle{}s Slot.\+Color.  
+
+
+
+
+Spine.\+RGBATimeline에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_r_g_b_a_timeline__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+RGBATimeline에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_r_g_b_a_timeline__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a37cabf2ec9e53e98c8b7797a5a6c77fa}{RGBATimeline}} (int frame\+Count, int bezier\+Count, int slot\+Index)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac8122179792c1713d19f0443a48852ec}{Set\+Frame}} (int frame, float time, float r, float g, float b, float a)
+\begin{DoxyCompactList}\small\item\em Sets the time and color for the specified frame. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a40a20d5077d19ba65f1e7b65386e6377}{Apply}} (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, float last\+Time, float time, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$ fired\+Events, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction)
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_curve_timeline}{Spine.\+Curve\+Timeline}}(으)로부터 상속된 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_curve_timeline_afa35b489907e468118f5e8d723957fdf}{Curve\+Timeline}} (int frame\+Count, int bezier\+Count, params string\mbox{[}$\,$\mbox{]} property\+Ids)
+\begin{DoxyCompactList}\small\item\em The number of key frames for this timeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_ad3e163b312c0b48a00bc36c0552145ca}{Set\+Linear}} (int frame)
+\begin{DoxyCompactList}\small\item\em Sets the specified frame to linear interpolation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_a1b9ccce366163e04de7ad20c7370190b}{Set\+Stepped}} (int frame)
+\begin{DoxyCompactList}\small\item\em Sets the specified frame to stepped interpolation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline_a08d449a4eb9f83fc3292970d0cac522e}{Get\+Curve\+Type}} (int frame)
+\begin{DoxyCompactList}\small\item\em Returns the interpolation type for the specified frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_adbcf2147bc99fbb320059c3bbc14ef7c}{Shrink}} (int bezier\+Count)
+\begin{DoxyCompactList}\small\item\em Shrinks the storage for Bezier curves, for use when \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_a14cd4a3a6015c915726e66e72435e5fd}{Set\+Bezier}} (int bezier, int frame, int value, float time1, float value1, float cx1, float cy1, float cx2, float cy2, float time2, float value2)
+\begin{DoxyCompactList}\small\item\em Stores the segments for the specified Bezier curve. For timelines that modify multiple values, there may be more than one curve per frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{Get\+Bezier\+Value}} (float time, int frame\+Index, int value\+Offset, int i)
+\begin{DoxyCompactList}\small\item\em Returns the Bezier interpolated value for the specified time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_timeline}{Spine.\+Timeline}}(으)로부터 상속된 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_timeline_a6dc435d0ab20cafaa2d8d0b00dc62eb6}{Timeline}} (int frame\+Count, params string\mbox{[}$\,$\mbox{]} property\+Ids)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{매개변수}
+{\em property\+Ids} & Unique identifiers for the properties the timeline modifies.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_timeline_ac69d4f351c6bc3b79b1052323bd4201a}{Apply}} (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, float last\+Time, float time, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$ events, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Applies this timeline to the skeleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}} = 5
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_curve_timeline}{Spine.\+Curve\+Timeline}}(으)로부터 상속된 정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_afa6ed9000cd369a9cf98217f53871072}{LINEAR}} = 0
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_a818b2bad40f110b39aafb0056292e6f5}{STEPPED}} = 1
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}} = 2
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_adc0e7520753f035185d9144e46b93758}{BEZIER\+\_\+\+SIZE}} = 18
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Protected 속성}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}{R}} = 1
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}{G}} = 2
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}{B}} = 3
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}{A}} = 4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+override int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a23e006d370987d92d47bb924eaafac91}{Frame\+Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_aa2f11ab49d1551f3bcc0c8a8307ef2b9}{Slot\+Index}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The index of the slot in \doxylink{class_spine_1_1_skeleton_af72992c14e5cab05511330483a21e902}{Skeleton.\+Slots} that will be changed when this timeline is applied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_timeline}{Spine.\+Timeline}}(으)로부터 상속된 속성}
+\begin{DoxyCompactItemize}
+\item 
+string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_timeline_a55319626a889150e17d4fa4e26c21704}{Property\+Ids}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Uniquely encodes both the type of this timeline and the skeleton properties that it affects. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_timeline_aecb5b6169fa02870035f5d3d788c5bfb}{Frames}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The time in seconds and any other values for each frame. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_spine_1_1_timeline_a4884160d47f7641f9a7b6a655b6970b3}{Frame\+Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of entries stored per frame. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_spine_1_1_timeline_ad50c47fe6a578b014ad1ef8aa3d83fb4}{Frame\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of frames for this timeline. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_timeline_abd4e11b8c42f7c3c8b07793f134680fc}{Duration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{interface_spine_1_1_i_slot_timeline}{Spine.\+ISlot\+Timeline}}(으)로부터 상속된 속성}
+
+
+\doxysubsection{상세한 설명}
+Changes a slot\textquotesingle{}s Slot.\+Color. 
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01031}{1031}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_a37cabf2ec9e53e98c8b7797a5a6c77fa}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!RGBATimeline@{RGBATimeline}}
+\index{RGBATimeline@{RGBATimeline}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{RGBATimeline()}{RGBATimeline()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_a37cabf2ec9e53e98c8b7797a5a6c77fa} 
+Spine.\+RGBATimeline.\+RGBATimeline (\begin{DoxyParamCaption}\item[{int}]{frame\+Count}{, }\item[{int}]{bezier\+Count}{, }\item[{int}]{slot\+Index}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01037}{1037}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(frameCount,\ bezierCount,\ \textcolor{comment}{//}}
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394}{Property}}.RGB\ +\ \textcolor{stringliteral}{"{}|"{}}\ +\ slotIndex,\ \textcolor{comment}{//}}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394}{Property}}.Alpha\ +\ \textcolor{stringliteral}{"{}|"{}}\ +\ slotIndex)\ \{}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \ \ \ \ this.slotIndex\ =\ slotIndex;}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_a40a20d5077d19ba65f1e7b65386e6377}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!Apply@{Apply}}
+\index{Apply@{Apply}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_a40a20d5077d19ba65f1e7b65386e6377} 
+override void Spine.\+RGBATimeline.\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}}]{skeleton}{, }\item[{float}]{last\+Time}{, }\item[{float}]{time}{, }\item[{\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$}]{fired\+Events}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{\mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}}}]{direction}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01065}{1065}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \ \ \ \ Slot\ slot\ =\ skeleton.slots.Items[slotIndex];}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!slot.bone.active)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{01069\ }
+\DoxyCodeLine{01070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ frames\ =\ this.frames;}
+\DoxyCodeLine{01071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ frames[0])\ \{}
+\DoxyCodeLine{01072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SlotData\ setup\ =\ slot.data;}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.r\ =\ setup.r;}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.g\ =\ setup.g;}
+\DoxyCodeLine{01077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.b\ =\ setup.b;}
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.a\ =\ setup.a;}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.r\ +=\ (setup.r\ -\/\ slot.r)\ *\ alpha;}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.g\ +=\ (setup.g\ -\/\ slot.g)\ *\ alpha;}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.b\ +=\ (setup.b\ -\/\ slot.b)\ *\ alpha;}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.a\ +=\ (setup.a\ -\/\ slot.a)\ *\ alpha;}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.ClampColor();}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01090\ }
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r,\ g,\ b,\ a;}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ Search(frames,\ time,\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}),\ curveType\ =\ (int)curves[i\ /\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}];}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (curveType)\ \{}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_afa6ed9000cd369a9cf98217f53871072}{LINEAR}}:}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ before\ =\ frames[i];}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}{R}}];}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}{G}}];}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}{B}}];}
+\DoxyCodeLine{01099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}{A}}];}
+\DoxyCodeLine{01100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (time\ -\/\ before)\ /\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}]\ -\/\ before);}
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ +=\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}{R}}]\ -\/\ r)\ *\ t;}
+\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\ +=\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}{G}}]\ -\/\ g)\ *\ t;}
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ +=\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}{B}}]\ -\/\ b)\ *\ t;}
+\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ +=\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}}\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}{A}}]\ -\/\ a)\ *\ t;}
+\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_a818b2bad40f110b39aafb0056292e6f5}{STEPPED}}:}
+\DoxyCodeLine{01107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}{R}}];}
+\DoxyCodeLine{01108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}{G}}];}
+\DoxyCodeLine{01109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}{B}}];}
+\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}{A}}];}
+\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{GetBezierValue}}(time,\ i,\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}{R}},\ curveType\ -\/\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}});}
+\DoxyCodeLine{01114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{GetBezierValue}}(time,\ i,\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}{G}},\ curveType\ +\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_adc0e7520753f035185d9144e46b93758}{BEZIER\_SIZE}}\ -\/\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}});}
+\DoxyCodeLine{01115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{GetBezierValue}}(time,\ i,\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}{B}},\ curveType\ +\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_adc0e7520753f035185d9144e46b93758}{BEZIER\_SIZE}}\ *\ 2\ -\/\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}});}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{GetBezierValue}}(time,\ i,\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}{A}},\ curveType\ +\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_adc0e7520753f035185d9144e46b93758}{BEZIER\_SIZE}}\ *\ 3\ -\/\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}});}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01119\ }
+\DoxyCodeLine{01120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\ ==\ 1)\ \{}
+\DoxyCodeLine{01121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.r\ =\ r;}
+\DoxyCodeLine{01122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.g\ =\ g;}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.b\ =\ b;}
+\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.a\ =\ a;}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ br,\ bg,\ bb,\ ba;}
+\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup)\ \{}
+\DoxyCodeLine{01128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ br\ =\ slot.data.r;}
+\DoxyCodeLine{01129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bg\ =\ slot.data.g;}
+\DoxyCodeLine{01130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bb\ =\ slot.data.b;}
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ba\ =\ slot.data.a;}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ br\ =\ slot.r;}
+\DoxyCodeLine{01134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bg\ =\ slot.g;}
+\DoxyCodeLine{01135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bb\ =\ slot.b;}
+\DoxyCodeLine{01136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ba\ =\ slot.a;}
+\DoxyCodeLine{01137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.r\ =\ br\ +\ (r\ -\/\ br)\ *\ alpha;}
+\DoxyCodeLine{01139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.g\ =\ bg\ +\ (g\ -\/\ bg)\ *\ alpha;}
+\DoxyCodeLine{01140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.b\ =\ bb\ +\ (b\ -\/\ bb)\ *\ alpha;}
+\DoxyCodeLine{01141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slot.a\ =\ ba\ +\ (a\ -\/\ ba)\ *\ alpha;}
+\DoxyCodeLine{01142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01143\ \ \ \ \ \ \ \ \ \ \ \ \ slot.ClampColor();}
+\DoxyCodeLine{01144\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_r_g_b_a_timeline_a40a20d5077d19ba65f1e7b65386e6377_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_ac8122179792c1713d19f0443a48852ec}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!SetFrame@{SetFrame}}
+\index{SetFrame@{SetFrame}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{SetFrame()}{SetFrame()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_ac8122179792c1713d19f0443a48852ec} 
+void Spine.\+RGBATimeline.\+Set\+Frame (\begin{DoxyParamCaption}\item[{int}]{frame}{, }\item[{float}]{time}{, }\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Sets the time and color for the specified frame. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em frame} & Between 0 and 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{frameCount}
+
+\end{DoxyCode}
+, inclusive.\\
+\hline
+{\em time} & The frame time in seconds.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01056}{1056}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ frame\ *=\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}};}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame]\ =\ time;}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}{R}}]\ =\ r;}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}{G}}]\ =\ g;}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}{B}}]\ =\ b;}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame\ +\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}{A}}]\ =\ a;}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!A@{A}}
+\index{A@{A}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_a891b82ff53705c69c3063c23e4fedfe3} 
+const int Spine.\+RGBATimeline.\+A = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01033}{1033}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!B@{B}}
+\index{B@{B}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_a1ffc2ee45c260a02e1b450959e0fddd4} 
+const int Spine.\+RGBATimeline.\+B = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01033}{1033}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!ENTRIES@{ENTRIES}}
+\index{ENTRIES@{ENTRIES}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{ENTRIES}{ENTRIES}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51} 
+const int Spine.\+RGBATimeline.\+ENTRIES = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01032}{1032}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!G@{G}}
+\index{G@{G}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_ac9028750a057c761a8f9359a351d8e9a} 
+const int Spine.\+RGBATimeline.\+G = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01033}{1033}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!R@{R}}
+\index{R@{R}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_ab42f2e1a5358f53eb9de6a73fd33c650} 
+const int Spine.\+RGBATimeline.\+R = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01033}{1033}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_a23e006d370987d92d47bb924eaafac91}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!FrameEntries@{FrameEntries}}
+\index{FrameEntries@{FrameEntries}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{FrameEntries}{FrameEntries}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_a23e006d370987d92d47bb924eaafac91} 
+override int Spine.\+RGBATimeline.\+Frame\+Entries\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01043}{1043}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_r_g_b_a_timeline_a13fb3f9a0fa30ebb690ffd3d9d2a5a51}{ENTRIES}};\ \}}
+\DoxyCodeLine{01045\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_r_g_b_a_timeline_aa2f11ab49d1551f3bcc0c8a8307ef2b9}\index{Spine.RGBATimeline@{Spine.RGBATimeline}!SlotIndex@{SlotIndex}}
+\index{SlotIndex@{SlotIndex}!Spine.RGBATimeline@{Spine.RGBATimeline}}
+\doxysubsubsection{\texorpdfstring{SlotIndex}{SlotIndex}}
+{\footnotesize\ttfamily \label{class_spine_1_1_r_g_b_a_timeline_aa2f11ab49d1551f3bcc0c8a8307ef2b9} 
+int Spine.\+RGBATimeline.\+Slot\+Index\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The index of the slot in \doxylink{class_spine_1_1_skeleton_af72992c14e5cab05511330483a21e902}{Skeleton.\+Slots} that will be changed when this timeline is applied. 
+
+
+
+\mbox{\hyperlink{interface_spine_1_1_i_slot_timeline_aa12b5081d0de44535039d99ebe509c00}{Spine.\+ISlot\+Timeline}}를 구현.
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l01047}{1047}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ slotIndex;}
+\DoxyCodeLine{01050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_animation_8cs}{Animation.\+cs}}\end{DoxyCompactItemize}

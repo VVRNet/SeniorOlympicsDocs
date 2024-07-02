@@ -1,0 +1,110 @@
+\doxysection{Dummy\+Mecanim\+Controller\+Example.\+cs}
+\hypertarget{_dummy_mecanim_controller_example_8cs_source}{}\label{_dummy_mecanim_controller_example_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Mecanim as Logic/DummyMecanimControllerExample.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Mecanim as Logic/DummyMecanimControllerExample.cs}}
+\mbox{\hyperlink{_dummy_mecanim_controller_example_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00035}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example}{DummyMecanimControllerExample}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00037}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab16736fadc2608fa3f6c55cadae3e7e5}{00037}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Animator\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab16736fadc2608fa3f6c55cadae3e7e5}{logicAnimator}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab48a435e724cc19b3730fa7aa1f13e56}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example}{SkeletonAnimationHandleExample}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab48a435e724cc19b3730fa7aa1f13e56}{animationHandle}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Controls"{}})]}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_af6e270c8f01d443dcc923d5244142b95}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ KeyCode\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_af6e270c8f01d443dcc923d5244142b95}{walkButton}}\ =\ KeyCode.LeftShift;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ac3d976a11a04bbd76f56ae652b036d9a}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ KeyCode\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ac3d976a11a04bbd76f56ae652b036d9a}{jumpButton}}\ =\ KeyCode.Space;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Animator\ Properties"{}})]}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00045}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_af8639e21f9914aeef1583a20376541cc}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_af8639e21f9914aeef1583a20376541cc}{horizontalSpeedProperty}}\ =\ \textcolor{stringliteral}{"{}Speed"{}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ae6d81e50dbe83718d9a0b983676cd080}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ae6d81e50dbe83718d9a0b983676cd080}{verticalSpeedProperty}}\ =\ \textcolor{stringliteral}{"{}VerticalSpeed"{}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a1149a7e1d71d015d5d4fd4e8541a7eb7}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a1149a7e1d71d015d5d4fd4e8541a7eb7}{groundedProperty}}\ =\ \textcolor{stringliteral}{"{}Grounded"{}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Fake\ Physics"{}})]}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00050}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a9c2593691c4d1241ca6fc4fb12d93e32}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a9c2593691c4d1241ca6fc4fb12d93e32}{jumpDuration}}\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_abd0475b84a343c96c059fec494340ee3}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_abd0475b84a343c96c059fec494340ee3}{speed}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00052}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{isGrounded}};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Awake\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{isGrounded}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ Input.GetAxisRaw(\textcolor{stringliteral}{"{}Horizontal"{}});}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.GetKey(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_af6e270c8f01d443dcc923d5244142b95}{walkButton}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ 0.4f;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ speed.x\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Flip\ skeleton.}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab48a435e724cc19b3730fa7aa1f13e56}{animationHandle}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example_ae9f2b9b03656f13a81fa6233e3cee2f9}{SetFlip}}(x);}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.GetKeyDown(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ac3d976a11a04bbd76f56ae652b036d9a}{jumpButton}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{isGrounded}})}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(FakeJump());}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab16736fadc2608fa3f6c55cadae3e7e5}{logicAnimator}}.SetFloat(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_af8639e21f9914aeef1583a20376541cc}{horizontalSpeedProperty}},\ Mathf.Abs(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_abd0475b84a343c96c059fec494340ee3}{speed}}.x));}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab16736fadc2608fa3f6c55cadae3e7e5}{logicAnimator}}.SetFloat(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ae6d81e50dbe83718d9a0b983676cd080}{verticalSpeedProperty}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_abd0475b84a343c96c059fec494340ee3}{speed}}.y);}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ab16736fadc2608fa3f6c55cadae3e7e5}{logicAnimator}}.SetBool(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a1149a7e1d71d015d5d4fd4e8541a7eb7}{groundedProperty}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{isGrounded}});}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ IEnumerator\ FakeJump\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rise}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{isGrounded}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ speed.y\ =\ 10f;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ durationLeft\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a9c2593691c4d1241ca6fc4fb12d93e32}{jumpDuration}}\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (durationLeft\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ durationLeft\ -\/=\ Time.deltaTime;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Input.GetKey(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_ac3d976a11a04bbd76f56ae652b036d9a}{jumpButton}}))\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fall}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ speed.y\ =\ -\/10f;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fallDuration\ =\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a9c2593691c4d1241ca6fc4fb12d93e32}{jumpDuration}}\ *\ 0.5f)\ -\/\ durationLeft;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(fallDuration);}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Land}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ speed.y\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_a80adb08d0168bfaa7fefb27465f85fe7}{isGrounded}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_dummy_mecanim_controller_example_8cs_source_l00104}00104\ \}}
+
+\end{DoxyCode}

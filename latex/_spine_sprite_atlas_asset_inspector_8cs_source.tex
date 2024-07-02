@@ -1,0 +1,159 @@
+\doxysection{Spine\+Sprite\+Atlas\+Asset\+Inspector.\+cs}
+\hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source}{}\label{_spine_sprite_atlas_asset_inspector_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Asset Types/SpineSpriteAtlasAssetInspector.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Asset Types/SpineSpriteAtlasAssetInspector.cs}}
+\mbox{\hyperlink{_spine_sprite_atlas_asset_inspector_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine}{Spine}};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor}{Spine.Unity.Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_spine_1_1_event}{Event}}\ =\ UnityEngine.\mbox{\hyperlink{class_spine_1_1_event_a7ac46ae9fb305152ccd1f4626af42edc}{Event}};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00040}00040\ \ \ \ \ [CustomEditor(typeof(SpineSpriteAtlasAsset)),\ CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_sprite_atlas_asset_inspector}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_sprite_atlas_asset_inspector}{SpineSpriteAtlasAssetInspector}}\ :\ UnityEditor.\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_ac555d00812ab409d5738fb08c7cff1d6}{Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ SerializedProperty\ atlasFile,\ materials;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}}\ atlasAsset;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ List<AtlasRegion>\ GetRegions\ (\mbox{\hyperlink{class_spine_1_1_atlas}{Atlas}}\ atlas)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ FieldInfo\ regionsField\ =\ SpineInspectorUtility.GetNonPublicField(typeof(\mbox{\hyperlink{class_spine_1_1_atlas}{Atlas}}),\ \textcolor{stringliteral}{"{}regions"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (List<AtlasRegion>)regionsField.GetValue(atlas);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_a50138b04862241cbc785ba1e1b9b014f}{ConfirmInitialization}}();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ atlasFile\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}spriteAtlasFile"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ materials\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}materials"{}});}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ materials.isExpanded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ atlasAsset\ =\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}})target;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}}.AnySpriteAtlasNeedsRegionsLoaded())}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ -\/=\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}}.UpdateWhenEditorPlayModeStarted;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ +=\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}}.UpdateWhenEditorPlayModeStarted;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDisable\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.update\ -\/=\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}}.UpdateWhenEditorPlayModeStarted;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00067}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_sprite_atlas_asset_inspector_a57a055743a92228459019d3ff066b571}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_sprite_atlas_asset_inspector_a57a055743a92228459019d3ff066b571}{OnInspectorGUI}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (serializedObject.isEditingMultipleObjects)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawDefaultInspector();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ serializedObject.Update();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ atlasAsset\ =\ (atlasAsset\ ==\ \textcolor{keyword}{null})\ ?\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset}{SpineSpriteAtlasAsset}})target\ :\ atlasAsset;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atlasAsset.RegionsNeedLoading)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GUILayout.Button(SpineInspectorUtility.TempContent(\textcolor{stringliteral}{"{}Load\ regions\ by\ entering\ Play\ mode"{}}),\ GUILayout.Height(20)))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorApplication.isPlaying\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.BeginChangeCheck();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(atlasFile);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.PropertyField(materials,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (EditorGUI.EndChangeCheck())\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ serializedObject.ApplyModifiedProperties();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atlasAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset_ad36ce4d6160f3196e7f2666266a8c1a4}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atlasAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset_a7333f7b473f55863ef9197005a8ae55b}{GetAtlas}}();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atlasAsset.updateRegionsInPlayMode\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materials.arraySize\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}No\ materials"{}},\ MessageType.Error);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ materials.arraySize;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializedProperty\ prop\ =\ materials.GetArrayElementAtIndex(i);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ (Material)prop.objectReferenceValue;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Materials\ cannot\ be\ null."{}},\ MessageType.Error);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atlasFile.objectReferenceValue\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ baseIndent\ =\ EditorGUI.indentLevel;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<AtlasRegion>\ regions\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_sprite_atlas_asset_inspector}{SpineSpriteAtlasAssetInspector}}.GetRegions(atlasAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset_a7333f7b473f55863ef9197005a8ae55b}{GetAtlas}}());}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ regionsCount\ =\ regions.Count;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (\textcolor{keyword}{new}\ EditorGUILayout.HorizontalScope())\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.LabelField(\textcolor{stringliteral}{"{}Atlas\ Regions"{}},\ EditorStyles.boldLabel);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.LabelField(\textcolor{keywordtype}{string}.\mbox{\hyperlink{namespace_spine_a66fcb0ab63b2b301097360f7cb4f1cd3}{Format}}(\textcolor{stringliteral}{"{}\{0\}\ regions\ total"{}},\ regionsCount));}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ lastPage\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ regionsCount;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lastPage\ !=\ regions[i].page)\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lastPage\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.Separator();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.Separator();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastPage\ =\ regions[i].page;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Material\ mat\ =\ ((Material)lastPage.\mbox{\hyperlink{class_spine_1_1_atlas_page_a83791ea621231218919e51e1eb04f7e5}{rendererObject}});}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mat\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.indentLevel\ =\ baseIndent;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (\textcolor{keyword}{new}\ GUILayout.HorizontalScope())}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (\textcolor{keyword}{new}\ EditorGUI.DisabledGroupScope(\textcolor{keyword}{true}))}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.ObjectField(mat,\ typeof(Material),\ \textcolor{keyword}{false},\ GUILayout.Width(250));}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.indentLevel\ =\ baseIndent\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Page\ missing\ material!"{}},\ MessageType.Warning);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ regionName\ =\ regions[i].\mbox{\hyperlink{class_spine_1_1_atlas_page_a545ce356a7a7b20141fa333c0ec2c1b0}{name}};}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ icon\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_1_1_icons}{Icons}}.image;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (regionName.EndsWith(\textcolor{stringliteral}{"{}\ "{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionName\ =\ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}'\{0\}'"{}},\ regions[i].name);}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ icon\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities}{SpineEditorUtilities}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_spine_editor_utilities_1_1_icons}{Icons}}.warning;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.LabelField(SpineInspectorUtility.TempContent(regionName,\ icon,\ \textcolor{stringliteral}{"{}Region\ name\ ends\ with\ whitespace.\ This\ may\ cause\ errors.\ Please\ check\ your\ source\ image\ filenames."{}}));}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.LabelField(SpineInspectorUtility.TempContent(regionName,\ icon));}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.indentLevel\ =\ baseIndent;}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (serializedObject.ApplyModifiedProperties()\ ||\ SpineInspectorUtility.UndoRedoPerformed(\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor_af37dce70335e31a012b150edf4c1007e}{Event}}.current))}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atlasAsset.\mbox{\hyperlink{class_spine_1_1_unity_1_1_spine_sprite_atlas_asset_ad36ce4d6160f3196e7f2666266a8c1a4}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_spine_sprite_atlas_asset_inspector_8cs_source_l00153}00153\ \}}
+
+\end{DoxyCode}

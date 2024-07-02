@@ -1,0 +1,174 @@
+\doxysection{Skeleton\+Animation\+Multi.\+cs}
+\hypertarget{_skeleton_animation_multi_8cs_source}{}\label{_skeleton_animation_multi_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SkeletonAnimationMulti/SkeletonAnimationMulti.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Sample Components/SkeletonAnimationMulti/SkeletonAnimationMulti.cs}}
+\mbox{\hyperlink{_skeleton_animation_multi_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine}{Spine}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00036}00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00038}\mbox{\hyperlink{namespace_spine_1_1_unity_abfe1ca454300ce31e2647df1faf334cf}{00038}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity_abfe1ca454300ce31e2647df1faf334cf}{Animation}}\ =\ \mbox{\hyperlink{namespace_spine}{Spine}}.\mbox{\hyperlink{class_spine_1_1_animation}{Animation}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00039}\mbox{\hyperlink{namespace_spine_1_1_unity_ae2bd0d2fe29eaacc28597cd7be01cd5b}{00039}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity_ae2bd0d2fe29eaacc28597cd7be01cd5b}{AnimationState}}\ =\ \mbox{\hyperlink{namespace_spine}{Spine}}.\mbox{\hyperlink{class_spine_1_1_animation_state}{AnimationState}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00041}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi}{SkeletonAnimationMulti}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MainTrackIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00044}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a6194128cb1a54d12e3cb18540ed4dff2}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a6194128cb1a54d12e3cb18540ed4dff2}{initialFlipX}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a3969d6bfeaaec609941b7914260cedf8}{initialFlipY}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00045}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a98c0d4636544a59329ead95e67de911e}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a98c0d4636544a59329ead95e67de911e}{initialAnimation}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_abe293dd2c4853b1686602b12967d394c}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_abe293dd2c4853b1686602b12967d394c}{initialLoop}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00048}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a030fce37800e23372b0ccc6fa1bb69dc}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<SkeletonDataAsset>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a030fce37800e23372b0ccc6fa1bb69dc}{skeletonDataAssets}}\ =\ \textcolor{keyword}{new}\ List<SkeletonDataAsset>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00050}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a65ec26cc25cdf6d380f3d3a132ebf550}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_mesh_generator_1_1_settings}{MeshGenerator.Settings}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a65ec26cc25cdf6d380f3d3a132ebf550}{meshGeneratorSettings}}\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator}{MeshGenerator}}.\mbox{\hyperlink{struct_spine_1_1_unity_1_1_mesh_generator_1_1_settings}{Settings}}.\mbox{\hyperlink{struct_spine_1_1_unity_1_1_mesh_generator_1_1_settings_ac37fbf425eb1f4703bf3359c58582498}{Default}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ readonly\ List<SkeletonAnimation>\ skeletonAnimations\ =\ \textcolor{keyword}{new}\ List<SkeletonAnimation>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ readonly\ Dictionary<string,\ Animation>\ animationNameTable\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ Animation>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ readonly\ Dictionary<Animation,\ SkeletonAnimation>\ animationSkeletonTable\ =\ \textcolor{keyword}{new}\ Dictionary<Animation,\ SkeletonAnimation>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Stateful}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ currentSkeletonAnimation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Clear\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ skeletonAnimation\ \textcolor{keywordflow}{in}\ skeletonAnimations)}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(skeletonAnimation.gameObject);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimations.Clear();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ animationNameTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ animationSkeletonTable.Clear();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetActiveSkeleton\ (\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ skeletonAnimations.Count)}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetActiveSkeleton(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetActiveSkeleton(skeletonAnimations[index]);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetActiveSkeleton\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ skeletonAnimation)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ iter\ \textcolor{keywordflow}{in}\ skeletonAnimations)}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iter.gameObject.SetActive(iter\ ==\ skeletonAnimation);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ currentSkeletonAnimation\ =\ skeletonAnimation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00081}00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Lifecycle}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Awake\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a53c1470b8fef85409cdf283449236000}{Initialize}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00085}00085\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00087}00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ API}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00088}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ae5858b3ef30105bb381bc8534a082106}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<Animation,\ SkeletonAnimation>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ae5858b3ef30105bb381bc8534a082106}{AnimationSkeletonTable}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.animationSkeletonTable;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00089}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_af0ca58e92ae04d1f792bd89e0a096470}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<string,\ Animation>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_af0ca58e92ae04d1f792bd89e0a096470}{AnimationNameTable}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.animationNameTable;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00090}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a1ac85e7732da282d1196aea8d46b1690}{00090}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a1ac85e7732da282d1196aea8d46b1690}{CurrentSkeletonAnimation}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ this.currentSkeletonAnimation;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00091}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a25093ae00f807cffcc33a95a1155421f}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<SkeletonAnimation>\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a25093ae00f807cffcc33a95a1155421f}{SkeletonAnimations}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ skeletonAnimations;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00093}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a53c1470b8fef85409cdf283449236000}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a53c1470b8fef85409cdf283449236000}{Initialize}}\ (\textcolor{keywordtype}{bool}\ overwrite)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonAnimations.Count\ !=\ 0\ \&\&\ !overwrite)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ Clear();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_mesh_generator_1_1_settings}{MeshGenerator.Settings}}\ settings\ =\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a65ec26cc25cdf6d380f3d3a132ebf550}{meshGeneratorSettings}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ thisTransform\ =\ this.transform;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_data_asset}{SkeletonDataAsset}}\ dataAsset\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a030fce37800e23372b0ccc6fa1bb69dc}{skeletonDataAssets}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ newSkeletonAnimation\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_a8a2052d505c044dab2e1be70c55ec488}{NewSkeletonAnimationGameObject}}(dataAsset);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newSkeletonAnimation.transform.SetParent(thisTransform,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newSkeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_ae742f05394283ec3675d3e130587bae2}{SetMeshSettings}}(settings);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newSkeletonAnimation.initialFlipX\ =\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a6194128cb1a54d12e3cb18540ed4dff2}{initialFlipX}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newSkeletonAnimation.initialFlipY\ =\ this.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a3969d6bfeaaec609941b7914260cedf8}{initialFlipY}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton\ =\ newSkeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a8183a6e1f44096398fef80ed4af35e34}{skeleton}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.ScaleX\ =\ this.initialFlipX\ ?\ -\/1\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeleton.ScaleY\ =\ this.initialFlipY\ ?\ -\/1\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newSkeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_ac87342871735d41c80346ab7c2999ddd}{Initialize}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimations.Add(newSkeletonAnimation);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Build\ cache}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Dictionary<string,\ Animation>\ animationNameTable\ =\ this.animationNameTable;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ Dictionary<Animation,\ SkeletonAnimation>\ animationSkeletonTable\ =\ this.animationSkeletonTable;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ skeletonAnimation\ \textcolor{keywordflow}{in}\ skeletonAnimations)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{namespace_spine_1_1_unity_abfe1ca454300ce31e2647df1faf334cf}{Animation}}\ animationObject\ \textcolor{keywordflow}{in}\ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_aca997f96ffb5a89579dc325b790f0fd6}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_aa7ca532fb2a76b9998bb44b8066e99fc}{Data}}.\mbox{\hyperlink{class_spine_1_1_skeleton_data_a5139ac146e04db6256bd96fc1cfea7a8}{Animations}})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animationNameTable[animationObject.\mbox{\hyperlink{class_spine_1_1_animation_a51bf7cf1ccd2e3ae1fa03f62336b85a7}{Name}}]\ =\ animationObject;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animationSkeletonTable[animationObject]\ =\ skeletonAnimation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ SetActiveSkeleton(skeletonAnimations[0]);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ad003ed4f608538ab2be0ef583e2ac953}{SetAnimation}}(\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a98c0d4636544a59329ead95e67de911e}{initialAnimation}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_abe293dd2c4853b1686602b12967d394c}{initialLoop}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00129}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a09b72afa90140d9071f84e40de7a7a8c}{00129}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespace_spine_1_1_unity_abfe1ca454300ce31e2647df1faf334cf}{Animation}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a09b72afa90140d9071f84e40de7a7a8c}{FindAnimation}}\ (\textcolor{keywordtype}{string}\ animationName)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_1_1_unity_abfe1ca454300ce31e2647df1faf334cf}{Animation}}\ animation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ animationNameTable.TryGetValue(animationName,\ out\ animation);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ animation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00135}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ad003ed4f608538ab2be0ef583e2ac953}{00135}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ad003ed4f608538ab2be0ef583e2ac953}{SetAnimation}}\ (\textcolor{keywordtype}{string}\ animationName,\ \textcolor{keywordtype}{bool}\ loop)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ad003ed4f608538ab2be0ef583e2ac953}{SetAnimation}}(\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a09b72afa90140d9071f84e40de7a7a8c}{FindAnimation}}(animationName),\ loop);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00139}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a475b9e83c52e7ab2348dfa8ef2d52f30}{00139}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a475b9e83c52e7ab2348dfa8ef2d52f30}{SetAnimation}}\ (\mbox{\hyperlink{namespace_spine_1_1_unity_abfe1ca454300ce31e2647df1faf334cf}{Animation}}\ animation,\ \textcolor{keywordtype}{bool}\ loop)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animation\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation}{SkeletonAnimation}}\ skeletonAnimation;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ animationSkeletonTable.TryGetValue(animation,\ out\ skeletonAnimation);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeletonAnimation\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetActiveSkeleton(skeletonAnimation);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_a8183a6e1f44096398fef80ed4af35e34}{skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a1633fed9631208f0f1da9a29c75eb90a}{SetToSetupPose}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ trackEntry\ =\ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_a7ee3fba86aaa662dd7a6e93b446be709}{state}}.SetAnimation(MainTrackIndex,\ animation,\ loop);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_a3856279658d783b0f45467aea7e25668}{Update}}(0);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ trackEntry;}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00155}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a8bd5cc8051e0921d9ce348b2c9191170}{00155}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a8bd5cc8051e0921d9ce348b2c9191170}{SetEmptyAnimation}}\ (\textcolor{keywordtype}{float}\ mixDuration)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ currentSkeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_a7ee3fba86aaa662dd7a6e93b446be709}{state}}.SetEmptyAnimation(MainTrackIndex,\ mixDuration);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00159}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ab2add44b4cdba40df124a9685d3925bf}{00159}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_ab2add44b4cdba40df124a9685d3925bf}{ClearAnimation}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ currentSkeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_a7ee3fba86aaa662dd7a6e93b446be709}{state}}.ClearTrack(MainTrackIndex);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00163}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a395bcb44d7e1104617aca222de328abe}{00163}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_track_entry}{TrackEntry}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_multi_a395bcb44d7e1104617aca222de328abe}{GetCurrent}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ currentSkeletonAnimation.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_animation_a7ee3fba86aaa662dd7a6e93b446be709}{state}}.GetCurrent(MainTrackIndex);}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00166}00166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_animation_multi_8cs_source_l00168}00168\ \}}
+
+\end{DoxyCode}

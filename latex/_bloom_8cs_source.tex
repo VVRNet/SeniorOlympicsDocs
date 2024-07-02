@@ -1,0 +1,263 @@
+\doxysection{Bloom.\+cs}
+\hypertarget{_bloom_8cs_source}{}\label{_bloom_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX Remaster/Demo Assets/Kino Bloom/Bloom.cs@{D:/Unity/SeniorOlympics/Assets/JMO Assets/Cartoon FX Remaster/Demo Assets/Kino Bloom/Bloom.cs}}
+\mbox{\hyperlink{_bloom_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00002}00002\ \textcolor{comment}{//\ Kino/Bloom\ v2\ -\/\ Bloom\ filter\ for\ Unity}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00004}00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2015,\ 2016\ Keijiro\ Takahashi}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00005}00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00006}00006\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00007}00007\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00008}00008\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00009}00009\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00010}00010\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00011}00011\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00012}00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00013}00013\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00014}00014\ \textcolor{comment}{//\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00015}00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00016}00016\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00017}00017\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00018}00018\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00019}00019\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00020}00020\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00021}00021\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00022}00022\ \textcolor{comment}{//\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00023}00023\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00025}00025\ \textcolor{comment}{//\ Modified\ by\ Jean\ Moreno\ for\ Cartoon\ FX\ Remaster\ Demo}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00026}00026\ \textcolor{comment}{//\ -\/\ effect\ previews\ in\ SceneView}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00027}00027\ \textcolor{comment}{//\ -\/\ disabled\ a\ code\ warning}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00029}00029\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00031}\mbox{\hyperlink{namespace_kino}{00031}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_kino}{Kino}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00033}00033\ \ \ \ \ [ExecuteInEditMode]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00034}00034\ \ \ \ \ [RequireComponent(typeof(Camera))]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00035}00035\ \ \ \ \ [ImageEffectAllowedInSceneView]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00036}\mbox{\hyperlink{class_kino_1_1_bloom}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_kino_1_1_bloom}{Bloom}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Public\ Properties}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00042}\mbox{\hyperlink{class_kino_1_1_bloom_ab19ebe9462aa88f4e201b2f2e3c43e91}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_kino_1_1_bloom_ab19ebe9462aa88f4e201b2f2e3c43e91}{thresholdGamma}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ Mathf.Max(\_threshold,\ 0);\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_threshold\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00050}\mbox{\hyperlink{class_kino_1_1_bloom_a6d47f955ddaa0bbada3682122bf33056}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_kino_1_1_bloom_a6d47f955ddaa0bbada3682122bf33056}{thresholdLinear}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ GammaToLinear(\mbox{\hyperlink{class_kino_1_1_bloom_ab19ebe9462aa88f4e201b2f2e3c43e91}{thresholdGamma}});\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_threshold\ =\ LinearToGamma(value);\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Filters\ out\ pixels\ under\ this\ level\ of\ brightness."{}})]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_threshold\ =\ 0.8f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00062}\mbox{\hyperlink{class_kino_1_1_bloom_afafa8f7c49b5bc4a0e8bb408e565b6e5}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_kino_1_1_bloom_afafa8f7c49b5bc4a0e8bb408e565b6e5}{softKnee}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \_softKnee;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_softKnee\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ [SerializeField,\ Range(0,\ 1)]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Makes\ transition\ between\ under/over-\/threshold\ gradual."{}})]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_softKnee\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00075}\mbox{\hyperlink{class_kino_1_1_bloom_ad7bbde37dcb2b302a80d5fb5fd98b241}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_kino_1_1_bloom_ad7bbde37dcb2b302a80d5fb5fd98b241}{radius}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \_radius;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_radius\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ [SerializeField,\ Range(1,\ 7)]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Changes\ extent\ of\ veiling\ effects\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}in\ a\ screen\ resolution-\/independent\ fashion."{}})]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_radius\ =\ 2.5f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00088}\mbox{\hyperlink{class_kino_1_1_bloom_ab13e6902cdaf8d180f94f096f8f32a3c}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_kino_1_1_bloom_ab13e6902cdaf8d180f94f096f8f32a3c}{intensity}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ Mathf.Max(\_intensity,\ 0);\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_intensity\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Blend\ factor\ of\ the\ result\ image."{}})]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_intensity\ =\ 0.8f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00100}\mbox{\hyperlink{class_kino_1_1_bloom_a36675eeb267633e7c14da323b39a9d3f}{00100}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_kino_1_1_bloom_a36675eeb267633e7c14da323b39a9d3f}{highQuality}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \_highQuality;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_highQuality\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Controls\ filter\ quality\ and\ buffer\ resolution."{}})]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_highQuality\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Reduces\ flashing\ noise\ with\ an\ additional\ filter."{}})]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_antiFlicker\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00116}\mbox{\hyperlink{class_kino_1_1_bloom_ad8059d108751c02ec8bb2482eb21ad7d}{00116}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_kino_1_1_bloom_ad8059d108751c02ec8bb2482eb21ad7d}{antiFlicker}}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \_antiFlicker;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_antiFlicker\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00122}00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00124}00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Private\ Members}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00126}00126\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ 0649}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ [SerializeField,\ HideInInspector]}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ Shader\ \_shader;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00129}00129\ \textcolor{preprocessor}{\#pragma\ warning\ restore\ 0649}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ Material\ \_material;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ kMaxIterations\ =\ 16;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ RenderTexture[]\ \_blurBuffer1\ =\ \textcolor{keyword}{new}\ RenderTexture[kMaxIterations];}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ RenderTexture[]\ \_blurBuffer2\ =\ \textcolor{keyword}{new}\ RenderTexture[kMaxIterations];}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ LinearToGamma(\textcolor{keywordtype}{float}\ x)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00139}00139\ \textcolor{preprocessor}{\#if\ UNITY\_5\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.LinearToGammaSpace(x);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00141}00141\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <=\ 0.0031308f)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 12.92f\ *\ x;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1.055f\ *\ Mathf.Pow(x,\ 1\ /\ 2.4f)\ -\/\ 0.055f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00146}00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ GammaToLinear(\textcolor{keywordtype}{float}\ x)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00151}00151\ \textcolor{preprocessor}{\#if\ UNITY\_5\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.GammaToLinearSpace(x);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00153}00153\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <=\ 0.04045f)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ /\ 12.92f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Pow((x\ +\ 0.055f)\ /\ 1.055f,\ 2.4f);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00158}00158\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00161}00161\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00163}00163\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ MonoBehaviour\ Functions}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ var\ shader\ =\ \_shader\ ?\ \_shader\ :\ Shader.Find(\textcolor{stringliteral}{"{}Hidden/Kino/Bloom"{}});}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \_material\ =\ \textcolor{keyword}{new}\ Material(shader);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.hideFlags\ =\ HideFlags.DontSave;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ DestroyImmediate(\_material);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnRenderImage(RenderTexture\ source,\ RenderTexture\ destination)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ var\ useRGBM\ =\ Application.isMobilePlatform;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ source\ texture\ size}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ var\ tw\ =\ source.width;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ var\ th\ =\ source.height;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ halve\ the\ texture\ size\ for\ the\ low\ quality\ mode}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_highQuality)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tw\ /=\ 2;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ th\ /=\ 2;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ blur\ buffer\ format}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ var\ rtFormat\ =\ useRGBM\ ?}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RenderTextureFormat.Default\ :\ RenderTextureFormat.DefaultHDR;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ determine\ the\ iteration\ count}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ var\ logh\ =\ Mathf.Log(th,\ 2)\ +\ \_radius\ -\/\ 8;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ var\ logh\_i\ =\ (int)logh;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ var\ iterations\ =\ Mathf.Clamp(logh\_i,\ 1,\ kMaxIterations);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ the\ shader\ properties}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ var\ lthresh\ =\ \mbox{\hyperlink{class_kino_1_1_bloom_a6d47f955ddaa0bbada3682122bf33056}{thresholdLinear}};}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetFloat(\textcolor{stringliteral}{"{}\_Threshold"{}},\ lthresh);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ var\ knee\ =\ lthresh\ *\ \_softKnee\ +\ 1e-\/5f;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ var\ curve\ =\ \textcolor{keyword}{new}\ Vector3(lthresh\ -\/\ knee,\ knee\ *\ 2,\ 0.25f\ /\ knee);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetVector(\textcolor{stringliteral}{"{}\_Curve"{}},\ curve);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ var\ pfo\ =\ !\_highQuality\ \&\&\ \_antiFlicker;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetFloat(\textcolor{stringliteral}{"{}\_PrefilterOffs"{}},\ pfo\ ?\ -\/0.5f\ :\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetFloat(\textcolor{stringliteral}{"{}\_SampleScale"{}},\ 0.5f\ +\ logh\ -\/\ logh\_i);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetFloat(\textcolor{stringliteral}{"{}\_Intensity"{}},\ \mbox{\hyperlink{class_kino_1_1_bloom_ab13e6902cdaf8d180f94f096f8f32a3c}{intensity}});}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ prefilter\ pass}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ var\ prefiltered\ =\ RenderTexture.GetTemporary(tw,\ th,\ 0,\ rtFormat);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ var\ pass\ =\ \_antiFlicker\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.Blit(source,\ prefiltered,\ \_material,\ pass);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ construct\ a\ mip\ pyramid}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ var\ last\ =\ prefiltered;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ level\ =\ 0;\ level\ <\ iterations;\ level++)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_blurBuffer1[level]\ =\ RenderTexture.GetTemporary(}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last.width\ /\ 2,\ last.height\ /\ 2,\ 0,\ rtFormat}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pass\ =\ (level\ ==\ 0)\ ?\ (\_antiFlicker\ ?\ 3\ :\ 2)\ :\ 4;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.Blit(last,\ \_blurBuffer1[level],\ \_material,\ pass);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last\ =\ \_blurBuffer1[level];}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ upsample\ and\ combine\ loop}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ level\ =\ iterations\ -\/\ 2;\ level\ >=\ 0;\ level-\/-\/)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ basetex\ =\ \_blurBuffer1[level];}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetTexture(\textcolor{stringliteral}{"{}\_BaseTex"{}},\ basetex);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_blurBuffer2[level]\ =\ RenderTexture.GetTemporary(}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ basetex.width,\ basetex.height,\ 0,\ rtFormat}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pass\ =\ \_highQuality\ ?\ 6\ :\ 5;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.Blit(last,\ \_blurBuffer2[level],\ \_material,\ pass);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last\ =\ \_blurBuffer2[level];}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ finish\ process}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \_material.SetTexture(\textcolor{stringliteral}{"{}\_BaseTex"{}},\ source);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ pass\ =\ \_highQuality\ ?\ 8\ :\ 7;}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.Blit(last,\ destination,\ \_material,\ pass);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ release\ the\ temporary\ buffers}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ kMaxIterations;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_blurBuffer1[i]\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RenderTexture.ReleaseTemporary(\_blurBuffer1[i]);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_blurBuffer2[i]\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RenderTexture.ReleaseTemporary(\_blurBuffer2[i]);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_blurBuffer1[i]\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_blurBuffer2[i]\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ RenderTexture.ReleaseTemporary(prefiltered);}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00270}00270\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00271}00271\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bloom_8cs_source_l00272}00272\ \}}
+
+\end{DoxyCode}

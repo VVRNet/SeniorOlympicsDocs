@@ -1,0 +1,201 @@
+\doxysection{Key\+Pad\+Controller 클래스 참조}
+\hypertarget{class_key_pad_controller}{}\label{class_key_pad_controller}\index{KeyPadController@{KeyPadController}}
+
+
+Key\+Pad\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_key_pad_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Key\+Pad\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_key_pad_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_key_pad_controller_af7bffc4d59acc0ec0fc3c357e23d59c2}{Password\+Change\+Mode}} ()
+\item 
+void \mbox{\hyperlink{class_key_pad_controller_a1a21325b1c687f1c063e5e0fb2b47dea}{On\+Num\+Button\+Click}} (string number)
+\item 
+void \mbox{\hyperlink{class_key_pad_controller_adf78005c6dd4da56a5dfd7eca46c4307}{Delete\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}{is\+Change\+Mode}}
+\item 
+List$<$ Image $>$ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{password\+Pin\+Point}}
+\item 
+Color32 \mbox{\hyperlink{class_key_pad_controller_a1966395710eaaec44bbb516fe129a4c5}{pin\+Origin\+Color}}
+\item 
+Color32 \mbox{\hyperlink{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6}{pin\+Change\+Color}}
+\item 
+string \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}} = "{}"{}
+\item 
+Game\+Object \mbox{\hyperlink{class_key_pad_controller_affe6a030588ff1921b62e3c72a4cf56f}{manager\+Panel}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_key_pad_controller_adf78005c6dd4da56a5dfd7eca46c4307}\index{KeyPadController@{KeyPadController}!DeleteNumber@{DeleteNumber}}
+\index{DeleteNumber@{DeleteNumber}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{DeleteNumber()}{DeleteNumber()}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_adf78005c6dd4da56a5dfd7eca46c4307} 
+void Key\+Pad\+Controller.\+Delete\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00090}{90}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ >\ 0)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ������\ ���� ����}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ =\ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}.Substring(0,\ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}.Length\ -\/\ 1);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ���ŵ� ���� ��ġ��\ ���� �ʱ�ȭ}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}[currentClickCount\ -\/\ 1].color\ =\ \textcolor{keyword}{new}\ Color32(217,\ 217,\ 217,\ 255);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ currentClickCount-\/-\/;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_key_pad_controller_a1a21325b1c687f1c063e5e0fb2b47dea}\index{KeyPadController@{KeyPadController}!OnNumButtonClick@{OnNumButtonClick}}
+\index{OnNumButtonClick@{OnNumButtonClick}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{OnNumButtonClick()}{OnNumButtonClick()}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_a1a21325b1c687f1c063e5e0fb2b47dea} 
+void Key\+Pad\+Controller.\+On\+Num\+Button\+Click (\begin{DoxyParamCaption}\item[{string}]{number}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ <\ clickCount)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}{password}}\ +=\ number;\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ currentClickCount++;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ <=\ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}.Count)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}{passwordPinPoint}}[currentClickCount\ -\/\ 1].color\ =\ \mbox{\hyperlink{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6}{pinChangeColor}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClickCount\ ==\ clickCount)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ComparePassword();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ ResetPassword();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_key_pad_controller_af7bffc4d59acc0ec0fc3c357e23d59c2}\index{KeyPadController@{KeyPadController}!PasswordChangeMode@{PasswordChangeMode}}
+\index{PasswordChangeMode@{PasswordChangeMode}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{PasswordChangeMode()}{PasswordChangeMode()}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_af7bffc4d59acc0ec0fc3c357e23d59c2} 
+void Key\+Pad\+Controller.\+Password\+Change\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}{isChangeMode}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4}\index{KeyPadController@{KeyPadController}!isChangeMode@{isChangeMode}}
+\index{isChangeMode@{isChangeMode}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{isChangeMode}{isChangeMode}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_a1ab8b796c7cd4a999085bf8fc34065f4} 
+bool Key\+Pad\+Controller.\+is\+Change\+Mode}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_key_pad_controller_affe6a030588ff1921b62e3c72a4cf56f}\index{KeyPadController@{KeyPadController}!managerPanel@{managerPanel}}
+\index{managerPanel@{managerPanel}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{managerPanel}{managerPanel}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_affe6a030588ff1921b62e3c72a4cf56f} 
+Game\+Object Key\+Pad\+Controller.\+manager\+Panel}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f}\index{KeyPadController@{KeyPadController}!password@{password}}
+\index{password@{password}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_ab6816936d9f868fb954d1e090f14524f} 
+string Key\+Pad\+Controller.\+password = "{}"{}}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7}\index{KeyPadController@{KeyPadController}!passwordPinPoint@{passwordPinPoint}}
+\index{passwordPinPoint@{passwordPinPoint}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{passwordPinPoint}{passwordPinPoint}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_a525e598490ca99ddf70c9193eaa4a7d7} 
+List$<$Image$>$ Key\+Pad\+Controller.\+password\+Pin\+Point}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6}\index{KeyPadController@{KeyPadController}!pinChangeColor@{pinChangeColor}}
+\index{pinChangeColor@{pinChangeColor}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{pinChangeColor}{pinChangeColor}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_a7223051374c364f3fdfd45d4e7d419c6} 
+Color32 Key\+Pad\+Controller.\+pin\+Change\+Color}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_key_pad_controller_a1966395710eaaec44bbb516fe129a4c5}\index{KeyPadController@{KeyPadController}!pinOriginColor@{pinOriginColor}}
+\index{pinOriginColor@{pinOriginColor}!KeyPadController@{KeyPadController}}
+\doxysubsubsection{\texorpdfstring{pinOriginColor}{pinOriginColor}}
+{\footnotesize\ttfamily \label{class_key_pad_controller_a1966395710eaaec44bbb516fe129a4c5} 
+Color32 Key\+Pad\+Controller.\+pin\+Origin\+Color}
+
+
+
+\mbox{\hyperlink{_key_pad_controller_8cs_source}{Key\+Pad\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_key_pad_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Launcher/\+Not\+Used/\mbox{\hyperlink{_key_pad_controller_8cs}{Key\+Pad\+Controller.\+cs}}\end{DoxyCompactItemize}

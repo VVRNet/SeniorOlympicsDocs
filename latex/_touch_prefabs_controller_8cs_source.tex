@@ -1,0 +1,54 @@
+\doxysection{Touch\+Prefabs\+Controller.\+cs}
+\hypertarget{_touch_prefabs_controller_8cs_source}{}\label{_touch_prefabs_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Useful/TouchPrefabsController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Useful/TouchPrefabsController.cs}}
+\mbox{\hyperlink{_touch_prefabs_controller_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00005}\mbox{\hyperlink{class_touch_prefabs_controller}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_touch_prefabs_controller}{TouchPrefabsController}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00007}00007\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Touch\ Image]"{}})]}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00008}\mbox{\hyperlink{class_touch_prefabs_controller_afe6d16b204cfea59ea515996c15f0dbb}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_touch_prefabs_controller_afe6d16b204cfea59ea515996c15f0dbb}{rootObject}};}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00009}\mbox{\hyperlink{class_touch_prefabs_controller_a1d1d6f067ab356b46b5424296703d05b}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_touch_prefabs_controller_a1d1d6f067ab356b46b5424296703d05b}{hitEffectImage}};}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00010}\mbox{\hyperlink{class_touch_prefabs_controller_a5948a1505a5331747e819a521761d614}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_touch_prefabs_controller_a5948a1505a5331747e819a521761d614}{is2dObj}};}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_prefabs_controller_afe6d16b204cfea59ea515996c15f0dbb}{rootObject}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00017}\mbox{\hyperlink{class_touch_prefabs_controller_a95ddf7673c9ffa1229857be69b4f872f}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_prefabs_controller_a95ddf7673c9ffa1229857be69b4f872f}{OnTouch}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_touch_prefabs_controller_a1d1d6f067ab356b46b5424296703d05b}{hitEffectImage}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_touch_prefabs_controller_afe6d16b204cfea59ea515996c15f0dbb}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_touch_prefabs_controller_a5948a1505a5331747e819a521761d614}{is2dObj}})}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ var\ obj\ =\ Instantiate(\mbox{\hyperlink{class_touch_prefabs_controller_a1d1d6f067ab356b46b5424296703d05b}{hitEffectImage}},\ \mbox{\hyperlink{class_touch_prefabs_controller_afe6d16b204cfea59ea515996c15f0dbb}{rootObject}}.transform);}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ var\ rect\ =\ obj.GetComponent<RectTransform>();}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ rect.anchoredPosition\ =\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ≈Õƒ°\ ¡¬«•∏¶\ ∫‰∆˜∆Æ\ ¡¬«•∑Œ ¡§±‘»≠\ (0ø°º≠\ 1\ ªÁ¿Ã\ ∞™)}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ Screen.width,1-\/\ (y\ /\ Screen.height),\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∫‰∆˜∆Æ\ ¡¬«•ø°º≠\ y√‡\ π›¿¸}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ viewportPosition.y\ =\ 1\ -\/\ viewportPosition.y;}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ∫‰∆˜∆Æ\ ¡¬«•∏¶\ ø˘µÂ ¡¬«•∑Œ ∫Ø»Ø}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ µπˆ±◊ ∑Œ±◊}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}≈Õƒ°\ ¡¬«•:\ (\{x\},\ \{y\})"{}});}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}∫‰∆˜∆Æ\ ¡¬«•:\ \{viewportPosition\}"{}});}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}ø˘µÂ ¡¬«•:\ \{worldPosition\}"{}});}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ø˘µÂ ¡¬«•ø°\ ¿Ã∆Â∆Æ\ ¿ÃπÃ¡ˆ ª˝º∫}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_touch_prefabs_controller_a1d1d6f067ab356b46b5424296703d05b}{hitEffectImage}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_touch_prefabs_controller_afe6d16b204cfea59ea515996c15f0dbb}{rootObject}}.transform);}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_touch_prefabs_controller_8cs_source_l00048}00048\ \}}
+
+\end{DoxyCode}

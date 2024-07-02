@@ -1,0 +1,277 @@
+\doxysection{Ending\+Get\+Data 클래스 참조}
+\hypertarget{class_ending_get_data}{}\label{class_ending_get_data}\index{EndingGetData@{EndingGetData}}
+
+
+Ending\+Get\+Data에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_ending_get_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Ending\+Get\+Data에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_ending_get_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ending_get_data_ac678dcb7b0d4eb0ffb65bd175afdb91c}{Get\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_af02f0a023754f207581d5a24e7603d9d}{player\+Name}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_aabd65b9b592e7d34dc311825d20aba55}{total\+Score\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_ab0693a33b39803f0a4f92bdd4051fff2}{physical\+Score\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a3b2bbf572b5acb4a2f13bb76e16f41d3}{cognitive\+Score\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a081aabb2ddd74817c825057e77941f73}{player\+Name1p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a6f6c64e85204c10a6b564cb048722c32}{player\+Name2p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_ad0d8e77c7d1a15753a1f47398b8ad111}{out\+Come1p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a1fec6b8a31f73ebb6e26985e019706dc}{out\+Come2p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a06412da895d9bd21ad86ab324d7b90a4}{total\+Score\+Text1p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a3142b1f445f31d29ca4683e2a02b1778}{total\+Score\+Text2p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a07d4de2a58534808000fb031e39e5a2f}{physical\+Score\+Text1p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a1315ae7344d517d6de7a845dc1199c99}{physical\+Score\+Text2p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a52a584129bfa0514e13db70144c4d664}{cognitive\+Score\+Text1p}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ending_get_data_a52f04eb726552d825a279f88cf720dfd}{cognitive\+Score\+Text2p}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_ending_get_data_ac678dcb7b0d4eb0ffb65bd175afdb91c}\index{EndingGetData@{EndingGetData}!GetData@{GetData}}
+\index{GetData@{GetData}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \label{class_ending_get_data_ac678dcb7b0d4eb0ffb65bd175afdb91c} 
+void Ending\+Get\+Data.\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ playerName.text\ =\ \$\textcolor{stringliteral}{"{}1P\ <color=\#FFB800>\{single.Name\}</color>"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText.text\ =\ single.RecordDetail.TotalScore.ToString();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.SpeedScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=60>\{single.RecordDetail.AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].TotalScore\ >\ dual.RecordDetails[1].TotalScore)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FF6B00>WIN</color>"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dual.RecordDetails[0].TotalScore\ <\ dual.RecordDetails[1].TotalScore)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FF6B00>WIN</color>"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#A5A5A5>DRAW</color>"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outCome2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#A5A5A5>DRAW</color>"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ playerName1p.text\ =\ \$\textcolor{stringliteral}{"{}1P\ <color=\#FFB800>\{dual.Names[0]\}</color>"{}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ playerName2p.text\ =\ \$\textcolor{stringliteral}{"{}2P\ <color=\#FFB800>\{dual.Names[1]\}</color>"{}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText1p.text\ =\ dual.RecordDetails[0].TotalScore.ToString();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ totalScoreText2p.text\ =\ dual.RecordDetails[1].TotalScore.ToString();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].SpeedScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ physicalScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].SpeedScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText1p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[0].AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ cognitiveScoreText2p.text\ =\ \$\textcolor{stringliteral}{"{}<color=\#FFB800><size=40>\{dual.RecordDetails[1].AccuracyScore\}</color></size>\ SCORE"{}};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ending_get_data_ac678dcb7b0d4eb0ffb65bd175afdb91c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_ending_get_data_a3b2bbf572b5acb4a2f13bb76e16f41d3}\index{EndingGetData@{EndingGetData}!cognitiveScoreText@{cognitiveScoreText}}
+\index{cognitiveScoreText@{cognitiveScoreText}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{cognitiveScoreText}{cognitiveScoreText}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a3b2bbf572b5acb4a2f13bb76e16f41d3} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+cognitive\+Score\+Text}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a52a584129bfa0514e13db70144c4d664}\index{EndingGetData@{EndingGetData}!cognitiveScoreText1p@{cognitiveScoreText1p}}
+\index{cognitiveScoreText1p@{cognitiveScoreText1p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{cognitiveScoreText1p}{cognitiveScoreText1p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a52a584129bfa0514e13db70144c4d664} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+cognitive\+Score\+Text1p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a52f04eb726552d825a279f88cf720dfd}\index{EndingGetData@{EndingGetData}!cognitiveScoreText2p@{cognitiveScoreText2p}}
+\index{cognitiveScoreText2p@{cognitiveScoreText2p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{cognitiveScoreText2p}{cognitiveScoreText2p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a52f04eb726552d825a279f88cf720dfd} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+cognitive\+Score\+Text2p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_ad0d8e77c7d1a15753a1f47398b8ad111}\index{EndingGetData@{EndingGetData}!outCome1p@{outCome1p}}
+\index{outCome1p@{outCome1p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{outCome1p}{outCome1p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_ad0d8e77c7d1a15753a1f47398b8ad111} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+out\+Come1p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a1fec6b8a31f73ebb6e26985e019706dc}\index{EndingGetData@{EndingGetData}!outCome2p@{outCome2p}}
+\index{outCome2p@{outCome2p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{outCome2p}{outCome2p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a1fec6b8a31f73ebb6e26985e019706dc} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+out\+Come2p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_ab0693a33b39803f0a4f92bdd4051fff2}\index{EndingGetData@{EndingGetData}!physicalScoreText@{physicalScoreText}}
+\index{physicalScoreText@{physicalScoreText}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{physicalScoreText}{physicalScoreText}}
+{\footnotesize\ttfamily \label{class_ending_get_data_ab0693a33b39803f0a4f92bdd4051fff2} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+physical\+Score\+Text}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a07d4de2a58534808000fb031e39e5a2f}\index{EndingGetData@{EndingGetData}!physicalScoreText1p@{physicalScoreText1p}}
+\index{physicalScoreText1p@{physicalScoreText1p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{physicalScoreText1p}{physicalScoreText1p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a07d4de2a58534808000fb031e39e5a2f} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+physical\+Score\+Text1p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a1315ae7344d517d6de7a845dc1199c99}\index{EndingGetData@{EndingGetData}!physicalScoreText2p@{physicalScoreText2p}}
+\index{physicalScoreText2p@{physicalScoreText2p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{physicalScoreText2p}{physicalScoreText2p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a1315ae7344d517d6de7a845dc1199c99} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+physical\+Score\+Text2p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_af02f0a023754f207581d5a24e7603d9d}\index{EndingGetData@{EndingGetData}!playerName@{playerName}}
+\index{playerName@{playerName}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{playerName}{playerName}}
+{\footnotesize\ttfamily \label{class_ending_get_data_af02f0a023754f207581d5a24e7603d9d} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+player\+Name}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a081aabb2ddd74817c825057e77941f73}\index{EndingGetData@{EndingGetData}!playerName1p@{playerName1p}}
+\index{playerName1p@{playerName1p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{playerName1p}{playerName1p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a081aabb2ddd74817c825057e77941f73} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+player\+Name1p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a6f6c64e85204c10a6b564cb048722c32}\index{EndingGetData@{EndingGetData}!playerName2p@{playerName2p}}
+\index{playerName2p@{playerName2p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{playerName2p}{playerName2p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a6f6c64e85204c10a6b564cb048722c32} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+player\+Name2p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_aabd65b9b592e7d34dc311825d20aba55}\index{EndingGetData@{EndingGetData}!totalScoreText@{totalScoreText}}
+\index{totalScoreText@{totalScoreText}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{totalScoreText}{totalScoreText}}
+{\footnotesize\ttfamily \label{class_ending_get_data_aabd65b9b592e7d34dc311825d20aba55} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+total\+Score\+Text}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a06412da895d9bd21ad86ab324d7b90a4}\index{EndingGetData@{EndingGetData}!totalScoreText1p@{totalScoreText1p}}
+\index{totalScoreText1p@{totalScoreText1p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{totalScoreText1p}{totalScoreText1p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a06412da895d9bd21ad86ab324d7b90a4} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+total\+Score\+Text1p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ending_get_data_a3142b1f445f31d29ca4683e2a02b1778}\index{EndingGetData@{EndingGetData}!totalScoreText2p@{totalScoreText2p}}
+\index{totalScoreText2p@{totalScoreText2p}!EndingGetData@{EndingGetData}}
+\doxysubsubsection{\texorpdfstring{totalScoreText2p}{totalScoreText2p}}
+{\footnotesize\ttfamily \label{class_ending_get_data_a3142b1f445f31d29ca4683e2a02b1778} 
+Text\+Mesh\+Pro\+UGUI Ending\+Get\+Data.\+total\+Score\+Text2p}
+
+
+
+\mbox{\hyperlink{_ending_get_data_8cs_source}{Ending\+Get\+Data.\+cs}} 파일의 \mbox{\hyperlink{_ending_get_data_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Useful/\mbox{\hyperlink{_ending_get_data_8cs}{Ending\+Get\+Data.\+cs}}\end{DoxyCompactItemize}

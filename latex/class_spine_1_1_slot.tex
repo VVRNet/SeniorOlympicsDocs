@@ -1,0 +1,591 @@
+\doxysection{Spine.\+Slot 클래스 참조}
+\hypertarget{class_spine_1_1_slot}{}\label{class_spine_1_1_slot}\index{Spine.Slot@{Spine.Slot}}
+
+
+Stores a slot\textquotesingle{}s current pose. Slots organize attachments for \doxylink{class_spine_1_1_skeleton_a6a451d2b789c6b916a978bd0f27a7c22}{Skeleton.\+Draw\+Order} purposes and provide a place to store state for an attachment.\+State cannot be stored in an attachment itself because attachments are stateless and may be shared across multiple skeletons.  
+
+
+
+
+Spine.\+Slot에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_slot__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_slot_a5d06d904b7e50d35d1be30c8478936f7}{Slot}} (\mbox{\hyperlink{class_spine_1_1_slot_data}{Slot\+Data}} data, \mbox{\hyperlink{class_spine_1_1_bone}{Bone}} bone)
+\item 
+\mbox{\hyperlink{class_spine_1_1_slot_a4f6182568e7ae4a24ff0190ab025b62a}{Slot}} (\mbox{\hyperlink{class_spine_1_1_slot}{Slot}} slot, \mbox{\hyperlink{class_spine_1_1_bone}{Bone}} bone)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_slot_a8efd3f1001fff56a1ae90484f1425a9e}{Clamp\+Color}} ()
+\item 
+void \mbox{\hyperlink{class_spine_1_1_slot_af31d06e9ecd33fe4f234c5ee4c921d4f}{Clamp\+Second\+Color}} ()
+\item 
+void \mbox{\hyperlink{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae}{Set\+To\+Setup\+Pose}} ()
+\begin{DoxyCompactList}\small\item\em Sets this slot to the setup pose. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_spine_1_1_slot_a8a8666ffdf83356df88632fcaa5e5dbd}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_slot_data}{Slot\+Data}} \mbox{\hyperlink{class_spine_1_1_slot_a6e9a5703aa22dfe4a18aea4b22d97a65}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The slot\textquotesingle{}s setup pose data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} \mbox{\hyperlink{class_spine_1_1_slot_a31ea34a42ecc5cc6791856d7937a70a3}{Bone}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The bone this slot belongs to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} \mbox{\hyperlink{class_spine_1_1_slot_a60be6be5435fd073a1a31d90e9948231}{Skeleton}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The skeleton this slot belongs to. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_a00dff3f2d22f8ea6ecd27a50d830fe24}{R}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_a073d0e7290f4671ab159dbd396ea1ed4}{G}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_ae32a370b2184b87d47deb37c3a3f1458}{B}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_a5087eb0163f50ebdc4e998e93c50a0a6}{A}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_aa1bae935e11d8b484a7f1733291ee495}{R2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The dark color used to tint the slot\textquotesingle{}s attachment for two color tinting, ignored if two color tinting is not used. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_a748c715b4592769d2c861ff2df4f7430}{G2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The dark color used to tint the slot\textquotesingle{}s attachment for two color tinting, ignored if two color tinting is not used. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_slot_afd59727cf274ed1107babcf10c048f86}{B2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The dark color used to tint the slot\textquotesingle{}s attachment for two color tinting, ignored if two color tinting is not used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Whether R2 G2 B2 are used to tint the slot\textquotesingle{}s attachment for two color tinting. False if two color tinting is not used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}} \mbox{\hyperlink{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}{Attachment}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_spine_1_1_slot_a3840bba92066ac64cff8e8c27c63f346}{Sequence\+Index}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The index of the texture region to display when the slot\textquotesingle{}s attachment has a \doxylink{class_spine_1_1_sequence}{Sequence}. -\/1 represents the \doxylink{class_spine_1_1_sequence_a3e7532a96f6fb7cd5650c5e1160598de}{Sequence.\+Setup\+Index}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ float $>$ \mbox{\hyperlink{class_spine_1_1_slot_a5be59110ff332b43a55dfe169770f343}{Deform}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vertices to deform the slot\textquotesingle{}s attachment. For an unweighted mesh, the entries are local positions for each vertex. For a weighted mesh, the entries are an offset for each vertex which will be added to the mesh\textquotesingle{}s local vertex positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Stores a slot\textquotesingle{}s current pose. Slots organize attachments for \doxylink{class_spine_1_1_skeleton_a6a451d2b789c6b916a978bd0f27a7c22}{Skeleton.\+Draw\+Order} purposes and provide a place to store state for an attachment.\+State cannot be stored in an attachment itself because attachments are stateless and may be shared across multiple skeletons. 
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_slot_a5d06d904b7e50d35d1be30c8478936f7}\index{Spine.Slot@{Spine.Slot}!Slot@{Slot}}
+\index{Slot@{Slot}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Slot()}{Slot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a5d06d904b7e50d35d1be30c8478936f7} 
+Spine.\+Slot.\+Slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_slot_data}{Slot\+Data}}}]{data}{, }\item[{\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}}]{bone}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00050}{50}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ this.bone\ =\ bone;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ darkColor\ =\ data.darkColor\ ==\ null\ ?\ null\ :\ new\ Color();}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.hasSecondColor)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ g2\ =\ b2\ =\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae}{SetToSetupPose}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_slot_a5d06d904b7e50d35d1be30c8478936f7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_slot_a4f6182568e7ae4a24ff0190ab025b62a}\index{Spine.Slot@{Spine.Slot}!Slot@{Slot}}
+\index{Slot@{Slot}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Slot()}{Slot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a4f6182568e7ae4a24ff0190ab025b62a} 
+Spine.\+Slot.\+Slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}}]{slot}{, }\item[{\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}}]{bone}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00065}{65}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}slot"{}},\ \textcolor{stringliteral}{"{}slot\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ data\ =\ slot.data;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ this.bone\ =\ bone;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ slot.r;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ slot.g;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ slot.b;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ slot.a;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ darkColor\ =\ slot.darkColor\ ==\ null\ ?\ null\ :\ new\ Color(slot.darkColor);}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.hasSecondColor)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ slot.r2;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g2\ =\ slot.g2;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b2\ =\ slot.b2;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ g2\ =\ b2\ =\ 0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ hasSecondColor\ =\ slot.hasSecondColor;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ attachment\ =\ slot.attachment;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ sequenceIndex\ =\ slot.sequenceIndex;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ deform.\mbox{\hyperlink{class_spine_1_1_exposed_list_a79ab03170ce2265e06fa4dd5118cc3bc}{AddRange}}(slot.deform);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_slot_a4f6182568e7ae4a24ff0190ab025b62a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_slot_a8efd3f1001fff56a1ae90484f1425a9e}\index{Spine.Slot@{Spine.Slot}!ClampColor@{ClampColor}}
+\index{ClampColor@{ClampColor}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{ClampColor()}{ClampColor()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a8efd3f1001fff56a1ae90484f1425a9e} 
+void Spine.\+Slot.\+Clamp\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00109}{109}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ MathUtils.Clamp(r,\ 0,\ 1);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ MathUtils.Clamp(g,\ 0,\ 1);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ MathUtils.Clamp(b,\ 0,\ 1);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ MathUtils.Clamp(a,\ 0,\ 1);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_slot_a8efd3f1001fff56a1ae90484f1425a9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_slot_af31d06e9ecd33fe4f234c5ee4c921d4f}\index{Spine.Slot@{Spine.Slot}!ClampSecondColor@{ClampSecondColor}}
+\index{ClampSecondColor@{ClampSecondColor}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{ClampSecondColor()}{ClampSecondColor()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_af31d06e9ecd33fe4f234c5ee4c921d4f} 
+void Spine.\+Slot.\+Clamp\+Second\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00128}{128}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ MathUtils.Clamp(r2,\ 0,\ 1);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ g2\ =\ MathUtils.Clamp(g2,\ 0,\ 1);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ b2\ =\ MathUtils.Clamp(b2,\ 0,\ 1);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_slot_af31d06e9ecd33fe4f234c5ee4c921d4f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae}\index{Spine.Slot@{Spine.Slot}!SetToSetupPose@{SetToSetupPose}}
+\index{SetToSetupPose@{SetToSetupPose}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{SetToSetupPose()}{SetToSetupPose()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae} 
+void Spine.\+Slot.\+Set\+To\+Setup\+Pose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets this slot to the setup pose. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00174}{174}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ data.r;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ data.g;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ data.b;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ data.a;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (darkColor\ !=\ null)\ darkColor.set(data.darkColor);}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{HasSecondColor}})\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ data.r2;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g2\ =\ data.g2;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b2\ =\ data.b2;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.attachmentName\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}{Attachment}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachment\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}{Attachment}}\ =\ bone.skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a49a6dfe7d4e66ba8d142541022f17a82}{GetAttachment}}(data.index,\ data.attachmentName);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_slot_a8a8666ffdf83356df88632fcaa5e5dbd}\index{Spine.Slot@{Spine.Slot}!ToString@{ToString}}
+\index{ToString@{ToString}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a8a8666ffdf83356df88632fcaa5e5dbd} 
+override string Spine.\+Slot.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00195}{195}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_slot_a5087eb0163f50ebdc4e998e93c50a0a6}\index{Spine.Slot@{Spine.Slot}!A@{A}}
+\index{A@{A}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a5087eb0163f50ebdc4e998e93c50a0a6} 
+float Spine.\+Slot.\+A\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00107}{107}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ a;\ \}\ \textcolor{keyword}{set}\ \{\ a\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}\index{Spine.Slot@{Spine.Slot}!Attachment@{Attachment}}
+\index{Attachment@{Attachment}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Attachment}{Attachment}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435} 
+\mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}} Spine.\+Slot.\+Attachment\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00134}{134}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ attachment;\ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attachment\ ==\ value)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(value\ is\ VertexAttachment)\ ||\ !(this.attachment\ is\ VertexAttachment)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ ((VertexAttachment)value).TimelineAttachment\ !=\ ((VertexAttachment)this.attachment).TimelineAttachment)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ deform.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.attachment\ =\ value;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sequenceIndex\ =\ -\/1;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_ae32a370b2184b87d47deb37c3a3f1458}\index{Spine.Slot@{Spine.Slot}!B@{B}}
+\index{B@{B}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_ae32a370b2184b87d47deb37c3a3f1458} 
+float Spine.\+Slot.\+B\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00104}{104}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b;\ \}\ \textcolor{keyword}{set}\ \{\ b\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_afd59727cf274ed1107babcf10c048f86}\index{Spine.Slot@{Spine.Slot}!B2@{B2}}
+\index{B2@{B2}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{B2}{B2}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_afd59727cf274ed1107babcf10c048f86} 
+float Spine.\+Slot.\+B2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The dark color used to tint the slot\textquotesingle{}s attachment for two color tinting, ignored if two color tinting is not used. 
+
+\begin{DoxySeeAlso}{참고}
+\doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color}
+
+
+\end{DoxySeeAlso}
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00124}{124}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b2;\ \}\ \textcolor{keyword}{set}\ \{\ b2\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a31ea34a42ecc5cc6791856d7937a70a3}\index{Spine.Slot@{Spine.Slot}!Bone@{Bone}}
+\index{Bone@{Bone}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Bone}{Bone}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a31ea34a42ecc5cc6791856d7937a70a3} 
+\mbox{\hyperlink{class_spine_1_1_bone}{Bone}} Spine.\+Slot.\+Bone\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The bone this slot belongs to. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00093}{93}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bone;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a6e9a5703aa22dfe4a18aea4b22d97a65}\index{Spine.Slot@{Spine.Slot}!Data@{Data}}
+\index{Data@{Data}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a6e9a5703aa22dfe4a18aea4b22d97a65} 
+\mbox{\hyperlink{class_spine_1_1_slot_data}{Slot\+Data}} Spine.\+Slot.\+Data\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The slot\textquotesingle{}s setup pose data. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00091}{91}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a5be59110ff332b43a55dfe169770f343}\index{Spine.Slot@{Spine.Slot}!Deform@{Deform}}
+\index{Deform@{Deform}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Deform}{Deform}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a5be59110ff332b43a55dfe169770f343} 
+\mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$float$>$ Spine.\+Slot.\+Deform\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Vertices to deform the slot\textquotesingle{}s attachment. For an unweighted mesh, the entries are local positions for each vertex. For a weighted mesh, the entries are an offset for each vertex which will be added to the mesh\textquotesingle{}s local vertex positions. 
+
+See \doxylink{class_spine_1_1_vertex_attachment_a85602549f16091b7b8beeb1e0a0adf60}{Vertex\+Attachment.\+Compute\+World\+Vertices(\+Slot, int, int, float\mbox{[}$\,$\mbox{]}, int, int)} and \doxylink{class_spine_1_1_deform_timeline}{Deform\+Timeline}. 
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00163}{163}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ deform;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deform\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}deform"{}},\ \textcolor{stringliteral}{"{}deform\ cannot\ be\ null."{}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ deform\ =\ value;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a073d0e7290f4671ab159dbd396ea1ed4}\index{Spine.Slot@{Spine.Slot}!G@{G}}
+\index{G@{G}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a073d0e7290f4671ab159dbd396ea1ed4} 
+float Spine.\+Slot.\+G\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00101}{101}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ g;\ \}\ \textcolor{keyword}{set}\ \{\ g\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a748c715b4592769d2c861ff2df4f7430}\index{Spine.Slot@{Spine.Slot}!G2@{G2}}
+\index{G2@{G2}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{G2}{G2}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a748c715b4592769d2c861ff2df4f7430} 
+float Spine.\+Slot.\+G2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The dark color used to tint the slot\textquotesingle{}s attachment for two color tinting, ignored if two color tinting is not used. 
+
+\begin{DoxySeeAlso}{참고}
+\doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color}
+
+
+\end{DoxySeeAlso}
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00121}{121}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ g2;\ \}\ \textcolor{keyword}{set}\ \{\ g2\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}\index{Spine.Slot@{Spine.Slot}!HasSecondColor@{HasSecondColor}}
+\index{HasSecondColor@{HasSecondColor}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{HasSecondColor}{HasSecondColor}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9} 
+bool Spine.\+Slot.\+Has\+Second\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Whether R2 G2 B2 are used to tint the slot\textquotesingle{}s attachment for two color tinting. False if two color tinting is not used. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00126}{126}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data.hasSecondColor;\ \}\ \textcolor{keyword}{set}\ \{\ data.hasSecondColor\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a00dff3f2d22f8ea6ecd27a50d830fe24}\index{Spine.Slot@{Spine.Slot}!R@{R}}
+\index{R@{R}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a00dff3f2d22f8ea6ecd27a50d830fe24} 
+float Spine.\+Slot.\+R\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The color used to tint the slot\textquotesingle{}s attachment. If \doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color} is set, this is used as the light color for two color tinting. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00098}{98}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ r;\ \}\ \textcolor{keyword}{set}\ \{\ r\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_aa1bae935e11d8b484a7f1733291ee495}\index{Spine.Slot@{Spine.Slot}!R2@{R2}}
+\index{R2@{R2}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{R2}{R2}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_aa1bae935e11d8b484a7f1733291ee495} 
+float Spine.\+Slot.\+R2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The dark color used to tint the slot\textquotesingle{}s attachment for two color tinting, ignored if two color tinting is not used. 
+
+\begin{DoxySeeAlso}{참고}
+\doxylink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{Has\+Second\+Color}
+
+
+\end{DoxySeeAlso}
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00118}{118}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ r2;\ \}\ \textcolor{keyword}{set}\ \{\ r2\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a3840bba92066ac64cff8e8c27c63f346}\index{Spine.Slot@{Spine.Slot}!SequenceIndex@{SequenceIndex}}
+\index{SequenceIndex@{SequenceIndex}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{SequenceIndex}{SequenceIndex}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a3840bba92066ac64cff8e8c27c63f346} 
+int Spine.\+Slot.\+Sequence\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The index of the texture region to display when the slot\textquotesingle{}s attachment has a \doxylink{class_spine_1_1_sequence}{Sequence}. -\/1 represents the \doxylink{class_spine_1_1_sequence_a3e7532a96f6fb7cd5650c5e1160598de}{Sequence.\+Setup\+Index}. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00157}{157}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ sequenceIndex;\ \}\ \textcolor{keyword}{set}\ \{\ sequenceIndex\ =\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_slot_a60be6be5435fd073a1a31d90e9948231}\index{Spine.Slot@{Spine.Slot}!Skeleton@{Skeleton}}
+\index{Skeleton@{Skeleton}!Spine.Slot@{Spine.Slot}}
+\doxysubsubsection{\texorpdfstring{Skeleton}{Skeleton}}
+{\footnotesize\ttfamily \label{class_spine_1_1_slot_a60be6be5435fd073a1a31d90e9948231} 
+\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} Spine.\+Slot.\+Skeleton\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The skeleton this slot belongs to. 
+
+
+
+\mbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}} 파일의 \mbox{\hyperlink{_slot_8cs_source_l00095}{95}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bone.skeleton;\ \}\ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_slot_8cs}{Slot.\+cs}}\end{DoxyCompactItemize}

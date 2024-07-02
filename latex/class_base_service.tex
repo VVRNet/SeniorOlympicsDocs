@@ -1,0 +1,154 @@
+\doxysection{Base\+Service 클래스 참조}
+\hypertarget{class_base_service}{}\label{class_base_service}\index{BaseService@{BaseService}}
+
+
+Base\+Service에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_service__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Base\+Service에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_base_service__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerator \mbox{\hyperlink{class_base_service_a58277b5cf1c1f86cefcfa19a3069ccde}{Send\+Request$<$ T $>$}} (string url, string json\+Data, Action$<$ List$<$ T $>$ $>$ callback)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 속성}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{base\+Url}} = "{}https\+://us-\/west-\/2.aws.\+data.\+mongodb-\/api.\+com/app/data-\/xhqnv/endpoint/data/v1/action/"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_base_service_8cs_source}{Base\+Service.\+cs}} 파일의 \mbox{\hyperlink{_base_service_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_base_service_a58277b5cf1c1f86cefcfa19a3069ccde}\index{BaseService@{BaseService}!SendRequest$<$ T $>$@{SendRequest$<$ T $>$}}
+\index{SendRequest$<$ T $>$@{SendRequest$<$ T $>$}!BaseService@{BaseService}}
+\doxysubsubsection{\texorpdfstring{SendRequest$<$ T $>$()}{SendRequest< T >()}}
+{\footnotesize\ttfamily \label{class_base_service_a58277b5cf1c1f86cefcfa19a3069ccde} 
+IEnumerator Base\+Service.\+Send\+Request$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{url}{, }\item[{string}]{json\+Data}{, }\item[{Action$<$ List$<$ T $>$ $>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_base_service_8cs_source}{Base\+Service.\+cs}} 파일의 \mbox{\hyperlink{_base_service_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(url))}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}url\ is\ null\ or\ empty"{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keywordflow}{default});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(jsonData))}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}jsonData\ is\ null\ or\ empty"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keywordflow}{default});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (UnityWebRequest\ request\ =\ \textcolor{keyword}{new}(url,\ \textcolor{stringliteral}{"{}POST"{}}))}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ bodyRaw\ =\ Encoding.UTF8.GetBytes(jsonData);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ request.uploadHandler\ =\ \textcolor{keyword}{new}\ UploadHandlerRaw(bodyRaw);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ request.downloadHandler\ =\ \textcolor{keyword}{new}\ DownloadHandlerBuffer();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ request.SetRequestHeader(\textcolor{stringliteral}{"{}Content-\/Type"{}},\ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ request.SetRequestHeader(\textcolor{stringliteral}{"{}api-\/key"{}},\ apiKey);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ request.SendWebRequest();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.result\ !=\ UnityWebRequest.Result.Success)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(request.error);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Response:\ "{}}\ +\ request.downloadHandler.text);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(url);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(url.Split(\textcolor{charliteral}{'/'}).Last()\ ==\ \textcolor{stringliteral}{"{}find"{}}\ ||\ url.Split(\textcolor{charliteral}{'/'}).Last()\ ==\ \textcolor{stringliteral}{"{}aggregate"{}})}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ responseObj\ =\ JsonConvert.DeserializeObject<\mbox{\hyperlink{class_mongo_response}{MongoResponse<T>}}>(request.downloadHandler.text);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (responseObj.documents\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Documents\ is\ :\ "{}}\ +\ responseObj.documents);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(responseObj.documents);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}No\ documents\ found\ in\ response."{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(url.Split(\textcolor{charliteral}{'/'}).Last()\ ==\ \textcolor{stringliteral}{"{}findOne"{}})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ responseObj\ =\ JsonConvert.DeserializeObject<\mbox{\hyperlink{class_document_response}{DocumentResponse<T>}}>(request.downloadHandler.text);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (responseObj.document\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Document\ is\ :\ "{}}\ +\ responseObj.document);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{new}\ List<T>\ \{\ responseObj.document\ \});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}No\ document\ found\ in\ response."{}}\ +\ request.result);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{new}\ List<T>\ \{\ \});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Insert\ Success"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{new}\ List<T>\ \{\ \});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}\index{BaseService@{BaseService}!baseUrl@{baseUrl}}
+\index{baseUrl@{baseUrl}!BaseService@{BaseService}}
+\doxysubsubsection{\texorpdfstring{baseUrl}{baseUrl}}
+{\footnotesize\ttfamily \label{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954} 
+string Base\+Service.\+base\+Url = "{}https\+://us-\/west-\/2.aws.\+data.\+mongodb-\/api.\+com/app/data-\/xhqnv/endpoint/data/v1/action/"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_base_service_8cs_source}{Base\+Service.\+cs}} 파일의 \mbox{\hyperlink{_base_service_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\+HTTP/\mbox{\hyperlink{_base_service_8cs}{Base\+Service.\+cs}}\end{DoxyCompactItemize}

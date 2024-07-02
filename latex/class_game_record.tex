@@ -1,0 +1,259 @@
+\doxysection{Game\+Record 클래스 참조}
+\hypertarget{class_game_record}{}\label{class_game_record}\index{GameRecord@{GameRecord}}
+
+
+Game\+Record에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_game_record__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Game\+Record에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_game_record__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c}{\+\_\+id}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_record_afa496941b0612b75f9066f184d91d88b}{Init\+Game}} (string agency\+Id, string category, string content\+Name)
+\item 
+virtual void \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{Start\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{End\+Game}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{Is\+Single}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{Agency\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{Category}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{Content\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Date\+Time \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{Game\+Start\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+Date\+Time \mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{Game\+End\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{Game\+Play\+Duration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}\index{GameRecord@{GameRecord}!EndGame@{EndGame}}
+\index{EndGame@{EndGame}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{EndGame()}{EndGame()}}
+{\footnotesize\ttfamily \label{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4} 
+void Game\+Record.\+End\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ =\ DateTime.UtcNow;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{GamePlayDuration}}\ =\ (int)(\mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ -\/\ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}).TotalSeconds;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_afa496941b0612b75f9066f184d91d88b}\index{GameRecord@{GameRecord}!InitGame@{InitGame}}
+\index{InitGame@{InitGame}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{InitGame()}{InitGame()}}
+{\footnotesize\ttfamily \label{class_game_record_afa496941b0612b75f9066f184d91d88b} 
+void Game\+Record.\+Init\+Game (\begin{DoxyParamCaption}\item[{string}]{agency\+Id}{, }\item[{string}]{category}{, }\item[{string}]{content\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{AgencyID}}\ =\ agencyId;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{Category}}\ =\ category;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}}\ =\ contentName;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}\index{GameRecord@{GameRecord}!StartGame@{StartGame}}
+\index{StartGame@{StartGame}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{StartGame()}{StartGame()}}
+{\footnotesize\ttfamily \label{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9} 
+virtual void Game\+Record.\+Start\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}\ =\ DateTime.UtcNow;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c}\index{GameRecord@{GameRecord}!\_id@{\_id}}
+\index{\_id@{\_id}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{\_id}{\_id}}
+{\footnotesize\ttfamily \label{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c} 
+string Game\+Record.\+\_\+id}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}\index{GameRecord@{GameRecord}!AgencyID@{AgencyID}}
+\index{AgencyID@{AgencyID}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{AgencyID}{AgencyID}}
+{\footnotesize\ttfamily \label{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c} 
+string Game\+Record.\+Agency\+ID\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ �����\ ObjectId}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}\index{GameRecord@{GameRecord}!Category@{Category}}
+\index{Category@{Category}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{Category}{Category}}
+{\footnotesize\ttfamily \label{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7} 
+string Game\+Record.\+Category\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ī�װ���}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_aff594c62b5d4a297b4f107f40c287137}\index{GameRecord@{GameRecord}!ContentName@{ContentName}}
+\index{ContentName@{ContentName}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{ContentName}{ContentName}}
+{\footnotesize\ttfamily \label{class_game_record_aff594c62b5d4a297b4f107f40c287137} 
+string Game\+Record.\+Content\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ������\ �̸�}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}\index{GameRecord@{GameRecord}!GameEndTime@{GameEndTime}}
+\index{GameEndTime@{GameEndTime}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{GameEndTime}{GameEndTime}}
+{\footnotesize\ttfamily \label{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d} 
+Date\+Time Game\+Record.\+Game\+End\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_aae33fc873d520f72acd82bcb444d34ff}\index{GameRecord@{GameRecord}!GamePlayDuration@{GamePlayDuration}}
+\index{GamePlayDuration@{GamePlayDuration}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{GamePlayDuration}{GamePlayDuration}}
+{\footnotesize\ttfamily \label{class_game_record_aae33fc873d520f72acd82bcb444d34ff} 
+int Game\+Record.\+Game\+Play\+Duration\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}\index{GameRecord@{GameRecord}!GameStartTime@{GameStartTime}}
+\index{GameStartTime@{GameStartTime}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{GameStartTime}{GameStartTime}}
+{\footnotesize\ttfamily \label{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e} 
+Date\+Time Game\+Record.\+Game\+Start\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}\index{GameRecord@{GameRecord}!IsSingle@{IsSingle}}
+\index{IsSingle@{IsSingle}!GameRecord@{GameRecord}}
+\doxysubsubsection{\texorpdfstring{IsSingle}{IsSingle}}
+{\footnotesize\ttfamily \label{class_game_record_a1ba1fa8c15effb98e7b26202719b974b} 
+bool Game\+Record.\+Is\+Single\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ �̱۸������ ���������}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\+Model/\mbox{\hyperlink{_game_record_8cs}{Game\+Record.\+cs}}\end{DoxyCompactItemize}

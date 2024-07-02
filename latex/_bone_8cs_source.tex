@@ -1,0 +1,399 @@
+\doxysection{Bone.\+cs}
+\hypertarget{_bone_8cs_source}{}\label{_bone_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Bone.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Bone.cs}}
+\mbox{\hyperlink{_bone_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00033}\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{00033}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}.\mbox{\hyperlink{class_spine_1_1_skeleton_a76c2052feb3e27c26a6ec7aa3d377343}{Physics}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_bone}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ :\ \mbox{\hyperlink{interface_spine_1_1_i_updatable}{IUpdatable}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00044}\mbox{\hyperlink{class_spine_1_1_bone_a3edbc88c04ce1c88e3524d9e3fee3e85}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_bone_a3edbc88c04ce1c88e3524d9e3fee3e85}{yDown}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ data;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ parent;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}\ children\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}();}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ x,\ y,\ rotation,\ scaleX,\ scaleY,\ shearX,\ shearY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ ax,\ ay,\ arotation,\ ascaleX,\ ascaleY,\ ashearX,\ ashearY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ a,\ b,\ worldX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ c,\ d,\ worldY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ inherit;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ sorted,\ active;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00059}\mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ \mbox{\hyperlink{class_spine_1_1_bone_a3c4ec0f40027d9604f8d46a68af8052c}{Data}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_bone_abc9d3a82cd486753bd30f02e1f537bcc}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ skeleton;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00061}\mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{00061}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_bone_aabeafbc6e34199fa8660adef6461c7c0}{Parent}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ parent;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00062}\mbox{\hyperlink{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Bone>}}\ \mbox{\hyperlink{class_spine_1_1_bone_a1b8a66d5894a29a97b2073226c38ccd5}{Children}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ children;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00063}\mbox{\hyperlink{class_spine_1_1_bone_ae61f8ff89dc9a52134aa745c8b717aaa}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_bone_ae61f8ff89dc9a52134aa745c8b717aaa}{Active}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ active;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00065}\mbox{\hyperlink{class_spine_1_1_bone_a449250768b89e6b5cda2a158207b219e}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a449250768b89e6b5cda2a158207b219e}{X}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ x;\ \}\ \textcolor{keyword}{set}\ \{\ x\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00067}\mbox{\hyperlink{class_spine_1_1_bone_a4a7a8d0b99b6f3d2e042189bc1620b2a}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a4a7a8d0b99b6f3d2e042189bc1620b2a}{Y}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ y;\ \}\ \textcolor{keyword}{set}\ \{\ y\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00069}\mbox{\hyperlink{class_spine_1_1_bone_ae3e3b5774fb19a846db3b39c565d6313}{00069}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_ae3e3b5774fb19a846db3b39c565d6313}{Rotation}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ rotation;\ \}\ \textcolor{keyword}{set}\ \{\ rotation\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00072}\mbox{\hyperlink{class_spine_1_1_bone_a41c41f1378421d1cf2ad21fd29c15a7e}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a41c41f1378421d1cf2ad21fd29c15a7e}{ScaleX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scaleX;\ \}\ \textcolor{keyword}{set}\ \{\ scaleX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00075}\mbox{\hyperlink{class_spine_1_1_bone_a4b0e658f9b264ccd6fe056dddc490a2c}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a4b0e658f9b264ccd6fe056dddc490a2c}{ScaleY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scaleY;\ \}\ \textcolor{keyword}{set}\ \{\ scaleY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00078}\mbox{\hyperlink{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401}{00078}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a7a0ccfe4f730da0491be616bb49b0401}{ShearX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ shearX;\ \}\ \textcolor{keyword}{set}\ \{\ shearX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00081}\mbox{\hyperlink{class_spine_1_1_bone_a9496340b8f39d2f3b70de79457363f7f}{00081}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a9496340b8f39d2f3b70de79457363f7f}{ShearY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ shearY;\ \}\ \textcolor{keyword}{set}\ \{\ shearY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00084}\mbox{\hyperlink{class_spine_1_1_bone_a8dbae327b49f4560162756f62220e511}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ inherit;\ \}\ \textcolor{keyword}{set}\ \{\ inherit\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00087}\mbox{\hyperlink{class_spine_1_1_bone_a6a3cc7c4448f3859b6bfc6f0157c3a6f}{00087}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a6a3cc7c4448f3859b6bfc6f0157c3a6f}{AppliedRotation}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ arotation;\ \}\ \textcolor{keyword}{set}\ \{\ arotation\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00090}\mbox{\hyperlink{class_spine_1_1_bone_ab3811661c5330a129f8ce8c74292266b}{00090}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_ab3811661c5330a129f8ce8c74292266b}{AX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ax;\ \}\ \textcolor{keyword}{set}\ \{\ ax\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00093}\mbox{\hyperlink{class_spine_1_1_bone_a1c2696d7e1094ed06f4d0fe6ec5abc5b}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a1c2696d7e1094ed06f4d0fe6ec5abc5b}{AY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ay;\ \}\ \textcolor{keyword}{set}\ \{\ ay\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00096}\mbox{\hyperlink{class_spine_1_1_bone_a0f21d0b0d5f45d8ff19f098d456970e9}{00096}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a0f21d0b0d5f45d8ff19f098d456970e9}{AScaleX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ascaleX;\ \}\ \textcolor{keyword}{set}\ \{\ ascaleX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00099}\mbox{\hyperlink{class_spine_1_1_bone_a835fb922b0bcaf127ecc44e6cf247c98}{00099}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a835fb922b0bcaf127ecc44e6cf247c98}{AScaleY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ascaleY;\ \}\ \textcolor{keyword}{set}\ \{\ ascaleY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00102}\mbox{\hyperlink{class_spine_1_1_bone_a967c874d90fdd83604c2c7d7bc798283}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a967c874d90fdd83604c2c7d7bc798283}{AShearX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ashearX;\ \}\ \textcolor{keyword}{set}\ \{\ ashearX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00105}\mbox{\hyperlink{class_spine_1_1_bone_a2b851cfd7e6b8ee35434f90844a4e1a4}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a2b851cfd7e6b8ee35434f90844a4e1a4}{AShearY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ ashearY;\ \}\ \textcolor{keyword}{set}\ \{\ ashearY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00108}\mbox{\hyperlink{class_spine_1_1_bone_a934009fcbf471670ddb717896d9c339e}{00108}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a934009fcbf471670ddb717896d9c339e}{A}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ a;\ \}\ \textcolor{keyword}{set}\ \{\ a\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00110}\mbox{\hyperlink{class_spine_1_1_bone_ad99c616c62995e4b0c207b1f6608a52c}{00110}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_ad99c616c62995e4b0c207b1f6608a52c}{B}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b;\ \}\ \textcolor{keyword}{set}\ \{\ b\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00112}\mbox{\hyperlink{class_spine_1_1_bone_a0f8f536da6e17eeda7cdc25051f29a5c}{00112}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a0f8f536da6e17eeda7cdc25051f29a5c}{C}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ c;\ \}\ \textcolor{keyword}{set}\ \{\ c\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00114}\mbox{\hyperlink{class_spine_1_1_bone_a6b370338082cd2e642c06de548847021}{00114}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a6b370338082cd2e642c06de548847021}{D}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ d;\ \}\ \textcolor{keyword}{set}\ \{\ d\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00117}\mbox{\hyperlink{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570}{00117}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_ac8f234829fb48b94eb694537100b3570}{WorldX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ worldX;\ \}\ \textcolor{keyword}{set}\ \{\ worldX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00119}\mbox{\hyperlink{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c}{00119}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_af22e54e68b742c6378c87fa2f5ad7d6c}{WorldY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ worldY;\ \}\ \textcolor{keyword}{set}\ \{\ worldY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00121}\mbox{\hyperlink{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf}{00121}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a6f9dcc12c596710439b0545275401ccf}{WorldRotationX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(c,\ a);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00123}\mbox{\hyperlink{class_spine_1_1_bone_a33a7ce850ec092ca76ebb8292796f483}{00123}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a33a7ce850ec092ca76ebb8292796f483}{WorldRotationY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(d,\ b);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00126}\mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{00126}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a2d81978145b54c3531ef3ceeb70904d5}{WorldScaleX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})Math.Sqrt(a\ *\ a\ +\ c\ *\ c);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00128}\mbox{\hyperlink{class_spine_1_1_bone_ad86cf0fe043b18cd39791f38f411fb2a}{00128}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_ad86cf0fe043b18cd39791f38f411fb2a}{WorldScaleY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})Math.Sqrt(b\ *\ b\ +\ d\ *\ d);\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00130}\mbox{\hyperlink{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552}{00130}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone_a87509d67b3dade6dd4574626836e1552}{Bone}}\ (\mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ data,\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton,\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ parent)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ this.skeleton\ =\ skeleton;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ this.parent\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa}{SetToSetupPose}}();}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00141}\mbox{\hyperlink{class_spine_1_1_bone_a6520a5f5576ed3f567cbd68a4fb15749}{00141}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone_a6520a5f5576ed3f567cbd68a4fb15749}{Bone}}\ (\mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone,\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton,\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ parent)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skeleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}skeleton"{}},\ \textcolor{stringliteral}{"{}skeleton\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ this.skeleton\ =\ skeleton;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ this.parent\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ data\ =\ bone.data;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ bone.x;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ bone.y;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ bone.rotation;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ scaleX\ =\ bone.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ scaleY\ =\ bone.scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ shearX\ =\ bone.shearX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ shearY\ =\ bone.shearY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ inherit\ =\ bone.inherit;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00158}\mbox{\hyperlink{class_spine_1_1_bone_a50fb82f9790751ea0a1e118c793de5ee}{00158}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_a50fb82f9790751ea0a1e118c793de5ee}{Update}}\ (\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}\ physics)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(ax,\ ay,\ arotation,\ ascaleX,\ ascaleY,\ ashearX,\ ashearY);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00163}\mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{00163}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_a7cb46c9bf47dc1c82334464ddad0f4f3}{UpdateWorldTransform}}(x,\ y,\ rotation,\ scaleX,\ scaleY,\ shearX,\ shearY);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00172}\mbox{\hyperlink{class_spine_1_1_bone_aec562a1c4a29fd87849e77161dbd2f58}{00172}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_aec562a1c4a29fd87849e77161dbd2f58}{UpdateWorldTransform}}\ (\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ rotation,\ \textcolor{keywordtype}{float}\ scaleX,\ \textcolor{keywordtype}{float}\ scaleY,\ \textcolor{keywordtype}{float}\ shearX,\ \textcolor{keywordtype}{float}\ shearY)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ ax\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ ay\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ rotation;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ ashearX\ =\ shearX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ shearY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ parent\ =\ this.parent;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{\ \textcolor{comment}{//\ Root\ bone.}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton\ =\ this.skeleton;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sx\ =\ skeleton.scaleX,\ sy\ =\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ 90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ (float)Math.Cos(rx)\ *\ scaleX\ *\ sx;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ (float)Math.Cos(ry)\ *\ scaleY\ *\ sx;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Sin(rx)\ *\ scaleX\ *\ sy;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ (float)Math.Sin(ry)\ *\ scaleY\ *\ sy;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ x\ *\ sx\ +\ skeleton.x;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ y\ *\ sy\ +\ skeleton.y;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pa\ =\ parent.a,\ pb\ =\ parent.b,\ pc\ =\ parent.c,\ pd\ =\ parent.d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ pa\ *\ x\ +\ pb\ *\ y\ +\ parent.worldX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ pc\ *\ x\ +\ pd\ *\ y\ +\ parent.worldY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (inherit)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.Normal:\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ 90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ la\ =\ (float)Math.Cos(rx)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lb\ =\ (float)Math.Cos(ry)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lc\ =\ (float)Math.Sin(rx)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ld\ =\ (float)Math.Sin(ry)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ pa\ *\ la\ +\ pb\ *\ lc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ pa\ *\ lb\ +\ pb\ *\ ld;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ pc\ *\ la\ +\ pd\ *\ lc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ pc\ *\ lb\ +\ pd\ *\ ld;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.OnlyTranslation:\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ 90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ (float)Math.Cos(rx)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ (float)Math.Cos(ry)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ (float)Math.Sin(rx)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ (float)Math.Sin(ry)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoRotationOrReflection:\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ pa\ *\ pa\ +\ pc\ *\ pc,\ prx;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >\ 0.0001f)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ Math.Abs(pa\ *\ pd\ -\/\ pb\ *\ pc)\ /\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ /=\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ /=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ pc\ *\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ pa\ *\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prx\ =\ MathUtils.Atan2Deg(pc,\ pa);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prx\ =\ 90\ -\/\ MathUtils.Atan2Deg(pd,\ pb);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rx\ =\ (rotation\ +\ shearX\ -\/\ prx)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ry\ =\ (rotation\ +\ shearY\ -\/\ prx\ +\ 90)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ la\ =\ (float)Math.Cos(rx)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lb\ =\ (float)Math.Cos(ry)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lc\ =\ (float)Math.Sin(rx)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ld\ =\ (float)Math.Sin(ry)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ pa\ *\ la\ -\/\ pb\ *\ lc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ pa\ *\ lb\ -\/\ pb\ *\ ld;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ pc\ *\ la\ +\ pd\ *\ lc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ pc\ *\ lb\ +\ pd\ *\ ld;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScale:}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScaleOrReflection:\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cos\ =\ (float)Math.Cos(rotation),\ sin\ =\ (float)Math.Sin(rotation);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ za\ =\ (pa\ *\ cos\ +\ pb\ *\ sin)\ /\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zc\ =\ (pc\ *\ cos\ +\ pd\ *\ sin)\ /\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ (float)Math.Sqrt(za\ *\ za\ +\ zc\ *\ zc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >\ 0.00001f)\ s\ =\ 1\ /\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ za\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zc\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sqrt(za\ *\ za\ +\ zc\ *\ zc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inherit\ ==\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScale\ \&\&\ (pa\ *\ pd\ -\/\ pb\ *\ pc\ <\ 0)\ !=\ (skeleton.scaleX\ <\ 0\ !=\ skeleton.ScaleY\ <\ 0))\ s\ =\ -\/s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ MathUtils.PI\ /\ 2\ +\ MathUtils.Atan2(zc,\ za);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zb\ =\ (float)Math.Cos(rotation)\ *\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zd\ =\ (float)Math.Sin(rotation)\ *\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shearX\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shearY\ =\ (90\ +\ shearY)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ la\ =\ (float)Math.Cos(shearX)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lb\ =\ (float)Math.Cos(shearY)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lc\ =\ (float)Math.Sin(shearX)\ *\ scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ld\ =\ (float)Math.Sin(shearY)\ *\ scaleY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ za\ *\ la\ +\ zb\ *\ lc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ za\ *\ lb\ +\ zb\ *\ ld;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ zc\ *\ la\ +\ zd\ *\ lc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ zc\ *\ lb\ +\ zd\ *\ ld;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ a\ *=\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ b\ *=\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ c\ *=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ d\ *=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00284}\mbox{\hyperlink{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa}{00284}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_a714357ad49be82fa9247e231ce917aaa}{SetToSetupPose}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone_data}{BoneData}}\ data\ =\ this.data;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ data.x;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ data.y;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ rotation\ =\ data.rotation;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ scaleX\ =\ data.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ scaleY\ =\ data.\mbox{\hyperlink{class_spine_1_1_bone_data_a7b76bed0929216bae2f83f33181de9b5}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ shearX\ =\ data.shearX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ shearY\ =\ data.shearY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ inherit\ =\ data.inherit;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00306}\mbox{\hyperlink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{00306}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_aa1ac7180d78c77b4ff5f0823bfc0b8ac}{UpdateAppliedTransform}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ parent\ =\ this.parent;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ax\ =\ worldX\ -\/\ skeleton.x;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ay\ =\ worldY\ -\/\ skeleton.y;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ this.a,\ b\ =\ this.b,\ c\ =\ this.c,\ d\ =\ this.d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ MathUtils.Atan2Deg(c,\ a);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ (float)Math.Sqrt(a\ *\ a\ +\ c\ *\ c);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ (float)Math.Sqrt(b\ *\ b\ +\ d\ *\ d);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ MathUtils.Atan2Deg(a\ *\ b\ +\ c\ *\ d,\ a\ *\ d\ -\/\ b\ *\ c);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pa\ =\ parent.a,\ pb\ =\ parent.b,\ pc\ =\ parent.c,\ pd\ =\ parent.d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pid\ =\ 1\ /\ (pa\ *\ pd\ -\/\ pb\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ia\ =\ pd\ *\ pid,\ ib\ =\ pb\ *\ pid,\ ic\ =\ pc\ *\ pid,\ \textcolor{keywordtype}{id}\ =\ pa\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ worldX\ -\/\ parent.worldX,\ dy\ =\ worldY\ -\/\ parent.worldY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ ax\ =\ (dx\ *\ ia\ -\/\ dy\ *\ ib);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ ay\ =\ (dy\ *\ \textcolor{keywordtype}{id}\ -\/\ dx\ *\ ic);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ra,\ rb,\ rc,\ rd;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inherit\ ==\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.OnlyTranslation)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ra\ =\ a;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb\ =\ b;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rc\ =\ c;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd\ =\ d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (inherit)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoRotationOrReflection:\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ Math.Abs(pa\ *\ pd\ -\/\ pb\ *\ pc)\ /\ (pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sa\ =\ pa\ /\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sc\ =\ pc\ /\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ -\/sc\ *\ s\ *\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ sa\ *\ s\ *\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pid\ =\ 1\ /\ (pa\ *\ pd\ -\/\ pb\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ia\ =\ pd\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ib\ =\ pb\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScale:}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScaleOrReflection:\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ rotation\ *\ MathUtils.DegRad,\ cos\ =\ (float)Math.Cos(r),\ sin\ =\ (float)Math.Sin(r);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ =\ (pa\ *\ cos\ +\ pb\ *\ sin)\ /\ skeleton.scaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ =\ (pc\ *\ cos\ +\ pd\ *\ sin)\ /\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ (float)Math.Sqrt(pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >\ 0.00001f)\ s\ =\ 1\ /\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pa\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pc\ *=\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ (float)Math.Sqrt(pa\ *\ pa\ +\ pc\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inherit\ ==\ \mbox{\hyperlink{namespace_spine_a9e651899b14c3a09d2d0211196269ae6}{Inherit}}.NoScale\ \&\&\ pid\ <\ 0\ !=\ (skeleton.scaleX\ <\ 0\ !=\ skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a43db6d20181ea0ddbb8710df9d0eba3a}{ScaleY}}\ <\ 0))\ s\ =\ -\/s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ MathUtils.PI\ /\ 2\ +\ MathUtils.Atan2(pc,\ pa);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ (float)Math.Cos(r)\ *\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd\ =\ (float)Math.Sin(r)\ *\ s;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pid\ =\ 1\ /\ (pa\ *\ pd\ -\/\ pb\ *\ pc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ia\ =\ pd\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ib\ =\ pb\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ic\ =\ pc\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ pa\ *\ pid;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ra\ =\ ia\ *\ a\ -\/\ ib\ *\ c;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb\ =\ ia\ *\ b\ -\/\ ib\ *\ d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rc\ =\ \textcolor{keywordtype}{id}\ *\ c\ -\/\ ic\ *\ a;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd\ =\ \textcolor{keywordtype}{id}\ *\ d\ -\/\ ic\ *\ b;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ ashearX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ (float)Math.Sqrt(ra\ *\ ra\ +\ rc\ *\ rc);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ascaleX\ >\ 0.0001f)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det\ =\ ra\ *\ rd\ -\/\ rb\ *\ rc;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ det\ /\ ascaleX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ -\/MathUtils.Atan2Deg(ra\ *\ rb\ +\ rc\ *\ rd,\ det);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ MathUtils.Atan2Deg(rc,\ ra);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ascaleY\ =\ (float)Math.Sqrt(rb\ *\ rb\ +\ rd\ *\ rd);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ashearY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arotation\ =\ 90\ -\/\ MathUtils.Atan2Deg(rd,\ rb);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00390}\mbox{\hyperlink{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd}{00390}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd}{WorldToLocal}}\ (\textcolor{keywordtype}{float}\ worldX,\ \textcolor{keywordtype}{float}\ worldY,\ out\ \textcolor{keywordtype}{float}\ localX,\ out\ \textcolor{keywordtype}{float}\ localY)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ this.a,\ b\ =\ this.b,\ c\ =\ this.c,\ d\ =\ this.d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det\ =\ a\ *\ d\ -\/\ b\ *\ c;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ worldX\ -\/\ this.worldX,\ y\ =\ worldY\ -\/\ this.worldY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ localX\ =\ (x\ *\ d\ -\/\ y\ *\ b)\ /\ det;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ localY\ =\ (y\ *\ a\ -\/\ x\ *\ c)\ /\ det;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00399}\mbox{\hyperlink{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}{00399}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}{LocalToWorld}}\ (\textcolor{keywordtype}{float}\ localX,\ \textcolor{keywordtype}{float}\ localY,\ out\ \textcolor{keywordtype}{float}\ worldX,\ out\ \textcolor{keywordtype}{float}\ worldY)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ localX\ *\ a\ +\ localY\ *\ b\ +\ this.worldX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ localX\ *\ c\ +\ localY\ *\ d\ +\ this.worldY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00405}\mbox{\hyperlink{class_spine_1_1_bone_ab0aa8a98bdd0871ab801adb375724bf7}{00405}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_ab0aa8a98bdd0871ab801adb375724bf7}{WorldToParent}}\ (\textcolor{keywordtype}{float}\ worldX,\ \textcolor{keywordtype}{float}\ worldY,\ out\ \textcolor{keywordtype}{float}\ parentX,\ out\ \textcolor{keywordtype}{float}\ parentY)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentX\ =\ worldX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentY\ =\ worldY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent.\mbox{\hyperlink{class_spine_1_1_bone_a85285deba5f815ed0c4afaf5fa265ccd}{WorldToLocal}}(worldX,\ worldY,\ out\ parentX,\ out\ parentY);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00415}\mbox{\hyperlink{class_spine_1_1_bone_a1d93a8c2d1dfc270dafd7d0032859616}{00415}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_a1d93a8c2d1dfc270dafd7d0032859616}{ParentToWorld}}\ (\textcolor{keywordtype}{float}\ parentX,\ \textcolor{keywordtype}{float}\ parentY,\ out\ \textcolor{keywordtype}{float}\ worldX,\ out\ \textcolor{keywordtype}{float}\ worldY)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldX\ =\ parentX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worldY\ =\ parentY;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent.\mbox{\hyperlink{class_spine_1_1_bone_a42e6bcd5d837faec67110fe71087be3a}{LocalToWorld}}(parentX,\ parentY,\ out\ worldX,\ out\ worldY);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00425}\mbox{\hyperlink{class_spine_1_1_bone_a900f988a99dde5481b6f3cfe3da7eebd}{00425}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_a900f988a99dde5481b6f3cfe3da7eebd}{WorldToLocalRotation}}\ (\textcolor{keywordtype}{float}\ worldRotation)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ worldRotation\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ (float)Math.Sin(worldRotation),\ cos\ =\ (float)Math.Cos(worldRotation);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(a\ *\ sin\ -\/\ c\ *\ cos,\ d\ *\ cos\ -\/\ b\ *\ sin)\ +\ rotation\ -\/\ shearX;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00432}\mbox{\hyperlink{class_spine_1_1_bone_aaba512ff57ace74ea287eaf67ffe683c}{00432}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_bone_aaba512ff57ace74ea287eaf67ffe683c}{LocalToWorldRotation}}\ (\textcolor{keywordtype}{float}\ localRotation)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ localRotation\ =\ (localRotation\ -\/\ rotation\ -\/\ shearX)\ *\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ (float)Math.Sin(localRotation),\ cos\ =\ (float)Math.Cos(localRotation);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MathUtils.Atan2Deg(cos\ *\ c\ +\ sin\ *\ d,\ cos\ *\ a\ +\ sin\ *\ b);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00444}\mbox{\hyperlink{class_spine_1_1_bone_aa8c440acc7431298b9ccafe6d54f10e5}{00444}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_bone_aa8c440acc7431298b9ccafe6d54f10e5}{RotateWorld}}\ (\textcolor{keywordtype}{float}\ degrees)\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ degrees\ *=\ MathUtils.DegRad;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ (float)Math.Sin(degrees),\ cos\ =\ (float)Math.Cos(degrees);}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ra\ =\ a,\ rb\ =\ b;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ cos\ *\ ra\ -\/\ sin\ *\ c;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ cos\ *\ rb\ -\/\ sin\ *\ d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ sin\ *\ ra\ +\ cos\ *\ c;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ sin\ *\ rb\ +\ cos\ *\ d;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00454}\mbox{\hyperlink{class_spine_1_1_bone_afb63677fe64ce4237a8079ce8a423e39}{00454}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_bone_afb63677fe64ce4237a8079ce8a423e39}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00457}00457\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bone_8cs_source_l00458}00458\ \}}
+
+\end{DoxyCode}

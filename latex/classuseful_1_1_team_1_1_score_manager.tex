@@ -1,0 +1,122 @@
+\doxysection{useful.\+Team.\+Score\+Manager 클래스 참조}
+\hypertarget{classuseful_1_1_team_1_1_score_manager}{}\label{classuseful_1_1_team_1_1_score_manager}\index{useful.Team.ScoreManager@{useful.Team.ScoreManager}}
+
+
+useful.\+Team.\+Score\+Manager에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classuseful_1_1_team_1_1_score_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+useful.\+Team.\+Score\+Manager에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classuseful_1_1_team_1_1_score_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a25d40266b1ccc19fd8e972f3cbaa757c}{Up\+Score\+Event}} (\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}} team)
+\item 
+void \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a3d1cf2e7046c541950f1ae889f5b36c0}{Up\+Score}} (\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}} team, int value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{Score\+Manager}} \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{이벤트}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a25d40266b1ccc19fd8e972f3cbaa757c}{Up\+Score\+Event}} \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7f82a7589bf0937981e9490f180d8c7c}{Up\+Score\+Event\+Handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_score_manager_8cs_source}{Score\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_score_manager_8cs_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{classuseful_1_1_team_1_1_score_manager_a3d1cf2e7046c541950f1ae889f5b36c0}\index{useful.Team.ScoreManager@{useful.Team.ScoreManager}!UpScore@{UpScore}}
+\index{UpScore@{UpScore}!useful.Team.ScoreManager@{useful.Team.ScoreManager}}
+\doxysubsubsection{\texorpdfstring{UpScore()}{UpScore()}}
+{\footnotesize\ttfamily \label{classuseful_1_1_team_1_1_score_manager_a3d1cf2e7046c541950f1ae889f5b36c0} 
+void useful.\+Team.\+Score\+Manager.\+Up\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}}]{team}{, }\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_score_manager_8cs_source}{Score\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_score_manager_8cs_source_l00078}{78}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ teamScore.GetTeamValue(team).UpScore(value);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (team.Equals(Team.RED))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Winner.redTeamScore\ +=\ value;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Winner.blueTeamScore\ +=\ value;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7f82a7589bf0937981e9490f180d8c7c}{UpScoreEventHandler}}(team);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classuseful_1_1_team_1_1_score_manager_a3d1cf2e7046c541950f1ae889f5b36c0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classuseful_1_1_team_1_1_score_manager_a25d40266b1ccc19fd8e972f3cbaa757c}\index{useful.Team.ScoreManager@{useful.Team.ScoreManager}!UpScoreEvent@{UpScoreEvent}}
+\index{UpScoreEvent@{UpScoreEvent}!useful.Team.ScoreManager@{useful.Team.ScoreManager}}
+\doxysubsubsection{\texorpdfstring{UpScoreEvent()}{UpScoreEvent()}}
+{\footnotesize\ttfamily \label{classuseful_1_1_team_1_1_score_manager_a25d40266b1ccc19fd8e972f3cbaa757c} 
+delegate void useful.\+Team.\+Score\+Manager.\+Up\+Score\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}}]{team}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}\index{useful.Team.ScoreManager@{useful.Team.ScoreManager}!Instance@{Instance}}
+\index{Instance@{Instance}!useful.Team.ScoreManager@{useful.Team.ScoreManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc} 
+\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{Score\+Manager}} useful.\+Team.\+Score\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_score_manager_8cs_source}{Score\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_score_manager_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{이벤트 문서화}
+\Hypertarget{classuseful_1_1_team_1_1_score_manager_a7f82a7589bf0937981e9490f180d8c7c}\index{useful.Team.ScoreManager@{useful.Team.ScoreManager}!UpScoreEventHandler@{UpScoreEventHandler}}
+\index{UpScoreEventHandler@{UpScoreEventHandler}!useful.Team.ScoreManager@{useful.Team.ScoreManager}}
+\doxysubsubsection{\texorpdfstring{UpScoreEventHandler}{UpScoreEventHandler}}
+{\footnotesize\ttfamily \label{classuseful_1_1_team_1_1_score_manager_a7f82a7589bf0937981e9490f180d8c7c} 
+\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a25d40266b1ccc19fd8e972f3cbaa757c}{Up\+Score\+Event}} useful.\+Team.\+Score\+Manager.\+Up\+Score\+Event\+Handler\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_score_manager_8cs_source}{Score\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_score_manager_8cs_source_l00052}{52}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Useful/\mbox{\hyperlink{_score_manager_8cs}{Score\+Manager.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\doxysection{Cw\+Camera\+Move.\+cs}
+\hypertarget{_cw_camera_move_8cs_source}{}\label{_cw_camera_move_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwCameraMove.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/Shared/Common/Examples/Scripts/CwCameraMove.cs}}
+\mbox{\hyperlink{_cw_camera_move_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00006}00006\ \ \ \ \ [HelpURL(CwShared.HelpUrlPrefix\ +\ \textcolor{stringliteral}{"{}CwCameraMove"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00007}00007\ \ \ \ \ [AddComponentMenu(CwShared.ComponentMenuPrefix\ +\ \textcolor{stringliteral}{"{}Camera\ Move"{}})]}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00008}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move}{CwCameraMove}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00011}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a59db10252ec2083d79e6dc9c83b423b5}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a59db10252ec2083d79e6dc9c83b423b5}{Listen}}\ \{\ \textcolor{keyword}{set}\ \{\ listen\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ listen;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ listen\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00014}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_aa096778294e1988b64c5a79cf46f2f74}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_aa096778294e1988b64c5a79cf46f2f74}{Damping}}\ \{\ \textcolor{keyword}{set}\ \{\ damping\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ damping;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ damping\ =\ 10.0f;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00017}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_ad44b0e55890b2497a924f7e004b97bc7}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_ad44b0e55890b2497a924f7e004b97bc7}{Sensitivity}}\ \{\ \textcolor{keyword}{set}\ \{\ sensitivity\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ sensitivity;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ sensitivity\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00020}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a64fed69d57205fb68937116c65315fff}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{CwInputManager.Axis}}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a64fed69d57205fb68937116c65315fff}{HorizontalControls}}\ \{\ \textcolor{keyword}{set}\ \{\ horizontalControls\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ horizontalControls;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{CwInputManager.Axis}}\ horizontalControls\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{Axis}}(2,\ \textcolor{keyword}{false},\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager_a2159880700044f74a33166b583a7eb99}{AxisGesture}}.HorizontalDrag,\ 1.0f,\ KeyCode.A,\ KeyCode.D,\ KeyCode.LeftArrow,\ KeyCode.RightArrow,\ 100.0f);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00023}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a4fe0895906f07af8b2ba73ce7ff2b04e}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{CwInputManager.Axis}}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a4fe0895906f07af8b2ba73ce7ff2b04e}{DepthControls}}\ \{\ \textcolor{keyword}{set}\ \{\ depthControls\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ depthControls;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{CwInputManager.Axis}}\ depthControls\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{Axis}}(2,\ \textcolor{keyword}{false},\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager_a2159880700044f74a33166b583a7eb99}{AxisGesture}}.HorizontalDrag,\ 1.0f,\ KeyCode.S,\ KeyCode.W,\ KeyCode.DownArrow,\ KeyCode.UpArrow,\ 100.0f);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00026}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_ad0423a66434666f86759e64d2f28e1cd}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{CwInputManager.Axis}}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_ad0423a66434666f86759e64d2f28e1cd}{VerticalControls}}\ \{\ \textcolor{keyword}{set}\ \{\ verticalControls\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ verticalControls;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{CwInputManager.Axis}}\ verticalControls\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis}{Axis}}(3,\ \textcolor{keyword}{false},\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager_a2159880700044f74a33166b583a7eb99}{AxisGesture}}.HorizontalDrag,\ 1.0f,\ KeyCode.F,\ KeyCode.R,\ KeyCode.None,\ KeyCode.None,\ 100.0f);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ [System.NonSerialized]}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Vector3\ remainingDelta;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00031}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a1e93a9d3716296e803b96573c063ba5b}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a1e93a9d3716296e803b96573c063ba5b}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager}{CwInputManager}}.\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_input_manager_ad3835a10dd2d76a561cc3c403d8a1dd2}{EnsureThisComponentExists}}();}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00036}\mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a193e3df48d3b3309d9ccb02fa55d4f70}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_w_1_1_common_1_1_cw_camera_move_a193e3df48d3b3309d9ccb02fa55d4f70}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (listen\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddToDelta();}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ DampenDelta();}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ AddToDelta()}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ delta\ from\ binds}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ var\ delta\ =\ \textcolor{keywordflow}{default}(Vector3);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ delta.x\ =\ horizontalControls.\mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis_aca30e796505ae8b1cea94cee7cebe57c}{GetValue}}(Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ delta.y\ =\ verticalControls\ \ .\mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis_aca30e796505ae8b1cea94cee7cebe57c}{GetValue}}(Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ delta.z\ =\ depthControls\ \ \ \ \ .\mbox{\hyperlink{struct_c_w_1_1_common_1_1_cw_input_manager_1_1_axis_aca30e796505ae8b1cea94cee7cebe57c}{GetValue}}(Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ old\ position}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ var\ oldPosition\ =\ transform.position;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Translate}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ transform.Translate(delta\ *\ sensitivity\ *\ Time.deltaTime,\ Space.Self);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ to\ remaining}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ var\ acceleration\ =\ transform.position\ -\/\ oldPosition;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ remainingDelta\ +=\ acceleration;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Revert\ position}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ transform.position\ =\ oldPosition;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ DampenDelta()}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dampen\ remaining\ delta}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ var\ factor\ \ \ =\ CwHelper.DampenFactor(damping,\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ var\ newDelta\ =\ Vector3.Lerp(remainingDelta,\ Vector3.zero,\ factor);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Translate\ by\ difference}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ transform.position\ +=\ remainingDelta\ -\/\ newDelta;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ remaining}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ remainingDelta\ =\ newDelta;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00085}00085\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00086}00086\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00087}00087\ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ CwCameraMove;}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00091}00091\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00092}00092\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CwCameraMove\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ TARGET\ tgt;\ TARGET[]\ tgts;\ GetTargets(out\ tgt,\ out\ tgts);}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}listen"{}},\ \textcolor{stringliteral}{"{}Is\ this\ component\ currently\ listening\ for\ inputs?"{}});}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}damping"{}},\ \textcolor{stringliteral}{"{}How\ quickly\ the\ rotation\ transitions\ from\ the\ current\ to\ the\ target\ value\ (-\/1\ =\ instant)."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}sensitivity"{}},\ \textcolor{stringliteral}{"{}The\ movement\ speed\ will\ be\ multiplied\ by\ this."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}horizontalControls"{}},\ \textcolor{stringliteral}{"{}The\ keys/fingers\ required\ to\ move\ right/left."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}depthControls"{}},\ \textcolor{stringliteral}{"{}The\ keys/fingers\ required\ to\ move\ backward/forward."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ Draw(\textcolor{stringliteral}{"{}verticalControls"{}},\ \textcolor{stringliteral}{"{}The\ keys/fingers\ required\ to\ move\ down/up."{}});}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{_cw_camera_move_8cs_source_l00111}00111\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

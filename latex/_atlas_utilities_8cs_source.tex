@@ -1,0 +1,721 @@
+\doxysection{Atlas\+Utilities.\+cs}
+\hypertarget{_atlas_utilities_8cs_source}{}\label{_atlas_utilities_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Utility/AtlasUtilities.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Utility/AtlasUtilities.cs}}
+\mbox{\hyperlink{_atlas_utilities_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00030}00030\ \textcolor{preprocessor}{\#if\ UNITY\_2019\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00031}00031\ \textcolor{preprocessor}{\#define\ CONFIGURABLE\_ENTER\_PLAY\_MODE}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00036}00036\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00037}00037\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00040}\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_attachment_tools}{00040}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_attachment_tools}{Spine.Unity.AttachmentTools}}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }AtlasUtilities\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{const}\ TextureFormat\ SpineTextureFormat\ =\ TextureFormat.RGBA32;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ DefaultMipmapBias\ =\ -\/0.5f;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ UseMipMaps\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ DefaultScale\ =\ 0.01f;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ NonrenderingRegion\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00050}00050\ \textcolor{preprocessor}{\#if\ CONFIGURABLE\_ENTER\_PLAY\_MODE}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Init\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ handle\ disabled\ domain\ reload}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.ClearCache();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00056}00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegion\ (\textcolor{keyword}{this}\ Texture2D\ t,\ Material\ materialPropertySource,\ \textcolor{keywordtype}{float}\ scale\ =\ DefaultScale)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t.ToAtlasRegion(materialPropertySource.shader,\ scale,\ materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegion\ (\textcolor{keyword}{this}\ Texture2D\ t,\ Shader\ shader,\ \textcolor{keywordtype}{float}\ scale\ =\ DefaultScale,\ Material\ materialPropertySource\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ \textcolor{keyword}{new}\ Material(shader);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialPropertySource\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ material.CopyPropertiesFromMaterial(materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ material.shaderKeywords\ =\ materialPropertySource.shaderKeywords;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ material.mainTexture\ =\ t;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page\ =\ material.ToSpineAtlasPage();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ t.\mbox{\hyperlink{class_spine_1_1_atlas_page_a1dbd76638862cfec95c048dfcd73ec84}{width}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ t.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ region.name\ =\ t.name;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ World\ space\ units}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ boundsMin\ =\ Vector2.zero,\ boundsMax\ =\ \textcolor{keyword}{new}\ Vector2(width,\ height)\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Texture\ space/pixel\ units}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ region.width\ =\ (int)width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ region.originalWidth\ =\ (int)width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ region.height\ =\ (int)height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ region.originalHeight\ =\ (int)height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ region.offsetX\ =\ width\ *\ (0.5f\ -\/\ InverseLerp(boundsMin.x,\ boundsMax.x,\ 0));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ region.offsetY\ =\ height\ *\ (0.5f\ -\/\ InverseLerp(boundsMin.y,\ boundsMax.y,\ 0));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ the\ full\ area\ of\ the\ texture.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ region.u\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ region.v\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ region.u2\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ region.v2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ region.x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ region.y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ region.page\ =\ page;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegionPMAClone\ (\textcolor{keyword}{this}\ Texture2D\ t,\ Material\ materialPropertySource,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t.ToAtlasRegionPMAClone(materialPropertySource.shader,\ textureFormat,\ mipmaps,\ materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegionPMAClone\ (\textcolor{keyword}{this}\ Texture2D\ t,\ Shader\ shader,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,\ Material\ materialPropertySource\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ \textcolor{keyword}{new}\ Material(shader);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialPropertySource\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ material.CopyPropertiesFromMaterial(materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ material.shaderKeywords\ =\ materialPropertySource.shaderKeywords;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ newTexture\ =\ t.GetClone(textureFormat,\ mipmaps,\ applyPMA:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ newTexture.name\ =\ t.name\ +\ \textcolor{stringliteral}{"{}-\/pma-\/"{}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ material.name\ =\ t.name\ +\ shader.name;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ material.mainTexture\ =\ newTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page\ =\ material.ToSpineAtlasPage();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ newTexture.ToAtlasRegion(shader);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ region.page\ =\ page;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ ToSpineAtlasPage\ (\textcolor{keyword}{this}\ Material\ m)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ newPage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rendererObject\ =\ m,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ m.name}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ Texture\ t\ =\ m.mainTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newPage.width\ =\ t.\mbox{\hyperlink{class_spine_1_1_atlas_page_a1dbd76638862cfec95c048dfcd73ec84}{width}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newPage.height\ =\ t.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newPage;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegion\ (\textcolor{keyword}{this}\ Sprite\ s,\ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (page\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}page"{}},\ \textcolor{stringliteral}{"{}page\ cannot\ be\ null.\ AtlasPage\ determines\ which\ texture\ region\ belongs\ and\ how\ it\ should\ be\ rendered.\ You\ can\ use\ material.ToSpineAtlasPage()\ to\ get\ a\ shareable\ AtlasPage\ from\ a\ Material,\ or\ use\ the\ sprite.ToAtlasRegion(material)\ overload."{}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ s.ToAtlasRegion();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ region.page\ =\ page;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegion\ (\textcolor{keyword}{this}\ Sprite\ s,\ Material\ material)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ s.ToAtlasRegion();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ region.page\ =\ material.ToSpineAtlasPage();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegionPMAClone\ (\textcolor{keyword}{this}\ Sprite\ s,\ Material\ materialPropertySource,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s.ToAtlasRegionPMAClone(materialPropertySource.shader,\ textureFormat,\ mipmaps,\ materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegionPMAClone\ (\textcolor{keyword}{this}\ Sprite\ s,\ Shader\ shader,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,\ Material\ materialPropertySource\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ \textcolor{keyword}{new}\ Material(shader);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialPropertySource\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ material.CopyPropertiesFromMaterial(materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ material.shaderKeywords\ =\ materialPropertySource.shaderKeywords;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ tex\ =\ s.ToTexture(textureFormat,\ mipmaps,\ applyPMA:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ tex.name\ =\ s.name\ +\ \textcolor{stringliteral}{"{}-\/pma-\/"{}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ material.name\ =\ tex.name\ +\ shader.name;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ material.mainTexture\ =\ tex;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page\ =\ material.ToSpineAtlasPage();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ s.ToAtlasRegion(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ region.page\ =\ page;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ToAtlasRegion\ (\textcolor{keyword}{this}\ Sprite\ s,\ \textcolor{keywordtype}{bool}\ isolatedTexture\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ region.name\ =\ s.name;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ region.index\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ region.degrees\ =\ s.packed\ \&\&\ s.packingRotation\ !=\ SpritePackingRotation.None\ ?\ 90\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ World\ space\ units}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ Bounds\ bounds\ =\ s.bounds;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ boundsMin\ =\ bounds.min,\ boundsMax\ =\ bounds.max;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Texture\ space/pixel\ units}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ spineRect\ =\ s.textureRect.SpineUnityFlipRect(s.texture.height);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ originalRect\ =\ s.rect;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ region.width\ =\ (int)spineRect.width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ region.originalWidth\ =\ (int)originalRect.width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ region.height\ =\ (int)spineRect.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ region.originalHeight\ =\ (int)originalRect.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ region.offsetX\ =\ s.textureRectOffset.x\ +\ spineRect.width\ *\ (0.5f\ -\/\ InverseLerp(boundsMin.x,\ boundsMax.x,\ 0));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ region.offsetY\ =\ s.textureRectOffset.y\ +\ spineRect.height\ *\ (0.5f\ -\/\ InverseLerp(boundsMin.y,\ boundsMax.y,\ 0));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isolatedTexture)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.u\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.v\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.u2\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.v2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ tex\ =\ s.texture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ uvRect\ =\ TextureRectToUVRect(s.textureRect,\ tex.width,\ tex.height);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.u\ =\ uvRect.xMin;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.v\ =\ uvRect.yMax;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.u2\ =\ uvRect.xMax;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.v2\ =\ uvRect.yMin;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.x\ =\ (int)spineRect.x;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.y\ =\ (int)spineRect.y;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00231}00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Runtime\ Repacking}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ readonly\ Dictionary<AtlasRegion,\ int>\ existingRegions\ =\ \textcolor{keyword}{new}\ Dictionary<AtlasRegion,\ int>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ readonly\ List<int>\ regionIndices\ =\ \textcolor{keyword}{new}\ List<int>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ readonly\ List<AtlasRegion>\ originalRegions\ =\ \textcolor{keyword}{new}\ List<AtlasRegion>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ readonly\ List<AtlasRegion>\ repackedRegions\ =\ \textcolor{keyword}{new}\ List<AtlasRegion>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ List<Texture2D>[]\ texturesToPackAtParam\ =\ \textcolor{keyword}{new}\ List<Texture2D>[1];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ List<Attachment>\ inoutAttachments\ =\ \textcolor{keyword}{new}\ List<Attachment>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ GetRepackedAttachments\ (List<Attachment>\ sourceAttachments,\ List<Attachment>\ outputAttachments,\ Material\ materialPropertySource,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ out\ Material\ outputMaterial,\ out\ Texture2D\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxAtlasSize\ =\ 1024,\ \textcolor{keywordtype}{int}\ padding\ =\ 2,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newAssetName\ =\ \textcolor{stringliteral}{"{}Repacked\ Attachments"{}},\ \textcolor{keywordtype}{bool}\ clearCache\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ useOriginalNonrenderables\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ additionalTexturePropertyIDsToCopy\ =\ \textcolor{keyword}{null},\ Texture2D[]\ additionalOutputTextures\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ TextureFormat[]\ additionalTextureFormats\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{bool}[]\ additionalTextureIsLinear\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ Shader\ shader\ =\ materialPropertySource\ ==\ \textcolor{keyword}{null}\ ?\ Shader.Find(\textcolor{stringliteral}{"{}Spine/Skeleton"{}})\ :\ materialPropertySource.shader;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ GetRepackedAttachments(sourceAttachments,\ outputAttachments,\ shader,\ out\ outputMaterial,\ out\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxAtlasSize,\ padding,\ textureFormat,\ mipmaps,\ newAssetName,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ materialPropertySource,\ clearCache,\ useOriginalNonrenderables,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTexturePropertyIDsToCopy,\ additionalOutputTextures,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureFormats,\ additionalTextureIsLinear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ GetRepackedAttachments\ (List<Attachment>\ sourceAttachments,\ List<Attachment>\ outputAttachments,\ Shader\ shader,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ out\ Material\ outputMaterial,\ out\ Texture2D\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxAtlasSize\ =\ 1024,\ \textcolor{keywordtype}{int}\ padding\ =\ 2,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newAssetName\ =\ \textcolor{stringliteral}{"{}Repacked\ Attachments"{}},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ materialPropertySource\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{bool}\ clearCache\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ useOriginalNonrenderables\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ additionalTexturePropertyIDsToCopy\ =\ \textcolor{keyword}{null},\ Texture2D[]\ additionalOutputTextures\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ TextureFormat[]\ additionalTextureFormats\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{bool}[]\ additionalTextureIsLinear\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourceAttachments\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}sourceAttachments"{}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (outputAttachments\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.ArgumentNullException(\textcolor{stringliteral}{"{}outputAttachments"{}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ outputTexture\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (additionalTexturePropertyIDsToCopy\ !=\ \textcolor{keyword}{null}\ \&\&\ additionalTextureIsLinear\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureIsLinear\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{bool}[additionalTexturePropertyIDsToCopy.Length];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ additionalTextureIsLinear.Length;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureIsLinear[i]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ these\ to\ detect\ and\ use\ shared\ regions.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ existingRegions.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ regionIndices.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Collect\ all\ textures\ from\ original\ attachments.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numTextureParamsToRepack\ =\ 1\ +\ (additionalTexturePropertyIDsToCopy\ ==\ \textcolor{keyword}{null}\ ?\ 0\ :\ additionalTexturePropertyIDsToCopy.Length);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ additionalOutputTextures\ =\ (additionalTexturePropertyIDsToCopy\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ \textcolor{keyword}{new}\ Texture2D[additionalTexturePropertyIDsToCopy.Length]);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texturesToPackAtParam.Length\ <\ numTextureParamsToRepack)}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Array.Resize(ref\ texturesToPackAtParam,\ numTextureParamsToRepack);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numTextureParamsToRepack;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texturesToPackAtParam[i]\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texturesToPackAtParam[i].Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texturesToPackAtParam[i]\ =\ \textcolor{keyword}{new}\ List<Texture2D>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ originalRegions.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{object}.ReferenceEquals(sourceAttachments,\ outputAttachments))\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputAttachments.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputAttachments.AddRange(sourceAttachments);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newRegionIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ attachmentIndex\ =\ 0,\ n\ =\ sourceAttachments.Count;\ attachmentIndex\ <\ n;\ attachmentIndex++)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ originalAttachment\ =\ sourceAttachments[attachmentIndex];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (originalAttachment\ is\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}}\ originalMeshAttachment\ =\ originalAttachment\ as\ \mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}}\ originalTextureAttachment\ =\ (\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}})originalAttachment;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ newAttachment\ =\ (originalTextureAttachment.Sequence\ !=\ \textcolor{keyword}{null})\ ?\ originalAttachment\ :}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (originalMeshAttachment\ !=\ \textcolor{keyword}{null})\ ?\ originalMeshAttachment.\mbox{\hyperlink{class_spine_1_1_mesh_attachment_ace78f0c65fbc1e7b2278084ef537bb13}{NewLinkedMesh}}()\ :}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ originalAttachment.\mbox{\hyperlink{class_spine_1_1_attachment_a9e39d7f3885810a0f8f34285f53b2e2b}{Copy}}();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}}\ newTextureAttachment\ =\ (\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}})newAttachment;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ newTextureAttachment.Region\ as\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (region\ ==\ \textcolor{keyword}{null}\ \&\&\ originalTextureAttachment.\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a14e2221f805d4a65002ea5c949615ddf}{Sequence}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region\ =\ (\mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}})originalTextureAttachment.\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a14e2221f805d4a65002ea5c949615ddf}{Sequence}}.\mbox{\hyperlink{class_spine_1_1_sequence_a82e6572e997f6be700e195b15b28956b}{Regions}}[0];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ existingIndex;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingRegions.TryGetValue(region,\ out\ existingIndex))\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionIndices.Add(existingIndex);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existingRegions.Add(region,\ newRegionIndex);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_sequence}{Sequence}}\ originalSequence\ =\ originalTextureAttachment.\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a14e2221f805d4a65002ea5c949615ddf}{Sequence}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (originalSequence\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newTextureAttachment.Sequence\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_spine_a3625b0b38867d83424d7aeec9f0ce394a3ff39d3acb327553070a64ef0cb321d5}{Sequence}}(originalSequence);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ regionCount\ =\ originalSequence.\mbox{\hyperlink{class_spine_1_1_sequence_a82e6572e997f6be700e195b15b28956b}{Regions}}.Length;\ i\ <\ regionCount;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ sequenceRegion\ =\ (\mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}})originalSequence.\mbox{\hyperlink{class_spine_1_1_sequence_a82e6572e997f6be700e195b15b28956b}{Regions}}[i];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddRegionTexturesToPack(numTextureParamsToRepack,\ sequenceRegion,\ textureFormat,\ mipmaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureFormats,\ additionalTexturePropertyIDsToCopy,\ additionalTextureIsLinear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ originalRegions.Add(sequenceRegion);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionIndices.Add(newRegionIndex);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newRegionIndex++;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddRegionTexturesToPack(numTextureParamsToRepack,\ region,\ textureFormat,\ mipmaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureFormats,\ additionalTexturePropertyIDsToCopy,\ additionalTextureIsLinear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ originalRegions.Add(region);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionIndices.Add(newRegionIndex);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newRegionIndex++;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputAttachments[attachmentIndex]\ =\ newAttachment;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputAttachments[attachmentIndex]\ =\ useOriginalNonrenderables\ ?\ originalAttachment\ :\ originalAttachment.\mbox{\hyperlink{class_spine_1_1_attachment_a9e39d7f3885810a0f8f34285f53b2e2b}{Copy}}();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionIndices.Add(NonrenderingRegion);\ \textcolor{comment}{//\ Output\ attachments\ pairs\ with\ regionIndices\ list\ 1:1.\ Pad\ with\ a\ sentinel\ if\ the\ attachment\ doesn't\ have\ a\ region.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rehydrate\ the\ repacked\ textures\ as\ a\ Material,\ Spine\ atlas\ and\ Spine.AtlasAttachments}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ newMaterial\ =\ \textcolor{keyword}{new}\ Material(shader);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialPropertySource\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newMaterial.CopyPropertiesFromMaterial(materialPropertySource);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newMaterial.shaderKeywords\ =\ materialPropertySource.shaderKeywords;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ newMaterial.name\ =\ newAssetName;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ Rect[]\ rects\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numTextureParamsToRepack;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fill\ a\ new\ texture\ with\ the\ collected\ attachment\ textures.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ newTexture\ =\ \textcolor{keyword}{new}\ Texture2D(maxAtlasSize,\ maxAtlasSize,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (i\ >\ 0\ \&\&\ additionalTextureFormats\ !=\ \textcolor{keyword}{null}\ \&\&\ i\ -\/\ 1\ <\ additionalTextureFormats.Length)\ ?}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureFormats[i\ -\/\ 1]\ :\ textureFormat,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mipmaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (i\ >\ 0)\ ?\ additionalTextureIsLinear[i\ -\/\ 1]\ :\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newTexture.mipMapBias\ =\ AtlasUtilities.DefaultMipmapBias;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Texture2D>\ texturesToPack\ =\ texturesToPackAtParam[i];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texturesToPack.Count\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ sourceTexture\ =\ texturesToPack[0];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newTexture.CopyTextureAttributesFrom(sourceTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newTexture.name\ =\ newAssetName;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rect[]\ rectsForTexParam\ =\ newTexture.PackTextures(texturesToPack.ToArray(),\ padding,\ maxAtlasSize);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rects\ =\ rectsForTexParam;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newMaterial.mainTexture\ =\ newTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputTexture\ =\ newTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newMaterial.SetTexture(additionalTexturePropertyIDsToCopy[i\ -\/\ 1],\ newTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalOutputTextures[i\ -\/\ 1]\ =\ newTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00432}00432\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page\ =\ newMaterial.ToSpineAtlasPage();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ page.name\ =\ newAssetName;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ repackedRegions.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ originalRegions.Count;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ oldRegion\ =\ originalRegions[i];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ newRegion\ =\ UVRectToAtlasRegion(rects[i],\ oldRegion,\ page);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ repackedRegions.Add(newRegion);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Map\ the\ cloned\ attachments\ to\ the\ repacked\ atlas.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ attachmentIndex\ =\ 0,\ repackedIndex\ =\ 0,\ n\ =\ outputAttachments.Count;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachmentIndex\ <\ n;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++attachmentIndex,\ ++repackedIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ attachment\ =\ outputAttachments[attachmentIndex];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}}\ textureAttachment\ =\ attachment\ as\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textureAttachment\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textureAttachment.\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a14e2221f805d4a65002ea5c949615ddf}{Sequence}}\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_texture_region}{TextureRegion}}[]\ regions\ =\ textureAttachment.\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a14e2221f805d4a65002ea5c949615ddf}{Sequence}}.\mbox{\hyperlink{class_spine_1_1_sequence_a82e6572e997f6be700e195b15b28956b}{Regions}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureAttachment.Region\ =\ repackedRegions[regionIndices[repackedIndex]];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ r\ =\ 0,\ regionCount\ =\ regions.Length;\ r\ <\ regionCount;\ ++r)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regions[r]\ =\ repackedRegions[regionIndices[repackedIndex++]];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/repackedIndex;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureAttachment.Region\ =\ repackedRegions[regionIndices[repackedIndex]];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureAttachment.\mbox{\hyperlink{interface_spine_1_1_i_has_texture_region_a37a36abf5d7be9ae3b8e48a7ff3c7fc2}{UpdateRegion}}();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clean\ up.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clearCache)}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.ClearCache();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ outputMaterial\ =\ newMaterial;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ AddRegionTexturesToPack\ (\textcolor{keywordtype}{int}\ numTextureParamsToRepack,\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ TextureFormat\ textureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps,\ TextureFormat[]\ additionalTextureFormats,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ additionalTexturePropertyIDsToCopy,\ \textcolor{keywordtype}{bool}[]\ additionalTextureIsLinear)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numTextureParamsToRepack;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ regionTexture\ =\ (i\ ==\ 0\ ?}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.ToTexture(textureFormat,\ mipmaps)\ :}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ region.ToTexture((additionalTextureFormats\ !=\ \textcolor{keyword}{null}\ \&\&\ i\ -\/\ 1\ <\ additionalTextureFormats.Length)\ ?}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureFormats[i\ -\/\ 1]\ :\ textureFormat,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mipmaps,\ additionalTexturePropertyIDsToCopy[i\ -\/\ 1],\ additionalTextureIsLinear[i\ -\/\ 1]));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ texturesToPackAtParam[i].Add(regionTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ GetRepackedSkin\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ o,\ \textcolor{keywordtype}{string}\ newName,\ Material\ materialPropertySource,\ out\ Material\ outputMaterial,\ out\ Texture2D\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxAtlasSize\ =\ 1024,\ \textcolor{keywordtype}{int}\ padding\ =\ 2,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ useOriginalNonrenderables\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ clearCache\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ additionalTexturePropertyIDsToCopy\ =\ \textcolor{keyword}{null},\ Texture2D[]\ additionalOutputTextures\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ TextureFormat[]\ additionalTextureFormats\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{bool}[]\ additionalTextureIsLinear\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetRepackedSkin(o,\ newName,\ materialPropertySource.shader,\ out\ outputMaterial,\ out\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxAtlasSize,\ padding,\ textureFormat,\ mipmaps,\ materialPropertySource,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clearCache,\ useOriginalNonrenderables,\ additionalTexturePropertyIDsToCopy,\ additionalOutputTextures,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTextureFormats,\ additionalTextureIsLinear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00525}00525\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00531}00531\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ GetRepackedSkin\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ o,\ \textcolor{keywordtype}{string}\ newName,\ Shader\ shader,\ out\ Material\ outputMaterial,\ out\ Texture2D\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxAtlasSize\ =\ 1024,\ \textcolor{keywordtype}{int}\ padding\ =\ 2,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ materialPropertySource\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{bool}\ clearCache\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ useOriginalNonrenderables\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[]\ additionalTexturePropertyIDsToCopy\ =\ \textcolor{keyword}{null},\ Texture2D[]\ additionalOutputTextures\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ TextureFormat[]\ additionalTextureFormats\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{bool}[]\ additionalTextureIsLinear\ =\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00536}00536\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ outputTexture\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.NullReferenceException(\textcolor{stringliteral}{"{}Skin\ was\ null"{}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ ICollection<\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}.\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}>\ skinAttachments\ =\ o.\mbox{\hyperlink{class_spine_1_1_skin_af42662baf7bf0d445f3894b564796b20}{Attachments}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ newSkin\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_skin}{Skin}}(newName);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ newSkin.\mbox{\hyperlink{class_spine_1_1_skin_a7be4fe8bc48ddb6d716e515e9b922cab}{Bones}}.AddRange(o.\mbox{\hyperlink{class_spine_1_1_skin_a7be4fe8bc48ddb6d716e515e9b922cab}{Bones}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ newSkin.\mbox{\hyperlink{class_spine_1_1_skin_a119b9bc765342f65060c26f3f9c5cc76}{Constraints}}.AddRange(o.\mbox{\hyperlink{class_spine_1_1_skin_a119b9bc765342f65060c26f3f9c5cc76}{Constraints}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ inoutAttachments.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}.\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ entry\ in\ skinAttachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inoutAttachments.Add(entry.Attachment);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ GetRepackedAttachments(inoutAttachments,\ inoutAttachments,\ materialPropertySource,\ out\ outputMaterial,\ out\ outputTexture,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxAtlasSize,\ padding,\ textureFormat,\ mipmaps,\ newName,\ clearCache,\ useOriginalNonrenderables,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ additionalTexturePropertyIDsToCopy,\ additionalOutputTextures,\ additionalTextureFormats,\ additionalTextureIsLinear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}.\mbox{\hyperlink{struct_spine_1_1_skin_1_1_skin_entry}{SkinEntry}}\ originalSkinEntry\ in\ skinAttachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ newAttachment\ =\ inoutAttachments[i++];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newSkin.\mbox{\hyperlink{class_spine_1_1_skin_a30fb37acfde4cf09a62a2a2835848c5f}{SetAttachment}}(originalSkinEntry.SlotIndex,\ originalSkinEntry.Name,\ newAttachment);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newSkin;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00559}00559\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00560}00560\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00561}00561\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Sprite\ ToSprite\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ar,\ \textcolor{keywordtype}{float}\ pixelsPerUnit\ =\ 100)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Sprite.Create(ar.GetMainTexture(),\ ar.GetUnityRect(),\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f),\ pixelsPerUnit);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00563}00563\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }IntAndAtlasRegionKey\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ IntAndAtlasRegionKey\ (\textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.i\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.region\ =\ region;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{int}\ GetHashCode\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i.GetHashCode()\ *\ 23\ \string^\ region.GetHashCode();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00577}00577\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00578}00578\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Dictionary<IntAndAtlasRegionKey,\ Texture2D>\ CachedRegionTextures\ =\ \textcolor{keyword}{new}\ Dictionary<IntAndAtlasRegionKey,\ Texture2D>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00579}00579\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ List<Texture2D>\ CachedRegionTexturesList\ =\ \textcolor{keyword}{new}\ List<Texture2D>();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00580}00580\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00593}00593\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ClearCache\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00594}00594\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Texture2D\ t\ \textcolor{keywordflow}{in}\ CachedRegionTexturesList)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00595}00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Object.Destroy(t);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00596}00596\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00597}00597\ \ \ \ \ \ \ \ \ \ \ \ \ CachedRegionTextures.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00598}00598\ \ \ \ \ \ \ \ \ \ \ \ \ CachedRegionTexturesList.Clear();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00599}00599\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00600}00600\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00603}00603\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Texture2D\ ToTexture\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ar,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,\ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ texturePropertyId\ =\ 0,\ \textcolor{keywordtype}{bool}\ linear\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ applyPMA\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00606}00606\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ output;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00607}00607\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00608}00608\ \ \ \ \ \ \ \ \ \ \ \ \ IntAndAtlasRegionKey\ cacheKey\ =\ \textcolor{keyword}{new}\ IntAndAtlasRegionKey(texturePropertyId,\ ar);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00609}00609\ \ \ \ \ \ \ \ \ \ \ \ \ CachedRegionTextures.TryGetValue(cacheKey,\ out\ output);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00610}00610\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00611}00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ sourceTexture\ =\ texturePropertyId\ ==\ 0\ ?\ ar.GetMainTexture()\ :\ ar.GetTexture(texturePropertyId);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ r\ =\ ar.GetUnityRect();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00613}00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ (int)r.\mbox{\hyperlink{class_spine_1_1_texture_region_a7a1079208e24e437cd3d7b4a94808ae6}{width}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ (int)r.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ =\ \textcolor{keyword}{new}\ Texture2D(width,\ height,\ textureFormat,\ mipmaps,\ linear)\ \{\ name\ =\ ar.name\ \};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00616}00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.CopyTextureAttributesFrom(sourceTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00617}00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (applyPMA)}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00618}00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.CopyTextureApplyPMA(sourceTexture,\ r,\ output);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00619}00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00620}00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.CopyTexture(sourceTexture,\ r,\ output);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00621}00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CachedRegionTextures.Add(cacheKey,\ output);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00622}00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CachedRegionTexturesList.Add(output);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00623}00623\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00624}00624\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00626}00626\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00627}00627\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00628}00628\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Texture2D\ ToTexture\ (\textcolor{keyword}{this}\ Sprite\ s,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,\ \textcolor{keywordtype}{bool}\ linear\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ applyPMA\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00630}00630\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ spriteTexture\ =\ s.texture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ r;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00633}00633\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!s.packed\ ||\ s.packingMode\ ==\ SpritePackingMode.Rectangle)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00634}00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ s.textureRect;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ \textcolor{keyword}{new}\ Rect();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00637}00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.xMin\ =\ Math.Min(s.uv[0].x,\ s.uv[1].x)\ *\ spriteTexture.width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00638}00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.xMax\ =\ Math.Max(s.uv[0].x,\ s.uv[1].x)\ *\ spriteTexture.width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00639}00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.yMin\ =\ Math.Min(s.uv[0].y,\ s.uv[2].y)\ *\ spriteTexture.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00640}00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.yMax\ =\ Math.Max(s.uv[0].y,\ s.uv[2].y)\ *\ spriteTexture.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00641}00641\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00642}00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s.uv.Length\ >\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00643}00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}When\ using\ a\ tightly\ packed\ SpriteAtlas\ with\ Spine,\ you\ may\ only\ access\ Sprites\ that\ are\ packed\ as\ 'FullRect'\ from\ it!\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00644}00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}You\ can\ either\ disable\ 'Tight\ Packing'\ at\ the\ whole\ SpriteAtlas,\ or\ change\ the\ single\ Sprite's\ TextureImporter\ Setting\ 'MeshType'\ to\ 'Full\ Rect'."{}}\ +}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00645}00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Sprite\ Asset:\ "{}}\ +\ s.name,\ s);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00646}00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00647}00647\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00648}00648\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ newTexture\ =\ \textcolor{keyword}{new}\ Texture2D((\textcolor{keywordtype}{int})r.width,\ (\textcolor{keywordtype}{int})r.height,\ textureFormat,\ mipmaps,\ linear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ newTexture.CopyTextureAttributesFrom(spriteTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (applyPMA)}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.CopyTextureApplyPMA(spriteTexture,\ r,\ newTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00653}00653\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.CopyTexture(spriteTexture,\ r,\ newTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00656}00656\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00657}00657\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00658}00658\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Texture2D\ GetClone\ (\textcolor{keyword}{this}\ Texture2D\ t,\ TextureFormat\ textureFormat\ =\ SpineTextureFormat,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00659}00659\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mipmaps\ =\ UseMipMaps,\ \textcolor{keywordtype}{bool}\ linear\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ applyPMA\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00660}00660\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ newTexture\ =\ \textcolor{keyword}{new}\ Texture2D((\textcolor{keywordtype}{int})t.width,\ (\textcolor{keywordtype}{int})t.height,\ textureFormat,\ mipmaps,\ linear);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ newTexture.CopyTextureAttributesFrom(t);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (applyPMA)}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.CopyTextureApplyPMA(t,\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ t.width,\ t.height),\ newTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00665}00665\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00666}00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AtlasUtilities.CopyTexture(t,\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ t.width,\ t.height),\ newTexture);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newTexture;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00668}00668\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00669}00669\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00670}00670\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CopyTexture\ (Texture2D\ source,\ Rect\ sourceRect,\ Texture2D\ destination)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SystemInfo.copyTextureSupport\ ==\ UnityEngine.Rendering.CopyTextureSupport.None)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GetPixels\ fallback\ for\ old\ devices.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color[]\ pixelBuffer\ =\ source.GetPixels((\textcolor{keywordtype}{int})sourceRect.x,\ (\textcolor{keywordtype}{int})sourceRect.y,\ (\textcolor{keywordtype}{int})sourceRect.width,\ (\textcolor{keywordtype}{int})sourceRect.height);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destination.SetPixels(pixelBuffer);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destination.Apply();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00677}00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Graphics.CopyTexture(source,\ 0,\ 0,\ (\textcolor{keywordtype}{int})sourceRect.x,\ (\textcolor{keywordtype}{int})sourceRect.y,\ (\textcolor{keywordtype}{int})sourceRect.width,\ (\textcolor{keywordtype}{int})sourceRect.height,\ destination,\ 0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00678}00678\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00679}00679\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00680}00680\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00681}00681\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CopyTextureApplyPMA\ (Texture2D\ source,\ Rect\ sourceRect,\ Texture2D\ destination)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00682}00682\ \ \ \ \ \ \ \ \ \ \ \ \ Color[]\ pixelBuffer\ =\ source.GetPixels((\textcolor{keywordtype}{int})sourceRect.x,\ (\textcolor{keywordtype}{int})sourceRect.y,\ (\textcolor{keywordtype}{int})sourceRect.width,\ (\textcolor{keywordtype}{int})sourceRect.height);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00683}00683\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ pixelBuffer.Length;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00684}00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ p\ =\ pixelBuffer[i];}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ p.a;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.r\ =\ p.r\ *\ a;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.g\ =\ p.g\ *\ a;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.b\ =\ p.b\ *\ a;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pixelBuffer[i]\ =\ p;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ destination.SetPixels(pixelBuffer);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ destination.Apply();}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00693}00693\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00695}00695\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsRenderable\ (\mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ a)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00696}00696\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\ is\ \mbox{\hyperlink{interface_spine_1_1_i_has_texture_region}{IHasTextureRegion}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00697}00697\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00698}00698\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00701}00701\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Rect\ SpineUnityFlipRect\ (\textcolor{keyword}{this}\ Rect\ rect,\ \textcolor{keywordtype}{int}\ textureHeight)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00702}00702\ \ \ \ \ \ \ \ \ \ \ \ \ rect.y\ =\ textureHeight\ -\/\ rect.y\ -\/\ rect.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00703}00703\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rect;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00704}00704\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00709}00709\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Rect\ GetUnityRect\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region.GetSpineAtlasRect().SpineUnityFlipRect(region.\mbox{\hyperlink{class_spine_1_1_atlas_region_ab8560489ae63a7a0f1df6ac7feec0c11}{page}}.\mbox{\hyperlink{class_spine_1_1_atlas_page_a23b2c41da539c740bbb9fb839ee4800a}{height}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00711}00711\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00712}00712\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00715}00715\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Rect\ GetUnityRect\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region,\ \textcolor{keywordtype}{int}\ textureHeight)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00716}00716\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region.GetSpineAtlasRect().SpineUnityFlipRect(textureHeight);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00717}00717\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00718}00718\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00721}00721\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Rect\ GetSpineAtlasRect\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region,\ \textcolor{keywordtype}{bool}\ includeRotate\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ region.\mbox{\hyperlink{class_spine_1_1_atlas_region_a1031d3ceecd229fa1ffd6bb9a10349a4}{packedWidth}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00723}00723\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ region.\mbox{\hyperlink{class_spine_1_1_atlas_region_a1d61ea6fb6aee85c2d41ad3f5f9498dd}{packedHeight}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00724}00724\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (includeRotate\ \&\&\ region.\mbox{\hyperlink{class_spine_1_1_atlas_region_a9c56b8443305c1cbd28bd92bd1c3cfac}{degrees}}\ ==\ 270)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00725}00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ region.\mbox{\hyperlink{class_spine_1_1_atlas_region_a1d61ea6fb6aee85c2d41ad3f5f9498dd}{packedHeight}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00726}00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height\ =\ region.\mbox{\hyperlink{class_spine_1_1_atlas_region_a1031d3ceecd229fa1ffd6bb9a10349a4}{packedWidth}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00727}00727\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00728}00728\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Rect(region.\mbox{\hyperlink{class_spine_1_1_atlas_region_a63a6159b92ef5a1d817b842bc9dc7732}{x}},\ region.\mbox{\hyperlink{class_spine_1_1_atlas_region_aef9e4a77793df814455550cd7acbfa51}{y}},\ width,\ height);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00729}00729\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00730}00730\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00733}00733\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Rect\ UVRectToTextureRect\ (Rect\ uvRect,\ \textcolor{keywordtype}{int}\ texWidth,\ \textcolor{keywordtype}{int}\ texHeight)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ uvRect.x\ *=\ texWidth;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00735}00735\ \ \ \ \ \ \ \ \ \ \ \ \ uvRect.width\ *=\ texWidth;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ uvRect.y\ *=\ texHeight;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ uvRect.height\ *=\ texHeight;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ uvRect;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00739}00739\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00740}00740\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00743}00743\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Rect\ TextureRectToUVRect\ (Rect\ textureRect,\ \textcolor{keywordtype}{int}\ texWidth,\ \textcolor{keywordtype}{int}\ texHeight)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00744}00744\ \ \ \ \ \ \ \ \ \ \ \ \ textureRect.x\ =\ Mathf.InverseLerp(0,\ texWidth,\ textureRect.x);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00745}00745\ \ \ \ \ \ \ \ \ \ \ \ \ textureRect.y\ =\ Mathf.InverseLerp(0,\ texHeight,\ textureRect.y);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00746}00746\ \ \ \ \ \ \ \ \ \ \ \ \ textureRect.width\ =\ Mathf.InverseLerp(0,\ texWidth,\ textureRect.width);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00747}00747\ \ \ \ \ \ \ \ \ \ \ \ \ textureRect.height\ =\ Mathf.InverseLerp(0,\ texHeight,\ textureRect.height);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00748}00748\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ textureRect;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00749}00749\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00750}00750\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00753}00753\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ UVRectToAtlasRegion\ (Rect\ uvRect,\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ referenceRegion,\ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00754}00754\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ tr\ =\ UVRectToTextureRect(uvRect,\ page.\mbox{\hyperlink{class_spine_1_1_atlas_page_a1dbd76638862cfec95c048dfcd73ec84}{width}},\ page.\mbox{\hyperlink{class_spine_1_1_atlas_page_a23b2c41da539c740bbb9fb839ee4800a}{height}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00755}00755\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ rr\ =\ tr.SpineUnityFlipRect(page.\mbox{\hyperlink{class_spine_1_1_atlas_page_a23b2c41da539c740bbb9fb839ee4800a}{height}});}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00756}00756\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00757}00757\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ (int)rr.x;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00758}00758\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ (int)rr.y;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00759}00759\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w\ =\ (int)rr.width;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00760}00760\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h\ =\ (int)rr.height;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00761}00761\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00762}00762\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_a9c56b8443305c1cbd28bd92bd1c3cfac}{degrees}}\ ==\ 270)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00763}00763\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempW\ =\ w;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00764}00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ h;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00765}00765\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ tempW;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00766}00766\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00767}00767\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00768}00768\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ originalW\ and\ originalH\ need\ to\ be\ scaled\ according\ to\ the}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00769}00769\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ repacked\ width\ and\ height,\ repacking\ can\ mess\ with\ aspect\ ratio,\ etc.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00770}00770\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ originalW\ =\ Mathf.RoundToInt((\textcolor{keywordtype}{float})w\ *\ ((\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_a83aaeaa6a6fbc014dc75ed4b8fc1f5a9}{originalWidth}}\ /\ (\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_texture_region_a7a1079208e24e437cd3d7b4a94808ae6}{width}}));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00771}00771\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ originalH\ =\ Mathf.RoundToInt((\textcolor{keywordtype}{float})h\ *\ ((\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_a98a3e9f73e379e0fd99d1da1db6458ff}{originalHeight}}\ /\ (\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_texture_region_aa0d411bbfceeaca365752ff2e0b17334}{height}}));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00772}00772\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00773}00773\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offsetX\ =\ Mathf.RoundToInt((\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_a4ed5cbd27bfcd2d0ddd603e8ff6f55cb}{offsetX}}\ *\ ((\textcolor{keywordtype}{float})w\ /\ (\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_texture_region_a7a1079208e24e437cd3d7b4a94808ae6}{width}}));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00774}00774\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offsetY\ =\ Mathf.RoundToInt((\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_a83fbaaf62897b81345e24dba549fa16f}{offsetY}}\ *\ ((\textcolor{keywordtype}{float})h\ /\ (\textcolor{keywordtype}{float})referenceRegion.\mbox{\hyperlink{class_spine_1_1_texture_region_aa0d411bbfceeaca365752ff2e0b17334}{height}}));}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00775}00775\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00776}00776\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u\ =\ uvRect.xMin;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00777}00777\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u2\ =\ uvRect.xMax;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00778}00778\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ v\ =\ uvRect.yMax;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00779}00779\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ v2\ =\ uvRect.yMin;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00780}00780\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00781}00781\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_a9c56b8443305c1cbd28bd92bd1c3cfac}{degrees}}\ ==\ 270)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00782}00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ at\ a\ 270\ degree\ region,\ u2/v2\ deltas\ and\ atlas\ width/height\ are\ swapped,\ and\ delta-\/v\ is\ negative.}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00783}00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ du\ =\ uvRect.width;\ \textcolor{comment}{//\ u2\ -\/\ u;}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00784}00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dv\ =\ uvRect.height;\ \textcolor{comment}{//\ v\ -\/\ v2;}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00785}00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ atlasAspectRatio\ =\ (float)page.\mbox{\hyperlink{class_spine_1_1_atlas_page_a1dbd76638862cfec95c048dfcd73ec84}{width}}\ /\ (\textcolor{keywordtype}{float})page.\mbox{\hyperlink{class_spine_1_1_atlas_page_a23b2c41da539c740bbb9fb839ee4800a}{height}};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00786}00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u2\ =\ u\ +\ (dv\ /\ atlasAspectRatio);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00787}00787\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2\ =\ v\ -\/\ (du\ *\ atlasAspectRatio);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00788}00788\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00789}00789\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00790}00790\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00791}00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ page\ =\ page,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00792}00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_af99497eb4a22dcba88f89c21c763fba2}{name}},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00793}00793\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00794}00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u\ =\ u,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00795}00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u2\ =\ u2,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00796}00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ v,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00797}00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2\ =\ v2,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00798}00798\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00799}00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00800}00800\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00801}00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ w,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00802}00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ originalWidth\ =\ originalW,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00803}00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height\ =\ h,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00804}00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ originalHeight\ =\ originalH,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00805}00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offsetX\ =\ offsetX,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00806}00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offsetY\ =\ offsetY,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00807}00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ x,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00808}00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ y,}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00809}00809\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00810}00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rotate\ =\ referenceRegion.\mbox{\hyperlink{class_spine_1_1_atlas_region_ad8e5dd7daf5c30607df23337645ea1c3}{rotate}},}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ degrees\ =\ referenceRegion.degrees}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00812}00812\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00813}00813\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00814}00814\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00817}00817\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Texture2D\ GetMainTexture\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00818}00818\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ (region.page.rendererObject\ as\ Material);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00819}00819\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ material.mainTexture\ as\ Texture2D;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00820}00820\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00821}00821\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00824}00824\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Texture2D\ GetTexture\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region,\ \textcolor{keywordtype}{string}\ texturePropertyName)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00825}00825\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ (region.page.rendererObject\ as\ Material);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00826}00826\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ material.GetTexture(texturePropertyName)\ as\ Texture2D;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00827}00827\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00828}00828\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00831}00831\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Texture2D\ GetTexture\ (\textcolor{keyword}{this}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region,\ \textcolor{keywordtype}{int}\ texturePropertyId)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00832}00832\ \ \ \ \ \ \ \ \ \ \ \ \ Material\ material\ =\ (region.page.rendererObject\ as\ Material);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00833}00833\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ material.GetTexture(texturePropertyId)\ as\ Texture2D;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00834}00834\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00835}00835\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00836}00836\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CopyTextureAttributesFrom\ (\textcolor{keyword}{this}\ Texture2D\ destination,\ Texture2D\ source)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00837}00837\ \ \ \ \ \ \ \ \ \ \ \ \ destination.filterMode\ =\ source.filterMode;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00838}00838\ \ \ \ \ \ \ \ \ \ \ \ \ destination.anisoLevel\ =\ source.anisoLevel;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00839}00839\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00840}00840\ \ \ \ \ \ \ \ \ \ \ \ \ destination.alphaIsTransparency\ =\ source.alphaIsTransparency;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00841}00841\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00842}00842\ \ \ \ \ \ \ \ \ \ \ \ \ destination.wrapModeU\ =\ source.wrapModeU;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00843}00843\ \ \ \ \ \ \ \ \ \ \ \ \ destination.wrapModeV\ =\ source.wrapModeV;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00844}00844\ \ \ \ \ \ \ \ \ \ \ \ \ destination.wrapModeW\ =\ source.wrapModeW;}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00845}00845\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00846}00846\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00847}00847\ }
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00848}00848\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ InverseLerp\ (\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00849}00849\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (value\ -\/\ a)\ /\ (b\ -\/\ a);}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00850}00850\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00851}00851\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_atlas_utilities_8cs_source_l00852}00852\ \}}
+
+\end{DoxyCode}

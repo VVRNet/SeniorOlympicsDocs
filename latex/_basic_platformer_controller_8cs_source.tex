@@ -1,0 +1,226 @@
+\doxysection{Basic\+Platformer\+Controller.\+cs}
+\hypertarget{_basic_platformer_controller_8cs_source}{}\label{_basic_platformer_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/BasicPlatformerController.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Getting Started Scripts/BasicPlatformerController.cs}}
+\mbox{\hyperlink{_basic_platformer_controller_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_examples}{Spine.Unity.Examples}}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00036}00036\ \ \ \ \ [RequireComponent(typeof(CharacterController))]}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00037}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller}{BasicPlatformerController}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6a6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6ae599161956d626eda4cb0a5ffb85271c}{Idle}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6a7a16a854f32231a8df9326136b09ee62}{Walk}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6ac5301693c4e792bcd5a479ef38fb8f8d}{Run}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6a497f1e75bc31c926497e67df9688f51d}{Crouch}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6a64d71b4eabcd8de0a1d64bd6d5973c50}{Rise}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6a58fa788345ab5ac21c2cef38907d4580}{Fall}},}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6adcfafcb4323b102c7e204555d313ba0a}{Attack}}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Components"{}})]}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a95afd9248f3081827982364d700da4af}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ CharacterController\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a95afd9248f3081827982364d700da4af}{controller}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Controls"{}})]}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00054}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a78fd244d780599364c198516727d9f03}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a78fd244d780599364c198516727d9f03}{XAxis}}\ =\ \textcolor{stringliteral}{"{}Horizontal"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00055}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a0de1ef550805428d44e4b7e58fc444e0}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a0de1ef550805428d44e4b7e58fc444e0}{YAxis}}\ =\ \textcolor{stringliteral}{"{}Vertical"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00056}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_abc80715eb8fc0b13029afd8f56ee9c4a}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_abc80715eb8fc0b13029afd8f56ee9c4a}{JumpButton}}\ =\ \textcolor{stringliteral}{"{}Jump"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Moving"{}})]}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00059}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ad2e257615bc82b0a85c1c61c2d79032d}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ad2e257615bc82b0a85c1c61c2d79032d}{walkSpeed}}\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ab912ceb84a2ef0a929fa61e0fb3a1d5d}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ab912ceb84a2ef0a929fa61e0fb3a1d5d}{runSpeed}}\ =\ 7f;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00061}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a67aff93687950ea0219adbdac55966b3}{00061}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a67aff93687950ea0219adbdac55966b3}{gravityScale}}\ =\ 6.6f;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Jumping"{}})]}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00064}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a768a370f9bc841d46d970ad0c2f4318e}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a768a370f9bc841d46d970ad0c2f4318e}{jumpSpeed}}\ =\ 25;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00065}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a85218f45fab2b2e5224a183c6bd91497}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a85218f45fab2b2e5224a183c6bd91497}{minimumJumpDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00066}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_adb9ac8dac1212d22a6db8579c41dba9b}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_adb9ac8dac1212d22a6db8579c41dba9b}{jumpInterruptFactor}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00067}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a1edc895cb2ee86ab406d572442444557}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a1edc895cb2ee86ab406d572442444557}{forceCrouchVelocity}}\ =\ 25;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00068}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_af5b651c0bf184073543de54393d6802f}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_af5b651c0bf184073543de54393d6802f}{forceCrouchDuration}}\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Animation"{}})]}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00071}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a8c0199ba1e9f7d6c4a7afc4d87cbfe42}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example}{SkeletonAnimationHandleExample}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a8c0199ba1e9f7d6c4a7afc4d87cbfe42}{animationHandle}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Events}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00074}\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a40f66d79eb28114cafc9362731a0d1f6}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ UnityAction\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ab7147bd8b2a363161b0ea5c6cd6eb1e5}{OnJump}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a47fff0e02babae2d973fe820d6cefe56}{OnLand}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a40f66d79eb28114cafc9362731a0d1f6}{OnHardLand}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ Vector2\ input\ =\ \textcolor{keywordflow}{default}(Vector2);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ Vector3\ velocity\ =\ \textcolor{keywordflow}{default}(Vector3);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minimumJumpEndTime\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ forceCrouchEndTime;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasGrounded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}\ previousState,\ currentState;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dt\ =\ Time.deltaTime;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isGrounded\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a95afd9248f3081827982364d700da4af}{controller}}.isGrounded;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ landed\ =\ !wasGrounded\ \&\&\ isGrounded;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dummy\ input.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ input.x\ =\ Input.GetAxis(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a78fd244d780599364c198516727d9f03}{XAxis}});}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ input.y\ =\ Input.GetAxis(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a0de1ef550805428d44e4b7e58fc444e0}{YAxis}});}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inputJumpStop\ =\ Input.GetButtonUp(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_abc80715eb8fc0b13029afd8f56ee9c4a}{JumpButton}});}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inputJumpStart\ =\ Input.GetButtonDown(\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_abc80715eb8fc0b13029afd8f56ee9c4a}{JumpButton}});}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ doCrouch\ =\ (isGrounded\ \&\&\ input.y\ <\ -\/0.5f)\ ||\ (forceCrouchEndTime\ >\ Time.time);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ doJumpInterrupt\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ doJump\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hardLand\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (landed)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/velocity.y\ >\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a1edc895cb2ee86ab406d572442444557}{forceCrouchVelocity}})\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hardLand\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doCrouch\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ forceCrouchEndTime\ =\ Time.time\ +\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_af5b651c0bf184073543de54393d6802f}{forceCrouchDuration}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!doCrouch)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGrounded)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inputJumpStart)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doJump\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doJumpInterrupt\ =\ inputJumpStop\ \&\&\ Time.time\ <\ minimumJumpEndTime;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dummy\ physics\ and\ controller\ using\ UnityEngine.CharacterController.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ gravityDeltaVelocity\ =\ Physics.gravity\ *\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a67aff93687950ea0219adbdac55966b3}{gravityScale}}\ *\ dt;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doJump)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity.y\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a768a370f9bc841d46d970ad0c2f4318e}{jumpSpeed}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minimumJumpEndTime\ =\ Time.time\ +\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a85218f45fab2b2e5224a183c6bd91497}{minimumJumpDuration}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (doJumpInterrupt)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (velocity.y\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity.y\ *=\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_adb9ac8dac1212d22a6db8579c41dba9b}{jumpInterruptFactor}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ velocity.x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!doCrouch)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input.x\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity.x\ =\ Mathf.Abs(input.x)\ >\ 0.6f\ ?\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ab912ceb84a2ef0a929fa61e0fb3a1d5d}{runSpeed}}\ :\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ad2e257615bc82b0a85c1c61c2d79032d}{walkSpeed}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity.x\ *=\ Mathf.Sign(input.x);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isGrounded)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wasGrounded)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (velocity.y\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity.y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity\ +=\ gravityDeltaVelocity;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a95afd9248f3081827982364d700da4af}{controller}}.Move(velocity\ *\ dt);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ wasGrounded\ =\ isGrounded;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ and\ store\ character\ state}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGrounded)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doCrouch)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Crouch;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input.x\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Idle;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState\ =\ Mathf.Abs(input.x)\ >\ 0.6f\ ?\ CharacterState.Run\ :\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Walk;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState\ =\ velocity.y\ >\ 0\ ?\ CharacterState.Rise\ :\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Fall;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ stateChanged\ =\ previousState\ !=\ currentState;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ previousState\ =\ currentState;}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animation}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ not\ modify\ character\ parameters\ or\ state\ in\ this\ phase.\ Just\ read\ them.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Detect\ changes\ in\ state,\ and\ communicate\ with\ animation\ handle\ if\ it\ changes.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stateChanged)}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HandleStateChanged();}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input.x\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a8c0199ba1e9f7d6c4a7afc4d87cbfe42}{animationHandle}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example_ae9f2b9b03656f13a81fa6233e3cee2f9}{SetFlip}}(input.x);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fire\ events.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doJump)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ab7147bd8b2a363161b0ea5c6cd6eb1e5}{OnJump}}.Invoke();}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (landed)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hardLand)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a40f66d79eb28114cafc9362731a0d1f6}{OnHardLand}}.Invoke();}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a47fff0e02babae2d973fe820d6cefe56}{OnLand}}.Invoke();}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ HandleStateChanged\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ When\ the\ state\ changes,\ notify\ the\ animation\ handle\ of\ the\ new\ state.}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ stateName\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (currentState)\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Idle:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}idle"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Walk:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}walk"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Run:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}run"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Crouch:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}crouch"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Rise:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}rise"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Fall:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}fall"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_ac9746dac9aa02387a90d3a1a142afbd6}{CharacterState}}.Attack:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateName\ =\ \textcolor{stringliteral}{"{}attack"{}};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_basic_platformer_controller_a8c0199ba1e9f7d6c4a7afc4d87cbfe42}{animationHandle}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example_a8db55b6a63a726dc629f21f0d9a8bd2d}{PlayAnimationForState}}(stateName,\ 0);}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_platformer_controller_8cs_source_l00220}00220\ \}}
+
+\end{DoxyCode}

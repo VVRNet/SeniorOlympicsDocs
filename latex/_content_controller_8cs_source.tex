@@ -1,0 +1,54 @@
+\doxysection{Content\+Controller.\+cs}
+\hypertarget{_content_controller_8cs_source}{}\label{_content_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/Controller/ContentController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/Controller/ContentController.cs}}
+\mbox{\hyperlink{_content_controller_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00006}\mbox{\hyperlink{class_content_controller}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_content_controller}{ContentController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_content_service}{ContentService}}\ \_contentService;}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \_contentService\ =\ gameObject.AddComponent<\mbox{\hyperlink{class_content_service}{ContentService}}>();}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00015}\mbox{\hyperlink{class_content_controller_ac5c754fe862ac135c14c52c5f2c11566}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_content_controller_ac5c754fe862ac135c14c52c5f2c11566}{CreateContent}}()}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content}{Content}}\ content\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ name:\textcolor{keyword}{new}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\textcolor{stringliteral}{"{}ƒ´µÂ ∏¬√ﬂ±‚"{}},\ en:\textcolor{stringliteral}{"{}CardMatch"{}}),\ detail:\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\ \textcolor{stringliteral}{"{}∞∞¿∫\ ∏æÁ¿« ƒ´µÂ∏¶\ ±‚æÔ«œ∞Ì ∏¬√Á ¡°ºˆ∏¶ »πµÊ«œººø‰."{}},\ en:\ \textcolor{stringliteral}{"{}Remember\ and\ match\ cards\ of\ the\ same\ shape\ to\ score\ points."{}}),\ etc:\ \textcolor{stringliteral}{"{}"{}},\ createdAt:\ DateTime.UtcNow);}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ StartCoroutine(\_contentService.\mbox{\hyperlink{class_content_service_a531ebbf5d21c47b47dfbfdb86903a48a}{CreateContent}}(content,\ (result)\ =>}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (content\ !=\ null)}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ª˝º∫: "{}}\ +\ result);}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ª˝º∫ Ω«∆–"{}});}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00033}\mbox{\hyperlink{class_content_controller_a86ef8660e0acdfc3a61c368ab4e56091}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_content_controller_a86ef8660e0acdfc3a61c368ab4e56091}{GetContents}}()}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ StartCoroutine(\_contentService.GetContents((result)\ =>}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result\ !=\ null)}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ƒ‹≈Ÿ√˜:\ "{}}\ +\ result.Count);}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetCurrentContents(result);}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ª˝º∫ Ω«∆–"{}});}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_controller_8cs_source_l00048}00048\ \}}
+
+\end{DoxyCode}

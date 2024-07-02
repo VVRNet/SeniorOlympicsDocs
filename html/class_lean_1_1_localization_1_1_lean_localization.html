@@ -1,0 +1,1862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SeniorOlympics: Lean.Localization.LeanLocalization 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_lean_1_1_localization_1_1_lean_localization.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 타입</a> &#124;
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-static-methods">정적 Public 멤버 함수</a> &#124;
+<a href="#pub-static-attribs">정적 Public 속성</a> &#124;
+<a href="#pro-methods">Protected 멤버 함수</a> &#124;
+<a href="#properties">속성</a> &#124;
+<a href="#events">이벤트</a> &#124;
+<a href="class_lean_1_1_localization_1_1_lean_localization-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">Lean.Localization.LeanLocalization 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This component manages a global list of translations for easy access. Translations are gathered from the <b>prefabs</b> list, as well as from any active and enabled <b><a class="el" href="class_lean_1_1_localization_1_1_lean_source.html" title="This is the base class used for all translation sources. When a translation source is built,...">LeanSource</a></b> components in the scene.  
+ <a href="#details">더 자세히 ...</a></p>
+<div class="dynheader">
+Lean.Localization.LeanLocalization에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization__inherit__graph.png" border="0" usemap="#a_lean_8_localization_8_lean_localization_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_lean_8_localization_8_lean_localization_inherit__map" id="a_lean_8_localization_8_lean_localization_inherit__map">
+<area shape="rect" title="This component manages a global list of translations for easy access. Translations are gathered from ..." alt="" coords="5,123,220,955"/>
+<area shape="rect" title=" " alt="" coords="62,5,163,75"/>
+<area shape="poly" title=" " alt="" coords="115,90,115,123,110,123,110,90"/>
+</map>
+</div>
+<div class="dynheader">
+Lean.Localization.LeanLocalization에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization__coll__graph.png" border="0" usemap="#a_lean_8_localization_8_lean_localization_coll__map" alt="Collaboration graph"/></div>
+<map name="a_lean_8_localization_8_lean_localization_coll__map" id="a_lean_8_localization_8_lean_localization_coll__map">
+<area shape="rect" title="This component manages a global list of translations for easy access. Translations are gathered from ..." alt="" coords="5,203,220,928"/>
+<area shape="rect" title=" " alt="" coords="14,5,115,75"/>
+<area shape="poly" title=" " alt="" coords="72,89,82,203,77,203,66,90"/>
+<area shape="rect" title=" " alt="" coords="139,5,185,75"/>
+<area shape="poly" title=" " alt="" coords="162,75,151,186,146,186,156,74"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 타입</h2></td></tr>
+<tr class="memitem:a592525613027ce57185649190d347a9d" id="r_a592525613027ce57185649190d347a9d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a592525613027ce57185649190d347a9d">DetectType</a> { <a class="el" href="#a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="#a592525613027ce57185649190d347a9da63c320c78a47a3681ef886db9973e988">SystemLanguage</a>
+, <a class="el" href="#a592525613027ce57185649190d347a9da470d47ad82f123fdb894af7608993b45">CurrentCulture</a>
+, <a class="el" href="#a592525613027ce57185649190d347a9da1930c70cb4fc1e93eda5c0c622163624">CurrentUICulture</a>
+ }</td></tr>
+<tr class="separator:a592525613027ce57185649190d347a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a994cd69ca460a6d10d58ff8f50f8b76e" id="r_a994cd69ca460a6d10d58ff8f50f8b76e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76e">SaveLoadType</a> { <a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76ea6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76ea619cfff8144ad8607369e5041054f972">WhenChanged</a>
+, <a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76ea629fdbeb91f91c075966ad547c17b562">WhenChangedAlt</a>
+ }</td></tr>
+<tr class="separator:a994cd69ca460a6d10d58ff8f50f8b76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a23b4be562f3cf28f6d402bc17e663f90" id="r_a23b4be562f3cf28f6d402bc17e663f90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23b4be562f3cf28f6d402bc17e663f90">ClearSave</a> ()</td></tr>
+<tr class="separator:a23b4be562f3cf28f6d402bc17e663f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056503035c3485a0c4df6057c1b3ac12" id="r_a056503035c3485a0c4df6057c1b3ac12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a056503035c3485a0c4df6057c1b3ac12">ClearSaveAlt</a> ()</td></tr>
+<tr class="separator:a056503035c3485a0c4df6057c1b3ac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8987f16d7d0ad680cb6ae3661216206a" id="r_a8987f16d7d0ad680cb6ae3661216206a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8987f16d7d0ad680cb6ae3661216206a">SetCurrentLanguage</a> (string newLanguage)</td></tr>
+<tr class="memdesc:a8987f16d7d0ad680cb6ae3661216206a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the current language using the specified language name.  <br /></td></tr>
+<tr class="separator:a8987f16d7d0ad680cb6ae3661216206a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac10213f3e443aec09e014f23146c95e" id="r_aac10213f3e443aec09e014f23146c95e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac10213f3e443aec09e014f23146c95e">AddPrefab</a> (<a class="el" href="_c_f_x_r___particle_text_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a> root)</td></tr>
+<tr class="memdesc:aac10213f3e443aec09e014f23146c95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This adds the specified UnityEngine.Object to this <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, allowing it to be registered as a prefab.  <br /></td></tr>
+<tr class="separator:aac10213f3e443aec09e014f23146c95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d32151799e918b2d10ddcc459cc3bbc" id="r_a1d32151799e918b2d10ddcc459cc3bbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d32151799e918b2d10ddcc459cc3bbc">AddLanguage</a> (string name)</td></tr>
+<tr class="memdesc:a1d32151799e918b2d10ddcc459cc3bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This creates a new token with the specified name, and adds it to the current GameObject.  <br /></td></tr>
+<tr class="separator:a1d32151799e918b2d10ddcc459cc3bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab871eabb62050ea276b3fcb8066df9d7" id="r_ab871eabb62050ea276b3fcb8066df9d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab871eabb62050ea276b3fcb8066df9d7">AddToken</a> (string name)</td></tr>
+<tr class="memdesc:ab871eabb62050ea276b3fcb8066df9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This creates a new token with the specified name, and adds it to the current GameObject.  <br /></td></tr>
+<tr class="separator:ab871eabb62050ea276b3fcb8066df9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2285e1a63f86cf6280a116b3b5c2b7a" id="r_af2285e1a63f86cf6280a116b3b5c2b7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lean_1_1_localization_1_1_lean_phrase.html">LeanPhrase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2285e1a63f86cf6280a116b3b5c2b7a">AddPhrase</a> (string name)</td></tr>
+<tr class="memdesc:af2285e1a63f86cf6280a116b3b5c2b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This creates a new phrase with the specified name, and adds it to the current GameObject.  <br /></td></tr>
+<tr class="separator:af2285e1a63f86cf6280a116b3b5c2b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+정적 Public 멤버 함수</h2></td></tr>
+<tr class="memitem:aa510a3c5f5b7e9c3c3ef8f7271ad5d34" id="r_aa510a3c5f5b7e9c3c3ef8f7271ad5d34"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa510a3c5f5b7e9c3c3ef8f7271ad5d34">RegisterToken</a> (string name, <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a> token)</td></tr>
+<tr class="memdesc:aa510a3c5f5b7e9c3c3ef8f7271ad5d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">When rebuilding translations this method is called from any <b><a class="el" href="class_lean_1_1_localization_1_1_lean_source.html" title="This is the base class used for all translation sources. When a translation source is built,...">LeanSource</a></b> components that define a token.  <br /></td></tr>
+<tr class="separator:aa510a3c5f5b7e9c3c3ef8f7271ad5d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338b04eb744f5e5d450eda399a989cdc" id="r_a338b04eb744f5e5d450eda399a989cdc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a338b04eb744f5e5d450eda399a989cdc">RegisterTranslation</a> (string name)</td></tr>
+<tr class="memdesc:a338b04eb744f5e5d450eda399a989cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">When rebuilding translations this method is called from any <b><a class="el" href="class_lean_1_1_localization_1_1_lean_source.html" title="This is the base class used for all translation sources. When a translation source is built,...">LeanSource</a></b> components that define a transition.  <br /></td></tr>
+<tr class="separator:a338b04eb744f5e5d450eda399a989cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f490fa636016eb6082e1ecc28e40e38" id="r_a0f490fa636016eb6082e1ecc28e40e38"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f490fa636016eb6082e1ecc28e40e38">SetCurrentLanguageAll</a> (string newLanguage)</td></tr>
+<tr class="memdesc:a0f490fa636016eb6082e1ecc28e40e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the current language of all instances using the specified language name.  <br /></td></tr>
+<tr class="separator:a0f490fa636016eb6082e1ecc28e40e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295e268229ae2db86eb23fd7faa091d3" id="r_a295e268229ae2db86eb23fd7faa091d3"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a295e268229ae2db86eb23fd7faa091d3">GetFirstCurrentLanguage</a> ()</td></tr>
+<tr class="memdesc:a295e268229ae2db86eb23fd7faa091d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This returns the <b>CurrentLanguage</b> value from the first <b><a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a></b> instance in the scene if it exists, or null.  <br /></td></tr>
+<tr class="separator:a295e268229ae2db86eb23fd7faa091d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99bb8fc2e6147e287c8f749fe5ca0c9" id="r_ab99bb8fc2e6147e287c8f749fe5ca0c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab99bb8fc2e6147e287c8f749fe5ca0c9">GetOrCreateInstance</a> ()</td></tr>
+<tr class="separator:ab99bb8fc2e6147e287c8f749fe5ca0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e5d4668cabc17611b514f78c9925a4" id="r_a97e5d4668cabc17611b514f78c9925a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97e5d4668cabc17611b514f78c9925a4">AddLanguageToFirst</a> (string name)</td></tr>
+<tr class="memdesc:a97e5d4668cabc17611b514f78c9925a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This calls <b>AddLanguage</b> on the first active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, or creates one first.  <br /></td></tr>
+<tr class="separator:a97e5d4668cabc17611b514f78c9925a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5d808cc9ca2e1e315b0bad336b121f" id="r_aeb5d808cc9ca2e1e315b0bad336b121f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb5d808cc9ca2e1e315b0bad336b121f">AddTokenToFirst</a> (string name)</td></tr>
+<tr class="memdesc:aeb5d808cc9ca2e1e315b0bad336b121f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This calls <b>AddToken</b> on the first active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, or creates one first.  <br /></td></tr>
+<tr class="separator:aeb5d808cc9ca2e1e315b0bad336b121f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347836a26d97b3c43c3ed695208583e9" id="r_a347836a26d97b3c43c3ed695208583e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a347836a26d97b3c43c3ed695208583e9">SetToken</a> (string name, string value, bool allowCreation=true)</td></tr>
+<tr class="memdesc:a347836a26d97b3c43c3ed695208583e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows you to set the value of the token with the specified name. If no token exists and allowCreation is enabled, then one will be created for you.  <br /></td></tr>
+<tr class="separator:a347836a26d97b3c43c3ed695208583e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c0209a9b555d0f7df64ed778416336" id="r_a89c0209a9b555d0f7df64ed778416336"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89c0209a9b555d0f7df64ed778416336">GetToken</a> (string name, string defaultValue=null)</td></tr>
+<tr class="memdesc:a89c0209a9b555d0f7df64ed778416336"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows you to get the value of the token with the specified name. If no token exists, then the defaultValue will be returned.  <br /></td></tr>
+<tr class="separator:a89c0209a9b555d0f7df64ed778416336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab545703e5c721044d9b37201305501df" id="r_ab545703e5c721044d9b37201305501df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lean_1_1_localization_1_1_lean_phrase.html">LeanPhrase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab545703e5c721044d9b37201305501df">AddPhraseToFirst</a> (string name)</td></tr>
+<tr class="memdesc:ab545703e5c721044d9b37201305501df"><td class="mdescLeft">&#160;</td><td class="mdescRight">This calls <b>AddPhrase</b> on the first active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, or creates one first.  <br /></td></tr>
+<tr class="separator:ab545703e5c721044d9b37201305501df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97cf2fdcbc211f8dbac95f978d3f9e0" id="r_af97cf2fdcbc211f8dbac95f978d3f9e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af97cf2fdcbc211f8dbac95f978d3f9e0">GetTranslation</a> (string name)</td></tr>
+<tr class="memdesc:af97cf2fdcbc211f8dbac95f978d3f9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will return the translation with the specified name, or null if none was found.  <br /></td></tr>
+<tr class="separator:af97cf2fdcbc211f8dbac95f978d3f9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1efd1fd2317c32f3bcb49cb3d5c6be7" id="r_aa1efd1fd2317c32f3bcb49cb3d5c6be7"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1efd1fd2317c32f3bcb49cb3d5c6be7">GetTranslationText</a> (string name, string fallback=null, bool replaceTokens=true)</td></tr>
+<tr class="memdesc:aa1efd1fd2317c32f3bcb49cb3d5c6be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will return the translated string with the specified name, or the fallback if none is found.  <br /></td></tr>
+<tr class="separator:aa1efd1fd2317c32f3bcb49cb3d5c6be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec527c171786f6bd4517d3c4601195b" id="r_acec527c171786f6bd4517d3c4601195b"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acec527c171786f6bd4517d3c4601195b">GetTranslationObject&lt; T &gt;</a> (string name, T fallback=null)</td></tr>
+<tr class="memdesc:acec527c171786f6bd4517d3c4601195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will return the translated UnityEngine.Object with the specified name, or the fallback if none is found.  <br /></td></tr>
+<tr class="separator:acec527c171786f6bd4517d3c4601195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31732b80e174396279c739e14ef53e0e" id="r_a31732b80e174396279c739e14ef53e0e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31732b80e174396279c739e14ef53e0e">UpdateTranslations</a> (bool forceUpdate=true)</td></tr>
+<tr class="memdesc:a31732b80e174396279c739e14ef53e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This rebuilds the dictionary used to quickly map phrase names to translations for the current language.  <br /></td></tr>
+<tr class="separator:a31732b80e174396279c739e14ef53e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac419fc3cf5a782d5f49db39d382bfc84" id="r_ac419fc3cf5a782d5f49db39d382bfc84"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac419fc3cf5a782d5f49db39d382bfc84">DelayUpdateTranslations</a> ()</td></tr>
+<tr class="memdesc:ac419fc3cf5a782d5f49db39d382bfc84"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you call this method, then UpdateTranslations will be called next Update.  <br /></td></tr>
+<tr class="separator:ac419fc3cf5a782d5f49db39d382bfc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+정적 Public 속성</h2></td></tr>
+<tr class="memitem:a7feed1d8958dbd226a0ddae7f623018d" id="r_a7feed1d8958dbd226a0ddae7f623018d"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7feed1d8958dbd226a0ddae7f623018d">HelpUrlPrefix</a> = LeanCommon.HelpUrlPrefix + &quot;LeanLocalization#&quot;</td></tr>
+<tr class="separator:a7feed1d8958dbd226a0ddae7f623018d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1fa2f63633494f0c32e663f2fc75b99" id="r_aa1fa2f63633494f0c32e663f2fc75b99"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1fa2f63633494f0c32e663f2fc75b99">ComponentPathPrefix</a> = &quot;Lean/Localization/Lean &quot;</td></tr>
+<tr class="separator:aa1fa2f63633494f0c32e663f2fc75b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57512f7a5f1d9042e5947475bd2276d6" id="r_a57512f7a5f1d9042e5947475bd2276d6"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a> = new List&lt;<a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a>&gt;()</td></tr>
+<tr class="memdesc:a57512f7a5f1d9042e5947475bd2276d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">All active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> components.  <br /></td></tr>
+<tr class="separator:a57512f7a5f1d9042e5947475bd2276d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928c6f3bf390022fc159cc78449a6866" id="r_a928c6f3bf390022fc159cc78449a6866"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a928c6f3bf390022fc159cc78449a6866">CurrentTokens</a> = new Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a>&gt;()</td></tr>
+<tr class="separator:a928c6f3bf390022fc159cc78449a6866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae023a3dd116a58cdad68d9f7697d10d1" id="r_ae023a3dd116a58cdad68d9f7697d10d1"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, <a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae023a3dd116a58cdad68d9f7697d10d1">CurrentLanguages</a> = new Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a>&gt;()</td></tr>
+<tr class="separator:ae023a3dd116a58cdad68d9f7697d10d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1292bc668cd603df1d19677c202ad5c" id="r_aa1292bc668cd603df1d19677c202ad5c"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1292bc668cd603df1d19677c202ad5c">CurrentAliases</a> = new Dictionary&lt;string, string&gt;()</td></tr>
+<tr class="separator:aa1292bc668cd603df1d19677c202ad5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8370868e87ae874f168a43181995d54f" id="r_a8370868e87ae874f168a43181995d54f"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a> = new Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a>&gt;()</td></tr>
+<tr class="memdesc:a8370868e87ae874f168a43181995d54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dictionary of all the phrase names mapped to their current translations.  <br /></td></tr>
+<tr class="separator:a8370868e87ae874f168a43181995d54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 멤버 함수</h2></td></tr>
+<tr class="memitem:a97384e3d4a12faeed82c44b7f6db02b4" id="r_a97384e3d4a12faeed82c44b7f6db02b4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97384e3d4a12faeed82c44b7f6db02b4">OnEnable</a> ()</td></tr>
+<tr class="memdesc:a97384e3d4a12faeed82c44b7f6db02b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the instance, merge old instance, and update translations.  <br /></td></tr>
+<tr class="separator:a97384e3d4a12faeed82c44b7f6db02b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce45b979341f2653037bd6dc216ec81" id="r_a4ce45b979341f2653037bd6dc216ec81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ce45b979341f2653037bd6dc216ec81">OnDisable</a> ()</td></tr>
+<tr class="memdesc:a4ce45b979341f2653037bd6dc216ec81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unset instance?  <br /></td></tr>
+<tr class="separator:a4ce45b979341f2653037bd6dc216ec81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5c518757f934a1dd0ad6bfb75dad2a" id="r_a0d5c518757f934a1dd0ad6bfb75dad2a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d5c518757f934a1dd0ad6bfb75dad2a">Update</a> ()</td></tr>
+<tr class="separator:a0d5c518757f934a1dd0ad6bfb75dad2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+속성</h2></td></tr>
+<tr class="memitem:a4839425018de8556035fde6f02fc6150" id="r_a4839425018de8556035fde6f02fc6150"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a592525613027ce57185649190d347a9d">DetectType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4839425018de8556035fde6f02fc6150">DetectLanguage</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4839425018de8556035fde6f02fc6150"><td class="mdescLeft">&#160;</td><td class="mdescRight">How should the cultures be used to detect the user's device language?  <br /></td></tr>
+<tr class="separator:a4839425018de8556035fde6f02fc6150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aad022fb3044f821b18cf159ef874da" id="r_a6aad022fb3044f821b18cf159ef874da"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aad022fb3044f821b18cf159ef874da">DefaultLanguage</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6aad022fb3044f821b18cf159ef874da"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the application is started and no language has been loaded or auto detected, this language will be used.  <br /></td></tr>
+<tr class="separator:a6aad022fb3044f821b18cf159ef874da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9d90cc42e95d2064198ab850319103" id="r_a7f9d90cc42e95d2064198ab850319103"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76e">SaveLoadType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f9d90cc42e95d2064198ab850319103">SaveLoad</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a7f9d90cc42e95d2064198ab850319103"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows you to control if/how this component's <b>CurrentLanguage</b> setting should save/load. None = Only the <b>DetectLanguage</b> and <b>DefaultLanguage</b> settings will be used. WhenChanged = If the <b>CurrentLanguage</b> gets manually changed, automatically save/load it to PlayerPrefs?  <br /></td></tr>
+<tr class="separator:a7f9d90cc42e95d2064198ab850319103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e23e6ae372040073dbb7c6d65a52057" id="r_a5e23e6ae372040073dbb7c6d65a52057"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_lean_1_1_localization_1_1_lean_prefab.html">LeanPrefab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e23e6ae372040073dbb7c6d65a52057">Prefabs</a><code> [get]</code></td></tr>
+<tr class="memdesc:a5e23e6ae372040073dbb7c6d65a52057"><td class="mdescLeft">&#160;</td><td class="mdescRight">This stores all prefabs and folders managed by this <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance.  <br /></td></tr>
+<tr class="separator:a5e23e6ae372040073dbb7c6d65a52057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a868b0dda90b6f95f492d285e42f0db" id="r_a4a868b0dda90b6f95f492d285e42f0db"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a868b0dda90b6f95f492d285e42f0db">CurrentLanguage</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4a868b0dda90b6f95f492d285e42f0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the current language of this instance?  <br /></td></tr>
+<tr class="separator:a4a868b0dda90b6f95f492d285e42f0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
+이벤트</h2></td></tr>
+<tr class="memitem:aaaa477745391bf41f7034b896704009b" id="r_aaaa477745391bf41f7034b896704009b"><td class="memItemLeft" align="right" valign="top">static System.Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaa477745391bf41f7034b896704009b">OnLocalizationChanged</a></td></tr>
+<tr class="memdesc:aaaa477745391bf41f7034b896704009b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the language or translations change.  <br /></td></tr>
+<tr class="separator:aaaa477745391bf41f7034b896704009b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock"><p>This component manages a global list of translations for easy access. Translations are gathered from the <b>prefabs</b> list, as well as from any active and enabled <b><a class="el" href="class_lean_1_1_localization_1_1_lean_source.html" title="This is the base class used for all translation sources. When a translation source is built,...">LeanSource</a></b> components in the scene. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00014">14</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">멤버 열거형 문서화</h2>
+<a id="a592525613027ce57185649190d347a9d" name="a592525613027ce57185649190d347a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a592525613027ce57185649190d347a9d">&#9670;&#160;</a></span>DetectType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a592525613027ce57185649190d347a9d">Lean.Localization.LeanLocalization.DetectType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">열거형 멤버</th></tr><tr><td class="fieldname"><a id="a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754" name="a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a592525613027ce57185649190d347a9da63c320c78a47a3681ef886db9973e988" name="a592525613027ce57185649190d347a9da63c320c78a47a3681ef886db9973e988"></a>SystemLanguage&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a592525613027ce57185649190d347a9da470d47ad82f123fdb894af7608993b45" name="a592525613027ce57185649190d347a9da470d47ad82f123fdb894af7608993b45"></a>CurrentCulture&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a592525613027ce57185649190d347a9da1930c70cb4fc1e93eda5c0c622163624" name="a592525613027ce57185649190d347a9da1930c70cb4fc1e93eda5c0c622163624"></a>CurrentUICulture&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00016">16</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            <a class="code hl_enumvalue" href="#a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
+<div class="line"><span class="lineno">   19</span>            <a class="code hl_enumvalue" href="#a592525613027ce57185649190d347a9da63c320c78a47a3681ef886db9973e988">SystemLanguage</a>,</div>
+<div class="line"><span class="lineno">   20</span>            <a class="code hl_enumvalue" href="#a592525613027ce57185649190d347a9da470d47ad82f123fdb894af7608993b45">CurrentCulture</a>,</div>
+<div class="line"><span class="lineno">   21</span>            <a class="code hl_enumvalue" href="#a592525613027ce57185649190d347a9da1930c70cb4fc1e93eda5c0c622163624">CurrentUICulture</a></div>
+<div class="line"><span class="lineno">   22</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a592525613027ce57185649190d347a9da1930c70cb4fc1e93eda5c0c622163624"><div class="ttname"><a href="#a592525613027ce57185649190d347a9da1930c70cb4fc1e93eda5c0c622163624">Lean.Localization.LeanLocalization.DetectType.CurrentUICulture</a></div><div class="ttdeci">@ CurrentUICulture</div></div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a592525613027ce57185649190d347a9da470d47ad82f123fdb894af7608993b45"><div class="ttname"><a href="#a592525613027ce57185649190d347a9da470d47ad82f123fdb894af7608993b45">Lean.Localization.LeanLocalization.DetectType.CurrentCulture</a></div><div class="ttdeci">@ CurrentCulture</div></div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a592525613027ce57185649190d347a9da63c320c78a47a3681ef886db9973e988"><div class="ttname"><a href="#a592525613027ce57185649190d347a9da63c320c78a47a3681ef886db9973e988">Lean.Localization.LeanLocalization.DetectType.SystemLanguage</a></div><div class="ttdeci">@ SystemLanguage</div></div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="#a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754">Lean.Localization.LeanLocalization.DetectType.None</a></div><div class="ttdeci">@ None</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a994cd69ca460a6d10d58ff8f50f8b76e" name="a994cd69ca460a6d10d58ff8f50f8b76e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a994cd69ca460a6d10d58ff8f50f8b76e">&#9670;&#160;</a></span>SaveLoadType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76e">Lean.Localization.LeanLocalization.SaveLoadType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">열거형 멤버</th></tr><tr><td class="fieldname"><a id="a994cd69ca460a6d10d58ff8f50f8b76ea6adf97f83acf6453d4a6a4b1070f3754" name="a994cd69ca460a6d10d58ff8f50f8b76ea6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a994cd69ca460a6d10d58ff8f50f8b76ea619cfff8144ad8607369e5041054f972" name="a994cd69ca460a6d10d58ff8f50f8b76ea619cfff8144ad8607369e5041054f972"></a>WhenChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a994cd69ca460a6d10d58ff8f50f8b76ea629fdbeb91f91c075966ad547c17b562" name="a994cd69ca460a6d10d58ff8f50f8b76ea629fdbeb91f91c075966ad547c17b562"></a>WhenChangedAlt&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00024">24</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <a class="code hl_enumvalue" href="#a592525613027ce57185649190d347a9da6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_enumvalue" href="#a994cd69ca460a6d10d58ff8f50f8b76ea619cfff8144ad8607369e5041054f972">WhenChanged</a>,</div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_enumvalue" href="#a994cd69ca460a6d10d58ff8f50f8b76ea629fdbeb91f91c075966ad547c17b562">WhenChangedAlt</a></div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a994cd69ca460a6d10d58ff8f50f8b76ea619cfff8144ad8607369e5041054f972"><div class="ttname"><a href="#a994cd69ca460a6d10d58ff8f50f8b76ea619cfff8144ad8607369e5041054f972">Lean.Localization.LeanLocalization.SaveLoadType.WhenChanged</a></div><div class="ttdeci">@ WhenChanged</div></div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a994cd69ca460a6d10d58ff8f50f8b76ea629fdbeb91f91c075966ad547c17b562"><div class="ttname"><a href="#a994cd69ca460a6d10d58ff8f50f8b76ea629fdbeb91f91c075966ad547c17b562">Lean.Localization.LeanLocalization.SaveLoadType.WhenChangedAlt</a></div><div class="ttdeci">@ WhenChangedAlt</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a1d32151799e918b2d10ddcc459cc3bbc" name="a1d32151799e918b2d10ddcc459cc3bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d32151799e918b2d10ddcc459cc3bbc">&#9670;&#160;</a></span>AddLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a> Lean.Localization.LeanLocalization.AddLanguage </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This creates a new token with the specified name, and adds it to the current GameObject. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00237">237</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>        {</div>
+<div class="line"><span class="lineno">  239</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  240</span>            {</div>
+<div class="line"><span class="lineno">  241</span>                var root     = <span class="keyword">new</span> GameObject(name);</div>
+<div class="line"><span class="lineno">  242</span>                var language = root.AddComponent&lt;LeanLanguage&gt;();</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>                root.transform.SetParent(transform, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>                <span class="keywordflow">return</span> language;</div>
+<div class="line"><span class="lineno">  247</span>            }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  250</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a97e5d4668cabc17611b514f78c9925a4" name="a97e5d4668cabc17611b514f78c9925a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e5d4668cabc17611b514f78c9925a4">&#9670;&#160;</a></span>AddLanguageToFirst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a> Lean.Localization.LeanLocalization.AddLanguageToFirst </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This calls <b>AddLanguage</b> on the first active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, or creates one first. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00231">231</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>        {</div>
+<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="#ab99bb8fc2e6147e287c8f749fe5ca0c9">GetOrCreateInstance</a>().AddLanguage(name);</div>
+<div class="line"><span class="lineno">  234</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_ab99bb8fc2e6147e287c8f749fe5ca0c9"><div class="ttname"><a href="#ab99bb8fc2e6147e287c8f749fe5ca0c9">Lean.Localization.LeanLocalization.GetOrCreateInstance</a></div><div class="ttdeci">static LeanLocalization GetOrCreateInstance()</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00202">LeanLocalization.cs:202</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a97e5d4668cabc17611b514f78c9925a4_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a97e5d4668cabc17611b514f78c9925a4_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a97e5d4668cabc17611b514f78c9925a4_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a97e5d4668cabc17611b514f78c9925a4_cgraph">
+<area shape="rect" title="This calls AddLanguage on the first active and enabled LeanLocalization instance, or creates one firs..." alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#ab99bb8fc2e6147e287c8f749fe5ca0c9" title=" " alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af2285e1a63f86cf6280a116b3b5c2b7a" name="af2285e1a63f86cf6280a116b3b5c2b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2285e1a63f86cf6280a116b3b5c2b7a">&#9670;&#160;</a></span>AddPhrase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lean_1_1_localization_1_1_lean_phrase.html">LeanPhrase</a> Lean.Localization.LeanLocalization.AddPhrase </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This creates a new phrase with the specified name, and adds it to the current GameObject. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00319">319</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  320</span>        {</div>
+<div class="line"><span class="lineno">  321</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  322</span>            {</div>
+<div class="line"><span class="lineno">  323</span>                var root   = <span class="keyword">new</span> GameObject(name);</div>
+<div class="line"><span class="lineno">  324</span>                var phrase = root.AddComponent&lt;LeanPhrase&gt;();</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>                root.transform.SetParent(transform, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>                <span class="keywordflow">return</span> phrase;</div>
+<div class="line"><span class="lineno">  329</span>            }</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  332</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab545703e5c721044d9b37201305501df" name="ab545703e5c721044d9b37201305501df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab545703e5c721044d9b37201305501df">&#9670;&#160;</a></span>AddPhraseToFirst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_lean_1_1_localization_1_1_lean_phrase.html">LeanPhrase</a> Lean.Localization.LeanLocalization.AddPhraseToFirst </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This calls <b>AddPhrase</b> on the first active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, or creates one first. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00313">313</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>        {</div>
+<div class="line"><span class="lineno">  315</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="#ab99bb8fc2e6147e287c8f749fe5ca0c9">GetOrCreateInstance</a>().AddPhrase(name);</div>
+<div class="line"><span class="lineno">  316</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_ab545703e5c721044d9b37201305501df_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_ab545703e5c721044d9b37201305501df_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_ab545703e5c721044d9b37201305501df_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_ab545703e5c721044d9b37201305501df_cgraph">
+<area shape="rect" title="This calls AddPhrase on the first active and enabled LeanLocalization instance, or creates one first." alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#ab99bb8fc2e6147e287c8f749fe5ca0c9" title=" " alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aac10213f3e443aec09e014f23146c95e" name="aac10213f3e443aec09e014f23146c95e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac10213f3e443aec09e014f23146c95e">&#9670;&#160;</a></span>AddPrefab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lean.Localization.LeanLocalization.AddPrefab </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_c_f_x_r___particle_text_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a></td>          <td class="paramname"><span class="paramname"><em>root</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This adds the specified UnityEngine.Object to this <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, allowing it to be registered as a prefab. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00213">213</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>        {</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">for</span> (var i = <a class="code hl_property" href="#a5e23e6ae372040073dbb7c6d65a52057">Prefabs</a>.Count - 1; i &gt;= 0; i--) <span class="comment">// NOTE: Property</span></div>
+<div class="line"><span class="lineno">  216</span>            {</div>
+<div class="line"><span class="lineno">  217</span>                <span class="keywordflow">if</span> (prefabs[i].Root == root)</div>
+<div class="line"><span class="lineno">  218</span>                {</div>
+<div class="line"><span class="lineno">  219</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  220</span>                }</div>
+<div class="line"><span class="lineno">  221</span>            }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>            var prefab = <span class="keyword">new</span> LeanPrefab();</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>            prefab.Root = root;</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>            prefabs.Add(prefab);</div>
+<div class="line"><span class="lineno">  228</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a5e23e6ae372040073dbb7c6d65a52057"><div class="ttname"><a href="#a5e23e6ae372040073dbb7c6d65a52057">Lean.Localization.LeanLocalization.Prefabs</a></div><div class="ttdeci">List&lt; LeanPrefab &gt; Prefabs</div><div class="ttdoc">This stores all prefabs and folders managed by this LeanLocalization instance.</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00066">LeanLocalization.cs:66</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab871eabb62050ea276b3fcb8066df9d7" name="ab871eabb62050ea276b3fcb8066df9d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab871eabb62050ea276b3fcb8066df9d7">&#9670;&#160;</a></span>AddToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a> Lean.Localization.LeanLocalization.AddToken </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This creates a new token with the specified name, and adds it to the current GameObject. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00259">259</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>        {</div>
+<div class="line"><span class="lineno">  261</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  262</span>            {</div>
+<div class="line"><span class="lineno">  263</span>                var root  = <span class="keyword">new</span> GameObject(name);</div>
+<div class="line"><span class="lineno">  264</span>                var token = root.AddComponent&lt;LeanToken&gt;();</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>                root.transform.SetParent(transform, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">return</span> token;</div>
+<div class="line"><span class="lineno">  269</span>            }</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  272</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeb5d808cc9ca2e1e315b0bad336b121f" name="aeb5d808cc9ca2e1e315b0bad336b121f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb5d808cc9ca2e1e315b0bad336b121f">&#9670;&#160;</a></span>AddTokenToFirst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a> Lean.Localization.LeanLocalization.AddTokenToFirst </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This calls <b>AddToken</b> on the first active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance, or creates one first. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00253">253</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>        {</div>
+<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="#ab99bb8fc2e6147e287c8f749fe5ca0c9">GetOrCreateInstance</a>().AddToken(name);</div>
+<div class="line"><span class="lineno">  256</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_cgraph">
+<area shape="rect" title="This calls AddToken on the first active and enabled LeanLocalization instance, or creates one first." alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#ab99bb8fc2e6147e287c8f749fe5ca0c9" title=" " alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_aeb5d808cc9ca2e1e315b0bad336b121f_icgraph">
+<area shape="rect" title="This calls AddToken on the first active and enabled LeanLocalization instance, or creates one first." alt="" coords="281,5,508,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a347836a26d97b3c43c3ed695208583e9" title="This allows you to set the value of the token with the specified name. If no token exists and allowCr..." alt="" coords="5,5,233,48"/>
+<area shape="poly" title=" " alt="" coords="265,29,233,29,233,24,265,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23b4be562f3cf28f6d402bc17e663f90" name="a23b4be562f3cf28f6d402bc17e663f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b4be562f3cf28f6d402bc17e663f90">&#9670;&#160;</a></span>ClearSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lean.Localization.LeanLocalization.ClearSave </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00135">135</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>        {</div>
+<div class="line"><span class="lineno">  137</span>            PlayerPrefs.DeleteKey(<span class="stringliteral">&quot;LeanLocalization.CurrentLanguage&quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>            PlayerPrefs.Save();</div>
+<div class="line"><span class="lineno">  140</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a056503035c3485a0c4df6057c1b3ac12" name="a056503035c3485a0c4df6057c1b3ac12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056503035c3485a0c4df6057c1b3ac12">&#9670;&#160;</a></span>ClearSaveAlt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lean.Localization.LeanLocalization.ClearSaveAlt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00143">143</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>        {</div>
+<div class="line"><span class="lineno">  145</span>            PlayerPrefs.DeleteKey(<span class="stringliteral">&quot;LeanLocalization.CurrentLanguageAlt&quot;</span>);</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>            PlayerPrefs.Save();</div>
+<div class="line"><span class="lineno">  148</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac419fc3cf5a782d5f49db39d382bfc84" name="ac419fc3cf5a782d5f49db39d382bfc84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac419fc3cf5a782d5f49db39d382bfc84">&#9670;&#160;</a></span>DelayUpdateTranslations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lean.Localization.LeanLocalization.DelayUpdateTranslations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you call this method, then UpdateTranslations will be called next Update. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00419">419</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  420</span>        {</div>
+<div class="line"><span class="lineno">  421</span>            pendingUpdates = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  422</span> </div>
+<div class="line"><span class="lineno">  423</span><span class="preprocessor">#if UNITY_EDITOR</span></div>
+<div class="line"><span class="lineno">  424</span>            <span class="comment">// Go through all enabled phrases</span></div>
+<div class="line"><span class="lineno">  425</span>            <span class="keywordflow">for</span> (var i = 0; i &lt; <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>.Count; i++)</div>
+<div class="line"><span class="lineno">  426</span>            {</div>
+<div class="line"><span class="lineno">  427</span>            <span class="comment">//  UnityEditor.EditorUtility.SetDirty(Instances[i].gameObject);</span></div>
+<div class="line"><span class="lineno">  428</span>            }</div>
+<div class="line"><span class="lineno">  429</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  430</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a57512f7a5f1d9042e5947475bd2276d6"><div class="ttname"><a href="#a57512f7a5f1d9042e5947475bd2276d6">Lean.Localization.LeanLocalization.Instances</a></div><div class="ttdeci">static List&lt; LeanLocalization &gt; Instances</div><div class="ttdoc">All active and enabled LeanLocalization components.</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00036">LeanLocalization.cs:36</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_ac419fc3cf5a782d5f49db39d382bfc84_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_ac419fc3cf5a782d5f49db39d382bfc84_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_ac419fc3cf5a782d5f49db39d382bfc84_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_ac419fc3cf5a782d5f49db39d382bfc84_icgraph">
+<area shape="rect" title="If you call this method, then UpdateTranslations will be called next Update." alt="" coords="253,39,480,81"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_source.html#a00cedd4a690b4fa60a6f98dfc640e904" title=" " alt="" coords="5,5,205,48"/>
+<area shape="poly" title=" " alt="" coords="237,46,205,42,206,37,238,41"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_source.html#a94c0420a932fd1aced4aac6af4bab69b" title=" " alt="" coords="5,72,205,115"/>
+<area shape="poly" title=" " alt="" coords="238,79,206,83,205,78,237,74"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a295e268229ae2db86eb23fd7faa091d3" name="a295e268229ae2db86eb23fd7faa091d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295e268229ae2db86eb23fd7faa091d3">&#9670;&#160;</a></span>GetFirstCurrentLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string Lean.Localization.LeanLocalization.GetFirstCurrentLanguage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This returns the <b>CurrentLanguage</b> value from the first <b><a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a></b> instance in the scene if it exists, or null. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00192">192</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>        {</div>
+<div class="line"><span class="lineno">  194</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>.Count &gt; 0)</div>
+<div class="line"><span class="lineno">  195</span>            {</div>
+<div class="line"><span class="lineno">  196</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>[0].CurrentLanguage;</div>
+<div class="line"><span class="lineno">  197</span>            }</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  200</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab99bb8fc2e6147e287c8f749fe5ca0c9" name="ab99bb8fc2e6147e287c8f749fe5ca0c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99bb8fc2e6147e287c8f749fe5ca0c9">&#9670;&#160;</a></span>GetOrCreateInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a> Lean.Localization.LeanLocalization.GetOrCreateInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00202">202</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>        {</div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>.Count == 0)</div>
+<div class="line"><span class="lineno">  205</span>            {</div>
+<div class="line"><span class="lineno">  206</span>                <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;LeanLocalization&quot;</span>).AddComponent&lt;LeanLocalization&gt;();</div>
+<div class="line"><span class="lineno">  207</span>            }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>[0];</div>
+<div class="line"><span class="lineno">  210</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_ab99bb8fc2e6147e287c8f749fe5ca0c9_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_ab99bb8fc2e6147e287c8f749fe5ca0c9_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_ab99bb8fc2e6147e287c8f749fe5ca0c9_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_ab99bb8fc2e6147e287c8f749fe5ca0c9_icgraph">
+<area shape="rect" title=" " alt="" coords="556,72,783,115"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a97e5d4668cabc17611b514f78c9925a4" title="This calls AddLanguage on the first active and enabled LeanLocalization instance, or creates one firs..." alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="563,70,485,51,486,46,565,65"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#ab545703e5c721044d9b37201305501df" title="This calls AddPhrase on the first active and enabled LeanLocalization instance, or creates one first." alt="" coords="281,72,508,115"/>
+<area shape="poly" title=" " alt="" coords="540,96,508,96,508,91,540,91"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#aeb5d808cc9ca2e1e315b0bad336b121f" title="This calls AddToken on the first active and enabled LeanLocalization instance, or creates one first." alt="" coords="281,139,508,181"/>
+<area shape="poly" title=" " alt="" coords="565,121,486,141,485,135,563,116"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a347836a26d97b3c43c3ed695208583e9" title="This allows you to set the value of the token with the specified name. If no token exists and allowCr..." alt="" coords="5,139,233,181"/>
+<area shape="poly" title=" " alt="" coords="265,163,233,163,233,157,265,157"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a89c0209a9b555d0f7df64ed778416336" name="a89c0209a9b555d0f7df64ed778416336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c0209a9b555d0f7df64ed778416336">&#9670;&#160;</a></span>GetToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string Lean.Localization.LeanLocalization.GetToken </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This allows you to get the value of the token with the specified name. If no token exists, then the defaultValue will be returned. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00297">297</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  298</span>        {</div>
+<div class="line"><span class="lineno">  299</span>            var token = <span class="keywordflow">default</span>(LeanToken);</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  302</span>            {</div>
+<div class="line"><span class="lineno">  303</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a928c6f3bf390022fc159cc78449a6866">CurrentTokens</a>.TryGetValue(name, out token) == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  304</span>                {</div>
+<div class="line"><span class="lineno">  305</span>                    <span class="keywordflow">return</span> token.Value;</div>
+<div class="line"><span class="lineno">  306</span>                }</div>
+<div class="line"><span class="lineno">  307</span>            }</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>            <span class="keywordflow">return</span> defaultValue;</div>
+<div class="line"><span class="lineno">  310</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a928c6f3bf390022fc159cc78449a6866"><div class="ttname"><a href="#a928c6f3bf390022fc159cc78449a6866">Lean.Localization.LeanLocalization.CurrentTokens</a></div><div class="ttdeci">static Dictionary&lt; string, LeanToken &gt; CurrentTokens</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00038">LeanLocalization.cs:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af97cf2fdcbc211f8dbac95f978d3f9e0" name="af97cf2fdcbc211f8dbac95f978d3f9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97cf2fdcbc211f8dbac95f978d3f9e0">&#9670;&#160;</a></span>GetTranslation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a> Lean.Localization.LeanLocalization.GetTranslation </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This will return the translation with the specified name, or null if none was found. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00335">335</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  336</span>        {</div>
+<div class="line"><span class="lineno">  337</span>            var translation = <span class="keywordflow">default</span>(LeanTranslation);</div>
+<div class="line"><span class="lineno">  338</span> </div>
+<div class="line"><span class="lineno">  339</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  340</span>            {</div>
+<div class="line"><span class="lineno">  341</span>                <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.TryGetValue(name, out translation);</div>
+<div class="line"><span class="lineno">  342</span>            }</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">return</span> translation;</div>
+<div class="line"><span class="lineno">  345</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a8370868e87ae874f168a43181995d54f"><div class="ttname"><a href="#a8370868e87ae874f168a43181995d54f">Lean.Localization.LeanLocalization.CurrentTranslations</a></div><div class="ttdeci">static Dictionary&lt; string, LeanTranslation &gt; CurrentTranslations</div><div class="ttdoc">Dictionary of all the phrase names mapped to their current translations.</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00045">LeanLocalization.cs:45</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_af97cf2fdcbc211f8dbac95f978d3f9e0_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_af97cf2fdcbc211f8dbac95f978d3f9e0_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_af97cf2fdcbc211f8dbac95f978d3f9e0_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_af97cf2fdcbc211f8dbac95f978d3f9e0_icgraph">
+<area shape="rect" title="This will return the translation with the specified name, or null if none was found." alt="" coords="537,172,764,215"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_behaviour.html#ac24249434422ddf3258eac825d478f47" title="If you call this then this component will update using the translation for the specified phrase." alt="" coords="271,72,481,115"/>
+<area shape="poly" title=" " alt="" coords="574,169,436,118,438,113,576,164"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_dropdown.html#af0ea81206db8b0baf350314b316602a7" title="If you call this then this component will update using the translation for the specified phrase." alt="" coords="271,172,481,215"/>
+<area shape="poly" title=" " alt="" coords="521,196,481,196,481,191,521,191"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown.html#ace70eacc91eef863c2d4aeb95e415b37" title="If you call this then this component will update using the translation for the specified phrase." alt="" coords="263,272,489,315"/>
+<area shape="poly" title=" " alt="" coords="576,223,438,274,436,269,574,218"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_behaviour.html#a4f19d1306490e67582eddc3439c15fde" title=" " alt="" coords="5,5,215,48"/>
+<area shape="poly" title=" " alt="" coords="272,70,197,51,199,46,274,65"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_behaviour.html#a34a9f12a606b930840c06eaaaba9e044" title=" " alt="" coords="5,72,215,115"/>
+<area shape="poly" title=" " alt="" coords="256,96,215,96,215,91,256,91"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_dropdown.html#a3959fd632367a681fced1eedb344da08" title=" " alt="" coords="5,139,215,181"/>
+<area shape="poly" title=" " alt="" coords="255,181,215,176,216,171,256,176"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_dropdown.html#a63b3bb5cc182296e8abf8ab0f6ef57ea" title=" " alt="" coords="5,205,215,248"/>
+<area shape="poly" title=" " alt="" coords="256,211,216,216,215,211,255,206"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown.html#ab57d1c4e24d06922481e209d6144eb93" title=" " alt="" coords="5,272,215,315"/>
+<area shape="poly" title=" " alt="" coords="247,296,215,296,215,291,247,291"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown.html#a5b28a2aa5868a87c83202507882d8b54" title=" " alt="" coords="5,339,215,381"/>
+<area shape="poly" title=" " alt="" coords="274,322,199,341,197,335,272,316"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acec527c171786f6bd4517d3c4601195b" name="acec527c171786f6bd4517d3c4601195b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acec527c171786f6bd4517d3c4601195b">&#9670;&#160;</a></span>GetTranslationObject&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T Lean.Localization.LeanLocalization.GetTranslationObject&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>fallback</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This will return the translated UnityEngine.Object with the specified name, or the fallback if none is found. </p>
+<div class="typeconstraint">
+<dl><dt><b>타입 한정자들</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em><a class="el" href="_c_f_x_r___particle_text_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a></em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00366">366</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  367</span>                    : <a class="code hl_typedef" href="_c_f_x_r___particle_text_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a></div>
+<div class="line"><span class="lineno">  368</span>        {</div>
+<div class="line"><span class="lineno">  369</span>            var translation = <span class="keywordflow">default</span>(LeanTranslation);</div>
+<div class="line"><span class="lineno">  370</span> </div>
+<div class="line"><span class="lineno">  371</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span> &amp;&amp; <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.TryGetValue(name, out translation) == <span class="keyword">true</span> &amp;&amp; translation.Data is T)</div>
+<div class="line"><span class="lineno">  372</span>            {</div>
+<div class="line"><span class="lineno">  373</span>                <span class="keywordflow">return</span> (T)translation.Data;</div>
+<div class="line"><span class="lineno">  374</span>            }</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>            <span class="keywordflow">return</span> fallback;</div>
+<div class="line"><span class="lineno">  377</span>        }</div>
+<div class="ttc" id="a_c_f_x_r___particle_text_8cs_html_aef19bab18b9814edeef255c43e4f6bbc"><div class="ttname"><a href="_c_f_x_r___particle_text_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a></div><div class="ttdeci">UnityEngine.Object Object</div><div class="ttdef"><b>Definition</b> <a href="_c_f_x_r___particle_text_8cs_source.html#l00008">CFXR_ParticleText.cs:8</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa1efd1fd2317c32f3bcb49cb3d5c6be7" name="aa1efd1fd2317c32f3bcb49cb3d5c6be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1efd1fd2317c32f3bcb49cb3d5c6be7">&#9670;&#160;</a></span>GetTranslationText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string Lean.Localization.LeanLocalization.GetTranslationText </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>fallback</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replaceTokens</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This will return the translated string with the specified name, or the fallback if none is found. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00348">348</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  349</span>        {</div>
+<div class="line"><span class="lineno">  350</span>            var translation = <span class="keywordflow">default</span>(LeanTranslation);</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span> &amp;&amp; <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.TryGetValue(name, out translation) == <span class="keyword">true</span> &amp;&amp; translation.Data is <span class="keywordtype">string</span>)</div>
+<div class="line"><span class="lineno">  353</span>            {</div>
+<div class="line"><span class="lineno">  354</span>                fallback = (string)translation.Data;</div>
+<div class="line"><span class="lineno">  355</span>            }</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>            <span class="keywordflow">if</span> (replaceTokens == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  358</span>            {</div>
+<div class="line"><span class="lineno">  359</span>                fallback = LeanTranslation.FormatText(fallback);</div>
+<div class="line"><span class="lineno">  360</span>            }</div>
+<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  362</span>            <span class="keywordflow">return</span> fallback;</div>
+<div class="line"><span class="lineno">  363</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_aa1efd1fd2317c32f3bcb49cb3d5c6be7_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_aa1efd1fd2317c32f3bcb49cb3d5c6be7_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_aa1efd1fd2317c32f3bcb49cb3d5c6be7_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_aa1efd1fd2317c32f3bcb49cb3d5c6be7_cgraph">
+<area shape="rect" title="This will return the translated string with the specified name, or the fallback if none is found." alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_translation.html#afbc0b0905175e30c123a4382f4afa914" title="This returns Text with all tokens substituted using the LeanLocalization.Tokens list...." alt="" coords="281,5,502,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_local_token.html#aa6653076cc369f5eb54d00f5d4f16b02" title=" " alt="" coords="550,5,735,48"/>
+<area shape="poly" title=" " alt="" coords="502,24,534,24,534,29,502,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4ce45b979341f2653037bd6dc216ec81" name="a4ce45b979341f2653037bd6dc216ec81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce45b979341f2653037bd6dc216ec81">&#9670;&#160;</a></span>OnDisable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Lean.Localization.LeanLocalization.OnDisable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unset instance? </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00441">441</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  442</span>        {</div>
+<div class="line"><span class="lineno">  443</span>            <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  444</span> </div>
+<div class="line"><span class="lineno">  445</span>            <a class="code hl_function" href="#a31732b80e174396279c739e14ef53e0e">UpdateTranslations</a>();</div>
+<div class="line"><span class="lineno">  446</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a31732b80e174396279c739e14ef53e0e"><div class="ttname"><a href="#a31732b80e174396279c739e14ef53e0e">Lean.Localization.LeanLocalization.UpdateTranslations</a></div><div class="ttdeci">static void UpdateTranslations(bool forceUpdate=true)</div><div class="ttdoc">This rebuilds the dictionary used to quickly map phrase names to translations for the current languag...</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00380">LeanLocalization.cs:380</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a4ce45b979341f2653037bd6dc216ec81_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a4ce45b979341f2653037bd6dc216ec81_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a4ce45b979341f2653037bd6dc216ec81_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a4ce45b979341f2653037bd6dc216ec81_cgraph">
+<area shape="rect" title="Unset instance?" alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a31732b80e174396279c739e14ef53e0e" title="This rebuilds the dictionary used to quickly map phrase names to translations for the current languag..." alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97384e3d4a12faeed82c44b7f6db02b4" name="a97384e3d4a12faeed82c44b7f6db02b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97384e3d4a12faeed82c44b7f6db02b4">&#9670;&#160;</a></span>OnEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Lean.Localization.LeanLocalization.OnEnable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the instance, merge old instance, and update translations. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00433">433</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  434</span>        {</div>
+<div class="line"><span class="lineno">  435</span>            <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>.Add(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  436</span> </div>
+<div class="line"><span class="lineno">  437</span>            <a class="code hl_function" href="#a31732b80e174396279c739e14ef53e0e">UpdateTranslations</a>();</div>
+<div class="line"><span class="lineno">  438</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a97384e3d4a12faeed82c44b7f6db02b4_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a97384e3d4a12faeed82c44b7f6db02b4_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a97384e3d4a12faeed82c44b7f6db02b4_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a97384e3d4a12faeed82c44b7f6db02b4_cgraph">
+<area shape="rect" title="Set the instance, merge old instance, and update translations." alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a31732b80e174396279c739e14ef53e0e" title="This rebuilds the dictionary used to quickly map phrase names to translations for the current languag..." alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa510a3c5f5b7e9c3c3ef8f7271ad5d34" name="aa510a3c5f5b7e9c3c3ef8f7271ad5d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa510a3c5f5b7e9c3c3ef8f7271ad5d34">&#9670;&#160;</a></span>RegisterToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lean.Localization.LeanLocalization.RegisterToken </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a></td>          <td class="paramname"><span class="paramname"><em>token</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When rebuilding translations this method is called from any <b><a class="el" href="class_lean_1_1_localization_1_1_lean_source.html" title="This is the base class used for all translation sources. When a translation source is built,...">LeanSource</a></b> components that define a token. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00102">102</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>        {</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span> &amp;&amp; token != <span class="keyword">null</span> &amp;&amp; <a class="code hl_variable" href="#a928c6f3bf390022fc159cc78449a6866">CurrentTokens</a>.ContainsKey(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  105</span>            {</div>
+<div class="line"><span class="lineno">  106</span>                <a class="code hl_variable" href="#a928c6f3bf390022fc159cc78449a6866">CurrentTokens</a>.Add(name, token);</div>
+<div class="line"><span class="lineno">  107</span>            }</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_aa510a3c5f5b7e9c3c3ef8f7271ad5d34_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_aa510a3c5f5b7e9c3c3ef8f7271ad5d34_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_aa510a3c5f5b7e9c3c3ef8f7271ad5d34_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_aa510a3c5f5b7e9c3c3ef8f7271ad5d34_icgraph">
+<area shape="rect" title="When rebuilding translations this method is called from any LeanSource components that define a token..." alt="" coords="247,5,474,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_token.html#ad261209e815273f29a627c516bd320aa" title="This allows you to register a token or language." alt="" coords="5,5,199,48"/>
+<area shape="poly" title=" " alt="" coords="231,29,199,29,199,24,231,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a338b04eb744f5e5d450eda399a989cdc" name="a338b04eb744f5e5d450eda399a989cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a338b04eb744f5e5d450eda399a989cdc">&#9670;&#160;</a></span>RegisterTranslation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a> Lean.Localization.LeanLocalization.RegisterTranslation </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When rebuilding translations this method is called from any <b><a class="el" href="class_lean_1_1_localization_1_1_lean_source.html" title="This is the base class used for all translation sources. When a translation source is built,...">LeanSource</a></b> components that define a transition. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00111">111</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>        {</div>
+<div class="line"><span class="lineno">  113</span>            var translation = <span class="keywordflow">default</span>(LeanTranslation);</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span> &amp;&amp; <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.TryGetValue(name, out translation) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  116</span>            {</div>
+<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span> (tempTranslations.TryGetValue(name, out translation) == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  118</span>                {</div>
+<div class="line"><span class="lineno">  119</span>                    tempTranslations.Remove(name);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>                    <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.Add(name, translation);</div>
+<div class="line"><span class="lineno">  122</span>                }</div>
+<div class="line"><span class="lineno">  123</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  124</span>                {</div>
+<div class="line"><span class="lineno">  125</span>                    translation = <span class="keyword">new</span> LeanTranslation(name);</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>                    <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.Add(name, translation);</div>
+<div class="line"><span class="lineno">  128</span>                }</div>
+<div class="line"><span class="lineno">  129</span>            }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">return</span> translation;</div>
+<div class="line"><span class="lineno">  132</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a338b04eb744f5e5d450eda399a989cdc_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a338b04eb744f5e5d450eda399a989cdc_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a338b04eb744f5e5d450eda399a989cdc_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a338b04eb744f5e5d450eda399a989cdc_icgraph">
+<area shape="rect" title="When rebuilding translations this method is called from any LeanSource components that define a trans..." alt="" coords="264,39,491,81"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_language_c_s_v.html#adb146ef650ba6aea1e4f30e1b82e37b1" title="This allows you to register a phrase based on the specified languages." alt="" coords="5,5,216,48"/>
+<area shape="poly" title=" " alt="" coords="248,47,216,42,217,37,248,41"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_phrase.html#a05d09b861e36b56e4056da036110ec82" title="This allows you to register a phrase based on the specified languages." alt="" coords="11,72,210,115"/>
+<area shape="poly" title=" " alt="" coords="249,79,211,84,210,78,248,73"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8987f16d7d0ad680cb6ae3661216206a" name="a8987f16d7d0ad680cb6ae3661216206a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8987f16d7d0ad680cb6ae3661216206a">&#9670;&#160;</a></span>SetCurrentLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lean.Localization.LeanLocalization.SetCurrentLanguage </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>newLanguage</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This sets the current language using the specified language name. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00177">177</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>        {</div>
+<div class="line"><span class="lineno">  179</span>            <a class="code hl_property" href="#a4a868b0dda90b6f95f492d285e42f0db">CurrentLanguage</a> = newLanguage;</div>
+<div class="line"><span class="lineno">  180</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a4a868b0dda90b6f95f492d285e42f0db"><div class="ttname"><a href="#a4a868b0dda90b6f95f492d285e42f0db">Lean.Localization.LeanLocalization.CurrentLanguage</a></div><div class="ttdeci">string CurrentLanguage</div><div class="ttdoc">Change the current language of this instance?</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00078">LeanLocalization.cs:79</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0f490fa636016eb6082e1ecc28e40e38" name="a0f490fa636016eb6082e1ecc28e40e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f490fa636016eb6082e1ecc28e40e38">&#9670;&#160;</a></span>SetCurrentLanguageAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lean.Localization.LeanLocalization.SetCurrentLanguageAll </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>newLanguage</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This sets the current language of all instances using the specified language name. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00183">183</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>        {</div>
+<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">foreach</span> (var instance <span class="keywordflow">in</span> <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>)</div>
+<div class="line"><span class="lineno">  186</span>            {</div>
+<div class="line"><span class="lineno">  187</span>                instance.CurrentLanguage = newLanguage;</div>
+<div class="line"><span class="lineno">  188</span>            }</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a347836a26d97b3c43c3ed695208583e9" name="a347836a26d97b3c43c3ed695208583e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347836a26d97b3c43c3ed695208583e9">&#9670;&#160;</a></span>SetToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lean.Localization.LeanLocalization.SetToken </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>allowCreation</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This allows you to set the value of the token with the specified name. If no token exists and allowCreation is enabled, then one will be created for you. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00276">276</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  277</span>        {</div>
+<div class="line"><span class="lineno">  278</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  279</span>            {</div>
+<div class="line"><span class="lineno">  280</span>                var token = <span class="keywordflow">default</span>(LeanToken);</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a928c6f3bf390022fc159cc78449a6866">CurrentTokens</a>.TryGetValue(name, out token) == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  283</span>                {</div>
+<div class="line"><span class="lineno">  284</span>                    token.Value = value;</div>
+<div class="line"><span class="lineno">  285</span>                }</div>
+<div class="line"><span class="lineno">  286</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (allowCreation == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  287</span>                {</div>
+<div class="line"><span class="lineno">  288</span>                    token = <a class="code hl_function" href="#aeb5d808cc9ca2e1e315b0bad336b121f">AddTokenToFirst</a>(name);</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>                    token.Value = value;</div>
+<div class="line"><span class="lineno">  291</span>                }</div>
+<div class="line"><span class="lineno">  292</span>            }</div>
+<div class="line"><span class="lineno">  293</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_aeb5d808cc9ca2e1e315b0bad336b121f"><div class="ttname"><a href="#aeb5d808cc9ca2e1e315b0bad336b121f">Lean.Localization.LeanLocalization.AddTokenToFirst</a></div><div class="ttdeci">static LeanToken AddTokenToFirst(string name)</div><div class="ttdoc">This calls AddToken on the first active and enabled LeanLocalization instance, or creates one first.</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00253">LeanLocalization.cs:253</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a347836a26d97b3c43c3ed695208583e9_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a347836a26d97b3c43c3ed695208583e9_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a347836a26d97b3c43c3ed695208583e9_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a347836a26d97b3c43c3ed695208583e9_cgraph">
+<area shape="rect" title="This allows you to set the value of the token with the specified name. If no token exists and allowCr..." alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#aeb5d808cc9ca2e1e315b0bad336b121f" title="This calls AddToken on the first active and enabled LeanLocalization instance, or creates one first." alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#ab99bb8fc2e6147e287c8f749fe5ca0c9" title=" " alt="" coords="556,5,783,48"/>
+<area shape="poly" title=" " alt="" coords="509,24,541,24,541,29,509,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0d5c518757f934a1dd0ad6bfb75dad2a" name="a0d5c518757f934a1dd0ad6bfb75dad2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5c518757f934a1dd0ad6bfb75dad2a">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Lean.Localization.LeanLocalization.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00448">448</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  449</span>        {</div>
+<div class="line"><span class="lineno">  450</span>            <a class="code hl_function" href="#a31732b80e174396279c739e14ef53e0e">UpdateTranslations</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  451</span>        }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a0d5c518757f934a1dd0ad6bfb75dad2a_cgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a0d5c518757f934a1dd0ad6bfb75dad2a_cgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a0d5c518757f934a1dd0ad6bfb75dad2a_cgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a0d5c518757f934a1dd0ad6bfb75dad2a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,233,48"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a31732b80e174396279c739e14ef53e0e" title="This rebuilds the dictionary used to quickly map phrase names to translations for the current languag..." alt="" coords="281,5,508,48"/>
+<area shape="poly" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31732b80e174396279c739e14ef53e0e" name="a31732b80e174396279c739e14ef53e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31732b80e174396279c739e14ef53e0e">&#9670;&#160;</a></span>UpdateTranslations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lean.Localization.LeanLocalization.UpdateTranslations </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forceUpdate</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This rebuilds the dictionary used to quickly map phrase names to translations for the current language. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00380">380</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  381</span>        {</div>
+<div class="line"><span class="lineno">  382</span>            <span class="keywordflow">if</span> (pendingUpdates == <span class="keyword">true</span> || forceUpdate == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  383</span>            {</div>
+<div class="line"><span class="lineno">  384</span>                pendingUpdates = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  385</span> </div>
+<div class="line"><span class="lineno">  386</span>                <span class="comment">// Copy previous translations to temp dictionary</span></div>
+<div class="line"><span class="lineno">  387</span>                tempTranslations.Clear();</div>
+<div class="line"><span class="lineno">  388</span> </div>
+<div class="line"><span class="lineno">  389</span>                <span class="keywordflow">foreach</span> (var pair <span class="keywordflow">in</span> <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>)</div>
+<div class="line"><span class="lineno">  390</span>                {</div>
+<div class="line"><span class="lineno">  391</span>                    var translation = pair.Value;</div>
+<div class="line"><span class="lineno">  392</span> </div>
+<div class="line"><span class="lineno">  393</span>                    translation.Clear();</div>
+<div class="line"><span class="lineno">  394</span> </div>
+<div class="line"><span class="lineno">  395</span>                    tempTranslations.Add(pair.Key, translation);</div>
+<div class="line"><span class="lineno">  396</span>                }</div>
+<div class="line"><span class="lineno">  397</span> </div>
+<div class="line"><span class="lineno">  398</span>                <span class="comment">// Clear currents</span></div>
+<div class="line"><span class="lineno">  399</span>                <a class="code hl_variable" href="#a928c6f3bf390022fc159cc78449a6866">CurrentTokens</a>.Clear();</div>
+<div class="line"><span class="lineno">  400</span>                <a class="code hl_variable" href="#ae023a3dd116a58cdad68d9f7697d10d1">CurrentLanguages</a>.Clear();</div>
+<div class="line"><span class="lineno">  401</span>                <a class="code hl_variable" href="#aa1292bc668cd603df1d19677c202ad5c">CurrentAliases</a>.Clear();</div>
+<div class="line"><span class="lineno">  402</span>                <a class="code hl_variable" href="#a8370868e87ae874f168a43181995d54f">CurrentTranslations</a>.Clear();</div>
+<div class="line"><span class="lineno">  403</span> </div>
+<div class="line"><span class="lineno">  404</span>                <span class="comment">// Rebuild all currents</span></div>
+<div class="line"><span class="lineno">  405</span>                <span class="keywordflow">foreach</span> (var instance <span class="keywordflow">in</span> <a class="code hl_variable" href="#a57512f7a5f1d9042e5947475bd2276d6">Instances</a>)</div>
+<div class="line"><span class="lineno">  406</span>                {</div>
+<div class="line"><span class="lineno">  407</span>                    instance.RegisterAll();</div>
+<div class="line"><span class="lineno">  408</span>                }</div>
+<div class="line"><span class="lineno">  409</span> </div>
+<div class="line"><span class="lineno">  410</span>                <span class="comment">// Notify changes?</span></div>
+<div class="line"><span class="lineno">  411</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="#aaaa477745391bf41f7034b896704009b">OnLocalizationChanged</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  412</span>                {</div>
+<div class="line"><span class="lineno">  413</span>                    <a class="code hl_event" href="#aaaa477745391bf41f7034b896704009b">OnLocalizationChanged</a>();</div>
+<div class="line"><span class="lineno">  414</span>                }</div>
+<div class="line"><span class="lineno">  415</span>            }</div>
+<div class="line"><span class="lineno">  416</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_aa1292bc668cd603df1d19677c202ad5c"><div class="ttname"><a href="#aa1292bc668cd603df1d19677c202ad5c">Lean.Localization.LeanLocalization.CurrentAliases</a></div><div class="ttdeci">static Dictionary&lt; string, string &gt; CurrentAliases</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00042">LeanLocalization.cs:42</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_aaaa477745391bf41f7034b896704009b"><div class="ttname"><a href="#aaaa477745391bf41f7034b896704009b">Lean.Localization.LeanLocalization.OnLocalizationChanged</a></div><div class="ttdeci">static System.Action OnLocalizationChanged</div><div class="ttdoc">Called when the language or translations change.</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00069">LeanLocalization.cs:69</a></div></div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_ae023a3dd116a58cdad68d9f7697d10d1"><div class="ttname"><a href="#ae023a3dd116a58cdad68d9f7697d10d1">Lean.Localization.LeanLocalization.CurrentLanguages</a></div><div class="ttdeci">static Dictionary&lt; string, LeanLanguage &gt; CurrentLanguages</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00040">LeanLocalization.cs:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lean_1_1_localization_1_1_lean_localization_a31732b80e174396279c739e14ef53e0e_icgraph.png" border="0" usemap="#aclass_lean_1_1_localization_1_1_lean_localization_a31732b80e174396279c739e14ef53e0e_icgraph" alt=""/></div>
+<map name="aclass_lean_1_1_localization_1_1_lean_localization_a31732b80e174396279c739e14ef53e0e_icgraph" id="aclass_lean_1_1_localization_1_1_lean_localization_a31732b80e174396279c739e14ef53e0e_icgraph">
+<area shape="rect" title="This rebuilds the dictionary used to quickly map phrase names to translations for the current languag..." alt="" coords="281,139,508,181"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_language_c_s_v.html#ac47641855852ad0f61c72e35925cb459" title="This will unload all translations from this component." alt="" coords="14,5,224,48"/>
+<area shape="poly" title=" " alt="" coords="350,132,295,96,232,62,202,51,204,46,234,58,298,92,353,127"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_language_c_s_v.html#a560c6e3a10b728135ff256f033f89caf" title="This will load all translations from the CSV file into this component." alt="" coords="14,72,224,115"/>
+<area shape="poly" title=" " alt="" coords="288,137,209,118,211,113,289,132"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a4ce45b979341f2653037bd6dc216ec81" title="Unset instance?" alt="" coords="5,139,233,181"/>
+<area shape="poly" title=" " alt="" coords="265,163,233,163,233,157,265,157"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a97384e3d4a12faeed82c44b7f6db02b4" title="Set the instance, merge old instance, and update translations." alt="" coords="5,205,233,248"/>
+<area shape="poly" title=" " alt="" coords="289,188,211,207,209,202,288,183"/>
+<area shape="rect" href="class_lean_1_1_localization_1_1_lean_localization.html#a0d5c518757f934a1dd0ad6bfb75dad2a" title=" " alt="" coords="5,272,233,315"/>
+<area shape="poly" title=" " alt="" coords="353,193,298,228,234,262,204,274,202,269,232,258,295,224,350,188"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="aa1fa2f63633494f0c32e663f2fc75b99" name="aa1fa2f63633494f0c32e663f2fc75b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fa2f63633494f0c32e663f2fc75b99">&#9670;&#160;</a></span>ComponentPathPrefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Lean.Localization.LeanLocalization.ComponentPathPrefix = &quot;Lean/Localization/Lean &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00033">33</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa1292bc668cd603df1d19677c202ad5c" name="aa1292bc668cd603df1d19677c202ad5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1292bc668cd603df1d19677c202ad5c">&#9670;&#160;</a></span>CurrentAliases</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, string&gt; Lean.Localization.LeanLocalization.CurrentAliases = new Dictionary&lt;string, string&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae023a3dd116a58cdad68d9f7697d10d1" name="ae023a3dd116a58cdad68d9f7697d10d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae023a3dd116a58cdad68d9f7697d10d1">&#9670;&#160;</a></span>CurrentLanguages</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a>&gt; Lean.Localization.LeanLocalization.CurrentLanguages = new Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_language.html">LeanLanguage</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00040">40</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a928c6f3bf390022fc159cc78449a6866" name="a928c6f3bf390022fc159cc78449a6866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a928c6f3bf390022fc159cc78449a6866">&#9670;&#160;</a></span>CurrentTokens</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a>&gt; Lean.Localization.LeanLocalization.CurrentTokens = new Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_token.html">LeanToken</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8370868e87ae874f168a43181995d54f" name="a8370868e87ae874f168a43181995d54f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8370868e87ae874f168a43181995d54f">&#9670;&#160;</a></span>CurrentTranslations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a>&gt; Lean.Localization.LeanLocalization.CurrentTranslations = new Dictionary&lt;string, <a class="el" href="class_lean_1_1_localization_1_1_lean_translation.html">LeanTranslation</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dictionary of all the phrase names mapped to their current translations. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7feed1d8958dbd226a0ddae7f623018d" name="a7feed1d8958dbd226a0ddae7f623018d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7feed1d8958dbd226a0ddae7f623018d">&#9670;&#160;</a></span>HelpUrlPrefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Lean.Localization.LeanLocalization.HelpUrlPrefix = LeanCommon.HelpUrlPrefix + &quot;LeanLocalization#&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00031">31</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a57512f7a5f1d9042e5947475bd2276d6" name="a57512f7a5f1d9042e5947475bd2276d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57512f7a5f1d9042e5947475bd2276d6">&#9670;&#160;</a></span>Instances</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a>&gt; Lean.Localization.LeanLocalization.Instances = new List&lt;<a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>All active and enabled <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> components. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">속성 문서화</h2>
+<a id="a4a868b0dda90b6f95f492d285e42f0db" name="a4a868b0dda90b6f95f492d285e42f0db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a868b0dda90b6f95f492d285e42f0db">&#9670;&#160;</a></span>CurrentLanguage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Lean.Localization.LeanLocalization.CurrentLanguage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the current language of this instance? </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00078">78</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   81</span>            {</div>
+<div class="line"><span class="lineno">   82</span>                <span class="keywordflow">if</span> (currentLanguage != value)</div>
+<div class="line"><span class="lineno">   83</span>                {</div>
+<div class="line"><span class="lineno">   84</span>                    currentLanguage = value;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>                    <span class="keywordflow">if</span> (saveLoad != <a class="code hl_enumeration" href="#a994cd69ca460a6d10d58ff8f50f8b76e">SaveLoadType</a>.None)</div>
+<div class="line"><span class="lineno">   87</span>                    {</div>
+<div class="line"><span class="lineno">   88</span>                        SaveNow();</div>
+<div class="line"><span class="lineno">   89</span>                    }</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>                    <a class="code hl_function" href="#a31732b80e174396279c739e14ef53e0e">UpdateTranslations</a>();</div>
+<div class="line"><span class="lineno">   92</span>                }</div>
+<div class="line"><span class="lineno">   93</span>            }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>            <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   96</span>            {</div>
+<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">return</span> currentLanguage;</div>
+<div class="line"><span class="lineno">   98</span>            }</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a994cd69ca460a6d10d58ff8f50f8b76e"><div class="ttname"><a href="#a994cd69ca460a6d10d58ff8f50f8b76e">Lean.Localization.LeanLocalization.SaveLoadType</a></div><div class="ttdeci">SaveLoadType</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00024">LeanLocalization.cs:25</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6aad022fb3044f821b18cf159ef874da" name="a6aad022fb3044f821b18cf159ef874da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aad022fb3044f821b18cf159ef874da">&#9670;&#160;</a></span>DefaultLanguage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Lean.Localization.LeanLocalization.DefaultLanguage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If the application is started and no language has been loaded or auto detected, this language will be used. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00056">56</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{ <span class="keyword">set</span> { defaultLanguage = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> defaultLanguage; } } [SerializeField] [LeanLanguageName] <span class="keyword">private</span> <span class="keywordtype">string</span> defaultLanguage;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4839425018de8556035fde6f02fc6150" name="a4839425018de8556035fde6f02fc6150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4839425018de8556035fde6f02fc6150">&#9670;&#160;</a></span>DetectLanguage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a592525613027ce57185649190d347a9d">DetectType</a> Lean.Localization.LeanLocalization.DetectLanguage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How should the cultures be used to detect the user's device language? </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00053">53</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keyword">set</span> { detectLanguage = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> detectLanguage; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_enumeration" href="#a592525613027ce57185649190d347a9d">DetectType</a> detectLanguage = <a class="code hl_enumeration" href="#a592525613027ce57185649190d347a9d">DetectType</a>.SystemLanguage;</div>
+<div class="ttc" id="aclass_lean_1_1_localization_1_1_lean_localization_html_a592525613027ce57185649190d347a9d"><div class="ttname"><a href="#a592525613027ce57185649190d347a9d">Lean.Localization.LeanLocalization.DetectType</a></div><div class="ttdeci">DetectType</div><div class="ttdef"><b>Definition</b> <a href="_lean_localization_8cs_source.html#l00016">LeanLocalization.cs:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5e23e6ae372040073dbb7c6d65a52057" name="a5e23e6ae372040073dbb7c6d65a52057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e23e6ae372040073dbb7c6d65a52057">&#9670;&#160;</a></span>Prefabs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_lean_1_1_localization_1_1_lean_prefab.html">LeanPrefab</a>&gt; Lean.Localization.LeanLocalization.Prefabs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This stores all prefabs and folders managed by this <a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html" title="This component manages a global list of translations for easy access. Translations are gathered from ...">LeanLocalization</a> instance. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00066">66</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{ <span class="keyword">get</span> { <span class="keywordflow">if</span> (prefabs == <span class="keyword">null</span>) prefabs = <span class="keyword">new</span> List&lt;LeanPrefab&gt;(); <span class="keywordflow">return</span> prefabs; } } [SerializeField] <span class="keyword">private</span> List&lt;LeanPrefab&gt; prefabs;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7f9d90cc42e95d2064198ab850319103" name="a7f9d90cc42e95d2064198ab850319103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9d90cc42e95d2064198ab850319103">&#9670;&#160;</a></span>SaveLoad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a994cd69ca460a6d10d58ff8f50f8b76e">SaveLoadType</a> Lean.Localization.LeanLocalization.SaveLoad</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This allows you to control if/how this component's <b>CurrentLanguage</b> setting should save/load. None = Only the <b>DetectLanguage</b> and <b>DefaultLanguage</b> settings will be used. WhenChanged = If the <b>CurrentLanguage</b> gets manually changed, automatically save/load it to PlayerPrefs? </p>
+<p>NOTE: This save data can be cleared with <b>ClearSave</b> context menu option. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{ <span class="keyword">set</span> { saveLoad = value; } <span class="keyword">get</span> { <span class="keywordflow">return</span> saveLoad; } } [SerializeField] <span class="keyword">private</span> <a class="code hl_enumeration" href="#a994cd69ca460a6d10d58ff8f50f8b76e">SaveLoadType</a> saveLoad = <a class="code hl_enumeration" href="#a994cd69ca460a6d10d58ff8f50f8b76e">SaveLoadType</a>.WhenChanged;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">이벤트 문서화</h2>
+<a id="aaaa477745391bf41f7034b896704009b" name="aaaa477745391bf41f7034b896704009b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa477745391bf41f7034b896704009b">&#9670;&#160;</a></span>OnLocalizationChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Action Lean.Localization.LeanLocalization.OnLocalizationChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called when the language or translations change. </p>
+
+<p class="definition"><a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a> 파일의 <a class="el" href="_lean_localization_8cs_source.html#l00069">69</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
+<li>D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/<a class="el" href="_lean_localization_8cs_source.html">LeanLocalization.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_lean.html">Lean</a></li><li class="navelem"><a class="el" href="namespace_lean_1_1_localization.html">Localization</a></li><li class="navelem"><a class="el" href="class_lean_1_1_localization_1_1_lean_localization.html">LeanLocalization</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

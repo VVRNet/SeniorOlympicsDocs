@@ -1,0 +1,166 @@
+\doxysection{Slot.\+cs}
+\hypertarget{_slot_8cs_source}{}\label{_slot_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Slot.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/Slot.cs}}
+\mbox{\hyperlink{_slot_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_slot}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_slot_data}{SlotData}}\ data;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ r,\ g,\ b,\ a;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{float}\ r2,\ g2,\ b2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{bool}\ hasSecondColor;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ attachment;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}\ sequenceIndex;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<float>}}\ deform\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<float>}}();}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{int}\ attachmentState;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00050}\mbox{\hyperlink{class_spine_1_1_slot_a5d06d904b7e50d35d1be30c8478936f7}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_slot_a5d06d904b7e50d35d1be30c8478936f7}{Slot}}\ (\mbox{\hyperlink{class_spine_1_1_slot_data}{SlotData}}\ data,\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone)\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}data"{}},\ \textcolor{stringliteral}{"{}data\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ this.data\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ this.bone\ =\ bone;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ darkColor\ =\ data.darkColor\ ==\ null\ ?\ null\ :\ new\ Color();}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.hasSecondColor)\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ g2\ =\ b2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae}{SetToSetupPose}}();}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00065}\mbox{\hyperlink{class_spine_1_1_slot_a4f6182568e7ae4a24ff0190ab025b62a}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_slot_a4f6182568e7ae4a24ff0190ab025b62a}{Slot}}\ (\mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot,\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ bone)\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}slot"{}},\ \textcolor{stringliteral}{"{}slot\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bone\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}bone"{}},\ \textcolor{stringliteral}{"{}bone\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ data\ =\ slot.data;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ this.bone\ =\ bone;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ slot.r;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ slot.g;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ slot.b;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ slot.a;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ darkColor\ =\ slot.darkColor\ ==\ null\ ?\ null\ :\ new\ Color(slot.darkColor);}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.hasSecondColor)\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ slot.r2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g2\ =\ slot.g2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b2\ =\ slot.b2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ g2\ =\ b2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ hasSecondColor\ =\ slot.hasSecondColor;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ attachment\ =\ slot.attachment;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ sequenceIndex\ =\ slot.sequenceIndex;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ deform.\mbox{\hyperlink{class_spine_1_1_exposed_list_a79ab03170ce2265e06fa4dd5118cc3bc}{AddRange}}(slot.deform);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00091}\mbox{\hyperlink{class_spine_1_1_slot_a6e9a5703aa22dfe4a18aea4b22d97a65}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_slot_data}{SlotData}}\ \mbox{\hyperlink{class_spine_1_1_slot_a6e9a5703aa22dfe4a18aea4b22d97a65}{Data}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00093}\mbox{\hyperlink{class_spine_1_1_slot_a31ea34a42ecc5cc6791856d7937a70a3}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \mbox{\hyperlink{class_spine_1_1_bone}{Bone}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bone;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00095}\mbox{\hyperlink{class_spine_1_1_slot_a60be6be5435fd073a1a31d90e9948231}{00095}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ \mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ bone.skeleton;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00098}\mbox{\hyperlink{class_spine_1_1_slot_a00dff3f2d22f8ea6ecd27a50d830fe24}{00098}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_a00dff3f2d22f8ea6ecd27a50d830fe24}{R}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ r;\ \}\ \textcolor{keyword}{set}\ \{\ r\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00101}\mbox{\hyperlink{class_spine_1_1_slot_a073d0e7290f4671ab159dbd396ea1ed4}{00101}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_a073d0e7290f4671ab159dbd396ea1ed4}{G}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ g;\ \}\ \textcolor{keyword}{set}\ \{\ g\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00104}\mbox{\hyperlink{class_spine_1_1_slot_ae32a370b2184b87d47deb37c3a3f1458}{00104}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_ae32a370b2184b87d47deb37c3a3f1458}{B}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b;\ \}\ \textcolor{keyword}{set}\ \{\ b\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00107}\mbox{\hyperlink{class_spine_1_1_slot_a5087eb0163f50ebdc4e998e93c50a0a6}{00107}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_a5087eb0163f50ebdc4e998e93c50a0a6}{A}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ a;\ \}\ \textcolor{keyword}{set}\ \{\ a\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00109}\mbox{\hyperlink{class_spine_1_1_slot_a8efd3f1001fff56a1ae90484f1425a9e}{00109}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_slot_a8efd3f1001fff56a1ae90484f1425a9e}{ClampColor}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ MathUtils.Clamp(r,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ MathUtils.Clamp(g,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ MathUtils.Clamp(b,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ MathUtils.Clamp(a,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00118}\mbox{\hyperlink{class_spine_1_1_slot_aa1bae935e11d8b484a7f1733291ee495}{00118}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_aa1bae935e11d8b484a7f1733291ee495}{R2}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ r2;\ \}\ \textcolor{keyword}{set}\ \{\ r2\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00121}\mbox{\hyperlink{class_spine_1_1_slot_a748c715b4592769d2c861ff2df4f7430}{00121}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_a748c715b4592769d2c861ff2df4f7430}{G2}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ g2;\ \}\ \textcolor{keyword}{set}\ \{\ g2\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00124}\mbox{\hyperlink{class_spine_1_1_slot_afd59727cf274ed1107babcf10c048f86}{00124}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_slot_afd59727cf274ed1107babcf10c048f86}{B2}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ b2;\ \}\ \textcolor{keyword}{set}\ \{\ b2\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00126}\mbox{\hyperlink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{00126}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{HasSecondColor}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data.hasSecondColor;\ \}\ \textcolor{keyword}{set}\ \{\ data.hasSecondColor\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00128}\mbox{\hyperlink{class_spine_1_1_slot_af31d06e9ecd33fe4f234c5ee4c921d4f}{00128}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_slot_af31d06e9ecd33fe4f234c5ee4c921d4f}{ClampSecondColor}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ MathUtils.Clamp(r2,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ g2\ =\ MathUtils.Clamp(g2,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ b2\ =\ MathUtils.Clamp(b2,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00134}\mbox{\hyperlink{class_spine_1_1_slot_a2e3bd07a4034cef3a3b438f217f2f435}{00134}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ attachment;\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attachment\ ==\ value)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(value\ is\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}})\ ||\ !(this.attachment\ is\ \mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}})}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ ((\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}})value).TimelineAttachment\ !=\ ((\mbox{\hyperlink{class_spine_1_1_vertex_attachment}{VertexAttachment}})this.attachment).TimelineAttachment)\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ deform.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.attachment\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sequenceIndex\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00157}\mbox{\hyperlink{class_spine_1_1_slot_a3840bba92066ac64cff8e8c27c63f346}{00157}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_slot_a3840bba92066ac64cff8e8c27c63f346}{SequenceIndex}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ sequenceIndex;\ \}\ \textcolor{keyword}{set}\ \{\ sequenceIndex\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00163}\mbox{\hyperlink{class_spine_1_1_slot_a5be59110ff332b43a55dfe169770f343}{00163}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<float>}}\ \mbox{\hyperlink{class_spine_1_1_slot_a5be59110ff332b43a55dfe169770f343}{Deform}}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ deform;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deform\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}deform"{}},\ \textcolor{stringliteral}{"{}deform\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ deform\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00174}\mbox{\hyperlink{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae}{00174}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_slot_a279764b85e2c39a837f980079ba7c1ae}{SetToSetupPose}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ data.r;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ data.g;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ data.b;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ data.a;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (darkColor\ !=\ null)\ darkColor.set(data.darkColor);}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_slot_a0ec15757074fea0e07fa6e048eb12ca9}{HasSecondColor}})\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r2\ =\ data.r2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g2\ =\ data.g2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b2\ =\ data.b2;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.attachmentName\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachment\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_attachment}{Attachment}}\ =\ bone.skeleton.\mbox{\hyperlink{class_spine_1_1_skeleton_a49a6dfe7d4e66ba8d142541022f17a82}{GetAttachment}}(data.index,\ data.attachmentName);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00195}\mbox{\hyperlink{class_spine_1_1_slot_a8a8666ffdf83356df88632fcaa5e5dbd}{00195}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_spine_1_1_slot_a8a8666ffdf83356df88632fcaa5e5dbd}{ToString}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.name;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00199}00199\ \}}
+
+\end{DoxyCode}

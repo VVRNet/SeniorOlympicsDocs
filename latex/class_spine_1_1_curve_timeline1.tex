@@ -1,0 +1,461 @@
+\doxysection{Spine.\+Curve\+Timeline1 클래스 참조}
+\hypertarget{class_spine_1_1_curve_timeline1}{}\label{class_spine_1_1_curve_timeline1}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+
+
+The base class for a \doxylink{class_spine_1_1_curve_timeline}{Curve\+Timeline} that sets one property.  
+
+
+
+
+Spine.\+Curve\+Timeline1에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Curve\+Timeline1에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_spine_1_1_curve_timeline1__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_curve_timeline1_aa6a1db3c5d1b8685ab5e0438b5cd6b87}{Curve\+Timeline1}} (int frame\+Count, int bezier\+Count, string property\+Id)
+\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline1_ae902b56ff1077390cb912b1971d66df1}{Set\+Frame}} (int frame, float time, float value)
+\begin{DoxyCompactList}\small\item\em Sets the time and value for the specified frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4}{Get\+Curve\+Value}} (float time)
+\begin{DoxyCompactList}\small\item\em Returns the interpolated value for the specified time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a1b7f414fc37bb68cef51c0032b0b8142}{Get\+Relative\+Value}} (float time, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, float current, float setup)
+\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline1_afcb3fcd28cacd20c2315674e82584a04}{Get\+Absolute\+Value}} (float time, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, float current, float setup)
+\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a9a2db570bed697f1798482792becebbf}{Get\+Absolute\+Value}} (float time, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, float current, float setup, float value)
+\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a758b857794e63fe33313420916b7296a}{Get\+Scale\+Value}} (float time, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction, float current, float setup)
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_curve_timeline}{Spine.\+Curve\+Timeline}}(으)로부터 상속된 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_curve_timeline_afa35b489907e468118f5e8d723957fdf}{Curve\+Timeline}} (int frame\+Count, int bezier\+Count, params string\mbox{[}$\,$\mbox{]} property\+Ids)
+\begin{DoxyCompactList}\small\item\em The number of key frames for this timeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_ad3e163b312c0b48a00bc36c0552145ca}{Set\+Linear}} (int frame)
+\begin{DoxyCompactList}\small\item\em Sets the specified frame to linear interpolation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_a1b9ccce366163e04de7ad20c7370190b}{Set\+Stepped}} (int frame)
+\begin{DoxyCompactList}\small\item\em Sets the specified frame to stepped interpolation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline_a08d449a4eb9f83fc3292970d0cac522e}{Get\+Curve\+Type}} (int frame)
+\begin{DoxyCompactList}\small\item\em Returns the interpolation type for the specified frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_adbcf2147bc99fbb320059c3bbc14ef7c}{Shrink}} (int bezier\+Count)
+\begin{DoxyCompactList}\small\item\em Shrinks the storage for Bezier curves, for use when \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_curve_timeline_a14cd4a3a6015c915726e66e72435e5fd}{Set\+Bezier}} (int bezier, int frame, int value, float time1, float value1, float cx1, float cy1, float cx2, float cy2, float time2, float value2)
+\begin{DoxyCompactList}\small\item\em Stores the segments for the specified Bezier curve. For timelines that modify multiple values, there may be more than one curve per frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{Get\+Bezier\+Value}} (float time, int frame\+Index, int value\+Offset, int i)
+\begin{DoxyCompactList}\small\item\em Returns the Bezier interpolated value for the specified time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_timeline}{Spine.\+Timeline}}(으)로부터 상속된 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_timeline_a6dc435d0ab20cafaa2d8d0b00dc62eb6}{Timeline}} (int frame\+Count, params string\mbox{[}$\,$\mbox{]} property\+Ids)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{매개변수}
+{\em property\+Ids} & Unique identifiers for the properties the timeline modifies.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spine_1_1_timeline_ac69d4f351c6bc3b79b1052323bd4201a}{Apply}} (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}} skeleton, float last\+Time, float time, \mbox{\hyperlink{class_spine_1_1_exposed_list}{Exposed\+List}}$<$ \mbox{\hyperlink{class_spine_1_1_event}{Event}} $>$ events, float alpha, \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}} blend, \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Applies this timeline to the skeleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline1_af5eaaa132f63217fb3ae1e7532fd19a8}{ENTRIES}} = 2
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_curve_timeline}{Spine.\+Curve\+Timeline}}(으)로부터 상속된 정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_afa6ed9000cd369a9cf98217f53871072}{LINEAR}} = 0
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_a818b2bad40f110b39aafb0056292e6f5}{STEPPED}} = 1
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}} = 2
+\item 
+const int \mbox{\hyperlink{class_spine_1_1_curve_timeline_adc0e7520753f035185d9144e46b93758}{BEZIER\+\_\+\+SIZE}} = 18
+\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+override int \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a5477d36abd1b2861aa0270de841dd2f8}{Frame\+Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_spine_1_1_timeline}{Spine.\+Timeline}}(으)로부터 상속된 속성}
+\begin{DoxyCompactItemize}
+\item 
+string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_timeline_a55319626a889150e17d4fa4e26c21704}{Property\+Ids}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Uniquely encodes both the type of this timeline and the skeleton properties that it affects. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spine_1_1_timeline_aecb5b6169fa02870035f5d3d788c5bfb}{Frames}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The time in seconds and any other values for each frame. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_spine_1_1_timeline_a4884160d47f7641f9a7b6a655b6970b3}{Frame\+Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of entries stored per frame. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_spine_1_1_timeline_ad50c47fe6a578b014ad1ef8aa3d83fb4}{Frame\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of frames for this timeline. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spine_1_1_timeline_abd4e11b8c42f7c3c8b07793f134680fc}{Duration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+The base class for a \doxylink{class_spine_1_1_curve_timeline}{Curve\+Timeline} that sets one property. 
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00394}{394}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_curve_timeline1_aa6a1db3c5d1b8685ab5e0438b5cd6b87}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!CurveTimeline1@{CurveTimeline1}}
+\index{CurveTimeline1@{CurveTimeline1}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{CurveTimeline1()}{CurveTimeline1()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_aa6a1db3c5d1b8685ab5e0438b5cd6b87} 
+Spine.\+Curve\+Timeline1.\+Curve\+Timeline1 (\begin{DoxyParamCaption}\item[{int}]{frame\+Count}{, }\item[{int}]{bezier\+Count}{, }\item[{string}]{property\+Id}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{매개변수}
+{\em bezier\+Count} & The maximum number of Bezier curves. See \doxylink{class_spine_1_1_curve_timeline_adbcf2147bc99fbb320059c3bbc14ef7c}{Shrink(int)}.\\
+\hline
+{\em property\+Ids} & Unique identifiers for the properties the timeline modifies.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00400}{400}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(frameCount,\ bezierCount,\ propertyId)\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_curve_timeline1_afcb3fcd28cacd20c2315674e82584a04}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!GetAbsoluteValue@{GetAbsoluteValue}}
+\index{GetAbsoluteValue@{GetAbsoluteValue}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{GetAbsoluteValue()}{GetAbsoluteValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_afcb3fcd28cacd20c2315674e82584a04} 
+float Spine.\+Curve\+Timeline1.\+Get\+Absolute\+Value (\begin{DoxyParamCaption}\item[{float}]{time}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{float}]{current}{, }\item[{float}]{setup}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00461}{461}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ frames[0])\ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup;}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (setup\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current;}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4}{GetCurveValue}}(time);}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup)\ \textcolor{keywordflow}{return}\ setup\ +\ (value\ -\/\ setup)\ *\ alpha;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (value\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_afcb3fcd28cacd20c2315674e82584a04_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_afcb3fcd28cacd20c2315674e82584a04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_curve_timeline1_a9a2db570bed697f1798482792becebbf}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!GetAbsoluteValue@{GetAbsoluteValue}}
+\index{GetAbsoluteValue@{GetAbsoluteValue}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{GetAbsoluteValue()}{GetAbsoluteValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_a9a2db570bed697f1798482792becebbf} 
+float Spine.\+Curve\+Timeline1.\+Get\+Absolute\+Value (\begin{DoxyParamCaption}\item[{float}]{time}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{float}]{current}{, }\item[{float}]{setup}{, }\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00476}{476}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ frames[0])\ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup;}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (setup\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current;}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup)\ \textcolor{keywordflow}{return}\ setup\ +\ (value\ -\/\ setup)\ *\ alpha;}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (value\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!GetCurveValue@{GetCurveValue}}
+\index{GetCurveValue@{GetCurveValue}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{GetCurveValue()}{GetCurveValue()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4} 
+float Spine.\+Curve\+Timeline1.\+Get\+Curve\+Value (\begin{DoxyParamCaption}\item[{float}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Returns the interpolated value for the specified time. 
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00418}{418}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ frames\ =\ this.frames;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ frames.Length\ -\/\ 2;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ii\ =\ 2;\ ii\ <=\ i;\ ii\ +=\ 2)\ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frames[ii]\ >\ time)\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ ii\ -\/\ 2;}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ curveType\ =\ (int)curves[i\ >>\ 1];}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (curveType)\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_afa6ed9000cd369a9cf98217f53871072}{LINEAR}}:}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ before\ =\ frames[i],\ value\ =\ frames[i\ +\ VALUE];}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ +\ (time\ -\/\ before)\ /\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_curve_timeline1_af5eaaa132f63217fb3ae1e7532fd19a8}{ENTRIES}}]\ -\/\ before)\ *\ (frames[i\ +\ \mbox{\hyperlink{class_spine_1_1_curve_timeline1_af5eaaa132f63217fb3ae1e7532fd19a8}{ENTRIES}}\ +\ VALUE]\ -\/\ value);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_a818b2bad40f110b39aafb0056292e6f5}{STEPPED}}:}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ frames[i\ +\ VALUE];}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_af5d5dc239e695c4ad4bb33396cb03d38}{GetBezierValue}}(time,\ i,\ VALUE,\ curveType\ -\/\ \mbox{\hyperlink{class_spine_1_1_curve_timeline_acd48a7335cb9d6decfb5a67c543db268}{BEZIER}});}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_curve_timeline1_a1b7f414fc37bb68cef51c0032b0b8142}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!GetRelativeValue@{GetRelativeValue}}
+\index{GetRelativeValue@{GetRelativeValue}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{GetRelativeValue()}{GetRelativeValue()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_a1b7f414fc37bb68cef51c0032b0b8142} 
+float Spine.\+Curve\+Timeline1.\+Get\+Relative\+Value (\begin{DoxyParamCaption}\item[{float}]{time}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{float}]{current}{, }\item[{float}]{setup}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00439}{439}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ frames[0])\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup;}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (setup\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4}{GetCurveValue}}(time);}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup\ +\ value\ *\ alpha;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Replace:}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ setup\ -\/\ current;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ value\ *\ alpha;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_a1b7f414fc37bb68cef51c0032b0b8142_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_a1b7f414fc37bb68cef51c0032b0b8142_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_curve_timeline1_a758b857794e63fe33313420916b7296a}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!GetScaleValue@{GetScaleValue}}
+\index{GetScaleValue@{GetScaleValue}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{GetScaleValue()}{GetScaleValue()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_a758b857794e63fe33313420916b7296a} 
+float Spine.\+Curve\+Timeline1.\+Get\+Scale\+Value (\begin{DoxyParamCaption}\item[{float}]{time}{, }\item[{float}]{alpha}{, }\item[{\mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{Mix\+Blend}}}]{blend}{, }\item[{\mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{Mix\+Direction}}}]{direction}{, }\item[{float}]{current}{, }\item[{float}]{setup}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00490}{490}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ frames\ =\ this.frames;}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\ <\ frames[0])\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup;}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (setup\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current;}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value\ =\ \mbox{\hyperlink{class_spine_1_1_curve_timeline1_a4c6265e50e7b3e9f359549ad55d94bf4}{GetCurveValue}}(time)\ *\ setup;}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\ ==\ 1)\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blend\ ==\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Add)\ \textcolor{keywordflow}{return}\ current\ +\ value\ -\/\ setup;}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mixing\ out\ uses\ sign\ of\ setup\ or\ current\ pose,\ else\ use\ sign\ of\ key.}}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ \mbox{\hyperlink{namespace_spine_a3adaf142a8c20385353051e58c729208}{MixDirection}}.Out)\ \{}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup\ +\ (Math.Abs(value)\ *\ Math.Sign(setup)\ -\/\ setup)\ *\ alpha;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Replace:}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (Math.Abs(value)\ *\ Math.Sign(current)\ -\/\ current)\ *\ alpha;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ s;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (blend)\ \{}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Setup:}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ Math.Abs(setup)\ *\ Math.Sign(value);}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s\ +\ (value\ -\/\ s)\ *\ alpha;}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.First:}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_spine_af9ea571861ba8b2aee8cbd56de9c45e2}{MixBlend}}.Replace:}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ =\ Math.Abs(current)\ *\ Math.Sign(value);}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s\ +\ (value\ -\/\ s)\ *\ alpha;}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ +\ (value\ -\/\ setup)\ *\ alpha;}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_a758b857794e63fe33313420916b7296a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_curve_timeline1_a758b857794e63fe33313420916b7296a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_curve_timeline1_ae902b56ff1077390cb912b1971d66df1}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!SetFrame@{SetFrame}}
+\index{SetFrame@{SetFrame}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{SetFrame()}{SetFrame()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_ae902b56ff1077390cb912b1971d66df1} 
+void Spine.\+Curve\+Timeline1.\+Set\+Frame (\begin{DoxyParamCaption}\item[{int}]{frame}{, }\item[{float}]{time}{, }\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the time and value for the specified frame. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em frame} & Between 0 and 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{frameCount}
+
+\end{DoxyCode}
+, inclusive.\\
+\hline
+{\em time} & The frame time in seconds\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00411}{411}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ frame\ <<=\ 1;}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame]\ =\ time;}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ frames[frame\ +\ VALUE]\ =\ value;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_spine_1_1_curve_timeline1_af5eaaa132f63217fb3ae1e7532fd19a8}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!ENTRIES@{ENTRIES}}
+\index{ENTRIES@{ENTRIES}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{ENTRIES}{ENTRIES}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_af5eaaa132f63217fb3ae1e7532fd19a8} 
+const int Spine.\+Curve\+Timeline1.\+ENTRIES = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00395}{395}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_spine_1_1_curve_timeline1_a5477d36abd1b2861aa0270de841dd2f8}\index{Spine.CurveTimeline1@{Spine.CurveTimeline1}!FrameEntries@{FrameEntries}}
+\index{FrameEntries@{FrameEntries}!Spine.CurveTimeline1@{Spine.CurveTimeline1}}
+\doxysubsubsection{\texorpdfstring{FrameEntries}{FrameEntries}}
+{\footnotesize\ttfamily \label{class_spine_1_1_curve_timeline1_a5477d36abd1b2861aa0270de841dd2f8} 
+override int Spine.\+Curve\+Timeline1.\+Frame\+Entries\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_animation_8cs_source}{Animation.\+cs}} 파일의 \mbox{\hyperlink{_animation_8cs_source_l00404}{404}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_curve_timeline1_af5eaaa132f63217fb3ae1e7532fd19a8}{ENTRIES}};\ \}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/csharp/\mbox{\hyperlink{_animation_8cs}{Animation.\+cs}}\end{DoxyCompactItemize}

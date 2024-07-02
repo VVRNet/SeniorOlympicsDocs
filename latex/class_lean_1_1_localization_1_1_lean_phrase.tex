@@ -1,0 +1,357 @@
+\doxysection{Lean.\+Localization.\+Lean\+Phrase 클래스 참조}
+\hypertarget{class_lean_1_1_localization_1_1_lean_phrase}{}\label{class_lean_1_1_localization_1_1_lean_phrase}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+
+
+This contains data about each phrase, which is then translated into different languages.  
+
+
+
+
+Lean.\+Localization.\+Lean\+Phrase에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_lean_1_1_localization_1_1_lean_phrase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Lean.\+Localization.\+Lean\+Phrase에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_lean_1_1_localization_1_1_lean_phrase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0}{Data\+Type}} \{ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a9dffbf69ffba8bc38bc4e01abf4b1675}{Text}}
+, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a497031794414a552435f90151ac3b54b}{Object}}
+, \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a51f2b7b14433aa22c67d1f4fc18943cd}{Sprite}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_ac0d9fe4d76aaa26e5e721f23bf9ef302}{Clear}} ()
+\item 
+override void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a05d09b861e36b56e4056da036110ec82}{Register}} (string primary\+Language, string secondary\+Language)
+\begin{DoxyCompactList}\small\item\em This allows you to register a phrase based on the specified languages. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a59a6c18543542cac20b9079f0930586f}{Try\+Find\+Translation}} (string language\+Name, ref \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}} entry)
+\begin{DoxyCompactList}\small\item\em This will return the translation of this phrase for the specified language. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_ac2eec5cf9c54f4890de7138a6c838961}{Remove\+Translation}} (string language\+Name)
+\item 
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}} \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a4b3d8208dc93ec99a2d7666d9eb16d42}{Add\+Entry}} (string language\+Name, string text=null, \mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} obj=null)
+\begin{DoxyCompactList}\small\item\em Add a new translation to this phrase for the specified language, or return the current one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source}{Lean.\+Localization.\+Lean\+Source}}(으)로부터 상속된 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source_aa2fd77d36a4c5342fde19695a186e8b6}{Register}} ()
+\begin{DoxyCompactList}\small\item\em This allows you to register a token or language. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0}{Data\+Type}} \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_ac490e42cb7e39cc13cdd8064fc2fd509}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}} $>$ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a5abba84e065be047d9bdc9dfa5f8f7cf}{Entries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{추가로 상속된 멤버들}
+\doxysubsection*{\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source}{Lean.\+Localization.\+Lean\+Source}}(으)로부터 상속된 Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source_a94c0420a932fd1aced4aac6af4bab69b}{On\+Enable}} ()
+\item 
+virtual void \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source_a00cedd4a690b4fa60a6f98dfc640e904}{On\+Disable}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+This contains data about each phrase, which is then translated into different languages. 
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 열거형 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!DataType@{DataType}}
+\index{DataType@{DataType}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{DataType}{DataType}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0} 
+enum \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0}{Lean.\+Localization.\+Lean\+Phrase.\+Data\+Type}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Text@{Text}}}\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a9dffbf69ffba8bc38bc4e01abf4b1675}\label{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0} 
+Text&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Object@{Object}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Object@{Object}}}\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a497031794414a552435f90151ac3b54b}\label{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0} 
+Object&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sprite@{Sprite}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Sprite@{Sprite}}}\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a51f2b7b14433aa22c67d1f4fc18943cd}\label{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0} 
+Sprite&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a9dffbf69ffba8bc38bc4e01abf4b1675}{Text}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a497031794414a552435f90151ac3b54b}{Object}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0a51f2b7b14433aa22c67d1f4fc18943cd}{Sprite}}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a4b3d8208dc93ec99a2d7666d9eb16d42}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!AddEntry@{AddEntry}}
+\index{AddEntry@{AddEntry}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{AddEntry()}{AddEntry()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_a4b3d8208dc93ec99a2d7666d9eb16d42} 
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}} Lean.\+Localization.\+Lean\+Phrase.\+Add\+Entry (\begin{DoxyParamCaption}\item[{string}]{language\+Name}{, }\item[{string}]{text}{ = {\ttfamily null}, }\item[{\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{obj}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Add a new translation to this phrase for the specified language, or return the current one. 
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00150}{150}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ var\ translation\ =\ \textcolor{keywordflow}{default}(Entry);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a59a6c18543542cac20b9079f0930586f}{TryFindTranslation}}(languageName,\ ref\ translation)\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ translation\ =\ \textcolor{keyword}{new}\ Entry();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ translation.Language\ =\ languageName;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entries\ =\ \textcolor{keyword}{new}\ List<Entry>();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entries.Add(translation);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ translation.Text\ \ \ =\ text;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ translation.Object\ =\ obj;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ translation;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lean_1_1_localization_1_1_lean_phrase_a4b3d8208dc93ec99a2d7666d9eb16d42_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_ac0d9fe4d76aaa26e5e721f23bf9ef302}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Clear@{Clear}}
+\index{Clear@{Clear}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_ac0d9fe4d76aaa26e5e721f23bf9ef302} 
+void Lean.\+Localization.\+Lean\+Phrase.\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entries.Clear();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a05d09b861e36b56e4056da036110ec82}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Register@{Register}}
+\index{Register@{Register}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_a05d09b861e36b56e4056da036110ec82} 
+override void Lean.\+Localization.\+Lean\+Phrase.\+Register (\begin{DoxyParamCaption}\item[{string}]{primary\+Language}{, }\item[{string}]{secondary\+Language}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This allows you to register a phrase based on the specified languages. 
+
+
+
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_source_add46fbefda5f39242b057583e3710c43}{Lean.\+Localization.\+Lean\+Source}}(으)로부터 재구현되었습니다.
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00062}{62}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ var\ translation\ =\ LeanLocalization.RegisterTranslation(name);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ entries.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ entry\ =\ entries[i];}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ translation.Register(entry.Language,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.Language\ ==\ primaryLanguage)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Compile(translation,\ entry,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (entry.Language\ ==\ secondaryLanguage\ \&\&\ translation.Primary\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Compile(translation,\ entry,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lean_1_1_localization_1_1_lean_phrase_a05d09b861e36b56e4056da036110ec82_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_ac2eec5cf9c54f4890de7138a6c838961}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!RemoveTranslation@{RemoveTranslation}}
+\index{RemoveTranslation@{RemoveTranslation}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{RemoveTranslation()}{RemoveTranslation()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_ac2eec5cf9c54f4890de7138a6c838961} 
+void Lean.\+Localization.\+Lean\+Phrase.\+Remove\+Translation (\begin{DoxyParamCaption}\item[{string}]{language\+Name}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00133}{133}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ entries.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries[i].Language\ ==\ languageName)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entries.RemoveAt(i);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a59a6c18543542cac20b9079f0930586f}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!TryFindTranslation@{TryFindTranslation}}
+\index{TryFindTranslation@{TryFindTranslation}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{TryFindTranslation()}{TryFindTranslation()}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_a59a6c18543542cac20b9079f0930586f} 
+bool Lean.\+Localization.\+Lean\+Phrase.\+Try\+Find\+Translation (\begin{DoxyParamCaption}\item[{string}]{language\+Name}{, }\item[{ref \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}}}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+This will return the translation of this phrase for the specified language. 
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00115}{115}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ entries.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entry\ =\ entries[i];}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.Language\ ==\ languageName)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lean_1_1_localization_1_1_lean_phrase_a59a6c18543542cac20b9079f0930586f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{속성 문서화}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_ac490e42cb7e39cc13cdd8064fc2fd509}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Data@{Data}}
+\index{Data@{Data}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_ac490e42cb7e39cc13cdd8064fc2fd509} 
+\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0}{Data\+Type}} Lean.\+Localization.\+Lean\+Phrase.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{\ \textcolor{keyword}{set}\ \{\ data\ =\ value;\ \}\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ data;\ \}\ \}\ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_a21369fbb48da8fc4fa0d85d753bff4d0}{DataType}}\ data;}
+
+\end{DoxyCode}
+\Hypertarget{class_lean_1_1_localization_1_1_lean_phrase_a5abba84e065be047d9bdc9dfa5f8f7cf}\index{Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}!Entries@{Entries}}
+\index{Entries@{Entries}!Lean.Localization.LeanPhrase@{Lean.Localization.LeanPhrase}}
+\doxysubsubsection{\texorpdfstring{Entries}{Entries}}
+{\footnotesize\ttfamily \label{class_lean_1_1_localization_1_1_lean_phrase_a5abba84e065be047d9bdc9dfa5f8f7cf} 
+List$<$\mbox{\hyperlink{class_lean_1_1_localization_1_1_lean_phrase_1_1_entry}{Entry}}$>$ Lean.\+Localization.\+Lean\+Phrase.\+Entries\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_lean_phrase_8cs_source}{Lean\+Phrase.\+cs}} 파일의 \mbox{\hyperlink{_lean_phrase_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entries\ =\ \textcolor{keyword}{new}\ List<Entry>();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entries;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Plugins/\+CW/\+Lean\+Localization/\+Required/\+Scripts/\mbox{\hyperlink{_lean_phrase_8cs}{Lean\+Phrase.\+cs}}\end{DoxyCompactItemize}

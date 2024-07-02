@@ -1,0 +1,110 @@
+\doxysection{Content\+Controller 클래스 참조}
+\hypertarget{class_content_controller}{}\label{class_content_controller}\index{ContentController@{ContentController}}
+
+
+Content\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_content_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Content\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_content_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_content_controller_ac5c754fe862ac135c14c52c5f2c11566}{Create\+Content}} ()
+\item 
+void \mbox{\hyperlink{class_content_controller_a86ef8660e0acdfc3a61c368ab4e56091}{Get\+Contents}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_content_controller_8cs_source}{Content\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_content_controller_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_content_controller_ac5c754fe862ac135c14c52c5f2c11566}\index{ContentController@{ContentController}!CreateContent@{CreateContent}}
+\index{CreateContent@{CreateContent}!ContentController@{ContentController}}
+\doxysubsubsection{\texorpdfstring{CreateContent()}{CreateContent()}}
+{\footnotesize\ttfamily \label{class_content_controller_ac5c754fe862ac135c14c52c5f2c11566} 
+void Content\+Controller.\+Create\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_content_controller_8cs_source}{Content\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_content_controller_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content}{Content}}\ content\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ name:\textcolor{keyword}{new}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\textcolor{stringliteral}{"{}ī�� ���߱�"{}},\ en:\textcolor{stringliteral}{"{}CardMatch"{}}),\ detail:\ new\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\ \textcolor{stringliteral}{"{}����\ ����� ī�带\ ����ϰ� ���� ������ ȹ���ϼ���."{}},\ en:\ \textcolor{stringliteral}{"{}Remember\ and\ match\ cards\ of\ the\ same\ shape\ to\ score\ points."{}}),\ etc:\ \textcolor{stringliteral}{"{}"{}},\ createdAt:\ DateTime.UtcNow);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ StartCoroutine(\_contentService.\mbox{\hyperlink{class_content_service_a531ebbf5d21c47b47dfbfdb86903a48a}{CreateContent}}(content,\ (result)\ =>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (content\ !=\ null)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}����: "{}}\ +\ result);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}���� ����"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_content_controller_ac5c754fe862ac135c14c52c5f2c11566_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_content_controller_a86ef8660e0acdfc3a61c368ab4e56091}\index{ContentController@{ContentController}!GetContents@{GetContents}}
+\index{GetContents@{GetContents}!ContentController@{ContentController}}
+\doxysubsubsection{\texorpdfstring{GetContents()}{GetContents()}}
+{\footnotesize\ttfamily \label{class_content_controller_a86ef8660e0acdfc3a61c368ab4e56091} 
+void Content\+Controller.\+Get\+Contents (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_content_controller_8cs_source}{Content\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_content_controller_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ StartCoroutine(\_contentService.\mbox{\hyperlink{class_content_service_ad1d1c366da314c58dc02ecd2b9d8226b}{GetContents}}((result)\ =>}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result\ !=\ null)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}������:\ "{}}\ +\ result.Count);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetCurrentContents(result);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}���� ����"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\+Controller/\mbox{\hyperlink{_content_controller_8cs}{Content\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,159 @@
+\doxysection{Skeleton\+Parts\+Renderer.\+cs}
+\hypertarget{_skeleton_parts_renderer_8cs_source}{}\label{_skeleton_parts_renderer_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Components/SkeletonRenderSeparator/SkeletonPartsRenderer.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Components/SkeletonRenderSeparator/SkeletonPartsRenderer.cs}}
+\mbox{\hyperlink{_skeleton_parts_renderer_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00033}00033\ \ \ \ \ [RequireComponent(typeof(MeshRenderer),\ typeof(MeshFilter))]}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00034}00034\ \ \ \ \ [HelpURL(\textcolor{stringliteral}{"{}http://esotericsoftware.com/spine-\/unity\#SkeletonRenderSeparator"{}})]}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00035}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer}{SkeletonPartsRenderer}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Properties}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator}{MeshGenerator}}\ meshGenerator;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00039}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a024b090350fa0045eeffc484e5877516}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator}{MeshGenerator}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator}{MeshGenerator}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LazyIntialize();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ meshGenerator;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_aae9e5b2de68078806209c6705b10322a}{MeshRenderer}}\ meshRenderer;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_aae9e5b2de68078806209c6705b10322a}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_aae9e5b2de68078806209c6705b10322a}{MeshRenderer}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_aae9e5b2de68078806209c6705b10322a}{MeshRenderer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LazyIntialize();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ meshRenderer;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a56017ea04851f6c066fcf19d072c2359}{MeshFilter}}\ meshFilter;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00055}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a56017ea04851f6c066fcf19d072c2359}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a56017ea04851f6c066fcf19d072c2359}{MeshFilter}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a56017ea04851f6c066fcf19d072c2359}{MeshFilter}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LazyIntialize();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ meshFilter;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00061}00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#region\ Callback\ Delegates}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00064}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_acf4853152c5be75a53b1356ecb611481}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ delegate\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_acf4853152c5be75a53b1356ecb611481}{SkeletonPartsRendererDelegate}}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer}{SkeletonPartsRenderer}}\ skeletonPartsRenderer);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00068}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a2d829acf2fa722902d0983304e7b89b7}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_acf4853152c5be75a53b1356ecb611481}{SkeletonPartsRendererDelegate}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a2d829acf2fa722902d0983304e7b89b7}{OnMeshAndMaterialsUpdated}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00069}00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers}{MeshRendererBuffers}}\ buffers;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction}{SkeletonRendererInstruction}}\ currentInstructions\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction}{SkeletonRendererInstruction}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ LazyIntialize\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffers\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffers\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers}{MeshRendererBuffers}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a11451ece54983c867abd359c3df84c3e}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meshGenerator\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a024b090350fa0045eeffc484e5877516}{MeshGenerator}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshFilter\ =\ GetComponent<MeshFilter>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshRenderer\ =\ GetComponent<MeshRenderer>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentInstructions.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_abe026d6be1737795d804bfbface0713c}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnDestroy\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffers\ !=\ \textcolor{keyword}{null})\ buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a76bcf260bd53201d4ec870534536c132}{Dispose}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00092}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a989e50f3894ced5fd3cb58d90fea3f0b}{00092}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a989e50f3894ced5fd3cb58d90fea3f0b}{ClearMesh}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ LazyIntialize();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ meshFilter.sharedMesh\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00097}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_ad8d5cb2a55389ec3eab84d4a3d00e555}{00097}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_ad8d5cb2a55389ec3eab84d4a3d00e555}{RenderParts}}\ (\mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<SubmeshInstruction>}}\ instructions,\ \textcolor{keywordtype}{int}\ startSubmesh,\ \textcolor{keywordtype}{int}\ endSubmesh)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ LazyIntialize();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ STEP\ 1:\ Create\ instruction}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh}{MeshRendererBuffers.SmartMesh}}\ smartMesh\ =\ buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a679bf0988f9c467f74ec081b7b955c16}{GetNextMesh}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ currentInstructions.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_a52d5117b1aa89aa089b4c47091e41223}{SetWithSubset}}(instructions,\ startSubmesh,\ endSubmesh);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ updateTriangles\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction}{SkeletonRendererInstruction}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_a6ea986f462eac2cac4e50e8206b69c81}{GeometryNotEqual}}(currentInstructions,\ smartMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7abd4344c8bbf37768a7102df1744ac7}{instructionUsed}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ STEP\ 2:\ Generate\ mesh\ buffers.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction}{SubmeshInstruction}}[]\ currentInstructionsSubmeshesItems\ =\ currentInstructions.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_a0de6fb5a0fb410135cf581566ccbde05}{submeshInstructions}}.Items;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_a2e1652f1dac9f494da4dfe73c91b564d}{Begin}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentInstructions.hasActiveClipping)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ currentInstructions.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_a0de6fb5a0fb410135cf581566ccbde05}{submeshInstructions}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_aa952a9e80b0019d3bbeb457175e00e7a}{AddSubmesh}}(currentInstructionsSubmeshesItems[i],\ updateTriangles);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_a627386e6a724f78211ef1ef258eeafcd}{BuildMeshWithArrays}}(currentInstructions,\ updateTriangles);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a62481e4aa36a0a2c9fea68887c40e9b9}{UpdateSharedMaterials}}(currentInstructions.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_a0de6fb5a0fb410135cf581566ccbde05}{submeshInstructions}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ STEP\ 3:\ modify\ mesh.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ mesh\ =\ smartMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_a9008146a52315d745bbd29c9e3a419c0}{VertexCount}}\ <=\ 0)\ \{\ \textcolor{comment}{//\ Clear\ an\ empty\ mesh}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ updateTriangles\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh.Clear();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_afb4387f3a4fe800d64bba1e17bf1d9bd}{FillVertexData}}(mesh);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (updateTriangles)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_ac0c3f6846034a622aa0d7998d433fae6}{FillTriangles}}(mesh);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshRenderer.sharedMaterials\ =\ buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a664abb3a5e6c98765ef6a357a229192e}{GetUpdatedSharedMaterialsArray}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_ad60996089f179ea505ee9bede6a75992}{MaterialsChangedInLastUpdate}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshRenderer.sharedMaterials\ =\ buffers.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a664abb3a5e6c98765ef6a357a229192e}{GetUpdatedSharedMaterialsArray}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ meshGenerator.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_generator_af42d751fee1dc4f18107753ff17e0dc9}{FillLateVertexData}}(mesh);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ meshFilter.sharedMesh\ =\ mesh;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ smartMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7abd4344c8bbf37768a7102df1744ac7}{instructionUsed}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_a928ab7ca9a7859575b5279f9bd7b7198}{Set}}(currentInstructions);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a2d829acf2fa722902d0983304e7b89b7}{OnMeshAndMaterialsUpdated}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a2d829acf2fa722902d0983304e7b89b7}{OnMeshAndMaterialsUpdated}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00141}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_acc5c0051801633e31e90a1b6940e1587}{00141}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_acc5c0051801633e31e90a1b6940e1587}{SetPropertyBlock}}\ (MaterialPropertyBlock\ block)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ LazyIntialize();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ meshRenderer.SetPropertyBlock(block);}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00146}\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_abcb251fb5203bc5657ad8090adcfe886}{00146}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer}{SkeletonPartsRenderer}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_abcb251fb5203bc5657ad8090adcfe886}{NewPartsRendererGameObject}}\ (Transform\ parent,\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{int}\ sortingOrder\ =\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ go\ =\ \textcolor{keyword}{new}\ GameObject(name,\ typeof(\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_a56017ea04851f6c066fcf19d072c2359}{MeshFilter}}),\ typeof(\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer_aae9e5b2de68078806209c6705b10322a}{MeshRenderer}}));}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ go.transform.SetParent(parent,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer}{SkeletonPartsRenderer}}\ returnComponent\ =\ go.AddComponent<\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_parts_renderer}{SkeletonPartsRenderer}}>();}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ returnComponent.MeshRenderer.sortingOrder\ =\ sortingOrder;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ returnComponent;}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_parts_renderer_8cs_source_l00155}00155\ \}}
+
+\end{DoxyCode}

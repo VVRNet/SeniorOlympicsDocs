@@ -1,0 +1,214 @@
+\doxysection{Spine.\+Unity.\+Wait\+For\+Spine\+Animation 클래스 참조}
+\hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation}{}\label{class_spine_1_1_unity_1_1_wait_for_spine_animation}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}
+
+
+Use this as a condition-\/blocking yield instruction for \doxylink{namespace_spine_1_1_unity}{Unity} Coroutines. The routine will pause until the Animation\+State.\+Track\+Entry fires any of the configured events. 
+
+See the \doxylink{}{Spine Unity Events documentation page} and http\+://esotericsoftware.\+com/spine-\/api-\/reference.\+Animation\+State\+Listener for more information on when track events will be triggered.  
+
+
+
+
+Spine.\+Unity.\+Wait\+For\+Spine\+Animation에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_wait_for_spine_animation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spine.\+Unity.\+Wait\+For\+Spine\+Animation에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_spine_1_1_unity_1_1_wait_for_spine_animation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}} \{ \newline
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93aa6122a65eaa676f700ae68d393054a37}{Start}} = 1
+, \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a1ce92afa20b1c7f6a4e5d0dc73e5c92a}{Interrupt}} = 2
+, \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a87557f11575c0ad78e4e28abedc13b6e}{End}} = 4
+, \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a4d236dc6ed028e6270a1463ceb68a612}{Dispose}} = 8
+, \newline
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93aae94f80b3ce82062a5dd7815daa04f9d}{Complete}} = 16
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a084c68145a1dc03d69543316322f3e65}{Wait\+For\+Spine\+Animation}} (\mbox{\hyperlink{class_spine_1_1_track_entry}{Spine.\+Track\+Entry}} track\+Entry, \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}} events\+To\+Wait\+For)
+\item 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation}{Wait\+For\+Spine\+Animation}} \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a6c828df9e5abe72bd912648b52dedff0}{Now\+Wait\+For}} (\mbox{\hyperlink{class_spine_1_1_track_entry}{Spine.\+Track\+Entry}} track\+Entry, \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}} events\+To\+Wait\+For)
+\begin{DoxyCompactList}\small\item\em One optimization high-\/frequency Yield\+Instruction returns is to cache instances to minimize GC pressure. Use Now\+Wait\+For to reuse the same instance of \doxylink{class_spine_1_1_unity_1_1_wait_for_spine_animation_complete}{Wait\+For\+Spine\+Animation\+Complete}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0}{Safe\+Subscribe}} (\mbox{\hyperlink{class_spine_1_1_track_entry}{Spine.\+Track\+Entry}} track\+Entry, \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}} events\+To\+Wait\+For)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Use this as a condition-\/blocking yield instruction for \doxylink{namespace_spine_1_1_unity}{Unity} Coroutines. The routine will pause until the Animation\+State.\+Track\+Entry fires any of the configured events. 
+
+See the \doxylink{}{Spine Unity Events documentation page} and http\+://esotericsoftware.\+com/spine-\/api-\/reference.\+Animation\+State\+Listener for more information on when track events will be triggered. 
+
+\mbox{\hyperlink{_wait_for_spine_animation_8cs_source}{Wait\+For\+Spine\+Animation.\+cs}} 파일의 \mbox{\hyperlink{_wait_for_spine_animation_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 열거형 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!AnimationEventTypes@{AnimationEventTypes}}
+\index{AnimationEventTypes@{AnimationEventTypes}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}
+\doxysubsubsection{\texorpdfstring{AnimationEventTypes}{AnimationEventTypes}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93} 
+enum \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Spine.\+Unity.\+Wait\+For\+Spine\+Animation.\+Animation\+Event\+Types}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Start@{Start}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!Start@{Start}}}\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93aa6122a65eaa676f700ae68d393054a37}\label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93} 
+Start&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Interrupt@{Interrupt}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!Interrupt@{Interrupt}}}\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a1ce92afa20b1c7f6a4e5d0dc73e5c92a}\label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93} 
+Interrupt&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{End@{End}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!End@{End}}}\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a87557f11575c0ad78e4e28abedc13b6e}\label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93} 
+End&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dispose@{Dispose}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!Dispose@{Dispose}}}\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a4d236dc6ed028e6270a1463ceb68a612}\label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93} 
+Dispose&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complete@{Complete}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!Complete@{Complete}}}\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93aae94f80b3ce82062a5dd7815daa04f9d}\label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93} 
+Complete&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{_wait_for_spine_animation_8cs_source}{Wait\+For\+Spine\+Animation.\+cs}} 파일의 \mbox{\hyperlink{_wait_for_spine_animation_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93aa6122a65eaa676f700ae68d393054a37}{Start}}\ =\ 1,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a1ce92afa20b1c7f6a4e5d0dc73e5c92a}{Interrupt}}\ =\ 2,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a87557f11575c0ad78e4e28abedc13b6e}{End}}\ =\ 4,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93a4d236dc6ed028e6270a1463ceb68a612}{Dispose}}\ =\ 8,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}\ =\ 16}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a084c68145a1dc03d69543316322f3e65}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!WaitForSpineAnimation@{WaitForSpineAnimation}}
+\index{WaitForSpineAnimation@{WaitForSpineAnimation}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}
+\doxysubsubsection{\texorpdfstring{WaitForSpineAnimation()}{WaitForSpineAnimation()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a084c68145a1dc03d69543316322f3e65} 
+Spine.\+Unity.\+Wait\+For\+Spine\+Animation.\+Wait\+For\+Spine\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_track_entry}{Spine.\+Track\+Entry}}}]{track\+Entry}{, }\item[{\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}}}]{events\+To\+Wait\+For}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_wait_for_spine_animation_8cs_source}{Wait\+For\+Spine\+Animation.\+cs}} 파일의 \mbox{\hyperlink{_wait_for_spine_animation_8cs_source_l00056}{56}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0}{SafeSubscribe}}(trackEntry,\ eventsToWaitFor);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_wait_for_spine_animation_a084c68145a1dc03d69543316322f3e65_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a6c828df9e5abe72bd912648b52dedff0}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!NowWaitFor@{NowWaitFor}}
+\index{NowWaitFor@{NowWaitFor}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}
+\doxysubsubsection{\texorpdfstring{NowWaitFor()}{NowWaitFor()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a6c828df9e5abe72bd912648b52dedff0} 
+\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation}{Wait\+For\+Spine\+Animation}} Spine.\+Unity.\+Wait\+For\+Spine\+Animation.\+Now\+Wait\+For (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_track_entry}{Spine.\+Track\+Entry}}}]{track\+Entry}{, }\item[{\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}}}]{events\+To\+Wait\+For}{}\end{DoxyParamCaption})}
+
+
+
+One optimization high-\/frequency Yield\+Instruction returns is to cache instances to minimize GC pressure. Use Now\+Wait\+For to reuse the same instance of \doxylink{class_spine_1_1_unity_1_1_wait_for_spine_animation_complete}{Wait\+For\+Spine\+Animation\+Complete}. 
+
+
+
+\mbox{\hyperlink{_wait_for_spine_animation_8cs_source}{Wait\+For\+Spine\+Animation.\+cs}} 파일의 \mbox{\hyperlink{_wait_for_spine_animation_8cs_source_l00064}{64}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0}{SafeSubscribe}}(trackEntry,\ eventsToWaitFor);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_wait_for_spine_animation_a6c828df9e5abe72bd912648b52dedff0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0}\index{Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}!SafeSubscribe@{SafeSubscribe}}
+\index{SafeSubscribe@{SafeSubscribe}!Spine.Unity.WaitForSpineAnimation@{Spine.Unity.WaitForSpineAnimation}}
+\doxysubsubsection{\texorpdfstring{SafeSubscribe()}{SafeSubscribe()}}
+{\footnotesize\ttfamily \label{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0} 
+void Spine.\+Unity.\+Wait\+For\+Spine\+Animation.\+Safe\+Subscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spine_1_1_track_entry}{Spine.\+Track\+Entry}}}]{track\+Entry}{, }\item[{\mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{Animation\+Event\+Types}}}]{events\+To\+Wait\+For}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{_wait_for_spine_animation_8cs_source}{Wait\+For\+Spine\+Animation.\+cs}} 파일의 \mbox{\hyperlink{_wait_for_spine_animation_8cs_source_l00083}{83}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (trackEntry\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Break\ immediately\ if\ trackEntry\ is\ null.}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogWarning(\textcolor{stringliteral}{"{}TrackEntry\ was\ null.\ Coroutine\ will\ continue\ immediately."{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_WasFired\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((eventsToWaitFor\ \&\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.Start)\ !=\ 0)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackEntry.Start\ +=\ HandleComplete;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((eventsToWaitFor\ \&\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.Interrupt)\ !=\ 0)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackEntry.Interrupt\ +=\ HandleComplete;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((eventsToWaitFor\ \&\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.End)\ !=\ 0)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackEntry.End\ +=\ HandleComplete;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((eventsToWaitFor\ \&\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.Dispose)\ !=\ 0)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackEntry.Dispose\ +=\ HandleComplete;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((eventsToWaitFor\ \&\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_wait_for_spine_animation_a27bfd84aeee202035f15f6c350e22c93}{AnimationEventTypes}}.Complete)\ !=\ 0)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackEntry.Complete\ +=\ HandleComplete;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spine_1_1_unity_1_1_wait_for_spine_animation_a56602b5656527acce15c47f2a12535e0_icgraph}
+\end{center}
+\end{figure}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/\+Spine/\+Runtime/spine-\/unity/\+Utility/\+Yield\+Instructions/\mbox{\hyperlink{_wait_for_spine_animation_8cs}{Wait\+For\+Spine\+Animation.\+cs}}\end{DoxyCompactItemize}

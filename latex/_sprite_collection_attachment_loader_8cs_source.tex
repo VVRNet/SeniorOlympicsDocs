@@ -1,0 +1,187 @@
+\doxysection{Sprite\+Collection\+Attachment\+Loader.\+cs}
+\hypertarget{_sprite_collection_attachment_loader_8cs_source}{}\label{_sprite_collection_attachment_loader_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Modules/TK2D/SpriteCollectionAttachmentLoader.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Modules/TK2D/SpriteCollectionAttachmentLoader.cs}}
+\mbox{\hyperlink{_sprite_collection_attachment_loader_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00030}00030\ \textcolor{preprocessor}{\#if\ SPINE\_TK2D}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_spine}{Spine}};}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00035}00035\ \textcolor{comment}{//\ MITCH:\ handle\ TPackerCW\ flip\ mode\ (probably\ not\ swap\ uv\ horizontaly)}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00036}00036\ \textcolor{keyword}{namespace\ }Spine.Unity.TK2D\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }SpriteCollectionAttachmentLoader\ :\ \mbox{\hyperlink{interface_spine_1_1_attachment_loader}{AttachmentLoader}}\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ tk2dSpriteCollectionData\ sprites;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ u,\ v,\ u2,\ v2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ regionRotated;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ regionOriginalWidth,\ regionOriginalHeight;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ regionWidth,\ regionHeight;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ regionOffsetX,\ regionOffsetY;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Material\ material;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SpriteCollectionAttachmentLoader\ (tk2dSpriteCollectionData\ sprites)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sprites\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}sprites\ cannot\ be\ null."{}});}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ this.sprites\ =\ sprites;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ ProcessSpriteDefinition\ (String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Strip\ folder\ names.}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ name.LastIndexOfAny(\textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[]\ \{\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\ \});}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ name.Substring(index\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ tk2dSpriteDefinition\ def\ =\ sprites.inst.GetSpriteDefinition(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (def\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Sprite\ not\ found\ in\ atlas:\ "{}}\ +\ name,\ sprites);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Sprite\ not\ found\ in\ atlas:\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (def.complexGeometry)}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException(\textcolor{stringliteral}{"{}Complex\ geometry\ is\ not\ supported:\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (def.flipped\ ==\ tk2dSpriteDefinition.FlipMode.TPackerCW)}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException(\textcolor{stringliteral}{"{}Only\ 2D\ Toolkit\ atlases\ are\ supported:\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ minTexCoords\ =\ Vector2.one,\ maxTexCoords\ =\ Vector2.zero;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ def.uvs.Length;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ uv\ =\ def.uvs[i];}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minTexCoords\ =\ Vector2.Min(minTexCoords,\ uv);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxTexCoords\ =\ Vector2.Max(maxTexCoords,\ uv);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ regionRotated\ =\ def.flipped\ ==\ tk2dSpriteDefinition.FlipMode.Tk2d;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (regionRotated)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ temp\ =\ minTexCoords.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minTexCoords.x\ =\ maxTexCoords.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxTexCoords.x\ =\ temp;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ u\ =\ minTexCoords.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ maxTexCoords.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ u2\ =\ maxTexCoords.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ v2\ =\ minTexCoords.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ regionOriginalWidth\ =\ (int)(def.untrimmedBoundsData[1].x\ /\ def.texelSize.x);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ regionOriginalHeight\ =\ (int)(def.untrimmedBoundsData[1].y\ /\ def.texelSize.y);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ regionWidth\ =\ (int)(def.boundsData[1].x\ /\ def.texelSize.x);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ regionHeight\ =\ (int)(def.boundsData[1].y\ /\ def.texelSize.y);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (regionRotated)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tempSwap\ =\ regionWidth;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionWidth\ =\ regionHeight;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regionHeight\ =\ tempSwap;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x0\ =\ def.untrimmedBoundsData[0].x\ -\/\ def.untrimmedBoundsData[1].x\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x1\ =\ def.boundsData[0].x\ -\/\ def.boundsData[1].x\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ regionOffsetX\ =\ (int)((x1\ -\/\ x0)\ /\ def.texelSize.x);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y0\ =\ def.untrimmedBoundsData[0].y\ -\/\ def.untrimmedBoundsData[1].y\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y1\ =\ def.boundsData[0].y\ -\/\ def.boundsData[1].y\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ regionOffsetY\ =\ (int)((y1\ -\/\ y0)\ /\ def.texelSize.y);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ material\ =\ def.materialInst;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ region.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}\ page\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_atlas_page}{AtlasPage}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ page.rendererObject\ =\ material;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ region.page\ =\ page;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ region.u\ =\ u;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ region.v\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ region.u2\ =\ u2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ region.v2\ =\ v2;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ region.rotate\ =\ regionRotated;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ region.degrees\ =\ regionRotated\ ?\ 90\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ region.originalWidth\ =\ (int)regionOriginalWidth;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ region.originalHeight\ =\ (int)regionOriginalHeight;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ region.width\ =\ (int)regionWidth;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ region.height\ =\ (int)regionHeight;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ region.offsetX\ =\ regionOffsetX;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ region.offsetY\ =\ regionOffsetY;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ region;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ LoadSequence\ (\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ basePath,\ \mbox{\hyperlink{class_spine_1_1_sequence}{Sequence}}\ sequence)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_texture_region}{TextureRegion}}[]\ regions\ =\ sequence.\mbox{\hyperlink{class_spine_1_1_sequence_a82e6572e997f6be700e195b15b28956b}{Regions}};}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ regions.Length;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\ =\ sequence.\mbox{\hyperlink{class_spine_1_1_sequence_a37b4fe644aca30b74566a80ca151e1c6}{GetPath}}(basePath,\ i);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ regions[i]\ =\ ProcessSpriteDefinition(path);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (regions[i]\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{keywordtype}{string}.\mbox{\hyperlink{namespace_spine_a66fcb0ab63b2b301097360f7cb4f1cd3}{Format}}(\textcolor{stringliteral}{"{}Region\ not\ found\ in\ atlas:\ \{0\}\ (region\ attachment:\ \{1\})"{}},\ path,\ name));}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_region_attachment}{RegionAttachment}}\ NewRegionAttachment\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin,\ String\ name,\ String\ path,\ \mbox{\hyperlink{class_spine_1_1_sequence}{Sequence}}\ sequence)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_region_attachment}{RegionAttachment}}\ attachment\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_region_attachment}{RegionAttachment}}(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sequence\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LoadSequence(name,\ path,\ sequence);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ ProcessSpriteDefinition(path);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (region\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{keywordtype}{string}.\mbox{\hyperlink{namespace_spine_a66fcb0ab63b2b301097360f7cb4f1cd3}{Format}}(\textcolor{stringliteral}{"{}Region\ not\ found\ in\ atlas:\ \{0\}\ (region\ attachment:\ \{1\})"{}},\ path,\ name));}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Region\ =\ region;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Path\ =\ path;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attachment;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}}\ NewMeshAttachment\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin,\ String\ name,\ String\ path,\ \mbox{\hyperlink{class_spine_1_1_sequence}{Sequence}}\ sequence)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}}\ attachment\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_mesh_attachment}{MeshAttachment}}(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sequence\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LoadSequence(name,\ path,\ sequence);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_atlas_region}{AtlasRegion}}\ region\ =\ ProcessSpriteDefinition(path);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (region\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{keywordtype}{string}.\mbox{\hyperlink{namespace_spine_a66fcb0ab63b2b301097360f7cb4f1cd3}{Format}}(\textcolor{stringliteral}{"{}Region\ not\ found\ in\ atlas:\ \{0\}\ (region\ attachment:\ \{1\})"{}},\ path,\ name));}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Region\ =\ region;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachment.Path\ =\ path;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attachment;}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}}\ NewBoundingBoxAttachment\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin,\ String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}}(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_path_attachment}{PathAttachment}}\ NewPathAttachment\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_path_attachment}{PathAttachment}}(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_point_attachment}{PointAttachment}}\ NewPointAttachment\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_point_attachment}{PointAttachment}}(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_clipping_attachment}{ClippingAttachment}}\ NewClippingAttachment\ (\mbox{\hyperlink{class_spine_1_1_skin}{Skin}}\ skin,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_clipping_attachment}{ClippingAttachment}}(name);}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00180}00180\ \}}
+\DoxyCodeLine{\Hypertarget{_sprite_collection_attachment_loader_8cs_source_l00181}00181\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

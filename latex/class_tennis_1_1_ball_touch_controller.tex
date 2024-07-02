@@ -1,0 +1,258 @@
+\doxysection{Tennis.\+Ball\+Touch\+Controller 클래스 참조}
+\hypertarget{class_tennis_1_1_ball_touch_controller}{}\label{class_tennis_1_1_ball_touch_controller}\index{Tennis.BallTouchController@{Tennis.BallTouchController}}
+
+
+Tennis.\+Ball\+Touch\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_tennis_1_1_ball_touch_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Tennis.\+Ball\+Touch\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_tennis_1_1_ball_touch_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72}{On\+Touch}} (float x, float y)
+\item 
+void \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{Touch\+Get\+Score\+Left}} (\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}} team)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{root\+Object}}
+\item 
+Game\+Object \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hit\+Effect\+Image}}
+\item 
+Game\+Object \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{touch\+Effect}}
+\item 
+Game\+Object \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{ball\+Obj}}
+\item 
+Game\+Object \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{ball\+Touch\+Round}}
+\item 
+Sphere\+Collider \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c}{ball\+Collider}}
+\item 
+Audio\+Source \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{ball\+Audio}}
+\item 
+Audio\+Clip \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{swing\+Sound}}
+\item 
+bool \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{is\+Left}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!OnTouch@{OnTouch}}
+\index{OnTouch@{OnTouch}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{OnTouch()}{OnTouch()}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72} 
+void Tennis.\+Ball\+Touch\+Controller.\+On\+Touch (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{interface_i_touch_object_aa5baa8693756baf00c210dafdcc39493}{ITouch\+Object}}를 구현.
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ ��ǥ��\ ����Ʈ\ ��ǥ�� ����ȭ\ (0����\ 1\ ����\ ��)}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width,\ (y\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height),\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����Ʈ\ ��ǥ��\ ���� ��ǥ�� ��ȯ}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.transform);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!TouchGetScoreLeft@{TouchGetScoreLeft}}
+\index{TouchGetScoreLeft@{TouchGetScoreLeft}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{TouchGetScoreLeft()}{TouchGetScoreLeft()}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381} 
+void Tennis.\+Ball\+Touch\+Controller.\+Touch\+Get\+Score\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}}]{team}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00075}{75}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ this.GetComponent<Rigidbody>().constraints\ =\ RigidbodyConstraints.FreezePosition;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ ����Ʈ}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{touchEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ ballAudio.clip\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{swingSound}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{ballAudio}}.Play();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//����}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(team,\ 1);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoTouch());}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!ballAudio@{ballAudio}}
+\index{ballAudio@{ballAudio}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{ballAudio}{ballAudio}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d} 
+Audio\+Source Tennis.\+Ball\+Touch\+Controller.\+ball\+Audio}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!ballCollider@{ballCollider}}
+\index{ballCollider@{ballCollider}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{ballCollider}{ballCollider}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c} 
+Sphere\+Collider Tennis.\+Ball\+Touch\+Controller.\+ball\+Collider}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!ballObj@{ballObj}}
+\index{ballObj@{ballObj}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{ballObj}{ballObj}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb} 
+Game\+Object Tennis.\+Ball\+Touch\+Controller.\+ball\+Obj}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!ballTouchRound@{ballTouchRound}}
+\index{ballTouchRound@{ballTouchRound}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{ballTouchRound}{ballTouchRound}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c} 
+Game\+Object Tennis.\+Ball\+Touch\+Controller.\+ball\+Touch\+Round}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!hitEffectImage@{hitEffectImage}}
+\index{hitEffectImage@{hitEffectImage}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{hitEffectImage}{hitEffectImage}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4} 
+Game\+Object Tennis.\+Ball\+Touch\+Controller.\+hit\+Effect\+Image}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!isLeft@{isLeft}}
+\index{isLeft@{isLeft}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{isLeft}{isLeft}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c} 
+bool Tennis.\+Ball\+Touch\+Controller.\+is\+Left}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!rootObject@{rootObject}}
+\index{rootObject@{rootObject}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{rootObject}{rootObject}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528} 
+Game\+Object Tennis.\+Ball\+Touch\+Controller.\+root\+Object}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!swingSound@{swingSound}}
+\index{swingSound@{swingSound}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{swingSound}{swingSound}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6} 
+Audio\+Clip Tennis.\+Ball\+Touch\+Controller.\+swing\+Sound}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}\index{Tennis.BallTouchController@{Tennis.BallTouchController}!touchEffect@{touchEffect}}
+\index{touchEffect@{touchEffect}!Tennis.BallTouchController@{Tennis.BallTouchController}}
+\doxysubsubsection{\texorpdfstring{touchEffect}{touchEffect}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43} 
+Game\+Object Tennis.\+Ball\+Touch\+Controller.\+touch\+Effect}
+
+
+
+\mbox{\hyperlink{_ball_touch_controller_8cs_source}{Ball\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_touch_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Exercise/\+Tennis/\mbox{\hyperlink{_ball_touch_controller_8cs}{Ball\+Touch\+Controller.\+cs}}\end{DoxyCompactItemize}

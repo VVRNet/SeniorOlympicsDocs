@@ -1,0 +1,85 @@
+\doxysection{Skeleton\+Root\+Motion\+Inspector.\+cs}
+\hypertarget{_skeleton_root_motion_inspector_8cs_source}{}\label{_skeleton_root_motion_inspector_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Components/SkeletonRootMotionInspector.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Editor/spine-\/unity/Editor/Components/SkeletonRootMotionInspector.cs}}
+\mbox{\hyperlink{_skeleton_root_motion_inspector_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity_1_1_editor}{Spine.Unity.Editor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00034}00034\ \ \ \ \ [CustomEditor(typeof(SkeletonRootMotion))]}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00035}00035\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00036}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector}{SkeletonRootMotionInspector}}\ :\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_base_inspector}{SkeletonRootMotionBaseInspector}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00037}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8cb3e44680c209d1f85dd302405f0ff8}{00037}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ SerializedProperty\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8cb3e44680c209d1f85dd302405f0ff8}{animationTrackFlags}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8b50f2b6f7aebfba2245517c2496e2c4}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ GUIContent\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8b50f2b6f7aebfba2245517c2496e2c4}{animationTrackFlagsLabel}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ TrackNames;}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_aba26d1fbca6199d334ea5db810a49ec7}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_aba26d1fbca6199d334ea5db810a49ec7}{OnEnable}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ base.OnEnable();}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8cb3e44680c209d1f85dd302405f0ff8}{animationTrackFlags}}\ =\ serializedObject.FindProperty(\textcolor{stringliteral}{"{}animationTrackFlags"{}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8b50f2b6f7aebfba2245517c2496e2c4}{animationTrackFlagsLabel}}\ =\ \textcolor{keyword}{new}\ UnityEngine.GUIContent(\textcolor{stringliteral}{"{}Animation\ Tracks"{}},}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Animation\ tracks\ to\ apply\ root\ motion\ at.\ Defaults\ to\ the\ first"{}}\ +}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ animation\ track\ (index\ 0)."{}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a27356eac4be4ccefa6f1ead146882128}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{override}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a27356eac4be4ccefa6f1ead146882128}{OnInspectorGUI}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ base.MainPropertyFields();}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a359b78eff9d9dcf8110fdebf00c7d31b}{AnimationTracksPropertyField}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ base.OptionalPropertyFields();}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ serializedObject.ApplyModifiedProperties();}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00060}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a359b78eff9d9dcf8110fdebf00c7d31b}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a359b78eff9d9dcf8110fdebf00c7d31b}{AnimationTracksPropertyField}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TrackNames\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a935e13aed9ab8885ae10508f037e8ba2}{InitTrackNames}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ animationTrackFlags.intValue\ =\ EditorGUILayout.MaskField(}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8b50f2b6f7aebfba2245517c2496e2c4}{animationTrackFlagsLabel}},\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a8cb3e44680c209d1f85dd302405f0ff8}{animationTrackFlags}}.intValue,\ TrackNames);}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00071}\mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a935e13aed9ab8885ae10508f037e8ba2}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_editor_1_1_skeleton_root_motion_inspector_a935e13aed9ab8885ae10508f037e8ba2}{InitTrackNames}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numEntries\ =\ 32;}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ TrackNames\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[numEntries];}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numEntries;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TrackNames[i]\ =\ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}Track\ \{0\}"{}},\ i);}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_root_motion_inspector_8cs_source_l00079}00079\ \}}
+
+\end{DoxyCode}

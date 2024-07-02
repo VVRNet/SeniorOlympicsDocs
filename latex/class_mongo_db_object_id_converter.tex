@@ -1,0 +1,115 @@
+\doxysection{Mongo\+Db\+Object\+Id\+Converter 클래스 참조}
+\hypertarget{class_mongo_db_object_id_converter}{}\label{class_mongo_db_object_id_converter}\index{MongoDbObjectIdConverter@{MongoDbObjectIdConverter}}
+
+
+Mongo\+Db\+Object\+Id\+Converter에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_mongo_db_object_id_converter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Mongo\+Db\+Object\+Id\+Converter에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_mongo_db_object_id_converter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_mongo_db_object_id_converter_a05f9bf608d6580b5bd7363d58dae4b3f}{Write\+Json}} (Json\+Writer writer, object value, Json\+Serializer serializer)
+\item 
+override object \mbox{\hyperlink{class_mongo_db_object_id_converter_a7b2c537bfe82a355ec5629f147111156}{Read\+Json}} (Json\+Reader reader, Type object\+Type, object existing\+Value, Json\+Serializer serializer)
+\item 
+override bool \mbox{\hyperlink{class_mongo_db_object_id_converter_a1b4c6642d5a40702f545472a817a425d}{Can\+Convert}} (Type object\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source}{Mongo\+Db\+Object\+Id\+Converter.\+cs}} 파일의 \mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_mongo_db_object_id_converter_a1b4c6642d5a40702f545472a817a425d}\index{MongoDbObjectIdConverter@{MongoDbObjectIdConverter}!CanConvert@{CanConvert}}
+\index{CanConvert@{CanConvert}!MongoDbObjectIdConverter@{MongoDbObjectIdConverter}}
+\doxysubsubsection{\texorpdfstring{CanConvert()}{CanConvert()}}
+{\footnotesize\ttfamily \label{class_mongo_db_object_id_converter_a1b4c6642d5a40702f545472a817a425d} 
+override bool Mongo\+Db\+Object\+Id\+Converter.\+Can\+Convert (\begin{DoxyParamCaption}\item[{Type}]{object\+Type}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source}{Mongo\+Db\+Object\+Id\+Converter.\+cs}} 파일의 \mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ objectType\ ==\ typeof(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_mongo_db_object_id_converter_a7b2c537bfe82a355ec5629f147111156}\index{MongoDbObjectIdConverter@{MongoDbObjectIdConverter}!ReadJson@{ReadJson}}
+\index{ReadJson@{ReadJson}!MongoDbObjectIdConverter@{MongoDbObjectIdConverter}}
+\doxysubsubsection{\texorpdfstring{ReadJson()}{ReadJson()}}
+{\footnotesize\ttfamily \label{class_mongo_db_object_id_converter_a7b2c537bfe82a355ec5629f147111156} 
+override object Mongo\+Db\+Object\+Id\+Converter.\+Read\+Json (\begin{DoxyParamCaption}\item[{Json\+Reader}]{reader}{, }\item[{Type}]{object\+Type}{, }\item[{object}]{existing\+Value}{, }\item[{Json\+Serializer}]{serializer}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source}{Mongo\+Db\+Object\+Id\+Converter.\+cs}} 파일의 \mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MongoDB����\ �����͸�\ �޾ƿ� ��\ \_id\ �ʵ带\ �ʱ�ȭ}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reader.TokenType\ ==\ JsonToken.Null)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reader.TokenType\ ==\ JsonToken.String)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ reader.Value.ToString();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ UnityEngine.Debug.Log(reader.Value);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ reader.Value;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_mongo_db_object_id_converter_a05f9bf608d6580b5bd7363d58dae4b3f}\index{MongoDbObjectIdConverter@{MongoDbObjectIdConverter}!WriteJson@{WriteJson}}
+\index{WriteJson@{WriteJson}!MongoDbObjectIdConverter@{MongoDbObjectIdConverter}}
+\doxysubsubsection{\texorpdfstring{WriteJson()}{WriteJson()}}
+{\footnotesize\ttfamily \label{class_mongo_db_object_id_converter_a05f9bf608d6580b5bd7363d58dae4b3f} 
+override void Mongo\+Db\+Object\+Id\+Converter.\+Write\+Json (\begin{DoxyParamCaption}\item[{Json\+Writer}]{writer}{, }\item[{object}]{value}{, }\item[{Json\+Serializer}]{serializer}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source}{Mongo\+Db\+Object\+Id\+Converter.\+cs}} 파일의 \mbox{\hyperlink{_mongo_db_object_id_converter_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MongoDB�� �����͸�\ ����\ ��\ \_id\ �ʵ带\ ��������\ ����}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ �ƹ�\ �۾��� ����\ ����}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ writer.WriteNull();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ writer.WriteValue(value.ToString());}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\mbox{\hyperlink{_mongo_db_object_id_converter_8cs}{Mongo\+Db\+Object\+Id\+Converter.\+cs}}\end{DoxyCompactItemize}

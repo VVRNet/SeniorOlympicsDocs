@@ -1,0 +1,83 @@
+\doxysection{Hurt\+Flash\+Effect.\+cs}
+\hypertarget{_hurt_flash_effect_8cs_source}{}\label{_hurt_flash_effect_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/HurtFlashEffect.cs@{D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/HurtFlashEffect.cs}}
+\mbox{\hyperlink{_hurt_flash_effect_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00034}\mbox{\hyperlink{class_hurt_flash_effect}{00034}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hurt_flash_effect}{HurtFlashEffect}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ DefaultFlashCount\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00038}\mbox{\hyperlink{class_hurt_flash_effect_add95866a522fb863c53763e103e8e745}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hurt_flash_effect_add95866a522fb863c53763e103e8e745}{flashCount}}\ =\ DefaultFlashCount;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00039}\mbox{\hyperlink{class_hurt_flash_effect_a6ea4edc95cb351ed15db78fb238cff2b}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{class_hurt_flash_effect_a6ea4edc95cb351ed15db78fb238cff2b}{flashColor}}\ =\ Color.white;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00040}00040\ \ \ \ \ [Range(1f\ /\ 120f,\ 1f\ /\ 15f)]}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00041}\mbox{\hyperlink{class_hurt_flash_effect_a79ee9aa953a443ae0b834d3f099adf7a}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_hurt_flash_effect_a79ee9aa953a443ae0b834d3f099adf7a}{interval}}\ =\ 1f\ /\ 60f;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00042}\mbox{\hyperlink{class_hurt_flash_effect_ab69522d0aa50736e2cc76d0fa0127d13}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_hurt_flash_effect_ab69522d0aa50736e2cc76d0fa0127d13}{fillPhaseProperty}}\ =\ \textcolor{stringliteral}{"{}\_FillPhase"{}};}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00043}\mbox{\hyperlink{class_hurt_flash_effect_a0f300a769e0363909ea6639779611fe2}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_hurt_flash_effect_a0f300a769e0363909ea6639779611fe2}{fillColorProperty}}\ =\ \textcolor{stringliteral}{"{}\_FillColor"{}};}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00045}00045\ \ \ \ \ MaterialPropertyBlock\ mpb;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00046}00046\ \ \ \ \ MeshRenderer\ meshRenderer;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00048}\mbox{\hyperlink{class_hurt_flash_effect_aa9012b8f9d452642994fc694e1d5d589}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hurt_flash_effect_aa9012b8f9d452642994fc694e1d5d589}{Flash}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mpb\ ==\ \textcolor{keyword}{null})\ mpb\ =\ \textcolor{keyword}{new}\ MaterialPropertyBlock();}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meshRenderer\ ==\ \textcolor{keyword}{null})\ meshRenderer\ =\ GetComponent<MeshRenderer>();}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ meshRenderer.GetPropertyBlock(mpb);}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ StartCoroutine(FlashRoutine());}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00056}00056\ \ \ \ \ IEnumerator\ FlashRoutine\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hurt_flash_effect_add95866a522fb863c53763e103e8e745}{flashCount}}\ <\ 0)\ \mbox{\hyperlink{class_hurt_flash_effect_add95866a522fb863c53763e103e8e745}{flashCount}}\ =\ DefaultFlashCount;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fillPhase\ =\ Shader.PropertyToID(\mbox{\hyperlink{class_hurt_flash_effect_ab69522d0aa50736e2cc76d0fa0127d13}{fillPhaseProperty}});}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fillColor\ =\ Shader.PropertyToID(\mbox{\hyperlink{class_hurt_flash_effect_a0f300a769e0363909ea6639779611fe2}{fillColorProperty}});}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ WaitForSeconds\ wait\ =\ \textcolor{keyword}{new}\ WaitForSeconds(\mbox{\hyperlink{class_hurt_flash_effect_a79ee9aa953a443ae0b834d3f099adf7a}{interval}});}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hurt_flash_effect_add95866a522fb863c53763e103e8e745}{flashCount}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ mpb.SetColor(fillColor,\ \mbox{\hyperlink{class_hurt_flash_effect_a6ea4edc95cb351ed15db78fb238cff2b}{flashColor}});}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ mpb.SetFloat(fillPhase,\ 1f);}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ meshRenderer.SetPropertyBlock(mpb);}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ wait;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ mpb.SetFloat(fillPhase,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ meshRenderer.SetPropertyBlock(mpb);}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ wait;}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_hurt_flash_effect_8cs_source_l00077}00077\ \}}
+
+\end{DoxyCode}

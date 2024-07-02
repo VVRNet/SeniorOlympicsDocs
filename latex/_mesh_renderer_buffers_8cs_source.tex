@@ -1,0 +1,135 @@
+\doxysection{Mesh\+Renderer\+Buffers.\+cs}
+\hypertarget{_mesh_renderer_buffers_8cs_source}{}\label{_mesh_renderer_buffers_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Mesh Generation/MeshRendererBuffers.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Mesh Generation/MeshRendererBuffers.cs}}
+\mbox{\hyperlink{_mesh_renderer_buffers_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00030}00030\ \textcolor{comment}{//\ Not\ for\ optimization.\ Do\ not\ disable.}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00031}\mbox{\hyperlink{_mesh_renderer_buffers_8cs_a22394b1bf659e141bf2f51d208ec06ad}{00031}}\ \textcolor{preprocessor}{\#define\ SPINE\_TRIANGLECHECK\ }\textcolor{comment}{//\ Avoid\ calling\ SetTriangles\ at\ the\ cost\ of\ checking\ for\ mesh\ differences\ (vertex\ counts,\ memberwise\ attachment\ list\ compare)\ every\ frame.}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00032}00032\ \textcolor{comment}{//\#define\ SPINE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00036}00036\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00038}00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00040}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers}{MeshRendererBuffers}}\ :\ IDisposable\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered}{DoubleBuffered<SmartMesh>}}\ doubleBufferedMesh;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ readonly\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Material>}}\ submeshMaterials\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Material>}}();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ Material[]\ sharedMaterials\ =\ \textcolor{keyword}{new}\ Material[0];}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00045}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a11451ece54983c867abd359c3df84c3e}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a11451ece54983c867abd359c3df84c3e}{Initialize}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doubleBufferedMesh\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doubleBufferedMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered_af2f0e2b5960fc0cb567a58ee72e6449f}{GetNext}}().Clear();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doubleBufferedMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered_af2f0e2b5960fc0cb567a58ee72e6449f}{GetNext}}().Clear();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ submeshMaterials.Clear();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doubleBufferedMesh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered}{DoubleBuffered<SmartMesh>}}();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00057}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a664abb3a5e6c98765ef6a357a229192e}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Material[]\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a664abb3a5e6c98765ef6a357a229192e}{GetUpdatedSharedMaterialsArray}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (submeshMaterials.Count\ ==\ sharedMaterials.Length)}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ submeshMaterials.CopyTo(sharedMaterials);}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sharedMaterials\ =\ submeshMaterials.ToArray();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sharedMaterials;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00067}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_ad60996089f179ea505ee9bede6a75992}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_ad60996089f179ea505ee9bede6a75992}{MaterialsChangedInLastUpdate}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newSubmeshMaterials\ =\ submeshMaterials.Count;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ Material[]\ sharedMaterials\ =\ this.sharedMaterials;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newSubmeshMaterials\ !=\ sharedMaterials.Length)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ Material[]\ submeshMaterialsItems\ =\ submeshMaterials.Items;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ newSubmeshMaterials;\ i++)}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Material.ReferenceEquals(submeshMaterialsItems[i],\ sharedMaterials[i]))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//if\ (submeshMaterialsItems[i].GetInstanceID()\ !=\ sharedMaterials[i].GetInstanceID())\ return\ true;}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00080}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a62481e4aa36a0a2c9fea68887c40e9b9}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a62481e4aa36a0a2c9fea68887c40e9b9}{UpdateSharedMaterials}}\ (\mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<SubmeshInstruction>}}\ instructions)\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newSize\ =\ instructions.\mbox{\hyperlink{class_spine_1_1_exposed_list_a1f98637f699b80b9cf46b3638962b0a0}{Count}};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//submeshMaterials.Resize(instructions.Count);}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newSize\ >\ submeshMaterials.Items.Length)}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Array.Resize(ref\ submeshMaterials.Items,\ newSize);}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ submeshMaterials.Count\ =\ newSize;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ Material[]\ submeshMaterialsItems\ =\ submeshMaterials.Items;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spine_1_1_unity_1_1_submesh_instruction}{SubmeshInstruction}}[]\ instructionsItems\ =\ instructions.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ newSize;\ i++)}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ submeshMaterialsItems[i]\ =\ instructionsItems[i].material;}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00094}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a679bf0988f9c467f74ec081b7b955c16}{00094}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh}{SmartMesh}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a679bf0988f9c467f74ec081b7b955c16}{GetNextMesh}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ doubleBufferedMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered_af2f0e2b5960fc0cb567a58ee72e6449f}{GetNext}}();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00098}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_ace709a76e5075e29bfe7d1f8945190d5}{00098}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_ace709a76e5075e29bfe7d1f8945190d5}{Clear}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ sharedMaterials\ =\ \textcolor{keyword}{new}\ Material[0];}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ submeshMaterials.Clear();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00103}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a76bcf260bd53201d4ec870534536c132}{00103}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_a76bcf260bd53201d4ec870534536c132}{Dispose}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doubleBufferedMesh\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ doubleBufferedMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered_af2f0e2b5960fc0cb567a58ee72e6449f}{GetNext}}().Dispose();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ doubleBufferedMesh.\mbox{\hyperlink{class_spine_1_1_unity_1_1_double_buffered_af2f0e2b5960fc0cb567a58ee72e6449f}{GetNext}}().Dispose();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ doubleBufferedMesh\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00111}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh}{00111}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh}{SmartMesh}}\ :\ IDisposable\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00112}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{00112}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespace_spine_a67af89d777151a1d991718c9aaef2332a710fdb6adb881b408116ef95335e1961}{Mesh}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}}\ =\ SpineMesh.NewSkeletonMesh();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00113}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7abd4344c8bbf37768a7102df1744ac7}{00113}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction}{SkeletonRendererInstruction}}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7abd4344c8bbf37768a7102df1744ac7}{instructionUsed}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction}{SkeletonRendererInstruction}}();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00115}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_ad881ba70e06e43275c51f077ad7e2471}{00115}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_ad881ba70e06e43275c51f077ad7e2471}{Clear}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7abd4344c8bbf37768a7102df1744ac7}{instructionUsed}}.\mbox{\hyperlink{class_spine_1_1_unity_1_1_skeleton_renderer_instruction_abe026d6be1737795d804bfbface0713c}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00120}\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7e03669042099544a0c840332737d363}{00120}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_a7e03669042099544a0c840332737d363}{Dispose}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}}\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00122}00122\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.isEditor\ \&\&\ !Application.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Object.DestroyImmediate(\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}});}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Object.Destroy(\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}});}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00127}00127\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Object.Destroy(\mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}});}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00129}00129\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_unity_1_1_mesh_renderer_buffers_1_1_smart_mesh_aa7961ec7a2ebd6a4068575e5b8ee2184}{mesh}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_renderer_buffers_8cs_source_l00135}00135\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,218 @@
+\doxysection{Skeleton\+Bounds.\+cs}
+\hypertarget{_skeleton_bounds_8cs_source}{}\label{_skeleton_bounds_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/SkeletonBounds.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/csharp/SkeletonBounds.cs}}
+\mbox{\hyperlink{_skeleton_bounds_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine}{Spine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00038}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_skeleton_bounds}{SkeletonBounds}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Polygon>}}\ polygonPool\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Polygon>}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ minX,\ minY,\ maxX,\ maxY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<BoundingBoxAttachment>}}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{BoundingBoxes}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00043}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Polygon>}}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00044}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a33c5f7041bdb7371fcfb0b2c1893000e}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a33c5f7041bdb7371fcfb0b2c1893000e}{MinX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ minX;\ \}\ \textcolor{keyword}{set}\ \{\ minX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00045}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a3950547a9548e604a80786e90634a754}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a3950547a9548e604a80786e90634a754}{MinY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ minY;\ \}\ \textcolor{keyword}{set}\ \{\ minY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad47f19660666838cca87d30929130078}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad47f19660666838cca87d30929130078}{MaxX}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ maxX;\ \}\ \textcolor{keyword}{set}\ \{\ maxX\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00047}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_aa2d410c22cc63e15c2efd77bad745064}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_aa2d410c22cc63e15c2efd77bad745064}{MaxY}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ maxY;\ \}\ \textcolor{keyword}{set}\ \{\ maxY\ =\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00048}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a0d0dc7aeb4eb483b2ebb327f253c677b}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a0d0dc7aeb4eb483b2ebb327f253c677b}{Width}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ maxX\ -\/\ minX;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00049}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ab98dc4e3771dbf390db69b73172b1d7e}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ab98dc4e3771dbf390db69b73172b1d7e}{Height}}\ \{\ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ maxY\ -\/\ minY;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00051}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a72a91a5f9e330a20bb58600d699e8f86}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a72a91a5f9e330a20bb58600d699e8f86}{SkeletonBounds}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{BoundingBoxes}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<BoundingBoxAttachment>}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Polygon>}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00064}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_acd919255a615f17879835bcc1b218bd4}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_acd919255a615f17879835bcc1b218bd4}{Update}}\ (\mbox{\hyperlink{class_spine_1_1_skeleton}{Skeleton}}\ skeleton,\ \textcolor{keywordtype}{bool}\ updateAabb)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<BoundingBoxAttachment>}}\ boundingBoxes\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{BoundingBoxes}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_exposed_list}{ExposedList<Polygon>}}\ polygons\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot}{Slot}}[]\ slots\ =\ skeleton.slots.Items;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ slotCount\ =\ skeleton.slots.Count;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxes.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ polygons.\mbox{\hyperlink{class_spine_1_1_exposed_list_a1f98637f699b80b9cf46b3638962b0a0}{Count}};\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygonPool.\mbox{\hyperlink{class_spine_1_1_exposed_list_af1b402437b46a187ebc58bc9f200689b}{Add}}(polygons.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[i]);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ polygons.\mbox{\hyperlink{class_spine_1_1_exposed_list_ab2453ae483ae98e5e68ea616320c8f5b}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ slotCount;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_slot}{Slot}}\ slot\ =\ slots[i];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!slot.bone.active)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}}\ boundingBox\ =\ slot.attachment\ as\ \mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundingBox\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBoxes.\mbox{\hyperlink{class_spine_1_1_exposed_list_af1b402437b46a187ebc58bc9f200689b}{Add}}(boundingBox);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}\ polygon\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ poolCount\ =\ polygonPool.\mbox{\hyperlink{class_spine_1_1_exposed_list_a1f98637f699b80b9cf46b3638962b0a0}{Count}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (poolCount\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygon\ =\ polygonPool.\mbox{\hyperlink{class_spine_1_1_exposed_list_a8c08a889d5162a41b308c119ac7c0330}{Items}}[poolCount\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygonPool.\mbox{\hyperlink{class_spine_1_1_exposed_list_ae8b96a0a493569d60e8b64442e2feebc}{RemoveAt}}(poolCount\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygon\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygons.\mbox{\hyperlink{class_spine_1_1_exposed_list_af1b402437b46a187ebc58bc9f200689b}{Add}}(polygon);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ boundingBox.worldVerticesLength;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ polygon.Count\ =\ count;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}}.Length\ <\ count)\ polygon.Vertices\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[count];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundingBox.\mbox{\hyperlink{class_spine_1_1_vertex_attachment_a3a09094aaa5c85778385a1b19397fced}{ComputeWorldVertices}}(slot,\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}});}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (updateAabb)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AabbCompute();}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minX\ =\ \textcolor{keywordtype}{int}.MinValue;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minY\ =\ \textcolor{keywordtype}{int}.MinValue;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxX\ =\ \textcolor{keywordtype}{int}.MaxValue;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxY\ =\ \textcolor{keywordtype}{int}.MaxValue;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ AabbCompute\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minX\ =\ \textcolor{keywordtype}{int}.MaxValue,\ minY\ =\ \textcolor{keywordtype}{int}.MaxValue,\ maxX\ =\ \textcolor{keywordtype}{int}.MinValue,\ maxY\ =\ \textcolor{keywordtype}{int}.MinValue;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}[]\ polygons\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Items;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Count;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}\ polygon\ =\ polygons[i];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ vertices\ =\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ii\ =\ 0,\ nn\ =\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a73a4f5583627b47782233ebb59c0178e}{Count}};\ ii\ <\ nn;\ ii\ +=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ vertices[ii];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ vertices[ii\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minX\ =\ Math.Min(minX,\ x);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minY\ =\ Math.Min(minY,\ y);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxX\ =\ Math.Max(maxX,\ x);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxY\ =\ Math.Max(maxY,\ y);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ this.minX\ =\ minX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ this.minY\ =\ minY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ this.maxX\ =\ maxX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ this.maxY\ =\ maxY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00129}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_abec83b44391262fa8c3379755088e497}{00129}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_abec83b44391262fa8c3379755088e497}{AabbContainsPoint}}\ (\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ >=\ minX\ \&\&\ x\ <=\ maxX\ \&\&\ y\ >=\ minY\ \&\&\ y\ <=\ maxY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00134}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad16bbda004b392f723c68d8d53be85a3}{00134}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad16bbda004b392f723c68d8d53be85a3}{AabbIntersectsSegment}}\ (\textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minX\ =\ this.minX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minY\ =\ this.minY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxX\ =\ this.maxX;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxY\ =\ this.maxY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((x1\ <=\ minX\ \&\&\ x2\ <=\ minX)\ ||\ (y1\ <=\ minY\ \&\&\ y2\ <=\ minY)\ ||\ (x1\ >=\ maxX\ \&\&\ x2\ >=\ maxX)\ ||\ (y1\ >=\ maxY\ \&\&\ y2\ >=\ maxY))}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\ =\ (y2\ -\/\ y1)\ /\ (x2\ -\/\ x1);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ m\ *\ (minX\ -\/\ x1)\ +\ y1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >\ minY\ \&\&\ y\ <\ maxY)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ m\ *\ (maxX\ -\/\ x1)\ +\ y1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >\ minY\ \&\&\ y\ <\ maxY)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ (minY\ -\/\ y1)\ /\ m\ +\ x1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ minX\ \&\&\ x\ <\ maxX)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ (maxY\ -\/\ y1)\ /\ m\ +\ x1;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ minX\ \&\&\ x\ <\ maxX)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00154}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ae7b42a01f199285bd65961d77838cde9}{00154}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ae7b42a01f199285bd65961d77838cde9}{AabbIntersectsSkeleton}}\ (\mbox{\hyperlink{class_spine_1_1_skeleton_bounds}{SkeletonBounds}}\ bounds)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ minX\ <\ bounds.maxX\ \&\&\ maxX\ >\ bounds.minX\ \&\&\ minY\ <\ bounds.maxY\ \&\&\ maxY\ >\ bounds.minY;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00159}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_aa76b1181551163ecee40e28e0af5893b}{00159}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_aa76b1181551163ecee40e28e0af5893b}{ContainsPoint}}\ (\mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}\ polygon,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ vertices\ =\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nn\ =\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a73a4f5583627b47782233ebb59c0178e}{Count}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ prevIndex\ =\ nn\ -\/\ 2;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inside\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ii\ =\ 0;\ ii\ <\ nn;\ ii\ +=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ vertexY\ =\ vertices[ii\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ prevY\ =\ vertices[prevIndex\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((vertexY\ <\ y\ \&\&\ prevY\ >=\ y)\ ||\ (prevY\ <\ y\ \&\&\ vertexY\ >=\ y))\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ vertexX\ =\ vertices[ii];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertexX\ +\ (y\ -\/\ vertexY)\ /\ (prevY\ -\/\ vertexY)\ *\ (vertices[prevIndex]\ -\/\ vertexX)\ <\ x)\ inside\ =\ !inside;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prevIndex\ =\ ii;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inside;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00179}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac29c76479a3cb6c9b02c1c92f70b67dd}{00179}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac29c76479a3cb6c9b02c1c92f70b67dd}{ContainsPoint}}\ (\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}[]\ polygons\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Items;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Count;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_aa76b1181551163ecee40e28e0af5893b}{ContainsPoint}}(polygons[i],\ x,\ y))\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{BoundingBoxes}}.Items[i];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00188}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad2af777c0038837f5a8b49939c096198}{00188}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad2af777c0038837f5a8b49939c096198}{IntersectsSegment}}\ (\textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}[]\ polygons\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Items;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ n\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Count;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ad2af777c0038837f5a8b49939c096198}{IntersectsSegment}}(polygons[i],\ x1,\ y1,\ x2,\ y2))\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{BoundingBoxes}}.Items[i];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00196}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ae6fa812c792b9dbac92854113a238731}{00196}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ae6fa812c792b9dbac92854113a238731}{IntersectsSegment}}\ (\mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}\ polygon,\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}[]\ vertices\ =\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nn\ =\ polygon.\mbox{\hyperlink{class_spine_1_1_polygon_a73a4f5583627b47782233ebb59c0178e}{Count}};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width12\ =\ x1\ -\/\ x2,\ height12\ =\ y1\ -\/\ y2;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det1\ =\ x1\ *\ y2\ -\/\ y1\ *\ x2;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x3\ =\ vertices[nn\ -\/\ 2],\ y3\ =\ vertices[nn\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ii\ =\ 0;\ ii\ <\ nn;\ ii\ +=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x4\ =\ vertices[ii],\ y4\ =\ vertices[ii\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det2\ =\ x3\ *\ y4\ -\/\ y3\ *\ x4;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width34\ =\ x3\ -\/\ x4,\ height34\ =\ y3\ -\/\ y4;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ det3\ =\ width12\ *\ height34\ -\/\ height12\ *\ width34;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ (det1\ *\ width34\ -\/\ width12\ *\ det2)\ /\ det3;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (((x\ >=\ x3\ \&\&\ x\ <=\ x4)\ ||\ (x\ >=\ x4\ \&\&\ x\ <=\ x3))\ \&\&\ ((x\ >=\ x1\ \&\&\ x\ <=\ x2)\ ||\ (x\ >=\ x2\ \&\&\ x\ <=\ x1)))\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ (det1\ *\ height34\ -\/\ height12\ *\ det2)\ /\ det3;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (((y\ >=\ y3\ \&\&\ y\ <=\ y4)\ ||\ (y\ >=\ y4\ \&\&\ y\ <=\ y3))\ \&\&\ ((y\ >=\ y1\ \&\&\ y\ <=\ y2)\ ||\ (y\ >=\ y2\ \&\&\ y\ <=\ y1)))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x3\ =\ x4;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y3\ =\ y4;}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00219}\mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a9363ab84c726b888c791921bc0bfdb66}{00219}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a9363ab84c726b888c791921bc0bfdb66}{GetPolygon}}\ (\mbox{\hyperlink{class_spine_1_1_bounding_box_attachment}{BoundingBoxAttachment}}\ attachment)\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_a841a55e838834c274f0ebcae189a77f9}{BoundingBoxes}}.IndexOf(attachment);}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ index\ ==\ -\/1\ ?\ null\ :\ \mbox{\hyperlink{class_spine_1_1_skeleton_bounds_ac2ffe9ef8fec69cb53c27f3de1a036df}{Polygons}}.Items[index];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00223}00223\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00225}\mbox{\hyperlink{class_spine_1_1_polygon}{00225}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_polygon}{Polygon}}\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00226}\mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{00226}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00227}\mbox{\hyperlink{class_spine_1_1_polygon_a73a4f5583627b47782233ebb59c0178e}{00227}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_spine_1_1_polygon_a73a4f5583627b47782233ebb59c0178e}{Count}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00229}\mbox{\hyperlink{class_spine_1_1_polygon_a442df923892656b587261ab0843a48ed}{00229}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spine_1_1_polygon_a442df923892656b587261ab0843a48ed}{Polygon}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spine_1_1_polygon_a6fb98c64ec485f733459e9f2d3de91c4}{Vertices}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[16];}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_skeleton_bounds_8cs_source_l00233}00233\ \}}
+
+\end{DoxyCode}

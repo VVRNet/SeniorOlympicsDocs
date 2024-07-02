@@ -1,0 +1,366 @@
+\doxysection{Bubble.\+Bubble\+Manager 클래스 참조}
+\hypertarget{class_bubble_1_1_bubble_manager}{}\label{class_bubble_1_1_bubble_manager}\index{Bubble.BubbleManager@{Bubble.BubbleManager}}
+
+
+Bubble.\+Bubble\+Manager에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_bubble_1_1_bubble_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Bubble.\+Bubble\+Manager에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_bubble_1_1_bubble_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30}{Show\+Question}} ()
+\item 
+void \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135}{Reset\+Stage}} ()
+\item 
+void \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{Spawn\+Correct\+Quiz}} ()
+\item 
+void \mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{Spawn\+Wrong\+Balloon}} ()
+\item 
+void \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{Complete\+Stage}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_color_list_bubble}{Color\+List\+Bubble}} $>$ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{Color\+ListQ}}
+\item 
+List$<$ \mbox{\hyperlink{class_color_position}{Color\+Position}} $>$ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{Color\+PositionQ}}
+\item 
+List$<$ int $>$ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quiz\+Text\+Index}}
+\item 
+int \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quiz\+Text\+Count}}
+\item 
+int \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correct\+Check\+Count}}
+\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quiz\+Object}}
+\item 
+bool \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c}{is\+Match}}
+\item 
+int \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{round\+Cnt}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!CompleteStage@{CompleteStage}}
+\index{CompleteStage@{CompleteStage}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{CompleteStage()}{CompleteStage()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216} 
+void Bubble.\+Bubble\+Manager.\+Complete\+Stage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00169}{169}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}\ ==\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}})}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GoNextStage());}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!ResetStage@{ResetStage}}
+\index{ResetStage@{ResetStage}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{ResetStage()}{ResetStage()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135} 
+void Bubble.\+Bubble\+Manager.\+Reset\+Stage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00084}{84}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Clear();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}\ =\ 0;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ quizTransform\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}}[\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}].roundPositon;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ quizTransform.Count;\ i++)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<TextMeshPro>();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.colorGradientPreset\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.fontSize\ =\ 4;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ touch.Count;\ i++)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch[i].isCorrect\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch[i].isTouch\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleList(ref\ quizTransform);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{SpawnCorrectQuiz}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!ShowQuestion@{ShowQuestion}}
+\index{ShowQuestion@{ShowQuestion}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{ShowQuestion()}{ShowQuestion()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30} 
+void Bubble.\+Bubble\+Manager.\+Show\+Question (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00079}{79}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135}{ResetStage}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!SpawnCorrectQuiz@{SpawnCorrectQuiz}}
+\index{SpawnCorrectQuiz@{SpawnCorrectQuiz}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{SpawnCorrectQuiz()}{SpawnCorrectQuiz()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331} 
+void Bubble.\+Bubble\+Manager.\+Spawn\+Correct\+Quiz (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00110}{110}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ i++)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Contains(quizText))}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Add(quizText);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<TextMeshPro>();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetComponent<SpriteRenderer>();}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[quizText].colorNameE.ToString();}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[quizText].answerSpriteColor;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.SetParent(quizTransform[i]);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BubbleTouch\ touch\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].GetComponent<BubbleTouch>();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch.isCorrect\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{SpawnWrongBalloon}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!SpawnWrongBalloon@{SpawnWrongBalloon}}
+\index{SpawnWrongBalloon@{SpawnWrongBalloon}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{SpawnWrongBalloon()}{SpawnWrongBalloon()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96} 
+void Bubble.\+Bubble\+Manager.\+Spawn\+Wrong\+Balloon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00138}{138}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ List<int>\ usedIndexes\ =\ \textcolor{keyword}{new}\ List<int>();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ List<Sprite>\ usedColors\ =\ \textcolor{keyword}{new}\ List<Sprite>();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ i\ <\ quizTransform.Count;\ i++)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ randomColor;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomIndex\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomColor\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].randomSpriteColor[Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].randomSpriteColor.Count)];}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (usedIndexes.Contains(randomIndex)\ ||\ usedColors.Contains(randomColor));}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedIndexes.Add(randomIndex);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedColors.Add(randomColor);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<TextMeshPro>();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetComponent<SpriteRenderer>();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].colorNameE.ToString();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.sprite\ =\ randomColor;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.SetParent(quizTransform[i]);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!ColorListQ@{ColorListQ}}
+\index{ColorListQ@{ColorListQ}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{ColorListQ}{ColorListQ}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878} 
+List$<$\mbox{\hyperlink{class_color_list_bubble}{Color\+List\+Bubble}}$>$ Bubble.\+Bubble\+Manager.\+Color\+ListQ}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!ColorPositionQ@{ColorPositionQ}}
+\index{ColorPositionQ@{ColorPositionQ}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{ColorPositionQ}{ColorPositionQ}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e} 
+List$<$\mbox{\hyperlink{class_color_position}{Color\+Position}}$>$ Bubble.\+Bubble\+Manager.\+Color\+PositionQ}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!correctCheckCount@{correctCheckCount}}
+\index{correctCheckCount@{correctCheckCount}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{correctCheckCount}{correctCheckCount}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d} 
+int Bubble.\+Bubble\+Manager.\+correct\+Check\+Count}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!isMatch@{isMatch}}
+\index{isMatch@{isMatch}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{isMatch}{isMatch}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c} 
+bool Bubble.\+Bubble\+Manager.\+is\+Match}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00042}{42}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!quizObject@{quizObject}}
+\index{quizObject@{quizObject}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{quizObject}{quizObject}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48} 
+List$<$Game\+Object$>$ Bubble.\+Bubble\+Manager.\+quiz\+Object}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!quizTextCount@{quizTextCount}}
+\index{quizTextCount@{quizTextCount}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{quizTextCount}{quizTextCount}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f} 
+int Bubble.\+Bubble\+Manager.\+quiz\+Text\+Count}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!quizTextIndex@{quizTextIndex}}
+\index{quizTextIndex@{quizTextIndex}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{quizTextIndex}{quizTextIndex}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94} 
+List$<$int$>$ Bubble.\+Bubble\+Manager.\+quiz\+Text\+Index}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}\index{Bubble.BubbleManager@{Bubble.BubbleManager}!roundCnt@{roundCnt}}
+\index{roundCnt@{roundCnt}!Bubble.BubbleManager@{Bubble.BubbleManager}}
+\doxysubsubsection{\texorpdfstring{roundCnt}{roundCnt}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041} 
+int Bubble.\+Bubble\+Manager.\+round\+Cnt}
+
+
+
+\mbox{\hyperlink{_bubble_manager_8cs_source}{Bubble\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_bubble_manager_8cs_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Bubble/\mbox{\hyperlink{_bubble_manager_8cs}{Bubble\+Manager.\+cs}}\end{DoxyCompactItemize}

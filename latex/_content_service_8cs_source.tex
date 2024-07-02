@@ -1,0 +1,81 @@
+\doxysection{Content\+Service.\+cs}
+\hypertarget{_content_service_8cs_source}{}\label{_content_service_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/HTTP/ContentService.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/HTTP/ContentService.cs}}
+\mbox{\hyperlink{_content_service_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00007}\mbox{\hyperlink{class_content_service}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_content_service}{ContentService}}\ :\ \mbox{\hyperlink{class_base_service}{BaseService}}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ dataSource\ =\ \textcolor{stringliteral}{"{}Cluster0"{}};}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ database\ =\ \textcolor{stringliteral}{"{}SeniorOlympic"{}};}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ collection\ =\ \textcolor{stringliteral}{"{}Categories"{}};}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00013}\mbox{\hyperlink{class_content_service_a531ebbf5d21c47b47dfbfdb86903a48a}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerator\ \mbox{\hyperlink{class_content_service_a531ebbf5d21c47b47dfbfdb86903a48a}{CreateContent}}(\mbox{\hyperlink{class_content}{Content}}\ content,\ Action<List<string>>\ callback)}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}insertOne"{}};}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ document\ =\ content}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<string>(url,\ jsonData,\ callback);}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00033}\mbox{\hyperlink{class_content_service_ad1d1c366da314c58dc02ecd2b9d8226b}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerator\ \mbox{\hyperlink{class_content_service_ad1d1c366da314c58dc02ecd2b9d8226b}{GetContents}}(Action<List<Content>>\ callback)}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}find"{}};}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Content>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(response);}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00055}\mbox{\hyperlink{class_content_service_ad6e4b681c275fb5f9b2bed1c40abc97f}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerator\ \mbox{\hyperlink{class_content_service_ad6e4b681c275fb5f9b2bed1c40abc97f}{GetContentById}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ Action<List<Content>>\ callback)}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}findOne"{}};}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(\textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ dataSource\ =\ dataSource,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ database\ =\ database,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ collection\ =\ collection,}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ \{\ \_id\ =\ \textcolor{keywordtype}{id}\ \}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<Content>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_service_8cs_source_l00075}00075\ \}}
+
+\end{DoxyCode}

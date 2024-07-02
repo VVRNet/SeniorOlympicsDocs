@@ -1,0 +1,199 @@
+\doxysection{Lean\+Phrase\+\_\+\+Editor.\+cs}
+\hypertarget{_lean_phrase___editor_8cs_source}{}\label{_lean_phrase___editor_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/Editor/LeanPhrase\_Editor.cs@{D:/Unity/SeniorOlympics/Assets/Plugins/CW/LeanLocalization/Required/Scripts/Editor/LeanPhrase\_Editor.cs}}
+\mbox{\hyperlink{_lean_phrase___editor_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_lean_1_1_common}{Lean.Common}};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_c_w_1_1_common}{CW.Common}};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00006}00006\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }Lean.Localization.Editor}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{using\ }TARGET\ =\ LeanPhrase;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00012}00012\ \ \ \ \ [CanEditMultipleObjects]}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00013}00013\ \ \ \ \ [CustomEditor(typeof(TARGET))]}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }LeanPhrase\_Editor\ :\ CwEditor}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ List<string>\ languageNames\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ List<LeanPhrase.Entry>\ entries\ =\ \textcolor{keyword}{new}\ List<LeanPhrase.Entry>();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnInspector()}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ TARGET\ tgt;\ TARGET[]\ tgts;\ GetTargets(out\ tgt,\ out\ tgts);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ entries.Clear();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ entries.AddRange(tgt.Entries);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ languageNames.Clear();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ languageNames.AddRange(LeanLocalization.CurrentLanguages.Keys);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ tgt.Data\ =\ (LeanPhrase.DataType)GUILayout.Toolbar((\textcolor{keywordtype}{int})tgt.Data,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[]\ \{\ \textcolor{stringliteral}{"{}Text"{}},\ \textcolor{stringliteral}{"{}Object"{}},\ \textcolor{stringliteral}{"{}Sprite"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ languageName\ \textcolor{keywordflow}{in}\ languageNames)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ entry\ =\ \textcolor{keywordflow}{default}(LeanPhrase.Entry);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tgt.TryFindTranslation(languageName,\ ref\ entry)\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawEntry(tgt,\ entry,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entries.Remove(entry);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.BeginHorizontal();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.LabelField(languageName,\ EditorStyles.boldLabel);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GUILayout.Button(\textcolor{stringliteral}{"{}Add"{}},\ EditorStyles.miniButton,\ GUILayout.Width(45.0f))\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Undo.RecordObject(tgt,\ \textcolor{stringliteral}{"{}Add\ Translation"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tgt.AddEntry(languageName);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DirtyAndUpdate();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.EndHorizontal();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entries.Count\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ entry\ \textcolor{keywordflow}{in}\ entries)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DrawEntry(tgt,\ entry,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ DrawEntry(TARGET\ tgt,\ LeanPhrase.Entry\ entry,\ \textcolor{keywordtype}{bool}\ unexpected)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.BeginHorizontal();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.LabelField(entry.Language,\ EditorStyles.boldLabel);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GUILayout.Button(\textcolor{stringliteral}{"{}Modify"{}},\ EditorStyles.miniButton,\ GUILayout.Width(65.0f))\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ menu\ =\ \textcolor{keyword}{new}\ GenericMenu();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ otherEntry\ \textcolor{keywordflow}{in}\ tgt.Entries)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ title\ =\ \textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Auto\ Translate/From\ "{}}\ +\ otherEntry.Language);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry\ !=\ otherEntry\ \&\&\ \textcolor{keywordtype}{string}.IsNullOrEmpty(otherEntry.Text)\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ textInput\ \ \ \ \ \ =\ otherEntry.Text;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ languageInput\ \ =\ \textcolor{keywordflow}{default}(LeanLanguage);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ languageOutput\ =\ \textcolor{keywordflow}{default}(LeanLanguage);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanLocalization.CurrentLanguages.TryGetValue(otherEntry.Language,\ out\ languageInput)\ ==\ \textcolor{keyword}{true}\ \&\&\ LeanLocalization.CurrentLanguages.TryGetValue(entry.Language,\ out\ languageOutput)\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ languageCodeInput\ \ =\ languageInput.TranslationCode;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ languageCodeOutput\ =\ languageOutput.TranslationCode;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddItem(title,\ \textcolor{keyword}{false},\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ textOutput\ =\ \textcolor{keywordflow}{default}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TryAutoTranslate(languageCodeInput,\ languageCodeOutput,\ textInput,\ ref\ textOutput)\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Undo.RecordObject(tgt,\ \textcolor{stringliteral}{"{}Auto\ Translate"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entry.Text\ =\ textOutput;}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorUtility.SetDirty(tgt);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}Failed\ to\ auto\ translate\ text\ for\ some\ reason."{}});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddDisabledItem(title,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddDisabledItem(title,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddSeparator(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.AddItem(\textcolor{keyword}{new}\ GUIContent(\textcolor{stringliteral}{"{}Remove"{}}),\ \textcolor{keyword}{false},\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Undo.RecordObject(tgt,\ \textcolor{stringliteral}{"{}Remove\ Translation"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tgt.RemoveTranslation(entry.Language);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DirtyAndUpdate();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menu.ShowAsContext();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.EndHorizontal();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (unexpected\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUILayout.HelpBox(\textcolor{stringliteral}{"{}Your\ LeanLocalization\ component\ doesn't\ define\ the\ "{}}\ +\ entry.Language\ +\ \textcolor{stringliteral}{"{}\ language."{}},\ MessageType.Warning);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ Undo.RecordObject(tgt,\ \textcolor{stringliteral}{"{}Modified\ Translation"{}});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ EditorGUI.BeginChangeCheck();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (tgt.Data)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ LeanPhrase.DataType.Text:}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entry.Text\ =\ EditorGUILayout.TextArea(entry.Text\ ??\ \textcolor{stringliteral}{"{}"{}},\ GUILayout.MinHeight(40.0f));}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ LeanPhrase.DataType.Object:}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entry.Object\ =\ EditorGUILayout.ObjectField(entry.Object,\ typeof(\mbox{\hyperlink{_c_f_x_r___particle_text_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ LeanPhrase.DataType.Sprite:}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entry.Object\ =\ EditorGUILayout.ObjectField(entry.Object,\ typeof(Sprite),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (EditorGUI.EndChangeCheck()\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DirtyAndUpdate();\ LeanLocalization.UpdateTranslations();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ Separator();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ [MenuItem(\textcolor{stringliteral}{"{}Assets/Create/Lean/Localization/Lean\ Phrase"{}})]}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CreatePhrase()}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ CwHelper.CreatePrefabAsset(\textcolor{stringliteral}{"{}New\ Phrase"{}}).AddComponent<LeanPhrase>();}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ TryAutoTranslate(\textcolor{keywordtype}{string}\ languageCodeInput,\ \textcolor{keywordtype}{string}\ languageCodeOutput,\ \textcolor{keywordtype}{string}\ wordInput,\ ref\ \textcolor{keywordtype}{string}\ wordOutput)}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ url\ \ \ \ \ \ \ =\ \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}https://translate.googleapis.com/translate\_a/single?client=gtx\&sl=\{0\}\&tl=\{1\}\&dt=t\&q=\{2\}"{}},\ languageCodeInput,\ languageCodeOutput,\ System.Web.HttpUtility.UrlEncode(wordInput));}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ webClient\ =\ \textcolor{keyword}{new}\ System.Net.WebClient\ \{\ Encoding\ =\ System.Text.Encoding.UTF8\ \};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ \ \ \ =\ webClient.DownloadString(url);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wordOutput\ =\ result.Substring(4,\ result.IndexOf(\textcolor{stringliteral}{"{}\(\backslash\)"{},\(\backslash\)"{}"{}},\ 4,\ System.StringComparison.Ordinal)\ -\/\ 4);}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00191}00191\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00192}00192\ \}}
+\DoxyCodeLine{\Hypertarget{_lean_phrase___editor_8cs_source_l00193}00193\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

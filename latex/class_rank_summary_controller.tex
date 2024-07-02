@@ -1,0 +1,204 @@
+\doxysection{Rank\+Summary\+Controller 클래스 참조}
+\hypertarget{class_rank_summary_controller}{}\label{class_rank_summary_controller}\index{RankSummaryController@{RankSummaryController}}
+
+
+Rank\+Summary\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_rank_summary_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Rank\+Summary\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_rank_summary_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rank_summary_controller_a8ca879c2a9e83a0c4d2c9025d876c1ba}{Get\+Rankers}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_rank_summary_controller_a5d5af6ddfcc0738d32fb23fb671b0841}{Get\+All\+Rankers}} ()
+\item 
+void \mbox{\hyperlink{class_rank_summary_controller_abe3f6c525c49ee98c581def48de2c5c2}{Get\+Content\+Rank}} (string content\+Name, int rank\+Count)
+\item 
+void \mbox{\hyperlink{class_rank_summary_controller_a53c79acfcc7cee4ba4c95637610a3d4b}{Get\+My\+Rank}} (string content\+Name, int? score)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_rank_summary_controller_abb022394ee403609ac8056c9367b4faf}{rankers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_rank_summary_controller_8cs_source}{Rank\+Summary\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_controller_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_rank_summary_controller_a5d5af6ddfcc0738d32fb23fb671b0841}\index{RankSummaryController@{RankSummaryController}!GetAllRankers@{GetAllRankers}}
+\index{GetAllRankers@{GetAllRankers}!RankSummaryController@{RankSummaryController}}
+\doxysubsubsection{\texorpdfstring{GetAllRankers()}{GetAllRankers()}}
+{\footnotesize\ttfamily \label{class_rank_summary_controller_a5d5af6ddfcc0738d32fb23fb671b0841} 
+IEnumerator Rank\+Summary\+Controller.\+Get\+All\+Rankers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_rank_summary_controller_8cs_source}{Rank\+Summary\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_controller_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ var\ contents\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.Contents;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (contents\ !=\ \textcolor{keyword}{null})\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ List<RankSummary>\ rankSummaries\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(contents.Count);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_content}{Content}}\ content\ \textcolor{keywordflow}{in}\ contents)\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}content:\ \{content\}"{}});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ StartCoroutine(\_rankSummaryService.\mbox{\hyperlink{class_rank_summary_service_a854a2ba1d1ca82ef41e5332039083b17}{GetRankers}}(content.\mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{Name}}.\mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{En}},\ (ranker)\ =>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rankSummaries.Add(new\ RankSummary(ranker));}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(rankSummaries);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ rankers.text\ =\ \textcolor{keywordtype}{string}.Join(\textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ rankSummaries);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rank_summary_controller_a5d5af6ddfcc0738d32fb23fb671b0841_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rank_summary_controller_a5d5af6ddfcc0738d32fb23fb671b0841_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_rank_summary_controller_abe3f6c525c49ee98c581def48de2c5c2}\index{RankSummaryController@{RankSummaryController}!GetContentRank@{GetContentRank}}
+\index{GetContentRank@{GetContentRank}!RankSummaryController@{RankSummaryController}}
+\doxysubsubsection{\texorpdfstring{GetContentRank()}{GetContentRank()}}
+{\footnotesize\ttfamily \label{class_rank_summary_controller_abe3f6c525c49ee98c581def48de2c5c2} 
+void Rank\+Summary\+Controller.\+Get\+Content\+Rank (\begin{DoxyParamCaption}\item[{string}]{content\+Name}{, }\item[{int}]{rank\+Count}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_rank_summary_controller_8cs_source}{Rank\+Summary\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_controller_8cs_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//contentName:\ ������\ �̸�\ /\ rankCount:\ ����Ʈ\ ��(��:\ TOP10\ -\/>\ 10)}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ List<TopRank>\ topRanks\ =\ \textcolor{keyword}{new}();\ \textcolor{comment}{//\ ��ŷ}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ StartCoroutine(\_rankSummaryService.\mbox{\hyperlink{class_rank_summary_service_a4601112dbdba5fc80653ede6dd2ab262}{GetContentRankers}}(contentName,\ rankCount,\ (ranker)\ =>}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ topRanks\ =\ ranker;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rank_summary_controller_abe3f6c525c49ee98c581def48de2c5c2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_rank_summary_controller_a53c79acfcc7cee4ba4c95637610a3d4b}\index{RankSummaryController@{RankSummaryController}!GetMyRank@{GetMyRank}}
+\index{GetMyRank@{GetMyRank}!RankSummaryController@{RankSummaryController}}
+\doxysubsubsection{\texorpdfstring{GetMyRank()}{GetMyRank()}}
+{\footnotesize\ttfamily \label{class_rank_summary_controller_a53c79acfcc7cee4ba4c95637610a3d4b} 
+void Rank\+Summary\+Controller.\+Get\+My\+Rank (\begin{DoxyParamCaption}\item[{string}]{content\+Name}{, }\item[{int?}]{score}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_rank_summary_controller_8cs_source}{Rank\+Summary\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_controller_8cs_source_l00055}{55}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//contentName:\ ������\ �̸�}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ var\ currentSession\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ personId\ =\ currentSession.CurrentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentSession.CurrentClass.Name\ :\ currentSession.CurrentStudent.Id;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ StartCoroutine(\_rankSummaryService.\mbox{\hyperlink{class_rank_summary_service_a4c26b7d03e524f439c95148e54d406ec}{GetMyRanking}}(contentName,\ personId,\ currentSession.CurrentStudent\ ==\ \textcolor{keyword}{null},\ (myRank)\ =>}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ ��\ ��ŷ(����\ ������\ ��ŷ\ /\ �ְ� ���� / ��� ����) /\ �̰ɷ� ���� ���� ȭ�鶧\ ���� �ǰڳ׿�}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//����\ ������\ ��ŷ\ -\/>\ ���\ /\ myRank.rank}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//�ְ� ���� ==\ ���� -\/>\ �ű��\ �޼�\ \ /\ myRank.BestScore}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//��� ����: myRank.AvgScore}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rank_summary_controller_a53c79acfcc7cee4ba4c95637610a3d4b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_rank_summary_controller_a8ca879c2a9e83a0c4d2c9025d876c1ba}\index{RankSummaryController@{RankSummaryController}!GetRankers@{GetRankers}}
+\index{GetRankers@{GetRankers}!RankSummaryController@{RankSummaryController}}
+\doxysubsubsection{\texorpdfstring{GetRankers()}{GetRankers()}}
+{\footnotesize\ttfamily \label{class_rank_summary_controller_a8ca879c2a9e83a0c4d2c9025d876c1ba} 
+void Rank\+Summary\+Controller.\+Get\+Rankers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_rank_summary_controller_8cs_source}{Rank\+Summary\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_rank_summary_controller_a5d5af6ddfcc0738d32fb23fb671b0841}{GetAllRankers}}());}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rank_summary_controller_a8ca879c2a9e83a0c4d2c9025d876c1ba_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_rank_summary_controller_abb022394ee403609ac8056c9367b4faf}\index{RankSummaryController@{RankSummaryController}!rankers@{rankers}}
+\index{rankers@{rankers}!RankSummaryController@{RankSummaryController}}
+\doxysubsubsection{\texorpdfstring{rankers}{rankers}}
+{\footnotesize\ttfamily \label{class_rank_summary_controller_abb022394ee403609ac8056c9367b4faf} 
+Text\+Mesh\+Pro\+UGUI Rank\+Summary\+Controller.\+rankers}
+
+
+
+\mbox{\hyperlink{_rank_summary_controller_8cs_source}{Rank\+Summary\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Public/\+Controller/\mbox{\hyperlink{_rank_summary_controller_8cs}{Rank\+Summary\+Controller.\+cs}}\end{DoxyCompactItemize}

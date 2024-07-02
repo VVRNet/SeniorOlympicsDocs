@@ -1,0 +1,76 @@
+\doxysection{Follow\+Skeleton\+Utility\+Root\+Rotation.\+cs}
+\hypertarget{_follow_skeleton_utility_root_rotation_8cs_source}{}\label{_follow_skeleton_utility_root_rotation_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Components/SkeletonUtility/FollowSkeletonUtilityRootRotation.cs@{D:/Unity/SeniorOlympics/Assets/Spine/Runtime/spine-\/unity/Components/SkeletonUtility/FollowSkeletonUtilityRootRotation.cs}}
+\mbox{\hyperlink{_follow_skeleton_utility_root_rotation_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00001}00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ Spine\ Runtimes\ License\ Agreement}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00003}00003\ \textcolor{comment}{\ *\ Last\ updated\ July\ 28,\ 2023.\ Replaces\ all\ prior\ versions.}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2013-\/2023,\ Esoteric\ Software\ LLC}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ Integration\ of\ the\ Spine\ Runtimes\ into\ software\ or\ otherwise\ creating}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ derivative\ works\ of\ the\ Spine\ Runtimes\ is\ permitted\ under\ the\ terms\ and}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ conditions\ of\ Section\ 2\ of\ the\ Spine\ Editor\ License\ Agreement:}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ http://esotericsoftware.com/spine-\/editor-\/license}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00012}00012\ \textcolor{comment}{\ *\ Otherwise,\ it\ is\ permitted\ to\ integrate\ the\ Spine\ Runtimes\ into\ software\ or}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ otherwise\ create\ derivative\ works\ of\ the\ Spine\ Runtimes\ (collectively,}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ "{}Products"{}),\ provided\ that\ each\ user\ of\ the\ Products\ must\ obtain\ their\ own}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00015}00015\ \textcolor{comment}{\ *\ Spine\ Editor\ license\ and\ redistribution\ of\ the\ Products\ in\ any\ form\ must}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ include\ this\ license\ and\ copyright\ notice.}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ THE\ SPINE\ RUNTIMES\ ARE\ PROVIDED\ BY\ ESOTERIC\ SOFTWARE\ LLC\ "{}AS\ IS"{}\ AND\ ANY}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE\ IMPLIED}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ ESOTERIC\ SOFTWARE\ LLC\ BE\ LIABLE\ FOR\ ANY}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00023}00023\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES,}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00024}00024\ \textcolor{comment}{\ *\ BUSINESS\ INTERRUPTION,\ OR\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS)\ HOWEVER\ CAUSED\ AND}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00025}00025\ \textcolor{comment}{\ *\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THE}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ SPINE\ RUNTIMES,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00028}00028\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_spine_1_1_unity}{Spine.Unity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00042}\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_skeleton_utility_root_rotation}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_skeleton_utility_root_rotation}{FollowSkeletonUtilityRootRotation}}\ :\ MonoBehaviour\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ FLIP\_ANGLE\_THRESHOLD\ =\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00046}\mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_skeleton_utility_root_rotation_ae339853d3c6b5c76d338f00eaf450bad}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_skeleton_utility_root_rotation_ae339853d3c6b5c76d338f00eaf450bad}{reference}};}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ Vector3\ prevLocalEulerAngles;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Start\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ prevLocalEulerAngles\ =\ this.transform.localEulerAngles;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FixedUpdate\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.rotation\ =\ \mbox{\hyperlink{class_spine_1_1_unity_1_1_follow_skeleton_utility_root_rotation_ae339853d3c6b5c76d338f00eaf450bad}{reference}}.rotation;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasFlippedAroundY\ =\ Mathf.Abs(this.transform.localEulerAngles.y\ -\/\ prevLocalEulerAngles.y)\ >\ FLIP\_ANGLE\_THRESHOLD;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasFlippedAroundX\ =\ Mathf.Abs(this.transform.localEulerAngles.x\ -\/\ prevLocalEulerAngles.x)\ >\ FLIP\_ANGLE\_THRESHOLD;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wasFlippedAroundY)}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CompensatePositionToYRotation();}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wasFlippedAroundX)}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CompensatePositionToXRotation();}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ prevLocalEulerAngles\ =\ this.transform.localEulerAngles;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CompensatePositionToYRotation\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ newPosition\ =\ reference.position\ +\ (reference.position\ -\/\ this.transform.position);}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ newPosition.y\ =\ this.transform.position.y;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.position\ =\ newPosition;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CompensatePositionToXRotation\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ newPosition\ =\ reference.position\ +\ (reference.position\ -\/\ this.transform.position);}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ newPosition.x\ =\ this.transform.position.x;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.position\ =\ newPosition;}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_follow_skeleton_utility_root_rotation_8cs_source_l00086}00086\ \}}
+
+\end{DoxyCode}

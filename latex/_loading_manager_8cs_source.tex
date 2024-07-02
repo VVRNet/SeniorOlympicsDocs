@@ -1,0 +1,96 @@
+\doxysection{Loading\+Manager.\+cs}
+\hypertarget{_loading_manager_8cs_source}{}\label{_loading_manager_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Loading/LoadingManager.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Loading/LoadingManager.cs}}
+\mbox{\hyperlink{_loading_manager_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine.SceneManagement;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00008}\mbox{\hyperlink{class_loading_manager}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_loading_manager}{LoadingManager}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ selectSceneKey\ =\ \textcolor{stringliteral}{"{}SelectScene"{}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ nextScene;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00012}\mbox{\hyperlink{class_loading_manager_a7c36f67320bae586f0e3d0d14e313325}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_loading_manager_a7c36f67320bae586f0e3d0d14e313325}{isLoading}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00014}\mbox{\hyperlink{class_loading_manager_a5eeeb2f71e4b0cbb882a28eafdc53ef9}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ Slider\ \mbox{\hyperlink{class_loading_manager_a5eeeb2f71e4b0cbb882a28eafdc53ef9}{loadingBar}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00015}\mbox{\hyperlink{class_loading_manager_a27cfb201e7730572eeffeeb206a6d4c9}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_loading_manager_a27cfb201e7730572eeffeeb206a6d4c9}{guideText}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00016}\mbox{\hyperlink{class_loading_manager_aa864eda58a252f9bab98a9f7e40dbb41}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_loading_manager_aa864eda58a252f9bab98a9f7e40dbb41}{progressImg}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00017}\mbox{\hyperlink{class_loading_manager_acf570912488a0fae10ea29fcaafa752a}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_loading_manager_acf570912488a0fae10ea29fcaafa752a}{loadingTime}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ nextScene\ =\ PlayerPrefs.GetString(selectSceneKey);}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ Debug.Log(nextScene\ +\ \textcolor{stringliteral}{"{}¿Ãµø«ÿæﬂ «“\ æ¿ ¿Ã∏ß\ »Æ¿Œ"{}});}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_manager_a7c36f67320bae586f0e3d0d14e313325}{isLoading}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ loadingBar.value\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ StartCoroutine(LoadingAni());}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ StartCoroutine(RoadScene());}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00035}00035\ \ \ \ \ IEnumerator\ RoadScene()}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ StartCoroutine(ChangeSliderValue());}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\mbox{\hyperlink{class_loading_manager_acf570912488a0fae10ea29fcaafa752a}{loadingTime}});}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(nextScene))}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}nextScene\ is\ not\ set!"{}});}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(nextScene.ToString());}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ SceneManager.LoadScene(nextScene);}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{private}\ IEnumerator\ ChangeSliderValue()}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ timer\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (timer\ <\ \mbox{\hyperlink{class_loading_manager_acf570912488a0fae10ea29fcaafa752a}{loadingTime}})}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ timer\ +=\ Time.deltaTime;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ Mathf.Clamp01(timer\ /\ \mbox{\hyperlink{class_loading_manager_acf570912488a0fae10ea29fcaafa752a}{loadingTime}});}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ loadingBar.value\ =\ t;}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00066}00066\ \ \ \ \ IEnumerator\ LoadingAni()}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_loading_manager_a7c36f67320bae586f0e3d0d14e313325}{isLoading}})}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING"{}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_manager_aa864eda58a252f9bab98a9f7e40dbb41}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING."{}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_manager_aa864eda58a252f9bab98a9f7e40dbb41}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING.."{}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_manager_aa864eda58a252f9bab98a9f7e40dbb41}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING..."{}};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_manager_aa864eda58a252f9bab98a9f7e40dbb41}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_manager_a7c36f67320bae586f0e3d0d14e313325}{isLoading}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//StopAllCoroutines();}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_manager_8cs_source_l00090}00090\ \}}
+
+\end{DoxyCode}

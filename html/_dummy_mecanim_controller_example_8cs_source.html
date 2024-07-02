@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SeniorOlympics: D:/Unity/SeniorOlympics/Assets/Spine Examples/Scripts/Mecanim as Logic/DummyMecanimControllerExample.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_dummy_mecanim_controller_example_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DummyMecanimControllerExample.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_dummy_mecanim_controller_example_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Spine Runtimes License Agreement</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Last updated July 28, 2023. Replaces all prior versions.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Copyright (c) 2013-2023, Esoteric Software LLC</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Integration of the Spine Runtimes into software or otherwise creating</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * derivative works of the Spine Runtimes is permitted under the terms and</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * conditions of Section 2 of the Spine Editor License Agreement:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * http://esotericsoftware.com/spine-editor-license</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Otherwise, it is permitted to integrate the Spine Runtimes into software or</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * otherwise create derivative works of the Spine Runtimes (collectively,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * &quot;Products&quot;), provided that each user of the Products must obtain their own</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * Spine Editor license and redistribution of the Products in any form must</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * include this license and copyright notice.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * THE SPINE RUNTIMES ARE PROVIDED BY ESOTERIC SOFTWARE LLC &quot;AS IS&quot; AND ANY</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * DISCLAIMED. IN NO EVENT SHALL ESOTERIC SOFTWARE LLC BE LIABLE FOR ANY</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * BUSINESS INTERRUPTION, OR LOSS OF USE, DATA, OR PROFITS) HOWEVER CAUSED AND</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_spine_1_1_unity_1_1_examples.html">Spine.Unity.Examples</a> {</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html">   35</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html">DummyMecanimControllerExample</a> : MonoBehaviour {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab16736fadc2608fa3f6c55cadae3e7e5">   37</a></span>        <span class="keyword">public</span> Animator <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab16736fadc2608fa3f6c55cadae3e7e5">logicAnimator</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab48a435e724cc19b3730fa7aa1f13e56">   38</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example.html">SkeletonAnimationHandleExample</a> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab48a435e724cc19b3730fa7aa1f13e56">animationHandle</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        [Header(<span class="stringliteral">&quot;Controls&quot;</span>)]</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af6e270c8f01d443dcc923d5244142b95">   41</a></span>        <span class="keyword">public</span> KeyCode <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af6e270c8f01d443dcc923d5244142b95">walkButton</a> = KeyCode.LeftShift;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ac3d976a11a04bbd76f56ae652b036d9a">   42</a></span>        <span class="keyword">public</span> KeyCode <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ac3d976a11a04bbd76f56ae652b036d9a">jumpButton</a> = KeyCode.Space;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        [Header(<span class="stringliteral">&quot;Animator Properties&quot;</span>)]</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af8639e21f9914aeef1583a20376541cc">   45</a></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af8639e21f9914aeef1583a20376541cc">horizontalSpeedProperty</a> = <span class="stringliteral">&quot;Speed&quot;</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ae6d81e50dbe83718d9a0b983676cd080">   46</a></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ae6d81e50dbe83718d9a0b983676cd080">verticalSpeedProperty</a> = <span class="stringliteral">&quot;VerticalSpeed&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a1149a7e1d71d015d5d4fd4e8541a7eb7">   47</a></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a1149a7e1d71d015d5d4fd4e8541a7eb7">groundedProperty</a> = <span class="stringliteral">&quot;Grounded&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        [Header(<span class="stringliteral">&quot;Fake Physics&quot;</span>)]</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a9c2593691c4d1241ca6fc4fb12d93e32">   50</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a9c2593691c4d1241ca6fc4fb12d93e32">jumpDuration</a> = 1.5f;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#abd0475b84a343c96c059fec494340ee3">   51</a></span>        <span class="keyword">public</span> Vector2 <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#abd0475b84a343c96c059fec494340ee3">speed</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">   52</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">isGrounded</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">void</span> Awake () {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">isGrounded</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">void</span> Update () {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordtype">float</span> x = Input.GetAxisRaw(<span class="stringliteral">&quot;Horizontal&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> (Input.GetKey(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af6e270c8f01d443dcc923d5244142b95">walkButton</a>)) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                x *= 0.4f;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            speed.x = x;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="comment">// Flip skeleton.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">if</span> (x != 0) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab48a435e724cc19b3730fa7aa1f13e56">animationHandle</a>.<a class="code hl_function" href="class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example.html#ae9f2b9b03656f13a81fa6233e3cee2f9">SetFlip</a>(x);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">if</span> (Input.GetKeyDown(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ac3d976a11a04bbd76f56ae652b036d9a">jumpButton</a>)) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">isGrounded</a>)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    StartCoroutine(FakeJump());</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab16736fadc2608fa3f6c55cadae3e7e5">logicAnimator</a>.SetFloat(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af8639e21f9914aeef1583a20376541cc">horizontalSpeedProperty</a>, Mathf.Abs(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#abd0475b84a343c96c059fec494340ee3">speed</a>.x));</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab16736fadc2608fa3f6c55cadae3e7e5">logicAnimator</a>.SetFloat(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ae6d81e50dbe83718d9a0b983676cd080">verticalSpeedProperty</a>, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#abd0475b84a343c96c059fec494340ee3">speed</a>.y);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab16736fadc2608fa3f6c55cadae3e7e5">logicAnimator</a>.SetBool(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a1149a7e1d71d015d5d4fd4e8541a7eb7">groundedProperty</a>, <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">isGrounded</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        IEnumerator FakeJump () {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="comment">// Rise</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">isGrounded</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            speed.y = 10f;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordtype">float</span> durationLeft = <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a9c2593691c4d1241ca6fc4fb12d93e32">jumpDuration</a> * 0.5f;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">while</span> (durationLeft &gt; 0) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                durationLeft -= Time.deltaTime;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <span class="keywordflow">if</span> (!Input.GetKey(<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ac3d976a11a04bbd76f56ae652b036d9a">jumpButton</a>)) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="comment">// Fall</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            speed.y = -10f;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordtype">float</span> fallDuration = (<a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a9c2593691c4d1241ca6fc4fb12d93e32">jumpDuration</a> * 0.5f) - durationLeft;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(fallDuration);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="comment">// Land</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            speed.y = 0f;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <a class="code hl_variable" href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">isGrounded</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html">Spine.Unity.Examples.DummyMecanimControllerExample</a></div><div class="ttdef"><b>Definition</b> <a href="#l00035">DummyMecanimControllerExample.cs:35</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_a1149a7e1d71d015d5d4fd4e8541a7eb7"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a1149a7e1d71d015d5d4fd4e8541a7eb7">Spine.Unity.Examples.DummyMecanimControllerExample.groundedProperty</a></div><div class="ttdeci">string groundedProperty</div><div class="ttdef"><b>Definition</b> <a href="#l00047">DummyMecanimControllerExample.cs:47</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_a80adb08d0168bfaa7fefb27465f85fe7"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a80adb08d0168bfaa7fefb27465f85fe7">Spine.Unity.Examples.DummyMecanimControllerExample.isGrounded</a></div><div class="ttdeci">bool isGrounded</div><div class="ttdef"><b>Definition</b> <a href="#l00052">DummyMecanimControllerExample.cs:52</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_a9c2593691c4d1241ca6fc4fb12d93e32"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#a9c2593691c4d1241ca6fc4fb12d93e32">Spine.Unity.Examples.DummyMecanimControllerExample.jumpDuration</a></div><div class="ttdeci">float jumpDuration</div><div class="ttdef"><b>Definition</b> <a href="#l00050">DummyMecanimControllerExample.cs:50</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_ab16736fadc2608fa3f6c55cadae3e7e5"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab16736fadc2608fa3f6c55cadae3e7e5">Spine.Unity.Examples.DummyMecanimControllerExample.logicAnimator</a></div><div class="ttdeci">Animator logicAnimator</div><div class="ttdef"><b>Definition</b> <a href="#l00037">DummyMecanimControllerExample.cs:37</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_ab48a435e724cc19b3730fa7aa1f13e56"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ab48a435e724cc19b3730fa7aa1f13e56">Spine.Unity.Examples.DummyMecanimControllerExample.animationHandle</a></div><div class="ttdeci">SkeletonAnimationHandleExample animationHandle</div><div class="ttdef"><b>Definition</b> <a href="#l00038">DummyMecanimControllerExample.cs:38</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_abd0475b84a343c96c059fec494340ee3"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#abd0475b84a343c96c059fec494340ee3">Spine.Unity.Examples.DummyMecanimControllerExample.speed</a></div><div class="ttdeci">Vector2 speed</div><div class="ttdef"><b>Definition</b> <a href="#l00051">DummyMecanimControllerExample.cs:51</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_ac3d976a11a04bbd76f56ae652b036d9a"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ac3d976a11a04bbd76f56ae652b036d9a">Spine.Unity.Examples.DummyMecanimControllerExample.jumpButton</a></div><div class="ttdeci">KeyCode jumpButton</div><div class="ttdef"><b>Definition</b> <a href="#l00042">DummyMecanimControllerExample.cs:42</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_ae6d81e50dbe83718d9a0b983676cd080"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#ae6d81e50dbe83718d9a0b983676cd080">Spine.Unity.Examples.DummyMecanimControllerExample.verticalSpeedProperty</a></div><div class="ttdeci">string verticalSpeedProperty</div><div class="ttdef"><b>Definition</b> <a href="#l00046">DummyMecanimControllerExample.cs:46</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_af6e270c8f01d443dcc923d5244142b95"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af6e270c8f01d443dcc923d5244142b95">Spine.Unity.Examples.DummyMecanimControllerExample.walkButton</a></div><div class="ttdeci">KeyCode walkButton</div><div class="ttdef"><b>Definition</b> <a href="#l00041">DummyMecanimControllerExample.cs:41</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example_html_af8639e21f9914aeef1583a20376541cc"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_dummy_mecanim_controller_example.html#af8639e21f9914aeef1583a20376541cc">Spine.Unity.Examples.DummyMecanimControllerExample.horizontalSpeedProperty</a></div><div class="ttdeci">string horizontalSpeedProperty</div><div class="ttdef"><b>Definition</b> <a href="#l00045">DummyMecanimControllerExample.cs:45</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example_html"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example.html">Spine.Unity.Examples.SkeletonAnimationHandleExample</a></div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_handle_example_8cs_source.html#l00040">SkeletonAnimationHandleExample.cs:40</a></div></div>
+<div class="ttc" id="aclass_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example_html_ae9f2b9b03656f13a81fa6233e3cee2f9"><div class="ttname"><a href="class_spine_1_1_unity_1_1_examples_1_1_skeleton_animation_handle_example.html#ae9f2b9b03656f13a81fa6233e3cee2f9">Spine.Unity.Examples.SkeletonAnimationHandleExample.SetFlip</a></div><div class="ttdeci">void SetFlip(float horizontal)</div><div class="ttdoc">Sets the horizontal flip state of the skeleton based on a nonzero float. If negative,...</div><div class="ttdef"><b>Definition</b> <a href="_skeleton_animation_handle_example_8cs_source.html#l00080">SkeletonAnimationHandleExample.cs:80</a></div></div>
+<div class="ttc" id="anamespace_spine_1_1_unity_1_1_examples_html"><div class="ttname"><a href="namespace_spine_1_1_unity_1_1_examples.html">Spine.Unity.Examples</a></div><div class="ttdef"><b>Definition</b> <a href="_spine_animation_tester_tool_8cs_source.html#l00037">SpineAnimationTesterTool.cs:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfe35fcde3865645aebb6760888e5d19.html">SeniorOlympics</a></li><li class="navelem"><a class="el" href="dir_0dfbd538de68c6818498e81e82261dfb.html">Assets</a></li><li class="navelem"><a class="el" href="dir_9c8c39a7638d41efb5d2c79f438eff06.html">Spine Examples</a></li><li class="navelem"><a class="el" href="dir_3f6f16555463a81f7197830943818d04.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_c662c506d50e9b7f6e09ac219b698dde.html">Mecanim as Logic</a></li><li class="navelem"><a class="el" href="_dummy_mecanim_controller_example_8cs.html">DummyMecanimControllerExample.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>
