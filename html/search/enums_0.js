@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5flogtype_0',['_LogType',['../class_reporter.html#a489661633a77ca87b2e3bf2faf26ca07',1,'Reporter']]]
+  ['team_0',['Team',['../namespaceuseful_1_1_team.html#ae4bc80de932200dd31e01e275c826dea',1,'useful::Team']]]
 ];

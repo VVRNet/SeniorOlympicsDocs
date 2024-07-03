@@ -1,10 +1,11 @@
 var class_olympics_game_manager =
 [
+    [ "QuitButton", "class_olympics_game_manager.html#adf60f4e0548b09cee7902b215a7b9f94", null ],
     [ "ResetObject", "class_olympics_game_manager.html#a8b083c252886ad4fbb68f3a100188c43", null ],
     [ "SelectGameType", "class_olympics_game_manager.html#a4d698947859777d001d0169ad7d1e01a", null ],
     [ "SetEndingPage", "class_olympics_game_manager.html#a7482a1c35d1c5a9a61ce4945bfb0f2df", null ],
     [ "StartGame", "class_olympics_game_manager.html#a5e4211898a7556c8cb35988323cb1677", null ],
-    [ "WaitStartGame", "class_olympics_game_manager.html#a69999b26eef60ef20d7bdbcd6a295ab9", null ],
+    [ "WaitStartGame", "class_olympics_game_manager.html#a0824be10745984449f90c5c3ebcef3a6", null ],
     [ "countdown", "class_olympics_game_manager.html#a8fe77f7e3e0d60f1219b5644e4702707", null ],
     [ "countdown_Off", "class_olympics_game_manager.html#af041128f91574b3bf3716b4dde5a5cad", null ],
     [ "currentGameRecord", "class_olympics_game_manager.html#ac5955dc36e402ade809a9517fda3a5a3", null ],
@@ -12,8 +13,9 @@ var class_olympics_game_manager =
     [ "gameRecordController", "class_olympics_game_manager.html#a50ba0a3da596d992f7f4e478bb43d7d7", null ],
     [ "gameTypeList", "class_olympics_game_manager.html#afab8333aa3e1596e2936af01296bed7d", null ],
     [ "getdata", "class_olympics_game_manager.html#ab17d4a2eee6d35c1f3d6eaa986bbf1ea", null ],
+    [ "isTest", "class_olympics_game_manager.html#ad951a254f72086d116c33672913852e1", null ],
     [ "resetObject", "class_olympics_game_manager.html#aac25828e044b3faed778c76b1fe1e166", null ],
-    [ "selectMode", "class_olympics_game_manager.html#a6f2ea6316f7bd833f788ce3eadca6eea", null ],
+    [ "selectPanel", "class_olympics_game_manager.html#a99d2621083a9096e8e1086a8a2535a28", null ],
     [ "timeScrollbar", "class_olympics_game_manager.html#adbbf0afc02c4d8825e17ca6783a6dbc6", null ],
     [ "totalTouchCount_Blue", "class_olympics_game_manager.html#a53c5ea036d28fa48cf713b2d71cbb68f", null ],
     [ "totalTouchCount_Red", "class_olympics_game_manager.html#a0f2a7f2cdbe60be3b9de9bc4bf7d6607", null ],

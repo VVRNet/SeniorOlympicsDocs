@@ -2,7 +2,8 @@
 \hypertarget{class_quickness_1_1_touch_object_controller}{}\label{class_quickness_1_1_touch_object_controller}\index{Quickness.TouchObjectController@{Quickness.TouchObjectController}}
 
 
-Quickness.\+Touch\+Object\+Controller에 대한 상속 다이어그램 \+: \nopagebreak
+Quickness.\+Touch\+Object\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +12,8 @@ Quickness.\+Touch\+Object\+Controller에 대한 상속 다이어그램 \+: \nopa
 \end{figure}
 
 
-Quickness.\+Touch\+Object\+Controller에 대한 협력 다이어그램\+:\nopagebreak
+Quickness.\+Touch\+Object\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -69,9 +71,9 @@ void Quickness.\+Touch\+Object\+Controller.\+On\+Touch (\begin{DoxyParamCaption}
 \DoxyCodeLine{00066\ }
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d}{hitEffectScore}}\ !=\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34}{rootObject}}.activeSelf\ !=\ \textcolor{keyword}{false})}
 \DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ ��ǥ��\ ����Ʈ\ ��ǥ�� ����ȭ\ (0����\ 1\ ����\ ��)}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width,\ (y\ /\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height),\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����Ʈ\ ��ǥ��\ ���� ��ǥ�� ��ȯ}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 좌표를\ 뷰포트\ 좌표로\ 정규화\ (0에서\ 1\ 사이\ 값)}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ Screen.width,\ (y\ /\ Screen.height),\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 뷰포트\ 좌표를\ 월드\ 좌표로\ 변환}}
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
 \DoxyCodeLine{00073\ }
 \DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a6411a09a6fa181c122ad2358d953a63d}{hitEffectScore}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_ab231d930a8d55ab9e29fbacd0b455a34}{rootObject}}.transform);}
@@ -88,7 +90,7 @@ void Quickness.\+Touch\+Object\+Controller.\+On\+Touch (\begin{DoxyParamCaption}
 \DoxyCodeLine{00085\ }
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ\ �̺�Ʈ}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 이벤트}}
 \DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}{removeEffect}}.SetActive(\textcolor{keyword}{true});}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f),\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -97,88 +99,89 @@ void Quickness.\+Touch\+Object\+Controller.\+On\+Touch (\begin{DoxyParamCaption}
 \DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
 \DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
 \DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.Hit(OlympicsGameManager.Instance.currentGameRecord,\ 0,\ isCorrect,\ accuracy,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsAnyGameTypeActive())}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ġ��\ ��ġ��\ randomPos����\ ����}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quicknessManager\_Red.RemovePosition(this.transform.position);}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ ��ġ"{}});}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ ���\ ��ġ"{}});}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boxCollider.enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrect\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!OlympicsGameManager.Instance.isTest)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.Hit(OlympicsGameManager.Instance.currentGameRecord,\ 0,\ isCorrect,\ accuracy,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Hit!!!!!!!!!!!!!!!!!!!"{}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsAnyGameTypeActive())}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치한\ 위치를\ randomPos에서\ 제거}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quicknessManager\_Red.\mbox{\hyperlink{class_quickness_1_1_quickness_manager_aad99aaa7456849fc13f8743d7d587c47}{RemovePosition}}(this.transform.position);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(OlympicsGameManager.Instance.currentGameRecord\ ==\ null)}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}GameRecord\ null\ :\ red\ 터치"{});}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ return;}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ 배경\ 터치"{}});}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//gameRecordController.Hit(OlympicsGameManager.Instance.currentGameRecord,\ 0,\ false,\ default,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ default);}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boxCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrect\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
 \DoxyCodeLine{00137\ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}{removeEffect}}.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f),\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(Vector3.one\ *\ 0.15f,\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.Hit(OlympicsGameManager.Instance.currentGameRecord,\ 1,\ isCorrect,\ accuracy,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quickness_1_1_touch_object_controller_a17e6489a68e305281955382f5ef14274}{removeEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(\textcolor{keyword}{new}\ Vector3(1.5f,\ 1.5f,\ 1.5f),\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOScale(Vector3.one\ *\ 0.15f,\ 0.2f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
 \DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsAnyGameTypeActive())}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quicknessManager\_Blue.RemovePosition(this.transform.position);}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ ��ġ"{}});}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//gameRecordController.Hit(OlympicsGameManager.Instance.currentGameRecord,\ 1,\ isCorrect,\ accuracy,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsAnyGameTypeActive())}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quicknessManager\_Blue.RemovePosition(this.transform.position);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ 터치"{}});}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
 \DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ ���\ ��ġ"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ 배경\ 터치"{}});}
 \DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//gameRecordController.Hit(OlympicsGameManager.Instance.currentGameRecord,\ 1,\ false,\ default,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ default);}}
 \DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

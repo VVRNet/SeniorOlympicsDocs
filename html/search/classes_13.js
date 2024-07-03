@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['teamcomparer_0',['TeamComparer',['../classuseful_1_1_team_1_1_team_comparer.html',1,'useful::Team']]],
-  ['teamdictionarysetter_1',['TeamDictionarySetter',['../classuseful_1_1_team_1_1_team_dictionary_setter.html',1,'useful::Team']]],
-  ['teamdictionarysetter_3c_20useful_3a_3ateam_3a_3ascore_20_3e_2',['TeamDictionarySetter&lt; useful::Team::Score &gt;',['../classuseful_1_1_team_1_1_team_dictionary_setter.html',1,'useful::Team']]],
-  ['templatematerials_3',['TemplateMaterials',['../class_spine_1_1_unity_1_1_blend_mode_materials_1_1_template_materials.html',1,'Spine::Unity::BlendModeMaterials']]],
-  ['testreporter_4',['TestReporter',['../class_test_reporter.html',1,'']]],
-  ['textureloader_5',['TextureLoader',['../interface_spine_1_1_texture_loader.html',1,'Spine']]],
-  ['texturemodificationwarningprocessor_6',['TextureModificationWarningProcessor',['../class_spine_1_1_unity_1_1_editor_1_1_texture_modification_warning_processor.html',1,'Spine::Unity::Editor']]],
-  ['textureregion_7',['TextureRegion',['../class_spine_1_1_texture_region.html',1,'Spine']]],
-  ['timeline_8',['Timeline',['../class_spine_1_1_timeline.html',1,'Spine']]],
-  ['token_9',['Token',['../class_cartoon_f_x_1_1_expression_parser_1_1_token.html',1,'CartoonFX::ExpressionParser']]],
-  ['toprank_10',['TopRank',['../class_top_rank.html',1,'']]],
-  ['toucheffectcontroller_11',['TouchEffectController',['../classuseful_1_1_touch_effect_controller.html',1,'useful']]],
-  ['touchevent_12',['TouchEvent',['../class_touch_event.html',1,'']]],
-  ['touchgoalcontroller_13',['TouchGoalController',['../class_basketball_1_1_touch_goal_controller.html',1,'Basketball']]],
-  ['touchobjectcontroller_14',['TouchObjectController',['../class_quickness_1_1_touch_object_controller.html',1,'Quickness']]],
-  ['touchprefabscontroller_15',['TouchPrefabsController',['../class_touch_prefabs_controller.html',1,'']]],
-  ['trackentry_16',['TrackEntry',['../class_spine_1_1_track_entry.html',1,'Spine']]],
-  ['transformconstraint_17',['TransformConstraint',['../class_spine_1_1_transform_constraint.html',1,'Spine']]],
-  ['transformconstraintdata_18',['TransformConstraintData',['../class_spine_1_1_transform_constraint_data.html',1,'Spine']]],
-  ['transformconstrainttimeline_19',['TransformConstraintTimeline',['../class_spine_1_1_transform_constraint_timeline.html',1,'Spine']]],
-  ['transitiondictionaryexample_20',['TransitionDictionaryExample',['../class_spine_1_1_unity_1_1_examples_1_1_transition_dictionary_example.html',1,'Spine::Unity::Examples']]],
-  ['translatetimeline_21',['TranslateTimeline',['../class_spine_1_1_translate_timeline.html',1,'Spine']]],
-  ['translatextimeline_22',['TranslateXTimeline',['../class_spine_1_1_translate_x_timeline.html',1,'Spine']]],
-  ['translateytimeline_23',['TranslateYTimeline',['../class_spine_1_1_translate_y_timeline.html',1,'Spine']]],
-  ['triangulator_24',['Triangulator',['../class_spine_1_1_triangulator.html',1,'Spine']]],
-  ['trigger_25',['Trigger',['../struct_c_w_1_1_common_1_1_cw_input_manager_1_1_trigger.html',1,'CW::Common::CwInputManager']]],
-  ['twobytwotransformeffectexample_26',['TwoByTwoTransformEffectExample',['../class_spine_1_1_unity_1_1_examples_1_1_two_by_two_transform_effect_example.html',1,'Spine::Unity::Examples']]]
+  ['winner_0',['Winner',['../struct_winner.html',1,'']]]
 ];

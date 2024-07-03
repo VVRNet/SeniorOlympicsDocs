@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
    </div>
   </td>
  </tr>
@@ -163,40 +163,40 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00020">20</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        var agency = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.LoggedInAgency;</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span> (agency != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   24</span>        {</div>
-<div class="line"><span class="lineno">   25</span>            var currentClass = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentClass;</div>
-<div class="line"><span class="lineno">   26</span>            var currentStudent = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentStudent;</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)</div>
-<div class="line"><span class="lineno">   29</span>            {</div>
-<div class="line"><span class="lineno">   30</span>                ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).InitGame(</div>
-<div class="line"><span class="lineno">   31</span>                agencyId: agency._id,</div>
-<div class="line"><span class="lineno">   32</span>                classId: currentClass.Name,</div>
-<div class="line"><span class="lineno">   33</span>                personId: currentStudent == null ? null : currentStudent.Id,</div>
-<div class="line"><span class="lineno">   34</span>                name: currentStudent == null ? currentClass.Name : currentStudent.Name,</div>
-<div class="line"><span class="lineno">   35</span>                <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
-<div class="line"><span class="lineno">   36</span>                <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
-<div class="line"><span class="lineno">   37</span>                );</div>
-<div class="line"><span class="lineno">   38</span>            }</div>
-<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)</div>
-<div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                <span class="comment">//�ӽ÷� ������ ����������� ���� �ôϾ� �ø��� ���� 2P �����ϸ� �� ������ ����� ������ ���� �־������</span></div>
-<div class="line"><span class="lineno">   42</span>                ((<a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)record).InitGame(</div>
-<div class="line"><span class="lineno">   43</span>                    agencyId: agency._id,</div>
-<div class="line"><span class="lineno">   44</span>                    classIds: new List&lt;string&gt; { currentClass.Name, <span class="stringliteral">&quot;VVR&quot;</span> },</div>
-<div class="line"><span class="lineno">   45</span>                    personIds: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? null : currentStudent.Id, <span class="stringliteral">&quot;91cc93e9-820a-40aa-abbc-a93e132c9e33&quot;</span> },</div>
-<div class="line"><span class="lineno">   46</span>                    names: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? currentClass.Name : currentStudent.Name, <span class="stringliteral">&quot;User1&quot;</span> },</div>
-<div class="line"><span class="lineno">   47</span>                    <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
-<div class="line"><span class="lineno">   48</span>                    <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
-<div class="line"><span class="lineno">   49</span>                    );</div>
-<div class="line"><span class="lineno">   50</span>            }</div>
-<div class="line"><span class="lineno">   51</span>        }</div>
-<div class="line"><span class="lineno">   52</span>        Debug.Log(record.ToString());</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
+<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        var agency = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.LoggedInAgency;</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (agency != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   23</span>        {</div>
+<div class="line"><span class="lineno">   24</span>            var currentClass = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentClass;</div>
+<div class="line"><span class="lineno">   25</span>            var currentStudent = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentStudent;</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)</div>
+<div class="line"><span class="lineno">   28</span>            {</div>
+<div class="line"><span class="lineno">   29</span>                ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).InitGame(</div>
+<div class="line"><span class="lineno">   30</span>                agencyId: agency._id,</div>
+<div class="line"><span class="lineno">   31</span>                classId: currentClass.Name,</div>
+<div class="line"><span class="lineno">   32</span>                personId: currentStudent == null ? null : currentStudent.Id,</div>
+<div class="line"><span class="lineno">   33</span>                name: currentStudent == null ? currentClass.Name : currentStudent.Name,</div>
+<div class="line"><span class="lineno">   34</span>                <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
+<div class="line"><span class="lineno">   35</span>                <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
+<div class="line"><span class="lineno">   36</span>                );</div>
+<div class="line"><span class="lineno">   37</span>            }</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)</div>
+<div class="line"><span class="lineno">   39</span>            {</div>
+<div class="line"><span class="lineno">   40</span>                <span class="comment">//임시로 데이터 적어놓은거임 추후 시니어 올림픽 때는 2P 선택하면 그 선택한 사람의 정보를 같이 넣어줘야함</span></div>
+<div class="line"><span class="lineno">   41</span>                ((<a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)record).InitGame(</div>
+<div class="line"><span class="lineno">   42</span>                    agencyId: agency._id,</div>
+<div class="line"><span class="lineno">   43</span>                    classIds: new List&lt;string&gt; { currentClass.Name, <span class="stringliteral">&quot;VVR&quot;</span> },</div>
+<div class="line"><span class="lineno">   44</span>                    personIds: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? null : currentStudent.Id, <span class="stringliteral">&quot;91cc93e9-820a-40aa-abbc-a93e132c9e33&quot;</span> },</div>
+<div class="line"><span class="lineno">   45</span>                    names: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? currentClass.Name : currentStudent.Name, <span class="stringliteral">&quot;User1&quot;</span> },</div>
+<div class="line"><span class="lineno">   46</span>                    <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
+<div class="line"><span class="lineno">   47</span>                    <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
+<div class="line"><span class="lineno">   48</span>                    );</div>
+<div class="line"><span class="lineno">   49</span>            }</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="line"><span class="lineno">   51</span>        Debug.Log(record.ToString());</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
 <div class="ttc" id="aclass_dual_game_record_html"><div class="ttname"><a href="class_dual_game_record.html">DualGameRecord</a></div><div class="ttdef"><b>Definition</b> <a href="_game_record_8cs_source.html#l00092">GameRecord.cs:93</a></div></div>
 <div class="ttc" id="aclass_game_record_controller_html_a5a0999a03d58661f82851d30762711a9"><div class="ttname"><a href="#a5a0999a03d58661f82851d30762711a9">GameRecordController.contentName</a></div><div class="ttdeci">string contentName</div><div class="ttdef"><b>Definition</b> <a href="_game_record_controller_8cs_source.html#l00011">GameRecordController.cs:11</a></div></div>
 <div class="ttc" id="aclass_game_record_controller_html_a9163932d5770c674e4dac34f2f2e43cd"><div class="ttname"><a href="#a9163932d5770c674e4dac34f2f2e43cd">GameRecordController.category</a></div><div class="ttdeci">string category</div><div class="ttdef"><b>Definition</b> <a href="_game_record_controller_8cs_source.html#l00010">GameRecordController.cs:10</a></div></div>
@@ -208,9 +208,9 @@ Public 속성</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_game_record_controller_aff23ce884a521ac45ecb63cc48871308_icgraph.png" border="0" usemap="#aclass_game_record_controller_aff23ce884a521ac45ecb63cc48871308_icgraph" alt=""/></div>
 <map name="aclass_game_record_controller_aff23ce884a521ac45ecb63cc48871308_icgraph" id="aclass_game_record_controller_aff23ce884a521ac45ecb63cc48871308_icgraph">
-<area shape="rect" title=" " alt="" coords="256,13,464,40"/>
-<area shape="rect" href="class_olympics_game_manager.html#a4d698947859777d001d0169ad7d1e01a" title=" " alt="" coords="5,5,208,48"/>
-<area shape="poly" title=" " alt="" coords="240,29,208,29,208,24,240,24"/>
+<area shape="rect" title=" " alt="" coords="246,13,454,40"/>
+<area shape="rect" href="class_olympics_game_manager.html#a0824be10745984449f90c5c3ebcef3a6" title=" " alt="" coords="5,5,198,48"/>
+<area shape="poly" title=" " alt="" coords="230,29,198,29,198,24,230,24"/>
 </map>
 </div>
 
@@ -231,11 +231,11 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00056">56</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>        ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).SingleGameStart();</div>
-<div class="line"><span class="lineno">   59</span>        Debug.Log(record.ToString());</div>
-<div class="line"><span class="lineno">   60</span>    }</div>
+<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00055">55</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).SingleGameStart();</div>
+<div class="line"><span class="lineno">   58</span>        Debug.Log(record.ToString());</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -278,47 +278,45 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00069">69</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>    {</div>
-<div class="line"><span class="lineno">   71</span>        <span class="comment">// isCorrect: ���� ����,</span></div>
-<div class="line"><span class="lineno">   72</span>        <span class="comment">// accuracy: ��Ȯ��(�߽����� �Ÿ� ����),</span></div>
-<div class="line"><span class="lineno">   73</span>        <span class="comment">// touchEvent: ��ġ �̺�Ʈ ���,</span></div>
-<div class="line"><span class="lineno">   74</span>        <span class="comment">// reactionTime: �����ӵ�(������Ʈ�� ��Ÿ���� ��ġ���������� �ð�)</span></div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>        <span class="comment">//((SingleGameRecord)record).RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</span></div>
-<div class="line"><span class="lineno">   77</span>        <span class="comment">//Debug.Log(record.ToString() );</span></div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> singleGameRecord)</div>
-<div class="line"><span class="lineno">   80</span>        {</div>
-<div class="line"><span class="lineno">   81</span>            singleGameRecord.RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dualGameRecord)</div>
-<div class="line"><span class="lineno">   84</span>        {</div>
-<div class="line"><span class="lineno">   85</span>            dualGameRecord.RecordDetails[userIndex].Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>        Debug.Log(record.ToString());</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
+<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00068">68</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="comment">// isCorrect: 정답 여부,</span></div>
+<div class="line"><span class="lineno">   71</span>        <span class="comment">// accuracy: 정확도(중심점과 거리 차이),</span></div>
+<div class="line"><span class="lineno">   72</span>        <span class="comment">// touchEvent: 터치 이벤트 기록,</span></div>
+<div class="line"><span class="lineno">   73</span>        <span class="comment">// reactionTime: 반응속도(오브젝트가 나타나고 터치됐을때까지 시간)</span></div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>        <span class="comment">//((SingleGameRecord)record).RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</span></div>
+<div class="line"><span class="lineno">   76</span>        <span class="comment">//Debug.Log(record.ToString() );</span></div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> singleGameRecord)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            singleGameRecord.RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dualGameRecord)</div>
+<div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            dualGameRecord.RecordDetails[userIndex].Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>        Debug.Log(record.ToString());</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
 </div><!-- fragment --><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e_icgraph.png" border="0" usemap="#aclass_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e_icgraph" alt=""/></div>
 <map name="aclass_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e_icgraph" id="aclass_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e_icgraph">
-<area shape="rect" title=" " alt="" coords="528,180,700,207"/>
-<area shape="rect" href="class_card_1_1_card_controller.html#a7bc9826848f8eb58642a32f34151e04e" title=" " alt="" coords="278,5,463,48"/>
-<area shape="poly" title=" " alt="" coords="592,169,544,115,513,87,479,62,456,51,459,46,481,58,516,83,548,111,596,166"/>
-<area shape="rect" href="class_card_1_1_card_vs_controller.html#ac1377292d9ab7586e11d05b5487f94e5" title=" " alt="" coords="285,72,456,115"/>
-<area shape="poly" title=" " alt="" coords="574,175,479,129,448,118,449,113,481,124,576,170"/>
-<area shape="rect" href="class_card_1_1_card_vs_controller.html#a288b1f55c77a2e3590947ee57a8554d7" title=" " alt="" coords="285,139,456,181"/>
-<area shape="poly" title=" " alt="" coords="512,182,456,174,457,169,513,177"/>
-<area shape="rect" href="class_card_1_1_card_background_touch.html#a007153f7ae93824cae2a07a4eea35ff8" title=" " alt="" coords="277,205,464,248"/>
-<area shape="poly" title=" " alt="" coords="513,210,465,217,464,211,512,205"/>
-<area shape="rect" href="class_quickness_1_1_touch_object_controller.html#a7196d53ddd7f612daf3c89631feaee8e" title=" " alt="" coords="261,272,480,315"/>
-<area shape="poly" title=" " alt="" coords="576,217,481,262,449,274,448,269,479,258,574,212"/>
-<area shape="rect" href="class_basketball_1_1_touch_goal_controller.html#ab70ceae2111baa6bc5a4cf6b1dd5ea83" title=" " alt="" coords="267,339,474,381"/>
-<area shape="poly" title=" " alt="" coords="596,221,548,275,516,304,481,329,459,340,456,336,479,324,513,300,544,272,592,217"/>
-<area shape="rect" href="class_basketball_1_1_touch_goal_controller.html#a9b0928e65ac4e400f398fa31faf4e043" title=" " alt="" coords="5,339,213,381"/>
-<area shape="poly" title=" " alt="" coords="251,363,213,363,213,357,251,357"/>
+<area shape="rect" title=" " alt="" coords="516,147,688,173"/>
+<area shape="rect" href="class_card_1_1_card_controller.html#a7bc9826848f8eb58642a32f34151e04e" title=" " alt="" coords="272,5,457,48"/>
+<area shape="poly" title=" " alt="" coords="573,138,525,100,467,62,441,51,443,46,469,58,528,95,576,134"/>
+<area shape="rect" href="class_card_1_1_card_vs_controller.html#ac1377292d9ab7586e11d05b5487f94e5" title=" " alt="" coords="279,72,450,115"/>
+<area shape="poly" title=" " alt="" coords="536,144,442,118,444,113,538,139"/>
+<area shape="rect" href="class_card_1_1_card_vs_controller.html#a288b1f55c77a2e3590947ee57a8554d7" title=" " alt="" coords="279,139,450,181"/>
+<area shape="poly" title=" " alt="" coords="501,163,450,163,450,157,501,157"/>
+<area shape="rect" href="class_card_1_1_card_background_touch.html#a007153f7ae93824cae2a07a4eea35ff8" title=" " alt="" coords="271,205,458,248"/>
+<area shape="poly" title=" " alt="" coords="538,181,444,207,442,202,536,176"/>
+<area shape="rect" href="class_basketball_1_1_touch_goal_controller.html#ab70ceae2111baa6bc5a4cf6b1dd5ea83" title=" " alt="" coords="261,272,468,315"/>
+<area shape="poly" title=" " alt="" coords="576,186,528,225,469,262,443,274,441,269,467,258,525,220,573,182"/>
+<area shape="rect" href="class_basketball_1_1_touch_goal_controller.html#a9b0928e65ac4e400f398fa31faf4e043" title=" " alt="" coords="5,272,213,315"/>
+<area shape="poly" title=" " alt="" coords="245,296,213,296,213,291,245,291"/>
 </map>
 </div>
 
@@ -343,26 +341,26 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00092">92</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>    {</div>
-<div class="line"><span class="lineno">   94</span>        Debug.Log(record.ToString());</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> single)</div>
-<div class="line"><span class="lineno">   97</span>        {</div>
-<div class="line"><span class="lineno">   98</span>            single.SingleGameEnd();</div>
-<div class="line"><span class="lineno">   99</span>        }</div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dual)</div>
-<div class="line"><span class="lineno">  101</span>        {</div>
-<div class="line"><span class="lineno">  102</span>            dual.DualGameEnd();</div>
-<div class="line"><span class="lineno">  103</span>        }</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>        StartCoroutine(_gameRecordService.<a class="code hl_function" href="class_game_record_service.html#ada0bad7effce61b2c0f0b9061e3da049">SaveGameRecord</a>(record, (response) =&gt;</div>
-<div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>            Debug.Log(<span class="stringliteral">&quot;���� ��� ����: &quot;</span> + response);</div>
-<div class="line"><span class="lineno">  108</span>            callback?.Invoke();</div>
-<div class="line"><span class="lineno">  109</span>        }));</div>
-<div class="line"><span class="lineno">  110</span>        </div>
-<div class="line"><span class="lineno">  111</span>    }</div>
+<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00091">91</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>        Debug.Log(record.ToString());</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> single)</div>
+<div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>            single.SingleGameEnd();</div>
+<div class="line"><span class="lineno">   98</span>        }</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dual)</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            dual.DualGameEnd();</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        StartCoroutine(_gameRecordService.<a class="code hl_function" href="class_game_record_service.html#ada0bad7effce61b2c0f0b9061e3da049">SaveGameRecord</a>(record, (response) =&gt;</div>
+<div class="line"><span class="lineno">  105</span>        {</div>
+<div class="line"><span class="lineno">  106</span>            Debug.Log(<span class="stringliteral">&quot;게임 기록 성공: &quot;</span> + response);</div>
+<div class="line"><span class="lineno">  107</span>            callback?.Invoke();</div>
+<div class="line"><span class="lineno">  108</span>        }));</div>
+<div class="line"><span class="lineno">  109</span>        </div>
+<div class="line"><span class="lineno">  110</span>    }</div>
 <div class="ttc" id="aclass_game_record_service_html_ada0bad7effce61b2c0f0b9061e3da049"><div class="ttname"><a href="class_game_record_service.html#ada0bad7effce61b2c0f0b9061e3da049">GameRecordService.SaveGameRecord</a></div><div class="ttdeci">IEnumerator SaveGameRecord(GameRecord gameRecord, Action&lt; List&lt; string &gt; &gt; callback)</div><div class="ttdoc">게임 기록을 저장합니다.</div><div class="ttdef"><b>Definition</b> <a href="_game_record_service_8cs_source.html#l00022">GameRecordService.cs:22</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -392,11 +390,11 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordtype">float</span> randomIndex = UnityEngine.Random.Range(0.0f, 10.0f);</div>
-<div class="line"><span class="lineno">   66</span>        <span class="comment">//Hit(randomIndex &lt; 5, randomIndex, new TouchEvent(x: randomIndex, y: randomIndex+2, DateTime.UtcNow), randomIndex+0.2f);</span></div>
-<div class="line"><span class="lineno">   67</span>    }</div>
+<p class="definition"><a class="el" href="_game_record_controller_8cs_source.html">GameRecordController.cs</a> 파일의 <a class="el" href="_game_record_controller_8cs_source.html#l00062">62</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordtype">float</span> randomIndex = UnityEngine.Random.Range(0.0f, 10.0f);</div>
+<div class="line"><span class="lineno">   65</span>        <span class="comment">//Hit(randomIndex &lt; 5, randomIndex, new TouchEvent(x: randomIndex, y: randomIndex+2, DateTime.UtcNow), randomIndex+0.2f);</span></div>
+<div class="line"><span class="lineno">   66</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

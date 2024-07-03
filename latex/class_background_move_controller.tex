@@ -1,0 +1,211 @@
+\doxysection{Background\+Move\+Controller 클래스 참조}
+\hypertarget{class_background_move_controller}{}\label{class_background_move_controller}\index{BackgroundMoveController@{BackgroundMoveController}}
+
+
+Background\+Move\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_background_move_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Background\+Move\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_background_move_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_background_move_controller_a4e9e8fbddc004bc70915f7cf6107d405}{Reset\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_background_move_controller_a5febd6eea16fb9a1b29d26eb62a40d73}{Start\+Motion}} ()
+\item 
+void \mbox{\hyperlink{class_background_move_controller_a8e649b2f984146e372301ace764ff3e7}{On\+Touch\+Moving}} ()
+\item 
+void \mbox{\hyperlink{class_background_move_controller_a080e034e9cac35247c1dde42e21fc50d}{On\+Touch\+Login}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+Image \mbox{\hyperlink{class_background_move_controller_a1d23928d622a8ecbf99673f37f309f3d}{title\+Object}}
+\item 
+Transform \mbox{\hyperlink{class_background_move_controller_a2ec1dec893b6c945e7815b3b9646de31}{move\+Object01}}
+\item 
+Transform \mbox{\hyperlink{class_background_move_controller_ab1c643b1c75ba9992d2893e0d9d73f69}{move\+Object02}}
+\item 
+Transform \mbox{\hyperlink{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}{move\+Object03}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_background_move_controller_a080e034e9cac35247c1dde42e21fc50d}\index{BackgroundMoveController@{BackgroundMoveController}!OnTouchLogin@{OnTouchLogin}}
+\index{OnTouchLogin@{OnTouchLogin}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{OnTouchLogin()}{OnTouchLogin()}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a080e034e9cac35247c1dde42e21fc50d} 
+void Background\+Move\+Controller.\+On\+Touch\+Login (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00067}{67}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_ab1c643b1c75ba9992d2893e0d9d73f69}{moveObject02}}.DOLocalMoveX(1100,\ 0.5f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}{moveObject03}}.DOLocalMove(\textcolor{keyword}{new}\ Vector3(-\/730,\ 420,\ 0),\ 0.5f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_background_move_controller_a8e649b2f984146e372301ace764ff3e7}\index{BackgroundMoveController@{BackgroundMoveController}!OnTouchMoving@{OnTouchMoving}}
+\index{OnTouchMoving@{OnTouchMoving}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{OnTouchMoving()}{OnTouchMoving()}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a8e649b2f984146e372301ace764ff3e7} 
+void Background\+Move\+Controller.\+On\+Touch\+Moving (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ StartCoroutine(CoFadeOut());}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ moveObject02.localRotation\ =\ Quaternion.Euler(0,\ 180,\ 0);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_ab1c643b1c75ba9992d2893e0d9d73f69}{moveObject02}}.DOLocalMoveX(270,\ 0.5f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ moveObject03.localRotation\ =\ Quaternion.Euler(180,\ 180,\ 0);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}{moveObject03}}.DOScale(\textcolor{keyword}{new}\ Vector3(1.1f,\ 1.1f,\ 1),\ 0.4f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}{moveObject03}}.DOLocalMove(\textcolor{keyword}{new}\ Vector3(-\/520,\ 200,\ 0),\ 0.5f).SetEase(Ease.Linear).OnComplete(()\ =>}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}{moveObject03}}.DOScale(\textcolor{keyword}{new}\ Vector3(0.8f,\ 0.8f,\ 1),\ 0.2f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_background_move_controller_a8e649b2f984146e372301ace764ff3e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_background_move_controller_a4e9e8fbddc004bc70915f7cf6107d405}\index{BackgroundMoveController@{BackgroundMoveController}!ResetPosition@{ResetPosition}}
+\index{ResetPosition@{ResetPosition}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{ResetPosition()}{ResetPosition()}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a4e9e8fbddc004bc70915f7cf6107d405} 
+void Background\+Move\+Controller.\+Reset\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ moveObject01.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ moveObject02.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(-\/1100,\ 0,\ 0);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ moveObject03.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(-\/1000,\ 0,\ 0);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a5febd6eea16fb9a1b29d26eb62a40d73}{StartMotion}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_background_move_controller_a4e9e8fbddc004bc70915f7cf6107d405_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_background_move_controller_a5febd6eea16fb9a1b29d26eb62a40d73}\index{BackgroundMoveController@{BackgroundMoveController}!StartMotion@{StartMotion}}
+\index{StartMotion@{StartMotion}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{StartMotion()}{StartMotion()}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a5febd6eea16fb9a1b29d26eb62a40d73} 
+void Background\+Move\+Controller.\+Start\+Motion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a2ec1dec893b6c945e7815b3b9646de31}{moveObject01}}.DOLocalMoveX(770,\ 0.5f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_ab1c643b1c75ba9992d2893e0d9d73f69}{moveObject02}}.DOLocalMoveX(-\/270,\ 0.5f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}{moveObject03}}.DOLocalMoveX(420,\ 0.5f).SetEase(Ease.Linear);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_background_move_controller_a5febd6eea16fb9a1b29d26eb62a40d73_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_background_move_controller_a2ec1dec893b6c945e7815b3b9646de31}\index{BackgroundMoveController@{BackgroundMoveController}!moveObject01@{moveObject01}}
+\index{moveObject01@{moveObject01}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{moveObject01}{moveObject01}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a2ec1dec893b6c945e7815b3b9646de31} 
+Transform Background\+Move\+Controller.\+move\+Object01}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_background_move_controller_ab1c643b1c75ba9992d2893e0d9d73f69}\index{BackgroundMoveController@{BackgroundMoveController}!moveObject02@{moveObject02}}
+\index{moveObject02@{moveObject02}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{moveObject02}{moveObject02}}
+{\footnotesize\ttfamily \label{class_background_move_controller_ab1c643b1c75ba9992d2893e0d9d73f69} 
+Transform Background\+Move\+Controller.\+move\+Object02}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d}\index{BackgroundMoveController@{BackgroundMoveController}!moveObject03@{moveObject03}}
+\index{moveObject03@{moveObject03}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{moveObject03}{moveObject03}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a34d1d678678a070b1e70f85242f4591d} 
+Transform Background\+Move\+Controller.\+move\+Object03}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_background_move_controller_a1d23928d622a8ecbf99673f37f309f3d}\index{BackgroundMoveController@{BackgroundMoveController}!titleObject@{titleObject}}
+\index{titleObject@{titleObject}!BackgroundMoveController@{BackgroundMoveController}}
+\doxysubsubsection{\texorpdfstring{titleObject}{titleObject}}
+{\footnotesize\ttfamily \label{class_background_move_controller_a1d23928d622a8ecbf99673f37f309f3d} 
+Image Background\+Move\+Controller.\+title\+Object}
+
+
+
+\mbox{\hyperlink{_background_move_controller_8cs_source}{Background\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_background_move_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Launcher/\mbox{\hyperlink{_background_move_controller_8cs}{Background\+Move\+Controller.\+cs}}\end{DoxyCompactItemize}

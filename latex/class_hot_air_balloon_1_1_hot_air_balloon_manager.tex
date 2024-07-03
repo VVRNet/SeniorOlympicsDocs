@@ -50,6 +50,8 @@ int \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307
 \item 
 List$<$ Game\+Object $>$ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloon\+Image}}
 \item 
+Game\+Object \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a11e2a65be1affc87c98ecd49818318cb}{ring}}
+\item 
 Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a0e00343abbd19c7c02d1b4cd4920a367}{guide\+Panel\+Text}}
 \end{DoxyCompactItemize}
 
@@ -70,34 +72,27 @@ void Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+Complete\+Stage (\begin{Do
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00218}{218}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00223}{223}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//���� ����\ ������ �������� �����س��� ����\ ������ ����\ ��}}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}\ ==\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}})}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctCheckCnt++;}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!balloonTouchController[i].isCorrect)}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouchController[i].OtherEndingMotion();}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GoNextStage());}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//맞춘\ 문제\ 개수가\ 정답으로\ 설정해놓은\ 문제\ 개수와\ 같을\ 때}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}\ ==\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}})}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctCheckCnt++;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!balloonTouchController[i].isCorrect)}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouchController[i].OtherEndingMotion();}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GoNextStage());}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_hot_air_balloon_1_1_hot_air_balloon_manager_a78672c775d9818c774ca3b90bd304fce_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_hot_air_balloon_1_1_hot_air_balloon_manager_a38ce44bd50344ae141d604bee7c37473}\index{HotAirBalloon.HotAirBalloonManager@{HotAirBalloon.HotAirBalloonManager}!ResetStage@{ResetStage}}
 \index{ResetStage@{ResetStage}!HotAirBalloon.HotAirBalloonManager@{HotAirBalloon.HotAirBalloonManager}}
 \doxysubsubsection{\texorpdfstring{ResetStage()}{ResetStage()}}
@@ -106,45 +101,47 @@ void Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+Reset\+Stage (\begin{DoxyP
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00097}{97}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00099}{99}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Clear();}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}\ =\ 0;}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}.Count;\ i++)}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ ==\ roundCnt)}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[i].parent.SetActive(\textcolor{keyword}{true});\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[i].parent.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouchController[i].isCorrect\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleList(ref\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Clear();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}\ =\ 0;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}.Count;\ i++)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ ==\ roundCnt)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[i].parent.SetActive(\textcolor{keyword}{true});\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[i].parent.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouchController[i].isCorrect\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a2a5bb2f5cd2155e46df0fb2d28cc31fc}{SpawnText}}();}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleList(ref\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a2a5bb2f5cd2155e46df0fb2d28cc31fc}{SpawnText}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_hot_air_balloon_1_1_hot_air_balloon_manager_a38ce44bd50344ae141d604bee7c37473_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,16 +156,17 @@ void Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+Show\+Question (\begin{Dox
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00092}{92}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00094}{94}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a38ce44bd50344ae141d604bee7c37473}{ResetStage}}();}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a38ce44bd50344ae141d604bee7c37473}{ResetStage}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -183,29 +181,31 @@ void Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+Spawn\+Correct\+Balloon (\
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00178}{178}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00181}{181}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}};\ i++)}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].GetComponent<SpriteRenderer>().sprite\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}[\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}[i]].answerHotAirBalloon;}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.SetParent(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition[i]);}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{00190\ }
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BalloonTouchController\ balloonTouch\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].GetComponent<BalloonTouchController>();}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouch.isCorrect\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ �������� ����}}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}};\ i++)}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].GetComponent<SpriteRenderer>().sprite\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}[\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}[i]].answerHotAirBalloon;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.SetParent(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition[i]);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BalloonTouchController\ balloonTouch\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].GetComponent<BalloonTouchController>();}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouch.isCorrect\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ 정답으로\ 설정}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ balloonTouch.hand.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -220,38 +220,40 @@ void Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+Spawn\+Text (\begin{DoxyPa
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00143}{143}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00145}{145}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}};\ i++)}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Contains(quizText))}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Add(quizText);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}};\ i++)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Contains(quizText))}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HardLevel(i,\ quizText);}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00158\ }
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_ac8a182cf3e9056441bcd205d580b389c}{SpawnCorrectBalloon}}();}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a6138b17c97a4055fb902b449d2cf2fd9}{SpawnWrongBalloon}}();}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Add(quizText);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HardLevel(i,\ quizText);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_ac8a182cf3e9056441bcd205d580b389c}{SpawnCorrectBalloon}}();}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a6138b17c97a4055fb902b449d2cf2fd9}{SpawnWrongBalloon}}();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_hot_air_balloon_1_1_hot_air_balloon_manager_a2a5bb2f5cd2155e46df0fb2d28cc31fc_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -266,33 +268,35 @@ void Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+Spawn\+Wrong\+Balloon (\be
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00196}{196}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00200}{200}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ List<int>\ wrongIndex\ =\ \textcolor{keyword}{new}\ List<int>();}
-\DoxyCodeLine{00199\ }
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ quizTextCount�� �ν����ͻ󿡼�\ 1�� ��\ ����}}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}};\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomBalloon\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Contains(randomBalloon)\ ||\ wrongIndex.Contains(randomBalloon))}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomBalloon\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00209\ }
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrongIndex.Add(randomBalloon);}
-\DoxyCodeLine{00211\ }
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].GetComponent<SpriteRenderer>().sprite\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}[randomBalloon].answerHotAirBalloon;}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.SetParent(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition[i]);}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ List<int>\ wrongIndex\ =\ \textcolor{keyword}{new}\ List<int>();}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ quizTextCount는\ 인스펙터상에서\ 1로\ 값\ 설정}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}{quizTextCount}};\ i\ <\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition.Count;\ i++)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomBalloon\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a732f887c881ab9c4dc52d64f84ed6a1f}{quizTextIndex}}.Contains(randomBalloon)\ ||\ wrongIndex.Contains(randomBalloon))}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomBalloon\ =\ Random.Range(0,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}.Count);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrongIndex.Add(randomBalloon);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].GetComponent<SpriteRenderer>().sprite\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_af7472b98cdf41f2eba642cd7ac40e033}{colorList\_Q}}[randomBalloon].answerHotAirBalloon;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.SetParent(\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_aa785ef6b1cbc767268ff0e81e9535b28}{ColorPositionQ}}[roundCnt].roundPosition[i]);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a7f6dbeefba1e608761f4349f80f20e80}{balloonImage}}[i].transform.GetComponent<BalloonTouchController>().hand.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -350,7 +354,7 @@ Text\+Mesh\+Pro\+UGUI Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+guide\+Pa
 
 
 
-\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00042}{42}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1d84684a560ad018f83680d18f9affe3}\index{HotAirBalloon.HotAirBalloonManager@{HotAirBalloon.HotAirBalloonManager}!quizTextCount@{quizTextCount}}
 \index{quizTextCount@{quizTextCount}!HotAirBalloon.HotAirBalloonManager@{HotAirBalloon.HotAirBalloonManager}}
@@ -371,6 +375,16 @@ List$<$int$>$ Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+quiz\+Text\+Index
 
 
 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_hot_air_balloon_1_1_hot_air_balloon_manager_a11e2a65be1affc87c98ecd49818318cb}\index{HotAirBalloon.HotAirBalloonManager@{HotAirBalloon.HotAirBalloonManager}!ring@{ring}}
+\index{ring@{ring}!HotAirBalloon.HotAirBalloonManager@{HotAirBalloon.HotAirBalloonManager}}
+\doxysubsubsection{\texorpdfstring{ring}{ring}}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_hot_air_balloon_manager_a11e2a65be1affc87c98ecd49818318cb} 
+Game\+Object Hot\+Air\+Balloon.\+Hot\+Air\+Balloon\+Manager.\+ring}
+
+
+
+\mbox{\hyperlink{_hot_air_balloon_manager_8cs_source}{Hot\+Air\+Balloon\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_hot_air_balloon_manager_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
 
 
 

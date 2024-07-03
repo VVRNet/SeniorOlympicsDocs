@@ -12,5 +12,6 @@ var class_hot_air_balloon_1_1_hot_air_balloon_manager =
     [ "correctCheckCount", "class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a1cea3307f28a9a5f7b2fe8d262fef348", null ],
     [ "guidePanelText", "class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a0e00343abbd19c7c02d1b4cd4920a367", null ],
     [ "quizTextCount", "class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a1d84684a560ad018f83680d18f9affe3", null ],
-    [ "quizTextIndex", "class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a732f887c881ab9c4dc52d64f84ed6a1f", null ]
+    [ "quizTextIndex", "class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a732f887c881ab9c4dc52d64f84ed6a1f", null ],
+    [ "ring", "class_hot_air_balloon_1_1_hot_air_balloon_manager.html#a11e2a65be1affc87c98ecd49818318cb", null ]
 ];

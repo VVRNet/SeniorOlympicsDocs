@@ -2,7 +2,8 @@
 \hypertarget{class_m_s500sdk}{}\label{class_m_s500sdk}\index{MS500sdk@{MS500sdk}}
 
 
-MS500sdk에 대한 상속 다이어그램 \+: \nopagebreak
+MS500sdk에 대한 상속 다이어그램 \+: 
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +12,8 @@ MS500sdk에 대한 상속 다이어그램 \+: \nopagebreak
 \end{figure}
 
 
-MS500sdk에 대한 협력 다이어그램\+:\nopagebreak
+MS500sdk에 대한 협력 다이어그램\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -221,7 +223,8 @@ Vector3 MS500sdk.\+Calculate\+Center (\begin{DoxyParamCaption}\item[{List$<$ Vec
 \DoxyCodeLine{00411\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -247,7 +250,8 @@ void MS500sdk.\+Exit\+Btn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 \DoxyCodeLine{00826\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -274,7 +278,8 @@ void MS500sdk.\+Free\+DLL (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 \DoxyCodeLine{00231\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -314,7 +319,7 @@ void MS500sdk.\+Get\+Object\+At\+Position (\begin{DoxyParamCaption}\item[{Vector
 \DoxyCodeLine{00638\ }
 \DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ RaycastHit\ hit;}
 \DoxyCodeLine{00640\ }
-\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_spine_a9e6ca923c79f5f706d84884adb93fa99}{Physics}}.Raycast(ray,\ out\ hit))}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Physics.Raycast(ray,\ out\ hit))}
 \DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}\ target\ =\ hit.collider.GetComponent<\mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}>();}
 \DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target\ !=\ \textcolor{keyword}{null})}
@@ -335,14 +340,16 @@ void MS500sdk.\+Get\+Object\+At\+Position (\begin{DoxyParamCaption}\item[{Vector
 \DoxyCodeLine{00659\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_m_s500sdk_a9dd1872370f78115545706a16e8e4936_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -369,9 +376,9 @@ void MS500sdk.\+Get\+Object\+At\+Position\+UI (\begin{DoxyParamCaption}\item[{Ve
 \DoxyCodeLine{00675\ }
 \DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ StartCoroutine(CooldownUI());}
 \DoxyCodeLine{00677\ }
-\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ PointerEventData\ pe\ =\ \textcolor{keyword}{new}\ PointerEventData(\mbox{\hyperlink{_cw_helper_8cs_aa29bcfb1928af6c7367e5da46cd564e7}{EventSystem}}.current) }
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ PointerEventData\ pe\ =\ \textcolor{keyword}{new}\ PointerEventData(EventSystem.current) }
 \DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ \textcolor{keyword}{new}\ Vector3(position.x\ +\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width\ /\ 15,\ position.y\ +\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height\ /\ 10,\ 0.0f)}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ \textcolor{keyword}{new}\ Vector3(position.x\ +\ Screen.width\ /\ 15,\ position.y\ +\ Screen.height\ /\ 10,\ 0.0f)}
 \DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00682\ }
 \DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ ms500Manager.LastHit.x\ =\ (int)(pe.position.x);}
@@ -383,7 +390,7 @@ void MS500sdk.\+Get\+Object\+At\+Position\+UI (\begin{DoxyParamCaption}\item[{Ve
 \DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00690\ }
 \DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ List<RaycastResult>\ hits\ =\ \textcolor{keyword}{new}\ List<RaycastResult>();}
-\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_cw_helper_8cs_aa29bcfb1928af6c7367e5da46cd564e7}{EventSystem}}.current.RaycastAll(pe,\ hits);\ \textcolor{comment}{//\ Raycast\ 방식으로\ 터치}}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ EventSystem.current.RaycastAll(pe,\ hits);\ \textcolor{comment}{//\ Raycast\ 방식으로\ 터치}}
 \DoxyCodeLine{00693\ }
 \DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ hits.Count;\ i++)}
 \DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \{}
@@ -393,14 +400,16 @@ void MS500sdk.\+Get\+Object\+At\+Position\+UI (\begin{DoxyParamCaption}\item[{Ve
 \DoxyCodeLine{00699\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_m_s500sdk_ae1f776576db94e404381288dfb0c21b7_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -564,7 +573,8 @@ void MS500sdk.\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 \DoxyCodeLine{00544\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -589,16 +599,17 @@ void MS500sdk.\+Position\+To\+Img (\begin{DoxyParamCaption}\item[{Vector2}]{posi
 \DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ heightRatio\ =\ Screen.height\ /\ (LT.transform.localPosition.y\ -\/\ \mbox{\hyperlink{class_m_s500sdk_a3d5ea3499e6b8891036829b0bedf74bc}{LB}}.transform.localPosition.y);}
 \DoxyCodeLine{00584\ }
 \DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ Vector2\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector2(}
-\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ (position.x\ -\/\ \mbox{\hyperlink{class_m_s500sdk_a8acb05a278574725c902ca3729d85809}{LT}}.transform.localPosition.x)\ *\ widthRatio\ -\/\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width\ /\ 2,}
-\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ (position.y\ -\/\ \mbox{\hyperlink{class_m_s500sdk_a8acb05a278574725c902ca3729d85809}{LT}}.transform.localPosition.y)\ *\ heightRatio\ +\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height\ /\ 2);}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ (position.x\ -\/\ \mbox{\hyperlink{class_m_s500sdk_a8acb05a278574725c902ca3729d85809}{LT}}.transform.localPosition.x)\ *\ widthRatio\ -\/\ Screen.width\ /\ 2,}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ (position.y\ -\/\ \mbox{\hyperlink{class_m_s500sdk_a8acb05a278574725c902ca3729d85809}{LT}}.transform.localPosition.y)\ *\ heightRatio\ +\ Screen.height\ /\ 2);}
 \DoxyCodeLine{00588\ }
 \DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ targetBlue.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(screenPosition.x,\ screenPosition.y,\ \mbox{\hyperlink{class_m_s500sdk_a36c0184fd5e2ab00a99db13b41ba469f}{targetBlue}}.transform.localPosition.z);}
-\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ Vector2\ newPosition\ =\ \textcolor{keyword}{new}\ Vector2(screenPosition.x\ +\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.width\ /\ 2,\ screenPosition.y\ +\ \mbox{\hyperlink{namespace_spine_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0}{Screen}}.height\ /\ 2);}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ Vector2\ newPosition\ =\ \textcolor{keyword}{new}\ Vector2(screenPosition.x\ +\ Screen.width\ /\ 2,\ screenPosition.y\ +\ Screen.height\ /\ 2);}
 \DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_m_s500sdk_a9dd1872370f78115545706a16e8e4936}{GetObjectAtPosition}}(newPosition);}
 \DoxyCodeLine{00592\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -644,7 +655,8 @@ void MS500sdk.\+Reset\+Btn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 \DoxyCodeLine{00819\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -729,7 +741,8 @@ void MS500sdk.\+Setting\+Button\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 \DoxyCodeLine{00140\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

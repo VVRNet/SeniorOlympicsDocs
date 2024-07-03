@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
    </div>
   </td>
  </tr>
@@ -116,123 +116,122 @@ $(function(){initNavTree('_game_record_controller_8cs_source.html',''); initResi
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        _gameRecordService = gameObject.AddComponent&lt;<a class="code hl_class" href="class_game_record_service.html">GameRecordService</a>&gt;();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="comment">//record = new SingleGameRecord();</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="comment">//Debug.Log(record.ToString());</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#aff23ce884a521ac45ecb63cc48871308">   20</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#aff23ce884a521ac45ecb63cc48871308">GameInit</a>(<a class="code hl_class" href="class_game_record.html">GameRecord</a> record)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        var agency = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.LoggedInAgency;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (agency != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            var currentClass = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentClass;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            var currentStudent = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentStudent;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).InitGame(</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                agencyId: agency._id,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                classId: currentClass.Name,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                personId: currentStudent == <span class="keyword">null</span> ? null : currentStudent.Id,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                name: currentStudent == <span class="keyword">null</span> ? currentClass.Name : currentStudent.Name,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                );</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="comment">//ÀÓ½Ã·Î µ¥ÀÌÅÍ Àû¾î³õÀº°ÅÀÓ ÃßÈÄ ½Ã´Ï¾î ¿Ã¸²ÇÈ ¶§´Â 2P ¼±ÅÃÇÏ¸é ±× ¼±ÅÃÇÑ »ç¶÷ÀÇ Á¤º¸¸¦ °°ÀÌ ³Ö¾îÁà¾ßÇÔ</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                ((<a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)record).InitGame(</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    agencyId: agency._id,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    classIds: <span class="keyword">new</span> List&lt;string&gt; { currentClass.Name, <span class="stringliteral">&quot;VVR&quot;</span> },</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    personIds: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? null : currentStudent.Id, <span class="stringliteral">&quot;91cc93e9-820a-40aa-abbc-a93e132c9e33&quot;</span> },</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    names: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? currentClass.Name : currentStudent.Name, <span class="stringliteral">&quot;User1&quot;</span> },</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    );</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        Debug.Log(record.ToString());</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#aff23ce884a521ac45ecb63cc48871308">   19</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#aff23ce884a521ac45ecb63cc48871308">GameInit</a>(<a class="code hl_class" href="class_game_record.html">GameRecord</a> record)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        var agency = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.LoggedInAgency;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span> (agency != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            var currentClass = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentClass;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            var currentStudent = <a class="code hl_class" href="class_session_manager.html">SessionManager</a>.<a class="code hl_property" href="class_session_manager.html#a41ea72dc41ee7bc4fa633b6ef7a09125">Instance</a>.CurrentStudent;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).InitGame(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                agencyId: agency._id,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                classId: currentClass.Name,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                personId: currentStudent == <span class="keyword">null</span> ? null : currentStudent.Id,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                name: currentStudent == <span class="keyword">null</span> ? currentClass.Name : currentStudent.Name,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                );</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="comment">//ì„ì‹œë¡œ ë°ì´í„° ì ì–´ë†“ì€ê±°ì„ ì¶”í›„ ì‹œë‹ˆì–´ ì˜¬ë¦¼í”½ ë•ŒëŠ” 2P ì„ íƒí•˜ë©´ ê·¸ ì„ íƒí•œ ì‚¬ëŒì˜ ì •ë³´ë¥¼ ê°™ì´ ë„£ì–´ì¤˜ì•¼í•¨</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                ((<a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a>)record).InitGame(</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    agencyId: agency._id,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    classIds: <span class="keyword">new</span> List&lt;string&gt; { currentClass.Name, <span class="stringliteral">&quot;VVR&quot;</span> },</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    personIds: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? null : currentStudent.Id, <span class="stringliteral">&quot;91cc93e9-820a-40aa-abbc-a93e132c9e33&quot;</span> },</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    names: <span class="keyword">new</span> List&lt;string&gt; { currentStudent == <span class="keyword">null</span> ? currentClass.Name : currentStudent.Name, <span class="stringliteral">&quot;User1&quot;</span> },</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>: <a class="code hl_variable" href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">category</a>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a>: <a class="code hl_variable" href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">contentName</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    );</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Debug.Log(record.ToString());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">//°ÔÀÓ ÃÖÃÊ ÃÊ±âÈ­</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#ab1b4b9edd053e44071f83debeb21e19f">   56</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#ab1b4b9edd053e44071f83debeb21e19f">GameStart</a>()</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).SingleGameStart();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        Debug.Log(record.ToString());</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">//ê²Œì„ ìµœì´ˆ ì´ˆê¸°í™”</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#ab1b4b9edd053e44071f83debeb21e19f">   55</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#ab1b4b9edd053e44071f83debeb21e19f">GameStart</a>()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        ((<a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a>)record).SingleGameStart();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        Debug.Log(record.ToString());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">//°ÔÀÓ ½ÃÀÛ</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#a0198fc250fd06e9b71478c236021877f">   63</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#a0198fc250fd06e9b71478c236021877f">TestOnTouch</a>()</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">float</span> randomIndex = UnityEngine.Random.Range(0.0f, 10.0f);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="comment">//Hit(randomIndex &lt; 5, randomIndex, new TouchEvent(x: randomIndex, y: randomIndex+2, DateTime.UtcNow), randomIndex+0.2f);</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">//ê²Œì„ ì‹œì‘</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#a0198fc250fd06e9b71478c236021877f">   62</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#a0198fc250fd06e9b71478c236021877f">TestOnTouch</a>()</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">float</span> randomIndex = UnityEngine.Random.Range(0.0f, 10.0f);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">//Hit(randomIndex &lt; 5, randomIndex, new TouchEvent(x: randomIndex, y: randomIndex+2, DateTime.UtcNow), randomIndex+0.2f);</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">   69</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">Hit</a>(<a class="code hl_class" href="class_game_record.html">GameRecord</a> record, <span class="keywordtype">int</span> userIndex, <span class="keywordtype">bool</span> isCorrect, <span class="keywordtype">float</span> accuracy, <a class="code hl_class" href="class_touch_event.html">TouchEvent</a> touchEvent, <span class="keywordtype">float</span> reactionTime)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="comment">// isCorrect: Á¤´ä ¿©ºÎ,</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// accuracy: Á¤È®µµ(Áß½ÉÁ¡°ú °Å¸® Â÷ÀÌ),</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// touchEvent: ÅÍÄ¡ ÀÌº¥Æ® ±â·Ï,</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="comment">// reactionTime: ¹İÀÀ¼Óµµ(¿ÀºêÁ§Æ®°¡ ³ªÅ¸³ª°í ÅÍÄ¡µÆÀ»¶§±îÁö ½Ã°£)</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">//((SingleGameRecord)record).RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">//Debug.Log(record.ToString() );</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> singleGameRecord)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            singleGameRecord.RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dualGameRecord)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            dualGameRecord.RecordDetails[userIndex].Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        Debug.Log(record.ToString());</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">   68</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">Hit</a>(<a class="code hl_class" href="class_game_record.html">GameRecord</a> record, <span class="keywordtype">int</span> userIndex, <span class="keywordtype">bool</span> isCorrect, <span class="keywordtype">float</span> accuracy, <a class="code hl_class" href="class_touch_event.html">TouchEvent</a> touchEvent, <span class="keywordtype">float</span> reactionTime)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">// isCorrect: ì •ë‹µ ì—¬ë¶€,</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="comment">// accuracy: ì •í™•ë„(ì¤‘ì‹¬ì ê³¼ ê±°ë¦¬ ì°¨ì´),</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// touchEvent: í„°ì¹˜ ì´ë²¤íŠ¸ ê¸°ë¡,</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// reactionTime: ë°˜ì‘ì†ë„(ì˜¤ë¸Œì íŠ¸ê°€ ë‚˜íƒ€ë‚˜ê³  í„°ì¹˜ëì„ë•Œê¹Œì§€ ì‹œê°„)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">//((SingleGameRecord)record).RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">//Debug.Log(record.ToString() );</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> singleGameRecord)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            singleGameRecord.RecordDetail.Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dualGameRecord)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            dualGameRecord.RecordDetails[userIndex].Hit(isCorrect, accuracy, touchEvent, reactionTime);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        Debug.Log(record.ToString());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">//ÅÍÄ¡µÆÀ»¶§ ½ÇÇà½ÃÅ³ ÇÔ¼ö: ITouchObject -&gt; OnTouch¿¡¼­ ½ÇÇà½ÃÄÑÁÖ¸é µÊ </span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#af8dd0434941a7c191663787565c53eb3">   92</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#af8dd0434941a7c191663787565c53eb3">SaveGameRecord</a>(<a class="code hl_class" href="class_game_record.html">GameRecord</a> record, Action callback)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        Debug.Log(record.ToString());</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> single)</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            single.SingleGameEnd();</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dual)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            dual.DualGameEnd();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        StartCoroutine(_gameRecordService.<a class="code hl_function" href="class_game_record_service.html#ada0bad7effce61b2c0f0b9061e3da049">SaveGameRecord</a>(record, (response) =&gt;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            Debug.Log(<span class="stringliteral">&quot;°ÔÀÓ ±â·Ï ¼º°ø: &quot;</span> + response);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            callback?.Invoke();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }));</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">//í„°ì¹˜ëì„ë•Œ ì‹¤í–‰ì‹œí‚¬ í•¨ìˆ˜: ITouchObject -&gt; OnTouchì—ì„œ ì‹¤í–‰ì‹œì¼œì£¼ë©´ ë¨ </span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_game_record_controller.html#af8dd0434941a7c191663787565c53eb3">   91</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_record_controller.html#af8dd0434941a7c191663787565c53eb3">SaveGameRecord</a>(<a class="code hl_class" href="class_game_record.html">GameRecord</a> record, Action callback)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        Debug.Log(record.ToString());</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_single_game_record.html">SingleGameRecord</a> single)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            single.SingleGameEnd();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(record is <a class="code hl_class" href="class_dual_game_record.html">DualGameRecord</a> dual)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            dual.DualGameEnd();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        StartCoroutine(_gameRecordService.<a class="code hl_function" href="class_game_record_service.html#ada0bad7effce61b2c0f0b9061e3da049">SaveGameRecord</a>(record, (response) =&gt;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            Debug.Log(<span class="stringliteral">&quot;ê²Œì„ ê¸°ë¡ ì„±ê³µ: &quot;</span> + response);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            callback?.Invoke();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }));</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">//°ÔÀÓ Á¾·á ÈÄ µ¥ÀÌÅÍ ÀúÀå</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">//ê²Œì„ ì¢…ë£Œ í›„ ë°ì´í„° ì €ì¥</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
 </div>
 <div class="ttc" id="aclass_dual_game_record_html"><div class="ttname"><a href="class_dual_game_record.html">DualGameRecord</a></div><div class="ttdef"><b>Definition</b> <a href="_game_record_8cs_source.html#l00092">GameRecord.cs:93</a></div></div>
 <div class="ttc" id="aclass_game_record_controller_html"><div class="ttname"><a href="class_game_record_controller.html">GameRecordController</a></div><div class="ttdef"><b>Definition</b> <a href="#l00006">GameRecordController.cs:7</a></div></div>
-<div class="ttc" id="aclass_game_record_controller_html_a0198fc250fd06e9b71478c236021877f"><div class="ttname"><a href="class_game_record_controller.html#a0198fc250fd06e9b71478c236021877f">GameRecordController.TestOnTouch</a></div><div class="ttdeci">void TestOnTouch()</div><div class="ttdef"><b>Definition</b> <a href="#l00063">GameRecordController.cs:63</a></div></div>
+<div class="ttc" id="aclass_game_record_controller_html_a0198fc250fd06e9b71478c236021877f"><div class="ttname"><a href="class_game_record_controller.html#a0198fc250fd06e9b71478c236021877f">GameRecordController.TestOnTouch</a></div><div class="ttdeci">void TestOnTouch()</div><div class="ttdef"><b>Definition</b> <a href="#l00062">GameRecordController.cs:62</a></div></div>
 <div class="ttc" id="aclass_game_record_controller_html_a5a0999a03d58661f82851d30762711a9"><div class="ttname"><a href="class_game_record_controller.html#a5a0999a03d58661f82851d30762711a9">GameRecordController.contentName</a></div><div class="ttdeci">string contentName</div><div class="ttdef"><b>Definition</b> <a href="#l00011">GameRecordController.cs:11</a></div></div>
-<div class="ttc" id="aclass_game_record_controller_html_a6a6c28b016fa1c43bb372eefacaccb9e"><div class="ttname"><a href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">GameRecordController.Hit</a></div><div class="ttdeci">void Hit(GameRecord record, int userIndex, bool isCorrect, float accuracy, TouchEvent touchEvent, float reactionTime)</div><div class="ttdef"><b>Definition</b> <a href="#l00069">GameRecordController.cs:69</a></div></div>
+<div class="ttc" id="aclass_game_record_controller_html_a6a6c28b016fa1c43bb372eefacaccb9e"><div class="ttname"><a href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">GameRecordController.Hit</a></div><div class="ttdeci">void Hit(GameRecord record, int userIndex, bool isCorrect, float accuracy, TouchEvent touchEvent, float reactionTime)</div><div class="ttdef"><b>Definition</b> <a href="#l00068">GameRecordController.cs:68</a></div></div>
 <div class="ttc" id="aclass_game_record_controller_html_a9163932d5770c674e4dac34f2f2e43cd"><div class="ttname"><a href="class_game_record_controller.html#a9163932d5770c674e4dac34f2f2e43cd">GameRecordController.category</a></div><div class="ttdeci">string category</div><div class="ttdef"><b>Definition</b> <a href="#l00010">GameRecordController.cs:10</a></div></div>
-<div class="ttc" id="aclass_game_record_controller_html_ab1b4b9edd053e44071f83debeb21e19f"><div class="ttname"><a href="class_game_record_controller.html#ab1b4b9edd053e44071f83debeb21e19f">GameRecordController.GameStart</a></div><div class="ttdeci">void GameStart()</div><div class="ttdef"><b>Definition</b> <a href="#l00056">GameRecordController.cs:56</a></div></div>
-<div class="ttc" id="aclass_game_record_controller_html_af8dd0434941a7c191663787565c53eb3"><div class="ttname"><a href="class_game_record_controller.html#af8dd0434941a7c191663787565c53eb3">GameRecordController.SaveGameRecord</a></div><div class="ttdeci">void SaveGameRecord(GameRecord record, Action callback)</div><div class="ttdef"><b>Definition</b> <a href="#l00092">GameRecordController.cs:92</a></div></div>
-<div class="ttc" id="aclass_game_record_controller_html_aff23ce884a521ac45ecb63cc48871308"><div class="ttname"><a href="class_game_record_controller.html#aff23ce884a521ac45ecb63cc48871308">GameRecordController.GameInit</a></div><div class="ttdeci">void GameInit(GameRecord record)</div><div class="ttdef"><b>Definition</b> <a href="#l00020">GameRecordController.cs:20</a></div></div>
+<div class="ttc" id="aclass_game_record_controller_html_ab1b4b9edd053e44071f83debeb21e19f"><div class="ttname"><a href="class_game_record_controller.html#ab1b4b9edd053e44071f83debeb21e19f">GameRecordController.GameStart</a></div><div class="ttdeci">void GameStart()</div><div class="ttdef"><b>Definition</b> <a href="#l00055">GameRecordController.cs:55</a></div></div>
+<div class="ttc" id="aclass_game_record_controller_html_af8dd0434941a7c191663787565c53eb3"><div class="ttname"><a href="class_game_record_controller.html#af8dd0434941a7c191663787565c53eb3">GameRecordController.SaveGameRecord</a></div><div class="ttdeci">void SaveGameRecord(GameRecord record, Action callback)</div><div class="ttdef"><b>Definition</b> <a href="#l00091">GameRecordController.cs:91</a></div></div>
+<div class="ttc" id="aclass_game_record_controller_html_aff23ce884a521ac45ecb63cc48871308"><div class="ttname"><a href="class_game_record_controller.html#aff23ce884a521ac45ecb63cc48871308">GameRecordController.GameInit</a></div><div class="ttdeci">void GameInit(GameRecord record)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">GameRecordController.cs:19</a></div></div>
 <div class="ttc" id="aclass_game_record_html"><div class="ttname"><a href="class_game_record.html">GameRecord</a></div><div class="ttdef"><b>Definition</b> <a href="_game_record_8cs_source.html#l00008">GameRecord.cs:9</a></div></div>
 <div class="ttc" id="aclass_game_record_service_html"><div class="ttname"><a href="class_game_record_service.html">GameRecordService</a></div><div class="ttdoc">ê²Œì„ ê¸°ë¡ ê´€ë ¨ ì‘ì—…ì„ ì²˜ë¦¬í•˜ëŠ” ì„œë¹„ìŠ¤ í´ë˜ìŠ¤ì…ë‹ˆë‹¤.</div><div class="ttdef"><b>Definition</b> <a href="_game_record_service_8cs_source.html#l00010">GameRecordService.cs:11</a></div></div>
 <div class="ttc" id="aclass_game_record_service_html_ada0bad7effce61b2c0f0b9061e3da049"><div class="ttname"><a href="class_game_record_service.html#ada0bad7effce61b2c0f0b9061e3da049">GameRecordService.SaveGameRecord</a></div><div class="ttdeci">IEnumerator SaveGameRecord(GameRecord gameRecord, Action&lt; List&lt; string &gt; &gt; callback)</div><div class="ttdoc">ê²Œì„ ê¸°ë¡ì„ ì €ì¥í•©ë‹ˆë‹¤.</div><div class="ttdef"><b>Definition</b> <a href="_game_record_service_8cs_source.html#l00022">GameRecordService.cs:22</a></div></div>

@@ -1,26 +1,4 @@
 var searchData=
 [
-  ['ianimationstatecomponent_0',['IAnimationStateComponent',['../interface_spine_1_1_unity_1_1_i_animation_state_component.html',1,'Spine::Unity']]],
-  ['ibonetimeline_1',['IBoneTimeline',['../interface_spine_1_1_i_bone_timeline.html',1,'Spine']]],
-  ['ihaschildren_2',['IHasChildren',['../interface_c_w_1_1_common_1_1_cw_child_1_1_i_has_children.html',1,'CW::Common::CwChild']]],
-  ['ihasskeletoncomponent_3',['IHasSkeletonComponent',['../interface_spine_1_1_unity_1_1_i_has_skeleton_component.html',1,'Spine::Unity']]],
-  ['ihasskeletondataasset_4',['IHasSkeletonDataAsset',['../interface_spine_1_1_unity_1_1_i_has_skeleton_data_asset.html',1,'Spine::Unity']]],
-  ['ihasskeletonrenderer_5',['IHasSkeletonRenderer',['../interface_spine_1_1_unity_1_1_i_has_skeleton_renderer.html',1,'Spine::Unity']]],
-  ['ihastextureregion_6',['IHasTextureRegion',['../interface_spine_1_1_i_has_texture_region.html',1,'Spine']]],
-  ['iinterpolation_7',['IInterpolation',['../class_spine_1_1_i_interpolation.html',1,'Spine']]],
-  ['ikconstraint_8',['IkConstraint',['../class_spine_1_1_ik_constraint.html',1,'Spine']]],
-  ['ikconstraintdata_9',['IkConstraintData',['../class_spine_1_1_ik_constraint_data.html',1,'Spine']]],
-  ['ikconstrainttimeline_10',['IkConstraintTimeline',['../class_spine_1_1_ik_constraint_timeline.html',1,'Spine']]],
-  ['ilocalizationhandler_11',['ILocalizationHandler',['../interface_lean_1_1_localization_1_1_i_localization_handler.html',1,'Lean::Localization']]],
-  ['images_12',['Images',['../class_images.html',1,'']]],
-  ['indentscope_13',['IndentScope',['../class_spine_1_1_unity_1_1_editor_1_1_spine_inspector_utility_1_1_indent_scope.html',1,'Spine::Unity::Editor::SpineInspectorUtility']]],
-  ['inheritenum_14',['InheritEnum',['../class_spine_1_1_inherit_enum.html',1,'Spine']]],
-  ['inherittimeline_15',['InheritTimeline',['../class_spine_1_1_inherit_timeline.html',1,'Spine']]],
-  ['ipoolable_16',['IPoolable',['../interface_spine_1_1_pool_1_1_i_poolable.html',1,'Spine::Pool']]],
-  ['iskeletonanimation_17',['ISkeletonAnimation',['../interface_spine_1_1_unity_1_1_i_skeleton_animation.html',1,'Spine::Unity']]],
-  ['iskeletoncomponent_18',['ISkeletonComponent',['../interface_spine_1_1_unity_1_1_i_skeleton_component.html',1,'Spine::Unity']]],
-  ['islottimeline_19',['ISlotTimeline',['../interface_spine_1_1_i_slot_timeline.html',1,'Spine']]],
-  ['ispinecomponent_20',['ISpineComponent',['../interface_spine_1_1_unity_1_1_i_spine_component.html',1,'Spine::Unity']]],
-  ['itouchobject_21',['ITouchObject',['../interface_i_touch_object.html',1,'']]],
-  ['iupdatable_22',['IUpdatable',['../interface_spine_1_1_i_updatable.html',1,'Spine']]]
+  ['itouchobject_0',['ITouchObject',['../interface_i_touch_object.html',1,'']]]
 ];

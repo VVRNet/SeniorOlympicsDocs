@@ -2,7 +2,8 @@
 \hypertarget{class_game_record_controller}{}\label{class_game_record_controller}\index{GameRecordController@{GameRecordController}}
 
 
-Game\+Record\+Controller에 대한 상속 다이어그램 \+: \nopagebreak
+Game\+Record\+Controller에 대한 상속 다이어그램 \+: 
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +12,8 @@ Game\+Record\+Controller에 대한 상속 다이어그램 \+: \nopagebreak
 \end{figure}
 
 
-Game\+Record\+Controller에 대한 협력 다이어그램\+:\nopagebreak
+Game\+Record\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -56,46 +58,47 @@ void Game\+Record\+Controller.\+Game\+Init (\begin{DoxyParamCaption}\item[{\mbox
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentStudent\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent;}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).InitGame(}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classId:\ currentClass.Name,}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personId:\ currentStudent\ ==\ null\ ?\ null\ :\ currentStudent.Id,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ currentStudent\ ==\ null\ ?\ currentClass.Name\ :\ currentStudent.Name,}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//�ӽ÷� ������\ ����������� ����\ �ôϾ� �ø���\ ���� 2P\ �����ϸ� �� ������\ �����\ ������\ ����\ �־������}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})record).InitGame(}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classIds:\ new\ List<string>\ \{\ currentClass.Name,\ \textcolor{stringliteral}{"{}VVR"{}}\ \},}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personIds:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ currentStudent.Id,\ \textcolor{stringliteral}{"{}91cc93e9-\/820a-\/40aa-\/abbc-\/a93e132c9e33"{}}\ \},}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ names:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.Name\ :\ currentStudent.Name,\ \textcolor{stringliteral}{"{}User1"{}}\ \},}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentStudent\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).InitGame(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classId:\ currentClass.Name,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personId:\ currentStudent\ ==\ null\ ?\ null\ :\ currentStudent.Id,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ currentStudent\ ==\ null\ ?\ currentClass.Name\ :\ currentStudent.Name,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//임시로\ 데이터\ 적어놓은거임\ 추후\ 시니어\ 올림픽\ 때는\ 2P\ 선택하면\ 그\ 선택한\ 사람의\ 정보를\ 같이\ 넣어줘야함}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})record).InitGame(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classIds:\ new\ List<string>\ \{\ currentClass.Name,\ \textcolor{stringliteral}{"{}VVR"{}}\ \},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personIds:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ currentStudent.Id,\ \textcolor{stringliteral}{"{}91cc93e9-\/820a-\/40aa-\/abbc-\/a93e132c9e33"{}}\ \},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ names:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.Name\ :\ currentStudent.Name,\ \textcolor{stringliteral}{"{}User1"{}}\ \},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -110,14 +113,14 @@ void Game\+Record\+Controller.\+Game\+Start (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00056}{56}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00055}{55}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00057\ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).SingleGameStart();}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).SingleGameStart();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}\index{GameRecordController@{GameRecordController}!Hit@{Hit}}
@@ -128,33 +131,34 @@ void Game\+Record\+Controller.\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyper
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00069}{69}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00068}{68}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00070\ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ isCorrect:\ ���� ����,}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ accuracy:\ ��Ȯ��(�߽����� �Ÿ�\ ����),}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ touchEvent:\ ��ġ\ �̺�Ʈ\ ���,}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reactionTime:\ �����ӵ�(������Ʈ��\ ��Ÿ���� ��ġ����������\ �ð�)}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//((SingleGameRecord)record).RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(record.ToString()\ );}}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGameRecord)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ singleGameRecord.RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGameRecord)}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ dualGameRecord.RecordDetails[userIndex].Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ isCorrect:\ 정답\ 여부,}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ accuracy:\ 정확도(중심점과\ 거리\ 차이),}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ touchEvent:\ 터치\ 이벤트\ 기록,}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reactionTime:\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//((SingleGameRecord)record).RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(record.ToString()\ );}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGameRecord)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ singleGameRecord.RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGameRecord)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ dualGameRecord.RecordDetails[userIndex].Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -169,29 +173,29 @@ void Game\+Record\+Controller.\+Save\+Game\+Record (\begin{DoxyParamCaption}\ite
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00092}{92}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00091}{91}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00093\ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ single.SingleGameEnd();}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ dual.DualGameEnd();}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ StartCoroutine(\_gameRecordService.\mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{SaveGameRecord}}(record,\ (response)\ =>}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}���� ���\ ����: "{}}\ +\ response);}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke();}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ single.SingleGameEnd();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ dual.DualGameEnd();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ StartCoroutine(\_gameRecordService.\mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{SaveGameRecord}}(record,\ (response)\ =>}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}게임\ 기록\ 성공:\ "{}}\ +\ response);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -210,14 +214,14 @@ void Game\+Record\+Controller.\+Test\+On\+Touch (\begin{DoxyParamCaption}{}{}\en
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00063}{63}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00062}{62}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064\ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ randomIndex\ =\ UnityEngine.Random.Range(0.0f,\ 10.0f);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hit(randomIndex\ <\ 5,\ randomIndex,\ new\ TouchEvent(x:\ randomIndex,\ y:\ randomIndex+2,\ DateTime.UtcNow),\ randomIndex+0.2f);}}
-\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ randomIndex\ =\ UnityEngine.Random.Range(0.0f,\ 10.0f);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hit(randomIndex\ <\ 5,\ randomIndex,\ new\ TouchEvent(x:\ randomIndex,\ y:\ randomIndex+2,\ DateTime.UtcNow),\ randomIndex+0.2f);}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
 
 \end{DoxyCode}
 

@@ -25,7 +25,7 @@ Ranking\+Move\+Cotroller에 대한 협력 다이어그램\+:
 \item 
 void \mbox{\hyperlink{class_ranking_move_cotroller_a690c064d571f746761e574d28a933e4c}{Reset\+Position}} ()
 \item 
-void \mbox{\hyperlink{class_ranking_move_cotroller_a8be5cba517af9dcef21a5bfc0d5fb9d7}{Setting\+Panel}} ()
+void \mbox{\hyperlink{class_ranking_move_cotroller_afd80246eeda2658e5e9bab008e82e496}{Setting\+Panel}} (bool open\+Panel)
 \item 
 void \mbox{\hyperlink{class_ranking_move_cotroller_a6de3885f449cecfc841f155882ae53b0}{Click\+Ranking\+Panel}} (bool click\+Up)
 \end{DoxyCompactItemize}
@@ -52,20 +52,20 @@ void Ranking\+Move\+Cotroller.\+Click\+Ranking\+Panel (\begin{DoxyParamCaption}\
 
 
 
-\mbox{\hyperlink{_ranking_move_cotroller_8cs_source}{Ranking\+Move\+Cotroller.\+cs}} 파일의 \mbox{\hyperlink{_ranking_move_cotroller_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_ranking_move_cotroller_8cs_source}{Ranking\+Move\+Cotroller.\+cs}} 파일의 \mbox{\hyperlink{_ranking_move_cotroller_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(clickUp)}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ranking_move_cotroller_a3e8d96ab8450d9ea93e4a03a79b2b0db}{rankingSlider}}.DOLocalMoveY(723,\ 0.5f).SetEase(Ease.OutBack);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ranking_move_cotroller_a3e8d96ab8450d9ea93e4a03a79b2b0db}{rankingSlider}}.DOLocalMoveY(0,\ 0.5f).SetEase(Ease.OutBack);}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(clickUp)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ranking_move_cotroller_a3e8d96ab8450d9ea93e4a03a79b2b0db}{rankingSlider}}.DOLocalMoveY(723,\ 0.5f).SetEase(Ease.OutBack);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ranking_move_cotroller_a3e8d96ab8450d9ea93e4a03a79b2b0db}{rankingSlider}}.DOLocalMoveY(0,\ 0.5f).SetEase(Ease.OutBack);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_ranking_move_cotroller_a690c064d571f746761e574d28a933e4c}\index{RankingMoveCotroller@{RankingMoveCotroller}!ResetPosition@{ResetPosition}}
@@ -86,11 +86,11 @@ void Ranking\+Move\+Cotroller.\+Reset\+Position (\begin{DoxyParamCaption}{}{}\en
 \DoxyCodeLine{00020\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_ranking_move_cotroller_a8be5cba517af9dcef21a5bfc0d5fb9d7}\index{RankingMoveCotroller@{RankingMoveCotroller}!SettingPanel@{SettingPanel}}
+\Hypertarget{class_ranking_move_cotroller_afd80246eeda2658e5e9bab008e82e496}\index{RankingMoveCotroller@{RankingMoveCotroller}!SettingPanel@{SettingPanel}}
 \index{SettingPanel@{SettingPanel}!RankingMoveCotroller@{RankingMoveCotroller}}
 \doxysubsubsection{\texorpdfstring{SettingPanel()}{SettingPanel()}}
-{\footnotesize\ttfamily \label{class_ranking_move_cotroller_a8be5cba517af9dcef21a5bfc0d5fb9d7} 
-void Ranking\+Move\+Cotroller.\+Setting\+Panel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_ranking_move_cotroller_afd80246eeda2658e5e9bab008e82e496} 
+void Ranking\+Move\+Cotroller.\+Setting\+Panel (\begin{DoxyParamCaption}\item[{bool}]{open\+Panel}{}\end{DoxyParamCaption})}
 
 
 
@@ -99,8 +99,18 @@ void Ranking\+Move\+Cotroller.\+Setting\+Panel (\begin{DoxyParamCaption}{}{}\end
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00023\ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this.transform.DOLocalMoveX(0,\ 0.5f).SetEase(Ease.OutBack);}
-\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(openPanel)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOLocalMoveX(0,\ 0.5f).SetEase(Ease.OutBack);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ this.transform.DOLocalMoveX(650,\ 0.5f).SetEase(Ease.OutBack).OnComplete(()\ =>}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
 
 \end{DoxyCode}
 

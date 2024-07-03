@@ -2,7 +2,8 @@
 \hypertarget{class_olympics_game_manager}{}\label{class_olympics_game_manager}\index{OlympicsGameManager@{OlympicsGameManager}}
 
 
-Olympics\+Game\+Manager에 대한 상속 다이어그램 \+: \nopagebreak
+Olympics\+Game\+Manager에 대한 상속 다이어그램 \+: 
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +12,8 @@ Olympics\+Game\+Manager에 대한 상속 다이어그램 \+: \nopagebreak
 \end{figure}
 
 
-Olympics\+Game\+Manager에 대한 협력 다이어그램\+:\nopagebreak
+Olympics\+Game\+Manager에 대한 협력 다이어그램\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,13 +25,15 @@ Olympics\+Game\+Manager에 대한 협력 다이어그램\+:\nopagebreak
 \item 
 void \mbox{\hyperlink{class_olympics_game_manager_a8b083c252886ad4fbb68f3a100188c43}{Reset\+Object}} ()
 \item 
-void \mbox{\hyperlink{class_olympics_game_manager_a69999b26eef60ef20d7bdbcd6a295ab9}{Wait\+Start\+Game}} ()
+void \mbox{\hyperlink{class_olympics_game_manager_a0824be10745984449f90c5c3ebcef3a6}{Wait\+Start\+Game}} (int game\+Mode)
 \item 
 void \mbox{\hyperlink{class_olympics_game_manager_a4d698947859777d001d0169ad7d1e01a}{Select\+Game\+Type}} ()
 \item 
 void \mbox{\hyperlink{class_olympics_game_manager_a7482a1c35d1c5a9a61ce4945bfb0f2df}{Set\+Ending\+Page}} ()
 \item 
 void \mbox{\hyperlink{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1677}{Start\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_olympics_game_manager_adf60f4e0548b09cee7902b215a7b9f94}{Quit\+Button}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
@@ -40,6 +44,8 @@ void \mbox{\hyperlink{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1
 \item 
 \mbox{\hyperlink{class_ending_get_data}{Ending\+Get\+Data}} \mbox{\hyperlink{class_olympics_game_manager_ab17d4a2eee6d35c1f3d6eaa986bbf1ea}{getdata}}
 \item 
+bool \mbox{\hyperlink{class_olympics_game_manager_ad951a254f72086d116c33672913852e1}{is\+Test}}
+\item 
 List$<$ Game\+Object $>$ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{game\+Type\+List}}
 \item 
 Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{reset\+Object}}
@@ -49,6 +55,8 @@ Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_olympics_game_manager_aa
 bool \mbox{\hyperlink{class_olympics_game_manager_af041128f91574b3bf3716b4dde5a5cad}{countdown\+\_\+\+Off}}
 \item 
 Game\+Object \mbox{\hyperlink{class_olympics_game_manager_adbbf0afc02c4d8825e17ca6783a6dbc6}{time\+Scrollbar}}
+\item 
+Game\+Object \mbox{\hyperlink{class_olympics_game_manager_a99d2621083a9096e8e1086a8a2535a28}{select\+Panel}}
 \item 
 Game\+Object \mbox{\hyperlink{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}{with\+Area}}
 \item 
@@ -63,8 +71,6 @@ Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_olympics_game_manager_a6
 int \mbox{\hyperlink{class_olympics_game_manager_a0f2a7f2cdbe60be3b9de9bc4bf7d6607}{total\+Touch\+Count\+\_\+\+Red}}
 \item 
 int \mbox{\hyperlink{class_olympics_game_manager_a53c5ea036d28fa48cf713b2d71cbb68f}{total\+Touch\+Count\+\_\+\+Blue}}
-\item 
-int \mbox{\hyperlink{class_olympics_game_manager_a6f2ea6316f7bd833f788ce3eadca6eea}{select\+Mode}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{정적 Public 속성}
 \begin{DoxyCompactItemize}
@@ -81,6 +87,23 @@ static \mbox{\hyperlink{class_olympics_game_manager}{Olympics\+Game\+Manager}} \
 
 
 \doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_olympics_game_manager_adf60f4e0548b09cee7902b215a7b9f94}\index{OlympicsGameManager@{OlympicsGameManager}!QuitButton@{QuitButton}}
+\index{QuitButton@{QuitButton}!OlympicsGameManager@{OlympicsGameManager}}
+\doxysubsubsection{\texorpdfstring{QuitButton()}{QuitButton()}}
+{\footnotesize\ttfamily \label{class_olympics_game_manager_adf60f4e0548b09cee7902b215a7b9f94} 
+void Olympics\+Game\+Manager.\+Quit\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00267}{267}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00268\ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ Application.Quit();}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_olympics_game_manager_a8b083c252886ad4fbb68f3a100188c43}\index{OlympicsGameManager@{OlympicsGameManager}!ResetObject@{ResetObject}}
 \index{ResetObject@{ResetObject}!OlympicsGameManager@{OlympicsGameManager}}
 \doxysubsubsection{\texorpdfstring{ResetObject()}{ResetObject()}}
@@ -89,18 +112,18 @@ void Olympics\+Game\+Manager.\+Reset\+Object (\begin{DoxyParamCaption}{}{}\end{D
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00071}{71}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00070}{70}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_adbbf0afc02c4d8825e17ca6783a6dbc6}{timeScrollbar}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ objects\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}})}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ objects.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_adbbf0afc02c4d8825e17ca6783a6dbc6}{timeScrollbar}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ objects\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ objects.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_olympics_game_manager_a4d698947859777d001d0169ad7d1e01a}\index{OlympicsGameManager@{OlympicsGameManager}!SelectGameType@{SelectGameType}}
@@ -111,121 +134,98 @@ void Olympics\+Game\+Manager.\+Select\+Game\+Type (\begin{DoxyParamCaption}{}{}\
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00114}{114}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00133}{133}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00115\ \ \ \ \ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}.Count;\ i++)}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[i].gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��ó����\ SelectGameMode��\ ����� ����\ ����\ ��� Ȱ��ȭ}}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.HasKey(\textcolor{stringliteral}{"{}SelectGameMode"{}}))}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}})\ ==\ 0)\ \textcolor{comment}{//\ �׽�Ʈ\ ���}}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager_a6f2ea6316f7bd833f788ce3eadca6eea}{selectMode}}\ ==\ 2)}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2��\ ���}}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[1].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//���\ ��ġ\ ������Ʈ\ Ȱ��ȭ}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aed434a338dfa941d5ac883d1caa97562}{vsArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����\ �̸���\ Ȱ��ȭ}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a875edc1d06f77fc6ee038de4a69dce72}{userName\_Blue}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ �̱۸��}}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}{withArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}})\ ==\ 1)}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 1��\ ���}}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}{withArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00156\ }
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Name.ToString();}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ �̱۸�� ���� �ʱ�ȭ}}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}();}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a50ba0a3da596d992f7f4e478bb43d7d7}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}{GameInit}}(\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}});}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//((SingleGameRecord)currentGameRecord).InitGame}}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ (SessionManager.Instance.LoggedInAgency.Name,\ SessionManager.Instance.CurrentClass.Name,\ currentGameRecord.\_id,\ userName\_Red.text,\ gameRecordController.category,\ gameRecordController.contentName);}}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}.Count;\ i++)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[i].gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ad951a254f72086d116c33672913852e1}{isTest}})\ \textcolor{comment}{//\ 테스트\ 모드}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectMode\ ==\ 2)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2인\ 모드}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[1].gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//배경\ 터치\ 오브젝트\ 활성화}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aed434a338dfa941d5ac883d1caa97562}{vsArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 유저\ 이름판\ 활성화}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a875edc1d06f77fc6ee038de4a69dce72}{userName\_Blue}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 싱글모드}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}{withArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectMode\ ==\ 2)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 2인\ 모드}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[1].gameObject.SetActive(\textcolor{keyword}{true});}
 \DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1677}{StartGame}}();}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}})\ ==\ 2)}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 2��\ ���}}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[1].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a875edc1d06f77fc6ee038de4a69dce72}{userName\_Blue}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00181\ }
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aed434a338dfa941d5ac883d1caa97562}{vsArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00183\ }
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Name.ToString();}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectOtherPlayer\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Blue.text\ =\ \textcolor{stringliteral}{"{}SPODY"{}};}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Blue.text\ =\ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectOtherPlayer.ToString();}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a875edc1d06f77fc6ee038de4a69dce72}{userName\_Blue}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aed434a338dfa941d5ac883d1caa97562}{vsArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Name.ToString();}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectOtherPlayer\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Blue.text\ =\ \textcolor{stringliteral}{"{}SPODY"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Blue.text\ =\ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectOtherPlayer.ToString();}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1677}{StartGame}}();}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 1인\ 모드}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
 \DoxyCodeLine{00201\ }
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//����� ���� �ʱ�ȭ}}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}();}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a50ba0a3da596d992f7f4e478bb43d7d7}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}{GameInit}}(\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}});}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//((DualGameRecord)currentGameRecord).InitGame}}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ (SessionManager.Instance.LoggedInAgency.\_id,\ new\ List<string>\ \{\ SessionManager.Instance.CurrentClass.Name,\ "{}VVR"{}\ \},}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ new\ List<string>\ \{\ SessionManager.Instance.CurrentStudent.Id,\ "{}91cc93e9-\/820a-\/40aa-\/abbc-\/a93e132c9e33"{}\ \},}}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ new\ List<string>\ \{\ SessionManager.Instance.CurrentStudent.Name,\ "{}User1"{}\ \},\ gameRecordController.category,\ gameRecordController.contentName);}}
-\DoxyCodeLine{00209\ }
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1677}{StartGame}}();}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}{resetObject}}[0].gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.GetComponentInParent<GameObject>().gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00219\ }
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}{withArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}{withArea}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}{userName\_Red}}.transform.parent.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userName\_Red.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Name.ToString();}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1677}{StartGame}}();}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,42 +240,30 @@ void Olympics\+Game\+Manager.\+Set\+Ending\+Page (\begin{DoxyParamCaption}{}{}\e
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00224}{224}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00219}{219}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00225\ \ \ \ \ \{}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ StartCoroutine(EndGame());}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_ab17d4a2eee6d35c1f3d6eaa986bbf1ea}{getdata}}.\mbox{\hyperlink{class_ending_get_data_ac678dcb7b0d4eb0ffb65bd175afdb91c}{GetData}}();\ \textcolor{comment}{//\ ����\ ������������\ �־��ִ��ڵ�}}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}})\ ==\ 0)}
+\DoxyCodeLine{00220\ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ StartCoroutine(EndGame());}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_ab17d4a2eee6d35c1f3d6eaa986bbf1ea}{getdata}}.\mbox{\hyperlink{class_ending_get_data_ac678dcb7b0d4eb0ffb65bd175afdb91c}{GetData}}();\ \textcolor{comment}{//\ 정보\ 엔딩페이지에\ 넣어주는코드}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectMode\ ==\ 2)}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6a1b093e354762b38a9222f1a17bfdc3}{endingPanel}}[1].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_a6f2ea6316f7bd833f788ce3eadca6eea}{selectMode}}\ ==\ 2)}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6a1b093e354762b38a9222f1a17bfdc3}{endingPanel}}[1].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6a1b093e354762b38a9222f1a17bfdc3}{endingPanel}}[0].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}})\ ==\ 1)}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6a1b093e354762b38a9222f1a17bfdc3}{endingPanel}}[0].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectGameMode"{}})\ ==\ 2)}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6a1b093e354762b38a9222f1a17bfdc3}{endingPanel}}[1].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[1].SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a6a1b093e354762b38a9222f1a17bfdc3}{endingPanel}}[0].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}{gameTypeList}}[0].SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -290,37 +278,38 @@ void Olympics\+Game\+Manager.\+Start\+Game (\begin{DoxyParamCaption}{}{}\end{Dox
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00255}{255}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00237}{237}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00256\ \ \ \ \ \{}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGame)}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ singleGame.SingleGameStart();}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGame)}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dualGame.DualGameStart();}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00268\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGame)}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ singleGame.SingleGameStart();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGame)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dualGame.DualGameStart();}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_olympics_game_manager_a5e4211898a7556c8cb35988323cb1677_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_olympics_game_manager_a69999b26eef60ef20d7bdbcd6a295ab9}\index{OlympicsGameManager@{OlympicsGameManager}!WaitStartGame@{WaitStartGame}}
+\Hypertarget{class_olympics_game_manager_a0824be10745984449f90c5c3ebcef3a6}\index{OlympicsGameManager@{OlympicsGameManager}!WaitStartGame@{WaitStartGame}}
 \index{WaitStartGame@{WaitStartGame}!OlympicsGameManager@{OlympicsGameManager}}
 \doxysubsubsection{\texorpdfstring{WaitStartGame()}{WaitStartGame()}}
-{\footnotesize\ttfamily \label{class_olympics_game_manager_a69999b26eef60ef20d7bdbcd6a295ab9} 
-void Olympics\+Game\+Manager.\+Wait\+Start\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_olympics_game_manager_a0824be10745984449f90c5c3ebcef3a6} 
+void Olympics\+Game\+Manager.\+Wait\+Start\+Game (\begin{DoxyParamCaption}\item[{int}]{game\+Mode}{}\end{DoxyParamCaption})}
 
 
 
@@ -329,10 +318,37 @@ void Olympics\+Game\+Manager.\+Wait\+Start\+Game (\begin{DoxyParamCaption}{}{}\e
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00082\ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ StartCoroutine(CoWaitStartGame());}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ selectMode\ =\ gameMode;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_olympics_game_manager_ad951a254f72086d116c33672913852e1}{isTest}})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectMode\ ==\ 2)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//듀얼모드\ 게임\ 초기화}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a50ba0a3da596d992f7f4e478bb43d7d7}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}{GameInit}}(\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 싱글모드\ 게임\ 초기화}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a50ba0a3da596d992f7f4e478bb43d7d7}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}{GameInit}}(\mbox{\hyperlink{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}{currentGameRecord}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager_a99d2621083a9096e8e1086a8a2535a28}{selectPanel}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ StartCoroutine(CoWaitStartGame());}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
 
 \end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_olympics_game_manager_a0824be10745984449f90c5c3ebcef3a6_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{멤버 데이터 문서화}
@@ -344,7 +360,7 @@ void Olympics\+Game\+Manager.\+Wait\+Start\+Game (\begin{DoxyParamCaption}{}{}\e
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_af041128f91574b3bf3716b4dde5a5cad}\index{OlympicsGameManager@{OlympicsGameManager}!countdown\_Off@{countdown\_Off}}
 \index{countdown\_Off@{countdown\_Off}!OlympicsGameManager@{OlympicsGameManager}}
@@ -354,7 +370,7 @@ bool Olympics\+Game\+Manager.\+countdown\+\_\+\+Off}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_ac5955dc36e402ade809a9517fda3a5a3}\index{OlympicsGameManager@{OlympicsGameManager}!currentGameRecord@{currentGameRecord}}
 \index{currentGameRecord@{currentGameRecord}!OlympicsGameManager@{OlympicsGameManager}}
@@ -374,7 +390,7 @@ Game\+Object \mbox{[}$\,$\mbox{]} Olympics\+Game\+Manager.\+ending\+Panel}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a50ba0a3da596d992f7f4e478bb43d7d7}\index{OlympicsGameManager@{OlympicsGameManager}!gameRecordController@{gameRecordController}}
 \index{gameRecordController@{gameRecordController}!OlympicsGameManager@{OlympicsGameManager}}
@@ -384,7 +400,7 @@ Game\+Object \mbox{[}$\,$\mbox{]} Olympics\+Game\+Manager.\+ending\+Panel}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_afab8333aa3e1596e2936af01296bed7d}\index{OlympicsGameManager@{OlympicsGameManager}!gameTypeList@{gameTypeList}}
 \index{gameTypeList@{gameTypeList}!OlympicsGameManager@{OlympicsGameManager}}
@@ -394,7 +410,7 @@ List$<$Game\+Object$>$ Olympics\+Game\+Manager.\+game\+Type\+List}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_ab17d4a2eee6d35c1f3d6eaa986bbf1ea}\index{OlympicsGameManager@{OlympicsGameManager}!getdata@{getdata}}
 \index{getdata@{getdata}!OlympicsGameManager@{OlympicsGameManager}}
@@ -404,7 +420,7 @@ List$<$Game\+Object$>$ Olympics\+Game\+Manager.\+game\+Type\+List}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}\index{OlympicsGameManager@{OlympicsGameManager}!Instance@{Instance}}
 \index{Instance@{Instance}!OlympicsGameManager@{OlympicsGameManager}}
@@ -416,6 +432,16 @@ List$<$Game\+Object$>$ Olympics\+Game\+Manager.\+game\+Type\+List}
 
 \mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
+\Hypertarget{class_olympics_game_manager_ad951a254f72086d116c33672913852e1}\index{OlympicsGameManager@{OlympicsGameManager}!isTest@{isTest}}
+\index{isTest@{isTest}!OlympicsGameManager@{OlympicsGameManager}}
+\doxysubsubsection{\texorpdfstring{isTest}{isTest}}
+{\footnotesize\ttfamily \label{class_olympics_game_manager_ad951a254f72086d116c33672913852e1} 
+bool Olympics\+Game\+Manager.\+is\+Test}
+
+
+
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_olympics_game_manager_aac25828e044b3faed778c76b1fe1e166}\index{OlympicsGameManager@{OlympicsGameManager}!resetObject@{resetObject}}
 \index{resetObject@{resetObject}!OlympicsGameManager@{OlympicsGameManager}}
 \doxysubsubsection{\texorpdfstring{resetObject}{resetObject}}
@@ -424,17 +450,17 @@ Game\+Object \mbox{[}$\,$\mbox{]} Olympics\+Game\+Manager.\+reset\+Object}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00029}{29}} 번째 라인에서 정의되었습니다.
 
-\Hypertarget{class_olympics_game_manager_a6f2ea6316f7bd833f788ce3eadca6eea}\index{OlympicsGameManager@{OlympicsGameManager}!selectMode@{selectMode}}
-\index{selectMode@{selectMode}!OlympicsGameManager@{OlympicsGameManager}}
-\doxysubsubsection{\texorpdfstring{selectMode}{selectMode}}
-{\footnotesize\ttfamily \label{class_olympics_game_manager_a6f2ea6316f7bd833f788ce3eadca6eea} 
-int Olympics\+Game\+Manager.\+select\+Mode}
+\Hypertarget{class_olympics_game_manager_a99d2621083a9096e8e1086a8a2535a28}\index{OlympicsGameManager@{OlympicsGameManager}!selectPanel@{selectPanel}}
+\index{selectPanel@{selectPanel}!OlympicsGameManager@{OlympicsGameManager}}
+\doxysubsubsection{\texorpdfstring{selectPanel}{selectPanel}}
+{\footnotesize\ttfamily \label{class_olympics_game_manager_a99d2621083a9096e8e1086a8a2535a28} 
+Game\+Object Olympics\+Game\+Manager.\+select\+Panel}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_adbbf0afc02c4d8825e17ca6783a6dbc6}\index{OlympicsGameManager@{OlympicsGameManager}!timeScrollbar@{timeScrollbar}}
 \index{timeScrollbar@{timeScrollbar}!OlympicsGameManager@{OlympicsGameManager}}
@@ -444,7 +470,7 @@ Game\+Object Olympics\+Game\+Manager.\+time\+Scrollbar}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a53c5ea036d28fa48cf713b2d71cbb68f}\index{OlympicsGameManager@{OlympicsGameManager}!totalTouchCount\_Blue@{totalTouchCount\_Blue}}
 \index{totalTouchCount\_Blue@{totalTouchCount\_Blue}!OlympicsGameManager@{OlympicsGameManager}}
@@ -454,7 +480,7 @@ int Olympics\+Game\+Manager.\+total\+Touch\+Count\+\_\+\+Blue}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00050}{50}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00053}{53}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a0f2a7f2cdbe60be3b9de9bc4bf7d6607}\index{OlympicsGameManager@{OlympicsGameManager}!totalTouchCount\_Red@{totalTouchCount\_Red}}
 \index{totalTouchCount\_Red@{totalTouchCount\_Red}!OlympicsGameManager@{OlympicsGameManager}}
@@ -464,7 +490,7 @@ int Olympics\+Game\+Manager.\+total\+Touch\+Count\+\_\+\+Red}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00052}{52}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a875edc1d06f77fc6ee038de4a69dce72}\index{OlympicsGameManager@{OlympicsGameManager}!userName\_Blue@{userName\_Blue}}
 \index{userName\_Blue@{userName\_Blue}!OlympicsGameManager@{OlympicsGameManager}}
@@ -474,7 +500,7 @@ Text\+Mesh\+Pro\+UGUI Olympics\+Game\+Manager.\+user\+Name\+\_\+\+Blue}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a30072a11afba92adac8fea9e49fb6261}\index{OlympicsGameManager@{OlympicsGameManager}!userName\_Red@{userName\_Red}}
 \index{userName\_Red@{userName\_Red}!OlympicsGameManager@{OlympicsGameManager}}
@@ -484,7 +510,7 @@ Text\+Mesh\+Pro\+UGUI Olympics\+Game\+Manager.\+user\+Name\+\_\+\+Red}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00042}{42}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00045}{45}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_aed434a338dfa941d5ac883d1caa97562}\index{OlympicsGameManager@{OlympicsGameManager}!vsArea@{vsArea}}
 \index{vsArea@{vsArea}!OlympicsGameManager@{OlympicsGameManager}}
@@ -494,7 +520,7 @@ Game\+Object Olympics\+Game\+Manager.\+vs\+Area}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00042}{42}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_olympics_game_manager_a6e67b4040d3f219004ae3becc867e96d}\index{OlympicsGameManager@{OlympicsGameManager}!withArea@{withArea}}
 \index{withArea@{withArea}!OlympicsGameManager@{OlympicsGameManager}}
@@ -504,7 +530,7 @@ Game\+Object Olympics\+Game\+Manager.\+with\+Area}
 
 
 
-\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_olympics_game_manager_8cs_source}{Olympics\+Game\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_olympics_game_manager_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
 
 
 

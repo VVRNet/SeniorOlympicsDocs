@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
    </div>
   </td>
  </tr>
@@ -471,7 +471,7 @@ Public 속성</h2></td></tr>
 <div class="line"><span class="lineno">  638</span> </div>
 <div class="line"><span class="lineno">  639</span>        RaycastHit hit;</div>
 <div class="line"><span class="lineno">  640</span> </div>
-<div class="line"><span class="lineno">  641</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="namespace_spine.html#a9e6ca923c79f5f706d84884adb93fa99">Physics</a>.Raycast(ray, out hit))</div>
+<div class="line"><span class="lineno">  641</span>        <span class="keywordflow">if</span> (Physics.Raycast(ray, out hit))</div>
 <div class="line"><span class="lineno">  642</span>        {</div>
 <div class="line"><span class="lineno">  643</span>            <a class="code hl_interface" href="interface_i_touch_object.html">ITouchObject</a> target = hit.collider.GetComponent&lt;<a class="code hl_interface" href="interface_i_touch_object.html">ITouchObject</a>&gt;();</div>
 <div class="line"><span class="lineno">  644</span>            <span class="keywordflow">if</span> (target != <span class="keyword">null</span>)</div>
@@ -494,7 +494,6 @@ Public 속성</h2></td></tr>
 <div class="ttc" id="aclass_ms500_manager_html_a2c1c81b773cf307e3136b264d4c49d34"><div class="ttname"><a href="class_ms500_manager.html#a2c1c81b773cf307e3136b264d4c49d34">Ms500Manager.callback</a></div><div class="ttdeci">UnityAction&lt; int, int &gt; callback</div><div class="ttdef"><b>Definition</b> <a href="_ms500_manager_8cs_source.html#l00017">Ms500Manager.cs:17</a></div></div>
 <div class="ttc" id="ainterface_i_touch_object_html"><div class="ttname"><a href="interface_i_touch_object.html">ITouchObject</a></div><div class="ttdef"><b>Definition</b> <a href="_i_touch_object_8cs_source.html#l00005">ITouchObject.cs:6</a></div></div>
 <div class="ttc" id="ainterface_i_touch_object_html_aa5baa8693756baf00c210dafdcc39493"><div class="ttname"><a href="interface_i_touch_object.html#aa5baa8693756baf00c210dafdcc39493">ITouchObject.OnTouch</a></div><div class="ttdeci">void OnTouch(float x, float y)</div></div>
-<div class="ttc" id="anamespace_spine_html_a9e6ca923c79f5f706d84884adb93fa99"><div class="ttname"><a href="namespace_spine.html#a9e6ca923c79f5f706d84884adb93fa99">Spine.Physics</a></div><div class="ttdeci">Skeleton.Physics Physics</div><div class="ttdef"><b>Definition</b> <a href="_bone_8cs_source.html#l00033">Bone.cs:33</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -545,9 +544,9 @@ Public 속성</h2></td></tr>
 <div class="line"><span class="lineno">  675</span> </div>
 <div class="line"><span class="lineno">  676</span>        StartCoroutine(CooldownUI());</div>
 <div class="line"><span class="lineno">  677</span> </div>
-<div class="line"><span class="lineno">  678</span>        PointerEventData pe = <span class="keyword">new</span> PointerEventData(<a class="code hl_typedef" href="_cw_helper_8cs.html#aa29bcfb1928af6c7367e5da46cd564e7">EventSystem</a>.current)</div>
+<div class="line"><span class="lineno">  678</span>        PointerEventData pe = <span class="keyword">new</span> PointerEventData(EventSystem.current)</div>
 <div class="line"><span class="lineno">  679</span>        {</div>
-<div class="line"><span class="lineno">  680</span>            position = <span class="keyword">new</span> Vector3(position.x + <a class="code hl_enumvalue" href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Screen</a>.width / 15, position.y + <a class="code hl_enumvalue" href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Screen</a>.height / 10, 0.0f)</div>
+<div class="line"><span class="lineno">  680</span>            position = <span class="keyword">new</span> Vector3(position.x + Screen.width / 15, position.y + Screen.height / 10, 0.0f)</div>
 <div class="line"><span class="lineno">  681</span>        };</div>
 <div class="line"><span class="lineno">  682</span> </div>
 <div class="line"><span class="lineno">  683</span>        ms500Manager.LastHit.x = (int)(pe.position.x);</div>
@@ -559,7 +558,7 @@ Public 속성</h2></td></tr>
 <div class="line"><span class="lineno">  689</span>        }</div>
 <div class="line"><span class="lineno">  690</span> </div>
 <div class="line"><span class="lineno">  691</span>        List&lt;RaycastResult&gt; hits = <span class="keyword">new</span> List&lt;RaycastResult&gt;();</div>
-<div class="line"><span class="lineno">  692</span>        <a class="code hl_typedef" href="_cw_helper_8cs.html#aa29bcfb1928af6c7367e5da46cd564e7">EventSystem</a>.current.RaycastAll(pe, hits); <span class="comment">// Raycast 방식으로 터치</span></div>
+<div class="line"><span class="lineno">  692</span>        EventSystem.current.RaycastAll(pe, hits); <span class="comment">// Raycast 방식으로 터치</span></div>
 <div class="line"><span class="lineno">  693</span> </div>
 <div class="line"><span class="lineno">  694</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; hits.Count; i++)</div>
 <div class="line"><span class="lineno">  695</span>        {</div>
@@ -567,8 +566,6 @@ Public 속성</h2></td></tr>
 <div class="line"><span class="lineno">  697</span>            target?.<a class="code hl_function" href="interface_i_touch_object.html#aa5baa8693756baf00c210dafdcc39493">OnTouch</a>(pe.position.x, pe.position.y);</div>
 <div class="line"><span class="lineno">  698</span>        }</div>
 <div class="line"><span class="lineno">  699</span>    }</div>
-<div class="ttc" id="a_cw_helper_8cs_html_aa29bcfb1928af6c7367e5da46cd564e7"><div class="ttname"><a href="_cw_helper_8cs.html#aa29bcfb1928af6c7367e5da46cd564e7">EventSystem</a></div><div class="ttdeci">UnityEngine.EventSystems.EventSystem EventSystem</div><div class="ttdef"><b>Definition</b> <a href="_cw_helper_8cs_source.html#l00012">CwHelper.cs:12</a></div></div>
-<div class="ttc" id="anamespace_spine_html_a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0"><div class="ttname"><a href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Spine.BlendMode.Screen</a></div><div class="ttdeci">@ Screen</div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -800,11 +797,11 @@ Public 속성</h2></td></tr>
 <div class="line"><span class="lineno">  583</span>        <span class="keywordtype">float</span> heightRatio = Screen.height / (LT.transform.localPosition.y - <a class="code hl_variable" href="#a3d5ea3499e6b8891036829b0bedf74bc">LB</a>.transform.localPosition.y);</div>
 <div class="line"><span class="lineno">  584</span> </div>
 <div class="line"><span class="lineno">  585</span>        Vector2 screenPosition = <span class="keyword">new</span> Vector2(</div>
-<div class="line"><span class="lineno">  586</span>            (position.x - <a class="code hl_variable" href="#a8acb05a278574725c902ca3729d85809">LT</a>.transform.localPosition.x) * widthRatio - <a class="code hl_enumvalue" href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Screen</a>.width / 2,</div>
-<div class="line"><span class="lineno">  587</span>            (position.y - <a class="code hl_variable" href="#a8acb05a278574725c902ca3729d85809">LT</a>.transform.localPosition.y) * heightRatio + <a class="code hl_enumvalue" href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Screen</a>.height / 2);</div>
+<div class="line"><span class="lineno">  586</span>            (position.x - <a class="code hl_variable" href="#a8acb05a278574725c902ca3729d85809">LT</a>.transform.localPosition.x) * widthRatio - Screen.width / 2,</div>
+<div class="line"><span class="lineno">  587</span>            (position.y - <a class="code hl_variable" href="#a8acb05a278574725c902ca3729d85809">LT</a>.transform.localPosition.y) * heightRatio + Screen.height / 2);</div>
 <div class="line"><span class="lineno">  588</span> </div>
 <div class="line"><span class="lineno">  589</span>        targetBlue.transform.localPosition = <span class="keyword">new</span> Vector3(screenPosition.x, screenPosition.y, <a class="code hl_variable" href="#a36c0184fd5e2ab00a99db13b41ba469f">targetBlue</a>.transform.localPosition.z);</div>
-<div class="line"><span class="lineno">  590</span>        Vector2 newPosition = <span class="keyword">new</span> Vector2(screenPosition.x + <a class="code hl_enumvalue" href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Screen</a>.width / 2, screenPosition.y + <a class="code hl_enumvalue" href="namespace_spine.html#a8df9bf8208f7a52aee6cfe66703caae8a2fc3359e12b2a9104121dcf04246f6a0">Screen</a>.height / 2);</div>
+<div class="line"><span class="lineno">  590</span>        Vector2 newPosition = <span class="keyword">new</span> Vector2(screenPosition.x + Screen.width / 2, screenPosition.y + Screen.height / 2);</div>
 <div class="line"><span class="lineno">  591</span>        <a class="code hl_function" href="#a9dd1872370f78115545706a16e8e4936">GetObjectAtPosition</a>(newPosition);</div>
 <div class="line"><span class="lineno">  592</span>    }</div>
 <div class="ttc" id="aclass_m_s500sdk_html_a36c0184fd5e2ab00a99db13b41ba469f"><div class="ttname"><a href="#a36c0184fd5e2ab00a99db13b41ba469f">MS500sdk.targetBlue</a></div><div class="ttdeci">GameObject targetBlue</div><div class="ttdef"><b>Definition</b> <a href="_m_s500sdk_8cs_source.html#l00032">MS500sdk.cs:32</a></div></div>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['kerning_0',['Kerning',['../class_cartoon_f_x_1_1_c_f_x_r___particle_text_font_asset_1_1_kerning.html',1,'CartoonFX::CFXR_ParticleTextFontAsset']]],
-  ['keypadcontroller_1',['KeyPadController',['../class_key_pad_controller.html',1,'']]]
+  ['licensepagetouch_0',['LicensePageTouch',['../class_license_page_touch.html',1,'']]],
+  ['loadingmanager_1',['LoadingManager',['../class_loading_manager.html',1,'']]],
+  ['localizedstring_2',['LocalizedString',['../class_localized_string.html',1,'']]]
 ];

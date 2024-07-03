@@ -3,6 +3,7 @@ var class_license_page_touch =
     [ "CheckLicense", "class_license_page_touch.html#a90e8586c03cf60e10c74d39c7f1bd266", null ],
     [ "LisenseDieBtn", "class_license_page_touch.html#a3fd09402e57a7b6e5a6ef087e682baf2", null ],
     [ "OnTouch", "class_license_page_touch.html#ab07a7e427cb43ee16d4df79f7d9f21fa", null ],
+    [ "bgMoveController", "class_license_page_touch.html#a2447a9b4bcb94ceff6526a770fc9d468", null ],
     [ "cannotDayText", "class_license_page_touch.html#aa965067755af670ae83769fbd7bb682f", null ],
     [ "cannotText", "class_license_page_touch.html#a42fefe6041fa30e7e25d47d7232c6b73", null ],
     [ "dayText", "class_license_page_touch.html#a7aed7f307c169d378e5481581f423357", null ],

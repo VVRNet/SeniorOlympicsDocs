@@ -1,25 +1,10 @@
 var searchData=
 [
-  ['raggedyspineboy_2ecs_0',['RaggedySpineboy.cs',['../_raggedy_spineboy_8cs.html',1,'']]],
-  ['rankingmovecotroller_2ecs_1',['RankingMoveCotroller.cs',['../_ranking_move_cotroller_8cs.html',1,'']]],
-  ['ranksummary_2ecs_2',['RankSummary.cs',['../_rank_summary_8cs.html',1,'']]],
-  ['ranksummarycontroller_2ecs_3',['RankSummaryController.cs',['../_rank_summary_controller_8cs.html',1,'']]],
-  ['ranksummaryservice_2ecs_4',['RankSummaryService.cs',['../_rank_summary_service_8cs.html',1,'']]],
-  ['raptor_2ecs_5',['Raptor.cs',['../_raptor_8cs.html',1,'']]],
-  ['readme_2emd_6',['README.md',['../_spine_2_runtime_2spine-unity_2_shaders_2_sprite_2_r_e_a_d_m_e_8md.html',1,'(전역 이름공간)'],['../_unity-_logs-_viewer_2_r_e_a_d_m_e_8md.html',1,'(전역 이름공간)']]],
-  ['rectconms_2ecs_7',['RectConMs.cs',['../_rect_con_ms_8cs.html',1,'']]],
-  ['regionattachment_2ecs_8',['RegionAttachment.cs',['../_region_attachment_8cs.html',1,'']]],
-  ['regionlessattachmentloader_2ecs_9',['RegionlessAttachmentLoader.cs',['../_regionless_attachment_loader_8cs.html',1,'']]],
-  ['reloadsceneonkeydown_2ecs_10',['ReloadSceneOnKeyDown.cs',['../_reload_scene_on_key_down_8cs.html',1,'']]],
-  ['rendercombinedmesh_2ecs_11',['RenderCombinedMesh.cs',['../_render_combined_mesh_8cs.html',1,'']]],
-  ['renderexistingmesh_2ecs_12',['RenderExistingMesh.cs',['../_render_existing_mesh_8cs.html',1,'']]],
-  ['rendertexturefadeoutexample_2ecs_13',['RenderTextureFadeoutExample.cs',['../_render_texture_fadeout_example_8cs.html',1,'']]],
-  ['reporter_2ecs_14',['Reporter.cs',['../_reporter_8cs.html',1,'']]],
-  ['reportereditor_2ecs_15',['ReporterEditor.cs',['../_reporter_editor_8cs.html',1,'']]],
-  ['reportergui_2ecs_16',['ReporterGUI.cs',['../_reporter_g_u_i_8cs.html',1,'']]],
-  ['reportermessagereceiver_2ecs_17',['ReporterMessageReceiver.cs',['../_reporter_message_receiver_8cs.html',1,'']]],
-  ['rootmotiondeltacompensation_2ecs_18',['RootMotionDeltaCompensation.cs',['../_root_motion_delta_compensation_8cs.html',1,'']]],
-  ['rotate_2ecs_19',['Rotate.cs',['../_rotate_8cs.html',1,'']]],
-  ['rotator_2ecs_20',['Rotator.cs',['../_rotator_8cs.html',1,'']]],
-  ['runtimeloadfromexportsexample_2ecs_21',['RuntimeLoadFromExportsExample.cs',['../_runtime_load_from_exports_example_8cs.html',1,'']]]
+  ['scoremanager_2ecs_0',['ScoreManager.cs',['../_score_manager_8cs.html',1,'']]],
+  ['selectcontentscontroller_2ecs_1',['SelectContentsController.cs',['../_select_contents_controller_8cs.html',1,'']]],
+  ['sessionmanager_2ecs_2',['SessionManager.cs',['../_session_manager_8cs.html',1,'']]],
+  ['settingmanager_2ecs_3',['SettingManager.cs',['../01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs.html',1,'(전역 이름공간)'],['../02_8_m_s500_s_d_k_2_scripts_2_setting_manager_8cs.html',1,'(전역 이름공간)']]],
+  ['settingpagemanager_2ecs_4',['SettingPageManager.cs',['../_setting_page_manager_8cs.html',1,'']]],
+  ['singleton_2ecs_5',['Singleton.cs',['../_singleton_8cs.html',1,'']]],
+  ['speedscoring_2ecs_6',['SpeedScoring.cs',['../_speed_scoring_8cs.html',1,'']]]
 ];

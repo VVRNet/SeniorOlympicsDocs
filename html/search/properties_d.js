@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['offset_0',['Offset',['../class_spine_1_1_region_attachment.html#af2da01ae99b5555b7f3b9df1f2a85b9b',1,'Spine::RegionAttachment']]],
-  ['offsetrotation_1',['OffsetRotation',['../class_spine_1_1_path_constraint_data.html#a3965d4c79e6f62cd8286c3e3f6aba0f6',1,'Spine.PathConstraintData.OffsetRotation'],['../class_spine_1_1_transform_constraint_data.html#a731ec55f15f691c2b3580d3a7f72e811',1,'Spine.TransformConstraintData.OffsetRotation']]],
-  ['offsetscalex_2',['OffsetScaleX',['../class_spine_1_1_transform_constraint_data.html#ac2667f27ae900272f28d540e276c8742',1,'Spine::TransformConstraintData']]],
-  ['offsetscaley_3',['OffsetScaleY',['../class_spine_1_1_transform_constraint_data.html#a7bb8ae0b4bc6e5a16d0582d8fbc93036',1,'Spine::TransformConstraintData']]],
-  ['offsetsheary_4',['OffsetShearY',['../class_spine_1_1_transform_constraint_data.html#a5d39427283a4d5b2c428d7c09ce63714',1,'Spine::TransformConstraintData']]],
-  ['offsetx_5',['OffsetX',['../class_spine_1_1_transform_constraint_data.html#adc662092ff87f0e23d2c2830137aea09',1,'Spine::TransformConstraintData']]],
-  ['offsety_6',['OffsetY',['../class_spine_1_1_transform_constraint_data.html#a685c2e19f07b5df4eacce98f224d14e2',1,'Spine::TransformConstraintData']]],
-  ['ondemandtextureloader_7',['OnDemandTextureLoader',['../class_spine_1_1_unity_1_1_atlas_asset_base.html#a14d45dc1c5fd40122a075bed695f3d22',1,'Spine::Unity::AtlasAssetBase']]],
-  ['ondeselected_8',['OnDeselected',['../class_lean_1_1_common_1_1_lean_select.html#a41e0f630991ae133cdd403d833404f9a',1,'Lean.Common.LeanSelect.OnDeselected'],['../class_lean_1_1_common_1_1_lean_selectable.html#a4d504e8024d5a0c8dff0894dab829270',1,'Lean.Common.LeanSelectable.OnDeselected']]],
-  ['onnothing_9',['OnNothing',['../class_lean_1_1_common_1_1_lean_select.html#af7d78c7ea2b16454cb7a7e0bc75f5c0a',1,'Lean::Common::LeanSelect']]],
-  ['onselected_10',['OnSelected',['../class_lean_1_1_common_1_1_lean_select.html#a6d5b7b355a0aba11bec4d7d0a8a25819',1,'Lean.Common.LeanSelect.OnSelected'],['../class_lean_1_1_common_1_1_lean_selectable.html#ab9892eabeb4751bbddf83b6441127a30',1,'Lean.Common.LeanSelectable.OnSelected']]],
-  ['onstring_11',['OnString',['../class_lean_1_1_common_1_1_lean_format_string.html#abc178be85006145b4048a89de0b86a5f',1,'Lean.Common.LeanFormatString.OnString'],['../class_lean_1_1_localization_1_1_lean_debug_localization.html#acffeda3d871a6027f752bc4fb8239878',1,'Lean.Localization.LeanDebugLocalization.OnString']]],
-  ['options_12',['Options',['../class_lean_1_1_localization_1_1_lean_localized_dropdown.html#aff532839d7a10028681f797a2cee31b3',1,'Lean.Localization.LeanLocalizedDropdown.Options'],['../class_lean_1_1_localization_1_1_lean_localized_t_m_p___dropdown.html#ab6b571c5029c4e8c09954ceb5683152c',1,'Lean.Localization.LeanLocalizedTMP_Dropdown.Options']]],
-  ['order_13',['Order',['../class_spine_1_1_constraint_data.html#aed31e63ebcc074c78cfeb790871d75a2',1,'Spine::ConstraintData']]],
-  ['originalheight_14',['OriginalHeight',['../class_spine_1_1_atlas_region.html#a7e92050e3ca0d76017eaba9f38e3327a',1,'Spine.AtlasRegion.OriginalHeight'],['../class_spine_1_1_texture_region.html#a790bb37ef4a75fe1553b6718506fece8',1,'Spine.TextureRegion.OriginalHeight']]],
-  ['originalwidth_15',['OriginalWidth',['../class_spine_1_1_atlas_region.html#a798f13b529a518968431d1d483cb8cd1',1,'Spine.AtlasRegion.OriginalWidth'],['../class_spine_1_1_texture_region.html#a73ee86b879f088d6da54b98585e16bcb',1,'Spine.TextureRegion.OriginalWidth']]],
-  ['overridename_16',['OverrideName',['../class_c_w_1_1_common_1_1_cw_demo_button_builder.html#ad90f36d32a75f8f45cfeb6e6496c2310',1,'CW::Common::CwDemoButtonBuilder']]],
-  ['overridetexture_17',['OverrideTexture',['../class_spine_1_1_unity_1_1_skeleton_graphic.html#ac0cffedf16395ba4ad85127d225e8ee2',1,'Spine::Unity::SkeletonGraphic']]]
+  ['time_0',['Time',['../class_touch_event.html#a784ea6369603ae0593a7939e2313175a',1,'TouchEvent']]],
+  ['totalscore_1',['TotalScore',['../class_record_detail.html#a89c7ad9151d3cb3376568ba2f05e4dfd',1,'RecordDetail']]],
+  ['totaltouch_2',['TotalTouch',['../class_record_detail.html#acfe6811a2a29f335a180a743c6b078a1',1,'RecordDetail']]]
 ];

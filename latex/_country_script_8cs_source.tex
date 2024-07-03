@@ -1,0 +1,42 @@
+\doxysection{Country\+Script.\+cs}
+\hypertarget{_country_script_8cs_source}{}\label{_country_script_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/CountryScript.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/CountryScript.cs}}
+\mbox{\hyperlink{_country_script_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.Networking;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00007}\mbox{\hyperlink{class_country_script}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_country_script}{CountryScript}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00009}\mbox{\hyperlink{class_country_script_a81c2636dc974faeac89c6cb92dfc5249}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ RawImage\ \mbox{\hyperlink{class_country_script_a81c2636dc974faeac89c6cb92dfc5249}{rawImage}};}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Start\ is\ called\ before\ the\ first\ frame\ update}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture());}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ Update\ is\ called\ once\ per\ frame}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00021}00021\ \ \ \ \ IEnumerator\ GetTexture()}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ var\ url\ =\ \$\textcolor{stringliteral}{"{}https://netspody.blob.core.windows.net/senior-\/olympic-\/image/korea.png"{}};}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ UnityWebRequest\ www\ =\ UnityWebRequestTexture.GetTexture(url);}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ www.SendWebRequest();}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (www.result\ !=\ UnityWebRequest.Result.Success)}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(www.error);}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ Texture\ myTexture\ =\ ((DownloadHandlerTexture)www.downloadHandler).texture;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ rawImage.texture\ =\ myTexture;}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_country_script_8cs_source_l00036}00036\ \}}
+
+\end{DoxyCode}
