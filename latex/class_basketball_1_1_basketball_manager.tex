@@ -53,13 +53,33 @@ List$<$ Transform $>$ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a
 List$<$ Transform $>$ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{set\+Goal\+Pos\+\_\+\+Blue}}
 \item 
 int \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{move\+Count\+\_\+\+Blue}}
+\item 
+int \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a31eb89c309866cd864f2833841e14da8}{add\+Score\+Red}} = 0
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}{creation\+Time\+\_\+red}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a4d52126abb7d3ae88bb6cf60181a0cc0}{removal\+Time\+\_\+red}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a03df3a9f16d8d965034178fcb675f1dd}{accuracy\+\_\+red}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6c54125abad5796ce98281a8bbc2f966}{reaction\+Time\+\_\+red}}
+\item 
+int \mbox{\hyperlink{class_basketball_1_1_basketball_manager_aab6ef486038048b6d4ab7d140784be74}{add\+Score\+Blue}} = 0
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}{creation\+Time\+\_\+blue}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_ae046dbfe8826faa5aaf81b814dd44a0c}{removal\+Time\+\_\+blue}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a20e91d0d61031a385dd2908863f354b5}{accuracy\+\_\+blue}}
+\item 
+float \mbox{\hyperlink{class_basketball_1_1_basketball_manager_aad07facfddf66e45549974dcbcb6d0fb}{reaction\+Time\+\_\+blue}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -72,31 +92,32 @@ void Basketball.\+Basketball\+Manager.\+Setting\+Random\+Pos (\begin{DoxyParamCa
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ =\ 0;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.Clear();}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i];}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex];}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex]\ =\ temp;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}});}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}[0].transform);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Red.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.Clear();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i];}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex]\ =\ temp;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}[0].transform);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Red.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}{creationTime\_red}}\ =\ Time.time;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -111,31 +132,32 @@ void Basketball.\+Basketball\+Manager.\+Setting\+Random\+Pos\+\_\+\+VS (\begin{D
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00069}{69}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00089}{89}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ =\ 0;}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.Clear();}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i];}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex];}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex]\ =\ temp;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}});}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}[0].transform);}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Blue.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ =\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.Clear();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i];}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex];}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex]\ =\ temp;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}[0].transform);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Blue.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}{creationTime\_blue}}\ =\ Time.time;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -150,30 +172,28 @@ void Basketball.\+Basketball\+Manager.\+Spawn\+Goals\+\_\+\+Blue (\begin{DoxyPar
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00088}{88}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00110}{110}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count)}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Blue());}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Blue());}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_basketball_1_1_basketball_manager_ab90093df200d665281712dc9dbb61e17_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -188,30 +208,28 @@ void Basketball.\+Basketball\+Manager.\+Spawn\+Goals\+\_\+\+Red (\begin{DoxyPara
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00052}{52}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00070}{70}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count)}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Red());}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Red());}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_basketball_1_1_basketball_manager_aa7a34b0e11cca48f2c8a4b4811ab333a_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -226,23 +244,22 @@ void Basketball.\+Basketball\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{isVersusMode}})}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ���}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{isVersusMode}})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 대결}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,6 +269,66 @@ void Basketball.\+Basketball\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{
 
 
 \doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_basketball_1_1_basketball_manager_a20e91d0d61031a385dd2908863f354b5}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!accuracy\_blue@{accuracy\_blue}}
+\index{accuracy\_blue@{accuracy\_blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{accuracy\_blue}{accuracy\_blue}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a20e91d0d61031a385dd2908863f354b5} 
+float Basketball.\+Basketball\+Manager.\+accuracy\+\_\+blue}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_a03df3a9f16d8d965034178fcb675f1dd}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!accuracy\_red@{accuracy\_red}}
+\index{accuracy\_red@{accuracy\_red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{accuracy\_red}{accuracy\_red}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a03df3a9f16d8d965034178fcb675f1dd} 
+float Basketball.\+Basketball\+Manager.\+accuracy\+\_\+red}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_aab6ef486038048b6d4ab7d140784be74}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!addScoreBlue@{addScoreBlue}}
+\index{addScoreBlue@{addScoreBlue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{addScoreBlue}{addScoreBlue}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_aab6ef486038048b6d4ab7d140784be74} 
+int Basketball.\+Basketball\+Manager.\+add\+Score\+Blue = 0}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_a31eb89c309866cd864f2833841e14da8}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!addScoreRed@{addScoreRed}}
+\index{addScoreRed@{addScoreRed}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{addScoreRed}{addScoreRed}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a31eb89c309866cd864f2833841e14da8} 
+int Basketball.\+Basketball\+Manager.\+add\+Score\+Red = 0}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!creationTime\_blue@{creationTime\_blue}}
+\index{creationTime\_blue@{creationTime\_blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{creationTime\_blue}{creationTime\_blue}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1} 
+float Basketball.\+Basketball\+Manager.\+creation\+Time\+\_\+blue}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!creationTime\_red@{creationTime\_red}}
+\index{creationTime\_red@{creationTime\_red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{creationTime\_red}{creationTime\_red}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb} 
+float Basketball.\+Basketball\+Manager.\+creation\+Time\+\_\+red}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!goalObject\_Blue@{goalObject\_Blue}}
 \index{goalObject\_Blue@{goalObject\_Blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
 \doxysubsubsection{\texorpdfstring{goalObject\_Blue}{goalObject\_Blue}}
@@ -260,7 +337,7 @@ Game\+Object Basketball.\+Basketball\+Manager.\+goal\+Object\+\_\+\+Blue}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!goalObject\_Red@{goalObject\_Red}}
 \index{goalObject\_Red@{goalObject\_Red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -270,7 +347,7 @@ Game\+Object Basketball.\+Basketball\+Manager.\+goal\+Object\+\_\+\+Red}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!goalPos\_Blue@{goalPos\_Blue}}
 \index{goalPos\_Blue@{goalPos\_Blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -280,7 +357,7 @@ List$<$Transform$>$ Basketball.\+Basketball\+Manager.\+goal\+Pos\+\_\+\+Blue}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!goalPos\_Red@{goalPos\_Red}}
 \index{goalPos\_Red@{goalPos\_Red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -290,7 +367,7 @@ List$<$Transform$>$ Basketball.\+Basketball\+Manager.\+goal\+Pos\+\_\+\+Red}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!isVersusMode@{isVersusMode}}
 \index{isVersusMode@{isVersusMode}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -300,7 +377,7 @@ bool Basketball.\+Basketball\+Manager.\+is\+Versus\+Mode}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!moveCount\_Blue@{moveCount\_Blue}}
 \index{moveCount\_Blue@{moveCount\_Blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -310,7 +387,7 @@ int Basketball.\+Basketball\+Manager.\+move\+Count\+\_\+\+Blue}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!moveCount\_Red@{moveCount\_Red}}
 \index{moveCount\_Red@{moveCount\_Red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -320,7 +397,47 @@ int Basketball.\+Basketball\+Manager.\+move\+Count\+\_\+\+Red}
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_aad07facfddf66e45549974dcbcb6d0fb}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!reactionTime\_blue@{reactionTime\_blue}}
+\index{reactionTime\_blue@{reactionTime\_blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{reactionTime\_blue}{reactionTime\_blue}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_aad07facfddf66e45549974dcbcb6d0fb} 
+float Basketball.\+Basketball\+Manager.\+reaction\+Time\+\_\+blue}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_a6c54125abad5796ce98281a8bbc2f966}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!reactionTime\_red@{reactionTime\_red}}
+\index{reactionTime\_red@{reactionTime\_red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{reactionTime\_red}{reactionTime\_red}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a6c54125abad5796ce98281a8bbc2f966} 
+float Basketball.\+Basketball\+Manager.\+reaction\+Time\+\_\+red}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_ae046dbfe8826faa5aaf81b814dd44a0c}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!removalTime\_blue@{removalTime\_blue}}
+\index{removalTime\_blue@{removalTime\_blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{removalTime\_blue}{removalTime\_blue}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_ae046dbfe8826faa5aaf81b814dd44a0c} 
+float Basketball.\+Basketball\+Manager.\+removal\+Time\+\_\+blue}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_basketball_1_1_basketball_manager_a4d52126abb7d3ae88bb6cf60181a0cc0}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!removalTime\_red@{removalTime\_red}}
+\index{removalTime\_red@{removalTime\_red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
+\doxysubsubsection{\texorpdfstring{removalTime\_red}{removalTime\_red}}
+{\footnotesize\ttfamily \label{class_basketball_1_1_basketball_manager_a4d52126abb7d3ae88bb6cf60181a0cc0} 
+float Basketball.\+Basketball\+Manager.\+removal\+Time\+\_\+red}
+
+
+
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!setGoalPos\_Blue@{setGoalPos\_Blue}}
 \index{setGoalPos\_Blue@{setGoalPos\_Blue}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -330,7 +447,7 @@ List$<$Transform$>$ Basketball.\+Basketball\+Manager.\+set\+Goal\+Pos\+\_\+\+Blu
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}\index{Basketball.BasketballManager@{Basketball.BasketballManager}!setGoalPos\_Red@{setGoalPos\_Red}}
 \index{setGoalPos\_Red@{setGoalPos\_Red}!Basketball.BasketballManager@{Basketball.BasketballManager}}
@@ -340,7 +457,7 @@ List$<$Transform$>$ Basketball.\+Basketball\+Manager.\+set\+Goal\+Pos\+\_\+\+Red
 
 
 
-\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_basketball_manager_8cs_source}{Basketball\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_basketball_manager_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
 
 
 

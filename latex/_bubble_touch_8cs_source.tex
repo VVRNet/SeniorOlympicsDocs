@@ -1,103 +1,173 @@
 \doxysection{Bubble\+Touch.\+cs}
-\hypertarget{_bubble_touch_8cs_source}{}\label{_bubble_touch_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/Bubble/BubbleTouch.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/Bubble/BubbleTouch.cs}}
+\hypertarget{_bubble_touch_8cs_source}{}\label{_bubble_touch_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/ColorMatch/BubbleTouch.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/ColorMatch/BubbleTouch.cs}}
 \mbox{\hyperlink{_bubble_touch_8cs}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }DG.Tweening;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }TMPro;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful_1_1_team}{useful.Team}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_bubble}{Bubble}}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00007}00007\ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00008}\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine.XR;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful_1_1_team}{useful.Team}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_bubble}{Bubble}}}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00010}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{00010}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager}{BubbleManager}}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00012}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00013}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00014}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00015}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touchPrefab}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00016}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{rootObject}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Sound"{}})]}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00019}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioSource\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00020}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correctSound}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00021}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrongSound}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00023}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Sprite\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d}{touchedSprite}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00024}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ TMP\_ColorGradient\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6}{gradient}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00026}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648}{OnTouch}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{rootObject}}.transform);}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00010}\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00012}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager}{BubbleManager}}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00014}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00015}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00016}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00017}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{isEffect}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00018}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touchPrefab}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00019}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{rootObject}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00020}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{answerEffect}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Sound"{}})]}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00023}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioSource\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00024}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correctSound}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00025}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrongSound}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_game_record_controller}{GameRecordController}}\ gameRecordController;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ accuracy;\ \textcolor{comment}{//\ 정확도(중심점과\ 거리\ 차이)}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ reactionTime;\ \textcolor{comment}{//\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ creationTime;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ removalTime;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ Vector3\ originalScale;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ Sequence\ sequence;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController\ =\ FindObjectOfType<GameRecordController>();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}})}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ creationTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correctSound}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ transform.localScale\ =\ originalScale;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00054}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648}{OnTouch}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPosition);}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}++;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{rootObject}}.transform);}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414}{TouchEffect}}();}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{CompleteStage}}();}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}++;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}\ >\ 2)}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bubbleManager.roundCnt\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrongSound}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00081}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414}{00081}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414}{TouchEffect}}()}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ spriteRenderer\ =\ gameObject.GetComponent<SpriteRenderer>();}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ gameObject.transform.GetChild(0).GetComponent<TextMeshPro>();}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(spriteRenderer\ !=\ \textcolor{keyword}{null}\ \&\&\ text\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ spriteRenderer.sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d}{touchedSprite}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.fontSize\ =\ 5;}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.colorGradientPreset\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6}{gradient}};}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00094}00094\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00095}00095\ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}})}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correctSound}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}++;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853}{AnswerEffect}}();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(WaitEffect());}
 \DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296}{WrongEffect}}();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrongSound}};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ IEnumerator\ WaitEffect()}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.transform.parent.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{CompleteStage}}();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00129}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853}{00129}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853}{AnswerEffect}}()}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//터치시\ 이펙트\ 구현}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{isEffect}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ originalScale\ =\ transform.localScale;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{answerEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ sequence\ =\ DOTween.Sequence();}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ sequence.Append(transform.DOScale(originalScale\ *\ 0.7f,\ 0.3f))}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(transform.DOScale(originalScale\ *\ 1.2f,\ 0.3f))}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(transform.DOScale(Vector3.zero,\ 0.3f))}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.localScale\ =\ originalScale;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{isEffect}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{answerEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00149}\mbox{\hyperlink{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296}{00149}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296}{WrongEffect}}()}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ transform.DOShakePosition(0.8f,\ \textcolor{keyword}{new}\ Vector3(0.1f,\ 0,\ 0),\ 10,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.DOLocalMove(Vector3.zero,\ 0.2f);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ RoundToDecimals(\textcolor{keywordtype}{float}\ value,\ \textcolor{keywordtype}{int}\ decimalPlaces)}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ multiplier\ =\ Mathf.Pow(10f,\ decimalPlaces);}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Round(value\ *\ multiplier)\ /\ multiplier;}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_bubble_touch_8cs_source_l00167}00167\ }
 
 \end{DoxyCode}

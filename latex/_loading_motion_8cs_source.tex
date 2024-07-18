@@ -1,0 +1,47 @@
+\doxysection{Loading\+Motion.\+cs}
+\hypertarget{_loading_motion_8cs_source}{}\label{_loading_motion_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Ending/LoadingMotion.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Ending/LoadingMotion.cs}}
+\mbox{\hyperlink{_loading_motion_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00006}\mbox{\hyperlink{class_loading_motion}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_loading_motion}{LoadingMotion}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00008}\mbox{\hyperlink{class_loading_motion_a22218ecefdd6061265d1b33dda4e247f}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_loading_motion_a22218ecefdd6061265d1b33dda4e247f}{isLoading}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00009}\mbox{\hyperlink{class_loading_motion_a2bfc77276c0791445328066cf1875a59}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_loading_motion_a2bfc77276c0791445328066cf1875a59}{guideText}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00010}\mbox{\hyperlink{class_loading_motion_a4918cd0ec2a0c8dbb14e1e204d276374}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_loading_motion_a4918cd0ec2a0c8dbb14e1e204d276374}{progressImg}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_motion_a22218ecefdd6061265d1b33dda4e247f}{isLoading}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ StartCoroutine(LoadingAni());}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00018}00018\ \ \ \ \ IEnumerator\ LoadingAni()}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_loading_motion_a22218ecefdd6061265d1b33dda4e247f}{isLoading}})}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING"{}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_motion_a4918cd0ec2a0c8dbb14e1e204d276374}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING."{}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_motion_a4918cd0ec2a0c8dbb14e1e204d276374}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING.."{}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_motion_a4918cd0ec2a0c8dbb14e1e204d276374}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}NOW\ LOADING..."{}};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_motion_a4918cd0ec2a0c8dbb14e1e204d276374}{progressImg}}.Rotate(\textcolor{keyword}{new}\ Vector3(0,\ 0,\ 30));}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.2f);}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_loading_motion_a22218ecefdd6061265d1b33dda4e247f}{isLoading}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_loading_motion_8cs_source_l00041}00041\ \}}
+
+\end{DoxyCode}

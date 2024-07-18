@@ -7,7 +7,7 @@ Game\+Record\+Controller에 대한 상속 다이어그램 \+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=188pt]{class_game_record_controller__inherit__graph}
+\includegraphics[width=189pt]{class_game_record_controller__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -17,7 +17,7 @@ Game\+Record\+Controller에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=188pt]{class_game_record_controller__coll__graph}
+\includegraphics[height=550pt]{class_game_record_controller__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 멤버 함수}
@@ -32,9 +32,21 @@ void \mbox{\hyperlink{class_game_record_controller_a0198fc250fd06e9b71478c236021
 void \mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}} (\mbox{\hyperlink{class_game_record}{Game\+Record}} record, int user\+Index, bool is\+Correct, float accuracy, \mbox{\hyperlink{class_touch_event}{Touch\+Event}} touch\+Event, float reaction\+Time)
 \item 
 void \mbox{\hyperlink{class_game_record_controller_af8dd0434941a7c191663787565c53eb3}{Save\+Game\+Record}} (\mbox{\hyperlink{class_game_record}{Game\+Record}} record, Action callback)
+\item 
+void \mbox{\hyperlink{class_game_record_controller_a7925aece1b70fb652a1985111e4d7465}{Ending}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_game_record_controller_a592c775489a70782ec9dae5c6671a923}{Get\+Ending\+Data}} (Action$<$ \mbox{\hyperlink{class_ending_data}{Ending\+Data}} $>$ callback)
+\item 
+IEnumerator \mbox{\hyperlink{class_game_record_controller_add3473954cdbfc7348be054118608f08}{Get\+Dual\+Ending\+Data}} (Action$<$ \mbox{\hyperlink{class_dual_ending_data}{Dual\+Ending\+Data}} $>$ callback)
+\item 
+void \mbox{\hyperlink{class_game_record_controller_ae591c9a7944b4c0c04875800530d83cb}{Get\+Dual\+End}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_game_record_controller_a1103d600026d80b4ae7d7153a8dbce27}{Get\+Best\+Score}} (string \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{content\+Name}}, string user\+Id, bool is\+Class, Action$<$ int $>$ callback)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_record_service}{Game\+Record\+Service}} \mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\+\_\+game\+Record\+Service}}
 \item 
 string \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}
 \item 
@@ -45,11 +57,28 @@ string \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d3076
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
 
 
 \doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_game_record_controller_a7925aece1b70fb652a1985111e4d7465}\index{GameRecordController@{GameRecordController}!Ending@{Ending}}
+\index{Ending@{Ending}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{Ending()}{Ending()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a7925aece1b70fb652a1985111e4d7465} 
+void Game\+Record\+Controller.\+Ending (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00154}{154}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//GetEndingData();}}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_game_record_controller_aff23ce884a521ac45ecb63cc48871308}\index{GameRecordController@{GameRecordController}!GameInit@{GameInit}}
 \index{GameInit@{GameInit}!GameRecordController@{GameRecordController}}
 \doxysubsubsection{\texorpdfstring{GameInit()}{GameInit()}}
@@ -58,47 +87,80 @@ void Game\+Record\+Controller.\+Game\+Init (\begin{DoxyParamCaption}\item[{\mbox
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentStudent\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).InitGame(}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classId:\ currentClass.Name,}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personId:\ currentStudent\ ==\ null\ ?\ null\ :\ currentStudent.Id,}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ currentStudent\ ==\ null\ ?\ currentClass.Name\ :\ currentStudent.Name,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//임시로\ 데이터\ 적어놓은거임\ 추후\ 시니어\ 올림픽\ 때는\ 2P\ 선택하면\ 그\ 선택한\ 사람의\ 정보를\ 같이\ 넣어줘야함}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})record).InitGame(}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classIds:\ new\ List<string>\ \{\ currentClass.Name,\ \textcolor{stringliteral}{"{}VVR"{}}\ \},}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personIds:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ currentStudent.Id,\ \textcolor{stringliteral}{"{}91cc93e9-\/820a-\/40aa-\/abbc-\/a93e132c9e33"{}}\ \},}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ names:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.Name\ :\ currentStudent.Name,\ \textcolor{stringliteral}{"{}User1"{}}\ \},}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentStudent\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/currentClass\ :\ "{}}\ +\ currentClass);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/currentStudent\ :\ "{}}\ +\ currentStudent);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).InitGame(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classId:\ currentClass.Name,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personId:\ currentStudent\ ==\ null\ ?\ null\ :\ currentStudent.Id,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ currentStudent\ ==\ null\ ?\ currentClass.Name\ :\ currentStudent.Name,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ age:\ currentStudent\ ==\ null\ ?\ currentClass.Age\ :\ currentStudent.Age,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countryCode\ :\ currentStudent\ ==\ null\ ?\ currentClass.CountryCode\ :\ currentStudent.CountryCode,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countryImg\ :\ currentStudent\ ==\ null\ ?\ currentClass.CountryImg\ :\ currentStudent.CountryImg,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/record\ :\ "{}}\ +\ record);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ class2p\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ student2p\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2p\ 반\ 이름\ 찾기}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ item\ \textcolor{keywordflow}{in}\ agency.Classes)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}item.Name"{}}\ +\ item.Name);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}UserDataController.Instance.savePlayerTeamName"{}}\ +\ \mbox{\hyperlink{classuseful_1_1_user_data_controller}{UserDataController}}.\mbox{\hyperlink{classuseful_1_1_user_data_controller_a47c8a2c090d9ecee2eb6518912e8e1f5}{Instance}}.savePlayerTeamName);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (item.Name\ ==\ \mbox{\hyperlink{classuseful_1_1_user_data_controller}{UserDataController}}.\mbox{\hyperlink{classuseful_1_1_user_data_controller_a47c8a2c090d9ecee2eb6518912e8e1f5}{Instance}}.savePlayerTeamName)\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class2p\ =\ item;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}class2p\ :\ "{}}\ +\ class2p);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//2p\ 학생\ id로\ 비교해서\ 찾기}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ student\ \textcolor{keywordflow}{in}\ class2p.\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}})}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(student.Id\ ==\ \mbox{\hyperlink{classuseful_1_1_user_data_controller}{UserDataController}}.\mbox{\hyperlink{classuseful_1_1_user_data_controller_a47c8a2c090d9ecee2eb6518912e8e1f5}{Instance}}.savePlayerUserId)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ student2p\ =\ student;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}currentClass:\ \{currentClass\}\ /\ currentStudent:\ \{currentStudent\}\ /\ class2p:\ \{class2p\}\ /\ student2p:\ \{student2p\}"{}});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})record).InitGame(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyId:\ agency.\_id,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classIds:\ new\ List<string>\ \{\ currentClass.Name,\ class2p.Name\ \},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ personIds:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ currentStudent.Id,\ student2p\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ student2p.Id\ \},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ names:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.Name\ :\ currentStudent.\mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{Name}},\ student2p\ ==\ \textcolor{keyword}{null}\ ?\ class2p.Name\ :\ student2p.Name\ \},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ages:\ \textcolor{keyword}{new}\ List<int>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.Age\ :\ currentStudent.\mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{Age}},\ student2p\ ==\ \textcolor{keyword}{null}\ ?\ class2p.Age\ :\ student2p.Age\ \},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countryCodes:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.CountryCode\ :\ currentStudent.\mbox{\hyperlink{class_student_aea4f6dcd96dbe5dd8d79dd5d45172c28}{CountryCode}},\ student2p\ ==\ \textcolor{keyword}{null}\ ?\ class2p.CountryCode\ :\ student2p.CountryCode\ \},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countryImgs:\ \textcolor{keyword}{new}\ List<string>\ \{\ currentStudent\ ==\ \textcolor{keyword}{null}\ ?\ currentClass.CountryImg\ :\ currentStudent.\mbox{\hyperlink{class_student_a11adc70a9cf05ee4efe44285a5c00c42}{CountryImg}},\ student2p\ ==\ \textcolor{keyword}{null}\ ?\ class2p.CountryImg\ :\ student2p.CountryImg\ \},}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}}:\ \mbox{\hyperlink{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}{category}},}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}:\ \mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -113,16 +175,321 @@ void Game\+Record\+Controller.\+Game\+Start (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00055}{55}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00096}{96}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00056\ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).SingleGameStart();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}})record).SingleGameStart();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\Hypertarget{class_game_record_controller_a1103d600026d80b4ae7d7153a8dbce27}\index{GameRecordController@{GameRecordController}!GetBestScore@{GetBestScore}}
+\index{GetBestScore@{GetBestScore}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{GetBestScore()}{GetBestScore()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a1103d600026d80b4ae7d7153a8dbce27} 
+IEnumerator Game\+Record\+Controller.\+Get\+Best\+Score (\begin{DoxyParamCaption}\item[{string}]{content\+Name}{, }\item[{string}]{user\+Id}{, }\item[{bool}]{is\+Class}{, }\item[{Action$<$ int $>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00372}{372}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00373\ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bestScore\ =\ 0;}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a586799f9c49734e0656f67056f6a3181}{GetBestScore}}(\mbox{\hyperlink{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}{contentName}},\ userId,\ isClass,\ (response)\ =>}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (response\ ==\ null)}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bestScore\ =\ 0;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}개인\ 랭킹:\ "{}\ +\ response[0]);}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bestScore\ =\ response[0];}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ callback(bestScore);}
+\DoxyCodeLine{00390\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_a1103d600026d80b4ae7d7153a8dbce27_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_controller_ae591c9a7944b4c0c04875800530d83cb}\index{GameRecordController@{GameRecordController}!GetDualEnd@{GetDualEnd}}
+\index{GetDualEnd@{GetDualEnd}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{GetDualEnd()}{GetDualEnd()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_ae591c9a7944b4c0c04875800530d83cb} 
+void Game\+Record\+Controller.\+Get\+Dual\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00330}{330}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00331\ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}\ endingData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}();}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a5df32babc993ae2eb48934dac0310153}{GetContentMyRankingWithNeighbors}}(\textcolor{stringliteral}{"{}QuicknessGame"{}},\ \textcolor{stringliteral}{"{}1810e55b-\/5de1-\/4692-\/8049-\/49cc43068257"{}},\ (response)\ =>}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}1p\ ranking:\ "{}}\ +\ response);}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ContentRanking1\ =\ response;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a5df32babc993ae2eb48934dac0310153}{GetContentMyRankingWithNeighbors}}(\textcolor{stringliteral}{"{}QuicknessGame"{}},\ \textcolor{stringliteral}{"{}3c8b54a6-\/b415-\/4326-\/8e98-\/461871d51906"{}},\ (response)\ =>}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}2p\ ranking:\ "{}}\ +\ response);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ContentRanking2\ =\ response;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \textcolor{comment}{//StartCoroutine(\_gameRecordService.GetDualTopPercent("{}QuicknessGame"{},\ 60,\ (response)\ =>}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}1p\ top:\ "{}\ +\ response);}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ endingData.ScoreTopPercent1\ =\ response;}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}edingData:\ "{}\ +\ endingData);}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}));}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{comment}{//StartCoroutine(\_gameRecordService.GetTopPercentMyScore("{}QuicknessGame"{},\ 50,\ (response)\ =>}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}2p\ top:\ "{}\ +\ response[0]);}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ endingData.ScoreTopPercent2\ =\ response[0];}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}edingData:\ "{}\ +\ endingData);}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}));}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{comment}{//StartCoroutine(\_gameRecordService.GetDualContentBestScore("{}QuicknessGame"{},\ (response)\ =>}}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}content\ best\ score:\ "{}\ +\ response);}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ endingData.ContentBestScore\ =\ response;}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Debug.Log("{}edingData:\ "{}\ +\ endingData);}}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}));}}
+\DoxyCodeLine{00364\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_ae591c9a7944b4c0c04875800530d83cb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_controller_add3473954cdbfc7348be054118608f08}\index{GameRecordController@{GameRecordController}!GetDualEndingData@{GetDualEndingData}}
+\index{GetDualEndingData@{GetDualEndingData}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{GetDualEndingData()}{GetDualEndingData()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_add3473954cdbfc7348be054118608f08} 
+IEnumerator Game\+Record\+Controller.\+Get\+Dual\+Ending\+Data (\begin{DoxyParamCaption}\item[{Action$<$ \mbox{\hyperlink{class_dual_ending_data}{Dual\+Ending\+Data}} $>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00233}{233}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO:\ 대결\ 엔딩화면\ 데이터\ 불러오기}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency}{Agency}}\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}\ endingData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}();}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ Debug.Log(endingData);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isClass\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ userId\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isClassVS\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ userIdVS\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ score\ =\ 0;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ scoreVS\ =\ 0;}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.PersonIDs[0]\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isClass\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userId\ =\ dual.ClassIDs[0];}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dual.PersonIDs[0]\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isClass\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userId\ =\ dual.PersonIDs[0];}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.PersonIDs[1]\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isClassVS\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userIdVS\ =\ dual.ClassIDs[1];}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dual.PersonIDs[1]\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isClassVS\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userIdVS\ =\ dual.PersonIDs[1];}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ score\ =\ dual.RecordDetails[0].Score;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ scoreVS\ =\ dual.RecordDetails[1].Score;}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record}{GameRecord}}\ cuurentGameRecord\ =\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ gameRecord\ =\ (\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}})cuurentGameRecord;}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a5df32babc993ae2eb48934dac0310153}{GetContentMyRankingWithNeighbors}}(gameRecord.\mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}},\ userId,\ (response)\ =>}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}1p\ ranking:\ "{}}\ +\ response);}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ContentRanking1\ =\ response;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ iscor1\ =\ true;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a5df32babc993ae2eb48934dac0310153}{GetContentMyRankingWithNeighbors}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ userIdVS,\ (response)\ =>}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}2p\ ranking:\ "{}}\ +\ response);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ContentRanking2\ =\ response;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ iscor2\ =\ true;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a45408f80a44293f295eba9010a8255d1}{GetDualTopPercent}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ score,\ (response)\ =>}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}1p\ top:\ "{}}\ +\ response);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ScoreTopPercent1\ =\ response;}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ iscor3\ =\ true;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a6e15261538fd2e4db6b4eb269ae1910a}{GetTopPercentMyScore}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ scoreVS,\ (response)\ =>}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}2p\ top:\ "{}}\ +\ response[0]);}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ScoreTopPercent2\ =\ response[0];}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ iscor4\ =\ true;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a2b88a939186fcd23a265e5a3c3fc29d5}{GetDualContentBestScore}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ (response)\ =>}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}content\ best\ score:\ "{}}\ +\ response);}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ContentBestScore\ =\ response;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}edingData:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ iscor5\ =\ true;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ iscor1\ ==\ \textcolor{keyword}{true}\ \&\&\ iscor2\ ==\ \textcolor{keyword}{true}\ \&\&\ iscor3\ ==\ \textcolor{keyword}{true}\ \&\&\ iscor4\ ==\ \textcolor{keyword}{true}\ \&\&\ iscor5\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ iscor1\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ iscor2\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ iscor3\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ iscor4\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ iscor5\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ callback(endingData);}
+\DoxyCodeLine{00327\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_add3473954cdbfc7348be054118608f08_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_record_controller_a592c775489a70782ec9dae5c6671a923}\index{GameRecordController@{GameRecordController}!GetEndingData@{GetEndingData}}
+\index{GetEndingData@{GetEndingData}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{GetEndingData()}{GetEndingData()}}
+{\footnotesize\ttfamily \label{class_game_record_controller_a592c775489a70782ec9dae5c6671a923} 
+IEnumerator Game\+Record\+Controller.\+Get\+Ending\+Data (\begin{DoxyParamCaption}\item[{Action$<$ \mbox{\hyperlink{class_ending_data}{Ending\+Data}} $>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00159}{159}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO:\ 엔딩화면\ 데이터\ 불러오기}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency}{Agency}}\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_data}{EndingData}}\ endingData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_ending_data}{EndingData}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_af0049715eb82f6bc892a00d2da8c4144}{GetContentRanking}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ (response)\ =>}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}콘텐츠\ 랭킹:\ "{}}\ +\ string.Join(\textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ response));}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ContentRanking\ =\ response;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}콘텐츠\ 랭킹:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ iscor1\ =\ true;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isClass\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ userId\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ score\ =\ 0;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(single.PersonID\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isClass\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userId\ =\ single.ClassID;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isClass\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userId\ =\ single.PersonID;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ score\ =\ single.RecordDetail.Score;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//else\ if(OlympicsGameManager.Instance.currentGameRecord\ is\ DualGameRecord\ dual)}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ if\ (dual.PersonIDs[0]\ ==\ null)}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ isClass\ =\ true;}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ userId\ =\ dual.ClassIDs[0];}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ else\ if\ (dual.PersonIDs[0]\ !=\ null)}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ isClass\ =\ false;}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ userId\ =\ dual.PersonIDs[0];}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ score\ =\ dual.RecordDetails[0].Score;}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a1e201269686abda9273e4b83695bb5ac}{GetContentMyRanking}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ userId,\ isClass,\ (response)\ =>}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}개인\ 랭킹:\ "{}}\ +\ response[0]);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.myRank\ =\ response[0];}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}개인\ 랭킹:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ iscor2\ =\ true;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_a6e15261538fd2e4db6b4eb269ae1910a}{GetTopPercentMyScore}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName,\ score,\ (response)\ =>}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}개인\ 랭킹:\ "{}}\ +\ response[0]);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ endingData.ScoreTopPercent\ =\ response[0];}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}개인\ 랭킹:\ "{}}\ +\ endingData);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ iscor3\ =\ true;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ iscor1\ ==\ \textcolor{keyword}{true}\ \&\&\ iscor2\ ==\ \textcolor{keyword}{true}\ \&\&\ iscor3\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ iscor1\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ iscor2\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ iscor3\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ callback(endingData);}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_record_controller_a592c775489a70782ec9dae5c6671a923_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}\index{GameRecordController@{GameRecordController}!Hit@{Hit}}
 \index{Hit@{Hit}!GameRecordController@{GameRecordController}}
 \doxysubsubsection{\texorpdfstring{Hit()}{Hit()}}
@@ -131,30 +498,30 @@ void Game\+Record\+Controller.\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyper
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00068}{68}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00109}{109}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00069\ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ isCorrect:\ 정답\ 여부,}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ accuracy:\ 정확도(중심점과\ 거리\ 차이),}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ touchEvent:\ 터치\ 이벤트\ 기록,}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reactionTime:\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//((SingleGameRecord)record).RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(record.ToString()\ );}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGameRecord)}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ singleGameRecord.RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGameRecord)}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ dualGameRecord.RecordDetails[userIndex].Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ isCorrect:\ 정답\ 여부,}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ accuracy:\ 정확도(중심점과\ 거리\ 차이),}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ touchEvent:\ 터치\ 이벤트\ 기록,}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reactionTime:\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//((SingleGameRecord)record).RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(record.ToString()\ );}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ singleGameRecord)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ singleGameRecord.RecordDetail.Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dualGameRecord)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ dualGameRecord.RecordDetails[userIndex].Hit(isCorrect,\ accuracy,\ touchEvent,\ reactionTime);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -173,33 +540,32 @@ void Game\+Record\+Controller.\+Save\+Game\+Record (\begin{DoxyParamCaption}\ite
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00091}{91}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00132}{132}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00092\ \ \ \ \ \{}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ single.SingleGameEnd();}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ dual.DualGameEnd();}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ StartCoroutine(\_gameRecordService.\mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{SaveGameRecord}}(record,\ (response)\ =>}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}게임\ 기록\ 성공:\ "{}}\ +\ response);}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke();}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ Debug.Log(record.ToString());}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ single)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ single.SingleGameEnd();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(record\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ dual.DualGameEnd();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}{\_gameRecordService}}.\mbox{\hyperlink{class_game_record_service_ada0bad7effce61b2c0f0b9061e3da049}{SaveGameRecord}}(record,\ (response)\ =>}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}게임\ 기록\ 성공:\ "{}}\ +\ response);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -214,19 +580,29 @@ void Game\+Record\+Controller.\+Test\+On\+Touch (\begin{DoxyParamCaption}{}{}\en
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00062}{62}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00103}{103}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00063\ \ \ \ \ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ randomIndex\ =\ UnityEngine.Random.Range(0.0f,\ 10.0f);}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hit(randomIndex\ <\ 5,\ randomIndex,\ new\ TouchEvent(x:\ randomIndex,\ y:\ randomIndex+2,\ DateTime.UtcNow),\ randomIndex+0.2f);}}
-\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ randomIndex\ =\ UnityEngine.Random.Range(0.0f,\ 10.0f);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hit(randomIndex\ <\ 5,\ randomIndex,\ new\ TouchEvent(x:\ randomIndex,\ y:\ randomIndex+2,\ DateTime.UtcNow),\ randomIndex+0.2f);}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4}\index{GameRecordController@{GameRecordController}!\_gameRecordService@{\_gameRecordService}}
+\index{\_gameRecordService@{\_gameRecordService}!GameRecordController@{GameRecordController}}
+\doxysubsubsection{\texorpdfstring{\_gameRecordService}{\_gameRecordService}}
+{\footnotesize\ttfamily \label{class_game_record_controller_aaa2a3f043b5e2d85bf3d5804dedb33c4} 
+\mbox{\hyperlink{class_game_record_service}{Game\+Record\+Service}} Game\+Record\+Controller.\+\_\+game\+Record\+Service}
+
+
+
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_game_record_controller_a9163932d5770c674e4dac34f2f2e43cd}\index{GameRecordController@{GameRecordController}!category@{category}}
 \index{category@{category}!GameRecordController@{GameRecordController}}
 \doxysubsubsection{\texorpdfstring{category}{category}}
@@ -235,7 +611,7 @@ string Game\+Record\+Controller.\+category}
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_game_record_controller_a5a0999a03d58661f82851d30762711a9}\index{GameRecordController@{GameRecordController}!contentName@{contentName}}
 \index{contentName@{contentName}!GameRecordController@{GameRecordController}}
@@ -245,7 +621,7 @@ string Game\+Record\+Controller.\+content\+Name}
 
 
 
-\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_controller_8cs_source}{Game\+Record\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_game_record_controller_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
 
 
 

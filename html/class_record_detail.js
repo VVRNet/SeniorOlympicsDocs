@@ -1,7 +1,7 @@
 var class_record_detail =
 [
     [ "RecordDetail", "class_record_detail.html#aa9169edaca948129de772c544015a43a", null ],
-    [ "EndGame", "class_record_detail.html#a1a4c0aeb8a33236cda2af49529c18c66", null ],
+    [ "EndGame", "class_record_detail.html#a3ed163077bb1994a80bbc8f1998244b2", null ],
     [ "Hit", "class_record_detail.html#a6ccc58d20457efd86999afd55cefd52d", null ],
     [ "ToString", "class_record_detail.html#a1b78114c45ae2da4f526bfed256cc1fa", null ],
     [ "Accuracy", "class_record_detail.html#a96243a5a4a8f6840a68de93a923d29f3", null ],

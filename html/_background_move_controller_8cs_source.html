@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.2</span>
    </div>
   </td>
  </tr>
@@ -105,91 +105,93 @@ $(function(){initNavTree('_background_move_controller_8cs_source.html',''); init
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>DG.Tweening;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>UnityEngine.UI;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_background_move_controller.html">    7</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_background_move_controller.html">BackgroundMoveController</a> : MonoBehaviour</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">    9</a></span>    <span class="keyword">public</span> Image <a class="code hl_variable" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">titleObject</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">   10</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">moveObject01</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">   11</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">   12</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnEnable()</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_function" href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">ResetPosition</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">   19</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">ResetPosition</a>()</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        moveObject01.localPosition = <span class="keyword">new</span> Vector3(0, 0, 0);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        moveObject02.localPosition = <span class="keyword">new</span> Vector3(-1100, 0, 0);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        moveObject03.localPosition = <span class="keyword">new</span> Vector3(-1000, 0, 0);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_function" href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">StartMotion</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// 라이센스 페이지에서 뒷 배경을 이동시키는 모션 컨트롤</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_background_move_controller.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_background_move_controller.html">BackgroundMoveController</a> : MonoBehaviour</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">   11</a></span>    <span class="keyword">public</span> Image <a class="code hl_variable" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">titleObject</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">   12</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">moveObject01</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">   13</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">   14</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnEnable()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_function" href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">ResetPosition</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">   21</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">ResetPosition</a>()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        moveObject01.localPosition = <span class="keyword">new</span> Vector3(0, 0, 0);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        moveObject02.localPosition = <span class="keyword">new</span> Vector3(-1100, 0, 0);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        moveObject03.localPosition = <span class="keyword">new</span> Vector3(-1000, 0, 0);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_function" href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">StartMotion</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">   28</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">StartMotion</a>()</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_variable" href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">moveObject01</a>.DOLocalMoveX(770, 0.5f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>.DOLocalMoveX(-270, 0.5f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOLocalMoveX(420, 0.5f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">   30</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">StartMotion</a>()</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_variable" href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">moveObject01</a>.DOLocalMoveX(770, 0.5f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>.DOLocalMoveX(-270, 0.5f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOLocalMoveX(420, 0.5f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a8e649b2f984146e372301ace764ff3e7">   35</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a8e649b2f984146e372301ace764ff3e7">OnTouchMoving</a>()</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        StartCoroutine(CoFadeOut());</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        moveObject02.localRotation = Quaternion.Euler(0, 180, 0);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>.DOLocalMoveX(270, 0.5f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        moveObject03.localRotation = Quaternion.Euler(180, 180, 0);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOScale(<span class="keyword">new</span> Vector3(1.1f, 1.1f, 1), 0.4f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOLocalMove(<span class="keyword">new</span> Vector3(-520, 200, 0), 0.5f).SetEase(Ease.Linear).OnComplete(() =&gt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOScale(<span class="keyword">new</span> Vector3(0.8f, 0.8f, 1), 0.2f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        });</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a8e649b2f984146e372301ace764ff3e7">   37</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a8e649b2f984146e372301ace764ff3e7">OnTouchMoving</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        StartCoroutine(CoFadeOut());</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        moveObject02.localRotation = Quaternion.Euler(0, 180, 0);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>.DOLocalMoveX(270, 0.5f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        moveObject03.localRotation = Quaternion.Euler(180, 180, 0);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOScale(<span class="keyword">new</span> Vector3(1.1f, 1.1f, 1), 0.4f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOLocalMove(<span class="keyword">new</span> Vector3(-520, 200, 0), 0.5f).SetEase(Ease.Linear).OnComplete(() =&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOScale(<span class="keyword">new</span> Vector3(0.8f, 0.8f, 1), 0.2f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        });</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    IEnumerator CoFadeOut()</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        Color originalColor = <a class="code hl_variable" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">titleObject</a>.color;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">float</span> alpha = originalColor.a;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">for</span> (<span class="keywordtype">float</span> t = 0; t &lt; 0.5f; t += Time.deltaTime)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordtype">float</span> normalizedTime = t / 0.5f;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            titleObject.color = <span class="keyword">new</span> Color(originalColor.r, originalColor.g, originalColor.b, Mathf.Lerp(alpha, 0, normalizedTime));</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        titleObject.color = <span class="keyword">new</span> Color(originalColor.r, originalColor.g, originalColor.b, 0);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_variable" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">titleObject</a>.gameObject.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a080e034e9cac35247c1dde42e21fc50d">   67</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a080e034e9cac35247c1dde42e21fc50d">OnTouchLogin</a>()</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>.DOLocalMoveX(1100, 0.5f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOLocalMove(<span class="keyword">new</span> Vector3(-730, 420, 0), 0.5f).SetEase(Ease.Linear);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    IEnumerator CoFadeOut()</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Color originalColor = <a class="code hl_variable" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">titleObject</a>.color;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">float</span> alpha = originalColor.a;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">for</span> (<span class="keywordtype">float</span> t = 0; t &lt; 0.5f; t += Time.deltaTime)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordtype">float</span> normalizedTime = t / 0.5f;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            titleObject.color = <span class="keyword">new</span> Color(originalColor.r, originalColor.g, originalColor.b, Mathf.Lerp(alpha, 0, normalizedTime));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        titleObject.color = <span class="keyword">new</span> Color(originalColor.r, originalColor.g, originalColor.b, 0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_variable" href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">titleObject</a>.gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_background_move_controller.html#a080e034e9cac35247c1dde42e21fc50d">   69</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_background_move_controller.html#a080e034e9cac35247c1dde42e21fc50d">OnTouchLogin</a>()</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">moveObject02</a>.DOLocalMoveX(1100, 0.5f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_variable" href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">moveObject03</a>.DOLocalMove(<span class="keyword">new</span> Vector3(-730, 420, 0), 0.5f).SetEase(Ease.Linear);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 </div>
-<div class="ttc" id="aclass_background_move_controller_html"><div class="ttname"><a href="class_background_move_controller.html">BackgroundMoveController</a></div><div class="ttdef"><b>Definition</b> <a href="#l00007">BackgroundMoveController.cs:8</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a080e034e9cac35247c1dde42e21fc50d"><div class="ttname"><a href="class_background_move_controller.html#a080e034e9cac35247c1dde42e21fc50d">BackgroundMoveController.OnTouchLogin</a></div><div class="ttdeci">void OnTouchLogin()</div><div class="ttdef"><b>Definition</b> <a href="#l00067">BackgroundMoveController.cs:67</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a1d23928d622a8ecbf99673f37f309f3d"><div class="ttname"><a href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">BackgroundMoveController.titleObject</a></div><div class="ttdeci">Image titleObject</div><div class="ttdef"><b>Definition</b> <a href="#l00009">BackgroundMoveController.cs:9</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a2ec1dec893b6c945e7815b3b9646de31"><div class="ttname"><a href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">BackgroundMoveController.moveObject01</a></div><div class="ttdeci">Transform moveObject01</div><div class="ttdef"><b>Definition</b> <a href="#l00010">BackgroundMoveController.cs:10</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a34d1d678678a070b1e70f85242f4591d"><div class="ttname"><a href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">BackgroundMoveController.moveObject03</a></div><div class="ttdeci">Transform moveObject03</div><div class="ttdef"><b>Definition</b> <a href="#l00012">BackgroundMoveController.cs:12</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a4e9e8fbddc004bc70915f7cf6107d405"><div class="ttname"><a href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">BackgroundMoveController.ResetPosition</a></div><div class="ttdeci">void ResetPosition()</div><div class="ttdef"><b>Definition</b> <a href="#l00019">BackgroundMoveController.cs:19</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a5febd6eea16fb9a1b29d26eb62a40d73"><div class="ttname"><a href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">BackgroundMoveController.StartMotion</a></div><div class="ttdeci">void StartMotion()</div><div class="ttdef"><b>Definition</b> <a href="#l00028">BackgroundMoveController.cs:28</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_a8e649b2f984146e372301ace764ff3e7"><div class="ttname"><a href="class_background_move_controller.html#a8e649b2f984146e372301ace764ff3e7">BackgroundMoveController.OnTouchMoving</a></div><div class="ttdeci">void OnTouchMoving()</div><div class="ttdef"><b>Definition</b> <a href="#l00035">BackgroundMoveController.cs:35</a></div></div>
-<div class="ttc" id="aclass_background_move_controller_html_ab1c643b1c75ba9992d2893e0d9d73f69"><div class="ttname"><a href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">BackgroundMoveController.moveObject02</a></div><div class="ttdeci">Transform moveObject02</div><div class="ttdef"><b>Definition</b> <a href="#l00011">BackgroundMoveController.cs:11</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html"><div class="ttname"><a href="class_background_move_controller.html">BackgroundMoveController</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">BackgroundMoveController.cs:10</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a080e034e9cac35247c1dde42e21fc50d"><div class="ttname"><a href="class_background_move_controller.html#a080e034e9cac35247c1dde42e21fc50d">BackgroundMoveController.OnTouchLogin</a></div><div class="ttdeci">void OnTouchLogin()</div><div class="ttdef"><b>Definition</b> <a href="#l00069">BackgroundMoveController.cs:69</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a1d23928d622a8ecbf99673f37f309f3d"><div class="ttname"><a href="class_background_move_controller.html#a1d23928d622a8ecbf99673f37f309f3d">BackgroundMoveController.titleObject</a></div><div class="ttdeci">Image titleObject</div><div class="ttdef"><b>Definition</b> <a href="#l00011">BackgroundMoveController.cs:11</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a2ec1dec893b6c945e7815b3b9646de31"><div class="ttname"><a href="class_background_move_controller.html#a2ec1dec893b6c945e7815b3b9646de31">BackgroundMoveController.moveObject01</a></div><div class="ttdeci">Transform moveObject01</div><div class="ttdef"><b>Definition</b> <a href="#l00012">BackgroundMoveController.cs:12</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a34d1d678678a070b1e70f85242f4591d"><div class="ttname"><a href="class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d">BackgroundMoveController.moveObject03</a></div><div class="ttdeci">Transform moveObject03</div><div class="ttdef"><b>Definition</b> <a href="#l00014">BackgroundMoveController.cs:14</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a4e9e8fbddc004bc70915f7cf6107d405"><div class="ttname"><a href="class_background_move_controller.html#a4e9e8fbddc004bc70915f7cf6107d405">BackgroundMoveController.ResetPosition</a></div><div class="ttdeci">void ResetPosition()</div><div class="ttdef"><b>Definition</b> <a href="#l00021">BackgroundMoveController.cs:21</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a5febd6eea16fb9a1b29d26eb62a40d73"><div class="ttname"><a href="class_background_move_controller.html#a5febd6eea16fb9a1b29d26eb62a40d73">BackgroundMoveController.StartMotion</a></div><div class="ttdeci">void StartMotion()</div><div class="ttdef"><b>Definition</b> <a href="#l00030">BackgroundMoveController.cs:30</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_a8e649b2f984146e372301ace764ff3e7"><div class="ttname"><a href="class_background_move_controller.html#a8e649b2f984146e372301ace764ff3e7">BackgroundMoveController.OnTouchMoving</a></div><div class="ttdeci">void OnTouchMoving()</div><div class="ttdef"><b>Definition</b> <a href="#l00037">BackgroundMoveController.cs:37</a></div></div>
+<div class="ttc" id="aclass_background_move_controller_html_ab1c643b1c75ba9992d2893e0d9d73f69"><div class="ttname"><a href="class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69">BackgroundMoveController.moveObject02</a></div><div class="ttdeci">Transform moveObject02</div><div class="ttdef"><b>Definition</b> <a href="#l00013">BackgroundMoveController.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

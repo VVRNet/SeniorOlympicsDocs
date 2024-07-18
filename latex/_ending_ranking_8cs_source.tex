@@ -1,0 +1,533 @@
+\doxysection{Ending\+Ranking.\+cs}
+\hypertarget{_ending_ranking_8cs_source}{}\label{_ending_ranking_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Ending/EndingRanking.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Ending/EndingRanking.cs}}
+\mbox{\hyperlink{_ending_ranking_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEngine.Networking;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00010}\mbox{\hyperlink{class_ending_ranking}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ending_ranking}{EndingRanking}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//public\ RankSummaryController\ rankSummaryController;}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00013}\mbox{\hyperlink{class_ending_ranking_ab58fe2b6dca57cd942f5ea2b1a0538ab}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_ending_ranking_ab58fe2b6dca57cd942f5ea2b1a0538ab}{rankingPrefab}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ 0\ :\ 골드,\ 1\ :\ 실버,\ 2\ :\ 브론즈,\ 3\ :\ 아이언}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00015}\mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Sprite>\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00016}\mbox{\hyperlink{class_ending_ranking_abe346a63306389fe029a00b539a85225}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_ending_ranking_abe346a63306389fe029a00b539a85225}{parentTransform}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00018}00018\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}협동형\ 랭킹"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00019}\mbox{\hyperlink{class_ending_ranking_a480ce2daf11833c5ca6c24ceb7a7dd88}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ Image\ \mbox{\hyperlink{class_ending_ranking_a480ce2daf11833c5ca6c24ceb7a7dd88}{icon}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00020}\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00021}\mbox{\hyperlink{class_ending_ranking_a7c20690ccd235a691ad05dcf2ca086cf}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a7c20690ccd235a691ad05dcf2ca086cf}{userName}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00022}\mbox{\hyperlink{class_ending_ranking_a883a9bce32bcf0c4637e3d6630979283}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ Image\ \mbox{\hyperlink{class_ending_ranking_a883a9bce32bcf0c4637e3d6630979283}{countryImage}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00023}\mbox{\hyperlink{class_ending_ranking_a5ab262e8982fc23cee86e5d81a485356}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a5ab262e8982fc23cee86e5d81a485356}{countryName}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00024}\mbox{\hyperlink{class_ending_ranking_a8757e1d58f9f165d2902703c735249c4}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a8757e1d58f9f165d2902703c735249c4}{score}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00026}00026\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}협동형\ 컨텐츠\ 이름"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00027}\mbox{\hyperlink{class_ending_ranking_affaa3a58eb5cd4f53b132f185cda5534}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_affaa3a58eb5cd4f53b132f185cda5534}{contentName}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00028}\mbox{\hyperlink{class_ending_ranking_ad49e89f1acbc1e553c930f134a671794}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_ad49e89f1acbc1e553c930f134a671794}{contentRankingName}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00030}00030\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}대결형\ 승패"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00031}\mbox{\hyperlink{class_ending_ranking_a468012eb5eb5f646ec99363fc17bf1b7}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a468012eb5eb5f646ec99363fc17bf1b7}{resultLeft}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00032}\mbox{\hyperlink{class_ending_ranking_a13d042a5e2756117e22e3d6457da1094}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a13d042a5e2756117e22e3d6457da1094}{resultRight}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00034}00034\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}대결형\ 컨텐츠\ 이름"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00035}\mbox{\hyperlink{class_ending_ranking_a2146eeeadc934935651f1d821380bc04}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a2146eeeadc934935651f1d821380bc04}{vsContentName}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00037}00037\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}1p\ 2p\ 이름"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00038}\mbox{\hyperlink{class_ending_ranking_ab969cb04fc03a8bc7689592e1687ee2b}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_ab969cb04fc03a8bc7689592e1687ee2b}{p1Name}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00039}\mbox{\hyperlink{class_ending_ranking_a94491464a6cd5b961becb103024cc9b3}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ending_ranking_a94491464a6cd5b961becb103024cc9b3}{p2Name}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00041}00041\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}대결형\ 랭킹\ 1p"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00042}\mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00043}\mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00044}\mbox{\hyperlink{class_ending_ranking_a9328b1557229707e26aee954b8626d1d}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ Image[]\ \mbox{\hyperlink{class_ending_ranking_a9328b1557229707e26aee954b8626d1d}{vsCountryImageLeft}}\ =\ \textcolor{keyword}{new}\ Image[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00045}\mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00046}\mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00048}00048\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}대결형\ 랭킹\ 2p"{}})]}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00049}\mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{00049}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00050}\mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00051}\mbox{\hyperlink{class_ending_ranking_aeaf5b21e4a2f39dd82c629315047d82e}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ Image[]\ \mbox{\hyperlink{class_ending_ranking_aeaf5b21e4a2f39dd82c629315047d82e}{vsCountryImageRight}}\ =\ \textcolor{keyword}{new}\ Image[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00052}\mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00053}\mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI[]\ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}\ =\ \textcolor{keyword}{new}\ TextMeshProUGUI[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ isLeft;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ isRight;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ 협동형\ 엔딩페이지\ 랭킹\ 리스트\ 관련\ 함수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00059}\mbox{\hyperlink{class_ending_ranking_ab6d3629453fb8251184c16f24d562236}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ending_ranking_ab6d3629453fb8251184c16f24d562236}{GetRankingData}}()}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_data}{EndingData}}\ endingData\ =\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.endingData;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//컨텐츠\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_ab7f961f1b8e577b42e45c8bd0ef219fb}{ContentName}}();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//내\ 랭킹\ 데이터}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a68701b283ec1d062e8307d6c01003a4d}{Ranking}}\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ icon.sprite\ =\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}}[0];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a68701b283ec1d062e8307d6c01003a4d}{Ranking}}\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ icon.sprite\ =\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}}[1];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a68701b283ec1d062e8307d6c01003a4d}{Ranking}}\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ icon.sprite\ =\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}}[2];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ icon.sprite\ =\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}}[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ rank.text\ =\ endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a68701b283ec1d062e8307d6c01003a4d}{Ranking}}.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ userName.text\ =\ endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a916aecd987347499a3d433c5f7d3973f}{UserName}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}endingData\ :\ "{}}\ +\ endingData);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}endingData.myRank\ :\ "{}}\ +\ endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}endingData.myRank.CountryImg\ :\ "{}}\ +\ endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a05bfca247a300a4a1cd241ed19179837}{CountryImg}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a05bfca247a300a4a1cd241ed19179837}{CountryImg}},\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ countryImage.sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ countryName.text\ =\ endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_a4096e6eb00a6b648d4711a63e1fa75f0}{CountryCode}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ score.text\ =\ endingData.\mbox{\hyperlink{class_ending_data_a645c0669f3174d2d8dd15bcd4007e397}{myRank}}.\mbox{\hyperlink{class_rank_ae1069d0abc735c5db473dbc8e0271065}{Score}}.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//여기서부턴\ 랭킹리스트}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ List<GameObject>\ list\ =\ \textcolor{keyword}{new}\ List<GameObject>();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ List<Rank>\ rankList\ =\ endingData.\mbox{\hyperlink{class_ending_data_add5d09d809258f0b8d4034b8a466831f}{ContentRanking}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rankList.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 4)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_ending_ranking_ab58fe2b6dca57cd942f5ea2b1a0538ab}{rankingPrefab}},\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0),\ Quaternion.identity);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ obj.transform.SetParent(\mbox{\hyperlink{class_ending_ranking_abe346a63306389fe029a00b539a85225}{parentTransform}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ obj.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ list.Add(obj);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ list.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ranking_prefab_data}{RankingPrefabData}}\ data\ =\ list[i].GetComponent<\mbox{\hyperlink{class_ranking_prefab_data}{RankingPrefabData}}>();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//아이콘}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 3)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.icon.sprite\ =\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}}[i];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.icon.sprite\ =\ \mbox{\hyperlink{class_ending_ranking_a83583ff956a2974bc0e282e8ebaa2f08}{icons}}[3];}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//순위}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ data.rank.text\ =\ rankList[i].Ranking.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//유저\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ data.userName.text\ =\ rankList[i].UserName.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(rankList[i].CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.countryImage.sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//국가\ 이름(코드)}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ data.countryName.text\ =\ rankList[i].CountryCode.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ data.score.text\ =\ rankList[i].Score.ToString();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00150}\mbox{\hyperlink{class_ending_ranking_a7ade3300276be8340e137ecfb2917cc8}{00150}}\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerator\ \mbox{\hyperlink{class_ending_ranking_a7ade3300276be8340e137ecfb2917cc8}{GetDualRankingData}}()}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00151}00151\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GetDualRankingData"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}\ dualData\ =\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.dualEndingData;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ is\ \mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ dual)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}DualGameRecord\ :\ "{}}\ +\ dual);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//컨텐츠\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ vsContentName.text\ =\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName.ToUpper();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsContentName.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a2146eeeadc934935651f1d821380bc04}{vsContentName}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 2p\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ p1Name.text\ =\ dual.Names[0].ToUpper();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}p1Name.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_ab969cb04fc03a8bc7689592e1687ee2b}{p1Name}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ p2Name.text\ =\ dual.Names[1].ToUpper();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}p2Name.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a94491464a6cd5b961becb103024cc9b3}{p2Name}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ win\ lose\ 판단}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].Score\ >\ dual.RecordDetails[1].Score)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 승\ 2p\ 패}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultLeft.text\ =\ \textcolor{stringliteral}{"{}<color=\#FF6E01>WIN</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}resultLeft.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a468012eb5eb5f646ec99363fc17bf1b7}{resultLeft}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultRight.text\ =\ \textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}resultRight.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13d042a5e2756117e22e3d6457da1094}{resultRight}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].Score\ <\ dual.RecordDetails[1].Score)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 패\ 2p\ 승}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultLeft.text\ =\ \textcolor{stringliteral}{"{}<color=\#C250F8>LOSE</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}resultLeft.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a468012eb5eb5f646ec99363fc17bf1b7}{resultLeft}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultRight.text\ =\ \textcolor{stringliteral}{"{}<color=\#FF6E01>WIN</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}resultRight.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13d042a5e2756117e22e3d6457da1094}{resultRight}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dual.RecordDetails[0].Score\ ==\ dual.RecordDetails[1].Score)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//무승부}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultLeft.text\ =\ \textcolor{stringliteral}{"{}<color=\#9F9F9F>DRAW</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}resultLeft.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a468012eb5eb5f646ec99363fc17bf1b7}{resultLeft}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultRight.text\ =\ \textcolor{stringliteral}{"{}<color=\#9F9F9F>DRAW</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}resultRight.text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13d042a5e2756117e22e3d6457da1094}{resultRight}}.text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a4b1dcc94e31ce9e2f2f40ec5583f5200}{LeftRank}}(dualData);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a8e949cdb8d5e327a3f70596f423eacda}{RightRank}}(dualData);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ isLeft\ ==\ \textcolor{keyword}{true}\ \&\&\ isRight\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00201}\mbox{\hyperlink{class_ending_ranking_a4b1dcc94e31ce9e2f2f40ec5583f5200}{00201}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ending_ranking_a4b1dcc94e31ce9e2f2f40ec5583f5200}{LeftRank}}(\mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}\ dualData)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00202}00202\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}LeftRank"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1등일때\ 0,1,2\ 중\ 0이\ 널이되고\ 꼴등일때는\ 0,1,2\ 중\ 2가\ 널이된다.}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.aboveUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}1등"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 랭킹\ 점수가\ 1등일\ 경우}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a9328b1557229707e26aee954b8626d1d}{vsCountryImageLeft}}[0].gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rank}{Rank}}\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.userScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.belowUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Ranking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Ranking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[index].text\ =\ rank.Ranking\ +\ temp;\ \textcolor{comment}{//\ 등수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.UserName.ToUpper();\ \textcolor{comment}{//유저이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsCountryImageLeft[index].sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryImageLeft[index].sprite\ :\ "{}}\ +\ vsCountryImageLeft[index].sprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));\ \textcolor{comment}{//\ 국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryCode.ToUpper();\ \textcolor{comment}{//\ 국가\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Score.ToString();\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}꼴등"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 랭킹점수가\ 꼴등일\ 경우}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a9328b1557229707e26aee954b8626d1d}{vsCountryImageLeft}}[2].gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rank}{Rank}}\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.aboveUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.userScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Ranking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[index].text\ =\ rank.Ranking\ +\ temp;\ \textcolor{comment}{//\ 등수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.UserName.ToUpper();\ \textcolor{comment}{//유저이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsCountryImageLeft[index].sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryImageLeft[index].sprite\ :\ "{}}\ +\ vsCountryImageLeft[index].sprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));\ \textcolor{comment}{//\ 국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryCode.ToUpper();\ \textcolor{comment}{//\ 국가\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Score.ToString();\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}3명있음"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3개의\ 랭킹이\ 다\ 있을\ 때\ }}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rank}{Rank}}\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.aboveUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.userScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking1.belowUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a5cbfc7032c9f6d2546a86715a522bcef}{ContentRanking1}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Ranking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[index].text\ =\ rank.Ranking\ +\ temp;\ \textcolor{comment}{//\ 등수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a99cae2ca8b25baa56f9187a778c25747}{vsRankLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.UserName.ToUpper();\ \textcolor{comment}{//유저이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_aa9792f030c0204e9a3d0fe13e86b9ed2}{vsUserNameLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsCountryImageLeft[index].sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryImageLeft[index].sprite\ :\ "{}}\ +\ vsCountryImageLeft[index].sprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));\ \textcolor{comment}{//\ 국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryCode;\ \textcolor{comment}{//\ 국가\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a769e540af21985d9b82701299d312928}{vsCountryNameLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Score.ToString();\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreLeft[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a49ad4487c76e084602cfe5e2733b5dd9}{vsScoreLeft}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ isLeft\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00337}00337\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00339}\mbox{\hyperlink{class_ending_ranking_a8e949cdb8d5e327a3f70596f423eacda}{00339}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ending_ranking_a8e949cdb8d5e327a3f70596f423eacda}{RightRank}}(\mbox{\hyperlink{class_dual_ending_data}{DualEndingData}}\ dualData)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00340}00340\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}RightRank"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1등일때\ 0,1,2\ 중\ 0이\ 널이되고\ 꼴등일때는\ 0,1,2\ 중\ 2가\ 널이된다.}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.aboveUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 랭킹\ 점수가\ 1등일\ 경우}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankRight[0].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[0].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameRight[0].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[0].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aeaf5b21e4a2f39dd82c629315047d82e}{vsCountryImageRight}}[0].gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameRight[0].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[0].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[0].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreRight[0].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[0].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rank}{Rank}}\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.userScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.belowUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Ranking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[index].text\ =\ rank.Ranking\ +\ temp;\ \textcolor{comment}{//\ 등수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankRight[index].text"{}}\ +\ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.UserName.ToUpper();\ \textcolor{comment}{//유저이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameRight[index].text"{}}\ +\ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsCountryImageRight[index].sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryImageRight[index].sprite\ :\ "{}}\ +\ vsCountryImageRight[index].sprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));\ \textcolor{comment}{//\ 국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryCode.ToUpper();\ \textcolor{comment}{//\ 국가\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}\{i\}\ for문\ i임"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Score.ToString();\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//1p\ 랭킹점수가\ 꼴등일\ 경우}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_aeaf5b21e4a2f39dd82c629315047d82e}{vsCountryImageRight}}[2].gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[2].text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rank}{Rank}}\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.aboveUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ddualData.ContentRanking2.userScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Ranking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[index].text\ =\ rank.Ranking\ +\ temp;\ \textcolor{comment}{//\ 등수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.UserName.ToUpper();\ \textcolor{comment}{//유저이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsCountryImageRight[index].sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryImageRight[index].sprite\ :\ "{}}\ +\ vsCountryImageRight[index].sprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));\ \textcolor{comment}{//\ 국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryCode.ToUpper();\ \textcolor{comment}{//\ 국가\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}\{i\}\ for문\ i임"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Score.ToString();\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3개의\ 랭킹이\ 다\ 있을\ 때\ }}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rank}{Rank}}\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.aboveUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_a21e6afb55ddf07e01d98a9e477b1785c}{aboveUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.userScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_ab6f25fe128613381e4fbee7b04c24785}{userScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}\ =\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}dualData.ContentRanking2.belowUserScore\ :\ "{}}\ +\ dualData.\mbox{\hyperlink{class_dual_ending_data_a7226a8b3f170b60a056a39e1032479c8}{ContentRanking2}}.\mbox{\hyperlink{class_dual_rank_af1bf9e5e50678a9a77bc36cadf28485f}{belowUserScore}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00454}00454\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}rank.Raking\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Ranking);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[index].text\ =\ rank.Ranking\ +\ temp;\ \textcolor{comment}{//\ 등수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsRankRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_af452ccdcbb43b11b3623308e1bf38989}{vsRankRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.UserName.ToUpper();\ \textcolor{comment}{//유저이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsUserNameRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_affb455757444bba11175a2fb5a0f9f7a}{vsUserNameRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GetTexture(\mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryImg,\ (mySprite)\ =>}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vsCountryImageRight[index].sprite\ =\ mySprite;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryImageRight[index].sprite\ :\ "{}}\ +\ vsCountryImageRight[index].sprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));\ \textcolor{comment}{//\ 국가\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.CountryCode.ToUpper();\ \textcolor{comment}{//\ 국가\ 이름}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}\{i\}\ for문\ i임"{}});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsCountryNameRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a13a3fcfe67049ffd373ff38630c9454b}{vsCountryNameRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[index].text\ =\ \mbox{\hyperlink{class_ending_ranking_a0d8c710d215cdb9db50729eb8b17fdb3}{rank}}.Score.ToString();\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}vsScoreRight[index].text\ :\ "{}}\ +\ \mbox{\hyperlink{class_ending_ranking_a72244803983ed2d6f189e887a63ca858}{vsScoreRight}}[index].text);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ isRight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00474}00474\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00476}\mbox{\hyperlink{class_ending_ranking_ab7f961f1b8e577b42e45c8bd0ef219fb}{00476}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ending_ranking_ab7f961f1b8e577b42e45c8bd0ef219fb}{ContentName}}()}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00477}00477\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00478}00478\ \ \ \ \ \ \ \ \ contentName.text\ =\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName.ToUpper();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00479}00479\ \ \ \ \ \ \ \ \ contentRankingName.text\ =\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord.ContentName.ToUpper()\ +\ \textcolor{stringliteral}{"{}<color=\#FFB800>\ RANKING</color>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00480}00480\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00482}00482\ \ \ \ \ IEnumerator\ GetTexture(\textcolor{keywordtype}{string}\ \_url,\ Action<Sprite>\ callback)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00483}00483\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ \_url\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00485}00485\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Requesting\ URL:\ "{}}\ +\ \_url);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00486}00486\ \ \ \ \ \ \ \ \ UnityWebRequest\ www\ =\ UnityWebRequestTexture.GetTexture(\_url);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ www.SendWebRequest();}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Request\ completed\ with\ result:\ "{}}\ +\ www.result.ToString());}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (www.result\ !=\ UnityWebRequest.Result.Success)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}Error:\ "{}}\ +\ www.error);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00495}00495\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ myTexture\ =\ ((DownloadHandlerTexture)www.downloadHandler).texture;}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ mySprite\ =\ TextureToSprite(myTexture);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(mySprite);}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00500}00500\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00501}00501\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00502}00502\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00503}00503\ \ \ \ \ \textcolor{keyword}{private}\ Sprite\ TextureToSprite(Texture2D\ texture)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00504}00504\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00505}00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Sprite.Create(texture,\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ texture.width,\ texture.height),\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f));}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00506}00506\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00508}\mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{00508}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_ending_ranking_a1ca9334837c24ef44143f573038382bd}{GetNumberSuffix}}(\textcolor{keywordtype}{int}\ number)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00509}00509\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00510}00510\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (number\ \%\ 100\ >=\ 11\ \&\&\ number\ \%\ 100\ <=\ 13)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}th"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00513}00513\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (number\ \%\ 10)}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00516}00516\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<size=11>st</size>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<size=11>nd</size>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<size=11>rd</size>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<size=11>th</size>"{}};}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00525}00525\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00526}00526\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ending_ranking_8cs_source_l00527}00527\ \}}
+
+\end{DoxyCode}

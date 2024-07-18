@@ -25,7 +25,9 @@ Bubble.\+Bubble\+Touch에 대한 협력 다이어그램\+:
 \item 
 void \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648}{On\+Touch}} (float x, float y)
 \item 
-void \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414}{Touch\+Effect}} ()
+void \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853}{Answer\+Effect}} ()
+\item 
+void \mbox{\hyperlink{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296}{Wrong\+Effect}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
@@ -38,30 +40,70 @@ bool \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7
 \item 
 bool \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{is\+Left}}
 \item 
+bool \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{is\+Effect}}
+\item 
 Game\+Object \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touch\+Prefab}}
 \item 
 Game\+Object \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{root\+Object}}
+\item 
+Game\+Object \mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{answer\+Effect}}
 \item 
 Audio\+Source \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{result\+Audio}}
 \item 
 Audio\+Clip \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correct\+Sound}}
 \item 
 Audio\+Clip \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrong\+Sound}}
-\item 
-Sprite \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d}{touched\+Sprite}}
-\item 
-TMP\+\_\+\+Color\+Gradient \mbox{\hyperlink{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6}{gradient}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
 
 
 
 \doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!AnswerEffect@{AnswerEffect}}
+\index{AnswerEffect@{AnswerEffect}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
+\doxysubsubsection{\texorpdfstring{AnswerEffect()}{AnswerEffect()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853} 
+void Bubble.\+Bubble\+Touch.\+Answer\+Effect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00129}{129}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//터치시\ 이펙트\ 구현}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{isEffect}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ originalScale\ =\ transform.localScale;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{answerEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ sequence\ =\ DOTween.Sequence();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ sequence.Append(transform.DOScale(originalScale\ *\ 0.7f,\ 0.3f))}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(transform.DOScale(originalScale\ *\ 1.2f,\ 0.3f))}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(transform.DOScale(Vector3.zero,\ 0.3f))}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.localScale\ =\ originalScale;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}{isEffect}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}{answerEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!OnTouch@{OnTouch}}
 \index{OnTouch@{OnTouch}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
 \doxysubsubsection{\texorpdfstring{OnTouch()}{OnTouch()}}
@@ -74,63 +116,74 @@ void Bubble.\+Bubble\+Touch.\+On\+Touch (\begin{DoxyParamCaption}\item[{float}]{
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00054}{54}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{rootObject}}.transform);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}})}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correctSound}};}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPosition);}
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}++;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}{rootObject}}.transform);}
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414}{TouchEffect}}();}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{CompleteStage}}();}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}++;}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}\ >\ 2)}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bubbleManager.roundCnt\ =\ 2;}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrongSound}};}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}{correctSound}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}{bubbleManager}}.\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}++;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a487f78029ec3547af6c841a08a06a853}{AnswerEffect}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(WaitEffect());}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a7d32cffb731a71b9086b9edee305a353}{isCorrect}})}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}{isLeft}})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296}{WrongEffect}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}{wrongSound}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}{resultAudio}}.Play();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -141,30 +194,26 @@ void Bubble.\+Bubble\+Touch.\+On\+Touch (\begin{DoxyParamCaption}\item[{float}]{
 \includegraphics[width=350pt]{class_bubble_1_1_bubble_touch_a601f85a87db6855ae65112daece72648_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!TouchEffect@{TouchEffect}}
-\index{TouchEffect@{TouchEffect}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
-\doxysubsubsection{\texorpdfstring{TouchEffect()}{TouchEffect()}}
-{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414} 
-void Bubble.\+Bubble\+Touch.\+Touch\+Effect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\Hypertarget{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!WrongEffect@{WrongEffect}}
+\index{WrongEffect@{WrongEffect}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
+\doxysubsubsection{\texorpdfstring{WrongEffect()}{WrongEffect()}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296} 
+void Bubble.\+Bubble\+Touch.\+Wrong\+Effect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00149}{149}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ spriteRenderer\ =\ gameObject.GetComponent<SpriteRenderer>();}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ gameObject.transform.GetChild(0).GetComponent<TextMeshPro>();}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(spriteRenderer\ !=\ \textcolor{keyword}{null}\ \&\&\ text\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ spriteRenderer.sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d}{touchedSprite}};}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.fontSize\ =\ 5;}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.colorGradientPreset\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6}{gradient}};}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ transform.DOShakePosition(0.8f,\ \textcolor{keyword}{new}\ Vector3(0.1f,\ 0,\ 0),\ 10,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.DOLocalMove(Vector3.zero,\ 0.2f);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}{isTouch}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -172,12 +221,22 @@ void Bubble.\+Bubble\+Touch.\+Touch\+Effect (\begin{DoxyParamCaption}{}{}\end{Do
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_bubble_1_1_bubble_touch_a0f5f4707b31dfa409c0f1a64d9c95414_icgraph}
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_touch_abb1a64e77776f609b7c2ec9ec4d9f296_icgraph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!answerEffect@{answerEffect}}
+\index{answerEffect@{answerEffect}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
+\doxysubsubsection{\texorpdfstring{answerEffect}{answerEffect}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_aa27dca5239d33e80c8d4b7178c157bdb} 
+Game\+Object Bubble.\+Bubble\+Touch.\+answer\+Effect}
+
+
+
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_bubble_1_1_bubble_touch_ae3655b8507c265234785b48f254e2863}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!bubbleManager@{bubbleManager}}
 \index{bubbleManager@{bubbleManager}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
 \doxysubsubsection{\texorpdfstring{bubbleManager}{bubbleManager}}
@@ -186,23 +245,13 @@ void Bubble.\+Bubble\+Touch.\+Touch\+Effect (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!correctSound@{correctSound}}
 \index{correctSound@{correctSound}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
 \doxysubsubsection{\texorpdfstring{correctSound}{correctSound}}
 {\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_a4a620bdbf52cbee545e37d7399a92822} 
 Audio\+Clip Bubble.\+Bubble\+Touch.\+correct\+Sound}
-
-
-
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!gradient@{gradient}}
-\index{gradient@{gradient}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
-\doxysubsubsection{\texorpdfstring{gradient}{gradient}}
-{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_afba3e6b33e2b90cc37c1f3bae880bbf6} 
-TMP\+\_\+\+Color\+Gradient Bubble.\+Bubble\+Touch.\+gradient}
 
 
 
@@ -216,7 +265,17 @@ bool Bubble.\+Bubble\+Touch.\+is\+Correct}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!isEffect@{isEffect}}
+\index{isEffect@{isEffect}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
+\doxysubsubsection{\texorpdfstring{isEffect}{isEffect}}
+{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_ad7d8aed14195fc413b6f5cf0b64677cb} 
+bool Bubble.\+Bubble\+Touch.\+is\+Effect}
+
+
+
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a4b7aec3eaa1cf9e3800054aa88c6749f}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!isLeft@{isLeft}}
 \index{isLeft@{isLeft}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
@@ -226,7 +285,7 @@ bool Bubble.\+Bubble\+Touch.\+is\+Left}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a3faf3bf929a8d17cee8d0d8a4e7cc4ea}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!isTouch@{isTouch}}
 \index{isTouch@{isTouch}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
@@ -236,7 +295,7 @@ bool Bubble.\+Bubble\+Touch.\+is\+Touch}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a07e187822b26c1656d68d4c824cedeb8}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!resultAudio@{resultAudio}}
 \index{resultAudio@{resultAudio}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
@@ -246,7 +305,7 @@ Audio\+Source Bubble.\+Bubble\+Touch.\+result\+Audio}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a5d1d39f948e7ec72ebdd42297bfec00a}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!rootObject@{rootObject}}
 \index{rootObject@{rootObject}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
@@ -256,17 +315,7 @@ Game\+Object Bubble.\+Bubble\+Touch.\+root\+Object}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!touchedSprite@{touchedSprite}}
-\index{touchedSprite@{touchedSprite}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
-\doxysubsubsection{\texorpdfstring{touchedSprite}{touchedSprite}}
-{\footnotesize\ttfamily \label{class_bubble_1_1_bubble_touch_a547514ba325eb088a848c2202268bf2d} 
-Sprite Bubble.\+Bubble\+Touch.\+touched\+Sprite}
-
-
-
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a9ab282b7f09e06910685b450adc7a527}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!touchPrefab@{touchPrefab}}
 \index{touchPrefab@{touchPrefab}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
@@ -276,7 +325,7 @@ Game\+Object Bubble.\+Bubble\+Touch.\+touch\+Prefab}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_touch_a70e0436a481432e8e92c643d31c5cf5b}\index{Bubble.BubbleTouch@{Bubble.BubbleTouch}!wrongSound@{wrongSound}}
 \index{wrongSound@{wrongSound}!Bubble.BubbleTouch@{Bubble.BubbleTouch}}
@@ -286,10 +335,10 @@ Audio\+Clip Bubble.\+Bubble\+Touch.\+wrong\+Sound}
 
 
 
-\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_touch_8cs_source}{Bubble\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_touch_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
 
 
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Bubble/\mbox{\hyperlink{_bubble_touch_8cs}{Bubble\+Touch.\+cs}}\end{DoxyCompactItemize}
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Color\+Match/\mbox{\hyperlink{_bubble_touch_8cs}{Bubble\+Touch.\+cs}}\end{DoxyCompactItemize}

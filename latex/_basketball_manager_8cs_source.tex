@@ -5,107 +5,131 @@
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful}{useful}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00006}\mbox{\hyperlink{namespace_basketball}{00006}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_basketball}{Basketball}}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00007}00007\ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00008}\mbox{\hyperlink{class_basketball_1_1_basketball_manager}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basketball_1_1_basketball_manager}{BasketballManager}}\ :\ MonoBehaviour}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00009}00009\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00010}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{00010}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00011}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00012}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00013}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ [Space]}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00016}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{isVersusMode}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00017}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00018}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00019}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00020}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}};}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00022}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a0698f2bc997da1bc402f319648d0020c}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a0698f2bc997da1bc402f319648d0020c}{Start}}()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{isVersusMode}})}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ���}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00005}\mbox{\hyperlink{namespace_basketball}{00005}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_basketball}{Basketball}}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00007}\mbox{\hyperlink{class_basketball_1_1_basketball_manager}{00007}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basketball_1_1_basketball_manager}{BasketballManager}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00009}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{00009}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00010}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{00010}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00011}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00012}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[VersusMode]"{}})]}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00015}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{isVersusMode}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00016}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00017}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00018}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00019}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Input\ Data]"{}})]}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 중\ 현재\ 스코어를\ 나타내기\ 위한\ 변수}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00023}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a31eb89c309866cd864f2833841e14da8}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a31eb89c309866cd864f2833841e14da8}{addScoreRed}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00025}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}{creationTime\_red}};\ \textcolor{comment}{//\ 생성\ 시간}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00026}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a4d52126abb7d3ae88bb6cf60181a0cc0}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a4d52126abb7d3ae88bb6cf60181a0cc0}{removalTime\_red}};\ \textcolor{comment}{//\ 제거\ 시간}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00027}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a03df3a9f16d8d965034178fcb675f1dd}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a03df3a9f16d8d965034178fcb675f1dd}{accuracy\_red}};\ \textcolor{comment}{//\ 정확도(중심점과\ 거리\ 차이)}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00028}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6c54125abad5796ce98281a8bbc2f966}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6c54125abad5796ce98281a8bbc2f966}{reactionTime\_red}};\ \textcolor{comment}{//\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [Space]}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00031}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_aab6ef486038048b6d4ab7d140784be74}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_aab6ef486038048b6d4ab7d140784be74}{addScoreBlue}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00033}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00033}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}{creationTime\_blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00034}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_ae046dbfe8826faa5aaf81b814dd44a0c}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_ae046dbfe8826faa5aaf81b814dd44a0c}{removalTime\_blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00035}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a20e91d0d61031a385dd2908863f354b5}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a20e91d0d61031a385dd2908863f354b5}{accuracy\_blue}};}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00036}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_aad07facfddf66e45549974dcbcb6d0fb}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_aad07facfddf66e45549974dcbcb6d0fb}{reactionTime\_blue}};}
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i];}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex];}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex]\ =\ temp;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}});}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}[0].transform);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Red.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00052}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_aa7a34b0e11cca48f2c8a4b4811ab333a}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_aa7a34b0e11cca48f2c8a4b4811ab333a}{SpawnGoals\_Red}}()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count)}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00038}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a0698f2bc997da1bc402f319648d0020c}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a0698f2bc997da1bc402f319648d0020c}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a53b5509ba19e900fc8275748118c689b}{isVersusMode}})}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 대결}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00049}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Red());}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i];}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex];}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}[randomIndex]\ =\ temp;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ IEnumerator\ CoSpawnGoals\_Red()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.1f);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}[\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}].transform);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Red.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00069}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{00069}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.Clear();}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i];}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex];}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex]\ =\ temp;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}});}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}[0].transform);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Blue.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00088}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_ab90093df200d665281712dc9dbb61e17}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_ab90093df200d665281712dc9dbb61e17}{SpawnGoals\_Blue}}()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count)}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Blue());}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ IEnumerator\ CoSpawnGoals\_Blue()}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.1f);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}[\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}].transform);}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Blue.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00104}00104\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}});}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}[0].transform);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Red.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}{creationTime\_red}}\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00070}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_aa7a34b0e11cca48f2c8a4b4811ab333a}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_aa7a34b0e11cca48f2c8a4b4811ab333a}{SpawnGoals\_Red}}()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a2e632e0a02e7f535a4ddd64ed350e75f}{goalPos\_Red}}.Count)}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a50c63b02c02b984ee54e62827a2a0f41}{SettingRandomPos}}();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Red());}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ IEnumerator\ CoSpawnGoals\_Red()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.1f);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af7faad34e4ac038903e3e9dec325b000}{goalObject\_Red}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a7b0e3a326ec83ee5b627fae7d581278a}{setGoalPos\_Red}}[\mbox{\hyperlink{class_basketball_1_1_basketball_manager_af59dc0ba68b378abb3b0135c35a9f547}{moveCount\_Red}}].transform);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Red.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a600aa0060e3588d04eac9f2e012b21fb}{creationTime\_red}}\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00089}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex\ =\ Random.Range(0,\ i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ temp\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i];}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[i]\ =\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex];}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}[randomIndex]\ =\ temp;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}.AddRange(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}});}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}[0].transform);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Blue.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}{creationTime\_blue}}\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00110}\mbox{\hyperlink{class_basketball_1_1_basketball_manager_ab90093df200d665281712dc9dbb61e17}{00110}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_ab90093df200d665281712dc9dbb61e17}{SpawnGoals\_Blue}}()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}\ >=\ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a49ee3a7c80e0ee49d00e4aa314d2597e}{goalPos\_Blue}}.Count)}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_afe2d787b7297fe1e4cf9cb5ddc6fd18f}{SettingRandomPos\_VS}}();}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoSpawnGoals\_Blue());}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ IEnumerator\ CoSpawnGoals\_Blue()}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.1f);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_af65f7499a1cffcf05bffa919ebf90665}{goalObject\_Blue}}.transform.SetParent(\mbox{\hyperlink{class_basketball_1_1_basketball_manager_a6e6a5deee296b2f2545b277937298391}{setGoalPos\_Blue}}[\mbox{\hyperlink{class_basketball_1_1_basketball_manager_acc7dfbd2c23c7f11a5956200273ea4d5}{moveCount\_Blue}}].transform);}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ goalObject\_Blue.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basketball_1_1_basketball_manager_a8feb7d6a4ad801e11b66d4335208d3b1}{creationTime\_blue}}\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basketball_manager_8cs_source_l00129}00129\ \}}
 
 \end{DoxyCode}

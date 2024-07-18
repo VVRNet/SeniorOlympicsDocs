@@ -1,0 +1,148 @@
+\doxysection{Setting\+Contents\+Controller.\+cs}
+\hypertarget{_setting_contents_controller_8cs_source}{}\label{_setting_contents_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/SettingContentsController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Launcher/SettingContentsController.cs}}
+\mbox{\hyperlink{_setting_contents_controller_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEngine.Video;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00009}00009\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00010}\mbox{\hyperlink{struct_contents_list}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_contents_list}{ContentsList}}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00012}\mbox{\hyperlink{struct_contents_list_a404a40034e7145005ed9ae3bd5cbe9b5}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_contents_list_a404a40034e7145005ed9ae3bd5cbe9b5}{sceneName}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00013}\mbox{\hyperlink{struct_contents_list_a96fb3ffebb1b2d39114caa36cc8920d5}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ VideoClip\ \mbox{\hyperlink{struct_contents_list_a96fb3ffebb1b2d39114caa36cc8920d5}{howToPlayVideo}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00014}\mbox{\hyperlink{struct_contents_list_a2e2b0b0a775a5688206ecd7cc6a5299e}{00014}}\ \ \ \ \ [TextArea]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_contents_list_a2e2b0b0a775a5688206ecd7cc6a5299e}{howToPlayText}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00017}\mbox{\hyperlink{class_setting_contents_controller}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_setting_contents_controller}{SettingContentsController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00019}\mbox{\hyperlink{class_setting_contents_controller_adb4d203a8c27b3706780143fcf696525}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_move_scene_controller}{MoveSceneController}}\ \mbox{\hyperlink{class_setting_contents_controller_adb4d203a8c27b3706780143fcf696525}{moveSceneController}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00021}00021\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Agency\ Data]"{}})]}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00022}\mbox{\hyperlink{class_setting_contents_controller_ac6f7502d973d60fe7d40fd6884d3e81e}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_setting_contents_controller_ac6f7502d973d60fe7d40fd6884d3e81e}{userName}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00023}\mbox{\hyperlink{class_setting_contents_controller_a3b53887932758e0f9b9c1c6201d8cd28}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ Image\ \mbox{\hyperlink{class_setting_contents_controller_a3b53887932758e0f9b9c1c6201d8cd28}{userProfile}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00025}00025\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Set\ Contents\ Object]"{}})]}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00026}\mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ List<RectTransform>\ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}};\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ RectTransform\ selectedContents;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ selectedIndex;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ normalSize\ =\ \textcolor{keyword}{new}\ Vector2(140,\ 140);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ selectedSize\ =\ \textcolor{keyword}{new}\ Vector2(272,\ 180);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ 오브젝트가\ 배치되는\ 최대,\ 최소\ 위치값}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ minX\ =\ -\/600f;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ maxX\ =\ 450f;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00037}00037\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Set\ Contents\ Info]"{}})]}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00038}\mbox{\hyperlink{class_setting_contents_controller_a244923cd74dad6ee324dd33c270c4997}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ List<ContentsList>\ \mbox{\hyperlink{class_setting_contents_controller_a244923cd74dad6ee324dd33c270c4997}{contentsInfoList}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00040}00040\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Setting\ Info\ Object]"{}})]}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00041}\mbox{\hyperlink{class_setting_contents_controller_a23f128ad747e7f7f81798009983a3d4c}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_setting_contents_controller_a23f128ad747e7f7f81798009983a3d4c}{infoObjectPos}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00042}\mbox{\hyperlink{class_setting_contents_controller_a434df2dff03d8eaea6273355abec49a2}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_setting_contents_controller_a434df2dff03d8eaea6273355abec49a2}{contentsName}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00043}\mbox{\hyperlink{class_setting_contents_controller_a1c27eaeb815357ff51109df63c9d0f7e}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ VideoPlayer\ \mbox{\hyperlink{class_setting_contents_controller_a1c27eaeb815357ff51109df63c9d0f7e}{infoVideo}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00044}\mbox{\hyperlink{class_setting_contents_controller_aceb0bb5b7d52af8cfc7ab20318fa6c9a}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_setting_contents_controller_aceb0bb5b7d52af8cfc7ab20318fa6c9a}{infoText}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00046}\mbox{\hyperlink{class_setting_contents_controller_a86f12a38c3f9b7ee818d81bf9890eed5}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_setting_contents_controller_a86f12a38c3f9b7ee818d81bf9890eed5}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_contents_controller_a9dc9d46e947e9bc4c1ddbb3a9f0ea7c1}{SetupData}}();}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전에\ 저장된\ SelectContents에\ 대한\ 정보\ 확인}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.HasKey(\textcolor{stringliteral}{"{}SelectContents"{}}))}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ selectedIndex\ =\ PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}SelectContents"{}});}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ selectedIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 선택된\ 인덱스와\ 동일한\ 인덱스를\ 가진\ contentsObjects을\ selectedContents로\ 저장}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ selectedContents\ =\ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[selectedIndex];}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ selectedContents를\ 선택했음을\ 인지}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_contents_controller_adb4d203a8c27b3706780143fcf696525}{moveSceneController}}.\mbox{\hyperlink{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6}{SelectContents}}(selectedContents.name);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 선택한\ 콘텐츠에\ 따른\ 다른\ 콘텐츠\ 판넬\ 이동}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ ArrangeContentsPanel();}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ 화면\ 상단\ 로그인\ 한\ 유저\ 정보\ 불러오기}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00071}\mbox{\hyperlink{class_setting_contents_controller_a9dc9d46e947e9bc4c1ddbb3a9f0ea7c1}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_setting_contents_controller_a9dc9d46e947e9bc4c1ddbb3a9f0ea7c1}{SetupData}}()}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.saveStudentId\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ userName.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageUrl\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.CountryImg;\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.LoadUrl(imageUrl,\ \mbox{\hyperlink{class_setting_contents_controller_a3b53887932758e0f9b9c1c6201d8cd28}{userProfile}}));}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ userName.text\ =\ \$\textcolor{stringliteral}{"{}\{SessionManager.Instance.CurrentClass.Name\}\ <color=\#FFFFFF>\ >\ </color>\ \{SessionManager.Instance.CurrentStudent.Name\}"{}};}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageUrl\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.ProfileImage;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.LoadUrl(imageUrl,\ \mbox{\hyperlink{class_setting_contents_controller_a3b53887932758e0f9b9c1c6201d8cd28}{userProfile}}));}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ ContentsPage\ -\/\ ClickButton의\ 콘텐츠\ 별\ 버튼\ 이벤트}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00090}\mbox{\hyperlink{class_setting_contents_controller_afbb28eedfb3c8a873e5b667b3d3d3b72}{00090}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_setting_contents_controller_afbb28eedfb3c8a873e5b667b3d3d3b72}{OnClickContents}}(RectTransform\ clickedContents)}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전에\ 선택된\ 콘텐츠와\ 같은지\ 확인}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedContents\ ==\ clickedContents)}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ selectedIndex\ =\ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}.IndexOf(clickedContents);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.SetInt(\textcolor{stringliteral}{"{}SelectContents"{}},\ selectedIndex);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 선택된\ 새로운\ 인덱스\ 저장}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ selectedIndex\ =\ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}.IndexOf(clickedContents);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ selectedContents\ =\ clickedContents;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerPrefs.SetInt(\textcolor{stringliteral}{"{}SelectContents"{}},\ selectedIndex);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ ArrangeContentsPanel();}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00110}00110\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ArrangeContentsPanel()}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ panelWidth\ =\ selectedSize.x\ +\ (contentsObjects.Count\ -\/\ 1)\ *\ normalSize.x;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ spacing\ =\ maxX\ -\/\ minX\ -\/\ panelWidth;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ panelsSpacing\ =\ spacing\ /\ (contentsObjects.Count\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ xOffset\ =\ minX;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[i]\ ==\ selectedContents)}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 클릭한\ 오브젝트}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[i].sizeDelta\ =\ selectedSize;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[i].anchoredPosition\ =\ \textcolor{keyword}{new}\ Vector2(xOffset\ +\ selectedSize.x\ /\ 2,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ +=\ selectedSize.x\ +\ panelsSpacing;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ infoObjectPos.position\ =\ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[i].position;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contentsName.text\ =\ \mbox{\hyperlink{class_setting_contents_controller_a244923cd74dad6ee324dd33c270c4997}{contentsInfoList}}[selectedIndex].sceneName;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ infoVideo.clip\ =\ \mbox{\hyperlink{class_setting_contents_controller_a244923cd74dad6ee324dd33c270c4997}{contentsInfoList}}[selectedIndex].howToPlayVideo;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ infoText.text\ =\ \mbox{\hyperlink{class_setting_contents_controller_a244923cd74dad6ee324dd33c270c4997}{contentsInfoList}}[selectedIndex].howToPlayText;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 클릭하지\ 않은\ 오브젝트}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[i].sizeDelta\ =\ normalSize;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_contents_controller_af2152878f4d89334a703d7b100e02f11}{contentsObjects}}[i].anchoredPosition\ =\ \textcolor{keyword}{new}\ Vector2(xOffset\ +\ normalSize.x\ /\ 2,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOffset\ +=\ normalSize.x\ +\ panelsSpacing;}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_setting_contents_controller_8cs_source_l00142}00142\ \}}
+
+\end{DoxyCode}

@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.2</span>
    </div>
   </td>
  </tr>
@@ -108,7 +108,7 @@ Quickness.QuicknessManager에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_quickness_1_1_quickness_manager__inherit__graph.png" border="0" usemap="#a_quickness_8_quickness_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_quickness_8_quickness_manager_inherit__map" id="a_quickness_8_quickness_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,123,196,363"/>
+<area shape="rect" title=" " alt="" coords="5,123,196,405"/>
 <area shape="rect" title=" " alt="" coords="50,5,151,75"/>
 <area shape="poly" title=" " alt="" coords="103,90,103,123,98,123,98,90"/>
 </map>
@@ -118,7 +118,7 @@ Quickness.QuicknessManager에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_quickness_1_1_quickness_manager__coll__graph.png" border="0" usemap="#a_quickness_8_quickness_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_quickness_8_quickness_manager_coll__map" id="a_quickness_8_quickness_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,123,196,363"/>
+<area shape="rect" title=" " alt="" coords="5,123,196,405"/>
 <area shape="rect" title=" " alt="" coords="50,5,151,75"/>
 <area shape="poly" title=" " alt="" coords="103,90,103,123,98,123,98,90"/>
 </map>
@@ -149,6 +149,10 @@ Public 속성</h2></td></tr>
 <tr class="separator:a912f21e1230ba12b8f2b6eacf844439b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a576443d8da7c66543d42c267f226e692" id="r_a576443d8da7c66543d42c267f226e692"><td class="memItemLeft" align="right" valign="top">List&lt; Transform &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a576443d8da7c66543d42c267f226e692">randomPos</a> = new List&lt;Transform&gt;()</td></tr>
 <tr class="separator:a576443d8da7c66543d42c267f226e692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d1fc7b8e37692b8b481afe1f5a359e" id="r_a86d1fc7b8e37692b8b481afe1f5a359e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86d1fc7b8e37692b8b481afe1f5a359e">addScoreRed</a> = 0</td></tr>
+<tr class="separator:a86d1fc7b8e37692b8b481afe1f5a359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691e0932277051acd1a3e0328cc96a8c" id="r_a691e0932277051acd1a3e0328cc96a8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a691e0932277051acd1a3e0328cc96a8c">addScoreBlue</a> = 0</td></tr>
+<tr class="separator:a691e0932277051acd1a3e0328cc96a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
@@ -169,36 +173,36 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00076">76</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>        {</div>
-<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.Count &gt; 0)</div>
-<div class="line"><span class="lineno">   79</span>            {</div>
-<div class="line"><span class="lineno">   80</span>                Transform newPos = <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>[0];</div>
-<div class="line"><span class="lineno">   81</span>                <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.RemoveAt(0);</div>
-<div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Add(newPos);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">foreach</span> (Transform pos <span class="keywordflow">in</span> <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>)</div>
-<div class="line"><span class="lineno">   85</span>                {</div>
-<div class="line"><span class="lineno">   86</span>                    <span class="keywordflow">if</span> (pos.childCount == 0) <span class="comment">// �ڽ� ������Ʈ�� ���� ��� ����</span></div>
-<div class="line"><span class="lineno">   87</span>                    {</div>
-<div class="line"><span class="lineno">   88</span>                        <a class="code hl_function" href="#ab11cdab54a0e233abd0b1b6211bf68d5">CreateTouchObject</a>(pos);</div>
-<div class="line"><span class="lineno">   89</span>                    }</div>
-<div class="line"><span class="lineno">   90</span>                }</div>
-<div class="line"><span class="lineno">   91</span>            }</div>
-<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   93</span>            {</div>
-<div class="line"><span class="lineno">   94</span>                ShuffleTouchPositions();</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.Count &gt; 0)</div>
-<div class="line"><span class="lineno">   97</span>                {</div>
-<div class="line"><span class="lineno">   98</span>                    <a class="code hl_function" href="#a32b516f813a2604d351b61772e8de1b0">AddNewPosition</a>();</div>
-<div class="line"><span class="lineno">   99</span>                }</div>
-<div class="line"><span class="lineno">  100</span>            }</div>
-<div class="line"><span class="lineno">  101</span>        }</div>
-<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a32b516f813a2604d351b61772e8de1b0"><div class="ttname"><a href="#a32b516f813a2604d351b61772e8de1b0">Quickness.QuicknessManager.AddNewPosition</a></div><div class="ttdeci">void AddNewPosition()</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00076">QuicknessManager.cs:76</a></div></div>
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00080">80</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.Count &gt; 0)</div>
+<div class="line"><span class="lineno">   83</span>            {</div>
+<div class="line"><span class="lineno">   84</span>                Transform newPos = <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>[0];</div>
+<div class="line"><span class="lineno">   85</span>                <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.RemoveAt(0);</div>
+<div class="line"><span class="lineno">   86</span>                <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Add(newPos);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">foreach</span> (Transform pos <span class="keywordflow">in</span> <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>)</div>
+<div class="line"><span class="lineno">   89</span>                {</div>
+<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">if</span> (pos.childCount == 0) <span class="comment">// 자식 오브젝트가 없는 경우 생성</span></div>
+<div class="line"><span class="lineno">   91</span>                    {</div>
+<div class="line"><span class="lineno">   92</span>                        <a class="code hl_function" href="#ab11cdab54a0e233abd0b1b6211bf68d5">CreateTouchObject</a>(pos);</div>
+<div class="line"><span class="lineno">   93</span>                    }</div>
+<div class="line"><span class="lineno">   94</span>                }</div>
+<div class="line"><span class="lineno">   95</span>            }</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   97</span>            {</div>
+<div class="line"><span class="lineno">   98</span>                ShuffleTouchPositions();</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.Count &gt; 0)</div>
+<div class="line"><span class="lineno">  101</span>                {</div>
+<div class="line"><span class="lineno">  102</span>                    <a class="code hl_function" href="#a32b516f813a2604d351b61772e8de1b0">AddNewPosition</a>();</div>
+<div class="line"><span class="lineno">  103</span>                }</div>
+<div class="line"><span class="lineno">  104</span>            }</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a32b516f813a2604d351b61772e8de1b0"><div class="ttname"><a href="#a32b516f813a2604d351b61772e8de1b0">Quickness.QuicknessManager.AddNewPosition</a></div><div class="ttdeci">void AddNewPosition()</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00080">QuicknessManager.cs:80</a></div></div>
 <div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a576443d8da7c66543d42c267f226e692"><div class="ttname"><a href="#a576443d8da7c66543d42c267f226e692">Quickness.QuicknessManager.randomPos</a></div><div class="ttdeci">List&lt; Transform &gt; randomPos</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00013">QuicknessManager.cs:13</a></div></div>
 <div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a912f21e1230ba12b8f2b6eacf844439b"><div class="ttname"><a href="#a912f21e1230ba12b8f2b6eacf844439b">Quickness.QuicknessManager.setTouchPos</a></div><div class="ttdeci">List&lt; Transform &gt; setTouchPos</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00012">QuicknessManager.cs:12</a></div></div>
-<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_ab11cdab54a0e233abd0b1b6211bf68d5"><div class="ttname"><a href="#ab11cdab54a0e233abd0b1b6211bf68d5">Quickness.QuicknessManager.CreateTouchObject</a></div><div class="ttdeci">void CreateTouchObject(Transform pos)</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00116">QuicknessManager.cs:116</a></div></div>
+<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_ab11cdab54a0e233abd0b1b6211bf68d5"><div class="ttname"><a href="#ab11cdab54a0e233abd0b1b6211bf68d5">Quickness.QuicknessManager.CreateTouchObject</a></div><div class="ttdeci">void CreateTouchObject(Transform pos)</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00120">QuicknessManager.cs:120</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -241,26 +245,26 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
-<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Clear();</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>            <span class="comment">// 3���� ��ġ�� randomPos�� ���� ���� �� ������ ����</span></div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3 &amp;&amp; setTouchPos.Count &gt; 0; i++)</div>
-<div class="line"><span class="lineno">   44</span>            {</div>
-<div class="line"><span class="lineno">   45</span>                Transform newPos = <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>[0];</div>
-<div class="line"><span class="lineno">   46</span>                <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.RemoveAt(0);</div>
-<div class="line"><span class="lineno">   47</span>                <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Add(newPos);</div>
-<div class="line"><span class="lineno">   48</span>            }</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">foreach</span> (Transform pos <span class="keywordflow">in</span> <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>)</div>
-<div class="line"><span class="lineno">   51</span>            {</div>
-<div class="line"><span class="lineno">   52</span>                <span class="keywordflow">if</span> (pos.childCount == 0) <span class="comment">// �ڽ� ������Ʈ�� ���� ��� ����</span></div>
-<div class="line"><span class="lineno">   53</span>                {</div>
-<div class="line"><span class="lineno">   54</span>                    <a class="code hl_function" href="#ab11cdab54a0e233abd0b1b6211bf68d5">CreateTouchObject</a>(pos);</div>
-<div class="line"><span class="lineno">   55</span>                }</div>
-<div class="line"><span class="lineno">   56</span>            }</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Clear();</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>            <span class="comment">// 3개의 위치만 randomPos에 따로 저장 후 프리팹 생성</span></div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3 &amp;&amp; setTouchPos.Count &gt; 0; i++)</div>
+<div class="line"><span class="lineno">   48</span>            {</div>
+<div class="line"><span class="lineno">   49</span>                Transform newPos = <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>[0];</div>
+<div class="line"><span class="lineno">   50</span>                <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.RemoveAt(0);</div>
+<div class="line"><span class="lineno">   51</span>                <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Add(newPos);</div>
+<div class="line"><span class="lineno">   52</span>            }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">foreach</span> (Transform pos <span class="keywordflow">in</span> <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>)</div>
+<div class="line"><span class="lineno">   55</span>            {</div>
+<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">if</span> (pos.childCount == 0) <span class="comment">// 자식 오브젝트가 없는 경우 생성</span></div>
+<div class="line"><span class="lineno">   57</span>                {</div>
+<div class="line"><span class="lineno">   58</span>                    <a class="code hl_function" href="#ab11cdab54a0e233abd0b1b6211bf68d5">CreateTouchObject</a>(pos);</div>
+<div class="line"><span class="lineno">   59</span>                }</div>
+<div class="line"><span class="lineno">   60</span>            }</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -301,18 +305,18 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00116">116</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>        {</div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> (pos.childCount == 0)</div>
-<div class="line"><span class="lineno">  119</span>            {</div>
-<div class="line"><span class="lineno">  120</span>                GameObject touchObj_R = Instantiate(<a class="code hl_variable" href="#a20ee83996814bd7cf2b3e36c6564fc05">touchObject</a>, pos.position, Quaternion.identity, pos);</div>
-<div class="line"><span class="lineno">  121</span>                touchObj_R.transform.localScale = Vector3.zero;</div>
-<div class="line"><span class="lineno">  122</span>                touchObj_R.transform.DOScale(<span class="keyword">new</span> Vector3(1.5f, 1.5f, 1.5f), 0.1f).SetEase(Ease.OutBack).OnComplete(() =&gt;</div>
-<div class="line"><span class="lineno">  123</span>                {</div>
-<div class="line"><span class="lineno">  124</span>                    touchObj_R.transform.DOScale(<span class="keyword">new</span> Vector3(1.4f, 1.4f, 1.4f), 0.2f).SetEase(Ease.OutBack);</div>
-<div class="line"><span class="lineno">  125</span>                });</div>
-<div class="line"><span class="lineno">  126</span>            }</div>
-<div class="line"><span class="lineno">  127</span>        }</div>
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00120">120</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>        {</div>
+<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">if</span> (pos.childCount == 0)</div>
+<div class="line"><span class="lineno">  123</span>            {</div>
+<div class="line"><span class="lineno">  124</span>                GameObject touchObj_R = Instantiate(<a class="code hl_variable" href="#a20ee83996814bd7cf2b3e36c6564fc05">touchObject</a>, pos.position, Quaternion.identity, pos);</div>
+<div class="line"><span class="lineno">  125</span>                touchObj_R.transform.localScale = Vector3.zero;</div>
+<div class="line"><span class="lineno">  126</span>                touchObj_R.transform.DOScale(<span class="keyword">new</span> Vector3(1.5f, 1.5f, 1.5f), 0.1f).SetEase(Ease.OutBack).OnComplete(() =&gt;</div>
+<div class="line"><span class="lineno">  127</span>                {</div>
+<div class="line"><span class="lineno">  128</span>                    touchObj_R.transform.DOScale(<span class="keyword">new</span> Vector3(1.4f, 1.4f, 1.4f), 0.2f).SetEase(Ease.OutBack);</div>
+<div class="line"><span class="lineno">  129</span>                });</div>
+<div class="line"><span class="lineno">  130</span>            }</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
 <div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a20ee83996814bd7cf2b3e36c6564fc05"><div class="ttname"><a href="#a20ee83996814bd7cf2b3e36c6564fc05">Quickness.QuicknessManager.touchObject</a></div><div class="ttdeci">GameObject touchObject</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00010">QuicknessManager.cs:10</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -353,22 +357,22 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00059">59</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>        {</div>
-<div class="line"><span class="lineno">   61</span>            <span class="comment">// randomPos���� ��ġ�� ������Ʈ�� ��ġ �ε����� ����</span></div>
-<div class="line"><span class="lineno">   62</span>            Transform target = <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Find(pos =&gt; pos.position == position);</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (target != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   65</span>            {</div>
-<div class="line"><span class="lineno">   66</span>                <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Remove(target);</div>
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>        {</div>
+<div class="line"><span class="lineno">   65</span>            <span class="comment">// randomPos에서 터치한 오브젝트의 위치 인덱스를 제거</span></div>
+<div class="line"><span class="lineno">   66</span>            Transform target = <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Find(pos =&gt; pos.position == position);</div>
 <div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>                <span class="comment">// ���ο� ��ġ�� �߰��Ͽ� randomPos�� �׻� 3���� �����ϵ��� �մϴ�.</span></div>
-<div class="line"><span class="lineno">   69</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Count &lt; 3)</div>
-<div class="line"><span class="lineno">   70</span>                {</div>
-<div class="line"><span class="lineno">   71</span>                    <a class="code hl_function" href="#a32b516f813a2604d351b61772e8de1b0">AddNewPosition</a>();</div>
-<div class="line"><span class="lineno">   72</span>                }</div>
-<div class="line"><span class="lineno">   73</span>            }</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
+<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">if</span> (target != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   69</span>            {</div>
+<div class="line"><span class="lineno">   70</span>                <a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Remove(target);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>                <span class="comment">// 새로운 위치를 추가하여 randomPos가 항상 3개를 유지하도록 합니다.</span></div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a576443d8da7c66543d42c267f226e692">randomPos</a>.Count &lt; 3)</div>
+<div class="line"><span class="lineno">   74</span>                {</div>
+<div class="line"><span class="lineno">   75</span>                    <a class="code hl_function" href="#a32b516f813a2604d351b61772e8de1b0">AddNewPosition</a>();</div>
+<div class="line"><span class="lineno">   76</span>                }</div>
+<div class="line"><span class="lineno">   77</span>            }</div>
+<div class="line"><span class="lineno">   78</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -410,24 +414,24 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00020">20</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
-<div class="line"><span class="lineno">   22</span>            <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.Clear();</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>            <span class="comment">// touchPos�� �ε��� ���� ����</span></div>
-<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>.Count - 1; i &gt; 0; i--)</div>
-<div class="line"><span class="lineno">   26</span>            {</div>
-<div class="line"><span class="lineno">   27</span>                <span class="keywordtype">int</span> randomIndex = Random.Range(0, i + 1);</div>
-<div class="line"><span class="lineno">   28</span>                Transform temp = <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[i];</div>
-<div class="line"><span class="lineno">   29</span>                <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[i] = <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[randomIndex];</div>
-<div class="line"><span class="lineno">   30</span>                <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[randomIndex] = temp;</div>
-<div class="line"><span class="lineno">   31</span>            }</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>            <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.AddRange(<a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>);</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>            <a class="code hl_function" href="#a0e4732813f6d86311a2e97a0514bc1af">AddRandomPos</a>();</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
-<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a0e4732813f6d86311a2e97a0514bc1af"><div class="ttname"><a href="#a0e4732813f6d86311a2e97a0514bc1af">Quickness.QuicknessManager.AddRandomPos</a></div><div class="ttdeci">void AddRandomPos()</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00038">QuicknessManager.cs:38</a></div></div>
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00024">24</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.Clear();</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>            <span class="comment">// touchPos의 인덱스 랜덤 섞기</span></div>
+<div class="line"><span class="lineno">   29</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>.Count - 1; i &gt; 0; i--)</div>
+<div class="line"><span class="lineno">   30</span>            {</div>
+<div class="line"><span class="lineno">   31</span>                <span class="keywordtype">int</span> randomIndex = Random.Range(0, i + 1);</div>
+<div class="line"><span class="lineno">   32</span>                Transform temp = <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[i];</div>
+<div class="line"><span class="lineno">   33</span>                <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[i] = <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[randomIndex];</div>
+<div class="line"><span class="lineno">   34</span>                <a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>[randomIndex] = temp;</div>
+<div class="line"><span class="lineno">   35</span>            }</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_variable" href="#a912f21e1230ba12b8f2b6eacf844439b">setTouchPos</a>.AddRange(<a class="code hl_variable" href="#a118d8946fcc5fab753e30bc213376c45">touchPos</a>);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>            <a class="code hl_function" href="#a0e4732813f6d86311a2e97a0514bc1af">AddRandomPos</a>();</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a0e4732813f6d86311a2e97a0514bc1af"><div class="ttname"><a href="#a0e4732813f6d86311a2e97a0514bc1af">Quickness.QuicknessManager.AddRandomPos</a></div><div class="ttdeci">void AddRandomPos()</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00042">QuicknessManager.cs:42</a></div></div>
 <div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a118d8946fcc5fab753e30bc213376c45"><div class="ttname"><a href="#a118d8946fcc5fab753e30bc213376c45">Quickness.QuicknessManager.touchPos</a></div><div class="ttdeci">List&lt; Transform &gt; touchPos</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00011">QuicknessManager.cs:11</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -469,11 +473,11 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00015">15</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            <a class="code hl_function" href="#a769876d2b6e5a4903ae9964a6f5b6789">SettingRandomPos</a>();</div>
-<div class="line"><span class="lineno">   18</span>        }</div>
-<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a769876d2b6e5a4903ae9964a6f5b6789"><div class="ttname"><a href="#a769876d2b6e5a4903ae9964a6f5b6789">Quickness.QuicknessManager.SettingRandomPos</a></div><div class="ttdeci">void SettingRandomPos()</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00020">QuicknessManager.cs:20</a></div></div>
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            <a class="code hl_function" href="#a769876d2b6e5a4903ae9964a6f5b6789">SettingRandomPos</a>();</div>
+<div class="line"><span class="lineno">   22</span>        }</div>
+<div class="ttc" id="aclass_quickness_1_1_quickness_manager_html_a769876d2b6e5a4903ae9964a6f5b6789"><div class="ttname"><a href="#a769876d2b6e5a4903ae9964a6f5b6789">Quickness.QuicknessManager.SettingRandomPos</a></div><div class="ttdeci">void SettingRandomPos()</div><div class="ttdef"><b>Definition</b> <a href="_quickness_manager_8cs_source.html#l00024">QuicknessManager.cs:24</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -492,6 +496,38 @@ Public 속성</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="a691e0932277051acd1a3e0328cc96a8c" name="a691e0932277051acd1a3e0328cc96a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691e0932277051acd1a3e0328cc96a8c">&#9670;&#160;</a></span>addScoreBlue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Quickness.QuicknessManager.addScoreBlue = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00017">17</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a86d1fc7b8e37692b8b481afe1f5a359e" name="a86d1fc7b8e37692b8b481afe1f5a359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d1fc7b8e37692b8b481afe1f5a359e">&#9670;&#160;</a></span>addScoreRed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Quickness.QuicknessManager.addScoreRed = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_quickness_manager_8cs_source.html">QuicknessManager.cs</a> 파일의 <a class="el" href="_quickness_manager_8cs_source.html#l00016">16</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
 <a id="a576443d8da7c66543d42c267f226e692" name="a576443d8da7c66543d42c267f226e692"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a576443d8da7c66543d42c267f226e692">&#9670;&#160;</a></span>randomPos</h2>
 

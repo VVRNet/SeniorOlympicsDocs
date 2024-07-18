@@ -9,5 +9,6 @@ var class_card_1_1_card_controller =
     [ "cardFlipClip", "class_card_1_1_card_controller.html#a44e9ea9e04c23f3633cc62858d27b84e", null ],
     [ "cardParent", "class_card_1_1_card_controller.html#a5b05d982265ed9ba931b1d1b3850408e", null ],
     [ "cardPrefab", "class_card_1_1_card_controller.html#a61af9f0faecf3633f35fe4e96e5a6562", null ],
-    [ "cardWrongClip", "class_card_1_1_card_controller.html#a93537ca93a4e0541994aa5b4397694f7", null ]
+    [ "cardWrongClip", "class_card_1_1_card_controller.html#a93537ca93a4e0541994aa5b4397694f7", null ],
+    [ "creationTime", "class_card_1_1_card_controller.html#aa9bf2422dc3268ddc803bb8672f66850", null ]
 ];

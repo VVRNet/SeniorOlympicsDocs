@@ -17,7 +17,7 @@ Setting\+Page\+Manager에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=229pt]{class_setting_page_manager__coll__graph}
+\includegraphics[height=550pt]{class_setting_page_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 멤버 함수}
@@ -25,15 +25,15 @@ Setting\+Page\+Manager에 대한 협력 다이어그램\+:
 \item 
 void \mbox{\hyperlink{class_setting_page_manager_a612cdea628d47f7dc1ce9766ae5c6440}{Reset\+Page}} ()
 \item 
+void \mbox{\hyperlink{class_setting_page_manager_a8de9be4302cd8ee4edda840f1870e38c}{Check\+Start\+Page}} ()
+\item 
 void \mbox{\hyperlink{class_setting_page_manager_a75eb02bfba8ebee705841baa6bcc3d06}{Call\+Check\+Data}} ()
 \item 
-void \mbox{\hyperlink{class_setting_page_manager_ac228c66f785a7c9a9f24ff53f5a29f45}{User\+Bnt\+Event}} ()
+void \mbox{\hyperlink{class_setting_page_manager_a8f197a11e06adbf00d144914ee04907e}{User\+Bnt\+Event}} (int num)
 \item 
 void \mbox{\hyperlink{class_setting_page_manager_a3df719d5942df5d699c59b5d85d4ff4a}{Active\+Tema\+Data}} ()
 \item 
 void \mbox{\hyperlink{class_setting_page_manager_af1c335edc08ec38acf85b02def0c2c0c}{Active\+User\+Data}} ()
-\item 
-void \mbox{\hyperlink{class_setting_page_manager_a666c9cf6df2acb383671e8aa372fae57}{Add\+User\+Bnt}} ()
 \item 
 void \mbox{\hyperlink{class_setting_page_manager_abb5c5a00a34db3382661d85edad89550}{Add\+Team\+Bnt}} ()
 \item 
@@ -44,21 +44,25 @@ void \mbox{\hyperlink{class_setting_page_manager_a3c14ac35ed37de4b15411bac4d51de
 \doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_background_move_controller}{Background\+Move\+Controller}} \mbox{\hyperlink{class_setting_page_manager_a13124dbc34165391620e14c97dc84f65}{bg\+Page\+Ctrl}}
+\item 
 List$<$ Game\+Object $>$ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{setting\+Pages}}
 \item 
 Box\+Collider2D \mbox{\hyperlink{class_setting_page_manager_a9a4ed6b722b1539726af0190dfbc297b}{bg\+Collider}}
 \item 
 Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_setting_page_manager_a6bd96b5b6e43ee1e147e6e4b9b5e2e16}{main\+Guide\+Text}}
 \item 
-Image\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_setting_page_manager_a266f34486dd4cbabfb23ffc8af6c3751}{logo}}
+Transform \mbox{\hyperlink{class_setting_page_manager_aa3c7fcafbd78697b7634e377ee9d2c76}{loading\+Progress}}
 \item 
-Game\+Object \mbox{\hyperlink{class_setting_page_manager_af4f876cfb06abd3adb2440b0cd13a9f2}{login\+Panel}}
+Game\+Object \mbox{\hyperlink{class_setting_page_manager_aedaa87519ada7c250ed57a9ccae479c1}{popup\+Login}}
 \item 
 Game\+Object \mbox{\hyperlink{class_setting_page_manager_aa3c24367082ae6ce6bb9dd363b4b58bd}{popup\+User\+Manager}}
 \item 
 Transform \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}
 \item 
 Transform \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}
+\item 
+Image\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_setting_page_manager_a266f34486dd4cbabfb23ffc8af6c3751}{logo}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{정적 Public 속성}
 \begin{DoxyCompactItemize}
@@ -83,15 +87,15 @@ void Setting\+Page\+Manager.\+Active\+Tema\+Data (\begin{DoxyParamCaption}{}{}\e
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00133}{133}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00148}{148}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00134\ \ \ \ \ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_setting_page_manager_af1c335edc08ec38acf85b02def0c2c0c}\index{SettingPageManager@{SettingPageManager}!ActiveUserData@{ActiveUserData}}
@@ -102,15 +106,15 @@ void Setting\+Page\+Manager.\+Active\+User\+Data (\begin{DoxyParamCaption}{}{}\e
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00141}{141}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00156}{156}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00142\ \ \ \ \ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_setting_page_manager_abb5c5a00a34db3382661d85edad89550}\index{SettingPageManager@{SettingPageManager}!AddTeamBnt@{AddTeamBnt}}
@@ -121,38 +125,17 @@ void Setting\+Page\+Manager.\+Add\+Team\+Bnt (\begin{DoxyParamCaption}{}{}\end{D
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00159}{159}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00164}{164}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00160\ \ \ \ \ \{}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ ���â(New)}}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});\ \textcolor{comment}{//\ ����â(Delete)}}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00166\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{class_setting_page_manager_a666c9cf6df2acb383671e8aa372fae57}\index{SettingPageManager@{SettingPageManager}!AddUserBnt@{AddUserBnt}}
-\index{AddUserBnt@{AddUserBnt}!SettingPageManager@{SettingPageManager}}
-\doxysubsubsection{\texorpdfstring{AddUserBnt()}{AddUserBnt()}}
-{\footnotesize\ttfamily \label{class_setting_page_manager_a666c9cf6df2acb383671e8aa372fae57} 
-void Setting\+Page\+Manager.\+Add\+User\+Bnt (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00149}{149}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00150\ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ ���â(New)}}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});\ \textcolor{comment}{//\ ����â(Delete)}}
-\DoxyCodeLine{00154\ }
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 등록창(New)}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});\ \textcolor{comment}{//\ 제거창(Delete)}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_setting_page_manager_a75eb02bfba8ebee705841baa6bcc3d06}\index{SettingPageManager@{SettingPageManager}!CallCheckData@{CallCheckData}}
@@ -163,40 +146,103 @@ void Setting\+Page\+Manager.\+Call\+Check\+Data (\begin{DoxyParamCaption}{}{}\en
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00090}{90}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00095}{95}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00091\ \ \ \ \ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ directoryPath\ =\ \textcolor{stringliteral}{"{}C://SpodyConfig//"{}};\ \textcolor{comment}{//\ ������\ �ִ� ���}}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageFileName\ =\ \textcolor{stringliteral}{"{}Logo.png"{}};\ \textcolor{comment}{//\ �̹��� ���ϸ�}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageFilePath\ =\ Path.Combine(directoryPath,\ imageFileName);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Sprite\ logoImage\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ �̹��� ������\ �����ϴ��� Ȯ��}}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(imageFilePath))}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ imageData\ =\ File.ReadAllBytes(imageFilePath);\ \textcolor{comment}{//\ �̹��� ����\ ����}}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ texture\ =\ \textcolor{keyword}{new}\ Texture2D(2,\ 2);\ \textcolor{comment}{//\ �ؽ�ó\ ����}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ texture.LoadImage(imageData);\ \textcolor{comment}{//\ �̹��� ������\ �ε�}}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ �ؽ�ó��\ Sprite�� ��ȯ}}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ rect\ =\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ texture.width,\ texture.height);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ pivot\ =\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f);}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ logoImage\ =\ Sprite.Create(texture,\ rect,\ pivot);}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ directoryPath\ =\ \textcolor{stringliteral}{"{}C://SpodyConfig//"{}};\ \textcolor{comment}{//\ 파일이\ 있는\ 경로}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageFileName\ =\ \textcolor{stringliteral}{"{}Logo.png"{}};\ \textcolor{comment}{//\ 이미지\ 파일명}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageFilePath\ =\ Path.Combine(directoryPath,\ imageFileName);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ Sprite\ logoImage\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이미지\ 파일이\ 존재하는지\ 확인}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(imageFilePath))}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ imageData\ =\ File.ReadAllBytes(imageFilePath);\ \textcolor{comment}{//\ 이미지\ 파일\ 내용}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ texture\ =\ \textcolor{keyword}{new}\ Texture2D(2,\ 2);\ \textcolor{comment}{//\ 텍스처\ 생성}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ texture.LoadImage(imageData);\ \textcolor{comment}{//\ 이미지\ 데이터\ 로드}}
 \DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ image\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_setting_page_manager_a266f34486dd4cbabfb23ffc8af6c3751}{logo}})}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ logoImage;}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}�̹��� ������\ ��������\ �ʽ��ϴ�."{}});}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 텍스처를\ Sprite로\ 변환}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ Rect\ rect\ =\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ texture.width,\ texture.height);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ pivot\ =\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ logoImage\ =\ Sprite.Create(texture,\ rect,\ pivot);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ image\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_setting_page_manager_a266f34486dd4cbabfb23ffc8af6c3751}{logo}})}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ logoImage;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}이미지\ 파일이\ 존재하지\ 않습니다."{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\Hypertarget{class_setting_page_manager_a8de9be4302cd8ee4edda840f1870e38c}\index{SettingPageManager@{SettingPageManager}!CheckStartPage@{CheckStartPage}}
+\index{CheckStartPage@{CheckStartPage}!SettingPageManager@{SettingPageManager}}
+\doxysubsubsection{\texorpdfstring{CheckStartPage()}{CheckStartPage()}}
+{\footnotesize\ttfamily \label{class_setting_page_manager_a8de9be4302cd8ee4edda840f1870e38c} 
+void Setting\+Page\+Manager.\+Check\+Start\+Page (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00059}{59}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.HasKey(\textcolor{stringliteral}{"{}ChoicePage"{}}))}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}ChoicePage"{}})\ ==\ 0)\ \textcolor{comment}{//\ 처음\ 시작}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 라이센스\ 페이지\ 활성화}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[0].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}ChoicePage"{}})\ ==\ 1)\ \textcolor{comment}{//\ 콘텐츠에서\ 유저\ 리스트로\ 돌아왔을\ 때}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 유저\ 페이지\ 활성화}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[1].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 배경\ 이동}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a13124dbc34165391620e14c97dc84f65}{bgPageCtrl}}.\mbox{\hyperlink{class_background_move_controller_a8e649b2f984146e372301ace764ff3e7}{OnTouchMoving}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (PlayerPrefs.GetInt(\textcolor{stringliteral}{"{}ChoicePage"{}})\ ==\ 2)\ \textcolor{comment}{//\ 콘텐츠에서\ 콘텐츠\ 리스트로\ 돌아왔을\ 때}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 콘텐츠\ 페이지\ 활성화}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[2].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 배경\ 이동}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a13124dbc34165391620e14c97dc84f65}{bgPageCtrl}}.\mbox{\hyperlink{class_background_move_controller_a080e034e9cac35247c1dde42e21fc50d}{OnTouchLogin}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a13124dbc34165391620e14c97dc84f65}{bgPageCtrl}}.\mbox{\hyperlink{class_background_move_controller_a1d23928d622a8ecbf99673f37f309f3d}{titleObject}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 라이센스\ 페이지\ 활성화}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[0].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SpodyConfig의\ Logo\ 이미지\ 데이터\ 확인}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//CallCheckData();}}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_setting_page_manager_a8de9be4302cd8ee4edda840f1870e38c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_setting_page_manager_a8de9be4302cd8ee4edda840f1870e38c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_setting_page_manager_abbfb1e964e9ba9a604a2688aa5b81d94}\index{SettingPageManager@{SettingPageManager}!LoginToContents@{LoginToContents}}
 \index{LoginToContents@{LoginToContents}!SettingPageManager@{SettingPageManager}}
 \doxysubsubsection{\texorpdfstring{LoginToContents()}{LoginToContents()}}
@@ -205,26 +251,17 @@ void Setting\+Page\+Manager.\+Login\+To\+Contents (\begin{DoxyParamCaption}{}{}\
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00169}{169}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00174}{174}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00170\ \ \ \ \ \{}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a612cdea628d47f7dc1ce9766ae5c6440}{ResetPage}}();}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_af4f876cfb06abd3adb2440b0cd13a9f2}{loginPanel}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[2].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_aedaa87519ada7c250ed57a9ccae479c1}{popupLogin}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[1].SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}}[2].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_setting_page_manager_abbfb1e964e9ba9a604a2688aa5b81d94_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_setting_page_manager_a3c14ac35ed37de4b15411bac4d51def8}\index{SettingPageManager@{SettingPageManager}!QuitButton@{QuitButton}}
 \index{QuitButton@{QuitButton}!SettingPageManager@{SettingPageManager}}
 \doxysubsubsection{\texorpdfstring{QuitButton()}{QuitButton()}}
@@ -233,13 +270,13 @@ void Setting\+Page\+Manager.\+Quit\+Button (\begin{DoxyParamCaption}{}{}\end{Dox
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00177}{177}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00181}{181}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00178\ \ \ \ \ \{}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ Application.Quit();}
-\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ Application.Quit();}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_setting_page_manager_a612cdea628d47f7dc1ce9766ae5c6440}\index{SettingPageManager@{SettingPageManager}!ResetPage@{ResetPage}}
@@ -250,47 +287,59 @@ void Setting\+Page\+Manager.\+Reset\+Page (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00082}{82}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00048}{48}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00083\ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ page\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}})}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ page.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ page\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}{settingPages}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ page.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 실행되어야\ 할\ 페이지\ 확인}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a8de9be4302cd8ee4edda840f1870e38c}{CheckStartPage}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_setting_page_manager_a612cdea628d47f7dc1ce9766ae5c6440_icgraph}
+\includegraphics[width=350pt]{class_setting_page_manager_a612cdea628d47f7dc1ce9766ae5c6440_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_setting_page_manager_ac228c66f785a7c9a9f24ff53f5a29f45}\index{SettingPageManager@{SettingPageManager}!UserBntEvent@{UserBntEvent}}
+\Hypertarget{class_setting_page_manager_a8f197a11e06adbf00d144914ee04907e}\index{SettingPageManager@{SettingPageManager}!UserBntEvent@{UserBntEvent}}
 \index{UserBntEvent@{UserBntEvent}!SettingPageManager@{SettingPageManager}}
 \doxysubsubsection{\texorpdfstring{UserBntEvent()}{UserBntEvent()}}
-{\footnotesize\ttfamily \label{class_setting_page_manager_ac228c66f785a7c9a9f24ff53f5a29f45} 
-void Setting\+Page\+Manager.\+User\+Bnt\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_setting_page_manager_a8f197a11e06adbf00d144914ee04907e} 
+void Setting\+Page\+Manager.\+User\+Bnt\+Event (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00121}{121}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00127}{127}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00122\ \ \ \ \ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_aa3c24367082ae6ce6bb9dd363b4b58bd}{popupUserManager}}.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ ���â(New)}}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});\ \textcolor{comment}{//\ ����â(Delete)}}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_aa3c24367082ae6ce6bb9dd363b4b58bd}{popupUserManager}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ ==\ 1)}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 등록창(New)}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});\ \textcolor{comment}{//\ 제거창(Delete)}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_a57884f2630803a8710f18496a815c082}{team}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});\ \textcolor{comment}{//\ 등록창(New)}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}{user}}.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});\ \textcolor{comment}{//\ 제거창(Delete)}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -304,7 +353,17 @@ Box\+Collider2D Setting\+Page\+Manager.\+bg\+Collider}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_setting_page_manager_a13124dbc34165391620e14c97dc84f65}\index{SettingPageManager@{SettingPageManager}!bgPageCtrl@{bgPageCtrl}}
+\index{bgPageCtrl@{bgPageCtrl}!SettingPageManager@{SettingPageManager}}
+\doxysubsubsection{\texorpdfstring{bgPageCtrl}{bgPageCtrl}}
+{\footnotesize\ttfamily \label{class_setting_page_manager_a13124dbc34165391620e14c97dc84f65} 
+\mbox{\hyperlink{class_background_move_controller}{Background\+Move\+Controller}} Setting\+Page\+Manager.\+bg\+Page\+Ctrl}
+
+
+
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}\index{SettingPageManager@{SettingPageManager}!Instance@{Instance}}
 \index{Instance@{Instance}!SettingPageManager@{SettingPageManager}}
@@ -316,15 +375,15 @@ Box\+Collider2D Setting\+Page\+Manager.\+bg\+Collider}
 
 \mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
 
-\Hypertarget{class_setting_page_manager_af4f876cfb06abd3adb2440b0cd13a9f2}\index{SettingPageManager@{SettingPageManager}!loginPanel@{loginPanel}}
-\index{loginPanel@{loginPanel}!SettingPageManager@{SettingPageManager}}
-\doxysubsubsection{\texorpdfstring{loginPanel}{loginPanel}}
-{\footnotesize\ttfamily \label{class_setting_page_manager_af4f876cfb06abd3adb2440b0cd13a9f2} 
-Game\+Object Setting\+Page\+Manager.\+login\+Panel}
+\Hypertarget{class_setting_page_manager_aa3c7fcafbd78697b7634e377ee9d2c76}\index{SettingPageManager@{SettingPageManager}!loadingProgress@{loadingProgress}}
+\index{loadingProgress@{loadingProgress}!SettingPageManager@{SettingPageManager}}
+\doxysubsubsection{\texorpdfstring{loadingProgress}{loadingProgress}}
+{\footnotesize\ttfamily \label{class_setting_page_manager_aa3c7fcafbd78697b7634e377ee9d2c76} 
+Transform Setting\+Page\+Manager.\+loading\+Progress}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_a266f34486dd4cbabfb23ffc8af6c3751}\index{SettingPageManager@{SettingPageManager}!logo@{logo}}
 \index{logo@{logo}!SettingPageManager@{SettingPageManager}}
@@ -334,7 +393,7 @@ Image \mbox{[}$\,$\mbox{]} Setting\+Page\+Manager.\+logo}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00029}{29}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_a6bd96b5b6e43ee1e147e6e4b9b5e2e16}\index{SettingPageManager@{SettingPageManager}!mainGuideText@{mainGuideText}}
 \index{mainGuideText@{mainGuideText}!SettingPageManager@{SettingPageManager}}
@@ -344,7 +403,17 @@ Text\+Mesh\+Pro\+UGUI Setting\+Page\+Manager.\+main\+Guide\+Text}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_setting_page_manager_aedaa87519ada7c250ed57a9ccae479c1}\index{SettingPageManager@{SettingPageManager}!popupLogin@{popupLogin}}
+\index{popupLogin@{popupLogin}!SettingPageManager@{SettingPageManager}}
+\doxysubsubsection{\texorpdfstring{popupLogin}{popupLogin}}
+{\footnotesize\ttfamily \label{class_setting_page_manager_aedaa87519ada7c250ed57a9ccae479c1} 
+Game\+Object Setting\+Page\+Manager.\+popup\+Login}
+
+
+
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_aa3c24367082ae6ce6bb9dd363b4b58bd}\index{SettingPageManager@{SettingPageManager}!popupUserManager@{popupUserManager}}
 \index{popupUserManager@{popupUserManager}!SettingPageManager@{SettingPageManager}}
@@ -354,7 +423,7 @@ Game\+Object Setting\+Page\+Manager.\+popup\+User\+Manager}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_a3894c337295ad9882bfb7b6bbddffa2b}\index{SettingPageManager@{SettingPageManager}!settingPages@{settingPages}}
 \index{settingPages@{settingPages}!SettingPageManager@{SettingPageManager}}
@@ -364,7 +433,7 @@ List$<$Game\+Object$>$ Setting\+Page\+Manager.\+setting\+Pages}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_a57884f2630803a8710f18496a815c082}\index{SettingPageManager@{SettingPageManager}!team@{team}}
 \index{team@{team}!SettingPageManager@{SettingPageManager}}
@@ -374,7 +443,7 @@ Transform Setting\+Page\+Manager.\+team}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_setting_page_manager_ab31a8b314e71e8c000f8da62d8c036f2}\index{SettingPageManager@{SettingPageManager}!user@{user}}
 \index{user@{user}!SettingPageManager@{SettingPageManager}}
@@ -384,7 +453,7 @@ Transform Setting\+Page\+Manager.\+user}
 
 
 
-\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_setting_page_manager_8cs_source}{Setting\+Page\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_setting_page_manager_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 
 

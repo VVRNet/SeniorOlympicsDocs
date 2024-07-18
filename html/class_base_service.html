@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.2</span>
    </div>
   </td>
  </tr>
@@ -118,10 +118,10 @@ BaseService에 대한 상속 다이어그램 : </div>
 <area shape="poly" title=" " alt="" coords="343,204,311,242,269,305,264,303,307,238,339,201"/>
 <area shape="rect" href="class_feedback_service.html" title="피드백 관련 작업을 처리하는 서비스 클래스입니다." alt="" coords="322,315,449,405"/>
 <area shape="poly" title=" " alt="" coords="388,207,388,315,383,315,383,207"/>
-<area shape="rect" href="class_game_record_service.html" title="게임 기록 관련 작업을 처리하는 서비스 클래스입니다." alt="" coords="473,325,609,395"/>
-<area shape="poly" title=" " alt="" coords="431,201,463,238,523,324,519,327,459,242,427,204"/>
-<area shape="rect" href="class_rank_summary_service.html" title="랭크 관련 작업을 처리하는 서비스 클래스입니다." alt="" coords="634,304,779,416"/>
-<area shape="poly" title=" " alt="" coords="469,172,547,197,587,215,623,238,655,268,680,303,676,306,651,272,620,242,584,220,545,202,468,177"/>
+<area shape="rect" href="class_game_record_service.html" title="게임 기록 관련 작업을 처리하는 서비스 클래스입니다." alt="" coords="473,251,721,469"/>
+<area shape="poly" title=" " alt="" coords="433,200,485,249,481,253,429,204"/>
+<area shape="rect" href="class_rank_summary_service.html" title="랭크 관련 작업을 처리하는 서비스 클래스입니다." alt="" coords="746,293,891,427"/>
+<area shape="poly" title=" " alt="" coords="470,159,531,167,600,181,670,204,735,238,763,263,786,292,782,295,759,266,732,242,668,209,599,186,531,172,469,165"/>
 <area shape="rect" title=" " alt="" coords="335,5,436,75"/>
 <area shape="poly" title=" " alt="" coords="388,90,388,123,383,123,383,90"/>
 </map>
@@ -254,33 +254,34 @@ Protected 속성</h2></td></tr>
 <div class="line"><span class="lineno">   82</span>                    <span class="keywordflow">if</span>(url.Split(<span class="charliteral">&#39;/&#39;</span>).Last() == <span class="stringliteral">&quot;findOne&quot;</span>)</div>
 <div class="line"><span class="lineno">   83</span>                    {</div>
 <div class="line"><span class="lineno">   84</span>                        var responseObj = JsonConvert.DeserializeObject&lt;<a class="code hl_class" href="class_document_response.html">DocumentResponse&lt;T&gt;</a>&gt;(request.downloadHandler.text);</div>
-<div class="line"><span class="lineno">   85</span>                        <span class="keywordflow">if</span> (responseObj.document != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   86</span>                        {</div>
-<div class="line"><span class="lineno">   87</span>                            Debug.Log(<span class="stringliteral">&quot;Document is : &quot;</span> + responseObj.document);</div>
-<div class="line"><span class="lineno">   88</span>                            callback?.Invoke(<span class="keyword">new</span> List&lt;T&gt; { responseObj.document });</div>
-<div class="line"><span class="lineno">   89</span>                        }</div>
-<div class="line"><span class="lineno">   90</span>                        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   91</span>                        {</div>
-<div class="line"><span class="lineno">   92</span>                            Debug.Log(<span class="stringliteral">&quot;No document found in response.&quot;</span> + request.result);</div>
-<div class="line"><span class="lineno">   93</span>                            callback?.Invoke(<span class="keyword">new</span> List&lt;T&gt; { });</div>
-<div class="line"><span class="lineno">   94</span>                        }</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>                    }</div>
-<div class="line"><span class="lineno">   97</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   98</span>                    {</div>
-<div class="line"><span class="lineno">   99</span>                        Debug.Log(<span class="stringliteral">&quot;Insert Success&quot;</span>);</div>
-<div class="line"><span class="lineno">  100</span>                        callback?.Invoke(<span class="keyword">new</span> List&lt;T&gt; { });</div>
-<div class="line"><span class="lineno">  101</span>                    }</div>
-<div class="line"><span class="lineno">  102</span>                    </div>
-<div class="line"><span class="lineno">  103</span>                }</div>
-<div class="line"><span class="lineno">  104</span>                </div>
-<div class="line"><span class="lineno">  105</span>            }</div>
-<div class="line"><span class="lineno">  106</span>        }</div>
-<div class="line"><span class="lineno">  107</span>    }</div>
-<div class="ttc" id="aclass_document_response_html"><div class="ttname"><a href="class_document_response.html">DocumentResponse</a></div><div class="ttdoc">단일 문서 응답을 처리하는 클래스입니다.</div><div class="ttdef"><b>Definition</b> <a href="_base_service_8cs_source.html#l00115">BaseService.cs:116</a></div></div>
+<div class="line"><span class="lineno">   85</span>                        Debug.Log(responseObj);</div>
+<div class="line"><span class="lineno">   86</span>                        <span class="keywordflow">if</span> (responseObj.document != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   87</span>                        {</div>
+<div class="line"><span class="lineno">   88</span>                            Debug.Log(<span class="stringliteral">&quot;Document is : &quot;</span> + responseObj.document);</div>
+<div class="line"><span class="lineno">   89</span>                            callback?.Invoke(<span class="keyword">new</span> List&lt;T&gt; { responseObj.document });</div>
+<div class="line"><span class="lineno">   90</span>                        }</div>
+<div class="line"><span class="lineno">   91</span>                        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   92</span>                        {</div>
+<div class="line"><span class="lineno">   93</span>                            Debug.Log(<span class="stringliteral">&quot;No document found in response.&quot;</span> + request.result);</div>
+<div class="line"><span class="lineno">   94</span>                            callback?.Invoke(<span class="keyword">new</span> List&lt;T&gt; { });</div>
+<div class="line"><span class="lineno">   95</span>                        }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>                    }</div>
+<div class="line"><span class="lineno">   98</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   99</span>                    {</div>
+<div class="line"><span class="lineno">  100</span>                        Debug.Log(<span class="stringliteral">&quot;Insert Success&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>                        callback?.Invoke(<span class="keyword">new</span> List&lt;T&gt; { });</div>
+<div class="line"><span class="lineno">  102</span>                    }</div>
+<div class="line"><span class="lineno">  103</span>                    </div>
+<div class="line"><span class="lineno">  104</span>                }</div>
+<div class="line"><span class="lineno">  105</span>                </div>
+<div class="line"><span class="lineno">  106</span>            }</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="ttc" id="aclass_document_response_html"><div class="ttname"><a href="class_document_response.html">DocumentResponse</a></div><div class="ttdoc">단일 문서 응답을 처리하는 클래스입니다.</div><div class="ttdef"><b>Definition</b> <a href="_base_service_8cs_source.html#l00116">BaseService.cs:117</a></div></div>
 <div class="ttc" id="aclass_mongo_db_date_time_converter_html"><div class="ttname"><a href="class_mongo_db_date_time_converter.html">MongoDbDateTimeConverter</a></div><div class="ttdef"><b>Definition</b> <a href="_mongo_db_date_time_converter_8cs_source.html#l00007">MongoDbDateTimeConverter.cs:8</a></div></div>
 <div class="ttc" id="aclass_mongo_db_object_id_converter_html"><div class="ttname"><a href="class_mongo_db_object_id_converter.html">MongoDbObjectIdConverter</a></div><div class="ttdef"><b>Definition</b> <a href="_mongo_db_object_id_converter_8cs_source.html#l00006">MongoDbObjectIdConverter.cs:7</a></div></div>
-<div class="ttc" id="aclass_mongo_response_html"><div class="ttname"><a href="class_mongo_response.html">MongoResponse</a></div><div class="ttdoc">여러 문서 응답을 처리하는 클래스입니다.</div><div class="ttdef"><b>Definition</b> <a href="_base_service_8cs_source.html#l00125">BaseService.cs:126</a></div></div>
+<div class="ttc" id="aclass_mongo_response_html"><div class="ttname"><a href="class_mongo_response.html">MongoResponse</a></div><div class="ttdoc">여러 문서 응답을 처리하는 클래스입니다.</div><div class="ttdef"><b>Definition</b> <a href="_base_service_8cs_source.html#l00126">BaseService.cs:127</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

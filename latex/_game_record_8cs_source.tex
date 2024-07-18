@@ -6,321 +6,368 @@
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00007}00007\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00008}\mbox{\hyperlink{class_game_record}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_record}{GameRecord}}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00010}00010\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}))]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00011}\mbox{\hyperlink{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c}{\_id}};\ \textcolor{comment}{//\ ObjectId}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00012}\mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 싱글모드인지\ 듀얼모드인지}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00013}\mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{AgencyID}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기관의\ ObjectId}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00014}\mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{Category}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 카테고리}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00015}\mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 콘텐츠\ 이름}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00017}00017\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00018}\mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00019}00019\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00020}\mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00021}\mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{GamePlayDuration}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00023}\mbox{\hyperlink{class_game_record_afa496941b0612b75f9066f184d91d88b}{00023}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_record_afa496941b0612b75f9066f184d91d88b}{InitGame}}(\textcolor{keywordtype}{string}\ agencyId,\ \textcolor{keywordtype}{string}\ category,\ \textcolor{keywordtype}{string}\ contentName)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00024}00024\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{AgencyID}}\ =\ agencyId;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{Category}}\ =\ category;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}}\ =\ contentName;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00028}00028\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//게임\ 초기화}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00031}\mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{00031}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00032}00032\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}\ =\ DateTime.UtcNow;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00034}00034\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//게임\ 시작}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00037}\mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{00037}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00038}00038\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ =\ DateTime.UtcNow;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{GamePlayDuration}}\ =\ (int)(\mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ -\/\ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}).TotalSeconds;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00041}00041\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00043}00043\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Unity.VisualScripting;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00008}00008\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00009}\mbox{\hyperlink{class_game_record}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_record}{GameRecord}}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00011}00011\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}))]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00012}\mbox{\hyperlink{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_a85707e0a7f59020b5e146b6c782d5f2c}{\_id}};\ \textcolor{comment}{//\ ObjectId}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00013}\mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 싱글모드인지\ 듀얼모드인지}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00014}\mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{AgencyID}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기관의\ ObjectId}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00015}\mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{Category}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 카테고리}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00016}\mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 콘텐츠\ 이름}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00018}00018\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00019}\mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00020}00020\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00021}\mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00022}\mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{GamePlayDuration}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00024}\mbox{\hyperlink{class_game_record_afa496941b0612b75f9066f184d91d88b}{00024}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_record_afa496941b0612b75f9066f184d91d88b}{InitGame}}(\textcolor{keywordtype}{string}\ agencyId,\ \textcolor{keywordtype}{string}\ category,\ \textcolor{keywordtype}{string}\ contentName)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a60bb8372fe9ef2e2a100b15b1be0608c}{AgencyID}}\ =\ agencyId;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a0c8359bc88debfaaccbc7f7d1fa308c7}{Category}}\ =\ category;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}}\ =\ contentName;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//게임\ 초기화}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00032}\mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{00032}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}\ =\ DateTime.UtcNow;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//게임\ 시작}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00038}\mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{00038}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ =\ DateTime.UtcNow;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aae33fc873d520f72acd82bcb444d34ff}{GamePlayDuration}}\ =\ (int)(\mbox{\hyperlink{class_game_record_a8f781c10c8e6244f77ba11fc00371f5d}{GameEndTime}}\ -\/\ \mbox{\hyperlink{class_game_record_a14b2d2726ec67e6ba444a488a395ff1e}{GameStartTime}}).TotalSeconds;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00044}00044\ \}}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00046}00046\ \textcolor{comment}{//싱글모드}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00047}00047\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00048}\mbox{\hyperlink{class_single_game_record}{00048}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ :\ \mbox{\hyperlink{class_game_record}{GameRecord}}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00049}00049\ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00050}\mbox{\hyperlink{class_single_game_record_ad656275cd70135dd7745cca2c2301ba6}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_ad656275cd70135dd7745cca2c2301ba6}{ClassID}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반의\ ObjectId}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00051}\mbox{\hyperlink{class_single_game_record_a1581e42fb166c981232eb8f99dc3b64b}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a1581e42fb166c981232eb8f99dc3b64b}{PersonID}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 개인의\ ObjectId,\ 반일\ 경우\ null}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00052}\mbox{\hyperlink{class_single_game_record_a8b0e53b25087ca76fe306ab2983a0674}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a8b0e53b25087ca76fe306ab2983a0674}{Name}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어\ 이름}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00053}\mbox{\hyperlink{class_single_game_record_ad967d6ac2f384b0fffc711306f55db5b}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기록\ 세부정보}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00055}\mbox{\hyperlink{class_single_game_record_a460b6eddc1c9e076f266a45474e8ba79}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_single_game_record_a460b6eddc1c9e076f266a45474e8ba79}{SingleGameRecord}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00056}00056\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00059}00059\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00061}\mbox{\hyperlink{class_single_game_record_ae5be031c6f651a0787a376e98b0e95b5}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_single_game_record_ae5be031c6f651a0787a376e98b0e95b5}{InitGame}}(\textcolor{keywordtype}{string}\ agencyId,\ \textcolor{keywordtype}{string}\ classId,\ \textcolor{keywordtype}{string}\ personId,\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ category,\ \textcolor{keywordtype}{string}\ contentName)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00062}00062\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_ae5be031c6f651a0787a376e98b0e95b5}{InitGame}}(agencyId,\ category,\ contentName);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_ad656275cd70135dd7745cca2c2301ba6}{ClassID}}\ =\ classId;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a1581e42fb166c981232eb8f99dc3b64b}{PersonID}}\ =\ personId;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a8b0e53b25087ca76fe306ab2983a0674}{Name}}\ =\ name;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00070}\mbox{\hyperlink{class_single_game_record_a814d27dd123090c4760e482f636bdda7}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_single_game_record_a814d27dd123090c4760e482f636bdda7}{SingleGameStart}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00071}00071\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00073}00073\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00075}\mbox{\hyperlink{class_single_game_record_a176a7def918eef47b468bdca99c402be}{00075}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_single_game_record_a176a7def918eef47b468bdca99c402be}{SingleGameEnd}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00076}00076\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail}{RecordDetail}}.\mbox{\hyperlink{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}{EndGame}}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00079}00079\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00047}00047\ \textcolor{comment}{//싱글모드}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00048}00048\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00049}\mbox{\hyperlink{class_single_game_record}{00049}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_single_game_record}{SingleGameRecord}}\ :\ \mbox{\hyperlink{class_game_record}{GameRecord}}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00051}\mbox{\hyperlink{class_single_game_record_ad656275cd70135dd7745cca2c2301ba6}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_ad656275cd70135dd7745cca2c2301ba6}{ClassID}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반의\ ObjectId}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00052}\mbox{\hyperlink{class_single_game_record_a1581e42fb166c981232eb8f99dc3b64b}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a1581e42fb166c981232eb8f99dc3b64b}{PersonID}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 개인의\ ObjectId,\ 반일\ 경우\ null}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00053}\mbox{\hyperlink{class_single_game_record_a8b0e53b25087ca76fe306ab2983a0674}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a8b0e53b25087ca76fe306ab2983a0674}{Name}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어\ 이름}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00054}\mbox{\hyperlink{class_single_game_record_a20bd311d0cbb72f0d243dddaaa93e901}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_single_game_record_a20bd311d0cbb72f0d243dddaaa93e901}{Age}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 나이}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00055}\mbox{\hyperlink{class_single_game_record_a28ae92eed0cec5d27c3765eada903b8f}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a28ae92eed0cec5d27c3765eada903b8f}{CountryCode}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 국가\ 코드}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00056}\mbox{\hyperlink{class_single_game_record_a58f4a069d2e0f9bd784d33a5899e3f73}{00056}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a58f4a069d2e0f9bd784d33a5899e3f73}{CountryImg}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 국기\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00057}\mbox{\hyperlink{class_single_game_record_ad967d6ac2f384b0fffc711306f55db5b}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기록\ 세부정보}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00059}\mbox{\hyperlink{class_single_game_record_a460b6eddc1c9e076f266a45474e8ba79}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_single_game_record_a460b6eddc1c9e076f266a45474e8ba79}{SingleGameRecord}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00065}\mbox{\hyperlink{class_single_game_record_aafccffc9629e46630a2ad53e64343a70}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_single_game_record_aafccffc9629e46630a2ad53e64343a70}{InitGame}}(\textcolor{keywordtype}{string}\ agencyId,\ \textcolor{keywordtype}{string}\ classId,\ \textcolor{keywordtype}{string}\ personId,\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{int}\ age,\ \textcolor{keywordtype}{string}\ countryCode,\ \textcolor{keywordtype}{string}\ countryImg,\ \textcolor{keywordtype}{string}\ category,\ \textcolor{keywordtype}{string}\ contentName)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_aafccffc9629e46630a2ad53e64343a70}{InitGame}}(agencyId,\ category,\ contentName);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_ad656275cd70135dd7745cca2c2301ba6}{ClassID}}\ =\ classId;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a1581e42fb166c981232eb8f99dc3b64b}{PersonID}}\ =\ personId;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a8b0e53b25087ca76fe306ab2983a0674}{Name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a20bd311d0cbb72f0d243dddaaa93e901}{Age}}\ =\ age;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a28ae92eed0cec5d27c3765eada903b8f}{CountryCode}}\ =\ countryCode;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_single_game_record_a58f4a069d2e0f9bd784d33a5899e3f73}{CountryImg}}\ =\ countryImg;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail}{RecordDetail}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00077}\mbox{\hyperlink{class_single_game_record_a814d27dd123090c4760e482f636bdda7}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_single_game_record_a814d27dd123090c4760e482f636bdda7}{SingleGameStart}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00080}00080\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00082}\mbox{\hyperlink{class_single_game_record_a9a18e47b731891e4077d2ceb6b464c4d}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a9a18e47b731891e4077d2ceb6b464c4d}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00082}\mbox{\hyperlink{class_single_game_record_a176a7def918eef47b468bdca99c402be}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_single_game_record_a176a7def918eef47b468bdca99c402be}{SingleGameEnd}}()}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00083}00083\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}GameRecord(\_id:\ \{\_id\},\ AgencyID:\ \{AgencyID\},\ ClassID:\ \{ClassID\},\ PersonID:\ \{PersonID\},\ Name:\ \{Name\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Category:\ \{Category\},\ ContentName:\ \{ContentName\},\ GameStartTime:\ \{GameStartTime\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}GameEndTime:\ \{GameEndTime\},\ GamePlayDuration:\ \{GamePlayDuration\},\ RecordDetail:\ \{RecordDetail\})"{}};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00087}00087\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00088}00088\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00090}00090\ \textcolor{comment}{//듀얼모드}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00091}00091\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00092}\mbox{\hyperlink{class_dual_game_record}{00092}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ :\ \mbox{\hyperlink{class_game_record}{GameRecord}}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00093}00093\ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00094}\mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{00094}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반의\ ObjectId}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00095}\mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{00095}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 개인의\ ObjectId,\ 반일\ 경우\ null}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00096}\mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어\ 이름}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00097}\mbox{\hyperlink{class_dual_game_record_ab9b107c16e766116a996ac2701bf9450}{00097}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_winner}{Winner}}\ \{\ \ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 승리자}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00098}\mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{00098}}\ \ \ \ \ \textcolor{keyword}{public}\ List<RecordDetail>\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기록\ 세부정보}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00100}\mbox{\hyperlink{class_dual_game_record_a275dd3e65ecb9a1c094b7ae29a53c990}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dual_game_record_a275dd3e65ecb9a1c094b7ae29a53c990}{DualGameRecord}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00101}00101\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00107}00107\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00109}\mbox{\hyperlink{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f}{00109}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f}{InitGame}}(\textcolor{keywordtype}{string}\ agencyId,\ List<string>\ classIds,\ List<string>\ personIds,\ List<string>\ names,\ \textcolor{keywordtype}{string}\ category,\ \textcolor{keywordtype}{string}\ contentName)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00110}00110\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f}{InitGame}}(agencyId,\ category,\ contentName);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ classIds;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ personIds;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ names;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}\ List<RecordDetail>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}()\ \};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00116}00116\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00117}\mbox{\hyperlink{class_dual_game_record_a377f193948b038cf4a186dd4c60b594a}{00117}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dual_game_record_a377f193948b038cf4a186dd4c60b594a}{DualGameStart}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00118}00118\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail}{RecordDetail}}.\mbox{\hyperlink{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}{EndGame}}(\mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00089}\mbox{\hyperlink{class_single_game_record_a9a18e47b731891e4077d2ceb6b464c4d}{00089}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_single_game_record_a9a18e47b731891e4077d2ceb6b464c4d}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}GameRecord(\_id:\ \{\_id\},\ AgencyID:\ \{AgencyID\},\ ClassID:\ \{ClassID\},\ PersonID:\ \{PersonID\},\ Name:\ \{Name\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Category:\ \{Category\},\ ContentName:\ \{ContentName\},\ GameStartTime:\ \{GameStartTime\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}GameEndTime:\ \{GameEndTime\},\ GamePlayDuration:\ \{GamePlayDuration\},\ RecordDetail:\ \{RecordDetail\})"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00097}00097\ \textcolor{comment}{//듀얼모드}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00098}00098\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00099}\mbox{\hyperlink{class_dual_game_record}{00099}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dual_game_record}{DualGameRecord}}\ :\ \mbox{\hyperlink{class_game_record}{GameRecord}}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00100}00100\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00101}\mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{00101}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반의\ ObjectId}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00102}\mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{00102}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 개인의\ ObjectId,\ 반일\ 경우\ null}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00103}\mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{00103}}\ \ \ \ \ \textcolor{keyword}{public}\ \ List<string>\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어\ 이름}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00104}\mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ List<int>\ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어들\ 나이}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00105}\mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{00105}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 국가\ 코드}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00106}\mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{00106}}\ \ \ \ \ \textcolor{keyword}{public}\ List<string>\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 국기\ 이미지}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00107}\mbox{\hyperlink{class_dual_game_record_ab9b107c16e766116a996ac2701bf9450}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_winner}{Winner}}\ \{\ \ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 승리자}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00108}\mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{00108}}\ \ \ \ \ \textcolor{keyword}{public}\ List<RecordDetail>\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기록\ 세부정보}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00110}\mbox{\hyperlink{class_dual_game_record_a275dd3e65ecb9a1c094b7ae29a53c990}{00110}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dual_game_record_a275dd3e65ecb9a1c094b7ae29a53c990}{DualGameRecord}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}();}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00120}00120\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00122}\mbox{\hyperlink{class_dual_game_record_a81226613935f5d650598f480a4492671}{00122}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dual_game_record_a81226613935f5d650598f480a4492671}{DualGameEnd}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00122}\mbox{\hyperlink{class_dual_game_record_a522ee728a0dea914372f50169c1bc636}{00122}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dual_game_record_a522ee728a0dea914372f50169c1bc636}{InitGame}}(\textcolor{keywordtype}{string}\ agencyId,\ List<string>\ classIds,\ List<string>\ personIds,\ List<string>\ names,\ List<int>\ ages,\ List<string>\ countryCodes,\ List<string>\ countryImgs,\ \textcolor{keywordtype}{string}\ category,\ \textcolor{keywordtype}{string}\ contentName)}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00123}00123\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_record_detail}{RecordDetail}}\ rd\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}})}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ rd.\mbox{\hyperlink{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}{EndGame}}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[0].TotalScore\ >\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[1].TotalScore)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[0];}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[1];}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00137}00137\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00140}\mbox{\hyperlink{class_dual_game_record_a99138c1af2caba6f7cbf4d0ff5234adf}{00140}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_dual_game_record_a99138c1af2caba6f7cbf4d0ff5234adf}{ToString}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00141}00141\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}GameRecord(\_id:\ \{\_id\},\ AgencyID:\ \{AgencyID\},\ ClassIDs:\ \{ClassIDs\},\ PersonIDs:\ \{PersonIDs\},\ Names:\ \{Names\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Category:\ \{Category\},\ ContentName:\ \{ContentName\},\ GameStartTime:\ \{GameStartTime\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}GameEndTime:\ \{GameEndTime\},\ GamePlayDuration:\ \{GamePlayDuration\},\ RecordDetails:\ \{RecordDetails\})"{}};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00145}00145\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00146}00146\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00147}00147\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00148}00148\ \textcolor{comment}{//터치\ 이벤트}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00149}00149\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00150}\mbox{\hyperlink{class_touch_event}{00150}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_touch_event}{TouchEvent}}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00151}00151\ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00152}\mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{00152}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{X}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00153}\mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{00153}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{Y}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00154}\mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{00154}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{Time}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a522ee728a0dea914372f50169c1bc636}{InitGame}}(agencyId,\ category,\ contentName);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ classIds;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ClassIDs\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ personIds;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}PersonIDs\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ names;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Names\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}}\ =\ ages;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Ages\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}\ =\ countryCodes;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryCodes\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}\ =\ countryImgs;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryImgs\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}\ List<RecordDetail>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}()\ \};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}RecordDetails\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryCodes\ for\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}[i]);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryImgs\ for\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}[i]);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00151}\mbox{\hyperlink{class_dual_game_record_a377f193948b038cf4a186dd4c60b594a}{00151}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dual_game_record_a377f193948b038cf4a186dd4c60b594a}{DualGameStart}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00152}00152\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00154}00154\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00156}\mbox{\hyperlink{class_touch_event_a1fcb2447acebec405a03aedb0daed1dd}{00156}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_touch_event_a1fcb2447acebec405a03aedb0daed1dd}{TouchEvent}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00156}\mbox{\hyperlink{class_dual_game_record_a81226613935f5d650598f480a4492671}{00156}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dual_game_record_a81226613935f5d650598f480a4492671}{DualGameEnd}}()}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00157}00157\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{X}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{Y}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{Time}}\ =\ DateTime.MinValue;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00161}00161\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00162}\mbox{\hyperlink{class_touch_event_a61b98b966a0de1e7156f915995529519}{00162}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_touch_event_a61b98b966a0de1e7156f915995529519}{TouchEvent}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ DateTime\ time)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00163}00163\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{X}}\ =\ x;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{Y}}\ =\ y;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{Time}}\ =\ time;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00167}00167\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00168}00168\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00170}00170\ \textcolor{comment}{//세부\ 기록}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00171}00171\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00172}\mbox{\hyperlink{class_record_detail}{00172}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_record_detail}{RecordDetail}}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00173}00173\ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00174}\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{00174}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 점수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00175}\mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{00175}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 총\ 터치\ 수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00176}\mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{00176}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 오답\ 수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00177}\mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{00177}}\ \ \ \ \ \textcolor{keyword}{public}\ List<float>\ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00178}\mbox{\hyperlink{class_record_detail_abb4f5cfcb322a8648d07c0cc72be13b0}{00178}}\ \ \ \ \ \textcolor{keyword}{public}\ List<TouchEvent>\ Events\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 터치\ 이벤트}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00179}\mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{00179}}\ \ \ \ \ \textcolor{keyword}{public}\ List<float>\ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반응\ 속도}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00180}\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{00180}}\ \ \ \ \ \textcolor{keyword}{public}\ List<float>\ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지\ 속도}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00181}\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{00181}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도\ 점수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00182}\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{00182}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 순발력\ 점수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00183}\mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{00183}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 최종\ 점수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00184}\mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{00184}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지능력\ 나이}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00185}\mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{00185}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 신체능력\ 나이}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00186}00186\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00187}\mbox{\hyperlink{class_record_detail_aa9169edaca948129de772c544015a43a}{00187}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_record_detail_aa9169edaca948129de772c544015a43a}{RecordDetail}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00188}00188\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ Events\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00196}00196\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00198}\mbox{\hyperlink{class_record_detail_a6ccc58d20457efd86999afd55cefd52d}{00198}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_detail_a6ccc58d20457efd86999afd55cefd52d}{Hit}}(\textcolor{keywordtype}{bool}\ isCorrect,\ \textcolor{keywordtype}{float}\ accuracy,\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}\ touchEvent,\ \textcolor{keywordtype}{float}\ reactionTime)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00199}00199\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isCorrect)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}++;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}.Add(accuracy);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Add(reactionTime);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}++;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00210}00210\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}++;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ Events.Add(touchEvent);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Add(reactionTime);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00214}00214\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00215}00215\ \ \ \ \ \textcolor{comment}{//터치\ 함수}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00216}00216\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00217}\mbox{\hyperlink{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}{00217}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}{EndGame}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00218}00218\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_accuracy_scoring}{AccuracyScoring}}\ ac\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ (int)ac.\mbox{\hyperlink{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}{CalculateAccuracyScore}}(\mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}},\ (\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ /\ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}));}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_speed_scoring}{SpeedScoring}}\ sp\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ (int)sp.\mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{CalculateAverageScore}}(\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}});}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ (\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ +\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}})\ /\ 2\ +\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//점수계산}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_record_detail}{RecordDetail}}\ rd\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}})}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ rd.\mbox{\hyperlink{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}{EndGame}}(\mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[0].TotalScore\ >\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[1].TotalScore)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[0];}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[1];}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00172}00172\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00174}\mbox{\hyperlink{class_dual_game_record_a99138c1af2caba6f7cbf4d0ff5234adf}{00174}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_dual_game_record_a99138c1af2caba6f7cbf4d0ff5234adf}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00175}00175\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}GameRecord(\_id:\ \{\_id\},\ AgencyID:\ \{AgencyID\},\ ClassIDs:\ \{ClassIDs\},\ PersonIDs:\ \{PersonIDs\},\ Names:\ \{Names\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Category:\ \{Category\},\ ContentName:\ \{ContentName\},\ GameStartTime:\ \{GameStartTime\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}GameEndTime:\ \{GameEndTime\},\ GamePlayDuration:\ \{GamePlayDuration\},\ RecordDetails:\ \{RecordDetails\})"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00180}00180\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00182}00182\ \textcolor{comment}{//터치\ 이벤트}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00183}00183\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00184}\mbox{\hyperlink{class_touch_event}{00184}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_touch_event}{TouchEvent}}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00185}00185\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00186}\mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{00186}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{X}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00187}\mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{00187}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{Y}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00188}\mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{00188}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{Time}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00190}\mbox{\hyperlink{class_touch_event_a1fcb2447acebec405a03aedb0daed1dd}{00190}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_touch_event_a1fcb2447acebec405a03aedb0daed1dd}{TouchEvent}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00191}00191\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{X}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{Y}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{Time}}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00195}00195\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00196}\mbox{\hyperlink{class_touch_event_a61b98b966a0de1e7156f915995529519}{00196}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_touch_event_a61b98b966a0de1e7156f915995529519}{TouchEvent}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ DateTime\ time)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00197}00197\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a1098327b3ecbae965d54182f7b9dc9d1}{X}}\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_aa09a8394242632cf6e2cc01fd4b9a05d}{Y}}\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_event_a784ea6369603ae0593a7939e2313175a}{Time}}\ =\ time;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00201}00201\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00202}00202\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00204}00204\ \textcolor{comment}{//세부\ 기록}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00205}00205\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00206}\mbox{\hyperlink{class_record_detail}{00206}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_record_detail}{RecordDetail}}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00207}00207\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00208}\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{00208}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00209}\mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{00209}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 총\ 터치\ 수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00210}\mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{00210}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 오답\ 수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00211}\mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{00211}}\ \ \ \ \ \textcolor{keyword}{public}\ List<float>\ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00212}\mbox{\hyperlink{class_record_detail_abb4f5cfcb322a8648d07c0cc72be13b0}{00212}}\ \ \ \ \ \textcolor{keyword}{public}\ List<TouchEvent>\ Events\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 터치\ 이벤트}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00213}\mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{00213}}\ \ \ \ \ \textcolor{keyword}{public}\ List<float>\ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반응\ 속도}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00214}\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{00214}}\ \ \ \ \ \textcolor{keyword}{public}\ List<float>\ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지\ 속도}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00215}\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{00215}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도\ 점수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00216}\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{00216}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 순발력\ 점수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00217}\mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{00217}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 최종\ 점수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00218}\mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{00218}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지능력\ 나이}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00219}\mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{00219}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 신체능력\ 나이}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00221}\mbox{\hyperlink{class_record_detail_aa9169edaca948129de772c544015a43a}{00221}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_record_detail_aa9169edaca948129de772c544015a43a}{RecordDetail}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00222}00222\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ Events\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00230}00230\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00232}00232\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00233}00233\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ averageReactionTime\ =\ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Average();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ averageCognitiveSpeed\ =\ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Average();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00236}00236\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cognitiveAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}},\ AgeEstimationData.CognitiveSpeedAverages);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ physicalAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}},\ AgeEstimationData.ReactionTimeAverages);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00239}00239\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ =\ Mathf.RoundToInt(cognitiveAge);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ =\ Mathf.RoundToInt(physicalAge);}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//인지능력,\ 신체능력\ 나이\ 계산}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00244}00244\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00245}00245\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00234}\mbox{\hyperlink{class_record_detail_a6ccc58d20457efd86999afd55cefd52d}{00234}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_detail_a6ccc58d20457efd86999afd55cefd52d}{Hit}}(\textcolor{keywordtype}{bool}\ isCorrect,\ \textcolor{keywordtype}{float}\ accuracy,\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}\ touchEvent,\ \textcolor{keywordtype}{float}\ reactionTime)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00235}00235\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isCorrect)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}++;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}.Add(accuracy);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Add(reactionTime);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}++;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00246}00246\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00247}00247\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ EstimateAgeFromSpeed(\textcolor{keywordtype}{float}\ speed,\ Dictionary<int,\ float>\ speedAverages)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00248}00248\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ var\ keys\ =\ speedAverages.Keys.ToList();}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ keys.Count\ -\/\ 1;\ i++)}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (speed\ >=\ speedAverages[keys[i\ +\ 1]]\ \&\&\ speed\ <=\ speedAverages[keys[i]])}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 선형\ 보간법\ 적용}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ageRange\ =\ keys[i]\ -\/\ keys[i\ +\ 1];}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speedRange\ =\ speedAverages[keys[i]]\ -\/\ speedAverages[keys[i\ +\ 1]];}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ratio\ =\ (speed\ -\/\ speedAverages[keys[i\ +\ 1]])\ /\ speedRange;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ keys[i\ +\ 1]\ +\ ratio\ *\ ageRange;}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ keys.Last();\ \textcolor{comment}{//\ 최대\ 연령\ 반환}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00262}00262\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00263}00263\ \ \ \ \ \textcolor{comment}{//나이\ 계산}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00264}00264\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00265}\mbox{\hyperlink{class_record_detail_a1b78114c45ae2da4f526bfed256cc1fa}{00265}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_record_detail_a1b78114c45ae2da4f526bfed256cc1fa}{ToString}}()}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00266}00266\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}RecordDetail(Score:\ \{Score\},\ TotalTouch:\ \{TotalTouch\},\ Incorrect:\ \{Incorrect\},\ Accuracy:\ \{Accuracy\},\ Events:\ \{Events\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ReactionTime:\ \{ReactionTime\},\ CognitiveSpeed:\ \{CognitiveSpeed\},\ AccuracyScore:\ \{AccuracyScore\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}SpeedScore:\ \{SpeedScore\},\ TotalScore:\ \{TotalScore\})"{}};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00270}00270\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00271}00271\ \}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00272}00272\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00273}00273\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }AgeEstimationData}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00274}00274\ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00275}00275\ \ \ \ \ \textcolor{comment}{//public\ static\ Dictionary<int,\ float>\ ReactionTimeAverages\ =\ new\ Dictionary<int,\ float>}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00276}00276\ \ \ \ \ \textcolor{comment}{//\{}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00277}00277\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 10,\ 0.180f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00278}00278\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 20,\ 0.200f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00279}00279\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 30,\ 0.220f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00280}00280\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 40,\ 0.240f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00281}00281\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 50,\ 0.260f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00282}00282\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 60,\ 0.280f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00283}00283\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 70,\ 0.300f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00284}00284\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 80,\ 0.320f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00285}00285\ \ \ \ \ \textcolor{comment}{//\};}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00286}00286\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<int,\ float>\ ReactionTimeAverages\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ float>}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00287}00287\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \{\ 10,\ 200f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \{\ 20,\ 170f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \{\ 30,\ 140f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \{\ 40,\ 100f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \{\ 50,\ 80f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \{\ 60,\ 60f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \{\ 70,\ 40f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \{\ 80,\ 20f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00296}00296\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00297}00297\ }
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00298}00298\ \ \ \ \ \textcolor{comment}{//public\ static\ Dictionary<int,\ float>\ CognitiveSpeedAverages\ =\ new\ Dictionary<int,\ float>}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00299}00299\ \ \ \ \ \textcolor{comment}{//\{}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00300}00300\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 10,\ 0.220f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00301}00301\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 20,\ 0.250f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00302}00302\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 30,\ 0.270f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00303}00303\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 40,\ 0.290f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00304}00304\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 50,\ 0.310f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00305}00305\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 60,\ 0.330f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00306}00306\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 70,\ 0.350f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00307}00307\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 80,\ 0.370f\ \},}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00308}00308\ \ \ \ \ \textcolor{comment}{//\};}}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00309}00309\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<int,\ float>\ CognitiveSpeedAverages\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ float>}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00310}00310\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \{\ 10,\ 200f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \{\ 20,\ 100f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \{\ 30,\ 60f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \{\ 40,\ 55f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \{\ 50,\ 50f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \{\ 60,\ 45f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \{\ 70,\ 40f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \{\ 80,\ 20f\ \},}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00319}00319\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00320}00320\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}++;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ Events.Add(touchEvent);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Add(reactionTime);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00251}00251\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00252}00252\ \ \ \ \ \textcolor{comment}{//터치\ 함수}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00254}\mbox{\hyperlink{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}{00254}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}{EndGame}}(\textcolor{keywordtype}{string}\ contentName,\ \textcolor{keywordtype}{bool}\ isLeft)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00255}00255\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_accuracy_scoring}{AccuracyScoring}}\ ac\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalTouch\ =\ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(contentName\ ==\ \textcolor{stringliteral}{"{}CardMatch"{}})}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalTouch\ /=\ 2;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracy\ =\ ((float)\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ /\ totalTouch);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(accuracy);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(totalTouch);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ (int)ac.\mbox{\hyperlink{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd}{CalculateAccuracyScore}}(\mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}},\ accuracy,\ contentName,\ isLeft);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_speed_scoring}{SpeedScoring}}\ sp\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ (int)sp.\mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{CalculateAverageScore}}(\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}});}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ (\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ +\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}})\ /\ 2\ +\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//점수계산}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//float\ averageReactionTime\ =\ ReactionTime.Average();}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//float\ averageCognitiveSpeed\ =\ CognitiveSpeed.Average();}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cognitiveAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}},\ AgeEstimationData.CognitiveSpeedAverages);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ physicalAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}},\ AgeEstimationData.ReactionTimeAverages);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ =\ Mathf.RoundToInt(cognitiveAge);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ =\ Mathf.RoundToInt(physicalAge);}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//인지능력,\ 신체능력\ 나이\ 계산}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00291}00291\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00292}00292\ \ \ \ \ \textcolor{comment}{//게임\ 종료}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00294}00294\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ EstimateAgeFromSpeed(\textcolor{keywordtype}{float}\ speed,\ Dictionary<int,\ float>\ speedAverages)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00295}00295\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ var\ keys\ =\ speedAverages.Keys.ToList();}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ keys.Count\ -\/\ 1;\ i++)}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (speed\ >=\ speedAverages[keys[i\ +\ 1]]\ \&\&\ speed\ <=\ speedAverages[keys[i]])}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 선형\ 보간법\ 적용}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ageRange\ =\ keys[i]\ -\/\ keys[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speedRange\ =\ speedAverages[keys[i]]\ -\/\ speedAverages[keys[i\ +\ 1]];}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ratio\ =\ (speed\ -\/\ speedAverages[keys[i\ +\ 1]])\ /\ speedRange;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ keys[i\ +\ 1]\ +\ ratio\ *\ ageRange;}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ keys.Last();\ \textcolor{comment}{//\ 최대\ 연령\ 반환}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00309}00309\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00310}00310\ \ \ \ \ \textcolor{comment}{//나이\ 계산}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00312}\mbox{\hyperlink{class_record_detail_a1b78114c45ae2da4f526bfed256cc1fa}{00312}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_record_detail_a1b78114c45ae2da4f526bfed256cc1fa}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00313}00313\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}RecordDetail(Score:\ \{Score\},\ TotalTouch:\ \{TotalTouch\},\ Incorrect:\ \{Incorrect\},\ Accuracy:\ \{Accuracy\},\ Events:\ \{Events\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ReactionTime:\ \{ReactionTime\},\ CognitiveSpeed:\ \{CognitiveSpeed\},\ AccuracyScore:\ \{AccuracyScore\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}SpeedScore:\ \{SpeedScore\},\ TotalScore:\ \{TotalScore\})"{}};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00317}00317\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00318}00318\ \}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00320}00320\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }AgeEstimationData}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00321}00321\ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00322}00322\ \ \ \ \ \textcolor{comment}{//public\ static\ Dictionary<int,\ float>\ ReactionTimeAverages\ =\ new\ Dictionary<int,\ float>}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00323}00323\ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00324}00324\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 10,\ 0.180f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00325}00325\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 20,\ 0.200f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00326}00326\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 30,\ 0.220f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00327}00327\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 40,\ 0.240f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00328}00328\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 50,\ 0.260f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00329}00329\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 60,\ 0.280f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00330}00330\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 70,\ 0.300f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00331}00331\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 80,\ 0.320f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00332}00332\ \ \ \ \ \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00333}00333\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<int,\ float>\ ReactionTimeAverages\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ float>}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00334}00334\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \{\ 10,\ 200f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \{\ 20,\ 170f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \{\ 30,\ 140f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \{\ 40,\ 100f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \{\ 50,\ 80f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \{\ 60,\ 60f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \{\ 70,\ 40f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \{\ 80,\ 20f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00343}00343\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00344}00344\ }
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00345}00345\ \ \ \ \ \textcolor{comment}{//public\ static\ Dictionary<int,\ float>\ CognitiveSpeedAverages\ =\ new\ Dictionary<int,\ float>}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00346}00346\ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00347}00347\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 10,\ 0.220f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00348}00348\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 20,\ 0.250f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00349}00349\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 30,\ 0.270f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00350}00350\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 40,\ 0.290f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00351}00351\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 50,\ 0.310f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00352}00352\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 60,\ 0.330f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00353}00353\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 70,\ 0.350f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00354}00354\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{\ 80,\ 0.370f\ \},}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00355}00355\ \ \ \ \ \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00356}00356\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<int,\ float>\ CognitiveSpeedAverages\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ float>}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00357}00357\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \{\ 10,\ 200f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \{\ 20,\ 100f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \{\ 30,\ 60f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \{\ 40,\ 55f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \{\ 50,\ 50f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \{\ 60,\ 45f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \{\ 70,\ 40f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \{\ 80,\ 20f\ \},}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00366}00366\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_record_8cs_source_l00367}00367\ \}}
 
 \end{DoxyCode}

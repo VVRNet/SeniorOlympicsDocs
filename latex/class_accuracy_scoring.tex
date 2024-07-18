@@ -7,13 +7,20 @@ Accuracy\+Scoring에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=211pt]{class_accuracy_scoring__coll__graph}
+\includegraphics[width=243pt]{class_accuracy_scoring__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}{Calculate\+Accuracy\+Score}} (List$<$ float $>$ distances, float accuracy)
+float \mbox{\hyperlink{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd}{Calculate\+Accuracy\+Score}} (List$<$ float $>$ distances, float accuracy, string content\+Name, bool is\+Left)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ string, float $>$ \mbox{\hyperlink{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5}{Content\+Distance}}
+\item 
+static Dictionary$<$ string, float $>$ \mbox{\hyperlink{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef}{Dual\+Content\+Distance}}
 \end{DoxyCompactItemize}
 
 
@@ -25,36 +32,38 @@ float \mbox{\hyperlink{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}
 
 
 \doxysubsection{멤버 함수 문서화}
-\Hypertarget{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}\index{AccuracyScoring@{AccuracyScoring}!CalculateAccuracyScore@{CalculateAccuracyScore}}
+\Hypertarget{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd}\index{AccuracyScoring@{AccuracyScoring}!CalculateAccuracyScore@{CalculateAccuracyScore}}
 \index{CalculateAccuracyScore@{CalculateAccuracyScore}!AccuracyScoring@{AccuracyScoring}}
 \doxysubsubsection{\texorpdfstring{CalculateAccuracyScore()}{CalculateAccuracyScore()}}
-{\footnotesize\ttfamily \label{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3} 
-float Accuracy\+Scoring.\+Calculate\+Accuracy\+Score (\begin{DoxyParamCaption}\item[{List$<$ float $>$}]{distances}{, }\item[{float}]{accuracy}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd} 
+float Accuracy\+Scoring.\+Calculate\+Accuracy\+Score (\begin{DoxyParamCaption}\item[{List$<$ float $>$}]{distances}{, }\item[{float}]{accuracy}{, }\item[{string}]{content\+Name}{, }\item[{bool}]{is\+Left}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_accuracy_scoring_8cs_source}{Accuracy\+Scoring.\+cs}} 파일의 \mbox{\hyperlink{_accuracy_scoring_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_accuracy_scoring_8cs_source}{Accuracy\+Scoring.\+cs}} 파일의 \mbox{\hyperlink{_accuracy_scoring_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00009\ \ \ \ \ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 절대적인\ 기준\ 설정\ (예:\ 최대\ 거리\ 10)}}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ 1.0f;}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 평균\ 거리\ 계산}}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ meanDistance\ =\ CalculateMean(distances);}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 절대적인\ 기준에\ 따라\ 거리\ 기반\ 점수\ 계산}}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceScore\ =\ ((maxDistance\ -\/\ meanDistance)\ /\ maxDistance)\ *\ 100.0f;}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 정확도를\ 100점\ 척도로\ 변환}}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracyScore\ =\ accuracy\ *\ 100.0f;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 최종\ 점수\ 계산\ (최대\ 200점으로\ 제한)}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ finalScore\ =\ Mathf.Clamp(distanceScore\ +\ accuracyScore,\ 0,\ 200);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalScore;}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 컨텐츠마다\ 거리\ 다르게}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ isLeft\ ==\ \textcolor{keyword}{true}\ ?\ \mbox{\hyperlink{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5}{ContentDistance}}[contentName]\ :\ \mbox{\hyperlink{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef}{DualContentDistance}}[contentName];}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 평균\ 거리\ 계산}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ meanDistance\ =\ CalculateMean(distances);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 절대적인\ 기준에\ 따라\ 거리\ 기반\ 점수\ 계산}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceScore\ =\ ((maxDistance\ -\/\ meanDistance)\ /\ maxDistance)\ *\ 100.0f;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 정확도를\ 100점\ 척도로\ 변환}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracyScore\ =\ accuracy\ *\ 100.0f;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Debug.Log(accuracy);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Debug.Log(accuracyScore);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 최종\ 점수\ 계산\ (최대\ 200점으로\ 제한)}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ finalScore\ =\ Mathf.Clamp(distanceScore\ +\ accuracyScore,\ 0,\ 200);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalScore;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -62,9 +71,82 @@ float Accuracy\+Scoring.\+Calculate\+Accuracy\+Score (\begin{DoxyParamCaption}\i
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3_icgraph}
+\includegraphics[width=350pt]{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd_icgraph}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5}\index{AccuracyScoring@{AccuracyScoring}!ContentDistance@{ContentDistance}}
+\index{ContentDistance@{ContentDistance}!AccuracyScoring@{AccuracyScoring}}
+\doxysubsubsection{\texorpdfstring{ContentDistance}{ContentDistance}}
+{\footnotesize\ttfamily \label{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5} 
+Dictionary$<$string, float$>$ Accuracy\+Scoring.\+Content\+Distance\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ Dictionary<string,\ float>}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Basketball"{}},\ 8.5f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}QuicknessGame"{}},\ 0.6f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Tennis"{}},\ 1.5f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}CardMatch"{}},\ 6.5f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}ColorMatch"{}},\ 9f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}StroopTest"{}},\ 5.8f\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\mbox{\hyperlink{_accuracy_scoring_8cs_source}{Accuracy\+Scoring.\+cs}} 파일의 \mbox{\hyperlink{_accuracy_scoring_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Basketball"{}},\ 8.5f\ \},}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}QuicknessGame"{}},\ 0.6f\ \},}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Tennis"{}},\ 1.5f\ \},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}CardMatch"{}},\ 6.5f\ \},}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}ColorMatch"{}},\ 9f\ \},}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}StroopTest"{}},\ 5.8f\ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef}\index{AccuracyScoring@{AccuracyScoring}!DualContentDistance@{DualContentDistance}}
+\index{DualContentDistance@{DualContentDistance}!AccuracyScoring@{AccuracyScoring}}
+\doxysubsubsection{\texorpdfstring{DualContentDistance}{DualContentDistance}}
+{\footnotesize\ttfamily \label{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef} 
+Dictionary$<$string, float$>$ Accuracy\+Scoring.\+Dual\+Content\+Distance\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ Dictionary<string,\ float>}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Basketball"{}},\ 8.2f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}QuicknessGame"{}},\ 0.6f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Tennis"{}},\ 1.7f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}CardMatch"{}},\ 9.8f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}ColorMatch"{}},\ 14f\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}StroopTest"{}},\ 5.8f\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\mbox{\hyperlink{_accuracy_scoring_8cs_source}{Accuracy\+Scoring.\+cs}} 파일의 \mbox{\hyperlink{_accuracy_scoring_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Basketball"{}},\ 8.2f\ \},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}QuicknessGame"{}},\ 0.6f\ \},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Tennis"{}},\ 1.7f\ \},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}CardMatch"{}},\ 9.8f\ \},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}ColorMatch"{}},\ 14f\ \},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}StroopTest"{}},\ 5.8f\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+
+\end{DoxyCode}
 
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}

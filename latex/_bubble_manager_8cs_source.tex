@@ -1,77 +1,77 @@
 \doxysection{Bubble\+Manager.\+cs}
-\hypertarget{_bubble_manager_8cs_source}{}\label{_bubble_manager_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/Bubble/BubbleManager.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/Bubble/BubbleManager.cs}}
+\hypertarget{_bubble_manager_8cs_source}{}\label{_bubble_manager_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/ColorMatch/BubbleManager.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/ColorMatch/BubbleManager.cs}}
 \mbox{\hyperlink{_bubble_manager_8cs}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }TMPro;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful}{useful}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00008}00008\ [System.Serializable]}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00009}\mbox{\hyperlink{class_color_list_bubble}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_color_list_bubble}{ColorListBubble}}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00010}00010\ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00011}\mbox{\hyperlink{class_color_list_bubble_a0d2463a809be60c7301b6ab8decf04a8}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_color_list_bubble_a0d2463a809be60c7301b6ab8decf04a8}{colorNameE}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00012}\mbox{\hyperlink{class_color_list_bubble_ad5a262158d2f6ed92e277aa4364ca719}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ Sprite\ \mbox{\hyperlink{class_color_list_bubble_ad5a262158d2f6ed92e277aa4364ca719}{answerSpriteColor}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00013}\mbox{\hyperlink{class_color_list_bubble_a0a83031df222b52e3e0e6abce62376e7}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Sprite>\ \mbox{\hyperlink{class_color_list_bubble_a0a83031df222b52e3e0e6abce62376e7}{randomSpriteColor}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//public\ Color32\ answerTextColor;}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//public\ List<Color32>\ randomTextColor;}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00016}00016\ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00018}00018\ [System.Serializable]}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00019}\mbox{\hyperlink{class_color_position}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_color_position}{ColorPosition}}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00020}00020\ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00021}\mbox{\hyperlink{class_color_position_a449fea3aa695bcc0627417ac636c0df2}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_color_position_a449fea3aa695bcc0627417ac636c0df2}{roundPositon}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00022}00022\ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00024}00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_bubble}{Bubble}}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00025}00025\ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00026}\mbox{\hyperlink{class_bubble_1_1_bubble_manager}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bubble_1_1_bubble_manager}{BubbleManager}}\ :\ MonoBehaviour}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00027}00027\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00028}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<ColorListBubble>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00030}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<ColorPosition>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Quiz\ Text]"{}})]}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00033}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<int>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}};\ \textcolor{comment}{//√‚¡¶µ» πÆ¡¶∞°\ ¿˙¿Âµ… ∏ÆΩ∫∆Æ}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00034}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ \textcolor{comment}{//√‚¡¶µ» πÆ¡¶∞°\ ¿˚øÎµ…\ ≈ÿΩ∫∆Æ¿«\ ∞πºˆ}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00035}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}};\ \textcolor{comment}{//∏¬√· ¡§¥‰¿«\ ∞πºˆ∏¶ ƒ´øÓ∆Æ}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Question]"{}})]}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ List<Transform>\ quizTransform;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00039}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<GameObject>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ List<BubbleTouch>\ touch;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00042}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c}{isMatch}};\ \textcolor{comment}{//¥Î∞·«¸\ ø©∫Œ}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00044}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ touch\ =\ \textcolor{keyword}{new}\ List<BubbleTouch>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}}[\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}].roundPositon.Count;\ i++)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch.Add(\mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].GetComponent<BubbleTouch>());}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful}{useful}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00009}00009\ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00010}\mbox{\hyperlink{class_color_list_bubble}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_color_list_bubble}{ColorListBubble}}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00012}\mbox{\hyperlink{class_color_list_bubble_a0d2463a809be60c7301b6ab8decf04a8}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_color_list_bubble_a0d2463a809be60c7301b6ab8decf04a8}{colorNameE}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00013}\mbox{\hyperlink{class_color_list_bubble_ad5a262158d2f6ed92e277aa4364ca719}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ Sprite\ \mbox{\hyperlink{class_color_list_bubble_ad5a262158d2f6ed92e277aa4364ca719}{answerSpriteColor}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00014}\mbox{\hyperlink{class_color_list_bubble_a0a83031df222b52e3e0e6abce62376e7}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Sprite>\ \mbox{\hyperlink{class_color_list_bubble_a0a83031df222b52e3e0e6abce62376e7}{randomSpriteColor}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//public\ Color32\ answerTextColor;}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//public\ List<Color32>\ randomTextColor;}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00019}00019\ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00020}\mbox{\hyperlink{class_color_position}{00020}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_color_position}{ColorPosition}}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00022}\mbox{\hyperlink{class_color_position_a449fea3aa695bcc0627417ac636c0df2}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Transform>\ \mbox{\hyperlink{class_color_position_a449fea3aa695bcc0627417ac636c0df2}{roundPositon}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00025}00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_bubble}{Bubble}}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00027}\mbox{\hyperlink{class_bubble_1_1_bubble_manager}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bubble_1_1_bubble_manager}{BubbleManager}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00029}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{00029}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<ColorListBubble>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00031}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<ColorPosition>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Quiz\ Text]"{}})]}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00034}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<int>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}};\ \textcolor{comment}{//{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}∆Æ}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00035}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ \textcolor{comment}{//{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}ÿΩ{\ucr}∆Æ{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00036}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}};\ \textcolor{comment}{//{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ ƒ´{\ucr}{\ucr}∆Æ}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Question]"{}})]}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ List<Transform>\ quizTransform;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00040}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<GameObject>\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ List<BubbleTouch>\ touch;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00043}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a60a2e4a62c16ec551eef20861486ce5c}{isMatch}};\ \textcolor{comment}{//{\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00045}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ touch\ =\ \textcolor{keyword}{new}\ List<BubbleTouch>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}}[\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}].roundPositon.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch.Add(\mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}>());}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoWaitTime());}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00058}00058\ }
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ IEnumerator\ CoWaitTime()}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classuseful_1_1_up_down_timer}{UpDownTimer}}.\mbox{\hyperlink{classuseful_1_1_up_down_timer_a79edaac48324870f1cccbbb2aefa1d40}{instance}}.isTimerOn)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}});}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ \mbox{\hyperlink{classuseful_1_1_up_down_timer}{UpDownTimer}}.\mbox{\hyperlink{classuseful_1_1_up_down_timer_a79edaac48324870f1cccbbb2aefa1d40}{instance}});}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classuseful_1_1_up_down_timer}{UpDownTimer}}.\mbox{\hyperlink{classuseful_1_1_up_down_timer_a79edaac48324870f1cccbbb2aefa1d40}{instance}}.isTimerOn)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.countdown\_Off\ ==\ \textcolor{keyword}{true})}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//yield\ return\ new\ WaitForSeconds(0.5f);}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30}{ShowQuestion}}();}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -87,122 +87,126 @@
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00083}00083\ }
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00084}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ae3e18e7ff17d46a4041f4d78b677b135}{ResetStage}}()}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Clear();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ quizTransform\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}}[\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}].roundPositon;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ quizTransform.Count;\ i++)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<TextMeshPro>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.colorGradientPreset\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.fontSize\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ touch.Count;\ i++)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch[i].isCorrect\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch[i].isTouch\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleList(ref\ quizTransform);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{SpawnCorrectQuiz}}();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00110}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{00110}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{SpawnCorrectQuiz}}()}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ i++)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00115}00115\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Contains(quizText))}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Add(quizText);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00122}00122\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<TextMeshPro>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetComponent<SpriteRenderer>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[quizText].colorNameE.ToString();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[quizText].answerSpriteColor;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00127}00127\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.SetParent(quizTransform[i]);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ quizTransform\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ab55fb00df68bfbc7670b1f9512cb871e}{ColorPositionQ}}[\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}].roundPositon;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ quizTransform.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ touch.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch[i].isCorrect\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch[i].isTouch\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ ShuffleList(ref\ quizTransform);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{SpawnCorrectQuiz}}();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00106}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{00106}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a8ed24d6ef5c7a7351061db1fae0cc331}{SpawnCorrectQuiz}}()}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ i++)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Contains(quizText))}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quizText\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a7f603fccc96e7fa74cc776e9466bfb94}{quizTextIndex}}.Add(quizText);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(1).GetComponent<TextMeshPro>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<SpriteRenderer>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[quizText].colorNameE.ToString();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[quizText].answerSpriteColor;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.SetParent(quizTransform[i]);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}\ touch\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch.isCorrect\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00130}00130\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}\ touch\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].GetComponent<\mbox{\hyperlink{class_bubble_1_1_bubble_touch}{BubbleTouch}}>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touch.isCorrect\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00134}00134\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{SpawnWrongBalloon}}();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00137}00137\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00138}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{00138}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{SpawnWrongBalloon}}()}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ List<int>\ usedIndexes\ =\ \textcolor{keyword}{new}\ List<int>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ List<Sprite>\ usedColors\ =\ \textcolor{keyword}{new}\ List<Sprite>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00142}00142\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ i\ <\ quizTransform.Count;\ i++)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ randomColor;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00147}00147\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomIndex\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomColor\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].randomSpriteColor[Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].randomSpriteColor.Count)];}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (usedIndexes.Contains(randomIndex)\ ||\ usedColors.Contains(randomColor));}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00153}00153\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedIndexes.Add(randomIndex);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedColors.Add(randomColor);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00156}00156\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<TextMeshPro>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetComponent<SpriteRenderer>();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00159}00159\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].colorNameE.ToString();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.sprite\ =\ randomColor;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00162}00162\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.SetParent(quizTransform[i]);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00168}00168\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00169}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{00169}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{CompleteStage}}()}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}\ ==\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}})}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GoNextStage());}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{SpawnWrongBalloon}}();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00134}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{00134}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_adef1cdd55a81aea5d875e267efd3ce96}{SpawnWrongBalloon}}()}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ List<int>\ usedIndexes\ =\ \textcolor{keyword}{new}\ List<int>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ List<Sprite>\ usedColors\ =\ \textcolor{keyword}{new}\ List<Sprite>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a1e94fc1d0b80d485aa2fe60a3bf2a81f}{quizTextCount}};\ i\ <\ quizTransform.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ randomIndex;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ randomColor;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomIndex\ =\ Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}.Count);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ randomColor\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].randomSpriteColor[Random.Range(0,\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].randomSpriteColor.Count)];}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (usedIndexes.Contains(randomIndex)\ ||\ usedColors.Contains(randomColor));}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedIndexes.Add(randomIndex);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedColors.Add(randomColor);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TextMeshPro\ text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(1).GetComponent<TextMeshPro>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SpriteRenderer\ sprite\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].transform.GetChild(0).GetComponent<SpriteRenderer>();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.text\ =\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5bf26c1ee64bc7ad07d22457b14ec878}{ColorListQ}}[randomIndex].colorNameE.ToString();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.sprite\ =\ randomColor;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.SetParent(quizTransform[i]);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_afe068b6aefc308f0487a5e3a0f314b48}{quizObject}}[i].gameObject.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00165}\mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{00165}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_ac5f8c5ab5c834f0c83653b2f8a6c0216}{CompleteStage}}()}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(GoNextStage());}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ IEnumerator\ GoNextStage()}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//10Î¨∏Ï†ú\ ÎßûÏ∂úÎïåÎßàÎã§\ ÎùºÏö¥Îìú\ Ï¶ùÍ∞Ä}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}\ ==\ 10)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}++;}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00176}00176\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ IEnumerator\ GoNextStage()}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);\ \textcolor{comment}{//\ ¿Ã∆Â∆Æ\ ≥™ø¿¥¬µøæ» ±‚¥Ÿ∏Æ¥¬ øÎµµ∑Œ ≥÷æÓ≥˘¿Ω}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30}{ShowQuestion}}();}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}\ >\ 2)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a5f39a1d49e61894fc96fccfdc282e041}{roundCnt}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_a9f9b34873a493dce61ca68f2d3538f4d}{correctCheckCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00182}00182\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ShuffleList(ref\ List<Transform>\ list)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ random1;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ random2;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00187}00187\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ tmp;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00189}00189\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ list.Count;\ i++)}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ random1\ =\ Random.Range(0,\ list.Count);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ random2\ =\ Random.Range(0,\ list.Count);}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00194}00194\ }
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ list[random1];}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ list[random1]\ =\ list[random2];}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ list[random2]\ =\ tmp;}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00200}00200\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00201}00201\ \}}
-\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.5f);\ \textcolor{comment}{//\ {\ucr}{\ucr}{\ucr}{\ucr}∆Æ\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}¬µ{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}Ÿ∏{\ucr}{\ucr}{\ucr}\ {\ucr}Îµµ{\ucr}{\ucr}\ {\ucr}÷æ{\ucr}{\ucr}{\ucr}{\ucr}}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bubble_1_1_bubble_manager_abfd694edc5ad9ea09571b7cc9ea2ef30}{ShowQuestion}}();}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ShuffleList(ref\ List<Transform>\ list)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ random1;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ random2;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ Transform\ tmp;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ list.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ random1\ =\ Random.Range(0,\ list.Count);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ random2\ =\ Random.Range(0,\ list.Count);}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ list[random1];}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ list[random1]\ =\ list[random2];}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ list[random2]\ =\ tmp;}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{_bubble_manager_8cs_source_l00206}00206\ }
 
 \end{DoxyCode}

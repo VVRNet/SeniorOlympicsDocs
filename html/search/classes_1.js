@@ -10,5 +10,6 @@ var searchData=
   ['basketballmanager_7',['BasketballManager',['../class_basketball_1_1_basketball_manager.html',1,'Basketball']]],
   ['bubblebackgroundtouch_8',['BubbleBackgroundTouch',['../class_bubble_1_1_bubble_background_touch.html',1,'Bubble']]],
   ['bubblemanager_9',['BubbleManager',['../class_bubble_1_1_bubble_manager.html',1,'Bubble']]],
-  ['bubbletouch_10',['BubbleTouch',['../class_bubble_1_1_bubble_touch.html',1,'Bubble']]]
+  ['bubbletouch_10',['BubbleTouch',['../class_bubble_1_1_bubble_touch.html',1,'Bubble']]],
+  ['buttontouchcontroller_11',['ButtonTouchController',['../class_button_touch_controller.html',1,'']]]
 ];

@@ -25,15 +25,17 @@ Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller에 대한 협력 다이어그램\
 \item 
 void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3e2fbb1a5a29c4bc93a3ba28f50b3398}{On\+Touch}} (float x, float y)
 \item 
-void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}{Score}} ()
+void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_aa86ba238a7ce45fe58e389b4849076cd}{Score}} (float x, float y)
 \item 
 void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a9ab6f0aedc2b23102aadd25e91cbb872}{Answer\+Effect}} ()
 \item 
 void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3d91ef14bb4aea6f75a720fa06f4cc6f}{Wrong\+Effect}} ()
 \item 
-void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}} (string team\+Color)
+void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a223b0da815b260163e5fdd589e703b80}{BGTouch}} (string team\+Color, float x, float y)
 \item 
-void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{Answer\+Touch}} (string team\+Color)
+void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a52fe23cac2d43a051b197c40329d0980}{Answer\+Touch}} (string team\+Color, float x, float y)
+\item 
+void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a30369362e978c04bfdeb39e5f609a34c}{Wrong\+Touch}} (string team\+Color, float x, float y)
 \item 
 void \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac17450643b8e56f865bf7c10385bdc25}{Other\+Ending\+Motion}} ()
 \end{DoxyCompactItemize}
@@ -58,7 +60,11 @@ Audio\+Clip \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_
 \item 
 Game\+Object \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}
 \item 
+Game\+Object \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a24405f883441c160d9ce6a4041492a43}{answer\+Effect}}
+\item 
 bool \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a38aa7522094f35ef06433b70e14883cc}{is\+Effect}}
+\item 
+bool \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}{is\+Touch}} = false
 \end{DoxyCompactItemize}
 
 
@@ -78,23 +84,27 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Answer\+Effect (\begin{Dox
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00102}{102}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00135}{135}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a38aa7522094f35ef06433b70e14883cc}{isEffect}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ originalScale\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.localScale;}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ Sequence\ sequence\ =\ DOTween.Sequence();}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ sequence.Append(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOScale(originalScale\ *\ 0.8f,\ 0.5f))}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOScale(originalScale\ *\ 1.3f,\ 0.5f))}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOScale(Vector3.zero,\ 0.5f))}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>\ \{\ hand.transform.localScale\ =\ originalScale;}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a38aa7522094f35ef06433b70e14883cc}{isEffect}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a38aa7522094f35ef06433b70e14883cc}{isEffect}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ originalScale\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.localScale;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a24405f883441c160d9ce6a4041492a43}{answerEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ Sequence\ sequence\ =\ DOTween.Sequence();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ sequence.Append(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOScale(originalScale\ *\ 0.7f,\ 0.3f))}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOScale(originalScale\ *\ 2f,\ 0.3f))}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Append(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOScale(Vector3.zero,\ 0.3f))}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>\ \{\ hand.transform.localScale\ =\ originalScale;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a38aa7522094f35ef06433b70e14883cc}{isEffect}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}{isTouch}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a24405f883441c160d9ce6a4041492a43}{answerEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -105,70 +115,101 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Answer\+Effect (\begin{Dox
 \includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a9ab6f0aedc2b23102aadd25e91cbb872_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!AnswerTouch@{AnswerTouch}}
+\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a52fe23cac2d43a051b197c40329d0980}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!AnswerTouch@{AnswerTouch}}
 \index{AnswerTouch@{AnswerTouch}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
 \doxysubsubsection{\texorpdfstring{AnswerTouch()}{AnswerTouch()}}
-{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652} 
-void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Answer\+Touch (\begin{DoxyParamCaption}\item[{string}]{team\+Color}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_a52fe23cac2d43a051b197c40329d0980} 
+void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Answer\+Touch (\begin{DoxyParamCaption}\item[{string}]{team\+Color}{, }\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00139}{139}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00181}{181}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652_icgraph}
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a52fe23cac2d43a051b197c40329d0980_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!BGTouch@{BGTouch}}
-\index{BGTouch@{BGTouch}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
-\doxysubsubsection{\texorpdfstring{BGTouch()}{BGTouch()}}
-{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c} 
-void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+BGTouch (\begin{DoxyParamCaption}\item[{string}]{team\+Color}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00126}{126}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
-
-\end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c_icgraph}
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a52fe23cac2d43a051b197c40329d0980_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a223b0da815b260163e5fdd589e703b80}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!BGTouch@{BGTouch}}
+\index{BGTouch@{BGTouch}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
+\doxysubsubsection{\texorpdfstring{BGTouch()}{BGTouch()}}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_a223b0da815b260163e5fdd589e703b80} 
+void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+BGTouch (\begin{DoxyParamCaption}\item[{string}]{team\+Color}{, }\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00164}{164}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a223b0da815b260163e5fdd589e703b80_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a223b0da815b260163e5fdd589e703b80_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a3e2fbb1a5a29c4bc93a3ba28f50b3398}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!OnTouch@{OnTouch}}
@@ -183,23 +224,29 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+On\+Touch (\begin{DoxyPara
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00060}{60}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}{Score}}();}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a13bbce09d303d0a6f8d42624afcaf1e4}{touchPrefab}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a13bbce09d303d0a6f8d42624afcaf1e4}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}{rootObject}}.transform);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPosition);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a13bbce09d303d0a6f8d42624afcaf1e4}{touchPrefab}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}{rootObject}}.transform);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_aa86ba238a7ce45fe58e389b4849076cd}{Score}}(x,\ y);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a13bbce09d303d0a6f8d42624afcaf1e4}{touchPrefab}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -218,67 +265,70 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Other\+Ending\+Motion (\be
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00152}{152}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00224}{224}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ this.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!Score@{Score}}
+\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_aa86ba238a7ce45fe58e389b4849076cd}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!Score@{Score}}
 \index{Score@{Score}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
 \doxysubsubsection{\texorpdfstring{Score()}{Score()}}
-{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674} 
-void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_aa86ba238a7ce45fe58e389b4849076cd} 
+void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Score (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00051}{51}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00081}{81}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ teamColor\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4e8966a05fd97ea2ba26d7e8cf166b4c}{isLeft}})}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}RED"{}};}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}BLUE"{}};}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//배경\ 터치횟수\ 올리기}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})\ \textcolor{comment}{//정답\ 맞췄을\ 때}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3096260b58d2432ada42a472a32c3fbb}{correctSound}};}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_abfdd8239b8cb6f8197a9b32c05e85652}{AnswerTouch}}(teamColor);}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}{manager}}.\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}++;}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a9ab6f0aedc2b23102aadd25e91cbb872}{AnswerEffect}}();}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(WaitEffect());}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})\ \textcolor{comment}{//\ 틀렸을\ 때}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_adc864574579c0ee536ba2d5da356b76c}{BGTouch}}(teamColor);}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3d91ef14bb4aea6f75a720fa06f4cc6f}{WrongEffect}}();}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4f5b48e0ac6ceeab76484c0eedbc08cf}{wrongSound}};}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ teamColor\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4e8966a05fd97ea2ba26d7e8cf166b4c}{isLeft}})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}RED"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamColor\ =\ \textcolor{stringliteral}{"{}BLUE"{}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//배경\ 터치횟수\ 올리기}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a223b0da815b260163e5fdd589e703b80}{BGTouch}}(teamColor,\ x,\ y);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}{isTouch}})}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})\ \textcolor{comment}{//정답\ 맞췄을\ 때}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}{isTouch}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3096260b58d2432ada42a472a32c3fbb}{correctSound}};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a52fe23cac2d43a051b197c40329d0980}{AnswerTouch}}(teamColor,\ x,\ y);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}{manager}}.\mbox{\hyperlink{class_hot_air_balloon_1_1_hot_air_balloon_manager_a1cea3307f28a9a5f7b2fe8d262fef348}{correctCheckCount}}++;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a9ab6f0aedc2b23102aadd25e91cbb872}{AnswerEffect}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(WaitEffect());}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}})\ \textcolor{comment}{//\ 틀렸을\ 때}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}{isTouch}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a3d91ef14bb4aea6f75a720fa06f4cc6f}{WrongEffect}}();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultAudio.clip\ =\ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a4f5b48e0ac6ceeab76484c0eedbc08cf}{wrongSound}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a065aa9c84a138d0f9b9fd318c8c62e34}{resultAudio}}.Play();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a30369362e978c04bfdeb39e5f609a34c}{WrongTouch}}(teamColor,\ x,\ y);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -286,7 +336,7 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Score (\begin{DoxyParamCap
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674_cgraph}
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_aa86ba238a7ce45fe58e389b4849076cd_cgraph}
 \end{center}
 \end{figure}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -294,7 +344,7 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Score (\begin{DoxyParamCap
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_abefc8e4ad0f14836efa64481faa5c674_icgraph}
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_aa86ba238a7ce45fe58e389b4849076cd_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a3d91ef14bb4aea6f75a720fa06f4cc6f}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!WrongEffect@{WrongEffect}}
@@ -305,17 +355,18 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Wrong\+Effect (\begin{Doxy
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00117}{117}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00154}{154}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOShakePosition(0.8f,\ \textcolor{keyword}{new}\ Vector3(0.1f,\ 0,\ 0),\ 10,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keyword}{true})}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}{hand}}.transform.DOLocalMove(Vector3.zero,\ 0.2f);}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ transform.DOShakePosition(0.8f,\ \textcolor{keyword}{new}\ Vector3(0.1f,\ 0,\ 0),\ 10,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnComplete(()\ =>\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.DOLocalMove(Vector3.zero,\ 0.2f);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}{isTouch}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -326,9 +377,66 @@ void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Wrong\+Effect (\begin{Doxy
 \includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a3d91ef14bb4aea6f75a720fa06f4cc6f_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a30369362e978c04bfdeb39e5f609a34c}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!WrongTouch@{WrongTouch}}
+\index{WrongTouch@{WrongTouch}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
+\doxysubsubsection{\texorpdfstring{WrongTouch()}{WrongTouch()}}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_a30369362e978c04bfdeb39e5f609a34c} 
+void Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+Wrong\+Touch (\begin{DoxyParamCaption}\item[{string}]{team\+Color}{, }\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00205}{205}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}RED"{}})}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (teamColor\ ==\ \textcolor{stringliteral}{"{}BLUE"{}})}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !\mbox{\hyperlink{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}{isCorrect}},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a30369362e978c04bfdeb39e5f609a34c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hot_air_balloon_1_1_balloon_touch_controller_a30369362e978c04bfdeb39e5f609a34c_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a24405f883441c160d9ce6a4041492a43}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!answerEffect@{answerEffect}}
+\index{answerEffect@{answerEffect}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
+\doxysubsubsection{\texorpdfstring{answerEffect}{answerEffect}}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_a24405f883441c160d9ce6a4041492a43} 
+Game\+Object Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+answer\+Effect}
+
+
+
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a3096260b58d2432ada42a472a32c3fbb}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!correctSound@{correctSound}}
 \index{correctSound@{correctSound}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
 \doxysubsubsection{\texorpdfstring{correctSound}{correctSound}}
@@ -337,7 +445,7 @@ Audio\+Clip Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+correct\+Sound}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a93e098ad63117024c567e86e0155c78c}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!hand@{hand}}
 \index{hand@{hand}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
@@ -347,7 +455,7 @@ Game\+Object Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+hand}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_ac3a88b091edfcba5026870d5ceced391}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!isCorrect@{isCorrect}}
 \index{isCorrect@{isCorrect}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
@@ -357,7 +465,7 @@ bool Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+is\+Correct}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a38aa7522094f35ef06433b70e14883cc}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!isEffect@{isEffect}}
 \index{isEffect@{isEffect}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
@@ -367,7 +475,7 @@ bool Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+is\+Effect}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a4e8966a05fd97ea2ba26d7e8cf166b4c}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!isLeft@{isLeft}}
 \index{isLeft@{isLeft}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
@@ -377,7 +485,17 @@ bool Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+is\+Left}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!isTouch@{isTouch}}
+\index{isTouch@{isTouch}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
+\doxysubsubsection{\texorpdfstring{isTouch}{isTouch}}
+{\footnotesize\ttfamily \label{class_hot_air_balloon_1_1_balloon_touch_controller_a47f26ea2bc7e85a171c67eea41809530} 
+bool Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+is\+Touch = false}
+
+
+
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00029}{29}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a8170aafe2fb1e8e71c8affa4301ecf0a}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!manager@{manager}}
 \index{manager@{manager}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
@@ -397,7 +515,7 @@ Audio\+Source Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+result\+Audio}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_hot_air_balloon_1_1_balloon_touch_controller_a641e59f18e9bc79ed2d376bd1da93855}\index{HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}!rootObject@{rootObject}}
 \index{rootObject@{rootObject}!HotAirBalloon.BalloonTouchController@{HotAirBalloon.BalloonTouchController}}
@@ -427,10 +545,10 @@ Audio\+Clip Hot\+Air\+Balloon.\+Balloon\+Touch\+Controller.\+wrong\+Sound}
 
 
 
-\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_balloon_touch_controller_8cs_source}{Balloon\+Touch\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_balloon_touch_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
 
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Hot\+Air\+Balloon/\mbox{\hyperlink{_balloon_touch_controller_8cs}{Balloon\+Touch\+Controller.\+cs}}\end{DoxyCompactItemize}
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Stroop\+Test/\mbox{\hyperlink{_balloon_touch_controller_8cs}{Balloon\+Touch\+Controller.\+cs}}\end{DoxyCompactItemize}

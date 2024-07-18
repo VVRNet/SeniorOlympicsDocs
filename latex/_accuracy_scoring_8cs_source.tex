@@ -8,37 +8,59 @@
 \DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00004}00004\ }
 \DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00005}\mbox{\hyperlink{class_accuracy_scoring}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_accuracy_scoring}{AccuracyScoring}}}
 \DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00006}00006\ \{}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ 점수\ 계산\ 함수:\ 절대적인\ 기준을\ 사용하여\ 점수를\ 계산합니다.}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00008}\mbox{\hyperlink{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}{CalculateAccuracyScore}}(List<float>\ distances,\ \textcolor{keywordtype}{float}\ accuracy)}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00009}00009\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 절대적인\ 기준\ 설정\ (예:\ 최대\ 거리\ 10)}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ 1.0f;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 평균\ 거리\ 계산}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ meanDistance\ =\ CalculateMean(distances);}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 절대적인\ 기준에\ 따라\ 거리\ 기반\ 점수\ 계산}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceScore\ =\ ((maxDistance\ -\/\ meanDistance)\ /\ maxDistance)\ *\ 100.0f;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 정확도를\ 100점\ 척도로\ 변환}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracyScore\ =\ accuracy\ *\ 100.0f;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 최종\ 점수\ 계산\ (최대\ 200점으로\ 제한)}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ finalScore\ =\ Mathf.Clamp(distanceScore\ +\ accuracyScore,\ 0,\ 200);}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalScore;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00026}00026\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ 평균\ 계산\ 함수:\ 리스트의\ 모든\ 요소의\ 평균을\ 계산합니다.}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ CalculateMean(List<float>\ data)}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00030}00030\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sum\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{float}\ value\ \textcolor{keywordflow}{in}\ data)}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ value;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ /\ data.Count;}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00037}00037\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00007}\mbox{\hyperlink{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5}{00007}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<string,\ float>\ \mbox{\hyperlink{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5}{ContentDistance}}\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ float>}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00009}00009\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Basketball"{}},\ 8.5f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}QuicknessGame"{}},\ 0.6f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Tennis"{}},\ 1.5f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}CardMatch"{}},\ 6.5f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}ColorMatch"{}},\ 9f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}StroopTest"{}},\ 5.8f\ \}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00015}00015\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00017}\mbox{\hyperlink{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<string,\ float>\ \mbox{\hyperlink{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef}{DualContentDistance}}\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ float>}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Basketball"{}},\ 8.2f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}QuicknessGame"{}},\ 0.6f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}Tennis"{}},\ 1.7f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}CardMatch"{}},\ 9.8f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}ColorMatch"{}},\ 14f\ \},}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}StroopTest"{}},\ 5.8f\ \}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00025}00025\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ 점수\ 계산\ 함수:\ 절대적인\ 기준을\ 사용하여\ 점수를\ 계산합니다.}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00028}\mbox{\hyperlink{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd}{CalculateAccuracyScore}}(List<float>\ distances,\ \textcolor{keywordtype}{float}\ accuracy,\ \textcolor{keywordtype}{string}\ contentName,\ \textcolor{keywordtype}{bool}\ isLeft)}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 컨텐츠마다\ 거리\ 다르게}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ isLeft\ ==\ \textcolor{keyword}{true}\ ?\ \mbox{\hyperlink{class_accuracy_scoring_abb9a35a7876e62bb7fd412452fc25df5}{ContentDistance}}[contentName]\ :\ \mbox{\hyperlink{class_accuracy_scoring_a85b093f4c698981881485b807ff3a6ef}{DualContentDistance}}[contentName];}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 평균\ 거리\ 계산}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ meanDistance\ =\ CalculateMean(distances);}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 절대적인\ 기준에\ 따라\ 거리\ 기반\ 점수\ 계산}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceScore\ =\ ((maxDistance\ -\/\ meanDistance)\ /\ maxDistance)\ *\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 정확도를\ 100점\ 척도로\ 변환}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracyScore\ =\ accuracy\ *\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ Debug.Log(accuracy);}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ Debug.Log(accuracyScore);}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 최종\ 점수\ 계산\ (최대\ 200점으로\ 제한)}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ finalScore\ =\ Mathf.Clamp(distanceScore\ +\ accuracyScore,\ 0,\ 200);}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalScore;}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ 평균\ 계산\ 함수:\ 리스트의\ 모든\ 요소의\ 평균을\ 계산합니다.}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ CalculateMean(List<float>\ data)}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{float}\ value\ \textcolor{keywordflow}{in}\ data)}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ /\ data.Count;}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accuracy_scoring_8cs_source_l00060}00060\ \}}
 
 \end{DoxyCode}

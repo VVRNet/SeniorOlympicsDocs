@@ -1,0 +1,34 @@
+\doxysection{People.\+cs}
+\hypertarget{_people_8cs_source}{}\label{_people_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/Model/People.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Public/Model/People.cs}}
+\mbox{\hyperlink{_people_8cs}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Net;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00007}00007\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00008}\mbox{\hyperlink{class_people}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_people}{People}}}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00010}\mbox{\hyperlink{class_people_aca0311a377652cf87643623bbcfb4cc8}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_people_aca0311a377652cf87643623bbcfb4cc8}{Id}};}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00011}\mbox{\hyperlink{class_people_aa5f7e914ab062170ab0d12b4e1d81630}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_people_aa5f7e914ab062170ab0d12b4e1d81630}{Name}};\ \textcolor{comment}{//\ 이름}}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00012}\mbox{\hyperlink{class_people_a0be0f7624219ced095bfd209b2de705f}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_people_a0be0f7624219ced095bfd209b2de705f}{Age}};\ \textcolor{comment}{//\ 나이}}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00013}\mbox{\hyperlink{class_people_a9cb46ba27b75d9044681d25b043a635d}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_people_a9cb46ba27b75d9044681d25b043a635d}{ProfileImage}};\ \textcolor{comment}{//\ 프로필\ 이미지\ URL}}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00015}\mbox{\hyperlink{class_people_ac5d6d783531f85a7fae12e9c86c22070}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_people_ac5d6d783531f85a7fae12e9c86c22070}{People}}(Guid\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{int}\ age,\ \textcolor{keywordtype}{string}\ profileImage)}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_people_aca0311a377652cf87643623bbcfb4cc8}{Id}}\ =\ \textcolor{keywordtype}{id}.ToString();}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_people_aa5f7e914ab062170ab0d12b4e1d81630}{Name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_people_a0be0f7624219ced095bfd209b2de705f}{Age}}\ =\ age;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_people_a9cb46ba27b75d9044681d25b043a635d}{ProfileImage}}\ =\ profileImage;}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00023}\mbox{\hyperlink{class_people_a4563d9417b181fa26b084312d910c288}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_people_a4563d9417b181fa26b084312d910c288}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Student(Name:\ \{Name\},\ Age:\ \{Age\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ProfileImage:\ \{ProfileImage\})"{}};}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_people_8cs_source_l00028}00028\ \}}
+
+\end{DoxyCode}

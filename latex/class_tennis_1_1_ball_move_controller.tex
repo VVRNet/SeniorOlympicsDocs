@@ -43,6 +43,8 @@ float \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a86b5e024fc5fbe475f
 float \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a61bd999d0e97fb834db79cd544baccf7}{wait\+Time}}
 \item 
 \mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}} \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a239213a09b8d633857915ac047695117}{team}}
+\item 
+int \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a8be7312ee4d6e5fdf7c41bf5f52804ea}{add\+Score}} = 0
 \end{DoxyCompactItemize}
 
 
@@ -62,13 +64,13 @@ void Tennis.\+Ball\+Move\+Controller.\+Random\+Instantiate\+Ball (\begin{DoxyPar
 
 
 
-\mbox{\hyperlink{_ball_move_controller_8cs_source}{Ball\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_move_controller_8cs_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_ball_move_controller_8cs_source}{Ball\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_move_controller_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoRandomInstantiateBall());}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoRandomInstantiateBall());}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_tennis_1_1_ball_move_controller_ab409536180f0e400db78a63a960ce58f}\index{Tennis.BallMoveController@{Tennis.BallMoveController}!ResetObject@{ResetObject}}
@@ -79,28 +81,38 @@ void Tennis.\+Ball\+Move\+Controller.\+Reset\+Object (\begin{DoxyParamCaption}{}
 
 
 
-\mbox{\hyperlink{_ball_move_controller_8cs_source}{Ball\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_move_controller_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_ball_move_controller_8cs_source}{Ball\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_move_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a9f572b7821585f9da7c5bcb681c08a80}{characterMove}}.\mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{swingEffect}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ������\ �����Ǿ��� �� ������Ʈ\ ����}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ childCount\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}.transform.childCount;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childCount\ >=\ 1)}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ childCount;\ j++)}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}.transform.GetChild(j).gameObject);}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a9f572b7821585f9da7c5bcb681c08a80}{characterMove}}.\mbox{\hyperlink{class_tennis_1_1_character_move_a3f04e19eafa8bc5b716e52d186114049}{swingEffect}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전에\ 생성되었던\ 공\ 오브젝트\ 제거}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ childCount\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}.transform.childCount;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childCount\ >=\ 1)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ childCount;\ j++)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_aa98f9607c56fd21c7657dd7964ffff33}{ballTarget}}.transform.GetChild(j).gameObject);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_tennis_1_1_ball_move_controller_a8be7312ee4d6e5fdf7c41bf5f52804ea}\index{Tennis.BallMoveController@{Tennis.BallMoveController}!addScore@{addScore}}
+\index{addScore@{addScore}!Tennis.BallMoveController@{Tennis.BallMoveController}}
+\doxysubsubsection{\texorpdfstring{addScore}{addScore}}
+{\footnotesize\ttfamily \label{class_tennis_1_1_ball_move_controller_a8be7312ee4d6e5fdf7c41bf5f52804ea} 
+int Tennis.\+Ball\+Move\+Controller.\+add\+Score = 0}
+
+
+
+\mbox{\hyperlink{_ball_move_controller_8cs_source}{Ball\+Move\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_ball_move_controller_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_tennis_1_1_ball_move_controller_ac5a17745348032f4bf10d4b0a998a1af}\index{Tennis.BallMoveController@{Tennis.BallMoveController}!ballFactory@{ballFactory}}
 \index{ballFactory@{ballFactory}!Tennis.BallMoveController@{Tennis.BallMoveController}}
 \doxysubsubsection{\texorpdfstring{ballFactory}{ballFactory}}

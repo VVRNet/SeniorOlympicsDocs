@@ -8,6 +8,5 @@ var class_create_and_remove_user =
     [ "isTeam", "class_create_and_remove_user.html#a866c3ba5ae7f977527b5f5e0ca10b50c", null ],
     [ "objectList", "class_create_and_remove_user.html#aca268d1068ca80ec4ea8751b78023194", null ],
     [ "objectPrefabs", "class_create_and_remove_user.html#adc222ea6850320d343321ff566a45cd7", null ],
-    [ "objectRootTrans", "class_create_and_remove_user.html#a385b2758b9c9cb52a4691f2ee55e576a", null ],
-    [ "otherPlayer", "class_create_and_remove_user.html#adfce64a96d863b138677209c026146d2", null ]
+    [ "objectRootTrans", "class_create_and_remove_user.html#a385b2758b9c9cb52a4691f2ee55e576a", null ]
 ];

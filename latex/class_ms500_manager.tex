@@ -49,6 +49,8 @@ bool \mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{is\
 Vector2 \mbox{\hyperlink{class_ms500_manager_a130d2699f424e2beb3d8367ed4211761}{Last\+Hit}} = Vector2.\+zero
 \item 
 Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ms500_manager_a73174380bf254cb5ac7ef0bcee8791b1}{sensor\+Text}}
+\item 
+bool \mbox{\hyperlink{class_ms500_manager_ab269e7d75151b08e93ee8e68c8658194}{touch\+Enable}} = true
 \end{DoxyCompactItemize}
 \doxysubsubsection*{추가로 상속된 멤버들}
 \doxysubsection*{\mbox{\hyperlink{class_singleton}{Singleton$<$ Ms500\+Manager $>$}}(으)로부터 상속된 속성}
@@ -74,13 +76,13 @@ void Ms500\+Manager.\+Init (\begin{DoxyParamCaption}\item[{bool}]{Is\+Body\+Hand
 
 
 
-\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00071}{71}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00074}{74}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this.callback\ =\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}};}
-\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ this.callback\ =\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}\index{Ms500Manager@{Ms500Manager}!Reset@{Reset}}
@@ -91,13 +93,13 @@ void Ms500\+Manager.\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 
 
-\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00076}{76}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00079}{79}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \ \ \ \ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}}\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_ms500_manager_ab503b1c9b388325cb4bbbaf4181943be}\index{Ms500Manager@{Ms500Manager}!Setting@{Setting}}
@@ -108,29 +110,28 @@ void Ms500\+Manager.\+Setting (\begin{DoxyParamCaption}\item[{bool}]{is\+Set}{, 
 
 
 
-\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00057}{57}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ settingCanvas.enabled\ =\ isSet;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{isSetting}}\ =\ isSet;}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ settingRenderer.enabled\ =\ isSet;}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_ab589e5df5482a2605a1422ee9f75b555}{settingCamera}}.gameObject.SetActive(isSet);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(loginCanvas\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ this.loginCanvas\ =\ loginCanvas;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!isSet)}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ this.loginCanvas.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ settingCanvas.enabled\ =\ isSet;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{isSetting}}\ =\ isSet;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ settingRenderer.enabled\ =\ isSet;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_ab589e5df5482a2605a1422ee9f75b555}{settingCamera}}.gameObject.SetActive(isSet);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(loginCanvas\ !=\ null)}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ this.loginCanvas\ =\ loginCanvas;}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(!isSet)}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ this.loginCanvas.SetActive(true);}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -229,6 +230,16 @@ Mesh\+Renderer Ms500\+Manager.\+setting\+Renderer}
 
 
 \mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_ms500_manager_ab269e7d75151b08e93ee8e68c8658194}\index{Ms500Manager@{Ms500Manager}!touchEnable@{touchEnable}}
+\index{touchEnable@{touchEnable}!Ms500Manager@{Ms500Manager}}
+\doxysubsubsection{\texorpdfstring{touchEnable}{touchEnable}}
+{\footnotesize\ttfamily \label{class_ms500_manager_ab269e7d75151b08e93ee8e68c8658194} 
+bool Ms500\+Manager.\+touch\+Enable = true}
+
+
+
+\mbox{\hyperlink{_ms500_manager_8cs_source}{Ms500\+Manager.\+cs}} 파일의 \mbox{\hyperlink{_ms500_manager_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
 
 
 

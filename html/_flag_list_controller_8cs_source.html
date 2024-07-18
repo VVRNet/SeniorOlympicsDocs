@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.2</span>
    </div>
   </td>
  </tr>
@@ -99,83 +99,148 @@ $(function(){initNavTree('_flag_list_controller_8cs_source.html',''); initResiza
   <div class="headertitle"><div class="title">FlagListController.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_flag_list_controller_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Lean.Localization;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Collections;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System.Collections.Generic;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>TMPro;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span>UnityEngine;</div>
+<a href="_flag_list_controller_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>TMPro;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span>UnityEngine.Networking;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span>UnityEngine.UI;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>[Serializable]</div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_flag_list.html">   10</a></span><span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_flag_list.html">FlagList</a></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_flag_list.html#a40a5151959f4e137f694148032eb43ee">   12</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_flag_list.html#a40a5151959f4e137f694148032eb43ee">coutryName</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_flag_list.html#ab8e662e82f08be251d85d13fe0e53acf">   13</a></span>    <span class="keyword">public</span> Sprite <a class="code hl_variable" href="struct_flag_list.html#ab8e662e82f08be251d85d13fe0e53acf">coutryImage</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// 국기 리스트 생성 및 컨트롤러</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>[Serializable]</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_flag_list.html">   12</a></span><span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_flag_list.html">FlagList</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_flag_list.html#af5cf6a35844bccc9149aad722735a2a8">   14</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_flag_list.html#af5cf6a35844bccc9149aad722735a2a8">countryName</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_flag_list.html#a4d90d97cf067cf51f05703f4c731525e">   15</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_flag_list.html#a4d90d97cf067cf51f05703f4c731525e">countryURL</a>; <span class="comment">// 애저 Url</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_flag_list.html#a799943c0130a93c2aa2e099f4a7c091c">   16</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_flag_list.html#a799943c0130a93c2aa2e099f4a7c091c">countryCode</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html">   16</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_flag_list_controller.html">FlagListController</a> : MonoBehaviour</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">   18</a></span>    <span class="keyword">public</span> List&lt;FlagList&gt; <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#af446897259c79d56597b748fd23b215f">   20</a></span>    <span class="keyword">public</span> GameObject <a class="code hl_variable" href="class_flag_list_controller.html#af446897259c79d56597b748fd23b215f">coutryPrefab</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a3c96dac4bac14592183e34444e598822">   21</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_flag_list_controller.html#a3c96dac4bac14592183e34444e598822">coutryRootTransform</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a57224cad3fe4ae3ef5b33779c69634b4">   22</a></span>    <span class="keyword">public</span> Image <a class="code hl_variable" href="class_flag_list_controller.html#a57224cad3fe4ae3ef5b33779c69634b4">coutryIcon</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a002075fad2caf4537ed8bad2c9b9dbd8">   23</a></span>    <span class="keyword">public</span> TextMeshProUGUI <a class="code hl_variable" href="class_flag_list_controller.html#a002075fad2caf4537ed8bad2c9b9dbd8">coutryText</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnEnable()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_function" href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">CreateFlag</a>();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html">   19</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_flag_list_controller.html">FlagListController</a> : MonoBehaviour</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">   21</a></span>    <span class="keyword">public</span> List&lt;FlagList&gt; <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a79a91fba8af1cf7122ab5320177a9f8f">   23</a></span>    <span class="keyword">public</span> GameObject <a class="code hl_variable" href="class_flag_list_controller.html#a79a91fba8af1cf7122ab5320177a9f8f">countryPrefab</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#adb6b5e84a6f2dca81b98652aea5c3c87">   24</a></span>    <span class="keyword">public</span> Transform <a class="code hl_variable" href="class_flag_list_controller.html#adb6b5e84a6f2dca81b98652aea5c3c87">countryRootTransform</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#abb4f7a9f31c73c22b08e5d01f0f71bf3">   25</a></span>    <span class="keyword">public</span> List&lt;GameObject&gt; <a class="code hl_variable" href="class_flag_list_controller.html#abb4f7a9f31c73c22b08e5d01f0f71bf3">removeObjectList</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a2cd38bca912ca91f9f3c4d52372d1b41">   27</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_flag_list_controller.html#a2cd38bca912ca91f9f3c4d52372d1b41">saveCountryUrl</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a701b1f81c9e73b1745b337ab68a06396">   28</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="class_flag_list_controller.html#a701b1f81c9e73b1745b337ab68a06396">saveCountryCode</a>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a36d6ee4e94c3a51bd71bca995e2af331">   30</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_flag_list_controller.html#a36d6ee4e94c3a51bd71bca995e2af331">ResetObject</a>()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnEnable()</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_flag_list_controller.html#a3c96dac4bac14592183e34444e598822">coutryRootTransform</a>.childCount &gt; 0)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            List&lt;Transform&gt; children = <span class="keyword">new</span> List&lt;Transform&gt;();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> <a class="code hl_variable" href="class_flag_list_controller.html#a3c96dac4bac14592183e34444e598822">coutryRootTransform</a>)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                children.Add(child);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> children)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                Destroy(child.gameObject);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">CreateFlag</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#a36d6ee4e94c3a51bd71bca995e2af331">   35</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_flag_list_controller.html#a36d6ee4e94c3a51bd71bca995e2af331">ResetObject</a>()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="class_flag_list_controller.html#abb4f7a9f31c73c22b08e5d01f0f71bf3">removeObjectList</a>.Clear();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_flag_list_controller.html#adb6b5e84a6f2dca81b98652aea5c3c87">countryRootTransform</a>.childCount &gt; 0)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            List&lt;Transform&gt; children = <span class="keyword">new</span> List&lt;Transform&gt;();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> <a class="code hl_variable" href="class_flag_list_controller.html#adb6b5e84a6f2dca81b98652aea5c3c87">countryRootTransform</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                children.Add(child);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">   48</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">CreateFlag</a>()</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>.Count; i++)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            GameObject flagObject = Instantiate(<a class="code hl_variable" href="class_flag_list_controller.html#af446897259c79d56597b748fd23b215f">coutryPrefab</a>, <a class="code hl_variable" href="class_flag_list_controller.html#a3c96dac4bac14592183e34444e598822">coutryRootTransform</a>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            flagObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> children)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                Destroy(child.gameObject);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            flagObject.transform.GetChild(0).GetComponent&lt;Image&gt;().sprite = <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>[i].coutryImage;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">   55</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">CreateFlag</a>()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        StartCoroutine(CoCreateFlag());</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">private</span> IEnumerator CoCreateFlag()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>.Count; i++)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            GameObject flagObject = Instantiate(<a class="code hl_variable" href="class_flag_list_controller.html#a79a91fba8af1cf7122ab5320177a9f8f">countryPrefab</a>, <a class="code hl_variable" href="class_flag_list_controller.html#adb6b5e84a6f2dca81b98652aea5c3c87">countryRootTransform</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            flagObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <a class="code hl_variable" href="class_flag_list_controller.html#abb4f7a9f31c73c22b08e5d01f0f71bf3">removeObjectList</a>.Add(flagObject);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">string</span> url = <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>[i].countryURL;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            Image image = flagObject.transform.GetChild(0).GetComponent&lt;Image&gt;();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keyword">using</span> (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(url))</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                yield <span class="keywordflow">return</span> uwr.SendWebRequest();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">if</span> (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    Debug.Log(uwr.error);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    Texture2D texture = DownloadHandlerTexture.GetContent(uwr);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    Sprite sprite = Sprite.Create(texture, <span class="keyword">new</span> Rect(0, 0, texture.width, texture.height), <span class="keyword">new</span> Vector2(0.5f, 0.5f));</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    image.sprite = sprite;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="comment">// 나라 이름 설정</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            flagObject.transform.GetChild(1).GetComponent&lt;TextMeshProUGUI&gt;().text = <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>[i].countryName;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">if</span> (flagObject.transform.childCount &gt; 2)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                var clickToggle = flagObject.transform.GetChild(2).transform.GetChild(0).GetComponent&lt;Image&gt;();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                var buttonList = flagObject.GetComponent&lt;Button&gt;();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordtype">int</span> index = i;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                buttonList.onClick.AddListener(() =&gt;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    <span class="keywordflow">foreach</span> (var obj <span class="keywordflow">in</span> <a class="code hl_variable" href="class_flag_list_controller.html#abb4f7a9f31c73c22b08e5d01f0f71bf3">removeObjectList</a>)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                        var retuenToggle = obj.transform.GetChild(2).transform.GetChild(0).GetComponent&lt;Image&gt;();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                        retuenToggle.gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    clickToggle.gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    <a class="code hl_variable" href="class_flag_list_controller.html#a2cd38bca912ca91f9f3c4d52372d1b41">saveCountryUrl</a> = url;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                    <a class="code hl_variable" href="class_flag_list_controller.html#a701b1f81c9e73b1745b337ab68a06396">saveCountryCode</a> = <a class="code hl_variable" href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">flagList</a>[index].countryCode;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                });</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// UserManager - Flag - CancleBtn 버튼 이벤트</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_flag_list_controller.html#aa7195de271f6c81a35ac9a2b1071fb4e">  114</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_flag_list_controller.html#aa7195de271f6c81a35ac9a2b1071fb4e">ResetCountry</a>()</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        AgencyController.Instance.saveCountryUrl = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
 </div>
-<div class="ttc" id="aclass_flag_list_controller_html"><div class="ttname"><a href="class_flag_list_controller.html">FlagListController</a></div><div class="ttdef"><b>Definition</b> <a href="#l00016">FlagListController.cs:17</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_a002075fad2caf4537ed8bad2c9b9dbd8"><div class="ttname"><a href="class_flag_list_controller.html#a002075fad2caf4537ed8bad2c9b9dbd8">FlagListController.coutryText</a></div><div class="ttdeci">TextMeshProUGUI coutryText</div><div class="ttdef"><b>Definition</b> <a href="#l00023">FlagListController.cs:23</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_a36d6ee4e94c3a51bd71bca995e2af331"><div class="ttname"><a href="class_flag_list_controller.html#a36d6ee4e94c3a51bd71bca995e2af331">FlagListController.ResetObject</a></div><div class="ttdeci">void ResetObject()</div><div class="ttdef"><b>Definition</b> <a href="#l00030">FlagListController.cs:30</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_a3c96dac4bac14592183e34444e598822"><div class="ttname"><a href="class_flag_list_controller.html#a3c96dac4bac14592183e34444e598822">FlagListController.coutryRootTransform</a></div><div class="ttdeci">Transform coutryRootTransform</div><div class="ttdef"><b>Definition</b> <a href="#l00021">FlagListController.cs:21</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_a57224cad3fe4ae3ef5b33779c69634b4"><div class="ttname"><a href="class_flag_list_controller.html#a57224cad3fe4ae3ef5b33779c69634b4">FlagListController.coutryIcon</a></div><div class="ttdeci">Image coutryIcon</div><div class="ttdef"><b>Definition</b> <a href="#l00022">FlagListController.cs:22</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_a9feb930a43ddd65636a84b033832c6f4"><div class="ttname"><a href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">FlagListController.flagList</a></div><div class="ttdeci">List&lt; FlagList &gt; flagList</div><div class="ttdef"><b>Definition</b> <a href="#l00018">FlagListController.cs:18</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_af446897259c79d56597b748fd23b215f"><div class="ttname"><a href="class_flag_list_controller.html#af446897259c79d56597b748fd23b215f">FlagListController.coutryPrefab</a></div><div class="ttdeci">GameObject coutryPrefab</div><div class="ttdef"><b>Definition</b> <a href="#l00020">FlagListController.cs:20</a></div></div>
-<div class="ttc" id="aclass_flag_list_controller_html_af673ece27119f2d0e14acea30674930b"><div class="ttname"><a href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">FlagListController.CreateFlag</a></div><div class="ttdeci">void CreateFlag()</div><div class="ttdef"><b>Definition</b> <a href="#l00048">FlagListController.cs:48</a></div></div>
-<div class="ttc" id="astruct_flag_list_html"><div class="ttname"><a href="struct_flag_list.html">FlagList</a></div><div class="ttdef"><b>Definition</b> <a href="#l00010">FlagListController.cs:11</a></div></div>
-<div class="ttc" id="astruct_flag_list_html_a40a5151959f4e137f694148032eb43ee"><div class="ttname"><a href="struct_flag_list.html#a40a5151959f4e137f694148032eb43ee">FlagList.coutryName</a></div><div class="ttdeci">string coutryName</div><div class="ttdef"><b>Definition</b> <a href="#l00012">FlagListController.cs:12</a></div></div>
-<div class="ttc" id="astruct_flag_list_html_ab8e662e82f08be251d85d13fe0e53acf"><div class="ttname"><a href="struct_flag_list.html#ab8e662e82f08be251d85d13fe0e53acf">FlagList.coutryImage</a></div><div class="ttdeci">Sprite coutryImage</div><div class="ttdef"><b>Definition</b> <a href="#l00013">FlagListController.cs:13</a></div></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+</div>
+<div class="ttc" id="aclass_flag_list_controller_html"><div class="ttname"><a href="class_flag_list_controller.html">FlagListController</a></div><div class="ttdef"><b>Definition</b> <a href="#l00019">FlagListController.cs:20</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_a2cd38bca912ca91f9f3c4d52372d1b41"><div class="ttname"><a href="class_flag_list_controller.html#a2cd38bca912ca91f9f3c4d52372d1b41">FlagListController.saveCountryUrl</a></div><div class="ttdeci">string saveCountryUrl</div><div class="ttdef"><b>Definition</b> <a href="#l00027">FlagListController.cs:27</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_a36d6ee4e94c3a51bd71bca995e2af331"><div class="ttname"><a href="class_flag_list_controller.html#a36d6ee4e94c3a51bd71bca995e2af331">FlagListController.ResetObject</a></div><div class="ttdeci">void ResetObject()</div><div class="ttdef"><b>Definition</b> <a href="#l00035">FlagListController.cs:35</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_a701b1f81c9e73b1745b337ab68a06396"><div class="ttname"><a href="class_flag_list_controller.html#a701b1f81c9e73b1745b337ab68a06396">FlagListController.saveCountryCode</a></div><div class="ttdeci">string saveCountryCode</div><div class="ttdef"><b>Definition</b> <a href="#l00028">FlagListController.cs:28</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_a79a91fba8af1cf7122ab5320177a9f8f"><div class="ttname"><a href="class_flag_list_controller.html#a79a91fba8af1cf7122ab5320177a9f8f">FlagListController.countryPrefab</a></div><div class="ttdeci">GameObject countryPrefab</div><div class="ttdef"><b>Definition</b> <a href="#l00023">FlagListController.cs:23</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_a9feb930a43ddd65636a84b033832c6f4"><div class="ttname"><a href="class_flag_list_controller.html#a9feb930a43ddd65636a84b033832c6f4">FlagListController.flagList</a></div><div class="ttdeci">List&lt; FlagList &gt; flagList</div><div class="ttdef"><b>Definition</b> <a href="#l00021">FlagListController.cs:21</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_aa7195de271f6c81a35ac9a2b1071fb4e"><div class="ttname"><a href="class_flag_list_controller.html#aa7195de271f6c81a35ac9a2b1071fb4e">FlagListController.ResetCountry</a></div><div class="ttdeci">void ResetCountry()</div><div class="ttdef"><b>Definition</b> <a href="#l00114">FlagListController.cs:114</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_abb4f7a9f31c73c22b08e5d01f0f71bf3"><div class="ttname"><a href="class_flag_list_controller.html#abb4f7a9f31c73c22b08e5d01f0f71bf3">FlagListController.removeObjectList</a></div><div class="ttdeci">List&lt; GameObject &gt; removeObjectList</div><div class="ttdef"><b>Definition</b> <a href="#l00025">FlagListController.cs:25</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_adb6b5e84a6f2dca81b98652aea5c3c87"><div class="ttname"><a href="class_flag_list_controller.html#adb6b5e84a6f2dca81b98652aea5c3c87">FlagListController.countryRootTransform</a></div><div class="ttdeci">Transform countryRootTransform</div><div class="ttdef"><b>Definition</b> <a href="#l00024">FlagListController.cs:24</a></div></div>
+<div class="ttc" id="aclass_flag_list_controller_html_af673ece27119f2d0e14acea30674930b"><div class="ttname"><a href="class_flag_list_controller.html#af673ece27119f2d0e14acea30674930b">FlagListController.CreateFlag</a></div><div class="ttdeci">void CreateFlag()</div><div class="ttdef"><b>Definition</b> <a href="#l00055">FlagListController.cs:55</a></div></div>
+<div class="ttc" id="astruct_flag_list_html"><div class="ttname"><a href="struct_flag_list.html">FlagList</a></div><div class="ttdef"><b>Definition</b> <a href="#l00012">FlagListController.cs:13</a></div></div>
+<div class="ttc" id="astruct_flag_list_html_a4d90d97cf067cf51f05703f4c731525e"><div class="ttname"><a href="struct_flag_list.html#a4d90d97cf067cf51f05703f4c731525e">FlagList.countryURL</a></div><div class="ttdeci">string countryURL</div><div class="ttdef"><b>Definition</b> <a href="#l00015">FlagListController.cs:15</a></div></div>
+<div class="ttc" id="astruct_flag_list_html_a799943c0130a93c2aa2e099f4a7c091c"><div class="ttname"><a href="struct_flag_list.html#a799943c0130a93c2aa2e099f4a7c091c">FlagList.countryCode</a></div><div class="ttdeci">string countryCode</div><div class="ttdef"><b>Definition</b> <a href="#l00016">FlagListController.cs:16</a></div></div>
+<div class="ttc" id="astruct_flag_list_html_af5cf6a35844bccc9149aad722735a2a8"><div class="ttname"><a href="struct_flag_list.html#af5cf6a35844bccc9149aad722735a2a8">FlagList.countryName</a></div><div class="ttdeci">string countryName</div><div class="ttdef"><b>Definition</b> <a href="#l00014">FlagListController.cs:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

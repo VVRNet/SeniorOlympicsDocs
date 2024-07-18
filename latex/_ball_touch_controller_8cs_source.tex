@@ -2,176 +2,192 @@
 \hypertarget{_ball_touch_controller_8cs_source}{}\label{_ball_touch_controller_8cs_source}\index{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Exercise/Tennis/BallTouchController.cs@{D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Exercise/Tennis/BallTouchController.cs}}
 \mbox{\hyperlink{_ball_touch_controller_8cs}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful_1_1_team}{useful.Team}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_tennis}{Tennis}}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00008}00008\ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00009}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller}{BallTouchController}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00010}00010\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//public\ GameRecordController\ gameRecordController;}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[BG\ Touch\ Object]"{}})]}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00014}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00015}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Ball]"{}})]}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00018}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{touchEffect}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00019}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{ballObj}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00020}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{ballTouchRound}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00021}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SphereCollider\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c}{ballCollider}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Sound]"{}})]}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00024}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioSource\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{ballAudio}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00025}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{swingSound}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Score]"{}})]}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00028}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Input\ Data]"{}})]}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ creationTime;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ removalTime;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ isCorrect;\ \textcolor{comment}{//\ 정답\ 여부}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ accuracy;\ \textcolor{comment}{//\ 정확도(중심점과\ 거리\ 차이)}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ reactionTime;\ \textcolor{comment}{//\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//gameRecordController\ =\ FindObjectOfType<GameRecordController>();}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ creationTime\ =\ Time.time;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00050}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72}{OnTouch}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPos\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.WorldToScreenPoint(transform.position).z);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPos\ =\ Camera.main.ScreenToWorldPoint(screenPos);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPos);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceuseful_1_1_team}{useful.Team}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_tennis}{Tennis}}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00010}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller}{BallTouchController}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_touch_object}{ITouchObject}}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00012}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_record_controller}{GameRecordController}}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{gameRecordController}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{BallMoveController}}\ ballMoveController\_Red;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{BallMoveController}}\ ballMoveController\_Blue;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[BG\ Touch\ Object]"{}})]}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00017}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00018}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Ball]"{}})]}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00021}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{touchEffect}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00022}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a88f4589e0fd112c966a3b3eec978c0f1}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a88f4589e0fd112c966a3b3eec978c0f1}{hitTextScore}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00024}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{ballObj}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00025}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{ballTouchRound}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00026}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SphereCollider\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8c9c5c7ab062c5fd02f8c5f116a5866c}{ballCollider}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Sound]"{}})]}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00029}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{00029}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioSource\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{ballAudio}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00030}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ AudioClip\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{swingSound}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Score]"{}})]}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00033}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}[Input\ Data]"{}})]}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ creationTime;\ \textcolor{comment}{//\ 생성\ 시간}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ removalTime;\ \textcolor{comment}{//\ 제거\ 시간}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ isCorrect;\ \textcolor{comment}{//\ 정답\ 여부}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ accuracy;\ \textcolor{comment}{//\ 정확도(중심점과\ 거리\ 차이)}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ reactionTime;\ \textcolor{comment}{//\ 반응속도(오브젝트가\ 나타나고\ 터치됐을때까지\ 시간)}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{gameRecordController}}\ =\ FindObjectOfType<GameRecordController>();}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ creationTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ redGM\ =\ GameObject.FindGameObjectWithTag(\textcolor{stringliteral}{"{}Red"{}});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballMoveController\_Red\ =\ redGM.GetComponent<\mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{BallMoveController}}>();}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}})}
 \DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballCollider.enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ blueGM\ =\ GameObject.FindGameObjectWithTag(\textcolor{stringliteral}{"{}Blue"{}});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballMoveController\_Blue\ =\ blueGM.GetComponent<\mbox{\hyperlink{class_tennis_1_1_ball_move_controller}{BallMoveController}}>();}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.gameRecordController.Hit}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(OlympicsGameManager.Instance.currentGameRecord,\ 0,\ isCorrect,\ accuracy,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00066}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_adf7997b5857bd2663465e004e38dfa72}{OnTouch}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPos\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.WorldToScreenPoint(transform.position).z);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPos\ =\ Camera.main.ScreenToWorldPoint(screenPos);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ localPos\ =\ transform.InverseTransformPoint(worldPos);}
 \DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ 터치"{}});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ red\ 배경\ 터치"{}});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 좌표를\ 뷰포트\ 좌표로\ 정규화\ (0에서\ 1\ 사이\ 값)}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ Screen.width,\ (y\ /\ Screen.height),\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 뷰포트\ 좌표를\ 월드\ 좌표로\ 변환}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballMoveController\_Red.addScore\ +=\ 1;}
 \DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.gameRecordController.Hit}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(OlympicsGameManager.Instance.currentGameRecord,\ 0,\ false,\ default,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ default);}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballCollider.enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.gameRecordController.Hit}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(OlympicsGameManager.Instance.currentGameRecord,\ 1,\ isCorrect,\ accuracy,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ 터치"{}});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}GameRecord\ null\ :\ blue\ 배경\ 터치"{}});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.gameRecordController.Hit}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(OlympicsGameManager.Instance.currentGameRecord,\ 1,\ false,\ default,\ new\ TouchEvent(x,\ y\ +\ 2,\ DateTime.UtcNow),\ default);}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ \textcolor{keyword}{true},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}TouchArea"{}})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballCollider.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballMoveController\_Blue.addScore\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accuracy\ =\ RoundToDecimals(Vector3.Distance(Vector3.zero,\ localPos),\ 3);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removalTime\ =\ Time.time;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reactionTime\ =\ RoundToDecimals(removalTime\ -\/\ creationTime,\ 3);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ \textcolor{keyword}{true},\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00125}00125\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00130}00130\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 좌표를\ 뷰포트\ 좌표로\ 정규화\ (0에서\ 1\ 사이\ 값)}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ viewportPosition\ =\ \textcolor{keyword}{new}\ Vector3(x\ /\ Screen.width,\ (y\ /\ Screen.height),\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 뷰포트\ 좌표를\ 월드\ 좌표로\ 변환}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ViewportToWorldPoint(viewportPosition);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.transform);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00138}00138\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ RoundToDecimals(\textcolor{keywordtype}{float}\ value,\ \textcolor{keywordtype}{int}\ decimalPlaces)}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ multiplier\ =\ Mathf.Pow(10f,\ decimalPlaces);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Round(value\ *\ multiplier)\ /\ multiplier;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00144}00144\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00145}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{00145}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}\ team)}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ this.GetComponent<Rigidbody>().constraints\ =\ RigidbodyConstraints.FreezePosition;}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00148}00148\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 이펙트}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{touchEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a273f7cff339227e56e3813639340c0ec}{gameRecordController}}.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a88f4589e0fd112c966a3b3eec978c0f1}{hitTextScore}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ textScore\ =\ Instantiate(\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a88f4589e0fd112c966a3b3eec978c0f1}{hitTextScore}},\ worldPosition,\ Quaternion.identity,\ \textcolor{keyword}{this}.gameObject.transform);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textScore.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aeb9032f35531ca1f7c035af6de7ab63c}{isLeft}})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textScore.transform.GetChild(0).GetComponent<TextMeshPro>().text\ =\ ballMoveController\_Red.\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a8be7312ee4d6e5fdf7c41bf5f52804ea}{addScore}}.ToString();}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textScore.transform.GetChild(0).GetComponent<TextMeshPro>().text\ =\ ballMoveController\_Blue.\mbox{\hyperlink{class_tennis_1_1_ball_move_controller_a8be7312ee4d6e5fdf7c41bf5f52804ea}{addScore}}.ToString();}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.activeSelf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00151}00151\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 사운드}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ ballAudio.clip\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{swingSound}};}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{ballAudio}}.Play();}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//득점}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(team,\ 1);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00158}00158\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoTouch());}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ IEnumerator\ CoTouch()}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 오브젝트\ 제거}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{ballObj}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{ballTouchRound}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00170}00170\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_aa04b229de88f943ef350e7e94a9a1dc4}{hitEffectImage}},\ worldPosition,\ Quaternion.identity,\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ad75920870ac4326c9b6017d14d239528}{rootObject}}.transform);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ RoundToDecimals(\textcolor{keywordtype}{float}\ value,\ \textcolor{keywordtype}{int}\ decimalPlaces)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ multiplier\ =\ Mathf.Pow(10f,\ decimalPlaces);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Round(value\ *\ multiplier)\ /\ multiplier;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00161}\mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{00161}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a0e581a76e0b5fa19725c79d2c716a381}{TouchGetScoreLeft}}(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}\ team)}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ this.GetComponent<Rigidbody>().constraints\ =\ RigidbodyConstraints.FreezePosition;}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 터치\ 이펙트}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_acb417afc9490d3719c04c5011218cb43}{touchEffect}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 사운드}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ ballAudio.clip\ =\ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a813a786b4270c77b52c793cf98246fb6}{swingSound}};}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_ac4d0572e26fecd63baf042762899cf2d}{ballAudio}}.Play();}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//득점}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(team,\ 1);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoTouch());}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ IEnumerator\ CoTouch()}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 오브젝트\ 제거}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a8449ffa7d5a31a59304828b7f12dc1cb}{ballObj}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tennis_1_1_ball_touch_controller_a89852e2673849838a54a7ed46afd678c}{ballTouchRound}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(this.gameObject);}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ball_touch_controller_8cs_source_l00187}00187\ \}}
 
 \end{DoxyCode}

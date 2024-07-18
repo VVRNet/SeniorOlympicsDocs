@@ -25,7 +25,7 @@ Dual\+Game\+Record에 대한 협력 다이어그램\+:
 \item 
 \mbox{\hyperlink{class_dual_game_record_a275dd3e65ecb9a1c094b7ae29a53c990}{Dual\+Game\+Record}} ()
 \item 
-void \mbox{\hyperlink{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f}{Init\+Game}} (string agency\+Id, List$<$ string $>$ class\+Ids, List$<$ string $>$ person\+Ids, List$<$ string $>$ names, string category, string content\+Name)
+void \mbox{\hyperlink{class_dual_game_record_a522ee728a0dea914372f50169c1bc636}{Init\+Game}} (string agency\+Id, List$<$ string $>$ class\+Ids, List$<$ string $>$ person\+Ids, List$<$ string $>$ names, List$<$ int $>$ ages, List$<$ string $>$ country\+Codes, List$<$ string $>$ country\+Imgs, string category, string content\+Name)
 \item 
 void \mbox{\hyperlink{class_dual_game_record_a377f193948b038cf4a186dd4c60b594a}{Dual\+Game\+Start}} ()
 \item 
@@ -41,6 +41,12 @@ List$<$ string $>$ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c2587
 List$<$ string $>$ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{Person\+IDs}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 List$<$ string $>$ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ int $>$ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{Country\+Codes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{Country\+Imgs}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 string \mbox{\hyperlink{class_dual_game_record_ab9b107c16e766116a996ac2701bf9450}{Winner}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
@@ -83,7 +89,7 @@ void \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{End\+
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00092}{92}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00099}{99}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -96,17 +102,20 @@ Dual\+Game\+Record.\+Dual\+Game\+Record (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00100}{100}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00110}{110}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00101\ \ \ \ \ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_a1ba1fa8c15effb98e7b26202719b974b}{IsSingle}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -120,25 +129,25 @@ void Dual\+Game\+Record.\+Dual\+Game\+End (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00122}{122}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00156}{156}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00123\ \ \ \ \ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}();}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_record_detail}{RecordDetail}}\ rd\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}})}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ rd.\mbox{\hyperlink{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}{EndGame}}();}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[0].TotalScore\ >\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[1].TotalScore)}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[0];}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[1];}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_ae7594bd7cde4b3625e2a51976834a2b4}{EndGame}}();}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_record_detail}{RecordDetail}}\ rd\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}})}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ rd.\mbox{\hyperlink{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}{EndGame}}(\mbox{\hyperlink{class_game_record_aff594c62b5d4a297b4f107f40c287137}{ContentName}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[0].TotalScore\ >\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}[1].TotalScore)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[0];}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_winner}{Winner}}\ =\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}[1];}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -157,42 +166,62 @@ void Dual\+Game\+Record.\+Dual\+Game\+Start (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00117}{117}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00151}{151}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00118\ \ \ \ \ \{}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}();}
-\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_record_aeb9ac50a617b9e4f33565785ccff30b9}{StartGame}}();}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_dual_game_record_a377f193948b038cf4a186dd4c60b594a_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f}\index{DualGameRecord@{DualGameRecord}!InitGame@{InitGame}}
+\Hypertarget{class_dual_game_record_a522ee728a0dea914372f50169c1bc636}\index{DualGameRecord@{DualGameRecord}!InitGame@{InitGame}}
 \index{InitGame@{InitGame}!DualGameRecord@{DualGameRecord}}
 \doxysubsubsection{\texorpdfstring{InitGame()}{InitGame()}}
-{\footnotesize\ttfamily \label{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f} 
-void Dual\+Game\+Record.\+Init\+Game (\begin{DoxyParamCaption}\item[{string}]{agency\+Id}{, }\item[{List$<$ string $>$}]{class\+Ids}{, }\item[{List$<$ string $>$}]{person\+Ids}{, }\item[{List$<$ string $>$}]{names}{, }\item[{string}]{category}{, }\item[{string}]{content\+Name}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_dual_game_record_a522ee728a0dea914372f50169c1bc636} 
+void Dual\+Game\+Record.\+Init\+Game (\begin{DoxyParamCaption}\item[{string}]{agency\+Id}{, }\item[{List$<$ string $>$}]{class\+Ids}{, }\item[{List$<$ string $>$}]{person\+Ids}{, }\item[{List$<$ string $>$}]{names}{, }\item[{List$<$ int $>$}]{ages}{, }\item[{List$<$ string $>$}]{country\+Codes}{, }\item[{List$<$ string $>$}]{country\+Imgs}{, }\item[{string}]{category}{, }\item[{string}]{content\+Name}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00109}{109}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00122}{122}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00110\ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f}{InitGame}}(agencyId,\ category,\ contentName);}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ classIds;}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ personIds;}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ names;}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}\ List<RecordDetail>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}()\ \};}
-\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a522ee728a0dea914372f50169c1bc636}{InitGame}}(agencyId,\ category,\ contentName);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}}\ =\ classIds;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ClassIDs\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}{ClassIDs}});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}}\ =\ personIds;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}PersonIDs\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}{PersonIDs}});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}}\ =\ names;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Names\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}{Names}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}}\ =\ ages;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Ages\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}{Ages}});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}\ =\ countryCodes;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryCodes\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}\ =\ countryImgs;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryImgs\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}}\ =\ \textcolor{keyword}{new}\ List<RecordDetail>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_record_detail}{RecordDetail}}()\ \};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}RecordDetails\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}{RecordDetails}});}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}.Count;\ i++)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryCodes\ for\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}{CountryCodes}}[i]);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}.Count;\ i++)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CountryImgs\ for\ :\ "{}}\ +\ \mbox{\hyperlink{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}{CountryImgs}}[i]);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -200,7 +229,7 @@ void Dual\+Game\+Record.\+Init\+Game (\begin{DoxyParamCaption}\item[{string}]{ag
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=215pt]{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f_cgraph}
+\includegraphics[width=215pt]{class_dual_game_record_a522ee728a0dea914372f50169c1bc636_cgraph}
 \end{center}
 \end{figure}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -208,7 +237,7 @@ void Dual\+Game\+Record.\+Init\+Game (\begin{DoxyParamCaption}\item[{string}]{ag
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=215pt]{class_dual_game_record_a4c394d203e12e4486e7969f648d81b4f_icgraph}
+\includegraphics[width=215pt]{class_dual_game_record_a522ee728a0dea914372f50169c1bc636_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_dual_game_record_a99138c1af2caba6f7cbf4d0ff5234adf}\index{DualGameRecord@{DualGameRecord}!ToString@{ToString}}
@@ -219,20 +248,35 @@ override string Dual\+Game\+Record.\+To\+String (\begin{DoxyParamCaption}{}{}\en
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00140}{140}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00174}{174}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00141\ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}GameRecord(\_id:\ \{\_id\},\ AgencyID:\ \{AgencyID\},\ ClassIDs:\ \{ClassIDs\},\ PersonIDs:\ \{PersonIDs\},\ Names:\ \{Names\},\ "{}}\ +}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Category:\ \{Category\},\ ContentName:\ \{ContentName\},\ GameStartTime:\ \{GameStartTime\},\ "{}}\ +}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}GameEndTime:\ \{GameEndTime\},\ GamePlayDuration:\ \{GamePlayDuration\},\ RecordDetails:\ \{RecordDetails\})"{}};}
-\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}GameRecord(\_id:\ \{\_id\},\ AgencyID:\ \{AgencyID\},\ ClassIDs:\ \{ClassIDs\},\ PersonIDs:\ \{PersonIDs\},\ Names:\ \{Names\},\ "{}}\ +}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Category:\ \{Category\},\ ContentName:\ \{ContentName\},\ GameStartTime:\ \{GameStartTime\},\ "{}}\ +}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}GameEndTime:\ \{GameEndTime\},\ GamePlayDuration:\ \{GamePlayDuration\},\ RecordDetails:\ \{RecordDetails\})"{}};}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{속성 문서화}
+\Hypertarget{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef}\index{DualGameRecord@{DualGameRecord}!Ages@{Ages}}
+\index{Ages@{Ages}!DualGameRecord@{DualGameRecord}}
+\doxysubsubsection{\texorpdfstring{Ages}{Ages}}
+{\footnotesize\ttfamily \label{class_dual_game_record_a4f3721fcf1546f6f56b09cc88eb40fef} 
+List$<$int$>$ Dual\+Game\+Record.\+Ages\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00104}{104}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어들\ 나이}}
+
+\end{DoxyCode}
 \Hypertarget{class_dual_game_record_ac81489cbd2792e9c258788ce04c18140}\index{DualGameRecord@{DualGameRecord}!ClassIDs@{ClassIDs}}
 \index{ClassIDs@{ClassIDs}!DualGameRecord@{DualGameRecord}}
 \doxysubsubsection{\texorpdfstring{ClassIDs}{ClassIDs}}
@@ -241,11 +285,41 @@ List$<$string$>$ Dual\+Game\+Record.\+Class\+IDs\hspace{0.3cm}{\ttfamily [get]},
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00094}{94}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00101}{101}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00094\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반의\ ObjectId}}
+\DoxyCodeLine{00101\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반의\ ObjectId}}
+
+\end{DoxyCode}
+\Hypertarget{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa}\index{DualGameRecord@{DualGameRecord}!CountryCodes@{CountryCodes}}
+\index{CountryCodes@{CountryCodes}!DualGameRecord@{DualGameRecord}}
+\doxysubsubsection{\texorpdfstring{CountryCodes}{CountryCodes}}
+{\footnotesize\ttfamily \label{class_dual_game_record_a94b9c25312fe32e61b4304ee328588aa} 
+List$<$string$>$ Dual\+Game\+Record.\+Country\+Codes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00105}{105}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 국가\ 코드}}
+
+\end{DoxyCode}
+\Hypertarget{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c}\index{DualGameRecord@{DualGameRecord}!CountryImgs@{CountryImgs}}
+\index{CountryImgs@{CountryImgs}!DualGameRecord@{DualGameRecord}}
+\doxysubsubsection{\texorpdfstring{CountryImgs}{CountryImgs}}
+{\footnotesize\ttfamily \label{class_dual_game_record_a3da7aa51a3ae63988983096f501efa6c} 
+List$<$string$>$ Dual\+Game\+Record.\+Country\+Imgs\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00106}{106}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 국기\ 이미지}}
 
 \end{DoxyCode}
 \Hypertarget{class_dual_game_record_a2d5c678667387203a798e1bf4208613e}\index{DualGameRecord@{DualGameRecord}!Names@{Names}}
@@ -256,11 +330,11 @@ List$<$string$>$ Dual\+Game\+Record.\+Names\hspace{0.3cm}{\ttfamily [get]}, {\tt
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00096}{96}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00103}{103}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00096\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어\ 이름}}
+\DoxyCodeLine{00103\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 플레이어\ 이름}}
 
 \end{DoxyCode}
 \Hypertarget{class_dual_game_record_a245bbd8dffdeb2b5f2486ea2998bd46c}\index{DualGameRecord@{DualGameRecord}!PersonIDs@{PersonIDs}}
@@ -271,11 +345,11 @@ List$<$string$>$ Dual\+Game\+Record.\+Person\+IDs\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00095}{95}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00102}{102}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00095\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 개인의\ ObjectId,\ 반일\ 경우\ null}}
+\DoxyCodeLine{00102\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 개인의\ ObjectId,\ 반일\ 경우\ null}}
 
 \end{DoxyCode}
 \Hypertarget{class_dual_game_record_a64e60cd30ba008642211c9e51a177487}\index{DualGameRecord@{DualGameRecord}!RecordDetails@{RecordDetails}}
@@ -286,11 +360,11 @@ List$<$\mbox{\hyperlink{class_record_detail}{Record\+Detail}}$>$ Dual\+Game\+Rec
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00098}{98}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00108}{108}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기록\ 세부정보}}
+\DoxyCodeLine{00108\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 기록\ 세부정보}}
 
 \end{DoxyCode}
 \Hypertarget{class_dual_game_record_ab9b107c16e766116a996ac2701bf9450}\index{DualGameRecord@{DualGameRecord}!Winner@{Winner}}
@@ -301,11 +375,11 @@ string Dual\+Game\+Record.\+Winner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [s
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00097}{97}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00107}{107}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00097\ \{\ \ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 승리자}}
+\DoxyCodeLine{00107\ \{\ \ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 승리자}}
 
 \end{DoxyCode}
 

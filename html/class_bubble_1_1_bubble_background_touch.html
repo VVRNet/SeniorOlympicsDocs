@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.2</span>
    </div>
   </td>
  </tr>
@@ -142,7 +142,7 @@ Public 속성</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
-<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
+<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00008">8</a> 번째 라인에서 정의되었습니다.</p>
 </div><h2 class="groupheader">멤버 함수 문서화</h2>
 <a id="a117003f0d280879e4bec1de21916ccb3" name="a117003f0d280879e4bec1de21916ccb3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a117003f0d280879e4bec1de21916ccb3">&#9670;&#160;</a></span>OnTouch()</h2>
@@ -165,27 +165,44 @@ Public 속성</h2></td></tr>
 
 <p><a class="el" href="interface_i_touch_object.html#aa5baa8693756baf00c210dafdcc39493">ITouchObject</a>를 구현.</p>
 
-<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00013">13</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>        {</div>
-<div class="line"><span class="lineno">   15</span>            Vector3 screenPosition = <span class="keyword">new</span> Vector3(x, y, Camera.main.nearClipPlane);</div>
-<div class="line"><span class="lineno">   16</span>            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>            GameObject obj = Instantiate(<a class="code hl_variable" href="#a97b3cc2ca072c4844819ff59d7822ee9">touchPrefab</a>, worldPosition, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aeddf1ca53f09ece1b45e6fd81bb3e7f9">isLeft</a>)</div>
-<div class="line"><span class="lineno">   21</span>            {</div>
-<div class="line"><span class="lineno">   22</span>                <a class="code hl_class" href="class_olympics_game_manager.html">OlympicsGameManager</a>.<a class="code hl_variable" href="class_olympics_game_manager.html#a4230048b48e6b2c972745bec09f60e98">Instance</a>.totalTouchCount_Red++;</div>
-<div class="line"><span class="lineno">   23</span>            }</div>
-<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   25</span>            {</div>
-<div class="line"><span class="lineno">   26</span>                <a class="code hl_class" href="class_olympics_game_manager.html">OlympicsGameManager</a>.<a class="code hl_variable" href="class_olympics_game_manager.html#a4230048b48e6b2c972745bec09f60e98">Instance</a>.totalTouchCount_Blue++;</div>
-<div class="line"><span class="lineno">   27</span>            }</div>
-<div class="line"><span class="lineno">   28</span>        }</div>
-<div class="ttc" id="aclass_bubble_1_1_bubble_background_touch_html_a97b3cc2ca072c4844819ff59d7822ee9"><div class="ttname"><a href="#a97b3cc2ca072c4844819ff59d7822ee9">Bubble.BubbleBackgroundTouch.touchPrefab</a></div><div class="ttdeci">GameObject touchPrefab</div><div class="ttdef"><b>Definition</b> <a href="_bubble_background_touch_8cs_source.html#l00011">BubbleBackgroundTouch.cs:11</a></div></div>
-<div class="ttc" id="aclass_bubble_1_1_bubble_background_touch_html_aeddf1ca53f09ece1b45e6fd81bb3e7f9"><div class="ttname"><a href="#aeddf1ca53f09ece1b45e6fd81bb3e7f9">Bubble.BubbleBackgroundTouch.isLeft</a></div><div class="ttdeci">bool isLeft</div><div class="ttdef"><b>Definition</b> <a href="_bubble_background_touch_8cs_source.html#l00009">BubbleBackgroundTouch.cs:9</a></div></div>
+<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00021">21</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span>            Vector3 screenPosition = <span class="keyword">new</span> Vector3(x, y, Camera.main.nearClipPlane);</div>
+<div class="line"><span class="lineno">   24</span>            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>            GameObject obj = Instantiate(<a class="code hl_variable" href="#a97b3cc2ca072c4844819ff59d7822ee9">touchPrefab</a>, worldPosition, Quaternion.identity);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="class_olympics_game_manager.html">OlympicsGameManager</a>.<a class="code hl_variable" href="class_olympics_game_manager.html#a4230048b48e6b2c972745bec09f60e98">Instance</a>.isTest)</div>
+<div class="line"><span class="lineno">   29</span>            {</div>
+<div class="line"><span class="lineno">   30</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   31</span>            }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aeddf1ca53f09ece1b45e6fd81bb3e7f9">isLeft</a>)</div>
+<div class="line"><span class="lineno">   34</span>            {</div>
+<div class="line"><span class="lineno">   35</span>                gameRecordController.<a class="code hl_function" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">Hit</a>(<a class="code hl_class" href="class_olympics_game_manager.html">OlympicsGameManager</a>.<a class="code hl_variable" href="class_olympics_game_manager.html#a4230048b48e6b2c972745bec09f60e98">Instance</a>.currentGameRecord, 0, <span class="keyword">false</span>, <span class="keywordflow">default</span>, <span class="keyword">new</span> <a class="code hl_class" href="class_touch_event.html">TouchEvent</a>(x, y + 2, DateTime.UtcNow), <span class="keywordflow">default</span>);</div>
+<div class="line"><span class="lineno">   36</span>            }</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   38</span>            {</div>
+<div class="line"><span class="lineno">   39</span>                gameRecordController.<a class="code hl_function" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">Hit</a>(<a class="code hl_class" href="class_olympics_game_manager.html">OlympicsGameManager</a>.<a class="code hl_variable" href="class_olympics_game_manager.html#a4230048b48e6b2c972745bec09f60e98">Instance</a>.currentGameRecord, 1, <span class="keyword">false</span>, <span class="keywordflow">default</span>, <span class="keyword">new</span> <a class="code hl_class" href="class_touch_event.html">TouchEvent</a>(x, y + 2, DateTime.UtcNow), <span class="keywordflow">default</span>);</div>
+<div class="line"><span class="lineno">   40</span>            }</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="ttc" id="aclass_bubble_1_1_bubble_background_touch_html_a97b3cc2ca072c4844819ff59d7822ee9"><div class="ttname"><a href="#a97b3cc2ca072c4844819ff59d7822ee9">Bubble.BubbleBackgroundTouch.touchPrefab</a></div><div class="ttdeci">GameObject touchPrefab</div><div class="ttdef"><b>Definition</b> <a href="_bubble_background_touch_8cs_source.html#l00012">BubbleBackgroundTouch.cs:12</a></div></div>
+<div class="ttc" id="aclass_bubble_1_1_bubble_background_touch_html_aeddf1ca53f09ece1b45e6fd81bb3e7f9"><div class="ttname"><a href="#aeddf1ca53f09ece1b45e6fd81bb3e7f9">Bubble.BubbleBackgroundTouch.isLeft</a></div><div class="ttdeci">bool isLeft</div><div class="ttdef"><b>Definition</b> <a href="_bubble_background_touch_8cs_source.html#l00010">BubbleBackgroundTouch.cs:10</a></div></div>
+<div class="ttc" id="aclass_game_record_controller_html_a6a6c28b016fa1c43bb372eefacaccb9e"><div class="ttname"><a href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e">GameRecordController.Hit</a></div><div class="ttdeci">void Hit(GameRecord record, int userIndex, bool isCorrect, float accuracy, TouchEvent touchEvent, float reactionTime)</div><div class="ttdef"><b>Definition</b> <a href="_game_record_controller_8cs_source.html#l00109">GameRecordController.cs:109</a></div></div>
 <div class="ttc" id="aclass_olympics_game_manager_html"><div class="ttname"><a href="class_olympics_game_manager.html">OlympicsGameManager</a></div><div class="ttdef"><b>Definition</b> <a href="_olympics_game_manager_8cs_source.html#l00013">OlympicsGameManager.cs:14</a></div></div>
 <div class="ttc" id="aclass_olympics_game_manager_html_a4230048b48e6b2c972745bec09f60e98"><div class="ttname"><a href="class_olympics_game_manager.html#a4230048b48e6b2c972745bec09f60e98">OlympicsGameManager.Instance</a></div><div class="ttdeci">static OlympicsGameManager Instance</div><div class="ttdef"><b>Definition</b> <a href="_olympics_game_manager_8cs_source.html#l00015">OlympicsGameManager.cs:15</a></div></div>
-</div><!-- fragment -->
+<div class="ttc" id="aclass_touch_event_html"><div class="ttname"><a href="class_touch_event.html">TouchEvent</a></div><div class="ttdef"><b>Definition</b> <a href="_game_record_8cs_source.html#l00184">GameRecord.cs:185</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_bubble_1_1_bubble_background_touch_a117003f0d280879e4bec1de21916ccb3_cgraph.png" border="0" usemap="#aclass_bubble_1_1_bubble_background_touch_a117003f0d280879e4bec1de21916ccb3_cgraph" alt=""/></div>
+<map name="aclass_bubble_1_1_bubble_background_touch_a117003f0d280879e4bec1de21916ccb3_cgraph" id="aclass_bubble_1_1_bubble_background_touch_a117003f0d280879e4bec1de21916ccb3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,219,48"/>
+<area shape="rect" href="class_game_record_controller.html#a6a6c28b016fa1c43bb372eefacaccb9e" title=" " alt="" coords="267,13,439,40"/>
+<area shape="poly" title=" " alt="" coords="219,24,251,24,251,29,219,29"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">멤버 데이터 문서화</h2>
@@ -201,7 +218,7 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00009">9</a> 번째 라인에서 정의되었습니다.</p>
+<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00010">10</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>
@@ -217,12 +234,12 @@ Public 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00011">11</a> 번째 라인에서 정의되었습니다.</p>
+<p class="definition"><a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a> 파일의 <a class="el" href="_bubble_background_touch_8cs_source.html#l00012">12</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>
 <hr/>이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
-<li>D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/Bubble/<a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a></li>
+<li>D:/Unity/SeniorOlympics/Assets/01.SPODY2.0/Scripts/Contents/Cognitive/ColorMatch/<a class="el" href="_bubble_background_touch_8cs_source.html">BubbleBackgroundTouch.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

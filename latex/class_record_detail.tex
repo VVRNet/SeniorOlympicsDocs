@@ -2,8 +2,7 @@
 \hypertarget{class_record_detail}{}\label{class_record_detail}\index{RecordDetail@{RecordDetail}}
 
 
-Record\+Detail에 대한 협력 다이어그램\+:
-\nopagebreak
+Record\+Detail에 대한 협력 다이어그램\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,7 +16,7 @@ Record\+Detail에 대한 협력 다이어그램\+:
 \item 
 void \mbox{\hyperlink{class_record_detail_a6ccc58d20457efd86999afd55cefd52d}{Hit}} (bool is\+Correct, float accuracy, \mbox{\hyperlink{class_touch_event}{Touch\+Event}} touch\+Event, float reaction\+Time)
 \item 
-void \mbox{\hyperlink{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}{End\+Game}} ()
+void \mbox{\hyperlink{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}{End\+Game}} (string content\+Name, bool is\+Left)
 \item 
 override string \mbox{\hyperlink{class_record_detail_a1b78114c45ae2da4f526bfed256cc1fa}{To\+String}} ()
 \end{DoxyCompactItemize}
@@ -53,7 +52,7 @@ int \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{Phys
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00172}{172}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00206}{206}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -66,63 +65,73 @@ Record\+Detail.\+Record\+Detail (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapti
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00187}{187}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00221}{221}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00188\ \ \ \ \ \{}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ =\ 0;}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ =\ 0;}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}\ =\ 0;}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ Events\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ =\ 0;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ =\ 0;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}\ =\ 0;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ Events\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{멤버 함수 문서화}
-\Hypertarget{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66}\index{RecordDetail@{RecordDetail}!EndGame@{EndGame}}
+\Hypertarget{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2}\index{RecordDetail@{RecordDetail}!EndGame@{EndGame}}
 \index{EndGame@{EndGame}!RecordDetail@{RecordDetail}}
 \doxysubsubsection{\texorpdfstring{EndGame()}{EndGame()}}
-{\footnotesize\ttfamily \label{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66} 
-void Record\+Detail.\+End\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2} 
+void Record\+Detail.\+End\+Game (\begin{DoxyParamCaption}\item[{string}]{content\+Name}{, }\item[{bool}]{is\+Left}{}\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00217}{217}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00254}{254}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00218\ \ \ \ \ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ ==\ 0)}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ 0;}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ 0;}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ 0;}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_accuracy_scoring}{AccuracyScoring}}\ ac\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ (int)ac.\mbox{\hyperlink{class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3}{CalculateAccuracyScore}}(\mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}},\ (\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ /\ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}));}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_speed_scoring}{SpeedScoring}}\ sp\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ (int)sp.\mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{CalculateAverageScore}}(\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}});}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ (\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ +\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}})\ /\ 2\ +\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}};}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//점수계산}}
-\DoxyCodeLine{00233\ }
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ averageReactionTime\ =\ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Average();}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ averageCognitiveSpeed\ =\ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Average();}
-\DoxyCodeLine{00236\ }
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cognitiveAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}},\ AgeEstimationData.CognitiveSpeedAverages);}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ physicalAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}},\ AgeEstimationData.ReactionTimeAverages);}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ =\ Mathf.RoundToInt(cognitiveAge);}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ =\ Mathf.RoundToInt(physicalAge);}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//인지능력,\ 신체능력\ 나이\ 계산}}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}\ ==\ 0)}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ 0;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ 0;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ 0;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_accuracy_scoring}{AccuracyScoring}}\ ac\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalTouch\ =\ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}};}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(contentName\ ==\ \textcolor{stringliteral}{"{}CardMatch"{}})}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalTouch\ /=\ 2;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accuracy\ =\ ((float)\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}\ /\ totalTouch);}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(accuracy);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}});}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(totalTouch);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ =\ (int)ac.\mbox{\hyperlink{class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd}{CalculateAccuracyScore}}(\mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}},\ accuracy,\ contentName,\ isLeft);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_speed_scoring}{SpeedScoring}}\ sp\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}}\ =\ (int)sp.\mbox{\hyperlink{class_speed_scoring_a18a5c5fe00a71e7d1c02db6d9d29ccb2}{CalculateAverageScore}}(\mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}});}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}{TotalScore}}\ =\ (\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}}\ +\ \mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}})\ /\ 2\ +\ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}};}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//점수계산}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//float\ averageReactionTime\ =\ ReactionTime.Average();}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//float\ averageCognitiveSpeed\ =\ CognitiveSpeed.Average();}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cognitiveAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}{AccuracyScore}},\ AgeEstimationData.CognitiveSpeedAverages);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ physicalAge\ =\ EstimateAgeFromSpeed(\mbox{\hyperlink{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}{SpeedScore}},\ AgeEstimationData.ReactionTimeAverages);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}{CognitiveAge}}\ =\ Mathf.RoundToInt(cognitiveAge);}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}{PhysicalAge}}\ =\ Mathf.RoundToInt(physicalAge);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//인지능력,\ 신체능력\ 나이\ 계산}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
@@ -130,7 +139,7 @@ void Record\+Detail.\+End\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapti
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66_cgraph}
+\includegraphics[width=350pt]{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2_cgraph}
 \end{center}
 \end{figure}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -138,7 +147,7 @@ void Record\+Detail.\+End\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapti
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_record_detail_a1a4c0aeb8a33236cda2af49529c18c66_icgraph}
+\includegraphics[width=350pt]{class_record_detail_a3ed163077bb1994a80bbc8f1998244b2_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_record_detail_a6ccc58d20457efd86999afd55cefd52d}\index{RecordDetail@{RecordDetail}!Hit@{Hit}}
@@ -149,26 +158,27 @@ void Record\+Detail.\+Hit (\begin{DoxyParamCaption}\item[{bool}]{is\+Correct}{, 
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00198}{198}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00234}{234}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00199\ \ \ \ \ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isCorrect)}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}++;}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}.Add(accuracy);}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Add(reactionTime);}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}++;}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}++;}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ Events.Add(touchEvent);}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Add(reactionTime);}
-\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isCorrect)}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}{Score}}++;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_a96243a5a4a8f6840a68de93a923d29f3}{Accuracy}}.Add(accuracy);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}{CognitiveSpeed}}.Add(reactionTime);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}{Incorrect}}++;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}{TotalTouch}}++;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ Events.Add(touchEvent);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}{ReactionTime}}.Add(reactionTime);}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_a1b78114c45ae2da4f526bfed256cc1fa}\index{RecordDetail@{RecordDetail}!ToString@{ToString}}
@@ -179,15 +189,15 @@ override string Record\+Detail.\+To\+String (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00265}{265}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00312}{312}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00266\ \ \ \ \ \{}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}RecordDetail(Score:\ \{Score\},\ TotalTouch:\ \{TotalTouch\},\ Incorrect:\ \{Incorrect\},\ Accuracy:\ \{Accuracy\},\ Events:\ \{Events\},\ "{}}\ +}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ReactionTime:\ \{ReactionTime\},\ CognitiveSpeed:\ \{CognitiveSpeed\},\ AccuracyScore:\ \{AccuracyScore\},\ "{}}\ +}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}SpeedScore:\ \{SpeedScore\},\ TotalScore:\ \{TotalScore\})"{}};}
-\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}RecordDetail(Score:\ \{Score\},\ TotalTouch:\ \{TotalTouch\},\ Incorrect:\ \{Incorrect\},\ Accuracy:\ \{Accuracy\},\ Events:\ \{Events\},\ "{}}\ +}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ReactionTime:\ \{ReactionTime\},\ CognitiveSpeed:\ \{CognitiveSpeed\},\ AccuracyScore:\ \{AccuracyScore\},\ "{}}\ +}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}SpeedScore:\ \{SpeedScore\},\ TotalScore:\ \{TotalScore\})"{}};}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -201,11 +211,11 @@ List$<$float$>$ Record\+Detail.\+Accuracy\hspace{0.3cm}{\ttfamily [get]}, {\ttfa
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00177}{177}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00211}{211}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00177\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도}}
+\DoxyCodeLine{00211\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_accd2bd39ac266b6d9be4c9a5547d16ba}\index{RecordDetail@{RecordDetail}!AccuracyScore@{AccuracyScore}}
@@ -216,11 +226,11 @@ int Record\+Detail.\+Accuracy\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily 
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00181}{181}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00215}{215}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00181\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도\ 점수}}
+\DoxyCodeLine{00215\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 정확도\ 점수}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_a62c4ceb978cf8bcc07f12f73b7ae8084}\index{RecordDetail@{RecordDetail}!CognitiveAge@{CognitiveAge}}
@@ -231,11 +241,11 @@ int Record\+Detail.\+Cognitive\+Age\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00184}{184}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00218}{218}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00184\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지능력\ 나이}}
+\DoxyCodeLine{00218\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지능력\ 나이}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ac9121cf8a26cb7a34f073d5c56031f7f}\index{RecordDetail@{RecordDetail}!CognitiveSpeed@{CognitiveSpeed}}
@@ -246,11 +256,11 @@ List$<$float$>$ Record\+Detail.\+Cognitive\+Speed\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00180}{180}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00214}{214}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00180\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지\ 속도}}
+\DoxyCodeLine{00214\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 인지\ 속도}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_abb4f5cfcb322a8648d07c0cc72be13b0}\index{RecordDetail@{RecordDetail}!Events@{Events}}
@@ -261,11 +271,11 @@ List$<$\mbox{\hyperlink{class_touch_event}{Touch\+Event}}$>$ Record\+Detail.\+Ev
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00178}{178}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00212}{212}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00178\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 터치\ 이벤트}}
+\DoxyCodeLine{00212\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 터치\ 이벤트}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_aa976259b0c64d1f9a746bb0b39fec0a4}\index{RecordDetail@{RecordDetail}!Incorrect@{Incorrect}}
@@ -276,11 +286,11 @@ int Record\+Detail.\+Incorrect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00176}{176}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00210}{210}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00176\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 오답\ 수}}
+\DoxyCodeLine{00210\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 오답\ 수}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ad74ce6b41d1addefb34c7cb2232cc0b9}\index{RecordDetail@{RecordDetail}!PhysicalAge@{PhysicalAge}}
@@ -291,11 +301,11 @@ int Record\+Detail.\+Physical\+Age\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [s
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00185}{185}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00219}{219}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00185\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 신체능력\ 나이}}
+\DoxyCodeLine{00219\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 신체능력\ 나이}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ac5c6b34a531dd36a80f6b58883792ca2}\index{RecordDetail@{RecordDetail}!ReactionTime@{ReactionTime}}
@@ -306,11 +316,11 @@ List$<$float$>$ Record\+Detail.\+Reaction\+Time\hspace{0.3cm}{\ttfamily [get]}, 
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00179}{179}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00213}{213}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00179\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반응\ 속도}}
+\DoxyCodeLine{00213\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 반응\ 속도}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ac9cc549653c40d1e7d54c6eb57913ce7}\index{RecordDetail@{RecordDetail}!Score@{Score}}
@@ -321,11 +331,11 @@ int Record\+Detail.\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00174}{174}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00208}{208}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00174\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 점수}}
+\DoxyCodeLine{00208\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 점수}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_ae27fef8e9e520dae18911f62a240b04b}\index{RecordDetail@{RecordDetail}!SpeedScore@{SpeedScore}}
@@ -336,11 +346,11 @@ int Record\+Detail.\+Speed\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [se
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00182}{182}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00216}{216}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00182\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 순발력\ 점수}}
+\DoxyCodeLine{00216\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 순발력\ 점수}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_a89c7ad9151d3cb3376568ba2f05e4dfd}\index{RecordDetail@{RecordDetail}!TotalScore@{TotalScore}}
@@ -351,11 +361,11 @@ int Record\+Detail.\+Total\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [se
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00183}{183}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00217}{217}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00183\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 최종\ 점수}}
+\DoxyCodeLine{00217\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 최종\ 점수}}
 
 \end{DoxyCode}
 \Hypertarget{class_record_detail_acfe6811a2a29f335a180a743c6b078a1}\index{RecordDetail@{RecordDetail}!TotalTouch@{TotalTouch}}
@@ -366,11 +376,11 @@ int Record\+Detail.\+Total\+Touch\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [se
 
 
 
-\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00175}{175}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_game_record_8cs_source}{Game\+Record.\+cs}} 파일의 \mbox{\hyperlink{_game_record_8cs_source_l00209}{209}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00175\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 총\ 터치\ 수}}
+\DoxyCodeLine{00209\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 총\ 터치\ 수}}
 
 \end{DoxyCode}
 

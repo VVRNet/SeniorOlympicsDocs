@@ -8,7 +8,11 @@ var searchData=
   ['cognitivespeed_5',['CognitiveSpeed',['../class_record_detail.html#ac9121cf8a26cb7a34f073d5c56031f7f',1,'RecordDetail']]],
   ['contentname_6',['ContentName',['../class_game_record.html#aff594c62b5d4a297b4f107f40c287137',1,'GameRecord']]],
   ['contents_7',['Contents',['../class_session_manager.html#af4f9b9613b3b5a087107f251e85611f6',1,'SessionManager']]],
-  ['createdat_8',['CreatedAt',['../class_content.html#a2b6029268877fb373b934b0f09d55bc7',1,'Content.CreatedAt'],['../class_feedback.html#aa20e4146ece11809ed81ccd63b920627',1,'Feedback.CreatedAt']]],
-  ['currentclass_9',['CurrentClass',['../class_session_manager.html#aa646a015d76081c627580f9f2a47794e',1,'SessionManager']]],
-  ['currentstudent_10',['CurrentStudent',['../class_session_manager.html#a61468562dcfe6040a51fc5df9f9da337',1,'SessionManager']]]
+  ['countrycode_8',['CountryCode',['../class_single_game_record.html#a28ae92eed0cec5d27c3765eada903b8f',1,'SingleGameRecord']]],
+  ['countrycodes_9',['CountryCodes',['../class_dual_game_record.html#a94b9c25312fe32e61b4304ee328588aa',1,'DualGameRecord']]],
+  ['countryimg_10',['CountryImg',['../class_single_game_record.html#a58f4a069d2e0f9bd784d33a5899e3f73',1,'SingleGameRecord']]],
+  ['countryimgs_11',['CountryImgs',['../class_dual_game_record.html#a3da7aa51a3ae63988983096f501efa6c',1,'DualGameRecord']]],
+  ['createdat_12',['CreatedAt',['../class_content.html#a2b6029268877fb373b934b0f09d55bc7',1,'Content.CreatedAt'],['../class_feedback.html#aa20e4146ece11809ed81ccd63b920627',1,'Feedback.CreatedAt']]],
+  ['currentclass_13',['CurrentClass',['../class_session_manager.html#aa646a015d76081c627580f9f2a47794e',1,'SessionManager']]],
+  ['currentstudent_14',['CurrentStudent',['../class_session_manager.html#a61468562dcfe6040a51fc5df9f9da337',1,'SessionManager']]]
 ];

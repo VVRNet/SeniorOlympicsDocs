@@ -7,7 +7,7 @@ Select\+Contents\+Controller에 대한 상속 다이어그램 \+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=204pt]{class_select_contents_controller__inherit__graph}
+\includegraphics[width=198pt]{class_select_contents_controller__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -17,33 +17,9 @@ Select\+Contents\+Controller에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=204pt]{class_select_contents_controller__coll__graph}
+\includegraphics[width=198pt]{class_select_contents_controller__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public 멤버 함수}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_select_contents_controller_ac2b4e18205795928b40613bee2de8475}{Setting\+Data}} ()
-\item 
-void \mbox{\hyperlink{class_select_contents_controller_af96bf22eb88f5942e119c6d25751b662}{Click\+Contents}} (int contents\+Index)
-\item 
-void \mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{Set\+Active\+Contents\+Data}} (int contents\+Index)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Public 속성}
-\begin{DoxyCompactItemize}
-\item 
-Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_select_contents_controller_a533adbff5abc9043a7cf13428ab0b5dd}{class\+Name}}
-\item 
-List$<$ \mbox{\hyperlink{struct_contents_info}{Contents\+Info}} $>$ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contents\+Info\+List}}
-\item 
-Transform \mbox{\hyperlink{class_select_contents_controller_a897297b02b98dfd1993d06ae21136bcf}{info\+Object\+Pos}}
-\item 
-Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_select_contents_controller_a58edf170cf793c9345d4e2f3470840b0}{contents\+Name}}
-\item 
-Video\+Player \mbox{\hyperlink{class_select_contents_controller_aafb287c1174783c16611f9f26bbe1818}{info\+Video}}
-\item 
-Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_select_contents_controller_ac81cbb801f3ae47bde8bd3648695d90f}{info\+Text}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{상세한 설명}
@@ -53,153 +29,6 @@ Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_select_contents_controller_ac81cbb8
 
 
 
-\doxysubsection{멤버 함수 문서화}
-\Hypertarget{class_select_contents_controller_af96bf22eb88f5942e119c6d25751b662}\index{SelectContentsController@{SelectContentsController}!ClickContents@{ClickContents}}
-\index{ClickContents@{ClickContents}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{ClickContents()}{ClickContents()}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_af96bf22eb88f5942e119c6d25751b662} 
-void Select\+Contents\+Controller.\+Click\+Contents (\begin{DoxyParamCaption}\item[{int}]{contents\+Index}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00075}{75}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00076\ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ infoObjectPos.position\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].settingPos.position;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ contentsName.text\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].sceneName;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ infoVideo.clip\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].howToPlayVideo;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ infoText.text\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].howToPlayText;}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ PlayerPrefs.SetInt(\textcolor{stringliteral}{"{}SelectContents"{}},\ contentsIndex);}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}{SetActiveContentsData}}(contentsIndex);}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-
-\end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_select_contents_controller_af96bf22eb88f5942e119c6d25751b662_cgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9}\index{SelectContentsController@{SelectContentsController}!SetActiveContentsData@{SetActiveContentsData}}
-\index{SetActiveContentsData@{SetActiveContentsData}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{SetActiveContentsData()}{SetActiveContentsData()}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9} 
-void Select\+Contents\+Controller.\+Set\+Active\+Contents\+Data (\begin{DoxyParamCaption}\item[{int}]{contents\+Index}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00087}{87}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00088\ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sceneName\ =\ \mbox{\hyperlink{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}{contentsInfoList}}[contentsIndex].sceneName.ToString();}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ PlayerPrefs.SetString(\textcolor{stringliteral}{"{}SelectedContents"{}},\ sceneName);}
-\DoxyCodeLine{00091\ \ \ \ \ \}}
-
-\end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_select_contents_controller_a6bfae2b9e81a2efd8f26820f1d8fc0c9_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_select_contents_controller_ac2b4e18205795928b40613bee2de8475}\index{SelectContentsController@{SelectContentsController}!SettingData@{SettingData}}
-\index{SettingData@{SettingData}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{SettingData()}{SettingData()}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_ac2b4e18205795928b40613bee2de8475} 
-void Select\+Contents\+Controller.\+Setting\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00062}{62}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00063\ \ \ \ \ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectStudent)}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ className.text\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name.ToString();}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ className.text\ =\ SessionManager.Instance.CurrentClass.Name\ +\ \textcolor{stringliteral}{"{}<color=\#FFFFFF>\ \ >\ \ </color>"{}}\ +\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentStudent.Name.ToString();}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{멤버 데이터 문서화}
-\Hypertarget{class_select_contents_controller_a533adbff5abc9043a7cf13428ab0b5dd}\index{SelectContentsController@{SelectContentsController}!className@{className}}
-\index{className@{className}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{className}{className}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_a533adbff5abc9043a7cf13428ab0b5dd} 
-Text\+Mesh\+Pro\+UGUI Select\+Contents\+Controller.\+class\+Name}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac}\index{SelectContentsController@{SelectContentsController}!contentsInfoList@{contentsInfoList}}
-\index{contentsInfoList@{contentsInfoList}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{contentsInfoList}{contentsInfoList}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_a8624375bab330848c0d2e886b15026ac} 
-List$<$\mbox{\hyperlink{struct_contents_info}{Contents\+Info}}$>$ Select\+Contents\+Controller.\+contents\+Info\+List}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_select_contents_controller_a58edf170cf793c9345d4e2f3470840b0}\index{SelectContentsController@{SelectContentsController}!contentsName@{contentsName}}
-\index{contentsName@{contentsName}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{contentsName}{contentsName}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_a58edf170cf793c9345d4e2f3470840b0} 
-Text\+Mesh\+Pro\+UGUI Select\+Contents\+Controller.\+contents\+Name}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_select_contents_controller_a897297b02b98dfd1993d06ae21136bcf}\index{SelectContentsController@{SelectContentsController}!infoObjectPos@{infoObjectPos}}
-\index{infoObjectPos@{infoObjectPos}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{infoObjectPos}{infoObjectPos}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_a897297b02b98dfd1993d06ae21136bcf} 
-Transform Select\+Contents\+Controller.\+info\+Object\+Pos}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_select_contents_controller_ac81cbb801f3ae47bde8bd3648695d90f}\index{SelectContentsController@{SelectContentsController}!infoText@{infoText}}
-\index{infoText@{infoText}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{infoText}{infoText}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_ac81cbb801f3ae47bde8bd3648695d90f} 
-Text\+Mesh\+Pro\+UGUI Select\+Contents\+Controller.\+info\+Text}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00029}{29}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_select_contents_controller_aafb287c1174783c16611f9f26bbe1818}\index{SelectContentsController@{SelectContentsController}!infoVideo@{infoVideo}}
-\index{infoVideo@{infoVideo}!SelectContentsController@{SelectContentsController}}
-\doxysubsubsection{\texorpdfstring{infoVideo}{infoVideo}}
-{\footnotesize\ttfamily \label{class_select_contents_controller_aafb287c1174783c16611f9f26bbe1818} 
-Video\+Player Select\+Contents\+Controller.\+info\+Video}
-
-
-
-\mbox{\hyperlink{_select_contents_controller_8cs_source}{Select\+Contents\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_select_contents_controller_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
-
-
-
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Launcher/\mbox{\hyperlink{_select_contents_controller_8cs}{Select\+Contents\+Controller.\+cs}}\end{DoxyCompactItemize}
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Launcher/\+Not\+Used/\mbox{\hyperlink{_select_contents_controller_8cs}{Select\+Contents\+Controller.\+cs}}\end{DoxyCompactItemize}

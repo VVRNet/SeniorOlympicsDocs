@@ -17,7 +17,7 @@ Agency\+Controller에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_agency_controller__coll__graph}
+\includegraphics[width=350pt]{class_agency_controller__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 멤버 함수}
@@ -29,19 +29,17 @@ void \mbox{\hyperlink{class_agency_controller_aaac72e0f967ba6ba8e8a0dd680d113b8}
 \item 
 void \mbox{\hyperlink{class_agency_controller_a6c6f534f54df2a53f91c8c8fd2c49a50}{Get\+Team\+Data}} (\mbox{\hyperlink{class_agency}{Agency}} agency, Game\+Object prefabs, Transform root\+Transform, List$<$ Game\+Object $>$ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{remove\+Object\+List}}, bool show\+User)
 \item 
+void \mbox{\hyperlink{class_agency_controller_af704d8e713b5e2df0040144c885c3fc0}{Team\+Dropdown\+List}} (Dropdown dropdown)
+\item 
 void \mbox{\hyperlink{class_agency_controller_ae97f8adb82bfb5a3cc2297eb8d8c8609}{Get\+User\+Data}} (\mbox{\hyperlink{class_agency}{Agency}} agency, int class\+Value, Game\+Object prefabs, Transform root\+Transform, List$<$ Game\+Object $>$ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{remove\+Object\+List}})
 \item 
-void \mbox{\hyperlink{class_agency_controller_af704d8e713b5e2df0040144c885c3fc0}{Team\+Dropdown\+List}} (Dropdown dropdown)
+IEnumerator \mbox{\hyperlink{class_agency_controller_a21e0c53caa4a630a6b7af8356c4ab540}{Load\+Url}} (string url, Image image)
 \item 
 void \mbox{\hyperlink{class_agency_controller_aa8b768ed835b41587f700cdd073a455c}{On\+Login\+Button\+Clicked}} ()
 \item 
 void \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{Select\+Class}} (string class\+Name)
 \item 
 void \mbox{\hyperlink{class_agency_controller_af3cedcacd3e83427aa78df11d8d50f81}{Select\+Student}} (string student\+Id)
-\item 
-void \mbox{\hyperlink{class_agency_controller_a17fc3d8813bfda27789a97dc1ba373b2}{Login\+Check\+Team}} ()
-\item 
-void \mbox{\hyperlink{class_agency_controller_a8ee1cb13768aa1a616b3dc34b6793c66}{Login\+Check\+Student}} ()
 \item 
 void \mbox{\hyperlink{class_agency_controller_a878bd6e68f6cb3bb34ea41078932eda2}{Change\+Agency\+Name}} ()
 \item 
@@ -56,17 +54,29 @@ void \mbox{\hyperlink{class_agency_controller_a99a1ab9b3f342fbd99b4d87337926e9a}
 void \mbox{\hyperlink{class_agency_controller_acc911dc59024906bb7243beac76e122f}{Add\+Student}} ()
 \item 
 void \mbox{\hyperlink{class_agency_controller_abb8b832dd5ccf221930cd2453a98f639}{Remove\+Student}} ()
+\item 
+void \mbox{\hyperlink{class_agency_controller_a8ee1cb13768aa1a616b3dc34b6793c66}{Login\+Check\+Student}} ()
+\item 
+void \mbox{\hyperlink{class_agency_controller_a94a640a570963ce893ff247960464e26}{Login\+Cancle\+Btn}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_agency}{Agency}} \mbox{\hyperlink{class_agency_controller_af355db09aa8b6a420163d05bacd2e77c}{agency\+Data}}
+\mbox{\hyperlink{class_flag_list_controller}{Flag\+List\+Controller}} \mbox{\hyperlink{class_agency_controller_a69d2d1df27156eaf8ead4bbdb510d0aa}{flag\+List\+Controller}}
 \item 
-Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_agency_controller_ae36200f2184d1608867e4993bb2ffded}{agency\+Name}}
+\mbox{\hyperlink{class_profile_list_controller}{Profile\+List\+Controller}} \mbox{\hyperlink{class_agency_controller_a234f7dfda7496c2d84bc7207dae27cc6}{profile\+List\+Controller}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_agency_controller_a2eff26af087997db8315c57ebde32003}{agency\+Name\+Txt}}
+\item 
+\mbox{\hyperlink{class_content_controller}{Content\+Controller}} \mbox{\hyperlink{class_agency_controller_af00d605516f6568f7a5812548730e219}{content\+Controller}}
+\item 
+\mbox{\hyperlink{class_ranking_move_cotroller}{Ranking\+Move\+Cotroller}} \mbox{\hyperlink{class_agency_controller_a54dfed4284fada5b6466b13a4e6bcc06}{ranking\+Move\+Cotroller}}
 \item 
 int \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{select\+Class\+Index}}
 \item 
 bool \mbox{\hyperlink{class_agency_controller_a105d693b990055924862d830292191c0}{select\+Student}}
+\item 
+string \mbox{\hyperlink{class_agency_controller_a6959284674d6e4db3b5af1e761ec0c8d}{save\+Student\+Id}}
 \item 
 Game\+Object \mbox{\hyperlink{class_agency_controller_af19475b151bfd913af507ae3507cc7a5}{popup\+User\+Manager}}
 \item 
@@ -74,19 +84,29 @@ List$<$ Game\+Object $>$ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4
 \item 
 List$<$ string $>$ \mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdown\+Options}} = new List$<$string$>$()
 \item 
-TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_afa0a3a5946e867dc3e6691ed61733091}{input\+Student\+Name}}
-\item 
-TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_ad83291ae54281e558ac1923d43fdd2a4}{input\+Student\+Age}}
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_agency_controller_ae44991e4e1f9dd8c34a7114a62987dc9}{guide\+Text}}
 \item 
 TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_a759474fb431078ed94a8c77e4f249e19}{input\+Class\+Name}}
 \item 
-string \mbox{\hyperlink{class_agency_controller_a0beb5bedbb324afcca48f7e5c9e8a0c8}{select\+Other\+Team}}
+string \mbox{\hyperlink{class_agency_controller_ac3d8b38a27c3782bc02c3870ae8a984e}{save\+Country\+Url}}
 \item 
-string \mbox{\hyperlink{class_agency_controller_a669648cf67509c73b242e67b239a4ebc}{select\+Other\+Player}}
+string \mbox{\hyperlink{class_agency_controller_a2a9e0e5d4f9e09a57f9171f82a785167}{save\+Country\+Code}}
 \item 
-Game\+Object \mbox{\hyperlink{class_agency_controller_aa5318885664f74cccb6f75264098c999}{other\+Player\+Login}}
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_ae1e77313f1277132ef24face16828184}{input\+Team\+Age}}
 \item 
-bool \mbox{\hyperlink{class_agency_controller_a884787d3da98da378c7ead503b55be39}{is\+Japan\+Test}}
+int \mbox{\hyperlink{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d}{team\+Age}}
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_afa0a3a5946e867dc3e6691ed61733091}{input\+Student\+Name}}
+\item 
+string \mbox{\hyperlink{class_agency_controller_a8d235b4cf662f297fd595f0bcdc4821c}{save\+Profile\+Url}}
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_ad83291ae54281e558ac1923d43fdd2a4}{input\+Student\+Age}}
+\item 
+int \mbox{\hyperlink{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01}{student\+Age}}
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_af60ff425789d5819aab33dccfdeeccb4}{input\+Agency\+Name}}
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_agency_controller_af97d8a6b490ab599088213c3a0f93f51}{input\+Screen\+Size}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{정적 Public 속성}
 \begin{DoxyCompactItemize}
@@ -98,7 +118,7 @@ static \mbox{\hyperlink{class_agency_controller}{Agency\+Controller}} \mbox{\hyp
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -111,31 +131,62 @@ void Agency\+Controller.\+Add\+Class (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00415}{415}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00485}{485}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00416\ \ \ \ \ \{}
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ newClass\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_class}{Class}}(\mbox{\hyperlink{class_agency_controller_a759474fb431078ed94a8c77e4f249e19}{inputClassName}}.text,\ \textcolor{stringliteral}{"{}4\string~7세"{}},\ \textcolor{keyword}{new}\ List<Student>());}
-\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a045ee66a8f838387499d7ad2c9fa3a66}{AddClass}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ newClass,\ (success)\ =>}
-\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}반\ 추가\ 성공"{}});}
-\DoxyCodeLine{00423\ }
-\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputClassName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ popupUserManager.SetActive(false);}
-\DoxyCodeLine{00426\ }
-\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserPageController.Instance.UpdatePlayerTeam();}
-\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}반\ 추가\ 실패"{}});}
-\DoxyCodeLine{00432\ }
-\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputClassName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00436\ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_agency_controller_a759474fb431078ed94a8c77e4f249e19}{inputClassName}}.text\ ==\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}Please\ specify\ a\ name."{}};\ \textcolor{comment}{//\ "{}이름을\ 지정하세요."{}}}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(RemoveGuigeText());}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 나이\ 입력이\ 비어\ 있는지\ 확인하고\ 기본값\ 설정}}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(\mbox{\hyperlink{class_agency_controller_ae1e77313f1277132ef24face16828184}{inputTeamAge}}.text))}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d}{teamAge}}\ =\ 0;}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 나이를\ 정수로\ 변환하고\ 변환\ 실패\ 시\ 기본값\ 설정}}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{int}.TryParse(\mbox{\hyperlink{class_agency_controller_ae1e77313f1277132ef24face16828184}{inputTeamAge}}.text,\ out\ \mbox{\hyperlink{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d}{teamAge}}))}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d}{teamAge}}\ =\ 0;}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a2a9e0e5d4f9e09a57f9171f82a785167}{saveCountryCode}}\ =\ \mbox{\hyperlink{class_agency_controller_a69d2d1df27156eaf8ead4bbdb510d0aa}{flagListController}}.\mbox{\hyperlink{class_flag_list_controller_a701b1f81c9e73b1745b337ab68a06396}{saveCountryCode}};}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_ac3d8b38a27c3782bc02c3870ae8a984e}{saveCountryUrl}}\ =\ \mbox{\hyperlink{class_agency_controller_a69d2d1df27156eaf8ead4bbdb510d0aa}{flagListController}}.\mbox{\hyperlink{class_flag_list_controller_a2cd38bca912ca91f9f3c4d52372d1b41}{saveCountryUrl}};}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class}{Class}}\ newClass\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_class}{Class}}(\mbox{\hyperlink{class_agency_controller_a759474fb431078ed94a8c77e4f249e19}{inputClassName}}.text,\ \mbox{\hyperlink{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d}{teamAge}},\ \mbox{\hyperlink{class_agency_controller_a2a9e0e5d4f9e09a57f9171f82a785167}{saveCountryCode}},\ \mbox{\hyperlink{class_agency_controller_ac3d8b38a27c3782bc02c3870ae8a984e}{saveCountryUrl}},\ \textcolor{keyword}{new}\ List<Student>());}
+\DoxyCodeLine{00513\ \ }
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a045ee66a8f838387499d7ad2c9fa3a66}{AddClass}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ newClass,\ (success)\ =>}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/반\ 추가\ 성공"{}});}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputClassName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ popupUserManager.SetActive(false);}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전에\ 만들어진\ 프리팹을\ 제거하고\ 새로운\ 정보로\ 다시\ 생성}}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserPageController.Instance.UpdatePlayerTeam();}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/반\ 추가\ 실패"{}});}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}Failed\ to\ add\ team."{}};\ \textcolor{comment}{//\ "{}팀을\ 추가하지\ 못했습니다."{}}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputClassName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ guideText\ 비활성화}}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ StartCoroutine(RemoveGuigeText());}
+\DoxyCodeLine{00537\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_acc911dc59024906bb7243beac76e122f}\index{AgencyController@{AgencyController}!AddStudent@{AddStudent}}
@@ -146,51 +197,67 @@ void Agency\+Controller.\+Add\+Student (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00472}{472}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00573}{573}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00473\ \ \ \ \ \{}
-\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ studentAge\ =\ 0;}
-\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ studentAge\ =\ \textcolor{keywordtype}{int}.Parse(\mbox{\hyperlink{class_agency_controller_ad83291ae54281e558ac1923d43fdd2a4}{inputStudentAge}}.text);}
-\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (FormatException)}
-\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ studentAge\ =\ \textcolor{keywordtype}{int}.Parse(\textcolor{stringliteral}{"{}0"{}});}
-\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00483\ }
-\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ newStudent\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_student}{Student}}(}
-\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}:\ Guid.NewGuid(),}
-\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \mbox{\hyperlink{class_agency_controller_afa0a3a5946e867dc3e6691ed61733091}{inputStudentName}}.text,}
-\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ age:\ studentAge,}
-\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ parentPhone:\ \textcolor{stringliteral}{"{}010-\/1234-\/5678"{}},}
-\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ profileImage:\ \textcolor{stringliteral}{"{}https://"{}},}
-\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 100f}
-\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00492\ }
-\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a9a9fa6db0550dc0fc06653282576dd3d}{AddStudent}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name,\ newStudent,\ (success)\ =>}
-\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}학생\ 추가\ 성공"{}});}
-\DoxyCodeLine{00498\ }
-\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentAge.text\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}학생\ 추가\ 실패"{}});}
-\DoxyCodeLine{00505\ }
-\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentAge.text\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00509\ }
-\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.ResetUser();}
-\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
-\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00513\ \ \ \ \ \}}
+\DoxyCodeLine{00574\ \ \ \ \ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이름\ 입력이\ 비어\ 있는지\ 확인}}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(\mbox{\hyperlink{class_agency_controller_afa0a3a5946e867dc3e6691ed61733091}{inputStudentName}}.text))}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}Please\ specify\ a\ name."{}};\ \textcolor{comment}{//\ "{}이름을\ 지정하세요."{}}}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(RemoveGuigeText());}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 나이\ 입력이\ 비어\ 있는지\ 확인하고\ 기본값\ 설정}}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(\mbox{\hyperlink{class_agency_controller_ad83291ae54281e558ac1923d43fdd2a4}{inputStudentAge}}.text))}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01}{studentAge}}\ =\ 0;}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 나이를\ 정수로\ 변환하고\ 변환\ 실패\ 시\ 기본값\ 설정}}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{int}.TryParse(\mbox{\hyperlink{class_agency_controller_ad83291ae54281e558ac1923d43fdd2a4}{inputStudentAge}}.text,\ out\ \mbox{\hyperlink{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01}{studentAge}}))}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01}{studentAge}}\ =\ 0;}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ newStudent\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_student}{Student}}(}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}:\ Guid.NewGuid(),}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \mbox{\hyperlink{class_agency_controller_afa0a3a5946e867dc3e6691ed61733091}{inputStudentName}}.text,}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ age:\ \mbox{\hyperlink{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01}{studentAge}},}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ parentPhone:\ \textcolor{stringliteral}{"{}010-\/1234-\/5678"{}},}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ profileUrl:\ \mbox{\hyperlink{class_agency_controller_a8d235b4cf662f297fd595f0bcdc4821c}{saveProfileUrl}},}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 100f,}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ countryCode:\ \mbox{\hyperlink{class_agency_controller_a2a9e0e5d4f9e09a57f9171f82a785167}{saveCountryCode}},}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ countryImg:\ \mbox{\hyperlink{class_agency_controller_ac3d8b38a27c3782bc02c3870ae8a984e}{saveCountryUrl}}}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a9a9fa6db0550dc0fc06653282576dd3d}{AddStudent}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name,\ newStudent,\ (success)\ =>}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/학생\ 추가\ 성공"{}});}
+\DoxyCodeLine{00613\ }
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentAge.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/학생\ 추가\ 실패"{}});}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ guideText.text\ =\ \textcolor{stringliteral}{"{}No\ user\ has\ been\ added."{}};}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputStudentAge.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00625\ }
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전에\ 만들어진\ 프리팹을\ 제거하고\ 새로운\ 정보로\ 다시\ 생성}}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.ResetUser();}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00630\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_aaac72e0f967ba6ba8e8a0dd680d113b8}\index{AgencyController@{AgencyController}!AgencyLogin@{AgencyLogin}}
@@ -201,29 +268,27 @@ void Agency\+Controller.\+Agency\+Login (\begin{DoxyParamCaption}\item[{string}]
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00075}{75}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00086}{86}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00076\ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ password\ =\ \textcolor{stringliteral}{"{}securepassword"{}};}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a041b76c880832c02b2aef312a74e33da}{Login}}(agencyEmail,\ password,\ (agency)\ =>}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetLoggedInAgency(agency);}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SettingPageManager.Instance.mainGuideText.text\ =\ \textcolor{stringliteral}{"{}Touch\ the\ screen\ to\ start"{}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SettingPageManager.Instance.bgCollider.enabled\ =\ true;}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyName.text\ =\ agency.Name.ToString();}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}로그인\ 실패"{}});}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ password\ =\ \textcolor{stringliteral}{"{}securepassword"{}};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a041b76c880832c02b2aef312a74e33da}{Login}}(agencyEmail,\ password,\ (agency)\ =>}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetLoggedInAgency(agency);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ agencyNameTxt.text\ =\ agency.Name.ToString();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(CoWaitTime());}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/로그인\ 실패"{}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_a878bd6e68f6cb3bb34ea41078932eda2}\index{AgencyController@{AgencyController}!ChangeAgencyName@{ChangeAgencyName}}
@@ -234,25 +299,33 @@ void Agency\+Controller.\+Change\+Agency\+Name (\begin{DoxyParamCaption}{}{}\end
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00360}{360}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00413}{413}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00361\ \ \ \ \ \{}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newName\ =\ \textcolor{stringliteral}{"{}양양\ 어린이집"{}};}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{UpdateAgencyField}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ \textcolor{stringliteral}{"{}Name"{}},\ newName,\ (success)\ =>}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 명\ 변경\ 성공"{}});}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.LoggedInAgency.Name\ =\ newName;}
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 명\ 변경\ 실패"{}});}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00414\ \ \ \ \ \{}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newName\ =\ \mbox{\hyperlink{class_agency_controller_af60ff425789d5819aab33dccfdeeccb4}{inputAgencyName}}.text;}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_agency_controller_af60ff425789d5819aab33dccfdeeccb4}{inputAgencyName}}.text\ ==\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{UpdateAgencyField}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ \textcolor{stringliteral}{"{}Name"{}},\ newName,\ (success)\ =>}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 명\ 변경\ 성공"{}});}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.LoggedInAgency.Name\ =\ newName;}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputAgencyName.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 명\ 변경\ 실패"{}});}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00436\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_a09f67dd54ded3adc4117b1c3b71332d3}\index{AgencyController@{AgencyController}!ChangePassword@{ChangePassword}}
@@ -263,30 +336,29 @@ void Agency\+Controller.\+Change\+Password (\begin{DoxyParamCaption}{}{}\end{Dox
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00396}{396}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00465}{465}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00397\ \ \ \ \ \{}
-\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newPassword\ =\ \textcolor{stringliteral}{"{}newPassword"{}};}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ newPassword\ =\ \mbox{\hyperlink{class_password_helper}{PasswordHelper}}.\mbox{\hyperlink{class_password_helper_a23749ac87a2fae71832c98771314abd5}{CreatePasswordHash}}(newPassword);}
-\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{UpdateAgencyField}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ \textcolor{stringliteral}{"{}Password"{}},\ newPassword,\ (success)\ =>}
-\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}비밀번호\ 변경\ 성공"{}});}
-\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.LoggedInAgency.Password\ =\ newPassword;}
-\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}비밀번호\ 변경\ 실패"{}});}
-\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00412\ \ \ \ \ \}}
+\DoxyCodeLine{00466\ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newPassword\ =\ \textcolor{stringliteral}{"{}newPassword"{}};}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ newPassword\ =\ \mbox{\hyperlink{class_password_helper}{PasswordHelper}}.\mbox{\hyperlink{class_password_helper_a23749ac87a2fae71832c98771314abd5}{CreatePasswordHash}}(newPassword);}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{UpdateAgencyField}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ \textcolor{stringliteral}{"{}Password"{}},\ newPassword,\ (success)\ =>}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}비밀번호\ 변경\ 성공"{}});}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.LoggedInAgency.Password\ =\ newPassword;}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}비밀번호\ 변경\ 실패"{}});}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00481\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -301,25 +373,33 @@ void Agency\+Controller.\+Change\+Screen\+Size (\begin{DoxyParamCaption}{}{}\end
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00378}{378}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00439}{439}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00379\ \ \ \ \ \{}
-\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newScreenSize\ =\ \textcolor{stringliteral}{"{}500"{}};}
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{UpdateAgencyField}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ \textcolor{stringliteral}{"{}ScreenSize"{}},\ newScreenSize,\ (success)\ =>}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}화면\ 크기\ 변경\ 성공"{}});}
-\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.LoggedInAgency.ScreenSize\ =\ newScreenSize;}
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}화면\ 크기\ 변경\ 실패"{}});}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00393\ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newScreenSize\ =\ \mbox{\hyperlink{class_agency_controller_af97d8a6b490ab599088213c3a0f93f51}{inputScreenSize}}.text;}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_agency_controller_af97d8a6b490ab599088213c3a0f93f51}{inputScreenSize}}.text\ ==\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a095c1e84f3952dade68ebf29b0c94133}{UpdateAgencyField}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.\_id,\ \textcolor{stringliteral}{"{}ScreenSize"{}},\ newScreenSize,\ (success)\ =>}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}화면\ 크기\ 변경\ 성공"{}});}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.LoggedInAgency.ScreenSize\ =\ newScreenSize;}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputScreenSize.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}화면\ 크기\ 변경\ 실패"{}});}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_a38c698f259e113e142e0bf50d203857d}\index{AgencyController@{AgencyController}!CreateUser@{CreateUser}}
@@ -330,33 +410,32 @@ void Agency\+Controller.\+Create\+User (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00053}{53}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00063}{63}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00054\ \ \ \ \ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency}{Agency}}\ agency\ =\ \textcolor{keyword}{new}(name:\ \textcolor{stringliteral}{"{}이름"{}},\ password:\ \textcolor{stringliteral}{"{}securepassword"{}},\ screenSize:\ \textcolor{stringliteral}{"{}300"{}},}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contractDate:\ DateTime.UtcNow,\ expirationDate:\ DateTime.UtcNow.AddYears(1),\ status:\ \textcolor{stringliteral}{"{}active"{}},\ adminName:\ \textcolor{stringliteral}{"{}차하남"{}},}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adminContact:\ \textcolor{stringliteral}{"{}010-\/1234-\/5678"{}},\ adminEmail:\ \textcolor{stringliteral}{"{}hanam@vvr.co.kr"{}},\ logo:\ \textcolor{stringliteral}{"{}http://logo.url"{}},}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ address:\ \textcolor{stringliteral}{"{}서울\ 어딘가"{}},\ classes:\ \textcolor{keyword}{new}\ List<Class>());}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Debug.Log(agency.\mbox{\hyperlink{class_agency_a26e1bac13b007a24d4acd7a207cf41c9}{ToString}}());}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a620519ae769ad9cb63fc068ff9ea49e3}{CreateAgency}}(agency,\ (result)\ =>}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성:\ "{}}\ +\ result);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성\ 실패"{}});}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency}{Agency}}\ agency\ =\ \textcolor{keyword}{new}(name:\ \textcolor{stringliteral}{"{}이름"{}},\ password:\ \textcolor{stringliteral}{"{}securepassword"{}},\ screenSize:\ \textcolor{stringliteral}{"{}300"{}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contractDate:\ DateTime.UtcNow,\ expirationDate:\ DateTime.UtcNow.AddYears(1),\ status:\ \textcolor{stringliteral}{"{}active"{}},\ adminName:\ \textcolor{stringliteral}{"{}차하남"{}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adminContact:\ \textcolor{stringliteral}{"{}010-\/1234-\/5678"{}},\ adminEmail:\ \textcolor{stringliteral}{"{}hanam@vvr.co.kr"{}},\ logo:\ \textcolor{stringliteral}{"{}http://logo.url"{}},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ address:\ \textcolor{stringliteral}{"{}서울\ 어딘가"{}},\ classes:\ \textcolor{keyword}{new}\ List<Class>());}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Debug.Log(agency.\mbox{\hyperlink{class_agency_a26e1bac13b007a24d4acd7a207cf41c9}{ToString}}());}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a620519ae769ad9cb63fc068ff9ea49e3}{CreateAgency}}(agency,\ (result)\ =>}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성:\ "{}}\ +\ result);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성\ 실패"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -371,79 +450,114 @@ void Agency\+Controller.\+Get\+Team\+Data (\begin{DoxyParamCaption}\item[{\mbox{
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00097}{97}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00125}{125}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 이름\ :\ "{}}\ +\ agency.\mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{Name}});}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}.Count\ >\ 0)}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}.Count;\ i++)}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;\ }
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ teamObject\ =\ Instantiate(prefabs,\ rootTransform);}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}}.Add(teamObject);}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdownOptions}}.Contains(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name))}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdownOptions}}.Add(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name);}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ buttonList\ =\ teamObject.GetComponent<Button>();}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 유저를\ 보여주는\ 팀\ 오브젝트가\ 아니라면}}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!showUser)}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name);}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ =\ index;}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name);}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ =\ index;}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.ResetUser();}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}.otherPlayer)}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a0beb5bedbb324afcca48f7e5c9e8a0c8}{selectOtherTeam}}\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name;}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.ResetUser();}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/기관\ 이름\ :\ "{}}\ +\ agency.\mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{Name}});}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}.Count\ >\ 0)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ teamObject의\ 중복\ 생성\ 방지}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}}.Count\ !=\ 0)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 저장되어있는\ 클래스\ 정보를\ teamObject로\ 생성}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}.Count;\ i++)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ i;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ teamObject\ =\ Instantiate(prefabs,\ rootTransform);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}}.Add(teamObject);}
 \DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name;}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 제거\ 팝업창에서\ 생성되는\ 팀\ 프리팹}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamObject.transform.childCount\ >\ 3)}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ clickToggle\ =\ teamObject.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ obj\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ retuenToggle\ =\ obj.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retuenToggle.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clickToggle.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 드롭다운\ 리스트에\ 추가}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdownOptions}}.Contains(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name))}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdownOptions}}.Add(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 생성된\ 프리팹의\ 버튼\ 클릭\ 시\ 기능}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ buttonList\ =\ teamObject.GetComponent<Button>();}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 선택한\ 클래스\ 저장}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ =\ index;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 유저를\ 함께\ 보여주는\ 팀\ 오브젝트라면}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (showUser)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전에\ 생성된\ 유저\ 프리팹\ 리셋}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.ResetUser();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 새\ 유저\ 프리팹\ 생성}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 유저\ 리스트\ 상단의\ 팀\ 이름\ 갱신}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserPageController.Instance.teamNameTxt.text\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 팀\ 프리팹의\ 클릭\ 모션\ 기능}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ teamClickMotion\ =\ teamObject.GetComponent<\mbox{\hyperlink{class_team_click_motion}{TeamClickMotion}}>();}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamClickMotion\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 클릭한\ teamObject\ 외의\ 다른\ teamObject의\ 클릭\ 모션\ 리셋}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ child\ \textcolor{keywordflow}{in}\ rootTransform)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child.gameObject\ !=\ teamObject)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ otherTeamClickMotion\ =\ child.GetComponent<\mbox{\hyperlink{class_team_click_motion}{TeamClickMotion}}>();}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child.GetChild(0).GetComponent<Image>().sprite\ =\ otherTeamClickMotion.\mbox{\hyperlink{class_team_click_motion_ac443a1c6fb8d9e588b6291e274f11f5b}{originPanel}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child.GetChild(2).GetComponent<TextMeshProUGUI>().color\ =\ otherTeamClickMotion.originColor;}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (otherTeamClickMotion\ !=\ \textcolor{keyword}{null}\ \&\&\ otherTeamClickMotion.onClick)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ otherTeamClickMotion.ResetMotion();\ \textcolor{comment}{//\ 클릭\ 모션\ 리셋}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 클릭한\ teamObject의\ 클릭\ 모션\ 실행\ (onClick\ =\ false\ 일\ 때)}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!teamClickMotion.onClick)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamClickMotion.OnClickMotion();}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 첫\ 번째\ teamObject에\ 대한\ 클릭\ 이벤트\ 강제\ 호출}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.Invoke();}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ teamObject의\ 국기\ 이미지\ 불러오기}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_agency_controller_a21e0c53caa4a630a6b7af8356c4ab540}{LoadUrl}}(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].CountryImg,\ teamObject.transform.GetChild(1).GetComponent<Image>()));}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ teamObject의\ 이름\ 불러오기}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[index].Name;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 팀\ 프리팹\ 선택\ 기능}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (teamObject.transform.childCount\ >\ 3)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ clickToggle\ =\ teamObject.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ obj\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ retuenToggle\ =\ obj.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retuenToggle.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clickToggle.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_ae97f8adb82bfb5a3cc2297eb8d8c8609}\index{AgencyController@{AgencyController}!GetUserData@{GetUserData}}
@@ -454,52 +568,111 @@ void Agency\+Controller.\+Get\+User\+Data (\begin{DoxyParamCaption}\item[{\mbox{
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00169}{169}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00254}{254}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00170\ \ \ \ \ \{}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{comment}{//classValue가\ 유효한지\ 확인한\ 후\ Students.Count를\ 확인}}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (classValue\ >=\ 0\ \&\&\ classValue\ <\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}.Count\ \&\&\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students.Count\ >\ 0)}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students.Count;\ i++)}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ userObject\ =\ Instantiate(prefabs,\ rootTransform);}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}}.Add(userObject);}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ studentId\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students[i].Id;}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text\ =\ studentId;}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students[i].Name;}
-\DoxyCodeLine{00183\ }
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ buttonList\ =\ userObject.GetComponent<Button>();}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Name);}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_af3cedcacd3e83427aa78df11d8d50f81}{SelectStudent}}(studentId);}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00190\ }
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 제거\ 팝업창에서\ 생성되는\ 유저\ 프리팹}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (userObject.transform.childCount\ >\ 3)}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ clickToggle\ =\ userObject.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ obj\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ retuenToggle\ =\ obj.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retuenToggle.gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clickToggle.gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00208\ }
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SelectStudent(agency.Classes[classValue].Students[0].Id);}}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{comment}{//classValue값이\ 유효한지\ 확인한\ 후\ 해당\ 클래스의\ Students.Count를\ 확인}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (classValue\ >=\ 0\ \&\&\ classValue\ <\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}.Count\ \&\&\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students.Count\ >\ 0)}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students.Count;\ i++)}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ userObject\ =\ Instantiate(prefabs,\ rootTransform);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}}.Add(userObject);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ userObject의\ 프로필\ 이미지\ 불러오기}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_agency_controller_a21e0c53caa4a630a6b7af8356c4ab540}{LoadUrl}}(agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students[i].ProfileImage,\ userObject.transform.GetChild(0).GetComponent<Image>()));}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ studentId\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students[i].Id;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text\ =\ studentId;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ agency.\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}[classValue].Students[i].Name;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ buttonList\ =\ userObject.GetComponent<Button>();}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_af3cedcacd3e83427aa78df11d8d50f81}{SelectStudent}}(studentId);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a6959284674d6e4db3b5af1e761ec0c8d}{saveStudentId}}\ =\ studentId;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 제거\ 팝업창\ 내\ 생성되는\ 유저\ 프리팹\ 선택\ 기능}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (userObject.transform.childCount\ >\ 3)}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ clickToggle\ =\ userObject.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonList.onClick.AddListener(()\ =>}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ obj\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ retuenToggle\ =\ obj.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retuenToggle.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clickToggle.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_agency_controller_a21e0c53caa4a630a6b7af8356c4ab540}\index{AgencyController@{AgencyController}!LoadUrl@{LoadUrl}}
+\index{LoadUrl@{LoadUrl}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{LoadUrl()}{LoadUrl()}}
+{\footnotesize\ttfamily \label{class_agency_controller_a21e0c53caa4a630a6b7af8356c4ab540} 
+IEnumerator Agency\+Controller.\+Load\+Url (\begin{DoxyParamCaption}\item[{string}]{url}{, }\item[{Image}]{image}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00299}{299}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ URL\ 유효성\ 검사}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Uri.IsWellFormedUriString(url,\ UriKind.Absolute))}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (UnityWebRequest\ uwr\ =\ UnityWebRequestTexture.GetTexture(url))}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ uwr.SendWebRequest();}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uwr.result\ ==\ UnityWebRequest.Result.ConnectionError\ ||\ uwr.result\ ==\ UnityWebRequest.Result.ProtocolError)}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(uwr.error);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Texture2D\ texture\ =\ DownloadHandlerTexture.GetContent(uwr);}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ sprite\ =\ Sprite.Create(texture,\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ texture.width,\ texture.height),\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f));}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.sprite\ =\ sprite;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_agency_controller_a94a640a570963ce893ff247960464e26}\index{AgencyController@{AgencyController}!LoginCancleBtn@{LoginCancleBtn}}
+\index{LoginCancleBtn@{LoginCancleBtn}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{LoginCancleBtn()}{LoginCancleBtn()}}
+{\footnotesize\ttfamily \label{class_agency_controller_a94a640a570963ce893ff247960464e26} 
+void Agency\+Controller.\+Login\+Cancle\+Btn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00686}{686}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00687\ \ \ \ \ \{}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.SetCurrentStudent(\textcolor{keyword}{null});}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a105d693b990055924862d830292191c0}{selectStudent}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a6959284674d6e4db3b5af1e761ec0c8d}{saveStudentId}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency.Classes[\mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}].Name);}
+\DoxyCodeLine{00693\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_a8ee1cb13768aa1a616b3dc34b6793c66}\index{AgencyController@{AgencyController}!LoginCheckStudent@{LoginCheckStudent}}
@@ -510,30 +683,13 @@ void Agency\+Controller.\+Login\+Check\+Student (\begin{DoxyParamCaption}{}{}\en
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00354}{354}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00680}{680}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00355\ \ \ \ \ \{}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a105d693b990055924862d830292191c0}{selectStudent}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00357\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{class_agency_controller_a17fc3d8813bfda27789a97dc1ba373b2}\index{AgencyController@{AgencyController}!LoginCheckTeam@{LoginCheckTeam}}
-\index{LoginCheckTeam@{LoginCheckTeam}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{LoginCheckTeam()}{LoginCheckTeam()}}
-{\footnotesize\ttfamily \label{class_agency_controller_a17fc3d8813bfda27789a97dc1ba373b2} 
-void Agency\+Controller.\+Login\+Check\+Team (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00348}{348}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00349\ \ \ \ \ \{}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a105d693b990055924862d830292191c0}{selectStudent}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00681\ \ \ \ \ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a105d693b990055924862d830292191c0}{selectStudent}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00683\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_aa8b768ed835b41587f700cdd073a455c}\index{AgencyController@{AgencyController}!OnLoginButtonClicked@{OnLoginButtonClicked}}
@@ -544,42 +700,42 @@ void Agency\+Controller.\+On\+Login\+Button\+Clicked (\begin{DoxyParamCaption}{}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00250}{250}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00325}{325}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00251\ \ \ \ \ \{}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail\ =\ \textcolor{stringliteral}{"{}gapyeong@vvr.co.kr"{}};}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ password\ =\ \textcolor{stringliteral}{"{}securepassword"{}};}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a041b76c880832c02b2aef312a74e33da}{Login}}(adminEmail,\ password,\ (agency)\ =>}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}로그인\ 성공:\ "{}}\ +\ agency.Name);}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetLoggedInAgency(agency);}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency.Classes.Count\ >\ 0)}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SelectClass(agency.Classes[0].Name);}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ agency.Classes.Count;\ i++)}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SelectClass(agency.Classes[i].Name);}}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00267\ }
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SelectClass(agency.Classes[0].Name);}}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency.Classes[0].Students.Count\ >\ 0)}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SelectStudent(agency.Classes[0].Students[0].Id);}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 로그인\ 성공\ 시\ 추가\ 작업}}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}로그인\ 실패"{}});}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 로그인\ 실패\ 시\ 추가\ 작업}}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail\ =\ \textcolor{stringliteral}{"{}gapyeong@vvr.co.kr"{}};}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ password\ =\ \textcolor{stringliteral}{"{}securepassword"{}};}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a041b76c880832c02b2aef312a74e33da}{Login}}(adminEmail,\ password,\ (agency)\ =>}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}로그인\ 성공:\ "{}}\ +\ agency.Name);}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetLoggedInAgency(agency);}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency.Classes.Count\ >\ 0)}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SelectClass(agency.Classes[0].Name);}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ agency.Classes.Count;\ i++)}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SelectClass(agency.Classes[i].Name);}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SelectClass(agency.Classes[0].Name);}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency.Classes[0].Students.Count\ >\ 0)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SelectStudent(agency.Classes[0].Students[0].Id);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 로그인\ 성공\ 시\ 추가\ 작업}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}로그인\ 실패"{}});}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 로그인\ 실패\ 시\ 추가\ 작업}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_a99a1ab9b3f342fbd99b4d87337926e9a}\index{AgencyController@{AgencyController}!RemoveClass@{RemoveClass}}
@@ -590,40 +746,40 @@ void Agency\+Controller.\+Remove\+Class (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00439}{439}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00540}{540}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00440\ \ \ \ \ \{}
-\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ teamName\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00442\ }
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ teamObject\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
-\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ var\ checkObj\ =\ teamObject.transform.GetChild(2).transform.GetChild(0).GetComponent<Image>();}
-\DoxyCodeLine{00446\ }
-\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (checkObj.gameObject.activeSelf)}
-\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamName\ =\ teamObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text;}
-\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00453\ }
-\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a47b9a7a55ef705e2df4c35298221377e}{RemoveClass}}(teamName,\ (success)\ =>}
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removeObjectList.Clear();}
-\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser.Instance.RemoveData();}
-\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser.Instance.MakeTeamList();}
-\DoxyCodeLine{00461\ }
-\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}반\ 삭제\ 성공"{}});}
-\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}반\ 삭제\ 실패"{}});}
-\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00469\ \ \ \ \ \}}
+\DoxyCodeLine{00541\ \ \ \ \ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ teamName\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ teamObject\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ var\ checkObj\ =\ teamObject.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (checkObj.gameObject.activeSelf)}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teamName\ =\ teamObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text;}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a47b9a7a55ef705e2df4c35298221377e}{RemoveClass}}(teamName,\ (success)\ =>}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removeObjectList.Clear();}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser.Instance.RemoveData();}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser.Instance.MakeTeamList();}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/반\ 삭제\ 성공"{}});}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/반\ 삭제\ 실패"{}});}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00570\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_abb8b832dd5ccf221930cd2453a98f639}\index{AgencyController@{AgencyController}!RemoveStudent@{RemoveStudent}}
@@ -634,42 +790,48 @@ void Agency\+Controller.\+Remove\+Student (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00516}{516}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00633}{633}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00517\ \ \ \ \ \{}
-\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ userID\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00519\ }
-\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ userObject\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
-\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ var\ checkObj\ =\ userObject.transform.GetChild(2).transform.GetChild(0).GetComponent<Image>();}
-\DoxyCodeLine{00523\ }
-\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (checkObj.gameObject.activeSelf)}
-\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userID\ =\ userObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;}
-\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00530\ }
-\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a6deba71c329c0277247a61f4da300ef9}{RemoveStudent}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name,\ userID,\ (success)\ =>}
-\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
-\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removeObjectList.Clear();}
-\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser.Instance.RemoveData();}
-\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser.Instance.MakeUserList();}
-\DoxyCodeLine{00538\ }
-\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserPageController.Instance.UpdatePlayerTeam();}
-\DoxyCodeLine{00540\ }
-\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}학생\ 삭제\ 성공"{}});}
-\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}학생\ 삭제\ 실패"{}});}
-\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{00548\ \ \ \ \ \}}
+\DoxyCodeLine{00634\ \ \ \ \ \{}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ userID\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ userObject\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_agency_controller_ac6eed326ea0f4336fcffbafece72bd0d}{removeObjectList}})}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ var\ checkObj\ =\ userObject.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>();}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (checkObj.gameObject.activeSelf)}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userID\ =\ userObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text;}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ StartCoroutine(\_agencyService.\mbox{\hyperlink{class_agency_service_a6deba71c329c0277247a61f4da300ef9}{RemoveStudent}}(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass.Name,\ userID,\ (success)\ =>}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (success)}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removeObjectList.Clear();}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreateAndRemoveUser\ instance\ =\ FindObjectOfType<CreateAndRemoveUser>();}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(instance\ !=\ null)}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ instance.RemoveData();}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ instance.MakeUserList();}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserPageController.Instance.UpdatePlayerTeam();}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/학생\ 삭제\ 성공"{}});}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/학생\ 삭제\ 실패"{}});}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00671\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}\index{AgencyController@{AgencyController}!SelectClass@{SelectClass}}
@@ -680,34 +842,34 @@ void Agency\+Controller.\+Select\+Class (\begin{DoxyParamCaption}\item[{string}]
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00285}{285}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00361}{361}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00286\ \ \ \ \ \{}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관:\ "{}}\ +\ agency);}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ var\ selectedClass\ =\ agency.Classes.Find(c\ =>\ c.Name\ ==\ className);}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedClass\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.SetCurrentClass(selectedClass);}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}반\ 선택됨:\ "{}}\ +\ selectedClass.Name);}
-\DoxyCodeLine{00296\ }
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_agency_controller_a884787d3da98da378c7ead503b55be39}{isJapanTest}})}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 반\ 선택\ 시\ 추가\ 작업}}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.loginPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ \textcolor{stringliteral}{"{}Logging\ in\ as\ <color=\#FFC01E>"{}}\ +\ selectedClass.Name\ +\ \textcolor{stringliteral}{"{}</color>"{}};}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 없어"{}});}
-\DoxyCodeLine{00307\ }
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ var\ agency\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency;}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (agency\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Agency\ 확인\ :\ "{}}\ +\ agency.ToString());}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ var\ selectedClass\ =\ agency.Classes.Find(c\ =>\ c.Name\ ==\ className);}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedClass\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.SetCurrentClass(selectedClass);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//PlayerPrefs.SetString("{}CurrentClass"{},\ selectedClass.Name);}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/반\ 선택됨\ :\ "{}}\ +\ selectedClass);}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 반\ 선택\ 시\ 추가\ 작업}}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.popupLogin.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Log\ in\ as\ <color=\#FFC01E>"{}}\ +\ selectedClass.Name\ +\ \textcolor{stringliteral}{"{}</color>"{}};}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}기관\ 없어"{}});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_af3cedcacd3e83427aa78df11d8d50f81}\index{AgencyController@{AgencyController}!SelectStudent@{SelectStudent}}
@@ -718,43 +880,31 @@ void Agency\+Controller.\+Select\+Student (\begin{DoxyParamCaption}\item[{string
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00312}{312}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00388}{388}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00313\ \ \ \ \ \{}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClass\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ var\ selectedStudent\ =\ currentClass.Students.Find(s\ =>\ s.Id\ ==\ studentId);}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedStudent\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}.otherPlayer)}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a669648cf67509c73b242e67b239a4ebc}{selectOtherPlayer}}\ =\ selectedStudent.Name;}
-\DoxyCodeLine{00325\ }
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_agency_controller_a884787d3da98da378c7ead503b55be39}{isJapanTest}})}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aa5318885664f74cccb6f75264098c999}{otherPlayerLogin}}.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ \textcolor{stringliteral}{"{}Logging\ in\ as\ <color=\#FFC01E>"{}}\ +\ \mbox{\hyperlink{class_agency_controller_a669648cf67509c73b242e67b239a4ebc}{selectOtherPlayer}}\ +\ \textcolor{stringliteral}{"{}</color>"{}};}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ }
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.SetCurrentStudent(selectedStudent);}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}학생\ 선택됨:\ "{}}\ +\ selectedStudent.Name);}
-\DoxyCodeLine{00336\ }
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_agency_controller_a884787d3da98da378c7ead503b55be39}{isJapanTest}})}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 학생\ 선택\ 시\ 추가\ 작업}}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.loginPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ \textcolor{stringliteral}{"{}Logging\ in\ as\ <color=\#FFC01E>"{}}\ +\ selectedStudent.Name\ +\ \textcolor{stringliteral}{"{}</color>"{}};}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00345\ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (studentId\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.SetCurrentStudent(\textcolor{keyword}{null});}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ var\ currentClass\ =\ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.CurrentClass;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClass\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ var\ selectedStudent\ =\ currentClass.Students.Find(s\ =>\ s.Id\ ==\ studentId);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedStudent\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.SetCurrentStudent(selectedStudent);}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/학생\ 선택됨\ :\ "{}}\ +\ selectedStudent);}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 학생\ 선택\ 시\ 추가\ 작업}}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.popupLogin.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Log\ in\ as\ <color=\#FFC01E>"{}}\ +\ selectedStudent.Name\ +\ \textcolor{stringliteral}{"{}</color>"{}};}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00409\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_agency_controller_af704d8e713b5e2df0040144c885c3fc0}\index{AgencyController@{AgencyController}!TeamDropdownList@{TeamDropdownList}}
@@ -765,68 +915,53 @@ void Agency\+Controller.\+Team\+Dropdown\+List (\begin{DoxyParamCaption}\item[{D
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00213}{213}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00232}{232}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00214\ \ \ \ \ \{}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ dropdown.AddOptions(\mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdownOptions}});}
-\DoxyCodeLine{00216\ }
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}.otherPlayer)}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a0beb5bedbb324afcca48f7e5c9e8a0c8}{selectOtherTeam}}\ =\ dropdown.options[0].text;}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00224\ }
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 드롭다운의\ 값이\ 변경될\ 때\ 호출될\ 이벤트\ 핸들러를\ 추가}}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ dropdown.onValueChanged.AddListener(delegate\ }
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ selectedClassName\ =\ dropdown.options[dropdown.value].text;}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}.\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (CreateAndRemoveUser.Instance.otherPlayer)}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selectOtherTeam\ =\ selectedClassName;}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(selectedClassName);}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ =\ dropdown.value;}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00243\ }
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ initialSelectedClassName\ =\ dropdown.options[dropdown.value].text;}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(initialSelectedClassName);}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ =\ dropdown.value;}
-\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ dropdown.AddOptions(\mbox{\hyperlink{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}{dropdownOptions}});}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 드롭다운의\ 값이\ 변경될\ 때\ 호출될\ 이벤트\ 핸들러를\ 추가}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ dropdown.onValueChanged.AddListener(delegate}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ selectedClassName\ =\ dropdown.options[dropdown.value].text;}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(selectedClassName);}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ =\ dropdown.value;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dropdown.options.Count\ >\ 0\ \&\&\ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}\ <\ dropdown.options.Count)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ dropdown.value\ =\ \mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}};}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ initialSelectedClassName\ =\ dropdown.options[\mbox{\hyperlink{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}{selectClassIndex}}].text;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller_a7ebc285403a16a770d8481f3d4d4e519}{SelectClass}}(initialSelectedClassName);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{멤버 데이터 문서화}
-\Hypertarget{class_agency_controller_af355db09aa8b6a420163d05bacd2e77c}\index{AgencyController@{AgencyController}!agencyData@{agencyData}}
-\index{agencyData@{agencyData}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{agencyData}{agencyData}}
-{\footnotesize\ttfamily \label{class_agency_controller_af355db09aa8b6a420163d05bacd2e77c} 
-\mbox{\hyperlink{class_agency}{Agency}} Agency\+Controller.\+agency\+Data}
+\Hypertarget{class_agency_controller_a2eff26af087997db8315c57ebde32003}\index{AgencyController@{AgencyController}!agencyNameTxt@{agencyNameTxt}}
+\index{agencyNameTxt@{agencyNameTxt}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{agencyNameTxt}{agencyNameTxt}}
+{\footnotesize\ttfamily \label{class_agency_controller_a2eff26af087997db8315c57ebde32003} 
+Text\+Mesh\+Pro\+UGUI Agency\+Controller.\+agency\+Name\+Txt}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
-\Hypertarget{class_agency_controller_ae36200f2184d1608867e4993bb2ffded}\index{AgencyController@{AgencyController}!agencyName@{agencyName}}
-\index{agencyName@{agencyName}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{agencyName}{agencyName}}
-{\footnotesize\ttfamily \label{class_agency_controller_ae36200f2184d1608867e4993bb2ffded} 
-Text\+Mesh\+Pro\+UGUI Agency\+Controller.\+agency\+Name}
+\Hypertarget{class_agency_controller_af00d605516f6568f7a5812548730e219}\index{AgencyController@{AgencyController}!contentController@{contentController}}
+\index{contentController@{contentController}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{contentController}{contentController}}
+{\footnotesize\ttfamily \label{class_agency_controller_af00d605516f6568f7a5812548730e219} 
+\mbox{\hyperlink{class_content_controller}{Content\+Controller}} Agency\+Controller.\+content\+Controller}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_a4d77472cc08c057894f5223a0321dbfc}\index{AgencyController@{AgencyController}!dropdownOptions@{dropdownOptions}}
 \index{dropdownOptions@{dropdownOptions}!AgencyController@{AgencyController}}
@@ -836,7 +971,37 @@ List$<$string$>$ Agency\+Controller.\+dropdown\+Options = new List$<$string$>$()
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a69d2d1df27156eaf8ead4bbdb510d0aa}\index{AgencyController@{AgencyController}!flagListController@{flagListController}}
+\index{flagListController@{flagListController}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{flagListController}{flagListController}}
+{\footnotesize\ttfamily \label{class_agency_controller_a69d2d1df27156eaf8ead4bbdb510d0aa} 
+\mbox{\hyperlink{class_flag_list_controller}{Flag\+List\+Controller}} Agency\+Controller.\+flag\+List\+Controller}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_ae44991e4e1f9dd8c34a7114a62987dc9}\index{AgencyController@{AgencyController}!guideText@{guideText}}
+\index{guideText@{guideText}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{guideText}{guideText}}
+{\footnotesize\ttfamily \label{class_agency_controller_ae44991e4e1f9dd8c34a7114a62987dc9} 
+Text\+Mesh\+Pro\+UGUI Agency\+Controller.\+guide\+Text}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_af60ff425789d5819aab33dccfdeeccb4}\index{AgencyController@{AgencyController}!inputAgencyName@{inputAgencyName}}
+\index{inputAgencyName@{inputAgencyName}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{inputAgencyName}{inputAgencyName}}
+{\footnotesize\ttfamily \label{class_agency_controller_af60ff425789d5819aab33dccfdeeccb4} 
+TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Agency\+Name}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00046}{46}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_a759474fb431078ed94a8c77e4f249e19}\index{AgencyController@{AgencyController}!inputClassName@{inputClassName}}
 \index{inputClassName@{inputClassName}!AgencyController@{AgencyController}}
@@ -846,7 +1011,17 @@ TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Class\+Name}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_af97d8a6b490ab599088213c3a0f93f51}\index{AgencyController@{AgencyController}!inputScreenSize@{inputScreenSize}}
+\index{inputScreenSize@{inputScreenSize}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{inputScreenSize}{inputScreenSize}}
+{\footnotesize\ttfamily \label{class_agency_controller_af97d8a6b490ab599088213c3a0f93f51} 
+TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Screen\+Size}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00047}{47}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_ad83291ae54281e558ac1923d43fdd2a4}\index{AgencyController@{AgencyController}!inputStudentAge@{inputStudentAge}}
 \index{inputStudentAge@{inputStudentAge}!AgencyController@{AgencyController}}
@@ -856,7 +1031,7 @@ TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Student\+Age}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00042}{42}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_afa0a3a5946e867dc3e6691ed61733091}\index{AgencyController@{AgencyController}!inputStudentName@{inputStudentName}}
 \index{inputStudentName@{inputStudentName}!AgencyController@{AgencyController}}
@@ -866,7 +1041,17 @@ TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Student\+Name}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00040}{40}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_ae1e77313f1277132ef24face16828184}\index{AgencyController@{AgencyController}!inputTeamAge@{inputTeamAge}}
+\index{inputTeamAge@{inputTeamAge}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{inputTeamAge}{inputTeamAge}}
+{\footnotesize\ttfamily \label{class_agency_controller_ae1e77313f1277132ef24face16828184} 
+TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Team\+Age}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}\index{AgencyController@{AgencyController}!Instance@{Instance}}
 \index{Instance@{Instance}!AgencyController@{AgencyController}}
@@ -876,33 +1061,33 @@ TMP\+\_\+\+Input\+Field Agency\+Controller.\+input\+Student\+Name}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_agency_controller_a884787d3da98da378c7ead503b55be39}\index{AgencyController@{AgencyController}!isJapanTest@{isJapanTest}}
-\index{isJapanTest@{isJapanTest}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{isJapanTest}{isJapanTest}}
-{\footnotesize\ttfamily \label{class_agency_controller_a884787d3da98da378c7ead503b55be39} 
-bool Agency\+Controller.\+is\+Japan\+Test}
-
-
-
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_agency_controller_aa5318885664f74cccb6f75264098c999}\index{AgencyController@{AgencyController}!otherPlayerLogin@{otherPlayerLogin}}
-\index{otherPlayerLogin@{otherPlayerLogin}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{otherPlayerLogin}{otherPlayerLogin}}
-{\footnotesize\ttfamily \label{class_agency_controller_aa5318885664f74cccb6f75264098c999} 
-Game\+Object Agency\+Controller.\+other\+Player\+Login}
-
-
-
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_af19475b151bfd913af507ae3507cc7a5}\index{AgencyController@{AgencyController}!popupUserManager@{popupUserManager}}
 \index{popupUserManager@{popupUserManager}!AgencyController@{AgencyController}}
 \doxysubsubsection{\texorpdfstring{popupUserManager}{popupUserManager}}
 {\footnotesize\ttfamily \label{class_agency_controller_af19475b151bfd913af507ae3507cc7a5} 
 Game\+Object Agency\+Controller.\+popup\+User\+Manager}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00029}{29}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a234f7dfda7496c2d84bc7207dae27cc6}\index{AgencyController@{AgencyController}!profileListController@{profileListController}}
+\index{profileListController@{profileListController}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{profileListController}{profileListController}}
+{\footnotesize\ttfamily \label{class_agency_controller_a234f7dfda7496c2d84bc7207dae27cc6} 
+\mbox{\hyperlink{class_profile_list_controller}{Profile\+List\+Controller}} Agency\+Controller.\+profile\+List\+Controller}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a54dfed4284fada5b6466b13a4e6bcc06}\index{AgencyController@{AgencyController}!rankingMoveCotroller@{rankingMoveCotroller}}
+\index{rankingMoveCotroller@{rankingMoveCotroller}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{rankingMoveCotroller}{rankingMoveCotroller}}
+{\footnotesize\ttfamily \label{class_agency_controller_a54dfed4284fada5b6466b13a4e6bcc06} 
+\mbox{\hyperlink{class_ranking_move_cotroller}{Ranking\+Move\+Cotroller}} Agency\+Controller.\+ranking\+Move\+Cotroller}
 
 
 
@@ -916,7 +1101,47 @@ List$<$Game\+Object$>$ Agency\+Controller.\+remove\+Object\+List = new List$<$Ga
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a2a9e0e5d4f9e09a57f9171f82a785167}\index{AgencyController@{AgencyController}!saveCountryCode@{saveCountryCode}}
+\index{saveCountryCode@{saveCountryCode}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{saveCountryCode}{saveCountryCode}}
+{\footnotesize\ttfamily \label{class_agency_controller_a2a9e0e5d4f9e09a57f9171f82a785167} 
+string Agency\+Controller.\+save\+Country\+Code}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_ac3d8b38a27c3782bc02c3870ae8a984e}\index{AgencyController@{AgencyController}!saveCountryUrl@{saveCountryUrl}}
+\index{saveCountryUrl@{saveCountryUrl}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{saveCountryUrl}{saveCountryUrl}}
+{\footnotesize\ttfamily \label{class_agency_controller_ac3d8b38a27c3782bc02c3870ae8a984e} 
+string Agency\+Controller.\+save\+Country\+Url}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a8d235b4cf662f297fd595f0bcdc4821c}\index{AgencyController@{AgencyController}!saveProfileUrl@{saveProfileUrl}}
+\index{saveProfileUrl@{saveProfileUrl}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{saveProfileUrl}{saveProfileUrl}}
+{\footnotesize\ttfamily \label{class_agency_controller_a8d235b4cf662f297fd595f0bcdc4821c} 
+string Agency\+Controller.\+save\+Profile\+Url}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00041}{41}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a6959284674d6e4db3b5af1e761ec0c8d}\index{AgencyController@{AgencyController}!saveStudentId@{saveStudentId}}
+\index{saveStudentId@{saveStudentId}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{saveStudentId}{saveStudentId}}
+{\footnotesize\ttfamily \label{class_agency_controller_a6959284674d6e4db3b5af1e761ec0c8d} 
+string Agency\+Controller.\+save\+Student\+Id}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_aeb79ec694332cf1bb0f4bb9b1a2cdbaf}\index{AgencyController@{AgencyController}!selectClassIndex@{selectClassIndex}}
 \index{selectClassIndex@{selectClassIndex}!AgencyController@{AgencyController}}
@@ -926,27 +1151,7 @@ int Agency\+Controller.\+select\+Class\+Index}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_agency_controller_a669648cf67509c73b242e67b239a4ebc}\index{AgencyController@{AgencyController}!selectOtherPlayer@{selectOtherPlayer}}
-\index{selectOtherPlayer@{selectOtherPlayer}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{selectOtherPlayer}{selectOtherPlayer}}
-{\footnotesize\ttfamily \label{class_agency_controller_a669648cf67509c73b242e67b239a4ebc} 
-string Agency\+Controller.\+select\+Other\+Player}
-
-
-
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00034}{34}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_agency_controller_a0beb5bedbb324afcca48f7e5c9e8a0c8}\index{AgencyController@{AgencyController}!selectOtherTeam@{selectOtherTeam}}
-\index{selectOtherTeam@{selectOtherTeam}!AgencyController@{AgencyController}}
-\doxysubsubsection{\texorpdfstring{selectOtherTeam}{selectOtherTeam}}
-{\footnotesize\ttfamily \label{class_agency_controller_a0beb5bedbb324afcca48f7e5c9e8a0c8} 
-string Agency\+Controller.\+select\+Other\+Team}
-
-
-
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00024}{24}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_agency_controller_a105d693b990055924862d830292191c0}\index{AgencyController@{AgencyController}!selectStudent@{selectStudent}}
 \index{selectStudent@{selectStudent}!AgencyController@{AgencyController}}
@@ -956,7 +1161,27 @@ bool Agency\+Controller.\+select\+Student}
 
 
 
-\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01}\index{AgencyController@{AgencyController}!studentAge@{studentAge}}
+\index{studentAge@{studentAge}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{studentAge}{studentAge}}
+{\footnotesize\ttfamily \label{class_agency_controller_a60fd5c54e92b8a63da323eddedea3a01} 
+int Agency\+Controller.\+student\+Age}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d}\index{AgencyController@{AgencyController}!teamAge@{teamAge}}
+\index{teamAge@{teamAge}!AgencyController@{AgencyController}}
+\doxysubsubsection{\texorpdfstring{teamAge}{teamAge}}
+{\footnotesize\ttfamily \label{class_agency_controller_a8705add4acc5b32bbcb424b143cb9a4d} 
+int Agency\+Controller.\+team\+Age}
+
+
+
+\mbox{\hyperlink{_agency_controller_8cs_source}{Agency\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_agency_controller_8cs_source_l00039}{39}} 번째 라인에서 정의되었습니다.
 
 
 

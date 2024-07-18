@@ -11,5 +11,6 @@ var class_ms500_manager =
     [ "sensorText", "class_ms500_manager.html#a73174380bf254cb5ac7ef0bcee8791b1", null ],
     [ "settingCamera", "class_ms500_manager.html#ab589e5df5482a2605a1422ee9f75b555", null ],
     [ "settingCanvas", "class_ms500_manager.html#a0ee3c07908453fc1ce38fea38cd133b4", null ],
-    [ "settingRenderer", "class_ms500_manager.html#aa7f714bfab11b3b4271850cec9128179", null ]
+    [ "settingRenderer", "class_ms500_manager.html#aa7f714bfab11b3b4271850cec9128179", null ],
+    [ "touchEnable", "class_ms500_manager.html#ab269e7d75151b08e93ee8e68c8658194", null ]
 ];

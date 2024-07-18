@@ -10,6 +10,8 @@ var class_agency =
     [ "AdminName", "class_agency.html#af9657245ff7b8719efcffb2990965670", null ],
     [ "Classes", "class_agency.html#ae93f9fe3f982890706b489e7cf0370c0", null ],
     [ "ContractDate", "class_agency.html#a022325f39158e162755fdf0a2089d350", null ],
+    [ "CountryCode", "class_agency.html#a2688c90464b0d0527b6ee3cb6c073085", null ],
+    [ "CountryImg", "class_agency.html#a7c00d397a0542f182162221565882daa", null ],
     [ "ExpirationDate", "class_agency.html#a79282af16779dfb9563f37e7fbe3a480", null ],
     [ "Logo", "class_agency.html#aead63493ef2dc48e0d9283c39ae16546", null ],
     [ "Name", "class_agency.html#a81194ce32d88da6e8e45fd77dc72a249", null ],

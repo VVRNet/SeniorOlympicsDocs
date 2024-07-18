@@ -29,7 +29,9 @@ Rank\+Summary\+Service에 대한 협력 다이어그램\+:
 \begin{DoxyCompactItemize}
 \item 
 IEnumerator \mbox{\hyperlink{class_rank_summary_service_a854a2ba1d1ca82ef41e5332039083b17}{Get\+Rankers}} (string content\+Name, Action$<$ List$<$ \mbox{\hyperlink{class_content_rank}{Content\+Rank}} $>$ $>$ callback)
-\begin{DoxyCompactList}\small\item\em 특정 콘텐츠의 랭커들을 가져옵니다. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 특정 콘텐츠의 싱글모드 랭커들을 가져옵니다. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_rank_summary_service_af0a59e969385d18d9865028e20ab8d42}{Get\+Multi\+Rankers}} (string content\+Name, Action$<$ List$<$ \mbox{\hyperlink{class_content_rank}{Content\+Rank}} $>$ $>$ callback)
+\begin{DoxyCompactList}\small\item\em 특정 콘텐츠의 멀티모드 랭커들을 가져옵니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_rank_summary_service_a4c26b7d03e524f439c95148e54d406ec}{Get\+My\+Ranking}} (string content\+Name, string my\+Id, bool is\+Class, Action$<$ \mbox{\hyperlink{class_my_rank}{My\+Rank}} $>$ callback)
 \begin{DoxyCompactList}\small\item\em 특정 사용자의 랭킹을 가져옵니다. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_rank_summary_service_a4601112dbdba5fc80653ede6dd2ab262}{Get\+Content\+Rankers}} (string content\+Name, int ranker\+Count, Action$<$ List$<$ \mbox{\hyperlink{class_top_rank}{Top\+Rank}} $>$ $>$ callback)
@@ -79,90 +81,188 @@ IEnumerator Rank\+Summary\+Service.\+Get\+Content\+Rankers (\begin{DoxyParamCapt
 \end{DoxyReturn}
 
 
-\mbox{\hyperlink{_rank_summary_service_8cs_source}{Rank\+Summary\+Service.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_service_8cs_source_l00224}{224}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_rank_summary_service_8cs_source}{Rank\+Summary\+Service.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_service_8cs_source_l00297}{297}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00225\ \ \ \ \ \{}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}aggregate"{}};}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ var\ pipeline\ =\ \textcolor{keyword}{new}\ JArray}
-\DoxyCodeLine{00233\ \ \ \ \ \{}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$match"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$addFields"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}AgencyObjectId"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$toObjectId"{}}]\ =\ \textcolor{stringliteral}{"{}\$AgencyID"{}}}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$lookup"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}from"{}}]\ =\ \textcolor{stringliteral}{"{}Agency"{}},}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}localField"{}}]\ =\ \textcolor{stringliteral}{"{}AgencyObjectId"{}},}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}foreignField"{}}]\ =\ \textcolor{stringliteral}{"{}\_id"{}},}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}as"{}}]\ =\ \textcolor{stringliteral}{"{}AgencyInfo"{}}}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$unwind"{}}]\ =\ \textcolor{stringliteral}{"{}\$AgencyInfo"{}}}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$project"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ 1,}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ 1,}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}AgencyName"{}}]\ =\ \textcolor{stringliteral}{"{}\$AgencyInfo.Name"{}},}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ -\/1}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$limit"{}}]\ =\ rankerCount}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00287\ \ \ \ \ \};}
-\DoxyCodeLine{00288\ }
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00296\ }
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00299\ }
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<TopRank>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}aggregate"{}};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ var\ pipeline\ =\ \textcolor{keyword}{new}\ JArray}
+\DoxyCodeLine{00306\ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$match"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$addFields"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}AgencyObjectId"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$toObjectId"{}}]\ =\ \textcolor{stringliteral}{"{}\$AgencyID"{}}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$lookup"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}from"{}}]\ =\ \textcolor{stringliteral}{"{}Agency"{}},}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}localField"{}}]\ =\ \textcolor{stringliteral}{"{}AgencyObjectId"{}},}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}foreignField"{}}]\ =\ \textcolor{stringliteral}{"{}\_id"{}},}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}as"{}}]\ =\ \textcolor{stringliteral}{"{}AgencyInfo"{}}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$unwind"{}}]\ =\ \textcolor{stringliteral}{"{}\$AgencyInfo"{}}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$project"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ 1,}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ 1,}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}AgencyName"{}}]\ =\ \textcolor{stringliteral}{"{}\$AgencyInfo.Name"{}},}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ -\/1}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$limit"{}}]\ =\ rankerCount}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \};}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<TopRank>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rank_summary_service_a4601112dbdba5fc80653ede6dd2ab262_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_rank_summary_service_af0a59e969385d18d9865028e20ab8d42}\index{RankSummaryService@{RankSummaryService}!GetMultiRankers@{GetMultiRankers}}
+\index{GetMultiRankers@{GetMultiRankers}!RankSummaryService@{RankSummaryService}}
+\doxysubsubsection{\texorpdfstring{GetMultiRankers()}{GetMultiRankers()}}
+{\footnotesize\ttfamily \label{class_rank_summary_service_af0a59e969385d18d9865028e20ab8d42} 
+IEnumerator Rank\+Summary\+Service.\+Get\+Multi\+Rankers (\begin{DoxyParamCaption}\item[{string}]{content\+Name}{, }\item[{Action$<$ List$<$ \mbox{\hyperlink{class_content_rank}{Content\+Rank}} $>$ $>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+특정 콘텐츠의 멀티모드 랭커들을 가져옵니다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em content\+Name} & 콘텐츠 이름입니다. \\
+\hline
+{\em callback} & 결과를 처리할 콜백 함수입니다. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+코루틴 처리를 위한 IEnumerator입니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_rank_summary_service_8cs_source}{Rank\+Summary\+Service.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_service_8cs_source_l00113}{113}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}aggregate"{}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ var\ pipeline\ =\ \textcolor{keyword}{new}\ JArray}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$match"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}IsSingle"{}}]\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$unwind"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}path"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetails"{}},}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}includeArrayIndex"{}}]\ =\ \textcolor{stringliteral}{"{}index"{}}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$project"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ 1,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ \textcolor{stringliteral}{"{}\$Winner"{}},}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetails.TotalScore"{}}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ -\/1}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$limit"{}}]\ =\ 3}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<ContentRank>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -170,7 +270,7 @@ IEnumerator Rank\+Summary\+Service.\+Get\+Content\+Rankers (\begin{DoxyParamCapt
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_rank_summary_service_a4601112dbdba5fc80653ede6dd2ab262_icgraph}
+\includegraphics[width=350pt]{class_rank_summary_service_af0a59e969385d18d9865028e20ab8d42_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_rank_summary_service_a4c26b7d03e524f439c95148e54d406ec}\index{RankSummaryService@{RankSummaryService}!GetMyRanking@{GetMyRanking}}
@@ -199,110 +299,110 @@ IEnumerator Rank\+Summary\+Service.\+Get\+My\+Ranking (\begin{DoxyParamCaption}\
 \end{DoxyReturn}
 
 
-\mbox{\hyperlink{_rank_summary_service_8cs_source}{Rank\+Summary\+Service.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_service_8cs_source_l00114}{114}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_rank_summary_service_8cs_source}{Rank\+Summary\+Service.\+cs}} 파일의 \mbox{\hyperlink{_rank_summary_service_8cs_source_l00187}{187}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00115\ \ \ \ \ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}find"{}};}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ var\ matchCondition\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isClass)}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ matchCondition[\textcolor{stringliteral}{"{}ClassID"{}}]\ =\ myId;}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ matchCondition[\textcolor{stringliteral}{"{}PersonID"{}}]\ =\ JObject.Parse(\textcolor{stringliteral}{"{}null"{}});}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ matchCondition[\textcolor{stringliteral}{"{}PersonID"{}}]\ =\ myId;}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ var\ pipeline\ =\ \textcolor{keyword}{new}\ JArray}
-\DoxyCodeLine{00138\ \ \ \ \ \{}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$match"{}}]\ =\ matchCondition}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$group"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\_id"{}}]\ =\ JObject.Parse(\textcolor{stringliteral}{"{}null"{}}),}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}maxScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$max"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}avgScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$avg"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}scores"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$push"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ \textcolor{stringliteral}{"{}\$Name"{}},}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$unwind"{}}]\ =\ \textcolor{stringliteral}{"{}\$scores"{}}}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}scores.TotalScore"{}}]\ =\ -\/1}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$group"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\_id"{}}]\ =\ JObject.Parse(\textcolor{stringliteral}{"{}null"{}}),}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}maxScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$maxScore"{}}}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}avgScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$avgScore"{}}}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}rankings"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$push"{}}]\ =\ \textcolor{stringliteral}{"{}\$scores"{}}}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00196\ \ \ \ \ \};}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00205\ }
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
-\DoxyCodeLine{00207\ }
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00188\ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ url\ =\ \mbox{\hyperlink{class_base_service_a1eaefb0b8df84caeabc13ea5cfc10954}{baseUrl}}\ +\ \textcolor{stringliteral}{"{}find"{}};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ var\ settings\ =\ \textcolor{keyword}{new}\ JsonSerializerSettings();}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}());}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ settings.Converters.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}());}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ var\ matchCondition\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isClass)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ matchCondition[\textcolor{stringliteral}{"{}ClassID"{}}]\ =\ myId;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ matchCondition[\textcolor{stringliteral}{"{}PersonID"{}}]\ =\ JObject.Parse(\textcolor{stringliteral}{"{}null"{}});}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ matchCondition[\textcolor{stringliteral}{"{}PersonID"{}}]\ =\ myId;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00209\ }
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<MyRank>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response[0]);}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ var\ pipeline\ =\ \textcolor{keyword}{new}\ JArray}
+\DoxyCodeLine{00211\ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$match"{}}]\ =\ matchCondition}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$group"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\_id"{}}]\ =\ JObject.Parse(\textcolor{stringliteral}{"{}null"{}}),}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}maxScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$max"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}avgScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$avg"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}scores"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$push"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ \textcolor{stringliteral}{"{}\$Name"{}},}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$unwind"{}}]\ =\ \textcolor{stringliteral}{"{}\$scores"{}}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}scores.TotalScore"{}}]\ =\ -\/1}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$group"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\_id"{}}]\ =\ JObject.Parse(\textcolor{stringliteral}{"{}null"{}}),}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}maxScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$maxScore"{}}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}avgScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$avgScore"{}}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}rankings"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$push"{}}]\ =\ \textcolor{stringliteral}{"{}\$scores"{}}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<MyRank>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response[0]);}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
@@ -321,7 +421,7 @@ IEnumerator Rank\+Summary\+Service.\+Get\+Rankers (\begin{DoxyParamCaption}\item
 
 
 
-특정 콘텐츠의 랭커들을 가져옵니다. 
+특정 콘텐츠의 싱글모드 랭커들을 가져옵니다. 
 
 
 \begin{DoxyParams}{매개변수}
@@ -352,73 +452,74 @@ IEnumerator Rank\+Summary\+Service.\+Get\+Rankers (\begin{DoxyParamCaption}\item
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$match"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}RecordDetail.TotalScore"{}}]\ =\ -\/1}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$group"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\_id"{}}]\ =\ \textcolor{stringliteral}{"{}\$Name"{}},}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$Name"{}}}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$ContentName"{}}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$max"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ -\/1}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$limit"{}}]\ =\ 3}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$project"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ 1,}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ 1,}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ 1}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ \};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<ContentRank>(url,\ jsonData,\ (response)\ =>}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ contentName,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}IsSingle"{}}]\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}RecordDetail.TotalScore"{}}]\ =\ -\/1}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$group"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\_id"{}}]\ =\ \textcolor{stringliteral}{"{}\$Name"{}},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$Name"{}}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$first"{}}]\ =\ \textcolor{stringliteral}{"{}\$ContentName"{}}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$max"{}}]\ =\ \textcolor{stringliteral}{"{}\$RecordDetail.TotalScore"{}}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$sort"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ -\/1}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$limit"{}}]\ =\ 3}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}\$project"{}}]\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}ContentName"{}}]\ =\ 1,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}Name"{}}]\ =\ 1,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}TotalScore"{}}]\ =\ 1}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ var\ requestBody\ =\ \textcolor{keyword}{new}\ JObject}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}dataSource"{}}]\ =\ dataSource,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}database"{}}]\ =\ database,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}collection"{}}]\ =\ collection,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}pipeline"{}}]\ =\ pipeline}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ jsonData\ =\ JsonConvert.SerializeObject(requestBody,\ settings);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ Debug.Log(jsonData);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SendRequest<ContentRank>(url,\ jsonData,\ (response)\ =>}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ callback?.Invoke(response);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
 
 \end{DoxyCode}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:

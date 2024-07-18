@@ -75,7 +75,7 @@
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00071}00071\ }
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(filePath))}
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail\ =\ File.ReadAllText(filePath);\ \textcolor{comment}{//\ {\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}{\ucr}{\ucr}}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail\ =\ File.ReadAllText(filePath);}
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00075}00075\ }
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_agencyService\ !=\ \textcolor{keyword}{null})}
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -86,71 +86,69 @@
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (agency\ !=\ null)}
 \DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ {\ucr}ӽ{\ucr}\ {\ucr}α{\ucr}{\ucr}{\ucr}}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetLoggedInAgency(agency);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.SelectClass(agency.Classes[0].Name);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.SelectStudent(agency.Classes[0].Students[0].Id);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}No\ agency\ found."{}});}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultLoaded\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isLoading\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ resultLoaded);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00100}00100\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ {\ucr}{\ucr}{\ucr}{\ucr}{\ucr}\ {\ucr}ε{\ucr}{\ucr}\ {\ucr}Ŀ{\ucr}\ {\ucr}÷{\ucr}{\ucr}{\ucr}\ {\ucr}{\ucr}ư{\ucr}{\ucr}\ Ȱ{\ucr}{\ucr}ȭ}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_a963b4b5e9366bdb7db3974fa6ae6a051}{loadingPanel}}.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ playBtn\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_a270618adc26bbffbbe7b8d61f35dc404}{playButton}})}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playBtn.interactable\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}AgencyService\ is\ not\ initialized."{}});}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}AdminEmail.txt\ file\ does\ not\ exist."{}});}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00118}00118\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00119}\mbox{\hyperlink{class_japan_project_1_1_setting_manager_a6bf2042d0b7c3df708b44b0822853496}{00119}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_a6bf2042d0b7c3df708b44b0822853496}{CreateUser}}(\textcolor{keywordtype}{bool}\ isSingle)}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isSingle)}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userNameText.text\ =\ \textcolor{stringliteral}{"{}Log\ in\ as\ a\ <color=\#FFC126>"{}}\ +\ SessionManager.Instance.CurrentStudent.Name\ +\ \textcolor{stringliteral}{"{}</color>."{}};}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00124}00124\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loginButton.onClick.AddListener(()\ =>}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6}{SelectContents}}(contentsName);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_ae0ef038a86f7d40909327b7809a18235}{SelectGameMode}}(1);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_a19148c7d1a6de207406169305b392674}{LoadContents}}();}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userNameText.text\ =\ \textcolor{stringliteral}{"{}Log\ in\ as\ a\ match\ user\ with\ <color=\#FFC126>"{}}\ +\ AgencyController.Instance.selectOtherPlayer\ +\ \textcolor{stringliteral}{"{}</color>."{}};}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loginButton.onClick.AddListener(()\ =>}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_a1cd64954f0095c607a32e5bd6318d1e6}{SelectContents}}(contentsName);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_ae0ef038a86f7d40909327b7809a18235}{SelectGameMode}}(2);}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_a19148c7d1a6de207406169305b392674}{LoadContents}}();}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00144}00144\ }
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00145}\mbox{\hyperlink{class_japan_project_1_1_setting_manager_ae91c4d7f89c40e9b11d8e7172c12fedf}{00145}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_ae91c4d7f89c40e9b11d8e7172c12fedf}{QuitButton}}()}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ Application.Quit();}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00149}00149\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetLoggedInAgency(agency);}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.SelectClass(agency.Classes[0].Name);}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.SelectStudent(agency.Classes[0].Students[0].Id);}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}No\ agency\ found."{}});}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultLoaded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isLoading\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ resultLoaded);}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_a963b4b5e9366bdb7db3974fa6ae6a051}{loadingPanel}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ playBtn\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_a270618adc26bbffbbe7b8d61f35dc404}{playButton}})}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playBtn.interactable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}AgencyService\ is\ not\ initialized."{}});}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}AdminEmail.txt\ file\ does\ not\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00117}\mbox{\hyperlink{class_japan_project_1_1_setting_manager_a6bf2042d0b7c3df708b44b0822853496}{00117}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_a6bf2042d0b7c3df708b44b0822853496}{CreateUser}}(\textcolor{keywordtype}{bool}\ isSingle)}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isSingle)}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ userNameText.text\ =\ \textcolor{stringliteral}{"{}Log\ in\ as\ a\ <color=\#FFC126>"{}}\ +\ SessionManager.Instance.CurrentStudent.Name\ +\ \textcolor{stringliteral}{"{}</color>."{}};}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loginButton.onClick.AddListener(()\ =>}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//moveSceneController.SelectContents(contentsName);}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//moveSceneController.SelectGameMode(1);}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_a19148c7d1a6de207406169305b392674}{LoadContents}}();}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//userNameText.text\ =\ "{}Log\ in\ as\ a\ match\ user\ with\ <color=\#FFC126>"{}\ +\ AgencyController.Instance.selectOtherPlayer\ +\ "{}</color>."{};}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loginButton.onClick.AddListener(()\ =>}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//moveSceneController.SelectContents(contentsName);}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//moveSceneController.SelectGameMode(2);}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moveSceneController.\mbox{\hyperlink{class_move_scene_controller_a19148c7d1a6de207406169305b392674}{LoadContents}}();}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00143}\mbox{\hyperlink{class_japan_project_1_1_setting_manager_ae91c4d7f89c40e9b11d8e7172c12fedf}{00143}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_japan_project_1_1_setting_manager_ae91c4d7f89c40e9b11d8e7172c12fedf}{QuitButton}}()}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ Application.Quit();}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{01_8_s_p_o_d_y2_80_2_scripts_2_test_2_setting_manager_8cs_source_l00148}00148\ \}}
 
 \end{DoxyCode}

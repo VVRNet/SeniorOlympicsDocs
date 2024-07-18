@@ -17,7 +17,7 @@ User\+Page\+Controller에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=229pt]{class_user_page_controller__coll__graph}
+\includegraphics[width=228pt]{class_user_page_controller__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 멤버 함수}
@@ -32,8 +32,6 @@ void \mbox{\hyperlink{class_user_page_controller_abf2a40cfc50a5e395ceb76e55a09d1
 void \mbox{\hyperlink{class_user_page_controller_a736de14d957108ae660283bf02daa129}{Reset\+User}} ()
 \item 
 void \mbox{\hyperlink{class_user_page_controller_a6d25f1d3545dbf71960460c1b6db69b1}{Reset\+All\+Data}} (Transform parent\+Transform, List$<$ Game\+Object $>$ remove\+List)
-\item 
-void \mbox{\hyperlink{class_user_page_controller_aefc7e8d0d0c958204fb27ac8ccb1d597}{Update\+User\+Data}} (int class\+Value)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
@@ -44,11 +42,7 @@ Transform \mbox{\hyperlink{class_user_page_controller_a0e012446e6c5619b971e60cfd
 \item 
 List$<$ Game\+Object $>$ \mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{class\+List}} = new List$<$Game\+Object$>$()
 \item 
-Game\+Object \mbox{\hyperlink{class_user_page_controller_ae6c3dce7854d092f8126d835fd974dd9}{class\+Prefabs\+\_\+}}
-\item 
-Transform \mbox{\hyperlink{class_user_page_controller_a7a0761257fa6aa839f865de61f1271bf}{class\+Root\+Trans\+\_\+}}
-\item 
-List$<$ Game\+Object $>$ \mbox{\hyperlink{class_user_page_controller_a1f3837a3b5d265f187546605ef565191}{class\+List\+\_\+}} = new List$<$Game\+Object$>$()
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_user_page_controller_a67111d1d4c6d87df5f6f4afda4f50e78}{team\+Name\+Txt}}
 \item 
 Game\+Object \mbox{\hyperlink{class_user_page_controller_a48a6217154f5fc816eb668dd168d8220}{student\+Prefabs}}
 \item 
@@ -66,7 +60,7 @@ static \mbox{\hyperlink{class_user_page_controller}{User\+Page\+Controller}} \mb
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -79,22 +73,21 @@ void User\+Page\+Controller.\+Reset\+All\+Data (\begin{DoxyParamCaption}\item[{T
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00084}{84}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00085}{85}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00085\ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ removeList.Clear();}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ child\ \textcolor{keywordflow}{in}\ parentTransform)}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(child.gameObject);}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ removeList.Clear();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ child\ \textcolor{keywordflow}{in}\ parentTransform)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(child.gameObject);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -109,26 +102,23 @@ void User\+Page\+Controller.\+Reset\+Team (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00073}{73}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00073\ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a6d25f1d3545dbf71960460c1b6db69b1}{ResetAllData}}(\mbox{\hyperlink{class_user_page_controller_a0e012446e6c5619b971e60cfd9ec8c84}{classRootTrans}},\ \mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{classList}});}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a6d25f1d3545dbf71960460c1b6db69b1}{ResetAllData}}(\mbox{\hyperlink{class_user_page_controller_a7a0761257fa6aa839f865de61f1271bf}{classRootTrans\_}},\ \mbox{\hyperlink{class_user_page_controller_a1f3837a3b5d265f187546605ef565191}{classList\_}});}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a6d25f1d3545dbf71960460c1b6db69b1}{ResetAllData}}(\mbox{\hyperlink{class_user_page_controller_a0e012446e6c5619b971e60cfd9ec8c84}{classRootTrans}},\ \mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{classList}});}
 \DoxyCodeLine{00076\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_user_page_controller_abf2a40cfc50a5e395ceb76e55a09d16a_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -143,26 +133,23 @@ void User\+Page\+Controller.\+Reset\+User (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00078}{78}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00079}{79}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00079\ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a6d25f1d3545dbf71960460c1b6db69b1}{ResetAllData}}(\mbox{\hyperlink{class_user_page_controller_a7a0761257fa6aa839f865de61f1271bf}{classRootTrans\_}},\ \mbox{\hyperlink{class_user_page_controller_a1f3837a3b5d265f187546605ef565191}{classList\_}});}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
 \DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a6d25f1d3545dbf71960460c1b6db69b1}{ResetAllData}}(\mbox{\hyperlink{class_user_page_controller_a8eb61c6e26fc59d890705b4438f74ccb}{studentRootTrans}},\ \mbox{\hyperlink{class_user_page_controller_a2be207cfcad3fc89171f53a0fc1f9709}{studentList}});}
 \DoxyCodeLine{00082\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_user_page_controller_a736de14d957108ae660283bf02daa129_cgraph}
 \end{center}
 \end{figure}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -177,30 +164,29 @@ void User\+Page\+Controller.\+Update\+Player\+Team (\begin{DoxyParamCaption}{}{}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00044}{44}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00039\ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ����\ ���� ������Ʈ\ �ʱ�ȭ}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{classList}}.Count\ >\ 0)}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_abf2a40cfc50a5e395ceb76e55a09d16a}{ResetTeam}}();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_user_page_controller_a2be207cfcad3fc89171f53a0fc1f9709}{studentList}}.Count\ >\ 0)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a736de14d957108ae660283bf02daa129}{ResetUser}}();}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ��\ ������Ʈ\ ����}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetTeamData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_user_page_controller_ae17964b87a83bca9e39b2c849ea240b4}{classPrefabs}},\ \mbox{\hyperlink{class_user_page_controller_a0e012446e6c5619b971e60cfd9ec8c84}{classRootTrans}},\ \mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{classList}},\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_ad073dc1ec47dadf8c838c20d47e52682}{UpdatePlayerUser}}();}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 이전\ 생성\ 오브젝트\ 초기화}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{classList}}.Count\ >\ 0)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_abf2a40cfc50a5e395ceb76e55a09d16a}{ResetTeam}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_user_page_controller_a2be207cfcad3fc89171f53a0fc1f9709}{studentList}}.Count\ >\ 0)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_a736de14d957108ae660283bf02daa129}{ResetUser}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 팀\ 오브젝트\ 생성}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetTeamData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_user_page_controller_ae17964b87a83bca9e39b2c849ea240b4}{classPrefabs}},\ \mbox{\hyperlink{class_user_page_controller_a0e012446e6c5619b971e60cfd9ec8c84}{classRootTrans}},\ \mbox{\hyperlink{class_user_page_controller_aea67370a71470e34e924600f35823b45}{classList}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller_ad073dc1ec47dadf8c838c20d47e52682}{UpdatePlayerUser}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -215,17 +201,11 @@ void User\+Page\+Controller.\+Update\+Player\+User (\begin{DoxyParamCaption}{}{}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00057}{57}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00063}{63}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_user_page_controller_a1f3837a3b5d265f187546605ef565191}{classList\_}}.Count\ ==\ 0)}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ������\ ������ �ִ� ��\ ����}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetTeamData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_user_page_controller_ae6c3dce7854d092f8126d835fd974dd9}{classPrefabs\_}},\ \mbox{\hyperlink{class_user_page_controller_a7a0761257fa6aa839f865de61f1271bf}{classRootTrans\_}},\ \mbox{\hyperlink{class_user_page_controller_a1f3837a3b5d265f187546605ef565191}{classList\_}},\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00064\ \ \ \ \ \{}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_user_page_controller_a2be207cfcad3fc89171f53a0fc1f9709}{studentList}}.Count\ ==\ 0)}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ AgencyController.Instance.GetUserData}
@@ -234,31 +214,13 @@ void User\+Page\+Controller.\+Update\+Player\+User (\begin{DoxyParamCaption}{}{}
 \DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_user_page_controller_ad073dc1ec47dadf8c838c20d47e52682_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_user_page_controller_aefc7e8d0d0c958204fb27ac8ccb1d597}\index{UserPageController@{UserPageController}!UpdateUserData@{UpdateUserData}}
-\index{UpdateUserData@{UpdateUserData}!UserPageController@{UserPageController}}
-\doxysubsubsection{\texorpdfstring{UpdateUserData()}{UpdateUserData()}}
-{\footnotesize\ttfamily \label{class_user_page_controller_aefc7e8d0d0c958204fb27ac8ccb1d597} 
-void User\+Page\+Controller.\+Update\+User\+Data (\begin{DoxyParamCaption}\item[{int}]{class\+Value}{}\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00094}{94}} 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00095\ \ \ \ \ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//AgencyController.Instance.GetUserData(SessionManager.Instance.LoggedInAgency,\ AgencyController.Instance.classIndex[classValue],\ studentPrefabs,\ studentRootTrans,\ studentList);}}
-\DoxyCodeLine{00097\ \ \ \ \ \}}
-
-\end{DoxyCode}
 
 
 \doxysubsection{멤버 데이터 문서화}
@@ -270,17 +232,7 @@ List$<$Game\+Object$>$ User\+Page\+Controller.\+class\+List = new List$<$Game\+O
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_user_page_controller_a1f3837a3b5d265f187546605ef565191}\index{UserPageController@{UserPageController}!classList\_@{classList\_}}
-\index{classList\_@{classList\_}!UserPageController@{UserPageController}}
-\doxysubsubsection{\texorpdfstring{classList\_}{classList\_}}
-{\footnotesize\ttfamily \label{class_user_page_controller_a1f3837a3b5d265f187546605ef565191} 
-List$<$Game\+Object$>$ User\+Page\+Controller.\+class\+List\+\_\+ = new List$<$Game\+Object$>$()}
-
-
-
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_user_page_controller_ae17964b87a83bca9e39b2c849ea240b4}\index{UserPageController@{UserPageController}!classPrefabs@{classPrefabs}}
 \index{classPrefabs@{classPrefabs}!UserPageController@{UserPageController}}
@@ -290,17 +242,7 @@ Game\+Object User\+Page\+Controller.\+class\+Prefabs}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_user_page_controller_ae6c3dce7854d092f8126d835fd974dd9}\index{UserPageController@{UserPageController}!classPrefabs\_@{classPrefabs\_}}
-\index{classPrefabs\_@{classPrefabs\_}!UserPageController@{UserPageController}}
-\doxysubsubsection{\texorpdfstring{classPrefabs\_}{classPrefabs\_}}
-{\footnotesize\ttfamily \label{class_user_page_controller_ae6c3dce7854d092f8126d835fd974dd9} 
-Game\+Object User\+Page\+Controller.\+class\+Prefabs\+\_\+}
-
-
-
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00016}{16}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_user_page_controller_a0e012446e6c5619b971e60cfd9ec8c84}\index{UserPageController@{UserPageController}!classRootTrans@{classRootTrans}}
 \index{classRootTrans@{classRootTrans}!UserPageController@{UserPageController}}
@@ -310,17 +252,7 @@ Transform User\+Page\+Controller.\+class\+Root\+Trans}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
-
-\Hypertarget{class_user_page_controller_a7a0761257fa6aa839f865de61f1271bf}\index{UserPageController@{UserPageController}!classRootTrans\_@{classRootTrans\_}}
-\index{classRootTrans\_@{classRootTrans\_}!UserPageController@{UserPageController}}
-\doxysubsubsection{\texorpdfstring{classRootTrans\_}{classRootTrans\_}}
-{\footnotesize\ttfamily \label{class_user_page_controller_a7a0761257fa6aa839f865de61f1271bf} 
-Transform User\+Page\+Controller.\+class\+Root\+Trans\+\_\+}
-
-
-
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00014}{14}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}\index{UserPageController@{UserPageController}!Instance@{Instance}}
 \index{Instance@{Instance}!UserPageController@{UserPageController}}
@@ -330,7 +262,7 @@ Transform User\+Page\+Controller.\+class\+Root\+Trans\+\_\+}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_user_page_controller_a2be207cfcad3fc89171f53a0fc1f9709}\index{UserPageController@{UserPageController}!studentList@{studentList}}
 \index{studentList@{studentList}!UserPageController@{UserPageController}}
@@ -340,7 +272,7 @@ List$<$Game\+Object$>$ User\+Page\+Controller.\+student\+List = new List$<$Game\
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_user_page_controller_a48a6217154f5fc816eb668dd168d8220}\index{UserPageController@{UserPageController}!studentPrefabs@{studentPrefabs}}
 \index{studentPrefabs@{studentPrefabs}!UserPageController@{UserPageController}}
@@ -350,7 +282,7 @@ Game\+Object User\+Page\+Controller.\+student\+Prefabs}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_user_page_controller_a8eb61c6e26fc59d890705b4438f74ccb}\index{UserPageController@{UserPageController}!studentRootTrans@{studentRootTrans}}
 \index{studentRootTrans@{studentRootTrans}!UserPageController@{UserPageController}}
@@ -360,7 +292,17 @@ Transform User\+Page\+Controller.\+student\+Root\+Trans}
 
 
 
-\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_user_page_controller_a67111d1d4c6d87df5f6f4afda4f50e78}\index{UserPageController@{UserPageController}!teamNameTxt@{teamNameTxt}}
+\index{teamNameTxt@{teamNameTxt}!UserPageController@{UserPageController}}
+\doxysubsubsection{\texorpdfstring{teamNameTxt}{teamNameTxt}}
+{\footnotesize\ttfamily \label{class_user_page_controller_a67111d1d4c6d87df5f6f4afda4f50e78} 
+Text\+Mesh\+Pro\+UGUI User\+Page\+Controller.\+team\+Name\+Txt}
+
+
+
+\mbox{\hyperlink{_user_page_controller_8cs_source}{User\+Page\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_user_page_controller_8cs_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
 
 

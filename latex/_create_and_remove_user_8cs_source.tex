@@ -6,88 +6,89 @@
 \DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
 \DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
 \DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00005}\mbox{\hyperlink{class_create_and_remove_user}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}\ :\ MonoBehaviour}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00006}00006\ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00007}\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{00007}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}\ \mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}};}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00009}\mbox{\hyperlink{class_create_and_remove_user_a866c3ba5ae7f977527b5f5e0ca10b50c}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_create_and_remove_user_a866c3ba5ae7f977527b5f5e0ca10b50c}{isTeam}};}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00010}\mbox{\hyperlink{class_create_and_remove_user_adfce64a96d863b138677209c026146d2}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_create_and_remove_user_adfce64a96d863b138677209c026146d2}{otherPlayer}};}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00012}\mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{objectPrefabs}};}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00013}\mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}};}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00014}\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ List<GameObject>\ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}}\ =\ \textcolor{keyword}{new}\ List<GameObject>();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00017}00017\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00022}00022\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00025}00025\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_create_and_remove_user_a866c3ba5ae7f977527b5f5e0ca10b50c}{isTeam}})}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_a83bf50b587d56b06878142709a444251}{MakeTeamList}}();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_ad66557cfef6b689daf412b5d86aeb48f}{MakeUserList}}();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00034}00034\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ ¿Ã¿¸\ ª˝º∫ ø¿∫Í¡ß∆Æ\ √ ±‚»≠}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00037}\mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{RemoveData}}()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00038}00038\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}}.Count\ >\ 0)}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}}.Clear();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}}.childCount\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ child\ =\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}}.GetChild(i).gameObject;}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(child);}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00050}00050\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ PopUpPanel¿«\ UserManager¿«\ ∆¿¡¶∞≈ ∏µÂø°º≠\ ¡¶∞≈ ∞°¥…«— ∆¿\ ∏Ò∑œ ª˝º∫}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00053}\mbox{\hyperlink{class_create_and_remove_user_a83bf50b587d56b06878142709a444251}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_a83bf50b587d56b06878142709a444251}{MakeTeamList}}()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00054}00054\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetTeamData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{objectPrefabs}},\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}},\ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}},\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.AddRange(\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerTeam();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00058}00058\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ ∆¿\ ¡¶∞≈ √Îº“ πˆ∆∞ ¿Ã∫•∆Æ}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00061}\mbox{\hyperlink{class_create_and_remove_user_a46a484dd1b44ef6f5bd6a36587344c8e}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_a46a484dd1b44ef6f5bd6a36587344c8e}{CancelRemoveTeam}}()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00062}00062\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.Clear();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{RemoveData}}();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.team.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.team.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ PopUpPanel¿«\ UserManager¿«\ ¿Ø¿˙\ ¡¶∞≈ ∏µÂø°º≠\ ¡¶∞≈ ∞°¥…«— ¿Ø¿˙\ ∏Ò∑œ ª˝º∫}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00071}\mbox{\hyperlink{class_create_and_remove_user_ad66557cfef6b689daf412b5d86aeb48f}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_ad66557cfef6b689daf412b5d86aeb48f}{MakeUserList}}()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00072}00072\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetUserData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectClassIndex,\ \mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{objectPrefabs}},\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}},\ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.AddRange(\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00076}00076\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//\ ¿Ø¿˙\ ¡¶∞≈ √Îº“ πˆ∆∞ ¿Ã∫•∆Æ}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00079}\mbox{\hyperlink{class_create_and_remove_user_a4de96d386fcb3845939aee74e260f1e4}{00079}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_a4de96d386fcb3845939aee74e260f1e4}{CancelRemoveUser}}()}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00080}00080\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.Clear();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{RemoveData}}();}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.user.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.user.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00086}00086\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00005}00005\ \textcolor{comment}{//\ Ïú†Ï†Ä\ Ï†úÍ±∞Ï∞ΩÏóêÏÑú\ Ï†úÍ±∞Ìï†\ Ïú†Ï†Ä\ ÏÉùÏÑ±Í≥º\ Ïú†Ï†Ä\ Ï†úÍ±∞\ Í∏∞Îä•\ Ïª®Ìä∏Î°§}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00007}\mbox{\hyperlink{class_create_and_remove_user}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00009}\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_create_and_remove_user}{CreateAndRemoveUser}}\ \mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}};}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00011}\mbox{\hyperlink{class_create_and_remove_user_a866c3ba5ae7f977527b5f5e0ca10b50c}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_create_and_remove_user_a866c3ba5ae7f977527b5f5e0ca10b50c}{isTeam}};}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00013}\mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{objectPrefabs}};}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00014}\mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}};}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00015}\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ List<GameObject>\ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}}\ =\ \textcolor{keyword}{new}\ List<GameObject>();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_a381e2e9d5a95d6e8202e7c40f6b8aea2}{Instance}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_create_and_remove_user_a866c3ba5ae7f977527b5f5e0ca10b50c}{isTeam}})}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_a83bf50b587d56b06878142709a444251}{MakeTeamList}}();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_ad66557cfef6b689daf412b5d86aeb48f}{MakeUserList}}();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Ïù¥Ï†Ñ\ ÏÉùÏÑ±\ Ïò§Î∏åÏ†ùÌä∏\ Ï¥àÍ∏∞Ìôî}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00038}\mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{RemoveData}}()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}}.Count\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}}.childCount\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ child\ =\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}}.GetChild(i).gameObject;}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(child);}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ PopUpPanel\ -\/\ UserManager\ -\/\ Team\ -\/\ DeleteÏóêÏÑú\ Ï†úÍ±∞\ Í∞ÄÎä•Ìïú\ ÌåÄ\ Î™©Î°ù\ ÏÉùÏÑ±}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00054}\mbox{\hyperlink{class_create_and_remove_user_a83bf50b587d56b06878142709a444251}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_a83bf50b587d56b06878142709a444251}{MakeTeamList}}()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetTeamData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{objectPrefabs}},\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}},\ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.AddRange(\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerTeam();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ ÌåÄ\ Ï†úÍ±∞\ Ï∑®ÏÜå\ Î≤ÑÌäº\ Ïù¥Î≤§Ìä∏}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00062}\mbox{\hyperlink{class_create_and_remove_user_a46a484dd1b44ef6f5bd6a36587344c8e}{00062}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_a46a484dd1b44ef6f5bd6a36587344c8e}{CancelRemoveTeam}}()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.Clear();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{RemoveData}}();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.team.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.team.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//\ PopUpPanel\ -\/\ UserManager\ -\/\ User\ -\/\ DeleteÏóêÏÑú\ Ï†úÍ±∞\ Í∞ÄÎä•Ìïú\ Ïú†Ï†Ä\ Î™©Î°ù\ ÏÉùÏÑ±}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00072}\mbox{\hyperlink{class_create_and_remove_user_ad66557cfef6b689daf412b5d86aeb48f}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_ad66557cfef6b689daf412b5d86aeb48f}{MakeUserList}}()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.GetUserData(\mbox{\hyperlink{class_session_manager}{SessionManager}}.\mbox{\hyperlink{class_session_manager_a41ea72dc41ee7bc4fa633b6ef7a09125}{Instance}}.LoggedInAgency,\ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.selectClassIndex,\ \mbox{\hyperlink{class_create_and_remove_user_adc222ea6850320d343321ff566a45cd7}{objectPrefabs}},\ \mbox{\hyperlink{class_create_and_remove_user_a385b2758b9c9cb52a4691f2ee55e576a}{objectRootTrans}},\ \mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.AddRange(\mbox{\hyperlink{class_create_and_remove_user_aca268d1068ca80ec4ea8751b78023194}{objectList}});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_user_page_controller}{UserPageController}}.\mbox{\hyperlink{class_user_page_controller_a2e3d90b9178c7079e06efd6d9131bb13}{Instance}}.UpdatePlayerUser();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//\ Ïú†Ï†Ä\ Ï†úÍ±∞\ Ï∑®ÏÜå\ Î≤ÑÌäº\ Ïù¥Î≤§Ìä∏}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00080}\mbox{\hyperlink{class_create_and_remove_user_a4de96d386fcb3845939aee74e260f1e4}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_and_remove_user_a4de96d386fcb3845939aee74e260f1e4}{CancelRemoveUser}}()}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_controller}{AgencyController}}.\mbox{\hyperlink{class_agency_controller_ab7fcb88c2a25ed4e890aafeb5d742490}{Instance}}.removeObjectList.Clear();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_create_and_remove_user_adb4cf8cebbcc3f5923bdb8a4964d465e}{RemoveData}}();}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.user.GetChild(0).gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_setting_page_manager}{SettingPageManager}}.\mbox{\hyperlink{class_setting_page_manager_ae9c0898514a6581dad48f6ae52f44b8c}{Instance}}.user.GetChild(1).gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_create_and_remove_user_8cs_source_l00088}00088\ \}}
 
 \end{DoxyCode}

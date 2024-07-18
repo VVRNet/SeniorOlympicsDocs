@@ -8,108 +8,115 @@
 \DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Newtonsoft.Json;}
 \DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Net;}
 \DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00007}00007\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00008}\mbox{\hyperlink{class_agency}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_agency}{Agency}}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00010}00010\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}))]}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00011}\mbox{\hyperlink{class_agency_ad9d4a3e627055e8e0ebb355525b1c865}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_ad9d4a3e627055e8e0ebb355525b1c865}{\_id}};}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00012}\mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{Name}};\ \textcolor{comment}{//\ 어린이집\ 이름}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00013}\mbox{\hyperlink{class_agency_a34302e060f99d24e5a3bc8e37f1e338b}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a34302e060f99d24e5a3bc8e37f1e338b}{Password}};\ \textcolor{comment}{//\ 비밀번호}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00014}\mbox{\hyperlink{class_agency_a286db5c0d4803a074d65f87e00c5e675}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a286db5c0d4803a074d65f87e00c5e675}{ScreenSize}};\ \textcolor{comment}{//\ 화면 크기 :\ cm\ 단위}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00015}00015\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00016}\mbox{\hyperlink{class_agency_a022325f39158e162755fdf0a2089d350}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_agency_a022325f39158e162755fdf0a2089d350}{ContractDate}};\ \textcolor{comment}{//\ 계약일}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00017}00017\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00018}\mbox{\hyperlink{class_agency_a79282af16779dfb9563f37e7fbe3a480}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_agency_a79282af16779dfb9563f37e7fbe3a480}{ExpirationDate}};\ \textcolor{comment}{//\ 만료일}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00019}\mbox{\hyperlink{class_agency_aa280108704848ce801c9aa4566b75d62}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_aa280108704848ce801c9aa4566b75d62}{Status}};\ \textcolor{comment}{//\ 상태 :\ active,\ inActive}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00020}\mbox{\hyperlink{class_agency_af9657245ff7b8719efcffb2990965670}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_af9657245ff7b8719efcffb2990965670}{AdminName}};\ \textcolor{comment}{//\ 관리자 이름}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00021}\mbox{\hyperlink{class_agency_a21c29a5ca013f7414f7a7f18ed7190da}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a21c29a5ca013f7414f7a7f18ed7190da}{AdminContact}};\ \textcolor{comment}{//\ 관리자 연락처}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00022}\mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}};\ \textcolor{comment}{//\ 관리자 이메일}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00023}\mbox{\hyperlink{class_agency_aead63493ef2dc48e0d9283c39ae16546}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_aead63493ef2dc48e0d9283c39ae16546}{Logo}};\ \textcolor{comment}{//\ 로고 URL}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00024}\mbox{\hyperlink{class_agency_a67ff4d07482b2cba9e1da1dda5cc253a}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a67ff4d07482b2cba9e1da1dda5cc253a}{Address}};\ \textcolor{comment}{//\ 주소}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00025}\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Class>\ \mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}};\ \textcolor{comment}{//\ 반 리스트}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00027}\mbox{\hyperlink{class_agency_a8bae3c7393c04b0da1291d666f005cec}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_agency_a8bae3c7393c04b0da1291d666f005cec}{Agency}}()}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00028}00028\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}\ =\ \textcolor{keyword}{new}\ List<Class>();}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00030}00030\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00032}\mbox{\hyperlink{class_agency_a9752afe2cc41b653c879d5ad98c5381e}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_agency_a9752afe2cc41b653c879d5ad98c5381e}{Agency}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ password,\ \textcolor{keywordtype}{string}\ screenSize,\ DateTime\ contractDate,}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ expirationDate,\ \textcolor{keywordtype}{string}\ status,\ \textcolor{keywordtype}{string}\ adminName,\ \textcolor{keywordtype}{string}\ adminContact,}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail,\ \textcolor{keywordtype}{string}\ logo,\ \textcolor{keywordtype}{string}\ address,\ List<Class>\ classes)}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00035}00035\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{Name}}\ =\ name;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a34302e060f99d24e5a3bc8e37f1e338b}{Password}}\ =\ \mbox{\hyperlink{class_password_helper}{PasswordHelper}}.\mbox{\hyperlink{class_password_helper_a23749ac87a2fae71832c98771314abd5}{CreatePasswordHash}}(password);}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a286db5c0d4803a074d65f87e00c5e675}{ScreenSize}}\ =\ screenSize;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a022325f39158e162755fdf0a2089d350}{ContractDate}}\ =\ contractDate;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a79282af16779dfb9563f37e7fbe3a480}{ExpirationDate}}\ =\ expirationDate;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_aa280108704848ce801c9aa4566b75d62}{Status}}\ =\ status;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_af9657245ff7b8719efcffb2990965670}{AdminName}}\ =\ adminName;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a21c29a5ca013f7414f7a7f18ed7190da}{AdminContact}}\ =\ adminContact;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}}\ =\ adminEmail;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_aead63493ef2dc48e0d9283c39ae16546}{Logo}}\ =\ logo;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a67ff4d07482b2cba9e1da1dda5cc253a}{Address}}\ =\ address;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}\ =\ classes\ ??\ \textcolor{keyword}{new}\ List<Class>();}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00048}00048\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00050}\mbox{\hyperlink{class_agency_a26e1bac13b007a24d4acd7a207cf41c9}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a26e1bac13b007a24d4acd7a207cf41c9}{ToString}}()}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00051}00051\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Agency(\_id:\ \{\_id\},\ Name:\ \{Name\},\ Password:\ \{Password\},\ ScreenSize:\ \{ScreenSize\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ContractDate:\ \{ContractDate\},\ ExpirationDate:\ \{ExpirationDate\},\ Status:\ \{Status\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}AdminName:\ \{AdminName\},\ AdminContact:\ \{AdminContact\},\ AdminEmail:\ \{AdminEmail\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Logo:\ \{Logo\},\ Address:\ \{Address\},\ Classes:\ \{Classes.Count\})"{}};}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00056}00056\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00057}00057\ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00059}00059\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00060}\mbox{\hyperlink{class_class}{00060}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_class}{Class}}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00061}00061\ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00062}\mbox{\hyperlink{class_class_abc94283535c5a26d093bfb0b1ab820a7}{00062}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_abc94283535c5a26d093bfb0b1ab820a7}{Name}};\ \textcolor{comment}{//\ 반 이름}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00063}\mbox{\hyperlink{class_class_a398101586856da1a3beb75a8eca87fcd}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_a398101586856da1a3beb75a8eca87fcd}{Age}};\ \textcolor{comment}{//\ 반 구성\ 연령}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00064}\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Student>\ \mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}};\ \textcolor{comment}{//\ 학생 리스트}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00066}\mbox{\hyperlink{class_class_a6cb7d226bf3539bf75c9a305798605b1}{00066}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_class_a6cb7d226bf3539bf75c9a305798605b1}{Class}}()}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00067}00067\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}\ =\ \textcolor{keyword}{new}\ List<Student>();}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00071}\mbox{\hyperlink{class_class_a7d676c1b0b2ede98e262d9d41cc689e3}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_class_a7d676c1b0b2ede98e262d9d41cc689e3}{Class}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ age,\ List<Student>\ students)}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00072}00072\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_abc94283535c5a26d093bfb0b1ab820a7}{Name}}\ =\ name;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a398101586856da1a3beb75a8eca87fcd}{Age}}\ =\ age;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}\ =\ students\ ??\ \textcolor{keyword}{new}\ List<Student>();}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00076}00076\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00078}\mbox{\hyperlink{class_class_aa5c168b6af206c213f4b9d439c80e127}{00078}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_aa5c168b6af206c213f4b9d439c80e127}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00011}00011\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00012}\mbox{\hyperlink{class_agency}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_agency}{Agency}}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00014}00014\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_object_id_converter}{MongoDbObjectIdConverter}}))]}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00015}\mbox{\hyperlink{class_agency_ad9d4a3e627055e8e0ebb355525b1c865}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_ad9d4a3e627055e8e0ebb355525b1c865}{\_id}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00016}\mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{Name}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00017}\mbox{\hyperlink{class_agency_a34302e060f99d24e5a3bc8e37f1e338b}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a34302e060f99d24e5a3bc8e37f1e338b}{Password}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00018}\mbox{\hyperlink{class_agency_a286db5c0d4803a074d65f87e00c5e675}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a286db5c0d4803a074d65f87e00c5e675}{ScreenSize}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00019}00019\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00020}\mbox{\hyperlink{class_agency_a022325f39158e162755fdf0a2089d350}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_agency_a022325f39158e162755fdf0a2089d350}{ContractDate}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00021}00021\ \ \ \ \ [JsonConverter(typeof(\mbox{\hyperlink{class_mongo_db_date_time_converter}{MongoDbDateTimeConverter}}))]}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00022}\mbox{\hyperlink{class_agency_a79282af16779dfb9563f37e7fbe3a480}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_agency_a79282af16779dfb9563f37e7fbe3a480}{ExpirationDate}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00023}\mbox{\hyperlink{class_agency_aa280108704848ce801c9aa4566b75d62}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_aa280108704848ce801c9aa4566b75d62}{Status}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00024}\mbox{\hyperlink{class_agency_af9657245ff7b8719efcffb2990965670}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_af9657245ff7b8719efcffb2990965670}{AdminName}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00025}\mbox{\hyperlink{class_agency_a21c29a5ca013f7414f7a7f18ed7190da}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a21c29a5ca013f7414f7a7f18ed7190da}{AdminContact}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00026}\mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00027}\mbox{\hyperlink{class_agency_aead63493ef2dc48e0d9283c39ae16546}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_aead63493ef2dc48e0d9283c39ae16546}{Logo}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00028}\mbox{\hyperlink{class_agency_a67ff4d07482b2cba9e1da1dda5cc253a}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a67ff4d07482b2cba9e1da1dda5cc253a}{Address}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00029}\mbox{\hyperlink{class_agency_a2688c90464b0d0527b6ee3cb6c073085}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a2688c90464b0d0527b6ee3cb6c073085}{CountryCode}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00030}\mbox{\hyperlink{class_agency_a7c00d397a0542f182162221565882daa}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a7c00d397a0542f182162221565882daa}{CountryImg}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00031}\mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Class>\ \mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00033}\mbox{\hyperlink{class_agency_a8bae3c7393c04b0da1291d666f005cec}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_agency_a8bae3c7393c04b0da1291d666f005cec}{Agency}}()}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}\ =\ \textcolor{keyword}{new}\ List<Class>();}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00038}\mbox{\hyperlink{class_agency_a9752afe2cc41b653c879d5ad98c5381e}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_agency_a9752afe2cc41b653c879d5ad98c5381e}{Agency}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ password,\ \textcolor{keywordtype}{string}\ screenSize,\ DateTime\ contractDate,}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ expirationDate,\ \textcolor{keywordtype}{string}\ status,\ \textcolor{keywordtype}{string}\ adminName,\ \textcolor{keywordtype}{string}\ adminContact,}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ adminEmail,\ \textcolor{keywordtype}{string}\ logo,\ \textcolor{keywordtype}{string}\ address,\ List<Class>\ classes)}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a81194ce32d88da6e8e45fd77dc72a249}{Name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a34302e060f99d24e5a3bc8e37f1e338b}{Password}}\ =\ \mbox{\hyperlink{class_password_helper}{PasswordHelper}}.\mbox{\hyperlink{class_password_helper_a23749ac87a2fae71832c98771314abd5}{CreatePasswordHash}}(password);}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a286db5c0d4803a074d65f87e00c5e675}{ScreenSize}}\ =\ screenSize;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a022325f39158e162755fdf0a2089d350}{ContractDate}}\ =\ contractDate;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a79282af16779dfb9563f37e7fbe3a480}{ExpirationDate}}\ =\ expirationDate;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_aa280108704848ce801c9aa4566b75d62}{Status}}\ =\ status;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_af9657245ff7b8719efcffb2990965670}{AdminName}}\ =\ adminName;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a21c29a5ca013f7414f7a7f18ed7190da}{AdminContact}}\ =\ adminContact;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a025f5bdbaa36016b45a53491996ec2d5}{AdminEmail}}\ =\ adminEmail;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_aead63493ef2dc48e0d9283c39ae16546}{Logo}}\ =\ logo;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_a67ff4d07482b2cba9e1da1dda5cc253a}{Address}}\ =\ address;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_agency_ae93f9fe3f982890706b489e7cf0370c0}{Classes}}\ =\ classes\ ??\ \textcolor{keyword}{new}\ List<Class>();}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00056}\mbox{\hyperlink{class_agency_a26e1bac13b007a24d4acd7a207cf41c9}{00056}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_agency_a26e1bac13b007a24d4acd7a207cf41c9}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Agency(\_id:\ \{\_id\},\ Name:\ \{Name\},\ Password:\ \{Password\},\ ScreenSize:\ \{ScreenSize\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ContractDate:\ \{ContractDate\},\ ExpirationDate:\ \{ExpirationDate\},\ Status:\ \{Status\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}AdminName:\ \{AdminName\},\ AdminContact:\ \{AdminContact\},\ AdminEmail:\ \{AdminEmail\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Logo:\ \{Logo\},\ Address:\ \{Address\},\ Classes:\ \{Classes.Count\})"{}};}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00069}00069\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00070}\mbox{\hyperlink{class_class}{00070}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_class}{Class}}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00072}\mbox{\hyperlink{class_class_abc94283535c5a26d093bfb0b1ab820a7}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_abc94283535c5a26d093bfb0b1ab820a7}{Name}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00073}\mbox{\hyperlink{class_class_a11355489c73c470717db14442e929d51}{00073}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_class_a11355489c73c470717db14442e929d51}{Age}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00074}\mbox{\hyperlink{class_class_abbc5d907476b84d8ff070bae74305e5b}{00074}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_abbc5d907476b84d8ff070bae74305e5b}{CountryCode}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00075}\mbox{\hyperlink{class_class_a501b6e3cf419f90f0d1c8ca6b4e877e4}{00075}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_a501b6e3cf419f90f0d1c8ca6b4e877e4}{CountryImg}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00076}\mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{00076}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Student>\ \mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00078}\mbox{\hyperlink{class_class_a6cb7d226bf3539bf75c9a305798605b1}{00078}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_class_a6cb7d226bf3539bf75c9a305798605b1}{Class}}()}
 \DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00079}00079\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Class(Name:\ \{Name\},\ Age:\ \{Age\},\ Students:\ \{Students.Count\})"{}};}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}\ =\ \textcolor{keyword}{new}\ List<Student>();}
 \DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00081}00081\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00082}00082\ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00084}00084\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00085}\mbox{\hyperlink{class_student}{00085}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student}{Student}}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00086}00086\ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00087}\mbox{\hyperlink{class_student_a0d0570378e0e61b9c38d2c61a98a5472}{00087}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a0d0570378e0e61b9c38d2c61a98a5472}{Id}};}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00088}\mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{Name}};\ \textcolor{comment}{//\ 학생 이름}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00089}\mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{00089}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{Age}};\ \textcolor{comment}{//\ 학생 나이}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00090}\mbox{\hyperlink{class_student_aa2ba331d7442a646bc20e1becfac7050}{00090}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_aa2ba331d7442a646bc20e1becfac7050}{ParentPhone}};\ \textcolor{comment}{//\ 부모님 전화번호}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00091}\mbox{\hyperlink{class_student_a45245c131e661dddf1618bda35107daa}{00091}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a45245c131e661dddf1618bda35107daa}{ProfileImage}};\ \textcolor{comment}{//\ 프로필 이미지 URL}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00092}\mbox{\hyperlink{class_student_a93aa8cc96790b106b75413d79b7916f2}{00092}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_student_a93aa8cc96790b106b75413d79b7916f2}{Height}};\ \textcolor{comment}{//\ 학생 키}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00094}\mbox{\hyperlink{class_student_a0e7f3ee8c30ab56aaa660177725d0c09}{00094}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_student_a0e7f3ee8c30ab56aaa660177725d0c09}{Student}}(Guid\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{int}\ age,\ \textcolor{keywordtype}{string}\ parentPhone,\ \textcolor{keywordtype}{string}\ profileImage,\ \textcolor{keywordtype}{float}\ height)}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00095}00095\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a0d0570378e0e61b9c38d2c61a98a5472}{Id}}\ =\ \textcolor{keywordtype}{id}.ToString();}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{Name}}\ =\ name;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{Age}}\ =\ age;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_aa2ba331d7442a646bc20e1becfac7050}{ParentPhone}}\ =\ parentPhone;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a45245c131e661dddf1618bda35107daa}{ProfileImage}}\ =\ profileImage;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a93aa8cc96790b106b75413d79b7916f2}{Height}}\ =\ height;}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00102}00102\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00104}\mbox{\hyperlink{class_student_aa9a7ccad852f66997788b4dadf46c9cf}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_aa9a7ccad852f66997788b4dadf46c9cf}{ToString}}()}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00105}00105\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Student(Name:\ \{Name\},\ Age:\ \{Age\},\ ParentPhone:\ \{ParentPhone\},\ "{}}\ +}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ProfileImage:\ \{ProfileImage\},\ Height:\ \{Height\})"{}};}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00108}00108\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00083}\mbox{\hyperlink{class_class_a44fed34f0baac343999f3d5e9265e57d}{00083}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_class_a44fed34f0baac343999f3d5e9265e57d}{Class}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{int}\ age,\ \textcolor{keywordtype}{string}\ countryCode,\ \textcolor{keywordtype}{string}\ countryUrl,\ List<Student>\ students)}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00084}00084\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_abc94283535c5a26d093bfb0b1ab820a7}{Name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a11355489c73c470717db14442e929d51}{Age}}\ =\ age;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_abbc5d907476b84d8ff070bae74305e5b}{CountryCode}}\ =\ countryCode;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a501b6e3cf419f90f0d1c8ca6b4e877e4}{CountryImg}}\ =\ countryUrl;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_class_a375c0fd37d7ec570bd145ea1b2f75203}{Students}}\ =\ students\ ??\ \textcolor{keyword}{new}\ List<Student>();}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00092}\mbox{\hyperlink{class_class_aa5c168b6af206c213f4b9d439c80e127}{00092}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_class_aa5c168b6af206c213f4b9d439c80e127}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Class(Name:\ \{Name\},\ Age:\ \{Age\},\ CountryCode:\ \{CountryCode\},\ CountryImg:\ \{CountryImg\},\ Students:\ \{Students.Count\})"{}};}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00102}00102\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00103}\mbox{\hyperlink{class_student}{00103}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student}{Student}}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00104}00104\ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00105}\mbox{\hyperlink{class_student_a0d0570378e0e61b9c38d2c61a98a5472}{00105}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a0d0570378e0e61b9c38d2c61a98a5472}{Id}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00106}\mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{00106}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{Name}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00107}\mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{Age}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00108}\mbox{\hyperlink{class_student_aa2ba331d7442a646bc20e1becfac7050}{00108}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_aa2ba331d7442a646bc20e1becfac7050}{ParentPhone}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00109}\mbox{\hyperlink{class_student_a45245c131e661dddf1618bda35107daa}{00109}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a45245c131e661dddf1618bda35107daa}{ProfileImage}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00110}\mbox{\hyperlink{class_student_a93aa8cc96790b106b75413d79b7916f2}{00110}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_student_a93aa8cc96790b106b75413d79b7916f2}{Height}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00111}\mbox{\hyperlink{class_student_aea4f6dcd96dbe5dd8d79dd5d45172c28}{00111}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_aea4f6dcd96dbe5dd8d79dd5d45172c28}{CountryCode}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00112}\mbox{\hyperlink{class_student_a11adc70a9cf05ee4efe44285a5c00c42}{00112}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a11adc70a9cf05ee4efe44285a5c00c42}{CountryImg}};\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00114}\mbox{\hyperlink{class_student_a60b457cba09807bf688fdf97cadad4a7}{00114}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_student_a60b457cba09807bf688fdf97cadad4a7}{Student}}(Guid\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{int}\ age,\ \textcolor{keywordtype}{string}\ parentPhone,\ \textcolor{keywordtype}{string}\ profileUrl,\ \textcolor{keywordtype}{float}\ height,\ \textcolor{keywordtype}{string}\ countryCode,\ \textcolor{keywordtype}{string}\ countryImg)}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a0d0570378e0e61b9c38d2c61a98a5472}{Id}}\ =\ \textcolor{keywordtype}{id}.ToString();}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a2d11e93ba7218ecb49a6738db3ae1875}{Name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a066f1303acc63862d9b47fc12014bdf4}{Age}}\ =\ age;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_aa2ba331d7442a646bc20e1becfac7050}{ParentPhone}}\ =\ parentPhone;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a45245c131e661dddf1618bda35107daa}{ProfileImage}}\ =\ profileUrl;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a93aa8cc96790b106b75413d79b7916f2}{Height}}\ =\ height;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_aea4f6dcd96dbe5dd8d79dd5d45172c28}{CountryCode}}\ =\ countryCode;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a11adc70a9cf05ee4efe44285a5c00c42}{CountryImg}}\ =\ countryImg;}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00126}\mbox{\hyperlink{class_student_aa9a7ccad852f66997788b4dadf46c9cf}{00126}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_aa9a7ccad852f66997788b4dadf46c9cf}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Student(Name:\ \{Name\},\ Age:\ \{Age\},\ CountryCode:\ \{CountryCode\},\ CountryImg:\ \{CountryImg\},\ ParentPhone:\ \{ParentPhone\},\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}ProfileImage:\ \{ProfileImage\},\ Height:\ \{Height\})"{}};}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_agency_8cs_source_l00131}00131\ \}}
 
 \end{DoxyCode}

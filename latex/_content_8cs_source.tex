@@ -9,46 +9,44 @@
 \DoxyCodeLine{\Hypertarget{_content_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Net;}
 \DoxyCodeLine{\Hypertarget{_content_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Security.Cryptography;}
 \DoxyCodeLine{\Hypertarget{_content_8cs_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00008}00008\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00009}\mbox{\hyperlink{class_content}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_content}{Content}}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00010}00010\ \{}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00011}00011\ \ \ \ \ [JsonIgnore]}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00012}\mbox{\hyperlink{class_content_a907aa917c66d3e0728baed90288c170c}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_content_a907aa917c66d3e0728baed90288c170c}{Id}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ ObjectId}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00013}\mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}\ \mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{Name}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 다국어 지원 콘텐츠\ 이름}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00014}\mbox{\hyperlink{class_content_a798ec0a1399ef1dc749585bdbd82c69a}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}\ \mbox{\hyperlink{class_content_a798ec0a1399ef1dc749585bdbd82c69a}{Detail}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 다국어 지원 콘텐츠\ 설명}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00015}\mbox{\hyperlink{class_content_a3398af65b9824f9c8455486a1ab610d9}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_content_a3398af65b9824f9c8455486a1ab610d9}{Etc}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 추가적인\ 콘텐츠\ 정보}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00016}\mbox{\hyperlink{class_content_a2b6029268877fb373b934b0f09d55bc7}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_content_a2b6029268877fb373b934b0f09d55bc7}{CreatedAt}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 생성 날짜}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00018}\mbox{\hyperlink{class_content_a9a9fee9d18e53d88ed93ed3f7c0f8340}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_content_a9a9fee9d18e53d88ed93ed3f7c0f8340}{Content}}(\mbox{\hyperlink{class_localized_string}{LocalizedString}}\ name,\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}\ detail,\ \textcolor{keywordtype}{string}\ etc,\ DateTime\ createdAt)}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00019}00019\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{Name}}\ =\ name;}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a798ec0a1399ef1dc749585bdbd82c69a}{Detail}}\ =\ detail;}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a3398af65b9824f9c8455486a1ab610d9}{Etc}}\ =\ etc;}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a2b6029268877fb373b934b0f09d55bc7}{CreatedAt}}\ =\ createdAt;}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00024}00024\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00026}\mbox{\hyperlink{class_content_a2bf05b522b4e3eb0bb10d351d743df75}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_content_a2bf05b522b4e3eb0bb10d351d743df75}{ToString}}()}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00027}00027\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Content(Name:\ \{Name\},\ Detail:\ \{Detail\},\ Etc:\ \{Etc\},\ CreatedAt:\ \{CreatedAt\})"{}};}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00029}00029\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00030}00030\ \}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00032}00032\ [Serializable]}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00033}\mbox{\hyperlink{class_localized_string}{00033}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_localized_string}{LocalizedString}}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00034}00034\ \{}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00035}\mbox{\hyperlink{class_localized_string_a99a77868e2b5f0888324c620d6698096}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_localized_string_a99a77868e2b5f0888324c620d6698096}{Ko}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 한국어}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00036}\mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{En}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ 영어}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00038}\mbox{\hyperlink{class_localized_string_ad1a9c930e37e867f18c9ce61b71210bc}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_localized_string_ad1a9c930e37e867f18c9ce61b71210bc}{LocalizedString}}(\textcolor{keywordtype}{string}\ ko,\ \textcolor{keywordtype}{string}\ en)}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00039}00039\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_localized_string_a99a77868e2b5f0888324c620d6698096}{Ko}}\ =\ ko;}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{En}}\ =\ en;}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00042}00042\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00044}\mbox{\hyperlink{class_localized_string_a4e594ca129b5c875c4b0526f4c8dc0fa}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_localized_string_a4e594ca129b5c875c4b0526f4c8dc0fa}{ToString}}()}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00045}00045\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}LocalizedString(Ko:\ \{Ko\},\ En:\ \{En\})"{}};}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00012}00012\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00013}\mbox{\hyperlink{class_content}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_content}{Content}}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00015}00015\ \ \ \ \ [JsonIgnore]}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00016}\mbox{\hyperlink{class_content_a907aa917c66d3e0728baed90288c170c}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_content_a907aa917c66d3e0728baed90288c170c}{Id}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00017}\mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}\ \mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{Name}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00018}\mbox{\hyperlink{class_content_a798ec0a1399ef1dc749585bdbd82c69a}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}\ \mbox{\hyperlink{class_content_a798ec0a1399ef1dc749585bdbd82c69a}{Detail}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00019}\mbox{\hyperlink{class_content_a3398af65b9824f9c8455486a1ab610d9}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_content_a3398af65b9824f9c8455486a1ab610d9}{Etc}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00020}\mbox{\hyperlink{class_content_a2b6029268877fb373b934b0f09d55bc7}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_content_a2b6029268877fb373b934b0f09d55bc7}{CreatedAt}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00022}\mbox{\hyperlink{class_content_a9a9fee9d18e53d88ed93ed3f7c0f8340}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_content_a9a9fee9d18e53d88ed93ed3f7c0f8340}{Content}}(\mbox{\hyperlink{class_localized_string}{LocalizedString}}\ name,\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}\ detail,\ \textcolor{keywordtype}{string}\ etc,\ DateTime\ createdAt)}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a56e1c0a6653f41ec4eb993f6b1253099}{Name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a798ec0a1399ef1dc749585bdbd82c69a}{Detail}}\ =\ detail;}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a3398af65b9824f9c8455486a1ab610d9}{Etc}}\ =\ etc;}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content_a2b6029268877fb373b934b0f09d55bc7}{CreatedAt}}\ =\ createdAt;}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00030}\mbox{\hyperlink{class_content_a2bf05b522b4e3eb0bb10d351d743df75}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_content_a2bf05b522b4e3eb0bb10d351d743df75}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}Content(Name:\ \{Name\},\ Detail:\ \{Detail\},\ Etc:\ \{Etc\},\ CreatedAt:\ \{CreatedAt\})"{}};}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00041}00041\ [Serializable]}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00042}\mbox{\hyperlink{class_localized_string}{00042}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_localized_string}{LocalizedString}}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00044}\mbox{\hyperlink{class_localized_string_a99a77868e2b5f0888324c620d6698096}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_localized_string_a99a77868e2b5f0888324c620d6698096}{Ko}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00045}\mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{En}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00047}\mbox{\hyperlink{class_localized_string_ad1a9c930e37e867f18c9ce61b71210bc}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_localized_string_ad1a9c930e37e867f18c9ce61b71210bc}{LocalizedString}}(\textcolor{keywordtype}{string}\ ko,\ \textcolor{keywordtype}{string}\ en)}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_localized_string_a99a77868e2b5f0888324c620d6698096}{Ko}}\ =\ ko;}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_localized_string_abf80686fd9f2d8a47897131a41083037}{En}}\ =\ en;}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00053}\mbox{\hyperlink{class_localized_string_a4e594ca129b5c875c4b0526f4c8dc0fa}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_localized_string_a4e594ca129b5c875c4b0526f4c8dc0fa}{ToString}}()}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}LocalizedString(Ko:\ \{Ko\},\ En:\ \{En\})"{}};}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_content_8cs_source_l00057}00057\ \}}
 
 \end{DoxyCode}

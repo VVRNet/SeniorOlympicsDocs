@@ -2,8 +2,7 @@
 \hypertarget{class_content_controller}{}\label{class_content_controller}\index{ContentController@{ContentController}}
 
 
-Content\+Controller에 대한 상속 다이어그램 \+: 
-\nopagebreak
+Content\+Controller에 대한 상속 다이어그램 \+: \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Content\+Controller에 대한 상속 다이어그램 \+:
 \end{figure}
 
 
-Content\+Controller에 대한 협력 다이어그램\+:
-\nopagebreak
+Content\+Controller에 대한 협력 다이어그램\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -51,24 +49,23 @@ void Content\+Controller.\+Create\+Content (\begin{DoxyParamCaption}{}{}\end{Dox
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00016\ \ \ \ \ \{}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_content}{Content}}\ content\ =\ \textcolor{keyword}{new}(}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ name:\textcolor{keyword}{new}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\textcolor{stringliteral}{"{}ī�� ���߱�"{}},\ en:\textcolor{stringliteral}{"{}CardMatch"{}}),\ detail:\ new\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\ \textcolor{stringliteral}{"{}����\ ����� ī�带\ ����ϰ� ���� ������ ȹ���ϼ���."{}},\ en:\ \textcolor{stringliteral}{"{}Remember\ and\ match\ cards\ of\ the\ same\ shape\ to\ score\ points."{}}),\ etc:\ \textcolor{stringliteral}{"{}"{}},\ createdAt:\ DateTime.UtcNow);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ name:\textcolor{keyword}{new}\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\textcolor{stringliteral}{"{}카드\ 맞추기"{}},\ en:\textcolor{stringliteral}{"{}CardMatch"{}}),\ detail:\ new\ \mbox{\hyperlink{class_localized_string}{LocalizedString}}(ko:\ \textcolor{stringliteral}{"{}같은\ 모양의\ 카드를\ 기억하고\ 맞춰\ 점수를\ 획득하세요."{}},\ en:\ \textcolor{stringliteral}{"{}Remember\ and\ match\ cards\ of\ the\ same\ shape\ to\ score\ points."{}}),\ etc:\ \textcolor{stringliteral}{"{}"{}},\ createdAt:\ DateTime.UtcNow);}
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ StartCoroutine(\_contentService.\mbox{\hyperlink{class_content_service_a531ebbf5d21c47b47dfbfdb86903a48a}{CreateContent}}(content,\ (result)\ =>}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (content\ !=\ null)}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}����: "{}}\ +\ result);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성:\ "{}}\ +\ result);}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}���� ����"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성\ 실패"{}});}
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}));}
 \DoxyCodeLine{00031\ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -92,12 +89,12 @@ void Content\+Controller.\+Get\+Contents (\begin{DoxyParamCaption}{}{}\end{DoxyP
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result\ !=\ null)}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}������:\ "{}}\ +\ result.Count);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}콘텐츠:\ "{}}\ +\ result.Count);}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SessionManager.Instance.SetCurrentContents(result);}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}���� ����"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}생성\ 실패"{}});}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}));}
 \DoxyCodeLine{00047\ \ \ \ \ \}}

@@ -7,5 +7,6 @@ var searchData=
   ['ms500dll_4',['MS500DLL',['../class_m_s500_d_l_l.html',1,'']]],
   ['ms500manager_5',['Ms500Manager',['../class_ms500_manager.html',1,'']]],
   ['ms500sdk_6',['MS500sdk',['../class_m_s500sdk.html',1,'']]],
-  ['myrank_7',['MyRank',['../class_my_rank.html',1,'']]]
+  ['myrank_7',['MyRank',['../class_my_rank.html',1,'']]],
+  ['myrankdata_8',['MyRankData',['../class_rank_summary_controller_1_1_my_rank_data.html',1,'RankSummaryController']]]
 ];

@@ -21,7 +21,7 @@ var searchData=
   ['moveobject02_18',['moveObject02',['../class_background_move_controller.html#ab1c643b1c75ba9992d2893e0d9d73f69',1,'BackgroundMoveController']]],
   ['moveobject03_19',['moveObject03',['../class_background_move_controller.html#a34d1d678678a070b1e70f85242f4591d',1,'BackgroundMoveController']]],
   ['movescenecontroller_20',['MoveSceneController',['../class_move_scene_controller.html',1,'']]],
-  ['movescenecontroller_21',['moveSceneController',['../class_japan_project_1_1_setting_manager.html#ad43377a5023fc14b4f8357ae73c2abfd',1,'JapanProject::SettingManager']]],
+  ['movescenecontroller_21',['moveSceneController',['../class_setting_contents_controller.html#adb4d203a8c27b3706780143fcf696525',1,'SettingContentsController.moveSceneController'],['../class_japan_project_1_1_setting_manager.html#ad43377a5023fc14b4f8357ae73c2abfd',1,'JapanProject.SettingManager.moveSceneController']]],
   ['movescenecontroller_2ecs_22',['MoveSceneController.cs',['../_move_scene_controller_8cs.html',1,'']]],
   ['ms500dll_23',['MS500DLL',['../class_m_s500_d_l_l.html',1,'']]],
   ['ms500dll_2ecs_24',['MS500DLL.cs',['../_m_s500_d_l_l_8cs.html',1,'']]],
@@ -30,5 +30,7 @@ var searchData=
   ['ms500manager_2ecs_27',['Ms500Manager.cs',['../_ms500_manager_8cs.html',1,'']]],
   ['ms500sdk_28',['MS500sdk',['../class_m_s500sdk.html',1,'']]],
   ['ms500sdk_2ecs_29',['MS500sdk.cs',['../_m_s500sdk_8cs.html',1,'']]],
-  ['myrank_30',['MyRank',['../class_my_rank.html',1,'']]]
+  ['myrank_30',['MyRank',['../class_my_rank.html',1,'']]],
+  ['myrank_31',['myRank',['../class_ending_data.html#a645c0669f3174d2d8dd15bcd4007e397',1,'EndingData']]],
+  ['myrankdata_32',['MyRankData',['../class_rank_summary_controller_1_1_my_rank_data.html',1,'RankSummaryController']]]
 ];

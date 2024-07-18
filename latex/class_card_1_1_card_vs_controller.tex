@@ -47,6 +47,10 @@ Audio\+Clip \mbox{\hyperlink{class_card_1_1_card_vs_controller_afd785800315d9742
 Audio\+Clip \mbox{\hyperlink{class_card_1_1_card_vs_controller_a2909b724115e70dc907aae537db9e352}{card\+Answer\+Clip}}
 \item 
 Audio\+Clip \mbox{\hyperlink{class_card_1_1_card_vs_controller_ad4a95d8dd62826f84f458d3ba5747cbc}{card\+Wrong\+Clip}}
+\item 
+float \mbox{\hyperlink{class_card_1_1_card_vs_controller_af81b08f197248128ad112ea6296beb90}{creation\+Time\+Left}}
+\item 
+float \mbox{\hyperlink{class_card_1_1_card_vs_controller_a6ac7cc8d71b21e7dc33c7b20a13b2718}{creation\+Time\+Right}}
 \end{DoxyCompactItemize}
 
 
@@ -66,20 +70,20 @@ Audio\+Clip \mbox{\hyperlink{class_card_1_1_card_vs_controller_ad4a95d8dd62826f8
 
 
 
-\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00377}{377}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00383}{383}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ parent.childCount;\ i++)}
-\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent.GetChild(i).GetComponent<\mbox{\hyperlink{namespace_card}{Card}}>().GetIndex()\ ==\ index\ \&\&\ parent.GetChild(i).GetComponent<\mbox{\hyperlink{namespace_card}{Card}}>()\ !=\ card)}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parent.GetChild(i).GetComponent<\mbox{\hyperlink{namespace_card}{Card}}>();}
-\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ parent.childCount;\ i++)}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent.GetChild(i).GetComponent<\mbox{\hyperlink{namespace_card}{Card}}>().GetIndex()\ ==\ index\ \&\&\ parent.GetChild(i).GetComponent<\mbox{\hyperlink{namespace_card}{Card}}>()\ !=\ card)}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parent.GetChild(i).GetComponent<\mbox{\hyperlink{namespace_card}{Card}}>();}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_card_1_1_card_vs_controller_ac1377292d9ab7586e11d05b5487f94e5}\index{Card.CardVsController@{Card.CardVsController}!OnClickLeftCard@{OnClickLeftCard}}
@@ -90,91 +94,90 @@ void Card.\+Card\+Vs\+Controller.\+On\+Click\+Left\+Card (\begin{DoxyParamCaptio
 
 
 
-\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00162}{162}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00168}{168}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}{leftAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_afd785800315d9742d5cf5603c351e94f}{cardFlipClip}},\ 1.2f);}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempIndex1\ ==\ -\/1)}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex1\ =\ index;}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card1\ =\ card;}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0f));}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}{leftAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_afd785800315d9742d5cf5603c351e94f}{cardFlipClip}},\ 1.2f);}
 \DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hint1\ =\ StartCoroutine(Hint(card,\ leftCardParent,\ tempIndex1,\ 5f));}}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (card\ ==\ \_card1)}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//StopCoroutine(hint1);}}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectLeft\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempIndex1\ ==\ -\/1)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex1\ =\ index;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card1\ =\ card;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0f));}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hint1\ =\ StartCoroutine(Hint(card,\ leftCardParent,\ tempIndex1,\ 5f));}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00181\ }
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectLeft,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (card\ ==\ \_card1)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00184\ }
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsSameCard(tempIndex1,\ index))}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//����\ ī�带\ �����\ ��}}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ leftAnswerCount-\/-\/;}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//��ü��ġȽ�� + ������ ���� ����}}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.totalTouchCount\_Red++;}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectLeft,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsAnswer();}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card1.\mbox{\hyperlink{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984}{IsAnswer}}();}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}{leftAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_a2909b724115e70dc907aae537db9e352}{cardAnswerClip}},\ 1f);}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.2f));}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(leftAnswerCount\ ==\ 0)}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Delay(2f,\ \textcolor{stringliteral}{"{}RED"{}}));}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//�ٸ�\ ī�带\ �����\ ��}}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsWrong();}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card1.\mbox{\hyperlink{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373}{IsWrong}}();}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}{leftAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_ad4a95d8dd62826f84f458d3ba5747cbc}{cardWrongClip}},\ 1.2f);}
-\DoxyCodeLine{00213\ }
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectLeft,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
-\DoxyCodeLine{00216\ }
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.3f));}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//StopCoroutine(hint1);}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectLeft\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectLeft,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsSameCard(tempIndex1,\ index))}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//같은\ 카드를\ 골랐을\ 때}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ leftAnswerCount-\/-\/;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//전체터치횟수\ +\ 왼쪽팀\ 점수\ 증가}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.totalTouchCount\_Red++;}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectLeft,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.RED,\ 1);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsAnswer();}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card1.\mbox{\hyperlink{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984}{IsAnswer}}();}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}{leftAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_a2909b724115e70dc907aae537db9e352}{cardAnswerClip}},\ 1f);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.2f));}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(leftAnswerCount\ ==\ 0)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Delay(0.5f,\ \textcolor{stringliteral}{"{}RED"{}}));}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//다른\ 카드를\ 골랐을\ 때}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsWrong();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card1.\mbox{\hyperlink{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373}{IsWrong}}();}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}{leftAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_ad4a95d8dd62826f84f458d3ba5747cbc}{cardWrongClip}},\ 1.2f);}
 \DoxyCodeLine{00219\ }
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex1\ =\ -\/1;}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \_card1\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectLeft,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
 \DoxyCodeLine{00222\ }
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsSameCard(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y) }
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ ==\ y;}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ DelayTouch(\textcolor{keywordtype}{float}\ delay) }
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ :\ ��ġ\ ����\ �ڵ� ����}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.3f));}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex1\ =\ -\/1;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \_card1\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsSameCard(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y) }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ ==\ y;}
 \DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00233\ }
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ Delay(\textcolor{keywordtype}{float}\ delay,\ \textcolor{keywordtype}{string}\ color) }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ DelayTouch(\textcolor{keywordtype}{float}\ delay) }
 \DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Init(color);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ :\ 터치\ 방지\ 코드\ 구현}}
 \DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ Delay(\textcolor{keywordtype}{float}\ delay,\ \textcolor{keywordtype}{string}\ color) }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Init(color);}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -189,92 +192,91 @@ void Card.\+Card\+Vs\+Controller.\+On\+Click\+Right\+Card (\begin{DoxyParamCapti
 
 
 
-\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00241}{241}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00247}{247}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a7b092d141db995b595806dcaeaae9b2d}{rightAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_afd785800315d9742d5cf5603c351e94f}{cardFlipClip}},\ 1.2f);}
-\DoxyCodeLine{00244\ }
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempIndex2\ ==\ -\/1)}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex2\ =\ index;}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card2\ =\ card;}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0f));}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a7b092d141db995b595806dcaeaae9b2d}{rightAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_afd785800315d9742d5cf5603c351e94f}{cardFlipClip}},\ 1.2f);}
 \DoxyCodeLine{00250\ }
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hint2\ =\ StartCoroutine(Hint(card,\ rightCardParent,\ tempIndex2,\ 5f));}}
-\DoxyCodeLine{00252\ }
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (card\ ==\ \_card2)}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempIndex2\ ==\ -\/1)}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex2\ =\ index;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card2\ =\ card;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0f));}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hint2\ =\ StartCoroutine(Hint(card,\ rightCardParent,\ tempIndex2,\ 5f));}}
 \DoxyCodeLine{00258\ }
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//StopCoroutine(hint2);}}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectRight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00261\ }
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectRight,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (card\ ==\ \_card2)}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00264\ }
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsSameCard(tempIndex2,\ index))}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//����\ ī�带\ �����\ ��}}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rightAnswerCount-\/-\/;}
-\DoxyCodeLine{00269\ }
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.totalTouchCount\_Blue++;}}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectRight,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
-\DoxyCodeLine{00274\ }
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsAnswer();}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card2.\mbox{\hyperlink{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984}{IsAnswer}}();}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a7b092d141db995b595806dcaeaae9b2d}{rightAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_a2909b724115e70dc907aae537db9e352}{cardAnswerClip}},\ 1.0f);}
-\DoxyCodeLine{00279\ }
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.2f));}
-\DoxyCodeLine{00281\ }
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rightAnswerCount\ ==\ 0)}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Delay(2f,\ \textcolor{stringliteral}{"{}BLUE"{}}));}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//�ٸ�\ ī�带\ �����\ ��}}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsWrong();}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card2.\mbox{\hyperlink{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373}{IsWrong}}();}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a7b092d141db995b595806dcaeaae9b2d}{rightAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_ad4a95d8dd62826f84f458d3ba5747cbc}{cardWrongClip}},\ 1.2f);}
-\DoxyCodeLine{00293\ }
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectRight,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
-\DoxyCodeLine{00296\ }
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.3f));}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//StopCoroutine(hint2);}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectRight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectRight,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsSameCard(tempIndex2,\ index))}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//같은\ 카드를\ 골랐을\ 때}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rightAnswerCount-\/-\/;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//OlympicsGameManager.Instance.totalTouchCount\_Blue++;}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isCorrectRight,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager}{ScoreManager}}.\mbox{\hyperlink{classuseful_1_1_team_1_1_score_manager_a7b7af7346d5dcd4edfde1478a9a338dc}{Instance}}.UpScore(\mbox{\hyperlink{namespaceuseful_1_1_team_ae4bc80de932200dd31e01e275c826dea}{Team}}.BLUE,\ 1);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsAnswer();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card2.\mbox{\hyperlink{class_card_1_1_card_a8429a7a987bf7293a594084151b0c984}{IsAnswer}}();}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a7b092d141db995b595806dcaeaae9b2d}{rightAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_a2909b724115e70dc907aae537db9e352}{cardAnswerClip}},\ 1.0f);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.2f));}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rightAnswerCount\ ==\ 0)}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Delay(0.5f,\ \textcolor{stringliteral}{"{}BLUE"{}}));}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//다른\ 카드를\ 골랐을\ 때}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card.IsWrong();}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_card2.\mbox{\hyperlink{class_card_1_1_card_a0dd7ca775895c8debc54c1f8ff563373}{IsWrong}}();}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AudioPlay(\mbox{\hyperlink{class_card_1_1_card_vs_controller_a7b092d141db995b595806dcaeaae9b2d}{rightAudio}},\ \mbox{\hyperlink{class_card_1_1_card_vs_controller_ad4a95d8dd62826f84f458d3ba5747cbc}{cardWrongClip}},\ 1.2f);}
 \DoxyCodeLine{00299\ }
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex2\ =\ -\/1;}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \_card2\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !isCorrectRight,\ accuracy,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ System.DateTime.UtcNow),\ reactionTime);}
 \DoxyCodeLine{00302\ }
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsSameCard(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y) }
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ ==\ y;}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00307\ }
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ DelayTouch(\textcolor{keywordtype}{float}\ delay) }
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ :\ ��ġ����\ �ڵ� �����ؾ���.}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(DelayTouch(0.3f));}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ tempIndex2\ =\ -\/1;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \_card2\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsSameCard(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y) }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ ==\ y;}
 \DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00313\ }
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ Delay(\textcolor{keywordtype}{float}\ delay,\ \textcolor{keywordtype}{string}\ color) }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ DelayTouch(\textcolor{keywordtype}{float}\ delay) }
 \DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Init(color);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ :\ 터치방지\ 코드\ 구현해야함.}}
 \DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerator\ Delay(\textcolor{keywordtype}{float}\ delay,\ \textcolor{keywordtype}{string}\ color) }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Init(color);}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -324,6 +326,26 @@ Audio\+Clip Card.\+Card\+Vs\+Controller.\+card\+Wrong\+Clip}
 
 \mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
+\Hypertarget{class_card_1_1_card_vs_controller_af81b08f197248128ad112ea6296beb90}\index{Card.CardVsController@{Card.CardVsController}!creationTimeLeft@{creationTimeLeft}}
+\index{creationTimeLeft@{creationTimeLeft}!Card.CardVsController@{Card.CardVsController}}
+\doxysubsubsection{\texorpdfstring{creationTimeLeft}{creationTimeLeft}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_vs_controller_af81b08f197248128ad112ea6296beb90} 
+float Card.\+Card\+Vs\+Controller.\+creation\+Time\+Left}
+
+
+
+\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_card_1_1_card_vs_controller_a6ac7cc8d71b21e7dc33c7b20a13b2718}\index{Card.CardVsController@{Card.CardVsController}!creationTimeRight@{creationTimeRight}}
+\index{creationTimeRight@{creationTimeRight}!Card.CardVsController@{Card.CardVsController}}
+\doxysubsubsection{\texorpdfstring{creationTimeRight}{creationTimeRight}}
+{\footnotesize\ttfamily \label{class_card_1_1_card_vs_controller_a6ac7cc8d71b21e7dc33c7b20a13b2718} 
+float Card.\+Card\+Vs\+Controller.\+creation\+Time\+Right}
+
+
+
+\mbox{\hyperlink{_card_vs_controller_8cs_source}{Card\+Vs\+Controller.\+cs}} 파일의 \mbox{\hyperlink{_card_vs_controller_8cs_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+
 \Hypertarget{class_card_1_1_card_vs_controller_a20433c5e63eea1884598c7840e9ad89b}\index{Card.CardVsController@{Card.CardVsController}!leftAudio@{leftAudio}}
 \index{leftAudio@{leftAudio}!Card.CardVsController@{Card.CardVsController}}
 \doxysubsubsection{\texorpdfstring{leftAudio}{leftAudio}}
@@ -368,4 +390,4 @@ Transform Card.\+Card\+Vs\+Controller.\+right\+Card\+Parent}
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Card/\mbox{\hyperlink{_card_vs_controller_8cs}{Card\+Vs\+Controller.\+cs}}\end{DoxyCompactItemize}
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Card\+Match/\mbox{\hyperlink{_card_vs_controller_8cs}{Card\+Vs\+Controller.\+cs}}\end{DoxyCompactItemize}

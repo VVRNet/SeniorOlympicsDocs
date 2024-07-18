@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">SeniorOlympics<span id="projectnumber">&#160;1.0.2</span>
    </div>
   </td>
  </tr>
@@ -98,6 +98,7 @@ $(function(){initNavTree('class_accuracy_scoring.html',''); initResizable(true);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-static-attribs">정적 Public 속성</a> &#124;
 <a href="class_accuracy_scoring-members.html">모든 멤버 목록</a>  </div>
   <div class="headertitle"><div class="title">AccuracyScoring 클래스 참조</div></div>
 </div><!--header-->
@@ -107,21 +108,30 @@ AccuracyScoring에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_accuracy_scoring__coll__graph.png" border="0" usemap="#a_accuracy_scoring_coll__map" alt="Collaboration graph"/></div>
 <map name="a_accuracy_scoring_coll__map" id="a_accuracy_scoring_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,180,75"/>
+<area shape="rect" title=" " alt="" coords="5,155,180,224"/>
+<area shape="rect" title=" " alt="" coords="70,5,115,75"/>
+<area shape="poly" title=" " alt="" coords="95,75,95,137,90,137,90,75"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 멤버 함수</h2></td></tr>
-<tr class="memitem:a9e7da1fce8fa2b77a9fa7a9af9e23de3" id="r_a9e7da1fce8fa2b77a9fa7a9af9e23de3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e7da1fce8fa2b77a9fa7a9af9e23de3">CalculateAccuracyScore</a> (List&lt; float &gt; distances, float accuracy)</td></tr>
-<tr class="separator:a9e7da1fce8fa2b77a9fa7a9af9e23de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c93477694b2b77ba1ca2159b4b2f6dd" id="r_a0c93477694b2b77ba1ca2159b4b2f6dd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c93477694b2b77ba1ca2159b4b2f6dd">CalculateAccuracyScore</a> (List&lt; float &gt; distances, float accuracy, string contentName, bool isLeft)</td></tr>
+<tr class="separator:a0c93477694b2b77ba1ca2159b4b2f6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+정적 Public 속성</h2></td></tr>
+<tr class="memitem:abb9a35a7876e62bb7fd412452fc25df5" id="r_abb9a35a7876e62bb7fd412452fc25df5"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb9a35a7876e62bb7fd412452fc25df5">ContentDistance</a></td></tr>
+<tr class="separator:abb9a35a7876e62bb7fd412452fc25df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b093f4c698981881485b807ff3a6ef" id="r_a85b093f4c698981881485b807ff3a6ef"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85b093f4c698981881485b807ff3a6ef">DualContentDistance</a></td></tr>
+<tr class="separator:a85b093f4c698981881485b807ff3a6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
 <p class="definition"><a class="el" href="_accuracy_scoring_8cs_source.html">AccuracyScoring.cs</a> 파일의 <a class="el" href="_accuracy_scoring_8cs_source.html#l00005">5</a> 번째 라인에서 정의되었습니다.</p>
 </div><h2 class="groupheader">멤버 함수 문서화</h2>
-<a id="a9e7da1fce8fa2b77a9fa7a9af9e23de3" name="a9e7da1fce8fa2b77a9fa7a9af9e23de3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e7da1fce8fa2b77a9fa7a9af9e23de3">&#9670;&#160;</a></span>CalculateAccuracyScore()</h2>
+<a id="a0c93477694b2b77ba1ca2159b4b2f6dd" name="a0c93477694b2b77ba1ca2159b4b2f6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c93477694b2b77ba1ca2159b4b2f6dd">&#9670;&#160;</a></span>CalculateAccuracyScore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,37 +144,51 @@ Public 멤버 함수</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>accuracy</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>accuracy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>contentName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isLeft</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"><a class="el" href="_accuracy_scoring_8cs_source.html">AccuracyScoring.cs</a> 파일의 <a class="el" href="_accuracy_scoring_8cs_source.html#l00008">8</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>    {</div>
-<div class="line"><span class="lineno">   10</span>        <span class="comment">// 절대적인 기준 설정 (예: 최대 거리 10)</span></div>
-<div class="line"><span class="lineno">   11</span>        <span class="keywordtype">float</span> maxDistance = 1.0f;</div>
-<div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>        <span class="comment">// 평균 거리 계산</span></div>
-<div class="line"><span class="lineno">   14</span>        <span class="keywordtype">float</span> meanDistance = CalculateMean(distances);</div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>        <span class="comment">// 절대적인 기준에 따라 거리 기반 점수 계산</span></div>
-<div class="line"><span class="lineno">   17</span>        <span class="keywordtype">float</span> distanceScore = ((maxDistance - meanDistance) / maxDistance) * 100.0f;</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>        <span class="comment">// 정확도를 100점 척도로 변환</span></div>
-<div class="line"><span class="lineno">   20</span>        <span class="keywordtype">float</span> accuracyScore = accuracy * 100.0f;</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>        <span class="comment">// 최종 점수 계산 (최대 200점으로 제한)</span></div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordtype">float</span> finalScore = Mathf.Clamp(distanceScore + accuracyScore, 0, 200);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> finalScore;</div>
-<div class="line"><span class="lineno">   26</span>    }</div>
+<p class="definition"><a class="el" href="_accuracy_scoring_8cs_source.html">AccuracyScoring.cs</a> 파일의 <a class="el" href="_accuracy_scoring_8cs_source.html#l00028">28</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        <span class="comment">// 컨텐츠마다 거리 다르게</span></div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordtype">float</span> maxDistance = isLeft == <span class="keyword">true</span> ? <a class="code hl_variable" href="#abb9a35a7876e62bb7fd412452fc25df5">ContentDistance</a>[contentName] : <a class="code hl_variable" href="#a85b093f4c698981881485b807ff3a6ef">DualContentDistance</a>[contentName];</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>        <span class="comment">// 평균 거리 계산</span></div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordtype">float</span> meanDistance = CalculateMean(distances);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>        <span class="comment">// 절대적인 기준에 따라 거리 기반 점수 계산</span></div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordtype">float</span> distanceScore = ((maxDistance - meanDistance) / maxDistance) * 100.0f;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>        <span class="comment">// 정확도를 100점 척도로 변환</span></div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordtype">float</span> accuracyScore = accuracy * 100.0f;</div>
+<div class="line"><span class="lineno">   41</span>        Debug.Log(accuracy);</div>
+<div class="line"><span class="lineno">   42</span>        Debug.Log(accuracyScore);</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">// 최종 점수 계산 (최대 200점으로 제한)</span></div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordtype">float</span> finalScore = Mathf.Clamp(distanceScore + accuracyScore, 0, 200);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> finalScore;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="ttc" id="aclass_accuracy_scoring_html_a85b093f4c698981881485b807ff3a6ef"><div class="ttname"><a href="#a85b093f4c698981881485b807ff3a6ef">AccuracyScoring.DualContentDistance</a></div><div class="ttdeci">static Dictionary&lt; string, float &gt; DualContentDistance</div><div class="ttdef"><b>Definition</b> <a href="_accuracy_scoring_8cs_source.html#l00017">AccuracyScoring.cs:17</a></div></div>
+<div class="ttc" id="aclass_accuracy_scoring_html_abb9a35a7876e62bb7fd412452fc25df5"><div class="ttname"><a href="#abb9a35a7876e62bb7fd412452fc25df5">AccuracyScoring.ContentDistance</a></div><div class="ttdeci">static Dictionary&lt; string, float &gt; ContentDistance</div><div class="ttdef"><b>Definition</b> <a href="_accuracy_scoring_8cs_source.html#l00007">AccuracyScoring.cs:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3_icgraph.png" border="0" usemap="#aclass_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3_icgraph" alt=""/></div>
-<map name="aclass_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3_icgraph" id="aclass_accuracy_scoring_a9e7da1fce8fa2b77a9fa7a9af9e23de3_icgraph">
+<div class="center"><img src="class_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd_icgraph.png" border="0" usemap="#aclass_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd_icgraph" alt=""/></div>
+<map name="aclass_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd_icgraph" id="aclass_accuracy_scoring_a0c93477694b2b77ba1ca2159b4b2f6dd_icgraph">
 <area shape="rect" title=" " alt="" coords="490,23,668,65"/>
-<area shape="rect" href="class_record_detail.html#a1a4c0aeb8a33236cda2af49529c18c66" title=" " alt="" coords="285,31,442,57"/>
+<area shape="rect" href="class_record_detail.html#a3ed163077bb1994a80bbc8f1998244b2" title=" " alt="" coords="285,31,442,57"/>
 <area shape="poly" title=" " alt="" coords="475,47,443,47,443,41,475,41"/>
 <area shape="rect" href="class_dual_game_record.html#a81226613935f5d650598f480a4492671" title=" " alt="" coords="15,5,227,32"/>
 <area shape="poly" title=" " alt="" coords="269,37,227,32,227,27,269,32"/>
@@ -173,6 +197,89 @@ Public 멤버 함수</h2></td></tr>
 </map>
 </div>
 
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="abb9a35a7876e62bb7fd412452fc25df5" name="abb9a35a7876e62bb7fd412452fc25df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9a35a7876e62bb7fd412452fc25df5">&#9670;&#160;</a></span>ContentDistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, float&gt; AccuracyScoring.ContentDistance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>초기값:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> Dictionary&lt;string, float&gt;</div>
+<div class="line">    {</div>
+<div class="line">        { <span class="stringliteral">&quot;Basketball&quot;</span>, 8.5f },</div>
+<div class="line">        { <span class="stringliteral">&quot;QuicknessGame&quot;</span>, 0.6f },</div>
+<div class="line">        { <span class="stringliteral">&quot;Tennis&quot;</span>, 1.5f },</div>
+<div class="line">        { <span class="stringliteral">&quot;CardMatch&quot;</span>, 6.5f },</div>
+<div class="line">        { <span class="stringliteral">&quot;ColorMatch&quot;</span>, 9f },</div>
+<div class="line">        { <span class="stringliteral">&quot;StroopTest&quot;</span>, 5.8f }</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="_accuracy_scoring_8cs_source.html">AccuracyScoring.cs</a> 파일의 <a class="el" href="_accuracy_scoring_8cs_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    {</div>
+<div class="line"><span class="lineno">    9</span>        { <span class="stringliteral">&quot;Basketball&quot;</span>, 8.5f },</div>
+<div class="line"><span class="lineno">   10</span>        { <span class="stringliteral">&quot;QuicknessGame&quot;</span>, 0.6f },</div>
+<div class="line"><span class="lineno">   11</span>        { <span class="stringliteral">&quot;Tennis&quot;</span>, 1.5f },</div>
+<div class="line"><span class="lineno">   12</span>        { <span class="stringliteral">&quot;CardMatch&quot;</span>, 6.5f },</div>
+<div class="line"><span class="lineno">   13</span>        { <span class="stringliteral">&quot;ColorMatch&quot;</span>, 9f },</div>
+<div class="line"><span class="lineno">   14</span>        { <span class="stringliteral">&quot;StroopTest&quot;</span>, 5.8f }</div>
+<div class="line"><span class="lineno">   15</span>    };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a85b093f4c698981881485b807ff3a6ef" name="a85b093f4c698981881485b807ff3a6ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b093f4c698981881485b807ff3a6ef">&#9670;&#160;</a></span>DualContentDistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, float&gt; AccuracyScoring.DualContentDistance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>초기값:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> Dictionary&lt;string, float&gt;</div>
+<div class="line">    {</div>
+<div class="line">        { <span class="stringliteral">&quot;Basketball&quot;</span>, 8.2f },</div>
+<div class="line">        { <span class="stringliteral">&quot;QuicknessGame&quot;</span>, 0.6f },</div>
+<div class="line">        { <span class="stringliteral">&quot;Tennis&quot;</span>, 1.7f },</div>
+<div class="line">        { <span class="stringliteral">&quot;CardMatch&quot;</span>, 9.8f },</div>
+<div class="line">        { <span class="stringliteral">&quot;ColorMatch&quot;</span>, 14f },</div>
+<div class="line">        { <span class="stringliteral">&quot;StroopTest&quot;</span>, 5.8f }</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="_accuracy_scoring_8cs_source.html">AccuracyScoring.cs</a> 파일의 <a class="el" href="_accuracy_scoring_8cs_source.html#l00017">17</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>        { <span class="stringliteral">&quot;Basketball&quot;</span>, 8.2f },</div>
+<div class="line"><span class="lineno">   20</span>        { <span class="stringliteral">&quot;QuicknessGame&quot;</span>, 0.6f },</div>
+<div class="line"><span class="lineno">   21</span>        { <span class="stringliteral">&quot;Tennis&quot;</span>, 1.7f },</div>
+<div class="line"><span class="lineno">   22</span>        { <span class="stringliteral">&quot;CardMatch&quot;</span>, 9.8f },</div>
+<div class="line"><span class="lineno">   23</span>        { <span class="stringliteral">&quot;ColorMatch&quot;</span>, 14f },</div>
+<div class="line"><span class="lineno">   24</span>        { <span class="stringliteral">&quot;StroopTest&quot;</span>, 5.8f }</div>
+<div class="line"><span class="lineno">   25</span>    };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>

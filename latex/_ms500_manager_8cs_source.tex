@@ -12,75 +12,78 @@
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00009}\mbox{\hyperlink{class_ms500_manager}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ms500_manager}{Ms500Manager}}\ :\ \mbox{\hyperlink{class_singleton}{Singleton}}<Ms500Manager>}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00010}00010\ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//Lidar\ ¸Å´ÏÀú}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//Lidar\ ë§¤ë‹ˆì €}}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00012}\mbox{\hyperlink{class_ms500_manager_ab134f5f03fe71382e2c2abddb65af7c8}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ms500_manager_ab134f5f03fe71382e2c2abddb65af7c8}{isBottom}};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00013}\mbox{\hyperlink{class_ms500_manager_ab589e5df5482a2605a1422ee9f75b555}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ Camera\ \mbox{\hyperlink{class_ms500_manager_ab589e5df5482a2605a1422ee9f75b555}{settingCamera}};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00014}\mbox{\hyperlink{class_ms500_manager_a0ee3c07908453fc1ce38fea38cd133b4}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ Canvas\ \mbox{\hyperlink{class_ms500_manager_a0ee3c07908453fc1ce38fea38cd133b4}{settingCanvas}};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00015}\mbox{\hyperlink{class_ms500_manager_aa7f714bfab11b3b4271850cec9128179}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ MeshRenderer\ \mbox{\hyperlink{class_ms500_manager_aa7f714bfab11b3b4271850cec9128179}{settingRenderer}};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00016}\mbox{\hyperlink{class_ms500_manager_a1c0ecdcba09c43c777f1ae973e2d0a10}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ms500_manager_a1c0ecdcba09c43c777f1ae973e2d0a10}{isEnable}};}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00017}\mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ UnityAction<int,\ int>\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}};\ \textcolor{comment}{//ÅÍÄ¡\ ÇÔ¼ö}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00017}\mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ UnityAction<int,\ int>\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}};\ \textcolor{comment}{//í„°ì¹˜\ í•¨ìˆ˜}}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00018}00018\ }
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00019}\mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{isSetting}};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00020}\mbox{\hyperlink{class_ms500_manager_a130d2699f424e2beb3d8367ed4211761}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_ms500_manager_a130d2699f424e2beb3d8367ed4211761}{LastHit}}\ =\ Vector2.zero;}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00021}\mbox{\hyperlink{class_ms500_manager_a73174380bf254cb5ac7ef0bcee8791b1}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ms500_manager_a73174380bf254cb5ac7ef0bcee8791b1}{sensorText}};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ loginCanvas;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00023}00023\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00025}00025\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ obj\ =\ FindObjectsOfType<Ms500Manager>();}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj.Length\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ DontDestroyOnLoad(gameObject);}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00035}00035\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00038}00038\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a1c0ecdcba09c43c777f1ae973e2d0a10}{isEnable}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ SceneManager.sceneLoaded\ +=\ OnSceneLoaded;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00024}\mbox{\hyperlink{class_ms500_manager_ab269e7d75151b08e93ee8e68c8658194}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ms500_manager_ab269e7d75151b08e93ee8e68c8658194}{touchEnable}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ var\ obj\ =\ FindObjectsOfType<Ms500Manager>();}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj.Length\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ DontDestroyOnLoad(gameObject);}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a1c0ecdcba09c43c777f1ae973e2d0a10}{isEnable}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDisable()}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00044}00044\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a1c0ecdcba09c43c777f1ae973e2d0a10}{isEnable}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ SceneManager.sceneLoaded\ -\/=\ OnSceneLoaded;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnSceneLoaded(Scene\ scene,\ LoadSceneMode\ mode)}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00050}00050\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}{Reset}}();}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00052}00052\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00054}\mbox{\hyperlink{class_ms500_manager_ab503b1c9b388325cb4bbbaf4181943be}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ms500_manager_ab503b1c9b388325cb4bbbaf4181943be}{Setting}}(\textcolor{keywordtype}{bool}\ isSet,\ GameObject\ loginCanvas\ =\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00055}00055\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ settingCanvas.enabled\ =\ isSet;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{isSetting}}\ =\ isSet;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ settingRenderer.enabled\ =\ isSet;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_ab589e5df5482a2605a1422ee9f75b555}{settingCamera}}.gameObject.SetActive(isSet);}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(loginCanvas\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ this.loginCanvas\ =\ loginCanvas;}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!isSet)}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ this.loginCanvas.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00071}\mbox{\hyperlink{class_ms500_manager_aa669ecbca7895e993497344cb70e29da}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ms500_manager_aa669ecbca7895e993497344cb70e29da}{Init}}(\textcolor{keywordtype}{bool}\ IsBodyHandMode,\ UnityAction<int,\ int>\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}})}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00072}00072\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ this.callback\ =\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}};}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00074}00074\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00076}\mbox{\hyperlink{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}{00076}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}{Reset}}()}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00077}00077\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}}\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00079}00079\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ SceneManager.sceneLoaded\ +=\ OnSceneLoaded;}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDisable()}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a1c0ecdcba09c43c777f1ae973e2d0a10}{isEnable}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ SceneManager.sceneLoaded\ -\/=\ OnSceneLoaded;}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnSceneLoaded(Scene\ scene,\ LoadSceneMode\ mode)}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}{Reset}}();}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00057}\mbox{\hyperlink{class_ms500_manager_ab503b1c9b388325cb4bbbaf4181943be}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ms500_manager_ab503b1c9b388325cb4bbbaf4181943be}{Setting}}(\textcolor{keywordtype}{bool}\ isSet,\ GameObject\ loginCanvas\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ settingCanvas.enabled\ =\ isSet;}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a98c00579c5f403f7a756053025c82fd9}{isSetting}}\ =\ isSet;}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ settingRenderer.enabled\ =\ isSet;}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_ab589e5df5482a2605a1422ee9f75b555}{settingCamera}}.gameObject.SetActive(isSet);}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(loginCanvas\ !=\ null)}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ this.loginCanvas\ =\ loginCanvas;}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(!isSet)}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ this.loginCanvas.SetActive(true);}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00074}\mbox{\hyperlink{class_ms500_manager_aa669ecbca7895e993497344cb70e29da}{00074}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ms500_manager_aa669ecbca7895e993497344cb70e29da}{Init}}(\textcolor{keywordtype}{bool}\ IsBodyHandMode,\ UnityAction<int,\ int>\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}})}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ this.callback\ =\ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}};}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00079}\mbox{\hyperlink{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}{00079}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ms500_manager_a486ee03d62be636898fbb3eb9c6dae63}{Reset}}()}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ms500_manager_a2c1c81b773cf307e3136b264d4c49d34}{callback}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ms500_manager_8cs_source_l00083}00083\ \}}
 
 \end{DoxyCode}

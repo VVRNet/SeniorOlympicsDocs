@@ -2,8 +2,7 @@
 \hypertarget{class_bubble_1_1_bubble_background_touch}{}\label{class_bubble_1_1_bubble_background_touch}\index{Bubble.BubbleBackgroundTouch@{Bubble.BubbleBackgroundTouch}}
 
 
-Bubble.\+Bubble\+Background\+Touch에 대한 상속 다이어그램 \+: 
-\nopagebreak
+Bubble.\+Bubble\+Background\+Touch에 대한 상속 다이어그램 \+: \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Bubble.\+Bubble\+Background\+Touch에 대한 상속 다이어그램 \+:
 \end{figure}
 
 
-Bubble.\+Bubble\+Background\+Touch에 대한 협력 다이어그램\+:
-\nopagebreak
+Bubble.\+Bubble\+Background\+Touch에 대한 협력 다이어그램\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,7 +35,7 @@ Game\+Object \mbox{\hyperlink{class_bubble_1_1_bubble_background_touch_a97b3cc2c
 \doxysubsection{상세한 설명}
 
 
-\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
 
 
@@ -54,27 +52,40 @@ void Bubble.\+Bubble\+Background\+Touch.\+On\+Touch (\begin{DoxyParamCaption}\it
 
 
 
-\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_bubble_1_1_bubble_background_touch_a97b3cc2ca072c4844819ff59d7822ee9}{touchPrefab}},\ worldPosition,\ Quaternion.identity);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_background_touch_aeddf1ca53f09ece1b45e6fd81bb3e7f9}{isLeft}})}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Red++;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.totalTouchCount\_Blue++;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ screenPosition\ =\ \textcolor{keyword}{new}\ Vector3(x,\ y,\ Camera.main.nearClipPlane);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ worldPosition\ =\ Camera.main.ScreenToWorldPoint(screenPosition);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ obj\ =\ Instantiate(\mbox{\hyperlink{class_bubble_1_1_bubble_background_touch_a97b3cc2ca072c4844819ff59d7822ee9}{touchPrefab}},\ worldPosition,\ Quaternion.identity);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.isTest)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bubble_1_1_bubble_background_touch_aeddf1ca53f09ece1b45e6fd81bb3e7f9}{isLeft}})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 0,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameRecordController.\mbox{\hyperlink{class_game_record_controller_a6a6c28b016fa1c43bb372eefacaccb9e}{Hit}}(\mbox{\hyperlink{class_olympics_game_manager}{OlympicsGameManager}}.\mbox{\hyperlink{class_olympics_game_manager_a4230048b48e6b2c972745bec09f60e98}{Instance}}.currentGameRecord,\ 1,\ \textcolor{keyword}{false},\ \textcolor{keywordflow}{default},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_touch_event}{TouchEvent}}(x,\ y\ +\ 2,\ DateTime.UtcNow),\ \textcolor{keywordflow}{default});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bubble_1_1_bubble_background_touch_a117003f0d280879e4bec1de21916ccb3_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{멤버 데이터 문서화}
@@ -86,7 +97,7 @@ bool Bubble.\+Bubble\+Background\+Touch.\+is\+Left}
 
 
 
-\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_bubble_1_1_bubble_background_touch_a97b3cc2ca072c4844819ff59d7822ee9}\index{Bubble.BubbleBackgroundTouch@{Bubble.BubbleBackgroundTouch}!touchPrefab@{touchPrefab}}
 \index{touchPrefab@{touchPrefab}!Bubble.BubbleBackgroundTouch@{Bubble.BubbleBackgroundTouch}}
@@ -96,10 +107,10 @@ Game\+Object Bubble.\+Bubble\+Background\+Touch.\+touch\+Prefab}
 
 
 
-\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00011}{11}} 번째 라인에서 정의되었습니다.
+\mbox{\hyperlink{_bubble_background_touch_8cs_source}{Bubble\+Background\+Touch.\+cs}} 파일의 \mbox{\hyperlink{_bubble_background_touch_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
 
 
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Bubble/\mbox{\hyperlink{_bubble_background_touch_8cs}{Bubble\+Background\+Touch.\+cs}}\end{DoxyCompactItemize}
+D\+:/\+Unity/\+Senior\+Olympics/\+Assets/01.\+SPODY2.\+0/\+Scripts/\+Contents/\+Cognitive/\+Color\+Match/\mbox{\hyperlink{_bubble_background_touch_8cs}{Bubble\+Background\+Touch.\+cs}}\end{DoxyCompactItemize}
